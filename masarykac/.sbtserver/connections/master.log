@@ -1,0 +1,31 @@
+New log file opened at Thu Feb 02 10:47:49 CET 2017 by 10580@Martin-pc
+Taking next connection to: 63772
+New client attempting to connect on port: 63773-63772
+  Address = /192.168.56.1:63772
+This client on port 63773 has uuid 46590663-1aa1-4cca-ab1c-b2be8974e1dd configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-46590663-1aa1-4cca-ab1c-b2be8974e1dd
+Taking next connection to: 63772
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63772
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63772
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63772
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63772
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63772
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 63772
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 10580@Martin-pc logs at Thu Feb 02 11:08:49 CET 2017, goodbye.
