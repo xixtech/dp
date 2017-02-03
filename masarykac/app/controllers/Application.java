@@ -10,6 +10,7 @@ public class Application extends Controller {
     public static Result dashboard() {
         return ok(views.html.dashboard.render());
     }
+
     @Security.Authenticated(Secured.class)
     public static Result index() {
         return ok(views.html.dashboard.render());
@@ -18,10 +19,11 @@ public class Application extends Controller {
     public static Result tables() {
         return ok(views.html.tables.tables.render());
     }
+
     @Security.Authenticated(Secured.class)
     public static Result workers() {
-        return ok(views.html.tables.workers.render());
-    }
+        return redirect(routes.TableController.listPerson());    }
+
     @Security.Authenticated(Secured.class)
     public static Result forms() {
         return ok(views.html.forms.render());

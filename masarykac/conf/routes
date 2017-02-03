@@ -10,7 +10,7 @@ GET     /                             controllers.Application.index()
 GET     /charts/flot                  controllers.Charts.flot()
 GET     /charts/morris                controllers.Charts.morris()
 GET     /tables                       controllers.Application.tables()
-GET     /workers                       controllers.Application.workers()
+GET     /workers                      controllers.Application.workers()
 GET     /forms                        controllers.Application.forms()
 GET     /ui-elements/panels-and-wells controllers.UiElements.panelsAndWells()
 GET     /ui-elements/buttons          controllers.UiElements.buttons()
@@ -19,6 +19,14 @@ GET     /ui-elements/typography       controllers.UiElements.typography()
 GET     /ui-elements/icons            controllers.UiElements.icons()
 GET     /ui-elements/grid             controllers.UiElements.grid()
 GET     /pages/blank                  controllers.Pages.blank()
+
+# Přidat zaměstnance
+GET    /users/register                controllers.PersonController.index()
+POST   /                              controllers.PersonController.save()
+
+# Vypsat zákazníky
+POST   /users                         controllers.Application.workers()
+GET    /users                         controllers.TableController.listPerson()
 
 # Odhlásit
 GET    /logout                        controllers.Application.logout()

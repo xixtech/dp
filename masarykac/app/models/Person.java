@@ -11,6 +11,7 @@ import java.util.List;
 /**
  * Created by Martin on 03.02.2017.
  */
+@Entity
 public class Person extends Model {
 
     public static Finder<Long, Person> find = new Finder<Long, Person>(
@@ -22,42 +23,31 @@ public class Person extends Model {
 
     @Constraints.Required(message = "Zadejte plat")
     @Formats.NonEmpty
-    public double plat;
+    public double salary;
 
     @Constraints.Required(message = "Zvolte zařazení")
     @Formats.NonEmpty
-    public String zarazeni;
+    public String jobTitle;
 
     @OneToOne(cascade = CascadeType.ALL)
-    public User osoba;
+    public User user;
 
     /**
-     * @param plat
-     * @param zarazeni
-     * @param osoba
+     * @param salary
+     * @param jobTitle
+     * @param user
      */
-    public Person(final double plat, final String zarazeni, final User osoba) {
-        this.plat = plat;
-        this.zarazeni = zarazeni;
-        this.osoba = osoba;
+    public Person(final double salary, final String jobTitle, final User user) {
+        this.salary = salary;
+        this.jobTitle = jobTitle;
+        this.user = user;
     }
 
-    /**
-     *
-     * stránka pracovníků
-     *
-     * @param page
-     * @param pageSize
-     * @param sortBy
-     * @param order
-     * @param filter
-     * @return
-     */
-    public static Page<Person> page(final int page, final int pageSize,
-                                       final String sortBy, final String order, final String filter) {
-        return find.where().ilike("zarazeni", "%" + filter + "%")
-                .orderBy(sortBy + " " + order)
-                .findPagingList(pageSize).setFetchAhead(false).getPage(page);
+
+    public static Page<Person> page() {
+        return find.where().ilike("jobTitle", "% Admin %")
+                .orderBy("id asc")
+                .findPagingList(10).setFetchAhead(false).getPage(1);
     }
 
     public static List<Person> persons() {

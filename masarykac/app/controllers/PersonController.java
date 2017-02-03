@@ -1,14 +1,13 @@
 package controllers;
 
 import models.Person;
+import models.Profile;
 import models.User;
+import models.utils.Hash;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static play.data.Form.form;
 
@@ -17,81 +16,96 @@ import static play.data.Form.form;
  */
 @Security.Authenticated(Secured.class)
 public class PersonController extends Controller {
-    final static Form<Person> PRACOVNIK_FORM = form(Person.class);
-    static Map<Person, Double> casy = new HashMap<Person, Double>();
-    static User osoba = null;
-
+    final static Form<User> SIGNUP_FORM = form(User.class);
+    final static Form<Person> SIGNUP_PERSON_FORM = form(Person.class);
+    final static Form<Profile> SIGNUP_PROFILE_FORM = form(Profile.class);
 
     /**
-     * přesměrování na založení nového pracovníka
+     * přesměrování na registrační formulář
      *
-     * @param id
      * @return
      */
-    public static Result index(final Long id) {
-        return ok(views.html.registracePracovnik.render(id, PRACOVNIK_FORM));
+    public static Result index() {
+        return ok(views.html.registerPerson.render(SIGNUP_FORM, SIGNUP_PERSON_FORM, SIGNUP_PROFILE_FORM));
     }
 
     /**
-     * uložení nového pracovníka
-     *
-     * @param id
-     * @return
-     */
-    public static Result save(final Long id) {
-            final Form<Person> pracovnikRegForm = PRACOVNIK_FORM
-                    .bindFromRequest();
-            osoba = User.find.byId(id);
-            if (pracovnikRegForm.hasErrors()) {
-                return badRequest(views.html.editPracovnik.render(id,
-                        pracovnikRegForm));
-            }
-            try {
-                savePracovnik(pracovnikRegForm);
-                flash("success", "Uživatel byl zaměstnán");
-                return redirect(routes.Application.index());
-            } catch (Exception e) {
-                return badRequest(views.html.editPracovnik.render(id,
-                        pracovnikRegForm));
-            }
-
-    }
-
-    /**
-     * uložení nového pracovníka
+     * uložení osoby, profilu a zákazníka z formuláře
      *
      * @return
-     */
-    public static void savePracovnik(final Form<Person> pracovnikRegForm) {
-        final Person register = pracovnikRegForm.get();
-        final Person pracovnik = new Person(register.plat,
-                register.zarazeni, osoba);
-        pracovnik.save();
-        osoba.setPerson(pracovnik);
-        osoba.update();
-    }
-
-    /**
-     * přesměrování na vypsání všech pracovníků
      *
-     * @param idZakazky
-     * @param idPracovnika
-     * @return
      */
-    public static Result vypsatPracovniky(final long idZakazky,
-                                          final long idPracovnika) {
-        final Osoba o = Osoba.findByEmail(request().username());
-        if (o.pracovnik != null) {
-            return redirect(routes.VypisController.listPracovniku(0L, 0L, 0,
-                    "zarazeni", "asc", ""));
-        } else {
-            notAccess();
+    public static Result save() {
+        final Form<User> registerForm = SIGNUP_FORM.bindFromRequest();
+        final Form<Person> personForm = SIGNUP_PERSON_FORM.bindFromRequest();
+        final Form<Profile> profileForm = SIGNUP_PROFILE_FORM.bindFromRequest();
+        if (registerForm.hasErrors() || personForm.hasErrors() || profileForm.hasErrors()) {
+            return badRequest(views.html.registerPerson.render(registerForm, personForm, profileForm));
+        }
+        if (checkRepeated(registerForm)) {
+            registerForm.reject("repeatPassword", "Hesla se neshodují");
+            return badRequest(views.html.registerPerson.render(registerForm, personForm, profileForm));
+        }
+        final User registerUser = registerForm.get();
+        final Person registerPerson = personForm.get();
+        final Profile registerProfile = profileForm.get();
+        final Result resultError = checkBeforeSave(registerForm, registerUser.email, personForm, profileForm);
+        if (resultError != null) {
+            return resultError;
+        }
+        try {
+            savePerson(registerUser, registerPerson, registerProfile);
             return redirect(routes.Application.index());
+        } catch (Exception e) {
+            return badRequest(views.html.registerPerson.render(registerForm,
+                    personForm, profileForm));
         }
     }
 
+    private static void savePerson(final User registerForm, final Person personForm, final Profile profileForm) throws Exception {
+        final User user = new User(registerForm.email,
+                Hash.createPassword(registerForm.password));
+        user.setActive(true);
+        user.save();
+        final Profile profile = new Profile(profileForm.firstName,
+                profileForm.lastName, profileForm.phoneNumber, user);
+        profile.save();
+        final Person person = new Person(personForm.salary,
+                personForm.jobTitle, user);
+        person.save();
+        user.setProfile(profile);
+        user.setPerson(person);
+        user.update();
 
-    public static void notAccess() {
-        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
+    private static boolean checkRepeated(final Form<User> registerForm) {
+        // Check repeated password
+        if (!registerForm.field("password").valueOr("").isEmpty()) {
+            if (!registerForm.field("password").valueOr("")
+                    .equals(registerForm.field("repeatPassword").value())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * ověření unikátního emailu před uložením
+     *
+     * @param registerForm
+     * @param email
+     * @return
+     */
+    private static Result checkBeforeSave(Form<User> registerForm, String email,
+                                          final Form<Person> personForm, final Form<Profile> profileForm) {
+        // Check unique email
+        if (User.findByEmail(email) != null) {
+            registerForm.reject("email",
+                    "Tento email již existuje, zvolte jiný");
+            return badRequest(views.html.registerPerson.render(registerForm, personForm, profileForm));
+
+        }
+        return null;
     }
 }

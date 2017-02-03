@@ -14,7 +14,7 @@ public class Roles {
      */
     public static List<String> rolesList() {
         List<String> all = new ArrayList<String>();
-        all.add("Administrativní pracovník");
+        all.add("Admin");
         all.add("Kontrolní pracovník");
         all.add("Servisní pracovník");
         return all;

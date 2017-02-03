@@ -38,6 +38,8 @@ public class User extends Model{
     @OneToOne(cascade = CascadeType.ALL)
     public Person person;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    public Profile profile;
     /**
      * @param email
      * @param password
@@ -60,6 +62,14 @@ public class User extends Model{
     public void setPerson(Person person) {
         this.person = person;
     }
+
+    /**
+     * @param profile
+     */
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
     /**
      * stránka všech osob
      *
