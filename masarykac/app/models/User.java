@@ -35,6 +35,9 @@ public class User extends Model{
     @Constraints.MinLength(value = 6)
     public String password;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    public Person person;
+
     /**
      * @param email
      * @param password
@@ -51,7 +54,12 @@ public class User extends Model{
     public void setActive(boolean active) {
         this.active = active;
     }
-
+    /**
+     * @param person
+     */
+    public void setPerson(Person person) {
+        this.person = person;
+    }
     /**
      * stránka všech osob
      *
