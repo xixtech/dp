@@ -28,7 +28,11 @@ POST   /                              controllers.PersonController.save()
 POST   /users                         controllers.Application.workers()
 GET    /users                         controllers.TableController.listPerson()
 
+# Vypsat údaje konkrétního zákazníka
+POST   /users/moje/:id                controllers.PrintController.printUserDetails(id:Long)
+GET    /users/moje/:id                controllers.PrintController.detailsList(id:Long)
+
 # Odhlásit
 GET    /logout                        controllers.Application.logout()
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file                 controllers.Assets.at(path="/public", file)

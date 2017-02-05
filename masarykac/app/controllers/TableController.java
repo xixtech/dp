@@ -12,6 +12,6 @@ import play.mvc.Security;
 public class TableController extends Controller {
 
     public static Result listPerson() {
-        return ok(views.html.tables.workers.render(Person.page()));
+        return ok(views.html.tables.workers.render(Person.search()));
     }
 }

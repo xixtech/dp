@@ -44,12 +44,12 @@ public class Person extends Model {
     }
 
 
-    public static Page<Person> page() {
-        return find.where().ilike("jobTitle", "% Admin %")
-                .orderBy("id asc")
-                .findPagingList(10).setFetchAhead(false).getPage(1);
+    public static List<Person> search() {
+        return find.where().findList();
     }
-
+    public static List<Person> personDetail(long id) {
+        return find.where().ilike("id", "%"+id+"%").findList();
+    }
     public static List<Person> persons() {
         return find.where().findList();
     }

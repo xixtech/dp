@@ -1,4 +1,4 @@
-@(currentPage: com.avaje.ebean.Page[Person])
+@(currentPage: List[Person])
 @import helper._
 @localStylesheets = {
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
@@ -47,8 +47,8 @@
                             </thead>
                             <tbody>
 
-                            @for(user <- currentPage.getList) {
-                                <tr class="even gradeA">
+                            @for(user <- currentPage) {
+                                <tr>
 
                                     <td class="center">
                                     @if(user.user.profile.firstName == null) {
@@ -72,11 +72,9 @@
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(user.user.email == null) {
-                                        <em>-</em>
-                                    } else {
-                                        @user.user.email
-                                    }
+                                        @form(routes.PrintController.printUserDetails(user.user.id), 'class -> "topRight") {
+                                            <input type="submit" value="@user.user.email" class="btn success">
+                                        }
                                     </td>
                                 </tr>
                             }

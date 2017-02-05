@@ -24,6 +24,7 @@ public class Application extends Controller {
     public static Result workers() {
         return redirect(routes.TableController.listPerson());    }
 
+
     @Security.Authenticated(Secured.class)
     public static Result forms() {
         return ok(views.html.forms.render());
