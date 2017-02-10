@@ -41,7 +41,7 @@ Seq[Any](format.raw/*1.4*/("""
 """),_display_(/*8.2*/main(scripts = localScripts)/*8.30*/ {_display_(Seq[Any](format.raw/*8.32*/("""
     """),format.raw/*9.5*/("""<div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header">Nástěnka</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -451,8 +451,8 @@ Seq[Any](format.raw/*1.4*/("""
             </div>
             <div class="panel-body">
                 <div id="morris-donut-chart"></div>
-              """),
-format.raw("""  <a href="#" class="btn btn-default btn-block">View Details</a>
+               """),
+format.raw(""" <a href="#" class="btn btn-default btn-block">View Details</a>
             </div>
             <!-- /.panel-body -->
         </div>
@@ -600,10 +600,10 @@ format.raw("""  <a href="#" class="btn btn-default btn-block">View Details</a>
 object dashboard extends dashboard_Scope0.dashboard
               /*
                   -- GENERATED --
-                  DATE: Thu Feb 09 12:02:30 CET 2017
-                  SOURCE: E:/Users/Martin/Downloads/masarykac/app/views/dashboard.scala.html
-                  HASH: efff3c136f1f0b44a5cc7f374ba48580f3966aae
-                  MATRIX: 746->1|826->5|846->17|926->21|957->26|1035->78|1049->84|1111->126|1167->156|1181->162|1241->202|1297->232|1311->238|1371->278|1422->3|1449->291|1476->293|1512->321|1551->323|1582->328|28352->27047
+                  DATE: Fri Feb 10 16:23:46 CET 2017
+                  SOURCE: C:/Users/Martin/dp/masarykac/app/views/dashboard.scala.html
+                  HASH: 54588042e422508a2adb5bb5dd55a1f695f8e709
+                  MATRIX: 746->1|826->5|846->17|926->21|957->26|1035->78|1049->84|1111->126|1167->156|1181->162|1241->202|1297->232|1311->238|1371->278|1422->3|1449->291|1476->293|1512->321|1551->323|1582->328|28351->27046
                   LINES: 27->1|31->2|31->2|33->2|34->3|35->4|35->4|35->4|36->5|36->5|36->5|37->6|37->6|37->6|39->1|40->7|41->8|41->8|41->8|42->9|582->548
                   -- GENERATED --
               */

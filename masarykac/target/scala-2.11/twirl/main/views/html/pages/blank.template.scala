@@ -60,8 +60,8 @@ Seq[Any](format.raw/*1.16*/("""
 object blank extends blank_Scope0.blank
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 10 10:44:56 CET 2017
-                  SOURCE: E:/Users/Martin/Downloads/masarykac/app/views/pages/blank.scala.html
+                  DATE: Fri Feb 10 16:23:47 CET 2017
+                  SOURCE: C:/Users/Martin/dp/masarykac/app/views/pages/blank.scala.html
                   HASH: 83b04c9607bfec546c779461412c0664fcb904a7
                   MATRIX: 751->1|860->15|887->17|900->23|939->25|970->30
                   LINES: 27->1|32->1|33->2|33->2|33->2|34->3

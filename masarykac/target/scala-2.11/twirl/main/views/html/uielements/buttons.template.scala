@@ -258,8 +258,8 @@ Seq[Any](format.raw/*1.4*/("""
 object buttons extends buttons_Scope0.buttons
               /*
                   -- GENERATED --
-                  DATE: Thu Feb 09 12:02:31 CET 2017
-                  SOURCE: E:/Users/Martin/Downloads/masarykac/app/views/uielements/buttons.scala.html
+                  DATE: Fri Feb 10 16:23:48 CET 2017
+                  SOURCE: C:/Users/Martin/dp/masarykac/app/views/uielements/buttons.scala.html
                   HASH: 5b646066a76543ccd1aa10f5a18215099a690625
                   MATRIX: 753->1|849->3|877->6|890->12|929->14|960->19
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4
