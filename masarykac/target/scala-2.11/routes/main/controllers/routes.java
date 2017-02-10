@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Fri Feb 10 16:23:46 CET 2017
+// @DATE:Fri Feb 10 20:48:36 CET 2017
 
 package controllers;
 
@@ -17,6 +17,7 @@ public class routes {
   public static final controllers.ReverseTableController TableController = new controllers.ReverseTableController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseLogin Login = new controllers.ReverseLogin(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseApplication Application = new controllers.ReverseApplication(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseMethodicsController MethodicsController = new controllers.ReverseMethodicsController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseCharts Charts = new controllers.ReverseCharts(RoutesPrefix.byNamePrefix());
 
   public static class javascript {
@@ -29,6 +30,7 @@ public class routes {
     public static final controllers.javascript.ReverseTableController TableController = new controllers.javascript.ReverseTableController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseLogin Login = new controllers.javascript.ReverseLogin(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseMethodicsController MethodicsController = new controllers.javascript.ReverseMethodicsController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseCharts Charts = new controllers.javascript.ReverseCharts(RoutesPrefix.byNamePrefix());
   }
 

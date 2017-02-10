@@ -9,7 +9,7 @@ import play.mvc.Security;
  * Created by Martin on 04.02.2017.
  */
 
-public class PrintController  extends Controller {
+public class PrintController extends Controller {
 
     /**
      * přesměrování na vypsání údajů konkrétní osoby

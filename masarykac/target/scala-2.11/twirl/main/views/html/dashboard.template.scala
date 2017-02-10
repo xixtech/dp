@@ -600,7 +600,7 @@ format.raw(""" <a href="#" class="btn btn-default btn-block">View Details</a>
 object dashboard extends dashboard_Scope0.dashboard
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 10 16:23:46 CET 2017
+                  DATE: Fri Feb 10 20:45:52 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/dashboard.scala.html
                   HASH: 54588042e422508a2adb5bb5dd55a1f695f8e709
                   MATRIX: 746->1|826->5|846->17|926->21|957->26|1035->78|1049->84|1111->126|1167->156|1181->162|1241->202|1297->232|1311->238|1371->278|1422->3|1449->291|1476->293|1512->321|1551->323|1582->328|28351->27046

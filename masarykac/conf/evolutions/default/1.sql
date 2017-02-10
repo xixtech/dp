@@ -15,6 +15,13 @@ create table member (
   constraint pk_member primary key (id)
 );
 
+create table methodics (
+  id                            bigserial not null,
+  title                         varchar(255),
+  coefficient                   varchar(255),
+  constraint pk_methodics primary key (id)
+);
+
 create table person (
   id                            bigserial not null,
   salary                        float,
@@ -54,6 +61,8 @@ alter table if exists person drop constraint if exists fk_person_member_id;
 alter table if exists profile drop constraint if exists fk_profile_member_id;
 
 drop table if exists member cascade;
+
+drop table if exists methodics cascade;
 
 drop table if exists person cascade;
 

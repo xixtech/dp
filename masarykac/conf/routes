@@ -4,7 +4,7 @@
 
 # Home page
 GET     /                             controllers.Application.dashboard()
-GET     /pdf            controllers.Application.pdf()
+GET     /pdf                          controllers.Application.pdf()
 GET     /                             controllers.Application.index()
 GET     /login                        controllers.Login.index()
 POST    /login                        controllers.Login.authenticate()
@@ -23,7 +23,11 @@ GET     /pages/blank                  controllers.Pages.blank()
 
 # Přidat zaměstnance
 GET    /users/register                controllers.PersonController.index()
-POST   /                              controllers.PersonController.save()
+POST   /users/saved                   controllers.PersonController.save()
+
+# Přidat meetodiku
+GET    /m/add                         controllers.MethodicsController.index()
+POST   /m/saved                       controllers.MethodicsController.save()
 
 # Vypsat zákazníky
 POST   /users                         controllers.Application.workers()
