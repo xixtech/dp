@@ -8,10 +8,10 @@ import play.mvc.Security;
 /**
  * Created by Martin on 03.02.2017.
  */
-@Security.Authenticated(Secured.class)
+
 public class TableController extends Controller {
 
-    public static Result listPerson() {
+    public Result listPerson() {
         return ok(views.html.tables.workers.render(Person.search()));
     }
 }

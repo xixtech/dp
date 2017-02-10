@@ -1,0 +1,12 @@
+[debug] Copy resource mappings: 
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\application.conf,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\application.conf)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\evolutions,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\evolutions)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\fonts,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\fonts)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\routes,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\routes)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\evolutions\default,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\evolutions\default)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\evolutions\default\1.sql,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\fonts\OpenSans-Bold.ttf,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\fonts\OpenSans-Italic.ttf,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\fonts\OpenSans-Regular.ttf,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+[debug] 	(E:\Users\Martin\Downloads\masarykac\conf\fonts\osifont.ttf,E:\Users\Martin\Downloads\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)

@@ -47,33 +47,33 @@
                             </thead>
                             <tbody>
 
-                            @for(user <- currentPage) {
+                            @for(member <- currentPage) {
                                 <tr>
 
                                     <td class="center">
-                                    @if(user.user.profile.firstName == null) {
+                                    @if(member.member.profile.firstName == null) {
                                         <em>-</em>
                                     } else {
-                                        @user.user.profile.firstName
+                                        @member.member.profile.firstName
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(user.user.profile.lastName == null) {
+                                    @if(member.member.profile.lastName == null) {
                                         <em>-</em>
                                     } else {
-                                        @user.user.profile.lastName
+                                        @member.member.profile.lastName
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(user.user.profile.phoneNumber == null) {
+                                    @if(member.member.profile.phoneNumber == null) {
                                         <em>-</em>
                                     } else {
-                                        @user.user.profile.phoneNumber
+                                        @member.member.profile.phoneNumber
                                     }
                                     </td>
                                     <td class="center">
-                                        @form(routes.PrintController.printUserDetails(user.user.id), 'class -> "topRight") {
-                                            <input type="submit" value="@user.user.email" class="btn success">
+                                        @form(routes.PrintController.printUserDetails(member.id), 'class -> "topRight") {
+                                            <input type="submit" value="@member.member.email" class="btn success">
                                         }
                                     </td>
                                 </tr>

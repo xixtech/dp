@@ -1,32 +1,35 @@
 package controllers;
 
+import models.Member;
 import models.Person;
 import models.Profile;
-import models.User;
 import models.utils.Hash;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import play.mvc.Security;
 
+import javax.inject.Inject;
+
+import play.data.FormFactory;
 import static play.data.Form.form;
 
 /**
  * Created by Martin on 03.02.2017.
  */
-@Security.Authenticated(Secured.class)
-public class PersonController extends Controller {
-    final static Form<User> SIGNUP_FORM = form(User.class);
-    final static Form<Person> SIGNUP_PERSON_FORM = form(Person.class);
-    final static Form<Profile> SIGNUP_PROFILE_FORM = form(Profile.class);
 
-    /**
+public class PersonController extends Controller {
+    @Inject
+    private FormFactory formFactory;
+       /**
      * přesměrování na registrační formulář
      *
      * @return
      */
-    public static Result index() {
-        return ok(views.html.registerPerson.render(SIGNUP_FORM, SIGNUP_PERSON_FORM, SIGNUP_PROFILE_FORM));
+    public Result index() {
+        Form<Member> registerForm = formFactory.form(Member.class);
+        Form<Person> personForm = formFactory.form(Person.class);
+        Form<Profile> profileForm = formFactory.form(Profile.class);
+        return ok(views.html.registerPerson.render(registerForm, personForm, profileForm));
     }
 
     /**
@@ -35,10 +38,10 @@ public class PersonController extends Controller {
      * @return
      *
      */
-    public static Result save() {
-        final Form<User> registerForm = SIGNUP_FORM.bindFromRequest();
-        final Form<Person> personForm = SIGNUP_PERSON_FORM.bindFromRequest();
-        final Form<Profile> profileForm = SIGNUP_PROFILE_FORM.bindFromRequest();
+    public Result save() {
+        Form<Member> registerForm = formFactory.form(Member.class).bindFromRequest();
+        Form<Person> personForm = formFactory.form(Person.class).bindFromRequest();
+        Form<Profile> profileForm = formFactory.form(Profile.class).bindFromRequest();
         if (registerForm.hasErrors() || personForm.hasErrors() || profileForm.hasErrors()) {
             return badRequest(views.html.registerPerson.render(registerForm, personForm, profileForm));
         }
@@ -46,15 +49,15 @@ public class PersonController extends Controller {
             registerForm.reject("repeatPassword", "Hesla se neshodují");
             return badRequest(views.html.registerPerson.render(registerForm, personForm, profileForm));
         }
-        final User registerUser = registerForm.get();
-        final Person registerPerson = personForm.get();
-        final Profile registerProfile = profileForm.get();
-        final Result resultError = checkBeforeSave(registerForm, registerUser.email, personForm, profileForm);
+        Member registerMember = registerForm.get();
+        Person registerPerson = personForm.get();
+        Profile registerProfile = profileForm.get();
+        Result resultError = checkBeforeSave(registerForm, registerMember.email, personForm, profileForm);
         if (resultError != null) {
             return resultError;
         }
         try {
-            savePerson(registerUser, registerPerson, registerProfile);
+            savePerson(registerMember, registerPerson, registerProfile);
             return redirect(routes.Application.index());
         } catch (Exception e) {
             return badRequest(views.html.registerPerson.render(registerForm,
@@ -62,24 +65,24 @@ public class PersonController extends Controller {
         }
     }
 
-    private static void savePerson(final User registerForm, final Person personForm, final Profile profileForm) throws Exception {
-        final User user = new User(registerForm.email,
+    private void savePerson(Member registerForm, Person personForm, Profile profileForm) throws Exception {
+        Member member = new Member(registerForm.email,
                 Hash.createPassword(registerForm.password));
-        user.setActive(true);
-        user.save();
-        final Profile profile = new Profile(profileForm.firstName,
-                profileForm.lastName, profileForm.phoneNumber, user);
+        member.setActive(true);
+        member.save();
+        Profile profile = new Profile(profileForm.firstName,
+                profileForm.lastName, profileForm.phoneNumber, member);
         profile.save();
-        final Person person = new Person(personForm.salary,
-                personForm.jobTitle, user);
+        Person person = new Person(personForm.salary,
+                personForm.jobTitle, member);
         person.save();
-        user.setProfile(profile);
-        user.setPerson(person);
-        user.update();
+        member.setProfile(profile);
+        member.setPerson(person);
+        member.update();
 
     }
 
-    private static boolean checkRepeated(final Form<User> registerForm) {
+    private boolean checkRepeated(Form<Member> registerForm) {
         // Check repeated password
         if (!registerForm.field("password").valueOr("").isEmpty()) {
             if (!registerForm.field("password").valueOr("")
@@ -97,10 +100,10 @@ public class PersonController extends Controller {
      * @param email
      * @return
      */
-    private static Result checkBeforeSave(Form<User> registerForm, String email,
-                                          final Form<Person> personForm, final Form<Profile> profileForm) {
+    private Result checkBeforeSave(Form<Member> registerForm, String email,
+                                   Form<Person> personForm, Form<Profile> profileForm) {
         // Check unique email
-        if (User.findByEmail(email) != null) {
+        if (Member.findByEmail(email) != null) {
             registerForm.reject("email",
                     "Tento email již existuje, zvolte jiný");
             return badRequest(views.html.registerPerson.render(registerForm, personForm, profileForm));

@@ -5,23 +5,26 @@ import play.data.format.Formats;
 import play.data.validation.Constraints;
 import play.mvc.Controller;
 import play.mvc.Result;
-import models.User;
+import models.Member;
+import javax.inject.Inject;
 
+import play.data.FormFactory;
 
 /**
  * Created by Martin on 02.02.2017.
  */
 public class Login  extends Controller {
+    @Inject
+    private FormFactory formFactory;
 
-    private final static Form<LoginModel> LOGIN_FORM = new Form<LoginModel>(
-            LoginModel.class);
     /**
      * vypsání přihlašovacího formuláře
      *
      * @return
      */
-    public static Result index() {
-        return ok(views.html.pages.login.render(LOGIN_FORM));
+    public Result index() {
+        Form<LoginModel> loginForm = formFactory.form(LoginModel.class);
+        return ok(views.html.pages.login.render(loginForm));
     }
 
     public static class LoginModel {
@@ -39,7 +42,7 @@ public class Login  extends Controller {
          */
         public String validate() {
 
-            if (User.authenticate(email, password) == null) {
+            if (Member.authenticate(email, password) == null) {
                 return "Neplatný email nebo heslo.";
             }
             return null;
@@ -51,8 +54,8 @@ public class Login  extends Controller {
      *
      * @return
      */
-    public static Result authenticate() {
-        final Form<LoginModel> form = LOGIN_FORM.bindFromRequest();
+    public Result authenticate() {
+        Form<LoginModel> form = formFactory.form(LoginModel.class).bindFromRequest();
         if (form.hasErrors()) {
             form.reject("email", "Neexistující email nebo špatné heslo.");
             form.reject("password", "Neexistující email nebo špatné heslo.");

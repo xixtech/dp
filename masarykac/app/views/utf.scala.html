@@ -1,0 +1,132 @@
+@(map: java.util.Map[String, String])
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>Platy tisk</title>
+        <meta charset="UTF-8" />
+        <style type="text/css"><!--
+        body {
+            font-family:  osifont;
+        }
+        --></style>
+    </head>
+    <body>
+        <header>
+            <table style="width:500px">
+                <tr>
+                    <td> </td>
+                    <td>ČESKÉ VYSOKÉ UČENÍ TECHNICKÉ V PRAZE</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>Masarykův ústav vyšších studií</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>ředitelka</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td>Kolejní 2637/2a, 160 00 Praha 6</td>
+                </tr>
+            </table>
+        </header>
+        </br>
+        <section>
+            <article>
+                <header>
+                    <h2>Změna platu</h2>
+                </header>
+
+                <p>Žádám Vás o změnu platového výměru k @map.get("date").</br>Zároveň Vás žádám, aby kmenovost pracovnice byla na středisku 32165. </p>
+
+            </article>
+
+            <article>
+                <p>Osobní číslo: @map.get("personalNumber") </br>Příjmení a jméno: @map.get("surname") @map.get("name")</p>
+            </article>
+
+            <article>
+                <table style="width:650px">
+                    <tr>
+                        <th>Zakázka</th>
+                        <th>Tarifní plat</th>
+                        <th>Osobní ohodnocení</th>
+                        <th>Příplatek za vedení</th>
+                    </tr>
+                    <tr>
+                        <td>číslo1</td>
+                        <td>11000</td>
+                        <td>5500</td>
+                        <td>Kč</td>
+
+                    </tr>
+                    <tr>
+                        <td>číslo2</td>
+                        <td>11000</td>
+                        <td>Kč</td>
+                        <td>Kč</td>
+                    </tr>
+                    <tr>
+                        <td>pr�zdn�</td>
+                        <td>Kč</td>
+                        <td>Kč</td>
+                        <td>Kč</td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+
+                    </tr>
+                    <tr>
+                        <td>Celkem od 1. října 2016</td>
+                        <td rowspan="4">29000</td>
+
+                    </tr>
+                    <tr>
+                        <td>Předchozí plat</td>
+                        <td rowspan="4">29000</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <article>
+            <p>Děkuji a jsem s pozdravem</p>
+
+        </article>
+        </br>
+        <article>
+            <p>doc. Ing. Lenka Švecová, Ph.D.</br>
+                ředitelka Masarykova ústavu vyšších studií</br>
+                České vysoké učení technické v Praze</p>
+        </article>
+        </br></br>
+        <footer>
+            <table style="width:700px">
+                <tr>
+                    <td>ČVUT v Praze</td>
+                    <td>tel.: (+420) 224 353 161</td>
+                    <td>IČO: 68 40 77 00</td>
+                </tr>
+                <tr>
+                    <td>Masarykův ústav vyšších studií</td>
+                    <td> </td>
+                    <td>DIČ: CZ 68 40 77 00</td>
+                </tr>
+                <tr>
+                    <td>ředitelka</td>
+                    <td>lenka.svecova&#64;cvut.cz</td>
+                    <td>Bankovní spojení: KB Praha 6 č.ú.:19-8491620277/0100 </td>
+                </tr>
+                <tr>
+                    <td>Kolejní 2637/2a, 160 00 Praha 6</td>
+                    <td>www.muvs.cvut.cz</td>
+                    <td>Číslo jednací živnostenského listu: ŽO/0000035/99/ZAK</td>
+                </tr>
+            </table>
+        </footer>
+
+    </body>
+</html>

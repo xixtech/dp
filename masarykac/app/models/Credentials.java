@@ -3,8 +3,7 @@ package models;
 import models.utils.Hash;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
-import play.db.ebean.Model;
-
+import com.avaje.ebean.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;

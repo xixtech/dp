@@ -1,10 +1,8 @@
 package models;
 
-import com.avaje.ebean.Page;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
-import play.db.ebean.Model;
-
+import com.avaje.ebean.*;
 import javax.persistence.*;
 
 /**
@@ -35,41 +33,39 @@ public class Profile  extends Model {
     public String phoneNumber;
 
     @OneToOne(cascade = CascadeType.ALL)
-    public User user;
+    public Member member;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     /**
      * @param firstName
      * @param lastName
      * @param phoneNumber
-     * @param user
+     * @param member
      */
-    public Profile(final String firstName, final String lastName,
-                  final String phoneNumber, final User user) {
+    public Profile(String firstName, String lastName,
+                  String phoneNumber, Member member) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
-        this.user = user;
+        this.member = member;
 
     }
-
-    /**
-     * stránka profilů
-     *
-     * @param page
-     * @param pageSize
-     * @param sortBy
-     * @param order
-     * @param filter
-     * @return
-     */
-    public static Page<Profile> page(final int page, final int pageSize,
-                                    final String sortBy, final String order, final String filter) {
-        return find.where().ilike("email", "%" + filter + "%")
-                .orderBy(sortBy + " " + order)
-                .findPagingList(pageSize).setFetchAhead(false).getPage(page);
-    }
-
 
 
 }

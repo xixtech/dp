@@ -1,32 +1,44 @@
 package controllers;
 
 import play.mvc.*;
+import it.innove.play.pdf.PdfGenerator;
 
+import javax.inject.Inject;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
-
+@Security.Authenticated(Secured.class)
 public class Application extends Controller {
+    @Inject
+    public PdfGenerator pdfGenerator;
 
-    @Security.Authenticated(Secured.class)
-    public static Result dashboard() {
+    public Result pdf() {
+        pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/osifont.ttf"}));
+        Map<String, String> test = new HashMap<String, String>();
+        test.put("name", "Jan");
+        test.put("surname","Novák");
+        test.put("date","1. 1. 2017");
+        test.put("personalNumber","3456789");
+        return pdfGenerator.ok(views.html.utf.render(test), "http://localhost:9000");
+    }
+
+    public Result dashboard() {
         return ok(views.html.dashboard.render());
     }
 
-    @Security.Authenticated(Secured.class)
-    public static Result index() {
+    public Result index() {
         return ok(views.html.dashboard.render());
     }
-    @Security.Authenticated(Secured.class)
-    public static Result tables() {
+
+    public Result tables() {
         return ok(views.html.tables.tables.render());
     }
 
-    @Security.Authenticated(Secured.class)
-    public static Result workers() {
+    public Result workers() {
         return redirect(routes.TableController.listPerson());    }
 
-
-    @Security.Authenticated(Secured.class)
-    public static Result forms() {
+    public Result forms() {
         return ok(views.html.forms.render());
     }
 
@@ -35,7 +47,7 @@ public class Application extends Controller {
      *
      * @return
      */
-    public static Result logout() {
+    public Result logout() {
         session().clear();
         flash("success", "Byl/a jste odhlášen/a.");
         return redirect(routes.Login.index());

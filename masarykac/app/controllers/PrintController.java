@@ -8,7 +8,7 @@ import play.mvc.Security;
 /**
  * Created by Martin on 04.02.2017.
  */
-@Security.Authenticated(Secured.class)
+
 public class PrintController  extends Controller {
 
     /**
@@ -17,7 +17,7 @@ public class PrintController  extends Controller {
      * @param id
      * @return
      */
-    public static Result printUserDetails(final Long id) {
+    public Result printUserDetails(Long id) {
         return redirect(routes.PrintController.detailsList(id));
 
     }
@@ -29,8 +29,8 @@ public class PrintController  extends Controller {
      * @param id
      * @return
      */
-    public static Result detailsList(final long id) {
-        return ok(views.html.personDetail.render((id), Person.personDetail(id)));
+    public Result detailsList(long id) {
+        return ok(views.html.personDetail.render(Person.personDetail(id)));
     }
 
 }

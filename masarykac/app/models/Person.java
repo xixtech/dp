@@ -1,12 +1,13 @@
 package models;
 
-import com.avaje.ebean.Page;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
-import play.db.ebean.Model;
+
+import com.avaje.ebean.*;
+import java.util.List;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 /**
  * Created by Martin on 03.02.2017.
@@ -30,17 +31,17 @@ public class Person extends Model {
     public String jobTitle;
 
     @OneToOne(cascade = CascadeType.ALL)
-    public User user;
+    public Member member;
 
     /**
      * @param salary
      * @param jobTitle
-     * @param user
+     * @param member
      */
-    public Person(final double salary, final String jobTitle, final User user) {
+    public Person(double salary, String jobTitle, Member member) {
         this.salary = salary;
         this.jobTitle = jobTitle;
-        this.user = user;
+        this.member = member;
     }
 
 
@@ -48,7 +49,7 @@ public class Person extends Model {
         return find.where().findList();
     }
     public static List<Person> personDetail(long id) {
-        return find.where().ilike("id", "%"+id+"%").findList();
+        return find.where().eq("id",id).findList();
     }
     public static List<Person> persons() {
         return find.where().findList();

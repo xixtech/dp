@@ -4,10 +4,10 @@ import play.mvc.*;
 
 public class Charts extends Controller {
 
-    public static Result flot() {
+    public Result flot() {
         return ok(views.html.charts.flot.render());
     }
-    public static Result morris() {
+    public Result morris() {
         return ok(views.html.charts.morris.render());
     }
 }

@@ -229,7 +229,7 @@ common: &default_settings
     # Default is true.
     enabled: true
 
-  # New Relic Real User Monitoring gives you insight into the performance real users are
+  # New Relic Real Member Monitoring gives you insight into the performance real users are
   # experiencing with your website. This is accomplished by measuring the time it takes for
   # your users' browsers to download and render your web pages by injecting a small amount
   # of JavaScript code into the header and footer of each page. 
@@ -237,15 +237,15 @@ common: &default_settings
 
     # By default the agent automatically inserts API calls in compiled JSPs to
     # inject the monitoring JavaScript into web pages. Not all rendering engines are supported.
-    # See https://docs.newrelic.com/docs/java/real-user-monitoring-in-java#manual_instrumentation
+    # See https://docs.newrelic.com/docs/java/real-member-monitoring-in-java#manual_instrumentation
     # for instructions to add these manually to your pages.
     # Set this attribute to false to turn off this behavior.
     auto_instrument: true
 
   class_transformer:
-    # This instrumentation reports the name of the user principal returned from 
+    # This instrumentation reports the name of the member principal returned from
     # HttpServletRequest.getUserPrincipal() when servlets and filters are invoked.
-    com.newrelic.instrumentation.servlet-user:
+    com.newrelic.instrumentation.servlet-member:
       enabled: false
 
 
