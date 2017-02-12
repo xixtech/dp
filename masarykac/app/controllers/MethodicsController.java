@@ -5,12 +5,15 @@ import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Security;
+
 import javax.inject.Inject;
 import static play.data.Form.form;
 
 /**
  * Created by Martin on 10.02.2017.
  */
+@Security.Authenticated(Secured.class)
 public class MethodicsController extends Controller{
     @Inject
     private FormFactory formFactory;

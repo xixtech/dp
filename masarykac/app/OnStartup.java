@@ -1,11 +1,14 @@
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import javax.management.relation.Role;
 
 import models.Member;
 import models.utils.Hash;
 import models.Person;
 import models.Profile;
+import models.Roles;
+
 /**
  * This class is a Guice module that tells Guice how to bind several
  * different types. This Guice module is created when the Play
@@ -24,13 +27,19 @@ public class OnStartup {
         if (member1.find.findRowCount() == 0) {
 
             try {
+                Roles roles=new Roles("Lektor");
+                roles.save();
+
+                Roles rolesAsistent=new Roles("Asistent");
+                rolesAsistent.save();
+
                 Member member = new Member("a@a.cz", Hash.createPassword("secret"));
                 member.setActive(true);
                 member.save();
 
-                Profile profile= new Profile("Jan", "Novák", "123456789", member);
+                Profile profile= new Profile("Jan", "Novák", "123456789", member, roles);
                 profile.save();
-                Person person = new Person(20000, "Admin", member);
+                Person person = new Person(20000, "Lektor", member);
                 person.save();
                 member.setPerson(person);
                 member.setProfile(profile);

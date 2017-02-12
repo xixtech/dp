@@ -47,6 +47,7 @@ Seq[Any](format.raw/*1.4*/("""
     </div>
     <!-- /.row -->
     <div class="row">
+        <h4>Rychlý přístup</h4>
         <div class="col-lg-3 col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -55,14 +56,14 @@ Seq[Any](format.raw/*1.4*/("""
                             <i class="fa fa-comments fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
-                            <div>New Comments!</div>
+                            <div class="huge"></div>
+                            <div>Registrace osoby</div>
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href=""""),_display_(/*31.27*/routes/*31.33*/.PersonController.index()),format.raw/*31.58*/("""">
                     <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
+                        <span class="pull-left">Registrace osoby</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -451,8 +452,7 @@ Seq[Any](format.raw/*1.4*/("""
             </div>
             <div class="panel-body">
                 <div id="morris-donut-chart"></div>
-               """),
-format.raw(""" <a href="#" class="btn btn-default btn-block">View Details</a>
+                <a href="#" class="btn btn-default btn-block">View Details</a>
             </div>
             <!-- /.panel-body -->
         </div>
@@ -468,7 +468,8 @@ format.raw(""" <a href="#" class="btn btn-default btn-block">View Details</a>
                     <ul class="dropdown-menu slidedown">
                         <li>
                             <a href="#">
-                                <i class="fa fa-refresh fa-fw"></i> Refresh
+                                <i class="fa fa-refresh fa-fw"></i> Refr"""),
+format.raw("""esh
                             </a>
                         </li>
                         <li>
@@ -579,7 +580,7 @@ format.raw(""" <a href="#" class="btn btn-default btn-block">View Details</a>
     <!-- /.col-lg-4 -->
     </div>
     <!-- /.row -->
-""")))}),format.raw/*548.2*/("""
+""")))}),format.raw/*549.2*/("""
 """))
       }
     }
@@ -600,11 +601,11 @@ format.raw(""" <a href="#" class="btn btn-default btn-block">View Details</a>
 object dashboard extends dashboard_Scope0.dashboard
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 10 20:45:52 CET 2017
+                  DATE: Sun Feb 12 18:17:09 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/dashboard.scala.html
-                  HASH: 54588042e422508a2adb5bb5dd55a1f695f8e709
-                  MATRIX: 746->1|826->5|846->17|926->21|957->26|1035->78|1049->84|1111->126|1167->156|1181->162|1241->202|1297->232|1311->238|1371->278|1422->3|1449->291|1476->293|1512->321|1551->323|1582->328|28351->27046
-                  LINES: 27->1|31->2|31->2|33->2|34->3|35->4|35->4|35->4|36->5|36->5|36->5|37->6|37->6|37->6|39->1|40->7|41->8|41->8|41->8|42->9|582->548
+                  HASH: 751bf336861d94bf2836d77916a53b00f406f01b
+                  MATRIX: 746->1|826->5|846->17|926->21|957->26|1035->78|1049->84|1111->126|1167->156|1181->162|1241->202|1297->232|1311->238|1371->278|1422->3|1449->291|1476->293|1512->321|1551->323|1582->328|2422->1141|2437->1147|2483->1172|28476->27114
+                  LINES: 27->1|31->2|31->2|33->2|34->3|35->4|35->4|35->4|36->5|36->5|36->5|37->6|37->6|37->6|39->1|40->7|41->8|41->8|41->8|42->9|64->31|64->31|64->31|583->549
                   -- GENERATED --
               */
           

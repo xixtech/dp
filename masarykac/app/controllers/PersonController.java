@@ -3,6 +3,7 @@ package controllers;
 import models.Member;
 import models.Person;
 import models.Profile;
+import models.Roles;
 import models.utils.Hash;
 import play.data.Form;
 import play.mvc.Controller;
@@ -11,12 +12,14 @@ import play.mvc.Result;
 import javax.inject.Inject;
 
 import play.data.FormFactory;
+import play.mvc.Security;
+
 import static play.data.Form.form;
 
 /**
  * Created by Martin on 03.02.2017.
  */
-
+@Security.Authenticated(Secured.class)
 public class PersonController extends Controller {
     @Inject
     private FormFactory formFactory;
@@ -71,7 +74,7 @@ public class PersonController extends Controller {
         member.setActive(true);
         member.save();
         Profile profile = new Profile(profileForm.firstName,
-                profileForm.lastName, profileForm.phoneNumber, member);
+                profileForm.lastName, profileForm.phoneNumber, member, profileForm.role);
         profile.save();
         Person person = new Person(personForm.salary,
                 personForm.jobTitle, member);

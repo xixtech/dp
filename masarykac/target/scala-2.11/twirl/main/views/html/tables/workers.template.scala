@@ -21,10 +21,10 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class workers extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[List[Person],play.twirl.api.HtmlFormat.Appendable] {
+class workers extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[List[Member],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(currentPage: List[Person]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(currentPage: List[Member]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 import helper._
@@ -85,29 +85,29 @@ Seq[Any](format.raw/*1.29*/("""
                                 """),format.raw/*51.33*/("""<tr>
 
                                     <td class="center">
-                                    """),_display_(/*54.38*/if(member.member.profile.firstName == null)/*54.81*/ {_display_(Seq[Any](format.raw/*54.83*/("""
+                                    """),_display_(/*54.38*/if(member.profile.getFirstName == null)/*54.77*/ {_display_(Seq[Any](format.raw/*54.79*/("""
                                         """),format.raw/*55.41*/("""<em>-</em>
                                     """)))}/*56.39*/else/*56.44*/{_display_(Seq[Any](format.raw/*56.45*/("""
-                                        """),_display_(/*57.42*/member/*57.48*/.member.profile.firstName),format.raw/*57.73*/("""
+                                        """),_display_(/*57.42*/member/*57.48*/.profile.getFirstName),format.raw/*57.69*/("""
                                     """)))}),format.raw/*58.38*/("""
                                     """),format.raw/*59.37*/("""</td>
                                     <td class="center">
-                                    """),_display_(/*61.38*/if(member.member.profile.lastName == null)/*61.80*/ {_display_(Seq[Any](format.raw/*61.82*/("""
+                                    """),_display_(/*61.38*/if(member.profile.getLastName == null)/*61.76*/ {_display_(Seq[Any](format.raw/*61.78*/("""
                                         """),format.raw/*62.41*/("""<em>-</em>
                                     """)))}/*63.39*/else/*63.44*/{_display_(Seq[Any](format.raw/*63.45*/("""
-                                        """),_display_(/*64.42*/member/*64.48*/.member.profile.lastName),format.raw/*64.72*/("""
+                                        """),_display_(/*64.42*/member/*64.48*/.profile.getLastName),format.raw/*64.68*/("""
                                     """)))}),format.raw/*65.38*/("""
                                     """),format.raw/*66.37*/("""</td>
                                     <td class="center">
-                                    """),_display_(/*68.38*/if(member.member.profile.phoneNumber == null)/*68.83*/ {_display_(Seq[Any](format.raw/*68.85*/("""
+                                    """),_display_(/*68.38*/if(member.profile.phoneNumber == null)/*68.76*/ {_display_(Seq[Any](format.raw/*68.78*/("""
                                         """),format.raw/*69.41*/("""<em>-</em>
                                     """)))}/*70.39*/else/*70.44*/{_display_(Seq[Any](format.raw/*70.45*/("""
-                                        """),_display_(/*71.42*/member/*71.48*/.member.profile.phoneNumber),format.raw/*71.75*/("""
+                                        """),_display_(/*71.42*/member/*71.48*/.profile.phoneNumber),format.raw/*71.68*/("""
                                     """)))}),format.raw/*72.38*/("""
                                     """),format.raw/*73.37*/("""</td>
                                     <td class="center">
                                         """),_display_(/*75.42*/form(routes.PrintController.printUserDetails(member.id), 'class -> "topRight")/*75.120*/ {_display_(Seq[Any](format.raw/*75.122*/("""
-                                            """),format.raw/*76.45*/("""<input type="submit" value=""""),_display_(/*76.74*/member/*76.80*/.member.email),format.raw/*76.93*/("""" class="btn success">
+                                            """),format.raw/*76.45*/("""<input type="submit" value=""""),_display_(/*76.74*/member/*76.80*/.email),format.raw/*76.86*/("""" class="btn success">
                                         """)))}),format.raw/*77.42*/("""
                                     """),format.raw/*78.37*/("""</td>
                                 </tr>
@@ -129,9 +129,9 @@ Seq[Any](format.raw/*1.29*/("""
     }
   }
 
-  def render(currentPage:List[Person]): play.twirl.api.HtmlFormat.Appendable = apply(currentPage)
+  def render(currentPage:List[Member]): play.twirl.api.HtmlFormat.Appendable = apply(currentPage)
 
-  def f:((List[Person]) => play.twirl.api.HtmlFormat.Appendable) = (currentPage) => apply(currentPage)
+  def f:((List[Member]) => play.twirl.api.HtmlFormat.Appendable) = (currentPage) => apply(currentPage)
 
   def ref: this.type = this
 
@@ -144,10 +144,10 @@ Seq[Any](format.raw/*1.29*/("""
 object workers extends workers_Scope0.workers
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 10 20:45:52 CET 2017
+                  DATE: Sun Feb 12 20:32:15 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/tables/workers.scala.html
-                  HASH: b0d86146cd226b26844deb8240bf92c161f31ed2
-                  MATRIX: 762->1|882->47|906->63|986->67|1017->72|1056->85|1070->91|1126->127|1185->167|1205->179|1285->183|1320->192|1395->241|1409->247|1496->314|1553->344|1568->350|1663->424|1829->562|1858->563|1903->580|1966->615|1995->616|2044->637|2105->670|2134->671|2177->686|2206->687|2263->28|2290->164|2319->705|2348->708|2417->768|2457->770|2489->775|3587->1846|3629->1872|3669->1874|3730->1907|3856->2006|3908->2049|3948->2051|4017->2092|4084->2141|4097->2146|4136->2147|4205->2189|4220->2195|4266->2220|4335->2258|4400->2295|4526->2394|4577->2436|4617->2438|4686->2479|4753->2528|4766->2533|4805->2534|4874->2576|4889->2582|4934->2606|5003->2644|5068->2681|5194->2780|5248->2825|5288->2827|5357->2868|5424->2917|5437->2922|5476->2923|5545->2965|5560->2971|5608->2998|5677->3036|5742->3073|5872->3176|5960->3254|6001->3256|6074->3301|6130->3330|6145->3336|6179->3349|6274->3413|6339->3450|6443->3523|6500->3552
+                  HASH: e82baf02061d3562cbbf1948400a7c13811eb6b8
+                  MATRIX: 762->1|882->47|906->63|986->67|1017->72|1056->85|1070->91|1126->127|1185->167|1205->179|1285->183|1320->192|1395->241|1409->247|1496->314|1553->344|1568->350|1663->424|1829->562|1858->563|1903->580|1966->615|1995->616|2044->637|2105->670|2134->671|2177->686|2206->687|2263->28|2290->164|2319->705|2348->708|2417->768|2457->770|2489->775|3587->1846|3629->1872|3669->1874|3730->1907|3856->2006|3904->2045|3944->2047|4013->2088|4080->2137|4093->2142|4132->2143|4201->2185|4216->2191|4258->2212|4327->2250|4392->2287|4518->2386|4565->2424|4605->2426|4674->2467|4741->2516|4754->2521|4793->2522|4862->2564|4877->2570|4918->2590|4987->2628|5052->2665|5178->2764|5225->2802|5265->2804|5334->2845|5401->2894|5414->2899|5453->2900|5522->2942|5537->2948|5578->2968|5647->3006|5712->3043|5842->3146|5930->3224|5971->3226|6044->3271|6100->3300|6115->3306|6142->3312|6237->3376|6302->3413|6406->3486|6463->3515
                   LINES: 27->1|31->3|31->3|33->3|34->4|34->4|34->4|34->4|35->7|35->7|37->7|38->8|39->9|39->9|39->9|40->10|40->10|40->10|44->14|44->14|45->15|45->15|45->15|46->16|47->17|47->17|48->18|48->18|51->1|52->5|54->20|56->22|56->22|56->22|57->23|84->50|84->50|84->50|85->51|88->54|88->54|88->54|89->55|90->56|90->56|90->56|91->57|91->57|91->57|92->58|93->59|95->61|95->61|95->61|96->62|97->63|97->63|97->63|98->64|98->64|98->64|99->65|100->66|102->68|102->68|102->68|103->69|104->70|104->70|104->70|105->71|105->71|105->71|106->72|107->73|109->75|109->75|109->75|110->76|110->76|110->76|110->76|111->77|112->78|114->80|115->81
                   -- GENERATED --
               */

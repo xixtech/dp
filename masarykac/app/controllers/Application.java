@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Roles;
 import play.mvc.*;
 import it.innove.play.pdf.PdfGenerator;
 
@@ -40,6 +41,10 @@ public class Application extends Controller {
 
     public Result forms() {
         return ok(views.html.forms.render());
+    }
+
+    public Result roles() {
+        return ok(views.html.roles.render(Roles.rolesList()));
     }
 
     /**

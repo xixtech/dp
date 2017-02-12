@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Fri Feb 10 20:48:36 CET 2017
+// @DATE:Sun Feb 12 17:54:41 CET 2017
 
 package router
 
@@ -30,11 +30,11 @@ class Routes(
   PersonController_1: controllers.PersonController,
   // @LINE:29
   MethodicsController_0: controllers.MethodicsController,
-  // @LINE:34
+  // @LINE:35
   TableController_3: controllers.TableController,
-  // @LINE:40
+  // @LINE:41
   PrintController_4: controllers.PrintController,
-  // @LINE:44
+  // @LINE:45
   Assets_7: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -55,11 +55,11 @@ class Routes(
     PersonController_1: controllers.PersonController,
     // @LINE:29
     MethodicsController_0: controllers.MethodicsController,
-    // @LINE:34
+    // @LINE:35
     TableController_3: controllers.TableController,
-    // @LINE:40
+    // @LINE:41
     PrintController_4: controllers.PrintController,
-    // @LINE:44
+    // @LINE:45
     Assets_7: controllers.Assets
   ) = this(errorHandler, Application_8, Login_6, Charts_9, UiElements_5, Pages_2, PersonController_1, MethodicsController_0, TableController_3, PrintController_4, Assets_7, "/")
 
@@ -96,6 +96,7 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """users/saved""", """controllers.PersonController.save()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """m/add""", """controllers.MethodicsController.index()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """m/saved""", """controllers.MethodicsController.save()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """roles""", """controllers.Application.roles()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """users""", """controllers.Application.workers()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """users""", """controllers.TableController.listPerson()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.Application.logout()"""),
@@ -466,11 +467,28 @@ class Routes(
     )
   )
 
-  // @LINE:33
-  private[this] lazy val controllers_Application_workers21_route = Route("POST",
+  // @LINE:32
+  private[this] lazy val controllers_Application_roles21_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("roles")))
+  )
+  private[this] lazy val controllers_Application_roles21_invoker = createInvoker(
+    Application_8.roles(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "roles",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """roles"""
+    )
+  )
+
+  // @LINE:34
+  private[this] lazy val controllers_Application_workers22_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users")))
   )
-  private[this] lazy val controllers_Application_workers21_invoker = createInvoker(
+  private[this] lazy val controllers_Application_workers22_invoker = createInvoker(
     Application_8.workers(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -483,11 +501,11 @@ class Routes(
     )
   )
 
-  // @LINE:34
-  private[this] lazy val controllers_TableController_listPerson22_route = Route("GET",
+  // @LINE:35
+  private[this] lazy val controllers_TableController_listPerson23_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users")))
   )
-  private[this] lazy val controllers_TableController_listPerson22_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listPerson23_invoker = createInvoker(
     TableController_3.listPerson(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -500,11 +518,11 @@ class Routes(
     )
   )
 
-  // @LINE:37
-  private[this] lazy val controllers_Application_logout23_route = Route("GET",
+  // @LINE:38
+  private[this] lazy val controllers_Application_logout24_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
-  private[this] lazy val controllers_Application_logout23_invoker = createInvoker(
+  private[this] lazy val controllers_Application_logout24_invoker = createInvoker(
     Application_8.logout(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -517,11 +535,11 @@ class Routes(
     )
   )
 
-  // @LINE:40
-  private[this] lazy val controllers_PrintController_printUserDetails24_route = Route("POST",
+  // @LINE:41
+  private[this] lazy val controllers_PrintController_printUserDetails25_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/moje/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PrintController_printUserDetails24_invoker = createInvoker(
+  private[this] lazy val controllers_PrintController_printUserDetails25_invoker = createInvoker(
     PrintController_4.printUserDetails(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -534,11 +552,11 @@ class Routes(
     )
   )
 
-  // @LINE:41
-  private[this] lazy val controllers_PrintController_detailsList25_route = Route("GET",
+  // @LINE:42
+  private[this] lazy val controllers_PrintController_detailsList26_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/moje/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PrintController_detailsList25_invoker = createInvoker(
+  private[this] lazy val controllers_PrintController_detailsList26_invoker = createInvoker(
     PrintController_4.detailsList(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -551,11 +569,11 @@ class Routes(
     )
   )
 
-  // @LINE:44
-  private[this] lazy val controllers_Assets_at26_route = Route("GET",
+  // @LINE:45
+  private[this] lazy val controllers_Assets_at27_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at26_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at27_invoker = createInvoker(
     Assets_7.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -697,40 +715,46 @@ class Routes(
         controllers_MethodicsController_save20_invoker.call(MethodicsController_0.save())
       }
   
-    // @LINE:33
-    case controllers_Application_workers21_route(params) =>
+    // @LINE:32
+    case controllers_Application_roles21_route(params) =>
       call { 
-        controllers_Application_workers21_invoker.call(Application_8.workers())
+        controllers_Application_roles21_invoker.call(Application_8.roles())
       }
   
     // @LINE:34
-    case controllers_TableController_listPerson22_route(params) =>
+    case controllers_Application_workers22_route(params) =>
       call { 
-        controllers_TableController_listPerson22_invoker.call(TableController_3.listPerson())
+        controllers_Application_workers22_invoker.call(Application_8.workers())
       }
   
-    // @LINE:37
-    case controllers_Application_logout23_route(params) =>
+    // @LINE:35
+    case controllers_TableController_listPerson23_route(params) =>
       call { 
-        controllers_Application_logout23_invoker.call(Application_8.logout())
+        controllers_TableController_listPerson23_invoker.call(TableController_3.listPerson())
       }
   
-    // @LINE:40
-    case controllers_PrintController_printUserDetails24_route(params) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_PrintController_printUserDetails24_invoker.call(PrintController_4.printUserDetails(id))
+    // @LINE:38
+    case controllers_Application_logout24_route(params) =>
+      call { 
+        controllers_Application_logout24_invoker.call(Application_8.logout())
       }
   
     // @LINE:41
-    case controllers_PrintController_detailsList25_route(params) =>
+    case controllers_PrintController_printUserDetails25_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_PrintController_detailsList25_invoker.call(PrintController_4.detailsList(id))
+        controllers_PrintController_printUserDetails25_invoker.call(PrintController_4.printUserDetails(id))
       }
   
-    // @LINE:44
-    case controllers_Assets_at26_route(params) =>
+    // @LINE:42
+    case controllers_PrintController_detailsList26_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_PrintController_detailsList26_invoker.call(PrintController_4.detailsList(id))
+      }
+  
+    // @LINE:45
+    case controllers_Assets_at27_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at26_invoker.call(Assets_7.at(path, file))
+        controllers_Assets_at27_invoker.call(Assets_7.at(path, file))
       }
   }
 }

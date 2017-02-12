@@ -7,12 +7,14 @@ import play.data.format.Formats;
 import play.data.validation.Constraints;
 import play.data.validation.Constraints.Email;
 
+import java.util.List;
+
 /**
  * Created by Martin on 02.02.2017.
  */
 @Entity
 public class Member extends Model{
-    public static Model.Finder<Long, Member> find = new Model.Finder<Long, Member>(Long.class, Member.class);
+    public static Model.Finder<Long, Member> find = new Model.Finder<Long, Member>(Member.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -90,5 +92,12 @@ public class Member extends Model{
      */
     public static Member findByEmail(String email) {
         return find.where().eq("email", email).findUnique();
+    }
+
+    public static List<Member> search() {
+        return Member.find.all();
+    }
+    public static List<Member> memberDetail(long id) {
+        return find.where().eq("id",id).findList();
     }
 }

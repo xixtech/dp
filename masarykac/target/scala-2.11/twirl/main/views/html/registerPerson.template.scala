@@ -93,52 +93,51 @@ Seq[Any](format.raw/*1.82*/("""
 
                         """),_display_(/*62.26*/select(
                             personForm("jobTitle"),
-                            options = options(Roles.rolesList),
-                            '_default -> "--vyberte zařazení---",
+                            options = Roles.selectCollection.toSeq,
                             '_label -> "Role",
                             'class -> "form-control",
                             '_help -> "Vyberte zařazení.",
                             '_error -> personForm.globalError
-                        )),format.raw/*70.26*/("""
+                        )),format.raw/*69.26*/("""
 
-                        """),_display_(/*72.26*/inputText(
+                        """),_display_(/*71.26*/inputText(
                             profileForm("firstName"),
                             '_label -> "Křestní jméno",
                             'class -> "form-control",
                             '_help -> "Zadejte křestní jméno.",
                             '_error -> profileForm.globalError
-                        )),format.raw/*78.26*/("""
+                        )),format.raw/*77.26*/("""
 
-                        """),_display_(/*80.26*/inputText(
+                        """),_display_(/*79.26*/inputText(
                             profileForm("lastName"),
                             '_label -> "Příjmení",
                             'class -> "form-control",
                             '_help -> "Zadejte příjmení.",
                             '_error -> profileForm.globalError
-                        )),format.raw/*86.26*/("""
+                        )),format.raw/*85.26*/("""
 
-                        """),_display_(/*88.26*/inputText(
+                        """),_display_(/*87.26*/inputText(
                             profileForm("phoneNumber"),
                             '_label -> "Telefonní číslo",
                             'class -> "form-control",
                             '_help -> "Zadejte telefonní číslo.",
                             '_error -> profileForm.globalError
-                        )),format.raw/*94.26*/("""
+                        )),format.raw/*93.26*/("""
 
-                    """),format.raw/*96.21*/("""</fieldset>
+                    """),format.raw/*95.21*/("""</fieldset>
 
                     <div class="actions">
 
                         <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                        <a href=""""),_display_(/*101.35*/routes/*101.41*/.Application.index()),format.raw/*101.61*/("""" class="btn">Zrušit</a>
+                        <a href=""""),_display_(/*100.35*/routes/*100.41*/.Application.index()),format.raw/*100.61*/("""" class="btn">Zrušit</a>
                     </div>
 
-                """)))}),format.raw/*104.18*/("""
-                """),format.raw/*105.17*/("""</div>
+                """)))}),format.raw/*103.18*/("""
+                """),format.raw/*104.17*/("""</div>
             </div>
         </div>
     </div>
-""")))}),format.raw/*109.2*/("""
+""")))}),format.raw/*108.2*/("""
 """))
       }
     }
@@ -159,11 +158,11 @@ Seq[Any](format.raw/*1.82*/("""
 object registerPerson extends registerPerson_Scope0.registerPerson
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 10 20:45:52 CET 2017
+                  DATE: Sun Feb 12 18:38:19 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/registerPerson.scala.html
-                  HASH: b9422ab0e3e6534004dcbb1f368b34b27d2e548c
-                  MATRIX: 796->1|969->102|989->114|1069->118|1101->124|1180->177|1194->183|1256->225|1313->256|1327->262|1387->302|1444->333|1458->339|1518->379|1571->81|1599->393|1627->396|1663->424|1702->426|1735->432|2120->790|2135->796|2188->840|2228->842|2280->866|2405->964|2764->1302|2820->1331|3112->1602|3168->1631|3545->1987|3597->2011|3762->2149|4093->2459|4149->2488|4615->2933|4671->2962|5025->3295|5081->3324|5424->3646|5480->3675|5840->4014|5892->4038|6117->4235|6133->4241|6175->4261|6280->4334|6327->4352|6415->4409
-                  LINES: 27->1|31->3|31->3|33->3|34->4|35->5|35->5|35->5|36->6|36->6|36->6|37->7|37->7|37->7|39->1|40->8|41->9|41->9|41->9|42->10|53->21|53->21|53->21|53->21|55->23|57->25|63->31|65->33|70->38|72->40|78->46|80->48|86->54|92->60|94->62|102->70|104->72|110->78|112->80|118->86|120->88|126->94|128->96|133->101|133->101|133->101|136->104|137->105|141->109
+                  HASH: 9054720690aded8d2705d1b576421628d8e1fee5
+                  MATRIX: 796->1|969->102|989->114|1069->118|1101->124|1180->177|1194->183|1256->225|1313->256|1327->262|1387->302|1444->333|1458->339|1518->379|1571->81|1599->393|1627->396|1663->424|1702->426|1735->432|2120->790|2135->796|2188->840|2228->842|2280->866|2405->964|2764->1302|2820->1331|3112->1602|3168->1631|3545->1987|3597->2011|3762->2149|4093->2459|4149->2488|4552->2870|4608->2899|4962->3232|5018->3261|5361->3583|5417->3612|5777->3951|5829->3975|6054->4172|6070->4178|6112->4198|6217->4271|6264->4289|6352->4346
+                  LINES: 27->1|31->3|31->3|33->3|34->4|35->5|35->5|35->5|36->6|36->6|36->6|37->7|37->7|37->7|39->1|40->8|41->9|41->9|41->9|42->10|53->21|53->21|53->21|53->21|55->23|57->25|63->31|65->33|70->38|72->40|78->46|80->48|86->54|92->60|94->62|101->69|103->71|109->77|111->79|117->85|119->87|125->93|127->95|132->100|132->100|132->100|135->103|136->104|140->108
                   -- GENERATED --
               */
           

@@ -4,6 +4,7 @@ import play.data.format.Formats;
 import play.data.validation.Constraints;
 
 import com.avaje.ebean.*;
+
 import java.util.List;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ import javax.persistence.*;
 public class Person extends Model {
 
     public static Finder<Long, Person> find = new Finder<Long, Person>(
-            Long.class, Person.class);
+            Person.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -54,4 +55,5 @@ public class Person extends Model {
     public static List<Person> persons() {
         return find.where().findList();
     }
+
 }

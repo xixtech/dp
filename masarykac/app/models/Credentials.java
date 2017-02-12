@@ -12,7 +12,7 @@ import javax.persistence.Id;
  * Created by Martin on 03.02.2017.
  */
 public class Credentials extends Model{
-    public static Model.Finder<Long,Credentials> find = new Model.Finder<Long,Credentials>(Long.class, Credentials.class);
+    public static Model.Finder<Long,Credentials> find = new Model.Finder<Long,Credentials>(Credentials.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

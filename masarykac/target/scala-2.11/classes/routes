@@ -29,6 +29,7 @@ POST   /users/saved                   controllers.PersonController.save()
 GET    /m/add                         controllers.MethodicsController.index()
 POST   /m/saved                       controllers.MethodicsController.save()
 
+GET     /roles                          controllers.Application.roles()
 # Vypsat zákazníky
 POST   /users                         controllers.Application.workers()
 GET    /users                         controllers.TableController.listPerson()

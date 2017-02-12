@@ -9,10 +9,10 @@ import javax.persistence.*;
  * Created by Martin on 03.02.2017.
  */
 @Entity
-public class Profile  extends Model {
+public class Profile extends Model {
 
     public static Finder<Long, Profile> find = new Finder<Long, Profile>(
-            Long.class, Profile.class);
+            Profile.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,6 +34,9 @@ public class Profile  extends Model {
 
     @OneToOne(cascade = CascadeType.ALL)
     public Member member;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    public Roles role;
 
     public String getFirstName() {
         return firstName;
@@ -58,12 +61,13 @@ public class Profile  extends Model {
      * @param member
      */
     public Profile(String firstName, String lastName,
-                  String phoneNumber, Member member) {
+                  String phoneNumber, Member member, Roles role) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.member = member;
+        this.role=role;
 
     }
 

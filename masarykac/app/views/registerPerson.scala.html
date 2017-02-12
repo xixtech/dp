@@ -61,8 +61,7 @@
 
                         @select(
                             personForm("jobTitle"),
-                            options = options(Roles.rolesList),
-                            '_default -> "--vyberte zařazení---",
+                            options = Roles.selectCollection.toSeq,
                             '_label -> "Role",
                             'class -> "form-control",
                             '_help -> "Vyberte zařazení.",

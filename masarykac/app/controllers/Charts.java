@@ -1,7 +1,7 @@
 package controllers;
 
 import play.mvc.*;
-
+@Security.Authenticated(Secured.class)
 public class Charts extends Controller {
 
     public Result flot() {

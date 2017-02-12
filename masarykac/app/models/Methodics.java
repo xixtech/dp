@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Entity
 public class Methodics extends Model {
     public static Finder<Long, Methodics> find = new Finder<Long, Methodics>(
-            Long.class, Methodics.class);
+            Methodics.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

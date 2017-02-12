@@ -1,6 +1,6 @@
 package controllers;
 
-import models.Person;
+import models.Member;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
@@ -8,7 +8,7 @@ import play.mvc.Security;
 /**
  * Created by Martin on 04.02.2017.
  */
-
+@Security.Authenticated(Secured.class)
 public class PrintController extends Controller {
 
     /**
@@ -30,7 +30,8 @@ public class PrintController extends Controller {
      * @return
      */
     public Result detailsList(long id) {
-        return ok(views.html.personDetail.render(Person.personDetail(id)));
+        Member member=Member.find.byId(id);
+        return ok(views.html.personDetail.render(member));
     }
 
 }

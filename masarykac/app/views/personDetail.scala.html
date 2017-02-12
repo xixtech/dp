@@ -1,4 +1,4 @@
-@(currentPage: List[Person])
+@(member: models.Member)
 @import helper._
 @localStylesheets = {
   <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
@@ -35,39 +35,37 @@
               </tr>
             </thead>
             <tbody>
-
-            @for(member <- currentPage) {
               <tr>
 
                 <td class="center">
-                @if(member.member.profile.firstName == null) {
+                @if(member.profile.getFirstName == null) {
                   <em>-</em>
                 } else {
-                  @member.member.profile.firstName
+                  @member.profile.getFirstName
                 }
                 </td>
                 <td class="center">
-                @if(member.member.profile.lastName == null) {
+                @if(member.profile.getLastName == null) {
                   <em>-</em>
                 } else {
-                  @member.member.profile.lastName
+                  @member.profile.getLastName
                 }
                 </td>
                 <td class="center">
-                @if(member.member.profile.phoneNumber == null) {
+                @if(member.profile.phoneNumber == null) {
                   <em>-</em>
                 } else {
-                  @member.member.profile.phoneNumber
+                  @member.profile.phoneNumber
                 }
                 </td>
 
                 <td class="center">
                 @form(routes.Application.pdf(), 'class -> "topRight") {
-                  <input type="submit" value="@member.member.email" class="btn success">
+                  <input type="submit" value="@member.email" class="btn success">
                   }
                 </td>
               </tr>
-            }
+
             </tbody>
           </table>
         </div>

@@ -37,8 +37,16 @@ create table profile (
   last_name                     varchar(255),
   phone_number                  varchar(255),
   member_id                     bigint,
+  role_id                       bigint,
   constraint uq_profile_member_id unique (member_id),
+  constraint uq_profile_role_id unique (role_id),
   constraint pk_profile primary key (id)
+);
+
+create table roles (
+  id                            bigserial not null,
+  role_name                     varchar(255),
+  constraint pk_roles primary key (id)
 );
 
 alter table member add constraint fk_member_person_id foreign key (person_id) references person (id) on delete restrict on update restrict;
@@ -48,6 +56,8 @@ alter table member add constraint fk_member_profile_id foreign key (profile_id) 
 alter table person add constraint fk_person_member_id foreign key (member_id) references member (id) on delete restrict on update restrict;
 
 alter table profile add constraint fk_profile_member_id foreign key (member_id) references member (id) on delete restrict on update restrict;
+
+alter table profile add constraint fk_profile_role_id foreign key (role_id) references roles (id) on delete restrict on update restrict;
 
 
 # --- !Downs
@@ -60,6 +70,8 @@ alter table if exists person drop constraint if exists fk_person_member_id;
 
 alter table if exists profile drop constraint if exists fk_profile_member_id;
 
+alter table if exists profile drop constraint if exists fk_profile_role_id;
+
 drop table if exists member cascade;
 
 drop table if exists methodics cascade;
@@ -67,4 +79,6 @@ drop table if exists methodics cascade;
 drop table if exists person cascade;
 
 drop table if exists profile cascade;
+
+drop table if exists roles cascade;
 

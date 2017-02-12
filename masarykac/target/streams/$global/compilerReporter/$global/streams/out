@@ -1,2 +1,4 @@
-[info] C:\Users\Martin\dp\masarykac\app\models\Member.java: Some input files use or override a deprecated API.
-[info] C:\Users\Martin\dp\masarykac\app\models\Member.java: Recompile with -Xlint:deprecation for details.
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\workers.scala.html:61: value geLastName is not a member of models.Profile
+[error]                                     @if(member.profile.geLastName == null) {
+[error]                                                        ^
+[error] one error found
