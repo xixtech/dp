@@ -90,54 +90,61 @@ Seq[Any](format.raw/*1.82*/("""
                             '_help -> "Zadejte plat.",
                             '_error -> personForm.globalError
                         )),format.raw/*60.26*/("""
-
-                        """),_display_(/*62.26*/select(
+                        """),_display_(/*61.26*/inputText(
                             personForm("jobTitle"),
-                            options = Roles.selectCollection.toSeq,
+                            '_label -> "Zařazení",
+                            'class -> "form-control",
+                            '_help -> "Zadejte zařazení.",
+                            '_error -> personForm.globalError
+                        )),format.raw/*67.26*/("""
+
+                        """),_display_(/*69.26*/select(
+                            personForm("role"),
+                            options = options(Roles.selectCollection),
                             '_label -> "Role",
                             'class -> "form-control",
                             '_help -> "Vyberte zařazení.",
                             '_error -> personForm.globalError
-                        )),format.raw/*69.26*/("""
+                        )),format.raw/*76.26*/("""
 
-                        """),_display_(/*71.26*/inputText(
+                        """),_display_(/*78.26*/inputText(
                             profileForm("firstName"),
                             '_label -> "Křestní jméno",
                             'class -> "form-control",
                             '_help -> "Zadejte křestní jméno.",
                             '_error -> profileForm.globalError
-                        )),format.raw/*77.26*/("""
+                        )),format.raw/*84.26*/("""
 
-                        """),_display_(/*79.26*/inputText(
+                        """),_display_(/*86.26*/inputText(
                             profileForm("lastName"),
                             '_label -> "Příjmení",
                             'class -> "form-control",
                             '_help -> "Zadejte příjmení.",
                             '_error -> profileForm.globalError
-                        )),format.raw/*85.26*/("""
+                        )),format.raw/*92.26*/("""
 
-                        """),_display_(/*87.26*/inputText(
+                        """),_display_(/*94.26*/inputText(
                             profileForm("phoneNumber"),
                             '_label -> "Telefonní číslo",
                             'class -> "form-control",
                             '_help -> "Zadejte telefonní číslo.",
                             '_error -> profileForm.globalError
-                        )),format.raw/*93.26*/("""
+                        )),format.raw/*100.26*/("""
 
-                    """),format.raw/*95.21*/("""</fieldset>
+                    """),format.raw/*102.21*/("""</fieldset>
 
                     <div class="actions">
 
                         <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                        <a href=""""),_display_(/*100.35*/routes/*100.41*/.Application.index()),format.raw/*100.61*/("""" class="btn">Zrušit</a>
+                        <a href=""""),_display_(/*107.35*/routes/*107.41*/.Application.index()),format.raw/*107.61*/("""" class="btn">Zrušit</a>
                     </div>
 
-                """)))}),format.raw/*103.18*/("""
-                """),format.raw/*104.17*/("""</div>
+                """)))}),format.raw/*110.18*/("""
+                """),format.raw/*111.17*/("""</div>
             </div>
         </div>
     </div>
-""")))}),format.raw/*108.2*/("""
+""")))}),format.raw/*115.2*/("""
 """))
       }
     }
@@ -158,11 +165,11 @@ Seq[Any](format.raw/*1.82*/("""
 object registerPerson extends registerPerson_Scope0.registerPerson
               /*
                   -- GENERATED --
-                  DATE: Sun Feb 12 18:38:19 CET 2017
+                  DATE: Sun Feb 12 21:04:20 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/registerPerson.scala.html
-                  HASH: 9054720690aded8d2705d1b576421628d8e1fee5
-                  MATRIX: 796->1|969->102|989->114|1069->118|1101->124|1180->177|1194->183|1256->225|1313->256|1327->262|1387->302|1444->333|1458->339|1518->379|1571->81|1599->393|1627->396|1663->424|1702->426|1735->432|2120->790|2135->796|2188->840|2228->842|2280->866|2405->964|2764->1302|2820->1331|3112->1602|3168->1631|3545->1987|3597->2011|3762->2149|4093->2459|4149->2488|4552->2870|4608->2899|4962->3232|5018->3261|5361->3583|5417->3612|5777->3951|5829->3975|6054->4172|6070->4178|6112->4198|6217->4271|6264->4289|6352->4346
-                  LINES: 27->1|31->3|31->3|33->3|34->4|35->5|35->5|35->5|36->6|36->6|36->6|37->7|37->7|37->7|39->1|40->8|41->9|41->9|41->9|42->10|53->21|53->21|53->21|53->21|55->23|57->25|63->31|65->33|70->38|72->40|78->46|80->48|86->54|92->60|94->62|101->69|103->71|109->77|111->79|117->85|119->87|125->93|127->95|132->100|132->100|132->100|135->103|136->104|140->108
+                  HASH: 4e7e1e3bbc984ce760c358cb31f22fb6ac878273
+                  MATRIX: 796->1|969->102|989->114|1069->118|1101->124|1180->177|1194->183|1256->225|1313->256|1327->262|1387->302|1444->333|1458->339|1518->379|1571->81|1599->393|1627->396|1663->424|1702->426|1735->432|2120->790|2135->796|2188->840|2228->842|2280->866|2405->964|2764->1302|2820->1331|3112->1602|3168->1631|3545->1987|3597->2011|3762->2149|4093->2459|4147->2486|4488->2806|4544->2835|4946->3216|5002->3245|5356->3578|5412->3607|5755->3929|5811->3958|6172->4297|6225->4321|6450->4518|6466->4524|6508->4544|6613->4617|6660->4635|6748->4692
+                  LINES: 27->1|31->3|31->3|33->3|34->4|35->5|35->5|35->5|36->6|36->6|36->6|37->7|37->7|37->7|39->1|40->8|41->9|41->9|41->9|42->10|53->21|53->21|53->21|53->21|55->23|57->25|63->31|65->33|70->38|72->40|78->46|80->48|86->54|92->60|93->61|99->67|101->69|108->76|110->78|116->84|118->86|124->92|126->94|132->100|134->102|139->107|139->107|139->107|142->110|143->111|147->115
                   -- GENERATED --
               */
           

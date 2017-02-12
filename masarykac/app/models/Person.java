@@ -27,22 +27,25 @@ public class Person extends Model {
     @Formats.NonEmpty
     public double salary;
 
-    @Constraints.Required(message = "Zvolte zařazení")
-    @Formats.NonEmpty
+
     public String jobTitle;
 
     @OneToOne(cascade = CascadeType.ALL)
     public Member member;
 
+    @Constraints.Required(message = "Zvolte zařazení")
+    @Formats.NonEmpty
+    public String role;
     /**
      * @param salary
      * @param jobTitle
      * @param member
      */
-    public Person(double salary, String jobTitle, Member member) {
+    public Person(double salary, String jobTitle, Member member, String role) {
         this.salary = salary;
         this.jobTitle = jobTitle;
         this.member = member;
+        this.role=role;
     }
 
 

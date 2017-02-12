@@ -58,10 +58,17 @@
                             '_help -> "Zadejte plat.",
                             '_error -> personForm.globalError
                         )
+                        @inputText(
+                            personForm("jobTitle"),
+                            '_label -> "Zařazení",
+                            'class -> "form-control",
+                            '_help -> "Zadejte zařazení.",
+                            '_error -> personForm.globalError
+                        )
 
                         @select(
-                            personForm("jobTitle"),
-                            options = Roles.selectCollection.toSeq,
+                            personForm("role"),
+                            options = options(Roles.selectCollection),
                             '_label -> "Role",
                             'class -> "form-control",
                             '_help -> "Vyberte zařazení.",

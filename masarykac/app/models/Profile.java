@@ -35,8 +35,6 @@ public class Profile extends Model {
     @OneToOne(cascade = CascadeType.ALL)
     public Member member;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    public Roles role;
 
     public String getFirstName() {
         return firstName;
@@ -61,13 +59,13 @@ public class Profile extends Model {
      * @param member
      */
     public Profile(String firstName, String lastName,
-                  String phoneNumber, Member member, Roles role) {
+                  String phoneNumber, Member member) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.member = member;
-        this.role=role;
+
 
     }
 

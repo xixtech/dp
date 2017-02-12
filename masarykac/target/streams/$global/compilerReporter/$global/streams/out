@@ -1,4 +1,10 @@
-[error] C:\Users\Martin\dp\masarykac\app\views\tables\workers.scala.html:61: value geLastName is not a member of models.Profile
-[error]                                     @if(member.profile.geLastName == null) {
-[error]                                                        ^
+[error] C:\Users\Martin\dp\masarykac\app\views\registerPerson.scala.html:72: overloaded method value apply with alternatives:
+[error]   (options: java.util.List[String])scala.collection.mutable.Buffer[(String, String)] <and>
+[error]   (options: scala.collection.immutable.List[String])List[(String, String)] <and>
+[error]   (options: java.util.Map[String,String])Seq[(String, String)] <and>
+[error]   (options: scala.collection.immutable.Map[String,String])Seq[(String, String)] <and>
+[error]   (options: (String, String)*)Seq[(String, String)]
+[error]  cannot be applied to (Seq[(String, String)])
+[error]                             '_label -> "Role",
+[error]                                ^
 [error] one error found

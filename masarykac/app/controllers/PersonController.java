@@ -74,10 +74,10 @@ public class PersonController extends Controller {
         member.setActive(true);
         member.save();
         Profile profile = new Profile(profileForm.firstName,
-                profileForm.lastName, profileForm.phoneNumber, member, profileForm.role);
+                profileForm.lastName, profileForm.phoneNumber, member);
         profile.save();
         Person person = new Person(personForm.salary,
-                personForm.jobTitle, member);
+                personForm.jobTitle, member, personForm.role);
         person.save();
         member.setProfile(profile);
         member.setPerson(person);

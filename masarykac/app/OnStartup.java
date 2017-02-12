@@ -37,9 +37,9 @@ public class OnStartup {
                 member.setActive(true);
                 member.save();
 
-                Profile profile= new Profile("Jan", "Novák", "123456789", member, roles);
+                Profile profile= new Profile("Jan", "Novák", "123456789", member);
                 profile.save();
-                Person person = new Person(20000, "Lektor", member);
+                Person person = new Person(20000, "Lektor", member, roles.roleName);
                 person.save();
                 member.setPerson(person);
                 member.setProfile(profile);

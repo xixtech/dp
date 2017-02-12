@@ -27,6 +27,7 @@ create table person (
   salary                        float,
   job_title                     varchar(255),
   member_id                     bigint,
+  role                          varchar(255),
   constraint uq_person_member_id unique (member_id),
   constraint pk_person primary key (id)
 );
@@ -37,9 +38,7 @@ create table profile (
   last_name                     varchar(255),
   phone_number                  varchar(255),
   member_id                     bigint,
-  role_id                       bigint,
   constraint uq_profile_member_id unique (member_id),
-  constraint uq_profile_role_id unique (role_id),
   constraint pk_profile primary key (id)
 );
 
@@ -57,8 +56,6 @@ alter table person add constraint fk_person_member_id foreign key (member_id) re
 
 alter table profile add constraint fk_profile_member_id foreign key (member_id) references member (id) on delete restrict on update restrict;
 
-alter table profile add constraint fk_profile_role_id foreign key (role_id) references roles (id) on delete restrict on update restrict;
-
 
 # --- !Downs
 
@@ -69,8 +66,6 @@ alter table if exists member drop constraint if exists fk_member_profile_id;
 alter table if exists person drop constraint if exists fk_person_member_id;
 
 alter table if exists profile drop constraint if exists fk_profile_member_id;
-
-alter table if exists profile drop constraint if exists fk_profile_role_id;
 
 drop table if exists member cascade;
 
