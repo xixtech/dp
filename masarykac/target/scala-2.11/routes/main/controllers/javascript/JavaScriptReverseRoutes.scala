@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sun Mar 05 12:36:57 CET 2017
+// @DATE:Sun Mar 05 22:24:55 CET 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -45,7 +45,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:48
+  // @LINE:50
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -53,7 +53,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:48
+    // @LINE:50
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -83,32 +83,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:45
-    def detailsListLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PrintController.detailsListLector",
-      """
-        function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "users/lector/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
-        }
-      """
-    )
-  
     // @LINE:42
     def detailsList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.detailsList",
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "users/moje/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
-        }
-      """
-    )
-  
-    // @LINE:44
-    def printLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PrintController.printLector",
-      """
-        function(id0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "users/lector/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
         }
       """
     )
@@ -403,6 +383,46 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "charts/morris"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:44
+  class ReverseSalaryController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:44
+    def saveLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SalaryController.saveLector",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "users/lector/saved"})
+        }
+      """
+    )
+  
+    // @LINE:46
+    def detailsListLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SalaryController.detailsListLector",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "users/lector/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
+        }
+      """
+    )
+  
+    // @LINE:45
+    def printLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SalaryController.printLector",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "users/lector/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
         }
       """
     )

@@ -41,8 +41,10 @@ GET    /logout                        controllers.Application.logout()
 POST   /users/moje/:id                controllers.PrintController.printUserDetails(id:Long)
 GET    /users/moje/:id                controllers.PrintController.detailsList(id:Long)
 
-POST   /users/lector/:id                controllers.PrintController.printLector(id:Long)
-GET    /users/lector/:id                controllers.PrintController.detailsListLector(id:Long)
+POST   /users/lector/saved            controllers.SalaryController.saveLector()
+POST   /users/lector/:id              controllers.SalaryController.printLector(id:Long)
+GET    /users/lector/:id              controllers.SalaryController.detailsListLector(id:Long)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                 controllers.Assets.at(path="/public", file)

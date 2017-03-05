@@ -26,10 +26,7 @@ public class PrintController extends Controller {
 
     }
 
-    public Result printLector(Long id) {
-        return redirect(routes.PrintController.detailsListLector(id));
 
-    }
 
 
     /**
@@ -43,16 +40,6 @@ public class PrintController extends Controller {
         return ok(views.html.personDetail.render(member));
     }
 
-    /**
-     * vypsání údajů konrétní osoby
-     *
-     * @param id
-     * @return
-     */
-    public Result detailsListLector(long id) {
-        Member member=Member.find.byId(id);
-        Form<Member> registerForm = formFactory.form(Member.class);
-        return ok(views.html.lectorCalculation.render(member,registerForm, CriteriaKPI.search()));
-    }
+
 
 }

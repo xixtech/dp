@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sun Mar 05 12:36:57 CET 2017
+// @DATE:Sun Mar 05 22:24:55 CET 2017
 
 package controllers;
 
@@ -19,6 +19,7 @@ public class routes {
   public static final controllers.ReverseApplication Application = new controllers.ReverseApplication(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseMethodicsController MethodicsController = new controllers.ReverseMethodicsController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseCharts Charts = new controllers.ReverseCharts(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseSalaryController SalaryController = new controllers.ReverseSalaryController(RoutesPrefix.byNamePrefix());
 
   public static class javascript {
     
@@ -32,6 +33,7 @@ public class routes {
     public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseMethodicsController MethodicsController = new controllers.javascript.ReverseMethodicsController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseCharts Charts = new controllers.javascript.ReverseCharts(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseSalaryController SalaryController = new controllers.javascript.ReverseSalaryController(RoutesPrefix.byNamePrefix());
   }
 
 }

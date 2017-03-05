@@ -52,6 +52,16 @@ create table person (
   constraint pk_person primary key (id)
 );
 
+create table person_salary (
+  id                            bigserial not null,
+  obligation                    float,
+  basic_salary                  float,
+  personal_evaluation           float,
+  personal_evaluation_pct       float,
+  evaluation_participation      float,
+  constraint pk_person_salary primary key (id)
+);
+
 create table profile (
   id                            bigserial not null,
   first_name                    varchar(255),
@@ -108,6 +118,8 @@ drop table if exists member cascade;
 drop table if exists methodics cascade;
 
 drop table if exists person cascade;
+
+drop table if exists person_salary cascade;
 
 drop table if exists profile cascade;
 

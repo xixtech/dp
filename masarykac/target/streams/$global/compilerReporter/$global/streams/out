@@ -1,4 +1,6 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\PrintController.java:15: cannot find symbol
-[error]   symbol:   class Inject
-[error]   location: class controllers.PrintController
-[error] Inject
+[error] C:\Users\Martin\dp\masarykac\app\models\PersonSalary.java:37:  java.lang.String cannot be converted to double
+[error] personalEvaluationPct
+[error] C:\Users\Martin\dp\masarykac\app\models\PersonSalary.java:66:  double cannot be converted to java.lang.String
+[error] personalEvaluationPct
+[error] C:\Users\Martin\dp\masarykac\app\models\PersonSalary.java:70:  java.lang.String cannot be converted to double
+[error] personalEvaluationPct
