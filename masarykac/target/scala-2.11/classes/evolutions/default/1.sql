@@ -3,6 +3,26 @@
 
 # --- !Ups
 
+create table criteria_kpi (
+  id                            bigserial not null,
+  identificator                 varchar(255),
+  items_kpi                     varchar(255),
+  value_docent                  varchar(255),
+  value_odborny_asistent        varchar(255),
+  value_asistent                varchar(255),
+  value_lektor                  varchar(255),
+  constraint pk_criteria_kpi primary key (id)
+);
+
+create table items_kpi (
+  id                            bigserial not null,
+  identificator                 varchar(255),
+  description                   varchar(255),
+  unit                          varchar(255),
+  weight                        varchar(255),
+  constraint pk_items_kpi primary key (id)
+);
+
 create table member (
   id                            bigserial not null,
   active                        boolean,
@@ -48,6 +68,18 @@ create table roles (
   constraint pk_roles primary key (id)
 );
 
+create table salary_scale (
+  id                            bigserial not null,
+  identificator                 varchar(255),
+  description                   varchar(255),
+  unit                          varchar(255),
+  value_docent                  varchar(255),
+  value_odborny_asistent        varchar(255),
+  value_asistent                varchar(255),
+  value_lektor                  varchar(255),
+  constraint pk_salary_scale primary key (id)
+);
+
 alter table member add constraint fk_member_person_id foreign key (person_id) references person (id) on delete restrict on update restrict;
 
 alter table member add constraint fk_member_profile_id foreign key (profile_id) references profile (id) on delete restrict on update restrict;
@@ -67,6 +99,10 @@ alter table if exists person drop constraint if exists fk_person_member_id;
 
 alter table if exists profile drop constraint if exists fk_profile_member_id;
 
+drop table if exists criteria_kpi cascade;
+
+drop table if exists items_kpi cascade;
+
 drop table if exists member cascade;
 
 drop table if exists methodics cascade;
@@ -76,4 +112,6 @@ drop table if exists person cascade;
 drop table if exists profile cascade;
 
 drop table if exists roles cascade;
+
+drop table if exists salary_scale cascade;
 

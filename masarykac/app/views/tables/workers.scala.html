@@ -73,7 +73,12 @@
                                     </td>
                                     <td class="center">
                                         @form(routes.PrintController.printUserDetails(member.id), 'class -> "topRight") {
-                                            <input type="submit" value="@member.email" class="btn success">
+                                        <input type="submit" value="@member.email" class="btn success">
+                                        }
+                                    </td>
+                                    <td class="center">
+                                    @form(routes.PrintController.printLector(member.id), 'class -> "topRight") {
+                                        <input type="submit" value="@member.email" class="btn success">
                                         }
                                     </td>
                                 </tr>

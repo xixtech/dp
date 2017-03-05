@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sun Feb 12 17:54:41 CET 2017
+// @DATE:Sun Mar 05 12:36:57 CET 2017
 
 package router
 
@@ -34,7 +34,7 @@ class Routes(
   TableController_3: controllers.TableController,
   // @LINE:41
   PrintController_4: controllers.PrintController,
-  // @LINE:45
+  // @LINE:48
   Assets_7: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -59,7 +59,7 @@ class Routes(
     TableController_3: controllers.TableController,
     // @LINE:41
     PrintController_4: controllers.PrintController,
-    // @LINE:45
+    // @LINE:48
     Assets_7: controllers.Assets
   ) = this(errorHandler, Application_8, Login_6, Charts_9, UiElements_5, Pages_2, PersonController_1, MethodicsController_0, TableController_3, PrintController_4, Assets_7, "/")
 
@@ -102,6 +102,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.Application.logout()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """users/moje/""" + "$" + """id<[^/]+>""", """controllers.PrintController.printUserDetails(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """users/moje/""" + "$" + """id<[^/]+>""", """controllers.PrintController.detailsList(id:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """users/lector/""" + "$" + """id<[^/]+>""", """controllers.PrintController.printLector(id:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """users/lector/""" + "$" + """id<[^/]+>""", """controllers.PrintController.detailsListLector(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -569,11 +571,45 @@ class Routes(
     )
   )
 
+  // @LINE:44
+  private[this] lazy val controllers_PrintController_printLector27_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/lector/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_PrintController_printLector27_invoker = createInvoker(
+    PrintController_4.printLector(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PrintController",
+      "printLector",
+      Seq(classOf[Long]),
+      "POST",
+      """""",
+      this.prefix + """users/lector/""" + "$" + """id<[^/]+>"""
+    )
+  )
+
   // @LINE:45
-  private[this] lazy val controllers_Assets_at27_route = Route("GET",
+  private[this] lazy val controllers_PrintController_detailsListLector28_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/lector/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_PrintController_detailsListLector28_invoker = createInvoker(
+    PrintController_4.detailsListLector(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PrintController",
+      "detailsListLector",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """users/lector/""" + "$" + """id<[^/]+>"""
+    )
+  )
+
+  // @LINE:48
+  private[this] lazy val controllers_Assets_at29_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at27_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at29_invoker = createInvoker(
     Assets_7.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -751,10 +787,22 @@ class Routes(
         controllers_PrintController_detailsList26_invoker.call(PrintController_4.detailsList(id))
       }
   
+    // @LINE:44
+    case controllers_PrintController_printLector27_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_PrintController_printLector27_invoker.call(PrintController_4.printLector(id))
+      }
+  
     // @LINE:45
-    case controllers_Assets_at27_route(params) =>
+    case controllers_PrintController_detailsListLector28_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_PrintController_detailsListLector28_invoker.call(PrintController_4.detailsListLector(id))
+      }
+  
+    // @LINE:48
+    case controllers_Assets_at29_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at27_invoker.call(Assets_7.at(path, file))
+        controllers_Assets_at29_invoker.call(Assets_7.at(path, file))
       }
   }
 }

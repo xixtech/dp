@@ -44,6 +44,8 @@ public class OnStartup {
                 member.setPerson(person);
                 member.setProfile(profile);
                 member.update();
+                KPIStart kpi=new KPIStart();
+                kpi.insertKPIStart();
 
             } catch (Exception e) {
                 // TODO Auto-generated catch block

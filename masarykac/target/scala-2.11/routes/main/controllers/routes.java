@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sun Feb 12 17:54:41 CET 2017
+// @DATE:Sun Mar 05 12:36:57 CET 2017
 
 package controllers;
 
