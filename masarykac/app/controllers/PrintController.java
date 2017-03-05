@@ -1,5 +1,6 @@
 package controllers;
 
+import models.CriteriaKPI;
 import models.Member;
 import play.data.Form;
 import play.data.FormFactory;
@@ -51,7 +52,7 @@ public class PrintController extends Controller {
     public Result detailsListLector(long id) {
         Member member=Member.find.byId(id);
         Form<Member> registerForm = formFactory.form(Member.class);
-        return ok(views.html.lectorCalculation.render(member,registerForm));
+        return ok(views.html.lectorCalculation.render(member,registerForm, CriteriaKPI.search()));
     }
 
 }

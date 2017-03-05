@@ -1,4 +1,4 @@
-@(member: models.Member, signupForm: Form[Member])
+@(member: models.Member, signupForm: Form[Member], criteriaKPI: List[CriteriaKPI])
 @import helper._
 @localStylesheets = {
   <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
@@ -71,68 +71,261 @@
         </div>
       </div>
     </div>
+
+    <div class="col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Plat
+        </div>
+          <!-- /.panel-heading -->
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Položka</th>
+                  <th>Hodnota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Základní plat (100% úvazek)</td>
+                  <td>
+                  @inputText(signupForm("email"), '_label -> "", 'class -> "form-control")
+                  </td>
+                </tr>
+                <tr>
+                  <td>Základ osobního hodnocení (100% úvazek)</td>
+                  <td>
+                  @if(member.profile.phoneNumber == null) {
+                    <em>-</em>
+                  } else {
+                    @member.profile.phoneNumber
+                  }
+                  </td>
+                </tr>
+                <tr>
+                  <td>Osobní ohodnocení [%]</td>
+                  <td>
+                  @if(member.profile.phoneNumber == null) {
+                    <em>-</em>
+                  } else {
+                    @member.profile.phoneNumber
+                  }
+                  </td>
+                </tr>
+                <tr>
+                  <td>Osobní ohodnocení/ velikost úvazku</td>
+                  <td>
+                  @if(member.profile.phoneNumber == null) {
+                    <em>-</em>
+                  } else {
+                    @member.profile.phoneNumber
+                  }
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            <!-- /.table-responsive -->
+        </div>
+          <!-- /.panel-body -->
+      </div>
+        <!-- /.panel -->
+    </div>
+
+    <div class="col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Plnění KPI
+        </div>
+          <!-- /.panel-heading -->
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Kritérium</th>
+                  <th>Popis</th>
+                  <th>Jednotka</th>
+                  <th>Váha</th>
+                  <th>Období</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AAA</td>
+                  <td>Předmět v akred. oboru</td>
+                  <td>15 hod.</td>
+                  <td>1</td>
+                  <td>
+                  @inputText(signupForm("email"), '_label -> "", 'class -> "form-control")
+                  </td>
+                </tr>
+                <tr>
+                  <td>AAB</td>
+                  <td>Jiný předmět</td>
+                  <td>15 hod.</td>
+                  <td>1</td>
+                  <td>
+                  @if(member.profile.phoneNumber == null) {
+                    <em>-</em>
+                  } else {
+                    @member.profile.phoneNumber
+                  }
+                  </td>
+                </tr>
+                <tr>
+                  <td>AB</td>
+                  <td>Zavedení předmětu</td>
+                  <td>15 hod.</td>
+                  <td>0,5</td>
+                  <td>
+                  @if(member.profile.phoneNumber == null) {
+                    <em>-</em>
+                  } else {
+                    @member.profile.phoneNumber
+                  }
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            <!-- /.table-responsive -->
+        </div>
+          <!-- /.panel-body -->
+      </div>
+        <!-- /.panel -->
+    </div>
+
     <div class="col-lg-6">
       <div class="panel panel-default">
         <div class="panel-heading">
           Položky KPI
         </div>
+          <!-- /.panel-heading -->
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Kritérium</th>
+                  <th>Popis</th>
+                  <th>Jednotka</th>
+                  <th>Váha</th>
+                  <th>Období</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AAA</td>
+                  <td>Předmět v akred. oboru</td>
+                  <td>15 hod.</td>
+                  <td>1</td>
+                  <td>
+                  @inputText(signupForm("email"), '_label -> "", 'class -> "form-control")
+                  </td>
+                </tr>
+                <tr>
+                  <td>AAB</td>
+                  <td>Jiný předmět</td>
+                  <td>15 hod.</td>
+                  <td>1</td>
+                  <td>
+                  @if(member.profile.phoneNumber == null) {
+                    <em>-</em>
+                  } else {
+                    @member.profile.phoneNumber
+                  }
+                  </td>
+                </tr>
+                <tr>
+                  <td>AB</td>
+                  <td>Zavedení předmětu</td>
+                  <td>15 hod.</td>
+                  <td>0,5</td>
+                  <td>
+                  @if(member.profile.phoneNumber == null) {
+                    <em>-</em>
+                  } else {
+                    @member.profile.phoneNumber
+                  }
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            <!-- /.table-responsive -->
+        </div>
+          <!-- /.panel-body -->
+      </div>
+        <!-- /.panel -->
+    </div>
+
+   <div class="col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h6 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Kritéria KPI</a>
+          </h6>
+        </div>
         <!-- /.panel-heading -->
+        <div id="collapseOne" class="panel-collapse collapse">
         <div class="panel-body">
           <div class="table-responsive">
             <table class="table table-hover">
               <thead>
               <tr>
                 <th>Kritérium</th>
-                <th>Popis</th>
                 <th>Jednotka</th>
                 <th>Váha</th>
-                <th>Období</th>
               </tr>
               </thead>
               <tbody>
+              @for(criteria <- criteriaKPI) {
               <tr>
-                <td>AAA</td>
-                <td>Předmět v akred. oboru</td>
-                <td>15 hod.</td>
-                <td>1</td>
                 <td>
-                @inputText(signupForm("email"))
-                </td>
-              </tr>
-              <tr>
-                <td>AAB</td>
-                <td>Jiný předmět</td>
-                <td>15 hod.</td>
-                <td>1</td>
-                <td>
-                  @if(member.profile.phoneNumber == null) {
-                  <em>-</em>
+                  @if(criteria.identificator == null) {
+                    <em>-</em>
                   } else {
-                  @member.profile.phoneNumber
+                    @criteria.identificator
                   }
                 </td>
-              </tr>
-              <tr>
-                <td>AB</td>
-                <td>Zavedení předmětu</td>
-                <td>15 hod.</td>
-                <td>0,5</td>
                 <td>
-                  @if(member.profile.phoneNumber == null) {
+                @if(criteria.itemsKPI == null) {
                   <em>-</em>
-                  } else {
-                  @member.profile.phoneNumber
-                  }
+                } else {
+                  @criteria.itemsKPI
+                }
                 </td>
+                <td>
+                @if(criteria.valueLektor == null) {
+                  <em>-</em>
+                } else {
+                  @criteria.valueLektor
+                }
+                </td>
+
               </tr>
+              }
               </tbody>
             </table>
           </div>
           <!-- /.table-responsive -->
         </div>
+        </div>
         <!-- /.panel-body -->
       </div>
       <!-- /.panel -->
+    </div>
+  <div>
+
+  </div>
+
+    <div class="actions">
+
+      <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+      <a href="@routes.Application.index()" class="btn">Zrušit</a>
     </div>
   </div>
 }

@@ -74,4 +74,7 @@ public class CriteriaKPI extends Model{
 
         return output;
     }
+    public static List<CriteriaKPI> search() {
+        return CriteriaKPI.find.all();
+    }
 }
