@@ -56,6 +56,54 @@ public class CriteriaKPI extends Model{
         this.valueLektor = valueLektor;
     }
 
+    public String getIdentificator() {
+        return identificator;
+    }
+
+    public void setIdentificator(String identificator) {
+        this.identificator = identificator;
+    }
+
+    public String getItemsKPI() {
+        return itemsKPI;
+    }
+
+    public void setItemsKPI(String itemsKPI) {
+        this.itemsKPI = itemsKPI;
+    }
+
+    public String getValueDocent() {
+        return valueDocent;
+    }
+
+    public void setValueDocent(String valueDocent) {
+        this.valueDocent = valueDocent;
+    }
+
+    public String getValueOdbornyAsistent() {
+        return valueOdbornyAsistent;
+    }
+
+    public void setValueOdbornyAsistent(String valueOdbornyAsistent) {
+        this.valueOdbornyAsistent = valueOdbornyAsistent;
+    }
+
+    public String getValueAsistent() {
+        return valueAsistent;
+    }
+
+    public void setValueAsistent(String valueAsistent) {
+        this.valueAsistent = valueAsistent;
+    }
+
+    public String getValueLektor() {
+        return valueLektor;
+    }
+
+    public void setValueLektor(String valueLektor) {
+        this.valueLektor = valueLektor;
+    }
+
     /**
      * List identifikátorů
      *

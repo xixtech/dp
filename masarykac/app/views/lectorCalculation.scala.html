@@ -1,4 +1,4 @@
-@(member: models.Member, personSalaryForm: Form[PersonSalary], criteriaKPI: List[CriteriaKPI])
+@(member: models.Member, personSalaryForm: Form[PersonSalary], criteriaKPI: List[CriteriaLector], itemsKPI: List[ItemsKPI])
 @import helper._
 @localStylesheets = {
   <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
@@ -156,48 +156,40 @@
               <thead>
                 <tr>
                   <th>Kritérium</th>
-                  <th>Popis</th>
                   <th>Jednotka</th>
-                  <th>Váha</th>
-                  <th>Období</th>
+                  <th>Období II.2016</th>
                 </tr>
               </thead>
               <tbody>
+              @for(criteria <- criteriaKPI) {
                 <tr>
-                  <td>AAA</td>
-                  <td>Předmět v akred. oboru</td>
-                  <td>15 hod.</td>
-                  <td>1</td>
                   <td>
+                  @if(criteria.identificator == null) {
+                    <em>-</em>
+                  } else {
+                    @criteria.identificator
+                  }
+                  </td>
+                  <td>
+                  @if(criteria.itemsKPI == null) {
+                    <em>-</em>
+                  } else {
+                    @criteria.itemsKPI
+                  }
+                  </td>
 
-                  </td>
-                </tr>
-                <tr>
-                  <td>AAB</td>
-                  <td>Jiný předmět</td>
-                  <td>15 hod.</td>
-                  <td>1</td>
                   <td>
-                  @if(member.profile.phoneNumber == null) {
+                  @if(criteria.period == null) {
                     <em>-</em>
                   } else {
-                    @member.profile.phoneNumber
+                    @if(criteria.period == "II.2015") {
+                      @criteria.valueLektor
+                    }
                   }
                   </td>
+
                 </tr>
-                <tr>
-                  <td>AB</td>
-                  <td>Zavedení předmětu</td>
-                  <td>15 hod.</td>
-                  <td>0,5</td>
-                  <td>
-                  @if(member.profile.phoneNumber == null) {
-                    <em>-</em>
-                  } else {
-                    @member.profile.phoneNumber
-                  }
-                  </td>
-                </tr>
+              }
               </tbody>
             </table>
           </div>
@@ -223,45 +215,56 @@
                   <th>Popis</th>
                   <th>Jednotka</th>
                   <th>Váha</th>
-                  <th>Období</th>
+                  <th>II.2015</th>
+                  <th>I.2016</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>AAA</td>
-                  <td>Předmět v akred. oboru</td>
-                  <td>15 hod.</td>
-                  <td>1</td>
-                  <td>
 
-                  </td>
-                </tr>
+              <tbody>
+              @for(items <- itemsKPI) {
                 <tr>
-                  <td>AAB</td>
-                  <td>Jiný předmět</td>
-                  <td>15 hod.</td>
-                  <td>1</td>
                   <td>
-                  @if(member.profile.phoneNumber == null) {
+                  @if(items.identificator == null) {
                     <em>-</em>
                   } else {
-                    @member.profile.phoneNumber
+                    @items.identificator
                   }
                   </td>
-                </tr>
-                <tr>
-                  <td>AB</td>
-                  <td>Zavedení předmětu</td>
-                  <td>15 hod.</td>
-                  <td>0,5</td>
                   <td>
-                  @if(member.profile.phoneNumber == null) {
+                  @if(items.description == null) {
                     <em>-</em>
                   } else {
-                    @member.profile.phoneNumber
+                    @items.description
                   }
                   </td>
+                  <td>
+                  @if(items.unit == null) {
+                    <em>-</em>
+                  } else {
+                    @items.unit
+                  }
+                  </td>
+                  <td>
+                  @if(items.weight == null) {
+                    <em>-</em>
+                  } else {
+                    @items.weight
+                  }
+                  </td>
+                  <td>
+                  @inputText(personSalaryForm("obligation"),
+                    '_label -> "",
+                    'class -> "form-control"
+                  )
+                  </td>
+                  <td>
+                  @inputText(personSalaryForm("obligation"),
+                    '_label -> "",
+                    'class -> "form-control"
+                  )
+                  </td>
                 </tr>
+              }
               </tbody>
             </table>
           </div>
@@ -288,7 +291,8 @@
               <tr>
                 <th>Kritérium</th>
                 <th>Jednotka</th>
-                <th>Váha</th>
+                <th>Období II.2015</th>
+                <th>Období I.2016</th>
               </tr>
               </thead>
               <tbody>
@@ -308,14 +312,25 @@
                   @criteria.itemsKPI
                 }
                 </td>
+
                 <td>
-                @if(criteria.valueLektor == null) {
+                @if(criteria.period == null) {
                   <em>-</em>
                 } else {
-                  @criteria.valueLektor
+                  @if(criteria.period == "II.2015") {
+                    @criteria.valueLektor
+                  }
                 }
                 </td>
-
+                <td>
+                @if(criteria.period == null) {
+                  <em>-</em>
+                } else {
+                  @if(criteria.period == "I.2016") {
+                    @criteria.valueLektor
+                  }
+                }
+                </td>
               </tr>
               }
               </tbody>

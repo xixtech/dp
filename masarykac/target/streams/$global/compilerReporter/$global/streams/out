@@ -1,6 +1,5 @@
-[error] C:\Users\Martin\dp\masarykac\app\models\PersonSalary.java:37:  java.lang.String cannot be converted to double
-[error] personalEvaluationPct
-[error] C:\Users\Martin\dp\masarykac\app\models\PersonSalary.java:66:  double cannot be converted to java.lang.String
-[error] personalEvaluationPct
-[error] C:\Users\Martin\dp\masarykac\app\models\PersonSalary.java:70:  java.lang.String cannot be converted to double
-[error] personalEvaluationPct
+[error] C:\Users\Martin\dp\masarykac\app\KPIStart.java:45: constructor CriteriaLector in class models.CriteriaLector cannot be applied to given types;
+[error]   required: java.lang.String,java.lang.String,java.lang.String,java.lang.String
+[error]   found: java.lang.String,java.lang.String
+[error]   reason: actual and formal argument lists differ in length
+[error] new CriteriaLector("II.2015",items.getValueLektor())

@@ -15,7 +15,7 @@ public class Application extends Controller {
     public PdfGenerator pdfGenerator;
 
     public Result pdf() {
-        pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/osifont.ttf"}));
+
         Map<String, String> test = new HashMap<String, String>();
         test.put("name", "Jan");
         test.put("surname","Novák");

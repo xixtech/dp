@@ -4,20 +4,17 @@ import com.avaje.ebean.Model;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by Martin on 05.03.2017.
+ * Created by Martin on 06.03.2017.
  */
 @Entity
-public class ItemsKPI extends Model {
-    public static Finder<Long, ItemsKPI> find = new Finder<Long, ItemsKPI>(
-            ItemsKPI.class);
+public class Lector extends Model {
+    public static Model.Finder<Long, Lector> find = new Model.Finder<Long, Lector>(
+            Lector.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,42 +26,31 @@ public class ItemsKPI extends Model {
 
     @Constraints.Required(message = "Identifikátor je povinný")
     @Formats.NonEmpty
-    public String description;
+    public String itemsKPI;
 
     @Constraints.Required(message = "Identifikátor je povinný")
     @Formats.NonEmpty
-    public String unit;
-
-    @Constraints.Required(message = "Identifikátor je povinný")
-    @Formats.NonEmpty
-    public String weight;
-
-    public ItemsKPI(String identificator, String description, String unit, String weight) {
-        this.identificator = identificator;
-        this.description = description;
-        this.unit = unit;
-        this.weight = weight;
-    }
+    public String valueLektor;
 
     /**
      * List identifikátorů
      *
      * @return
      */
-    public static List<ItemsKPI> itemsKPIList() {
+    public static List<Lector> criteriaKPIList() {
         return find.where().findList();
     }
 
     public static HashMap<String, String> selectCollection()  {
         HashMap<String, String> output = new HashMap<String, String>();
 
-        for(ItemsKPI r : ItemsKPI.find.all())  {
+        for(Lector r : Lector.find.all())  {
             output.put(r.id.toString(), r.identificator);
         }
 
         return output;
     }
-    public static List<ItemsKPI> search() {
-        return ItemsKPI.find.all();
+    public static List<Lector> search() {
+        return Lector.find.all();
     }
 }

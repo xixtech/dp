@@ -1,4 +1,5 @@
 import models.CriteriaKPI;
+import models.CriteriaLector;
 import models.ItemsKPI;
 import models.SalaryScale;
 
@@ -18,6 +19,8 @@ public class KPIStart {
         list.add(new ItemsKPI("AAB","Jiný předmět","15 hod.","1"));
         list.add(new ItemsKPI("AB","Zavedení předmětu","15 hod.","0,5"));
         list.add(new ItemsKPI("AC","Vedení obhájených závěrečných prací","1","1"));
+        list.add(new ItemsKPI("AD","Autorství učebnice/skripta/e-learningového kursu","100%","1"));
+        list.add(new ItemsKPI("AE","Testy, zkoušky","100%","1"));
 
         for (ItemsKPI items: list){
             items.save();
@@ -26,8 +29,23 @@ public class KPIStart {
         List<CriteriaKPI> listCriteria=new ArrayList<CriteriaKPI>();
         listCriteria.add(new CriteriaKPI("ZH","AAA,AB,CB","4","8","8","12"));
         listCriteria.add(new CriteriaKPI("ZH","BA,CCA","12","9","9","0"));
+        listCriteria.add(new CriteriaKPI("DH","AAA,AAB,AB,CB","4","4","4","4"));
+        listCriteria.add(new CriteriaKPI("DH","AC","12","16","16","20"));
+        listCriteria.add(new CriteriaKPI("DH","AE","20","20","20","20"));
+        listCriteria.add(new CriteriaKPI("DH","BA,CCA","12","12","12","12"));
+        listCriteria.add(new CriteriaKPI("DH","AD,BB,CCB,CD","2","2","2","2"));
+        listCriteria.add(new CriteriaKPI("DH","CA,D","1","1","1","1"));
 
         for (CriteriaKPI items: listCriteria){
+            items.save();
+        }
+
+        List<CriteriaLector> listLector=new ArrayList<CriteriaLector>();
+        for (CriteriaKPI items: listCriteria){
+            listLector.add(new CriteriaLector("II.2015",items.getIdentificator(),items.getItemsKPI(),items.getValueLektor()));
+            listLector.add(new CriteriaLector("I.2016",items.getIdentificator(),items.getItemsKPI(),items.getValueLektor()));
+        }
+        for (CriteriaLector items: listLector){
             items.save();
         }
 

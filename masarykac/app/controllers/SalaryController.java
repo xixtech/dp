@@ -1,9 +1,6 @@
 package controllers;
 
-import models.CriteriaKPI;
-import models.Member;
-import models.Methodics;
-import models.PersonSalary;
+import models.*;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -17,11 +14,11 @@ import javax.inject.Inject;
 public class SalaryController extends Controller {
     @Inject
     private FormFactory formFactory;
+
     public Result printLector(Long id) {
         return redirect(routes.SalaryController.detailsListLector(id));
 
     }
-
     /**
      * vypsání údajů konrétní osoby
      *
@@ -31,7 +28,7 @@ public class SalaryController extends Controller {
     public Result detailsListLector(long id) {
         Member member=Member.find.byId(id);
         Form<PersonSalary> personSalaryForm = formFactory.form(PersonSalary.class);
-        return ok(views.html.lectorCalculation.render(member,personSalaryForm, CriteriaKPI.search()));
+        return ok(views.html.lectorCalculation.render(member,personSalaryForm, CriteriaLector.search(), ItemsKPI.search()));
     }
 
 
