@@ -221,7 +221,9 @@
               </thead>
 
               <tbody>
-              @for(items <- itemsKPI) {
+
+                @for(items <- itemsKPI) {
+                  @items
                 <tr>
                   <td>
                   @if(items.identificator == null) {
@@ -252,10 +254,12 @@
                   }
                   </td>
                   <td>
+                    <fieldset>
                   @inputText(personSalaryForm("obligation"),
-                    '_label -> "",
+                    '_label -> "[x]",
                     'class -> "form-control"
                   )
+                    </fieldset>
                   </td>
                   <td>
                   @inputText(personSalaryForm("obligation"),
@@ -349,6 +353,9 @@
       <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
       <a href="@routes.Application.index()" class="btn">Zrušit</a>
     </div>
+
+
     }
   </div>
+
 }

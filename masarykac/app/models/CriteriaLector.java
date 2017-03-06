@@ -36,12 +36,14 @@ public class CriteriaLector  extends Model {
     @Formats.NonEmpty
     public String valueLektor;
 
+
     public CriteriaLector(String period, String identificator, String itemsKPI, String valueLektor) {
         this.period = period;
         this.identificator = identificator;
         this.itemsKPI = itemsKPI;
         this.valueLektor = valueLektor;
     }
+
 
     public String getPeriod() {
         return period;

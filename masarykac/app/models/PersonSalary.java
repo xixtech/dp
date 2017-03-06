@@ -30,12 +30,23 @@ public class PersonSalary extends Model {
 
     public double evaluationParticipation;
 
+    public List<String> valuesKPI;
+
     public PersonSalary(double obligation, double basicSalary, double personalEvaluation, double personalEvaluationPct, double evaluationParticipation) {
         this.obligation = obligation;
         this.basicSalary = basicSalary;
         this.personalEvaluation = personalEvaluation;
         this.personalEvaluationPct = personalEvaluationPct;
         this.evaluationParticipation = evaluationParticipation;
+    }
+
+
+    public List<String> getValuesKPI() {
+        return valuesKPI;
+    }
+
+    public void setValuesKPI(List<String> valuesKPI) {
+        this.valuesKPI = valuesKPI;
     }
 
     public double getObligation() {

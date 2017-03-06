@@ -14,6 +14,15 @@ create table criteria_kpi (
   constraint pk_criteria_kpi primary key (id)
 );
 
+create table criteria_lector (
+  id                            bigserial not null,
+  period                        varchar(255),
+  identificator                 varchar(255),
+  items_kpi                     varchar(255),
+  value_lektor                  varchar(255),
+  constraint pk_criteria_lector primary key (id)
+);
+
 create table items_kpi (
   id                            bigserial not null,
   identificator                 varchar(255),
@@ -21,6 +30,14 @@ create table items_kpi (
   unit                          varchar(255),
   weight                        varchar(255),
   constraint pk_items_kpi primary key (id)
+);
+
+create table lector (
+  id                            bigserial not null,
+  identificator                 varchar(255),
+  items_kpi                     varchar(255),
+  value_lektor                  varchar(255),
+  constraint pk_lector primary key (id)
 );
 
 create table member (
@@ -111,7 +128,11 @@ alter table if exists profile drop constraint if exists fk_profile_member_id;
 
 drop table if exists criteria_kpi cascade;
 
+drop table if exists criteria_lector cascade;
+
 drop table if exists items_kpi cascade;
+
+drop table if exists lector cascade;
 
 drop table if exists member cascade;
 
