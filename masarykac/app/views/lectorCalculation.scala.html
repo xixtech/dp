@@ -298,8 +298,11 @@
 
                                                         @helper.repeat(personSalaryForm("valuesKPIPrevious"), min = i) { valuesField =>
                                                             <td> <div style="height: 65px;
-                                                                overflow: hidden;">@helper.inputText(personSalaryForm(valuesField.name.toString),
-                                                                '_label -> "") </div> </td> </tr>
+                                                                overflow: hidden;">
+                                                                @helper.inputText(personSalaryForm(valuesField.name.toString),
+                                                                    '_label -> "")
+
+                                                            </div> </td> </tr>
                                                         }
                                                     </tbody>
 

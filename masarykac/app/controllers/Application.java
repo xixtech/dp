@@ -21,6 +21,9 @@ public class Application extends Controller {
         test.put("surname","Novák");
         test.put("date","1. 1. 2017");
         test.put("personalNumber","3456789");
+
+
+        pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
         return pdfGenerator.ok(views.html.utf.render(test), "http://localhost:9000");
     }
 

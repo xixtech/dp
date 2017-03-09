@@ -37,7 +37,7 @@ Seq[Any](format.raw/*1.16*/("""
             <div class="col-lg-12">
                 <h1 class="page-header">Blank</h1>
             </div>
-            <!-- /.col-lg-12 -->
+                <!-- /.col-lg-12 -->
         </div>
 
         <div>
@@ -47,11 +47,11 @@ Seq[Any](format.raw/*1.16*/("""
             <input id="result" type="text" />
             <script type="text/javascript">
 
-                    function compute()"""),format.raw/*19.39*/("""{"""),format.raw/*19.40*/("""
+                    function compute() """),format.raw/*19.40*/("""{"""),format.raw/*19.41*/("""
                         """),format.raw/*20.25*/("""var myBox1 = document.getElementById('first').value;
                         var myBox2 = document.getElementById('second').value;
 
-                        var grade = (parseInt(myBox1)+parseInt(myBox2));
+                        var grade = (parseInt(myBox1) + parseInt(myBox2));
                         result.value = grade;
                     """),format.raw/*25.21*/("""}"""),format.raw/*25.22*/("""
             """),format.raw/*26.13*/("""</script>
@@ -88,7 +88,7 @@ Seq[Any](format.raw/*1.16*/("""
             </div>
 
         </fieldset>
-        <!-- /.row -->
+            <!-- /.row -->
     </div>
 """)))}))
       }
@@ -110,10 +110,10 @@ Seq[Any](format.raw/*1.16*/("""
 object blank extends blank_Scope0.blank
               /*
                   -- GENERATED --
-                  DATE: Thu Mar 09 09:23:38 CET 2017
+                  DATE: Thu Mar 09 11:29:22 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/pages/blank.scala.html
-                  HASH: 346ef4e0dfc2e75ed69194e08689cd9c58c84893
-                  MATRIX: 751->1|860->15|888->18|901->24|940->26|971->31|1464->496|1493->497|1546->522|1845->793|1874->794|1915->807
+                  HASH: 7c7e8196b8ac2d66c590df672c7bb21f8b79ac23
+                  MATRIX: 751->1|860->15|888->18|901->24|940->26|971->31|1469->501|1498->502|1551->527|1852->800|1881->801|1922->814
                   LINES: 27->1|32->1|34->3|34->3|34->3|35->4|50->19|50->19|51->20|56->25|56->25|57->26
                   -- GENERATED --
               */

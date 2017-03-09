@@ -39,13 +39,14 @@ Seq[Any](format.raw/*1.38*/("""
         <meta charset="UTF-8" />
         <style type="text/css"><!--
         body """),format.raw/*10.14*/("""{"""),format.raw/*10.15*/("""
-            """),format.raw/*11.13*/("""font-family: "Berlin Sans FB Demi";
+            """),format.raw/*11.13*/("""font-family: Technika;
         """),format.raw/*12.9*/("""}"""),format.raw/*12.10*/("""
-        """),format.raw/*13.9*/("""--></style>
+
+        """),format.raw/*14.9*/("""--></style>
     </head>
     <body>
         <header>
-            <table style="width:500px">
+            <table style="width: 500px">
                 <tr>
                     <td> </td>
                     <td>ČESKÉ VYSOKÉ UČENÍ TECHNICKÉ V PRAZE</td>
@@ -71,16 +72,17 @@ Seq[Any](format.raw/*1.38*/("""
                     <h2>Změna platu</h2>
                 </header>
 
-                <p>Žádám Vás o změnu platového výměru k """),_display_(/*43.58*/map/*43.61*/.get("date")),format.raw/*43.73*/(""".</br>Zároveň Vás žádám, aby kmenovost pracovnice byla na středisku 32165. </p>
+                <p>Žádám Vás o změnu platového výměru k """),_display_(/*44.58*/map/*44.61*/.get("date")),format.raw/*44.73*/(""".</br>Zároveň Vás žádám, aby kmenovost pracovnice byla na středisku 32165. </p>
 
             </article>
 
             <article>
-                <p>Osobní číslo: """),_display_(/*48.35*/map/*48.38*/.get("personalNumber")),format.raw/*48.60*/(""" """),format.raw/*48.61*/("""</br>Příjmení a jméno: """),_display_(/*48.85*/map/*48.88*/.get("surname")),format.raw/*48.103*/(""" """),_display_(/*48.105*/map/*48.108*/.get("name")),format.raw/*48.120*/("""</p>
+                <p>Osobní číslo: """),_display_(/*49.35*/map/*49.38*/.get("personalNumber")),format.raw/*49.60*/(""" """),format.raw/*49.61*/("""</br>
+                    Příjmení a jméno: """),_display_(/*50.40*/map/*50.43*/.get("surname")),format.raw/*50.58*/(""" """),_display_(/*50.60*/map/*50.63*/.get("name")),format.raw/*50.75*/("""</p>
             </article>
 
             <article>
-                <table style="width:650px">
+                <table style="width: 650px">
                     <tr>
                         <th>Zakázka</th>
                         <th>Tarifní plat</th>
@@ -91,20 +93,20 @@ Seq[Any](format.raw/*1.38*/("""
                         <td>číslo1</td>
                         <td>11000</td>
                         <td>5500</td>
-                        <td>Kč</td>
+                        <td>100Kč</td>
 
                     </tr>
                     <tr>
                         <td>číslo2</td>
                         <td>11000</td>
-                        <td>Kč</td>
-                        <td>Kč</td>
+                        <td>100 Kč</td>
+                        <td>100 Kč</td>
                     </tr>
                     <tr>
-                        <td>pr�zdn�</td>
-                        <td>Kč</td>
-                        <td>Kč</td>
-                        <td>Kč</td>
+                        <td>prázdné</td>
+                        <td>10 Kč</td>
+                        <td>20 Kč</td>
+                        <td>30 Kč</td>
                     </tr>
                     <tr>
                         <td> </td>
@@ -122,12 +124,11 @@ Seq[Any](format.raw/*1.38*/("""
                 </table>
             </article>
         </section>
-
+        </br></br>
         <article>
             <p>Děkuji a jsem s pozdravem</p>
 
         </article>
-        </br>
         <article>
             <p>doc. Ing. Lenka Švecová, Ph.D.</br>
                 ředitelka Masarykova ústavu vyšších studií</br>
@@ -135,7 +136,7 @@ Seq[Any](format.raw/*1.38*/("""
         </article>
         </br></br>
         <footer>
-            <table style="width:700px">
+            <table style="width: 750px">
                 <tr>
                     <td>ČVUT v Praze</td>
                     <td>tel.: (+420) 224 353 161</td>
@@ -180,11 +181,11 @@ Seq[Any](format.raw/*1.38*/("""
 object utf extends utf_Scope0.utf
               /*
                   -- GENERATED --
-                  DATE: Mon Mar 06 12:15:54 CET 2017
+                  DATE: Thu Mar 09 14:49:00 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/utf.scala.html
-                  HASH: 4ea03142b7307ba970d63be1be54aa85f4533ea2
-                  MATRIX: 764->1|895->37|923->39|1138->226|1167->227|1208->240|1279->284|1308->285|1344->294|2228->1151|2240->1154|2273->1166|2461->1327|2473->1330|2516->1352|2545->1353|2596->1377|2608->1380|2645->1395|2675->1397|2688->1400|2722->1412
-                  LINES: 27->1|32->1|34->3|41->10|41->10|42->11|43->12|43->12|44->13|74->43|74->43|74->43|79->48|79->48|79->48|79->48|79->48|79->48|79->48|79->48|79->48|79->48
+                  HASH: f80538e448bff9813f0ef482417fffe90e4d0e79
+                  MATRIX: 764->1|895->37|923->39|1138->226|1167->227|1208->240|1266->271|1295->272|1332->282|2217->1140|2229->1143|2262->1155|2450->1316|2462->1319|2505->1341|2534->1342|2606->1387|2618->1390|2654->1405|2683->1407|2695->1410|2728->1422
+                  LINES: 27->1|32->1|34->3|41->10|41->10|42->11|43->12|43->12|45->14|75->44|75->44|75->44|80->49|80->49|80->49|80->49|81->50|81->50|81->50|81->50|81->50|81->50
                   -- GENERATED --
               */
           
