@@ -1,4 +1,5 @@
 @(text: String)
+
 @main() {
     <div class="container-fluid">
         <div class="row">
@@ -7,6 +8,55 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
+
+        <div>
+
+            <input id="first" type="text"/>
+            <input id="second" type="text" onchange="compute()"/>
+            <input id="result" type="text" />
+            <script type="text/javascript">
+
+                    function compute(){
+                        var myBox1 = document.getElementById('first').value;
+                        var myBox2 = document.getElementById('second').value;
+
+                        var grade = (parseInt(myBox1)+parseInt(myBox2));
+                        result.value = grade;
+                    }
+            </script>
+
+        </div>
+
+        <fieldset>
+            <div class="container">
+                <div class="row">
+                    <form action="#">
+                        <div class="col-xs-3">
+                            <div class="form-group">
+                                <label for="firstname">Firstname</label>
+                                <input type="text" class="form-control" id="firstname" placeholder="Firstname">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="form-group">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </fieldset>
         <!-- /.row -->
     </div>
 }

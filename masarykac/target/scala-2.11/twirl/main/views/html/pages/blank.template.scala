@@ -30,14 +30,64 @@ class blank extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Forma
 
 
 Seq[Any](format.raw/*1.16*/("""
-"""),_display_(/*2.2*/main()/*2.8*/ {_display_(Seq[Any](format.raw/*2.10*/("""
-    """),format.raw/*3.5*/("""<div class="container-fluid">
+
+"""),_display_(/*3.2*/main()/*3.8*/ {_display_(Seq[Any](format.raw/*3.10*/("""
+    """),format.raw/*4.5*/("""<div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Blank</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
+
+        <div>
+
+            <input id="first" type="text"/>
+            <input id="second" type="text" onchange="compute()"/>
+            <input id="result" type="text" />
+            <script type="text/javascript">
+
+                    function compute()"""),format.raw/*19.39*/("""{"""),format.raw/*19.40*/("""
+                        """),format.raw/*20.25*/("""var myBox1 = document.getElementById('first').value;
+                        var myBox2 = document.getElementById('second').value;
+
+                        var grade = (parseInt(myBox1)+parseInt(myBox2));
+                        result.value = grade;
+                    """),format.raw/*25.21*/("""}"""),format.raw/*25.22*/("""
+            """),format.raw/*26.13*/("""</script>
+
+        </div>
+
+        <fieldset>
+            <div class="container">
+                <div class="row">
+                    <form action="#">
+                        <div class="col-xs-3">
+                            <div class="form-group">
+                                <label for="firstname">Firstname</label>
+                                <input type="text" class="form-control" id="firstname" placeholder="Firstname">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="form-group">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </fieldset>
         <!-- /.row -->
     </div>
 """)))}))
@@ -60,11 +110,11 @@ Seq[Any](format.raw/*1.16*/("""
 object blank extends blank_Scope0.blank
               /*
                   -- GENERATED --
-                  DATE: Sun Feb 12 17:54:42 CET 2017
+                  DATE: Thu Mar 09 09:23:38 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/pages/blank.scala.html
-                  HASH: 83b04c9607bfec546c779461412c0664fcb904a7
-                  MATRIX: 751->1|860->15|887->17|900->23|939->25|970->30
-                  LINES: 27->1|32->1|33->2|33->2|33->2|34->3
+                  HASH: 346ef4e0dfc2e75ed69194e08689cd9c58c84893
+                  MATRIX: 751->1|860->15|888->18|901->24|940->26|971->31|1464->496|1493->497|1546->522|1845->793|1874->794|1915->807
+                  LINES: 27->1|32->1|34->3|34->3|34->3|35->4|50->19|50->19|51->20|56->25|56->25|57->26
                   -- GENERATED --
               */
           

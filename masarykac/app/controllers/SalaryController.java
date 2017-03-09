@@ -7,6 +7,9 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Martin on 05.03.2017.
  */
@@ -39,6 +42,16 @@ public class SalaryController extends Controller {
 
         PersonSalary ps=new PersonSalary(registerLector.obligation,registerLector.basicSalary,registerLector.personalEvaluation,registerLector.personalEvaluationPct,registerLector.evaluationParticipation);
         ps.save();
+
+
+        StringBuffer sb = new StringBuffer();
+        String delim = "";
+        for (String i : registerLector.valuesKPI) {
+            sb.append(delim).append(i);
+            delim = ",";
+        }
+        ps.setValue(sb.toString());
+        ps.update();
 
         return redirect(routes.Application.index());
 
