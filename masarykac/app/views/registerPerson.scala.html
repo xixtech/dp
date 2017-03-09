@@ -1,115 +1,115 @@
 @(signupForm: Form[Member], personForm: Form[Person], profileForm: Form[Profile])
-@import helper._
-@localScripts = {
-    <!-- Morris Charts JavaScript -->
-    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
-    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
-    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
-}
-@main(scripts = localScripts) {
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Registrace</h1>
-        </div>
-            <!-- /.col-lg-12 -->
-    </div>
-        <!-- /.row -->
-    <div class="container">
+    @import helper._
+    @localScripts = {
+        <!-- Morris Charts JavaScript -->
+        <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+        <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+        <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+    }
+    @main(scripts = localScripts) {
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel-body">
-                @helper.form(action = routes.PersonController.save) {
+            <div class="col-lg-12">
+                <h1 class="page-header">Registrace</h1>
+            </div>
+                <!-- /.col-lg-12 -->
+        </div>
+            <!-- /.row -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel-body">
+                    @helper.form(action = routes.PersonController.save) {
 
-                    <fieldset>
-                        <legend>Přihlašovací údaje</legend>
-                        @inputText(
-                            signupForm("email"),
-                            '_label -> "Email",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte platnou e-mailovou adresu.",
-                            '_error -> signupForm.globalError
-                        )
+                        <fieldset>
+                            <legend>Přihlašovací údaje</legend>
+                            @inputText(
+                                signupForm("email"),
+                                '_label -> "Email",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte platnou e-mailovou adresu.",
+                                '_error -> signupForm.globalError
+                            )
 
-                        @inputPassword(
-                            signupForm("password"),
-                            '_label -> "Heslo",
-                            'class -> "form-control",
-                            '_help -> "Heslo musí mít nejméně 6 znaků."
-                        )
+                            @inputPassword(
+                                signupForm("password"),
+                                '_label -> "Heslo",
+                                'class -> "form-control",
+                                '_help -> "Heslo musí mít nejméně 6 znaků."
+                            )
 
-                        @inputPassword(
-                            signupForm("repeatPassword"),
-                            '_label -> "Heslo pro kontrolu",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte znovu heslo.",
-                            '_error -> signupForm.error("password")
-                        )
+                            @inputPassword(
+                                signupForm("repeatPassword"),
+                                '_label -> "Heslo pro kontrolu",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte znovu heslo.",
+                                '_error -> signupForm.error("password")
+                            )
 
-                    </fieldset>
+                        </fieldset>
 
-                    <fieldset>
+                        <fieldset>
 
-                        <legend>Kontaktní informace</legend>
+                            <legend>Kontaktní informace</legend>
 
-                        @inputText(
-                            personForm("salary"),
-                            '_label -> "Plat",
-                            'class -> "form-control",
-                            '_help -> "Zadejte plat.",
-                            '_error -> personForm.globalError
-                        )
-                        @inputText(
-                            personForm("jobTitle"),
-                            '_label -> "Zařazení",
-                            'class -> "form-control",
-                            '_help -> "Zadejte zařazení.",
-                            '_error -> personForm.globalError
-                        )
+                            @inputText(
+                                personForm("salary"),
+                                '_label -> "Plat",
+                                'class -> "form-control",
+                                '_help -> "Zadejte plat.",
+                                '_error -> personForm.globalError
+                            )
+                            @inputText(
+                                personForm("jobTitle"),
+                                '_label -> "Zařazení",
+                                'class -> "form-control",
+                                '_help -> "Zadejte zařazení.",
+                                '_error -> personForm.globalError
+                            )
 
-                        @select(
-                            personForm("role"),
-                            options = options(Roles.selectCollection),
-                            '_label -> "Role",
-                            'class -> "form-control",
-                            '_help -> "Vyberte zařazení.",
-                            '_error -> personForm.globalError
-                        )
+                            @select(
+                                personForm("role"),
+                                options = options(Roles.selectCollection),
+                                '_label -> "Role",
+                                'class -> "form-control",
+                                '_help -> "Vyberte zařazení.",
+                                '_error -> personForm.globalError
+                            )
 
-                        @inputText(
-                            profileForm("firstName"),
-                            '_label -> "Křestní jméno",
-                            'class -> "form-control",
-                            '_help -> "Zadejte křestní jméno.",
-                            '_error -> profileForm.globalError
-                        )
+                            @inputText(
+                                profileForm("firstName"),
+                                '_label -> "Křestní jméno",
+                                'class -> "form-control",
+                                '_help -> "Zadejte křestní jméno.",
+                                '_error -> profileForm.globalError
+                            )
 
-                        @inputText(
-                            profileForm("lastName"),
-                            '_label -> "Příjmení",
-                            'class -> "form-control",
-                            '_help -> "Zadejte příjmení.",
-                            '_error -> profileForm.globalError
-                        )
+                            @inputText(
+                                profileForm("lastName"),
+                                '_label -> "Příjmení",
+                                'class -> "form-control",
+                                '_help -> "Zadejte příjmení.",
+                                '_error -> profileForm.globalError
+                            )
 
-                        @inputText(
-                            profileForm("phoneNumber"),
-                            '_label -> "Telefonní číslo",
-                            'class -> "form-control",
-                            '_help -> "Zadejte telefonní číslo.",
-                            '_error -> profileForm.globalError
-                        )
+                            @inputText(
+                                profileForm("phoneNumber"),
+                                '_label -> "Telefonní číslo",
+                                'class -> "form-control",
+                                '_help -> "Zadejte telefonní číslo.",
+                                '_error -> profileForm.globalError
+                            )
 
-                    </fieldset>
+                        </fieldset>
 
-                    <div class="actions">
+                        <div class="actions">
 
-                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                            <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                        </div>
+
+                    }
                     </div>
-
-                }
                 </div>
             </div>
         </div>
-    </div>
-}
+    }

@@ -76,7 +76,8 @@ create table person_salary (
   personal_evaluation           float,
   personal_evaluation_pct       float,
   evaluation_participation      float,
-  value                         varchar(255),
+  value_current                 varchar(255),
+  value_previous                varchar(255),
   constraint pk_person_salary primary key (id)
 );
 

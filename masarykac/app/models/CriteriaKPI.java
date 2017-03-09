@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Martin on 05.03.2017.
  */
 @Entity
-public class CriteriaKPI extends Model{
+public class CriteriaKPI extends Model {
     public static Model.Finder<Long, CriteriaKPI> find = new Model.Finder<Long, CriteriaKPI>(
             CriteriaKPI.class);
 
@@ -113,15 +113,16 @@ public class CriteriaKPI extends Model{
         return find.where().findList();
     }
 
-    public static HashMap<String, String> selectCollection()  {
+    public static HashMap<String, String> selectCollection() {
         HashMap<String, String> output = new HashMap<String, String>();
 
-        for(CriteriaKPI r : CriteriaKPI.find.all())  {
+        for (CriteriaKPI r : CriteriaKPI.find.all()) {
             output.put(r.id.toString(), r.identificator);
         }
 
         return output;
     }
+
     public static List<CriteriaKPI> search() {
         return CriteriaKPI.find.all();
     }

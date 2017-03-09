@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Martin on 06.03.2017.
  */
 @Entity
-public class CriteriaLector  extends Model {
+public class CriteriaLector extends Model {
     public static Model.Finder<Long, CriteriaLector> find = new Model.Finder<Long, CriteriaLector>(
             CriteriaLector.class);
 
@@ -86,15 +86,16 @@ public class CriteriaLector  extends Model {
         return find.where().findList();
     }
 
-    public static HashMap<String, String> selectCollection()  {
+    public static HashMap<String, String> selectCollection() {
         HashMap<String, String> output = new HashMap<String, String>();
 
-        for(CriteriaLector r : CriteriaLector.find.all())  {
+        for (CriteriaLector r : CriteriaLector.find.all()) {
             output.put(r.id.toString(), r.period);
         }
 
         return output;
     }
+
     public static List<CriteriaLector> search() {
         return CriteriaLector.find.all();
     }

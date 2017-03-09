@@ -30,17 +30,13 @@ public class PersonSalary extends Model {
 
     public double evaluationParticipation;
 
-    public String value;
+    public String valueCurrent;
 
-    public String getValue() {
-        return value;
-    }
+    public String valuePrevious;
 
-    public void setValue(String value) {
-        this.value = value;
-    }
 
-    public List<String> valuesKPI;
+    public List<String> valuesKPICurrent;
+    public List<String> valuesKPIPrevious;
 
     public PersonSalary(double obligation, double basicSalary, double personalEvaluation, double personalEvaluationPct, double evaluationParticipation) {
         this.obligation = obligation;
@@ -51,12 +47,36 @@ public class PersonSalary extends Model {
     }
 
 
-    public List<String> getValuesKPI() {
-        return valuesKPI;
+    public String getValueCurrent() {
+        return valueCurrent;
     }
 
-    public void setValuesKPI(List<String> valuesKPI) {
-        this.valuesKPI = valuesKPI;
+    public void setValueCurrent(String valueCurrent) {
+        this.valueCurrent = valueCurrent;
+    }
+
+    public String getValuePrevious() {
+        return valuePrevious;
+    }
+
+    public void setValuePrevious(String valuePrevious) {
+        this.valuePrevious = valuePrevious;
+    }
+
+    public List<String> getValuesKPICurrent() {
+        return valuesKPICurrent;
+    }
+
+    public void setValuesKPICurrent(List<String> valuesKPICurrent) {
+        this.valuesKPICurrent = valuesKPICurrent;
+    }
+
+    public List<String> getValuesKPIPrevious() {
+        return valuesKPIPrevious;
+    }
+
+    public void setValuesKPIPrevious(List<String> valuesKPIPrevious) {
+        this.valuesKPIPrevious = valuesKPIPrevious;
     }
 
     public double getObligation() {
@@ -102,9 +122,11 @@ public class PersonSalary extends Model {
     public static List<PersonSalary> search() {
         return find.where().findList();
     }
+
     public static List<PersonSalary> personDetail(long id) {
-        return find.where().eq("id",id).findList();
+        return find.where().eq("id", id).findList();
     }
+
     public static List<PersonSalary> persons() {
         return find.where().findList();
     }
