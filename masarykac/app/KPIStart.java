@@ -17,7 +17,7 @@ public class KPIStart {
         list.add(new ItemsKPI("AA", "Výuka", "", ""));
         list.add(new ItemsKPI("AAA", "Předmět v akreditovaném oboru", "15 hod.", "1"));
         list.add(new ItemsKPI("AAB", "Jiný předmět", "15 hod.", "1"));
-        list.add(new ItemsKPI("AB", "Zavedení předmětu", "15 hod.", "0,5"));
+        list.add(new ItemsKPI("AB", "Zavedení předmětu", "15 hod.", "0.5"));
         list.add(new ItemsKPI("AC", "Vedení obhájených závěrečných prací", "1", "1"));
         list.add(new ItemsKPI("AD", "Autorství učebnice/skripta/e-learningového kursu", "100%", "1"));
         list.add(new ItemsKPI("AE", "Testy, zkoušky", "100%", "1"));
@@ -43,7 +43,6 @@ public class KPIStart {
         List<CriteriaLector> listLector = new ArrayList<CriteriaLector>();
         for (CriteriaKPI items : listCriteria) {
             listLector.add(new CriteriaLector("II.2015", items.getIdentificator(), items.getItemsKPI(), items.getValueLektor()));
-            listLector.add(new CriteriaLector("I.2016", items.getIdentificator(), items.getItemsKPI(), items.getValueLektor()));
         }
         for (CriteriaLector items : listLector) {
             items.save();

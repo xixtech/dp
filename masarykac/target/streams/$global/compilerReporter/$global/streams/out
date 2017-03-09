@@ -1,8 +1,6 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:49: cannot find symbol
-[error]   symbol:   variable valuesKPI
-[error]   location: variable registerLector of type models.PersonSalary
-[error] registerLector.valuesKPI
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:53: cannot find symbol
-[error]   symbol:   method setValue(java.lang.String)
-[error]   location: variable ps of type models.PersonSalary
-[error] ps.setValue
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: -> expected
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: ')' expected
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: ';' expected
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: ';' expected
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: illegal start of expression
