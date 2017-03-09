@@ -32,6 +32,12 @@ public class Lector extends Model {
     @Formats.NonEmpty
     public String valueLektor;
 
+    public Lector(String identificator, String itemsKPI, String valueLektor) {
+        this.identificator = identificator;
+        this.itemsKPI = itemsKPI;
+        this.valueLektor = valueLektor;
+    }
+
     /**
      * List identifikátorů
      *

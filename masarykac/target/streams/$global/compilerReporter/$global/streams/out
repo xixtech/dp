@@ -1,6 +1,1 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: -> expected
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: ')' expected
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: ';' expected
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: illegal start of expression
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: ';' expected
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:60: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:173: ';' expected

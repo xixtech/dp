@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c2beb26-3c63-43aa-8b60-e106e0ae02db" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" afterPath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/connections/master.log" afterPath="$PROJECT_DIR$/.sbtserver/connections/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/master.log" afterPath="$PROJECT_DIR$/.sbtserver/master.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/KPIStart.java" afterPath="$PROJECT_DIR$/app/KPIStart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/SalaryController.java" afterPath="$PROJECT_DIR$/app/controllers/SalaryController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Lector.java" afterPath="$PROJECT_DIR$/app/models/Lector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" />
     </list>
     <ignored path="masarykac.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +57,7 @@
       <file leaf-file-name="lectorCalculation.scala.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/lectorCalculation.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-663">
+            <state relative-caret-position="-2193">
               <caret line="97" column="52" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
@@ -58,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KPIStart.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KPIStart.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/KPIStart.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="543">
@@ -70,27 +78,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SalaryController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SalaryController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/SalaryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+            <state relative-caret-position="509">
+              <caret line="177" column="39" selection-start-line="177" selection-start-column="39" selection-end-line="177" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1301#1309#0" expanded="true" />
-                <element signature="e#1356#1364#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemsKPI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/ItemsKPI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
-              <folding>
-                <element signature="e#1367#1368#0" expanded="true" />
+                <element signature="e#1307#1315#0" expanded="true" />
+                <element signature="e#1364#1372#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,6 +112,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Lector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Lector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="34" column="78" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CriteriaKPI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/CriteriaKPI.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -132,9 +138,10 @@
       <file leaf-file-name="PersonSalary.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/PersonSalary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+            <state relative-caret-position="510">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
+                <element signature="e#1264#1265#0" expanded="true" />
                 <element signature="e#1299#1300#0" expanded="true" />
               </folding>
             </state>
@@ -194,21 +201,21 @@
         <option value="$PROJECT_DIR$/app/views/tables/workers.scala.html" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/views/roles.scala.html" />
-        <option value="$PROJECT_DIR$/app/models/Lector.java" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/pokus.js" />
         <option value="$PROJECT_DIR$/public/lib/pokus.js" />
         <option value="$PROJECT_DIR$/app/views/main.scala.html" />
         <option value="$PROJECT_DIR$/app/views/registerPerson.scala.html" />
         <option value="$PROJECT_DIR$/app/views/pages/blank.scala.html" />
         <option value="$PROJECT_DIR$/app/models/CriteriaKPI.java" />
-        <option value="$PROJECT_DIR$/app/models/PersonSalary.java" />
         <option value="$PROJECT_DIR$/app/controllers/Application.java" />
         <option value="$PROJECT_DIR$/app/views/utf.scala.html" />
         <option value="$PROJECT_DIR$/app/models/ItemsKPI.java" />
         <option value="$PROJECT_DIR$/app/models/CriteriaLector.java" />
-        <option value="$PROJECT_DIR$/app/controllers/SalaryController.java" />
         <option value="$PROJECT_DIR$/app/views/lectorCalculation.scala.html" />
         <option value="$PROJECT_DIR$/app/KPIStart.java" />
+        <option value="$PROJECT_DIR$/app/models/Lector.java" />
+        <option value="$PROJECT_DIR$/app/models/PersonSalary.java" />
+        <option value="$PROJECT_DIR$/app/controllers/SalaryController.java" />
       </list>
     </option>
   </component>
@@ -1080,7 +1087,7 @@
       <workItem from="1488992449143" duration="3929000" />
       <workItem from="1489046203709" duration="9184000" />
       <workItem from="1489064903127" duration="7385000" />
-      <workItem from="1489077329265" duration="6883000" />
+      <workItem from="1489077329265" duration="12188000" />
     </task>
     <task id="LOCAL-00001" summary="10_02">
       <created>1486739731621</created>
@@ -1187,15 +1194,22 @@
       <option name="project" value="LOCAL" />
       <updated>1489088456813</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="09_03">
+      <created>1489092936880</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1489092936880</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118563000" />
+    <option name="totallyTimeSpent" value="123868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1397,22 +1411,6 @@
           <folding>
             <element signature="e#2208#2209#0" expanded="false" />
             <element signature="e#2248#2249#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Lector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#356#370#0" expanded="false" />
-            <element signature="e#948#949#0" expanded="false" />
-            <element signature="e#994#995#0" expanded="false" />
-            <element signature="e#1113#1129#0" expanded="false" />
-            <element signature="e#1317#1318#0" expanded="false" />
-            <element signature="e#1357#1358#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1622,6 +1620,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/KPIStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="60" column="82" selection-start-line="60" selection-start-column="82" selection-end-line="60" selection-end-column="82" />
+          <folding>
+            <element signature="e#2829#2842#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/lectorCalculation.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2193">
+          <caret line="97" column="52" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/ItemsKPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="628">
@@ -1640,11 +1658,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Lector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="34" column="78" selection-start-line="34" selection-start-column="78" selection-end-line="34" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/PersonSalary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+        <state relative-caret-position="510">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
+            <element signature="e#1264#1265#0" expanded="true" />
             <element signature="e#1299#1300#0" expanded="true" />
           </folding>
         </state>
@@ -1652,32 +1679,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/SalaryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+        <state relative-caret-position="509">
+          <caret line="177" column="39" selection-start-line="177" selection-start-column="39" selection-end-line="177" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1301#1309#0" expanded="true" />
-            <element signature="e#1356#1364#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/lectorCalculation.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="97" column="52" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/KPIStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="60" column="82" selection-start-line="60" selection-start-column="82" selection-end-line="60" selection-end-column="82" />
-          <folding>
-            <element signature="e#2829#2842#0" expanded="true" />
+            <element signature="e#1307#1315#0" expanded="true" />
+            <element signature="e#1364#1372#0" expanded="true" />
           </folding>
         </state>
       </provider>
