@@ -21,6 +21,32 @@ public class KPIStart {
         list.add(new ItemsKPI("AC", "Vedení obhájených závěrečných prací", "1", "1"));
         list.add(new ItemsKPI("AD", "Autorství učebnice/skripta/e-learningového kursu", "100%", "1"));
         list.add(new ItemsKPI("AE", "Testy, zkoušky", "100%", "1"));
+        list.add(new ItemsKPI("B", "Tvůrčí činnost", "", ""));
+        list.add(new ItemsKPI("BAA", "Publikace RIV", "", ""));
+        list.add(new ItemsKPI("BAA", "WoS 0-0,5", "100%", "14"));
+        list.add(new ItemsKPI("BAA", "WoS 0,5-1", "100%", "26"));
+        list.add(new ItemsKPI("BAA", "WoS 1 a více", "100%", "40"));
+        list.add(new ItemsKPI("BAA", "Scopus 0-0,5", "100%", "14"));
+        list.add(new ItemsKPI("BAA", "Scopus 0,5-1", "100%", "26"));
+        list.add(new ItemsKPI("BAA", "Scopus 1 a více", "100%", "40"));
+        list.add(new ItemsKPI("BAA", "ERIH", "100%", "10"));
+        list.add(new ItemsKPI("BAA", "Článek ČR recenz.", "100%", "3"));
+        list.add(new ItemsKPI("BAA", "Sborník (impakt.)", "100%", "3"));
+        list.add(new ItemsKPI("BAA", "Monografie", "100%", "28"));
+        list.add(new ItemsKPI("BAB", "Publikace ostatní", "", ""));
+        list.add(new ItemsKPI("BAB", "Odborný článek", "100%", "2"));
+        list.add(new ItemsKPI("BAB", "Neimpaktovaný sborník", "100%", "1"));
+        list.add(new ItemsKPI("BB", "Projekt/konference/letní škola", "vedení/členství", "1"));
+        list.add(new ItemsKPI("C", "Internacionalizace", "", ""));
+        list.add(new ItemsKPI("CA", "Výjezd", "14 dní", "1"));
+        list.add(new ItemsKPI("CB", "Výuka ve svět.jazyce/odb.jazyka", "15 hod", "0.3"));
+        list.add(new ItemsKPI("CCA", "Článek ČR/monografie ve svět. jazyce", "RIV body", "0.5"));
+        list.add(new ItemsKPI("CCB", "Učebnice ve svět. jazyce", "100%", "0.5"));
+        list.add(new ItemsKPI("CD", "Mezinárodní projekt", "člen", "1"));
+        list.add(new ItemsKPI("D", "Vedení (min. 1 pololetí)", "0/1", "1"));
+        list.add(new ItemsKPI("", "Akad. úvazek na MÚVS", "%", ""));
+
+
 
         for (ItemsKPI items : list) {
             items.save();
@@ -35,6 +61,10 @@ public class KPIStart {
         listCriteria.add(new CriteriaKPI("DH", "BA,CCA", "12", "12", "12", "12"));
         listCriteria.add(new CriteriaKPI("DH", "AD,BB,CCB,CD", "2", "2", "2", "2"));
         listCriteria.add(new CriteriaKPI("DH", "CA,D", "1", "1", "1", "1"));
+        listCriteria.add(new CriteriaKPI("ZH(povinné)", "Základní hodnotící jednotky - 1/0", "0", "0", "0", "0"));
+        listCriteria.add(new CriteriaKPI("DH (povinné)", "Dodatečné hodnotící jednotky - 1/0", "0", "0", "0", "0"));
+        listCriteria.add(new CriteriaKPI("DH (navíc)", "OO nad 100%, váha 20%", "0", "0", "0", "0"));
+        listCriteria.add(new CriteriaKPI("OO (tenure)", "OO nad 0%, váha 10%", "0", "0", "0", "0"));
 
         for (CriteriaKPI items : listCriteria) {
             items.save();

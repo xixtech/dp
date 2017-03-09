@@ -5351,3 +5351,615 @@ Copy resource mappings:
 Total time: 3 s, completed 9.3.2017 20:39:13
 > server-post-command-cleanup
 > server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@10731f5e, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@203709c7 directly...
+Java compilation took 0.868886339 s
+Java analysis took 0.033933852 s
+Java compile + analysis took 0.934252328 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:30:21
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@47d04445, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@4a0ec74d directly...
+Java compilation took 0.271589895 s
+Java analysis took 0.030186448 s
+Java compile + analysis took 0.333557896 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:40:57
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@44eb3e21, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@28800a26 directly...
+Java compilation took 0.293640463 s
+Java analysis took 0.030405959 s
+Java compile + analysis took 0.354451264 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:42:06
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@587e6e86, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@b411d6d directly...
+Java compilation took 0.405629835 s
+Java analysis took 0.03274229 s
+Java compile + analysis took 0.490571497 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:43:31
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@211a74be, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@2754e25c directly...
+Java compilation took 0.270736784 s
+Java analysis took 0.030527064 s
+Java compile + analysis took 0.331966074 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:43:42
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@3aecfed4, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@18b4a90b directly...
+Java compilation took 0.233013694 s
+Java analysis took 0.03170836 s
+Java compile + analysis took 0.294975199 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:43:54
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@74100c8, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@644c178e directly...
+Java compilation took 0.243138024 s
+Java analysis took 0.033144506 s
+Java compile + analysis took 0.307019328 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:44:01
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5da947ff, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@71a3d07 directly...
+Java compilation took 0.358265087 s
+Java analysis took 0.032032353 s
+Java compile + analysis took 0.430375718 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:44:07
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@468a193e, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@2d372e6e directly...
+Java compilation took 0.245343332 s
+Java analysis took 0.031403502 s
+Java compile + analysis took 0.309739227 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:44:13
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@34d82fe2, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5a006ba directly...
+Java compilation took 0.244137942 s
+Java analysis took 0.031092499 s
+Java compile + analysis took 0.306403747 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:46:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@461fb179, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@55bd2349 directly...
+Java compilation took 0.231191813 s
+Java analysis took 0.031556035 s
+Java compile + analysis took 0.293378278 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:46:34
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@259fe2a1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@227267ba directly...
+Java compilation took 0.232700524 s
+Java analysis took 0.030450658 s
+Java compile + analysis took 0.293274285 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:46:40
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@3134f093, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@78f2bb75 directly...
+Java compilation took 0.257377823 s
+Java analysis took 0.033691992 s
+Java compile + analysis took 0.326601356 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:46:47
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1b2f6722, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@6cd8236 directly...
+Java compilation took 0.220587672 s
+Java analysis took 0.031816824 s
+Java compile + analysis took 0.282621325 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:46:53
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@779ed16c, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@1378d110 directly...
+Java compilation took 0.23381596 s
+Java analysis took 0.029521909 s
+Java compile + analysis took 0.293479967 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:46:59
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@405ff858, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3ac1d01 directly...
+Java compilation took 0.238268551 s
+Java analysis took 0.029659706 s
+Java compile + analysis took 0.300701067 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:47:06
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@33789ab6, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@6a26c7fa directly...
+Java compilation took 0.262751831 s
+Java analysis took 0.031342391 s
+Java compile + analysis took 0.327107635 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:47:19
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1778aeea, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\KPIStart.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@6dadf8fe directly...
+Java compilation took 0.221919057 s
+Java analysis took 0.029482588 s
+Java compile + analysis took 0.283880144 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 9.3.2017 21:48:53
+> server-post-command-cleanup
+> server-handle-next-server-request
