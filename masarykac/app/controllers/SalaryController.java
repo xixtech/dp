@@ -24,6 +24,14 @@ public class SalaryController extends Controller {
 
     }
 
+    public Result getPerson() {
+        Form<SalaryController> scForm= formFactory.form(SalaryController.class).bindFromRequest();
+
+        SalaryController sc = scForm.get();
+        return redirect(routes.SalaryController.printLector(1));
+
+    }
+
     /**
      * vypsání údajů konrétní osoby
      *

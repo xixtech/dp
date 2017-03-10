@@ -44,9 +44,9 @@ Seq[Any](format.raw/*1.38*/("""
         <title>Přihlášení</title>
         <link href='"""),_display_(/*15.22*/routes/*15.28*/.Assets.at("stylesheets/sb-admin-2.css")),format.raw/*15.68*/("""' rel="stylesheet" type="text/css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
+            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
@@ -55,37 +55,42 @@ Seq[Any](format.raw/*1.38*/("""
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
+                    <img src=""""),_display_(/*28.32*/routes/*28.38*/.Assets.at("images/logo_CVUT.jpg")),format.raw/*28.72*/("""" width="400" height="200" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
                     <div class="login-panel panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">Přihlaste se</h3>
                         </div>
                         <div class="panel-body">
 
-                                    <fieldset>
-                                """),_display_(/*35.34*/helper/*35.40*/.form(routes.Login.authenticate)/*35.72*/ {_display_(Seq[Any](format.raw/*35.74*/("""
-                                    """),format.raw/*36.37*/("""<div class="form-group">
-                                        """),_display_(/*37.42*/inputText(
-                                            signupForm("email"),
-                                            '_label -> "Email",
-                                            'class -> "form-control",
-                                            '_help -> "Prosím zadejte platnou e-mailovou adresu.",
-                                            '_error -> signupForm.globalError
+                            <fieldset>
+                            """),_display_(/*40.30*/helper/*40.36*/.form(routes.Login.authenticate)/*40.68*/ {_display_(Seq[Any](format.raw/*40.70*/("""
+                                """),format.raw/*41.33*/("""<div class="form-group">
+                                """),_display_(/*42.34*/inputText(
+                                    signupForm("email"),
+                                    '_label -> "Email",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte platnou e-mailovou adresu.",
+                                    '_error -> signupForm.globalError
 
-                                        )),format.raw/*44.42*/("""
-                                    """),format.raw/*45.37*/("""</div>
-                                    <div class="form-group">
-                                        """),_display_(/*47.42*/inputPassword(
-                                            signupForm("password"),
-                                            '_label -> "Heslo",
-                                            'class -> "form-control",
-                                            '_help -> "Heslo musí mít nejméně 6 znaků."
-                                        )),format.raw/*52.42*/("""
-                                    """),format.raw/*53.37*/("""</div>
-                                    <div class="actions">
-                                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Přihlásit">
-                                    </div>
-                                """)))}),format.raw/*57.34*/("""
-                                """),format.raw/*58.33*/("""</fieldset>
+                                )),format.raw/*49.34*/("""
+                                """),format.raw/*50.33*/("""</div>
+                                <div class="form-group">
+                                """),_display_(/*52.34*/inputPassword(
+                                    signupForm("password"),
+                                    '_label -> "Heslo",
+                                    'class -> "form-control",
+                                    '_help -> "Heslo musí mít nejméně 6 znaků."
+                                )),format.raw/*57.34*/("""
+                                """),format.raw/*58.33*/("""</div>
+                                <div class="actions">
+                                    <input type="submit" class="btn btn-lg btn-success btn-block" value="Přihlásit">
+                                </div>
+                            """)))}),format.raw/*62.30*/("""
+                            """),format.raw/*63.29*/("""</fieldset>
                         </div>
                     </div>
                 </div>
@@ -93,14 +98,14 @@ Seq[Any](format.raw/*1.38*/("""
 
         </div>
 
-        <!-- jQuery -->
-        <script src='"""),_display_(/*67.23*/routes/*67.29*/.Assets.at("lib/jquery/jquery.min.js")),format.raw/*67.67*/("""'></script>
+            <!-- jQuery -->
+        <script src='"""),_display_(/*72.23*/routes/*72.29*/.Assets.at("lib/jquery/jquery.min.js")),format.raw/*72.67*/("""'></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src='"""),_display_(/*70.23*/routes/*70.29*/.Assets.at("lib/bootstrap/js/bootstrap.min.js")),format.raw/*70.76*/("""'></script>
+            <!-- Bootstrap Core JavaScript -->
+        <script src='"""),_display_(/*75.23*/routes/*75.29*/.Assets.at("lib/bootstrap/js/bootstrap.min.js")),format.raw/*75.76*/("""'></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src='"""),_display_(/*73.23*/routes/*73.29*/.Assets.at("javascripts/sb-admin-2.js")),format.raw/*73.68*/("""'></script>
+            <!-- Custom Theme JavaScript -->
+        <script src='"""),_display_(/*78.23*/routes/*78.29*/.Assets.at("javascripts/sb-admin-2.js")),format.raw/*78.68*/("""'></script>
     </body>
 </html>"""))
       }
@@ -122,11 +127,11 @@ Seq[Any](format.raw/*1.38*/("""
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Sun Feb 12 17:54:42 CET 2017
+                  DATE: Fri Mar 10 09:13:08 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/pages/login.scala.html
-                  HASH: 3e08525457e0a72f12e3bff7690fa3a912f72c3c
-                  MATRIX: 767->1|913->37|940->55|1325->413|1340->419|1417->474|1516->546|1531->552|1584->583|1670->642|1685->648|1746->688|2701->1616|2716->1622|2757->1654|2797->1656|2862->1693|2955->1759|3405->2188|3470->2225|3606->2334|3973->2680|4038->2717|4331->2979|4392->3012|4594->3187|4609->3193|4668->3231|4773->3309|4788->3315|4856->3362|4959->3438|4974->3444|5034->3483
-                  LINES: 27->1|32->1|33->3|41->11|41->11|41->11|42->12|42->12|42->12|45->15|45->15|45->15|65->35|65->35|65->35|65->35|66->36|67->37|74->44|75->45|77->47|82->52|83->53|87->57|88->58|97->67|97->67|97->67|100->70|100->70|100->70|103->73|103->73|103->73
+                  HASH: 337a301f490e27540176120f5a090a7276003d76
+                  MATRIX: 767->1|913->37|940->55|1325->413|1340->419|1417->474|1516->546|1531->552|1584->583|1670->642|1685->648|1746->688|2395->1310|2410->1316|2465->1350|2986->1844|3001->1850|3042->1882|3082->1884|3143->1917|3228->1975|3630->2356|3691->2389|3815->2486|4142->2792|4203->2825|4480->3071|4537->3100|4743->3279|4758->3285|4817->3323|4926->3405|4941->3411|5009->3458|5116->3538|5131->3544|5191->3583
+                  LINES: 27->1|32->1|33->3|41->11|41->11|41->11|42->12|42->12|42->12|45->15|45->15|45->15|58->28|58->28|58->28|70->40|70->40|70->40|70->40|71->41|72->42|79->49|80->50|82->52|87->57|88->58|92->62|93->63|102->72|102->72|102->72|105->75|105->75|105->75|108->78|108->78|108->78
                   -- GENERATED --
               */
           

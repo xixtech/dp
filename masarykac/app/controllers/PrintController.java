@@ -27,8 +27,6 @@ public class PrintController extends Controller {
     }
 
 
-
-
     /**
      * vypsání údajů konrétní osoby
      *
@@ -39,6 +37,7 @@ public class PrintController extends Controller {
         Member member=Member.find.byId(id);
         return ok(views.html.personDetail.render(member));
     }
+
 
 
 

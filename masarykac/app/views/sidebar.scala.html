@@ -18,28 +18,44 @@
                     <i class="fa fa-dashboard fa-fw"></i> Nástěnka
                 </a>
             </li>
+
             <li>
-                <a href="#">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Grafy<span class="fa arrow"></span>
-                </a>
+                <a href="#"><i class="fa fa-table fa-fw"></i>Seznamy<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
+
                     <li>
-                        <a href='@routes.Charts.flot'>Flot Charts</a>
-                    </li>
-                    <li>
-                        <a href='@routes.Charts.morris'>Morris.js Charts</a>
+                        <a href='@routes.Application.workers()'><i class="fa fa-table fa-fw"></i> Pracovníci</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-table fa-fw"></i> Tabulky<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-files-o fa-fw"></i> Další stránky<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href='@routes.Application.tables'><i class="fa fa-table fa-fw"></i> Tables</a>
+                        <a href="@routes.Pages.blank">Blank Page</a>
                     </li>
                     <li>
-                        <a href='@routes.Application.workers'><i class="fa fa-table fa-fw"></i> Pracovníci</a>
+                        <a href="@routes.Application.pdf()">pdf</a>
+                    </li>
+                    <li>
+                        <a href="@routes.Application.kpiChoosePerson()">KPI výběr osoby</a>
+                    </li>
+                    <li>
+                        <a href="@routes.Application.roles()">Role</a>
+                    </li>
+                    <li>
+                        <a href="@routes.PersonController.index()">Registrace osoby</a>
+                    </li>
+
+                </ul>
+                    <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-files-o fa-fw"></i> Metodika<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="@routes.MethodicsController.index()">Přidat metodiku</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
@@ -103,33 +119,20 @@
                     <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Grafy<span class="fa arrow"></span>
+                </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="@routes.Pages.blank">Blank Page</a>
+                        <a href='@routes.Charts.flot'>Flot Charts</a>
                     </li>
                     <li>
-                        <a href="@routes.Application.pdf()">pdf</a>
+                        <a href='@routes.Charts.morris'>Morris.js Charts</a>
                     </li>
-                    <li>
-                        <a href="@routes.Application.roles()">Role</a>
-                    </li>
-                    <li>
-                        <a href="@routes.PersonController.index()">Registrace osoby</a>
-                    </li>
+                </ul>
+                    <!-- /.nav-second-level -->
+            </li>
 
-                </ul>
-                    <!-- /.nav-second-level -->
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-files-o fa-fw"></i> Metodika<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="@routes.MethodicsController.index()">Přidat metodiku</a>
-                    </li>
-                </ul>
-                    <!-- /.nav-second-level -->
-            </li>
         </ul>
     </div>
         <!-- /.sidebar-collapse -->

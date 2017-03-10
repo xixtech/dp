@@ -6,6 +6,8 @@
 GET     /                             controllers.Application.dashboard()
 GET     /pdf                          controllers.Application.pdf()
 GET     /                             controllers.Application.index()
+GET     /kpi                          controllers.Application.kpiChoosePerson()
+POST    /kpi/k                        controllers.SalaryController.getPerson()
 GET     /login                        controllers.Login.index()
 POST    /login                        controllers.Login.authenticate()
 GET     /charts/flot                  controllers.Charts.flot()
