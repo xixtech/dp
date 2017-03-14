@@ -2,10 +2,8 @@ package models;
 
 import com.avaje.ebean.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Martin on 12.03.2017.
@@ -30,51 +28,8 @@ public class Employees extends Model {
 
     public String titleAfter;
 
-    public Employees(int personalNumber, String titleBefore, String surname, String firstName, String titleAfter) {
-        this.personalNumber = personalNumber;
-        this.titleBefore = titleBefore;
-        this.surname = surname;
-        this.firstName = firstName;
-        this.titleAfter = titleAfter;
-    }
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Teachers> teachers;
 
-    public int getPersonalNumber() {
-        return personalNumber;
-    }
 
-    public void setPersonalNumber(int personalNumber) {
-        this.personalNumber = personalNumber;
-    }
-
-    public String getTitleBefore() {
-        return titleBefore;
-    }
-
-    public void setTitleBefore(String titleBefore) {
-        this.titleBefore = titleBefore;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getTitleAfter() {
-        return titleAfter;
-    }
-
-    public void setTitleAfter(String titleAfter) {
-        this.titleAfter = titleAfter;
-    }
 }

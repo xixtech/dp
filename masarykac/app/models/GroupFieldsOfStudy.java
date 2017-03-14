@@ -9,10 +9,10 @@ import java.util.List;
  * Created by Martin on 12.03.2017.
  */
 @Entity
-public class Semesters extends Model {
+public class GroupFieldsOfStudy extends Model {
 
-    public static Finder<Long, Semesters> find = new Finder<Long, Semesters>(
-            Semesters.class);
+    public static Finder<Long, GroupFieldsOfStudy> find = new Finder<Long, GroupFieldsOfStudy>(
+            GroupFieldsOfStudy.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,15 +21,13 @@ public class Semesters extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StudyPlans> studyPlans;
 
-    public String semesterVK;
+    public String fieldOfStudyV;
 
-    public String semesterVD;
+    public String study;
 
-    public String semesterAr;
+    public String groupFieldsOfStudyLanguage;
 
-    public String semesterFrom;
+    public String formOfTeaching;
 
-    public String semesterTo;
 
-   
 }

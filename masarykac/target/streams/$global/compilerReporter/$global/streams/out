@@ -1,1 +1,58 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SalaryController.java:31: ')' expected
+[error] C:\Users\Martin\dp\masarykac\app\models\StudyGroups.java:14: class Groups is public, should be declared in a file named Groups.java
+[error] @Entity
+[error] public class Groups extends Model {
+[error] 
+[error]     public static Finder<Long, Groups> find = new Finder<Long, Groups>(
+[error]             Groups.class);
+[error] 
+[error]     @Id
+[error]     @GeneratedValue(strategy = GenerationType.AUTO)
+[error]     public Long id;
+[error] 
+[error]     public String group;
+[error] 
+[error]     public String groupP;
+[error] 
+[error]     public String groupV;
+[error] 
+[error]     public String note;
+[error] 
+[error]     public Groups(String group, String groupP, String groupV, String note) {
+[error]         this.group = group;
+[error]         this.groupP = groupP;
+[error]         this.groupV = groupV;
+[error]         this.note = note;
+[error]     }
+[error] 
+[error]     public String getGroup() {
+[error]         return group;
+[error]     }
+[error] 
+[error]     public void setGroup(String group) {
+[error]         this.group = group;
+[error]     }
+[error] 
+[error]     public String getGroupP() {
+[error]         return groupP;
+[error]     }
+[error] 
+[error]     public void setGroupP(String groupP) {
+[error]         this.groupP = groupP;
+[error]     }
+[error] 
+[error]     public String getGroupV() {
+[error]         return groupV;
+[error]     }
+[error] 
+[error]     public void setGroupV(String groupV) {
+[error]         this.groupV = groupV;
+[error]     }
+[error] 
+[error]     public String getNote() {
+[error]         return note;
+[error]     }
+[error] 
+[error]     public void setNote(String note) {
+[error]         this.note = note;
+[error]     }
+[error] }

@@ -3,25 +3,29 @@ package models;
 import com.avaje.ebean.Model;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 /**
  * Created by Martin on 12.03.2017.
  */
 @Entity
-public class Schedule extends Model {
+public class StudyGroups extends Model {
 
-    public static Finder<Long, Schedule> find = new Finder<Long, Schedule>(
-            Schedule.class);
+    public static Finder<Long, StudyGroups> find = new Finder<Long, StudyGroups>(
+            StudyGroups.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<ScheduleInWeeks> scheduleInWeeks;
+    public List<StudyPlans> studyPlans;
 
-    @ManyToOne
-    public Courses courses;
+    public String studyGroupP;
+
+    public String getStudyGroupV;
+
+    public String studyGroupsNote;
+
+
 }
