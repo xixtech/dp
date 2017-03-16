@@ -23,7 +23,7 @@ public class StudyGroups extends Model {
 
     public String studyGroupP;
 
-    public String getStudyGroupV;
+    public String studyGroupV;
 
     public String studyGroupsNote;
 

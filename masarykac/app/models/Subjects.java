@@ -51,4 +51,21 @@ public class Subjects extends Model {
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Courses> courses;
+
+    public Subjects(String ident, String identOld, String titleC, String titleA, int hoursP, int hoursC, int hoursSemester, int credits, boolean credit, boolean exam, boolean classifiedCredit, String department, boolean formPresentation, boolean formCombined) {
+        this.ident = ident;
+        this.identOld = identOld;
+        this.titleC = titleC;
+        this.titleA = titleA;
+        this.hoursP = hoursP;
+        this.hoursC = hoursC;
+        this.hoursSemester = hoursSemester;
+        this.credits = credits;
+        this.credit = credit;
+        this.exam = exam;
+        this.classifiedCredit = classifiedCredit;
+        this.department = department;
+        this.formPresentation = formPresentation;
+        this.formCombined = formCombined;
+    }
 }

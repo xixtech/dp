@@ -11,6 +11,7 @@ import java.util.List;
 @Entity
 public class FieldsOfStudy extends Model {
 
+    /** Obory **/
     public static Finder<Long, FieldsOfStudy> find = new Finder<Long, FieldsOfStudy>(
             FieldsOfStudy.class);
 

@@ -78,6 +78,25 @@ Seq[Any](format.raw/*1.4*/("""
                     <li>
                         <a href=""""),_display_(/*48.35*/routes/*48.41*/.PersonController.index()),format.raw/*48.66*/("""">Registrace osoby</a>
                     </li>
+                    <li>
+                        <a href=""""),_display_(/*51.35*/routes/*51.41*/.EmployeesController.index()),format.raw/*51.69*/("""">Registrace zaměstnance</a>
+                    </li>
+
+                    <li>
+                        <a href=""""),_display_(/*55.35*/routes/*55.41*/.SubjectController.index()),format.raw/*55.67*/("""">Registrace předmětu</a>
+                    </li>
+
+                    <li>
+                        <a href=""""),_display_(/*59.35*/routes/*59.41*/.FieldOfStudyController.index()),format.raw/*59.72*/("""">Registrace oboru</a>
+                    </li>
+
+                    <li>
+                        <a href=""""),_display_(/*63.35*/routes/*63.41*/.StudyGroupsController.index()),format.raw/*63.71*/("""">Registrace skupiny</a>
+                    </li>
+
+                    <li>
+                        <a href=""""),_display_(/*67.35*/routes/*67.41*/.SemestersController.index()),format.raw/*67.69*/("""">Registrace semestru</a>
+                    </li>
 
                 </ul>
                     <!-- /.nav-second-level -->
@@ -86,34 +105,34 @@ Seq[Any](format.raw/*1.4*/("""
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Metodika<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href=""""),_display_(/*58.35*/routes/*58.41*/.MethodicsController.index()),format.raw/*58.69*/("""">Přidat metodiku</a>
+                        <a href=""""),_display_(/*77.35*/routes/*77.41*/.MethodicsController.index()),format.raw/*77.69*/("""">Přidat metodiku</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href='"""),_display_(/*64.27*/routes/*64.33*/.Application.forms),format.raw/*64.51*/("""'><i class="fa fa-edit fa-fw"></i> Formuláře</a>
+                <a href='"""),_display_(/*83.27*/routes/*83.33*/.Application.forms),format.raw/*83.51*/("""'><i class="fa fa-edit fa-fw"></i> Formuláře</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> UI prvky<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href=""""),_display_(/*70.35*/routes/*70.41*/.UiElements.panelsAndWells),format.raw/*70.67*/("""">Panels and Wells</a>
+                        <a href=""""),_display_(/*89.35*/routes/*89.41*/.UiElements.panelsAndWells),format.raw/*89.67*/("""">Panels and Wells</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*73.35*/routes/*73.41*/.UiElements.buttons),format.raw/*73.60*/("""">Buttons</a>
+                        <a href=""""),_display_(/*92.35*/routes/*92.41*/.UiElements.buttons),format.raw/*92.60*/("""">Buttons</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*76.35*/routes/*76.41*/.UiElements.notifications),format.raw/*76.66*/("""">Notifications</a>
+                        <a href=""""),_display_(/*95.35*/routes/*95.41*/.UiElements.notifications),format.raw/*95.66*/("""">Notifications</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*79.35*/routes/*79.41*/.UiElements.typography),format.raw/*79.63*/("""">Typography</a>
+                        <a href=""""),_display_(/*98.35*/routes/*98.41*/.UiElements.typography),format.raw/*98.63*/("""">Typography</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*82.35*/routes/*82.41*/.UiElements.icons),format.raw/*82.58*/(""""> Icons</a>
+                        <a href=""""),_display_(/*101.35*/routes/*101.41*/.UiElements.icons),format.raw/*101.58*/(""""> Icons</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*85.35*/routes/*85.41*/.UiElements.grid),format.raw/*85.57*/("""">Grid</a>
+                        <a href=""""),_display_(/*104.35*/routes/*104.41*/.UiElements.grid),format.raw/*104.57*/("""">Grid</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
@@ -155,10 +174,10 @@ Seq[Any](format.raw/*1.4*/("""
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href='"""),_display_(/*127.35*/routes/*127.41*/.Charts.flot),format.raw/*127.53*/("""'>Flot Charts</a>
+                        <a href='"""),_display_(/*146.35*/routes/*146.41*/.Charts.flot),format.raw/*146.53*/("""'>Flot Charts</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*130.35*/routes/*130.41*/.Charts.morris),format.raw/*130.55*/("""'>Morris.js Charts</a>
+                        <a href='"""),_display_(/*149.35*/routes/*149.41*/.Charts.morris),format.raw/*149.55*/("""'>Morris.js Charts</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
@@ -187,11 +206,11 @@ Seq[Any](format.raw/*1.4*/("""
 object sidebar extends sidebar_Scope0.sidebar
               /*
                   -- GENERATED --
-                  DATE: Fri Mar 10 11:14:05 CET 2017
+                  DATE: Thu Mar 16 13:23:02 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/sidebar.scala.html
-                  HASH: 7ff34dcb5494f276f3edcf51b88d2dcf53578b51
-                  MATRIX: 742->1|838->3|865->4|1586->698|1601->704|1644->726|2011->1066|2026->1072|2069->1094|2499->1497|2514->1503|2547->1515|2676->1617|2691->1623|2730->1641|2852->1736|2867->1742|2918->1772|3052->1879|3067->1885|3108->1905|3231->2001|3246->2007|3292->2032|3690->2403|3705->2409|3754->2437|3960->2616|3975->2622|4014->2640|4340->2939|4355->2945|4402->2971|4537->3079|4552->3085|4592->3104|4718->3203|4733->3209|4779->3234|4911->3339|4926->3345|4969->3367|5098->3469|5113->3475|5151->3492|5276->3590|5291->3596|5328->3612|7069->5325|7085->5331|7119->5343|7250->5446|7266->5452|7302->5466
-                  LINES: 27->1|32->1|33->2|48->17|48->17|48->17|58->27|58->27|58->27|67->36|67->36|67->36|70->39|70->39|70->39|73->42|73->42|73->42|76->45|76->45|76->45|79->48|79->48|79->48|89->58|89->58|89->58|95->64|95->64|95->64|101->70|101->70|101->70|104->73|104->73|104->73|107->76|107->76|107->76|110->79|110->79|110->79|113->82|113->82|113->82|116->85|116->85|116->85|158->127|158->127|158->127|161->130|161->130|161->130
+                  HASH: 8690d8770b4444c2b769a810bcc3fd0464a40b17
+                  MATRIX: 742->1|838->3|865->4|1586->698|1601->704|1644->726|2011->1066|2026->1072|2069->1094|2499->1497|2514->1503|2547->1515|2676->1617|2691->1623|2730->1641|2852->1736|2867->1742|2918->1772|3052->1879|3067->1885|3108->1905|3231->2001|3246->2007|3292->2032|3427->2140|3442->2146|3491->2174|3633->2289|3648->2295|3695->2321|3834->2433|3849->2439|3901->2470|4037->2579|4052->2585|4103->2615|4241->2726|4256->2732|4305->2760|4706->3134|4721->3140|4770->3168|4976->3347|4991->3353|5030->3371|5356->3670|5371->3676|5418->3702|5553->3810|5568->3816|5608->3835|5734->3934|5749->3940|5795->3965|5927->4070|5942->4076|5985->4098|6115->4200|6131->4206|6170->4223|6296->4321|6312->4327|6350->4343|8091->6056|8107->6062|8141->6074|8272->6177|8288->6183|8324->6197
+                  LINES: 27->1|32->1|33->2|48->17|48->17|48->17|58->27|58->27|58->27|67->36|67->36|67->36|70->39|70->39|70->39|73->42|73->42|73->42|76->45|76->45|76->45|79->48|79->48|79->48|82->51|82->51|82->51|86->55|86->55|86->55|90->59|90->59|90->59|94->63|94->63|94->63|98->67|98->67|98->67|108->77|108->77|108->77|114->83|114->83|114->83|120->89|120->89|120->89|123->92|123->92|123->92|126->95|126->95|126->95|129->98|129->98|129->98|132->101|132->101|132->101|135->104|135->104|135->104|177->146|177->146|177->146|180->149|180->149|180->149
                   -- GENERATED --
               */
           

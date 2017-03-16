@@ -32,5 +32,5 @@ public class StudyPlans extends Model {
     public StudyGroups studyGroups;
 
     @ManyToOne
-    public GroupFieldsOfStudy groupFieldsOfStudy;
+    public StudyGroups1 studyGroups1;
 }

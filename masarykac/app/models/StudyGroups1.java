@@ -9,10 +9,10 @@ import java.util.List;
  * Created by Martin on 12.03.2017.
  */
 @Entity
-public class GroupFieldsOfStudy extends Model {
+public class StudyGroups1 extends Model {
 
-    public static Finder<Long, GroupFieldsOfStudy> find = new Finder<Long, GroupFieldsOfStudy>(
-            GroupFieldsOfStudy.class);
+    public static Finder<Long, StudyGroups1> find = new Finder<Long, StudyGroups1>(
+            StudyGroups1.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

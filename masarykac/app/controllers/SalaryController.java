@@ -1,6 +1,7 @@
 package controllers;
 
 import models.*;
+import play.data.DynamicForm;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -10,6 +11,8 @@ import play.mvc.Security;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+
+import static play.data.Form.form;
 
 /**
  * Created by Martin on 05.03.2017.
@@ -25,9 +28,9 @@ public class SalaryController extends Controller {
     }
 
     public Result getPerson() {
-        Form<SalaryController> scForm= formFactory.form(SalaryController.class).bindFromRequest();
-
-        SalaryController sc = scForm.get();
+        DynamicForm form = formFactory.form().bindFromRequest();
+        String id=form.get("id");
+        Long idLong=Long.parseLong(id);
         return redirect(routes.SalaryController.printLector(1));
 
     }

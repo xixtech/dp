@@ -1,0 +1,151 @@
+@(subjectForm: Form[Subjects])
+@import helper._
+@localScripts = {
+    <!-- Morris Charts JavaScript -->
+    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+}
+@main(scripts = localScripts) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Registrace</h1>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel-body">
+                @helper.form(action = routes.SubjectController.save) {
+
+                    <fieldset>
+                        <legend>Zadání předmětu</legend>
+                        @inputText(
+                            subjectForm("ident"),
+                            '_label -> "Ident",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @inputText(
+                            subjectForm("identOld"),
+                            '_label -> "Ident_old",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @inputText(
+                            subjectForm("titleC"),
+                            '_label -> "Název česky",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @inputText(
+                            subjectForm("titleA"),
+                            '_label -> "Název anglicky",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @inputText(
+                            subjectForm("hoursP"),
+                            '_label -> "Počet hodin přednášek za týden",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @inputText(
+                            subjectForm("hoursC"),
+                            '_label -> "Počet hodin cvičení za týden",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @inputText(
+                            subjectForm("hoursSemester"),
+                            '_label -> "Počet hodin za semestr",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @inputText(
+                            subjectForm("credits"),
+                            '_label -> "Počet kreditů",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+
+                        @checkbox(
+                            subjectForm("credit"),
+                            '_label -> "Zápočet",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @checkbox(
+                            subjectForm("exam"),
+                            '_label -> "Zkouška",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @checkbox(
+                            subjectForm("classifiedCredit"),
+                            '_label -> "Klasifikovaný zápočet",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @inputText(
+                            subjectForm("department"),
+                            '_label -> "Oddělení",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @checkbox(
+                            subjectForm("formPresentation"),
+                            '_label -> "Prezenční forma",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                        @checkbox(
+                            subjectForm("formCombined"),
+                            '_label -> "Kombinovaná forma",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> subjectForm.globalError
+                        )
+
+                    </fieldset>
+
+                    <div class="actions">
+
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                    </div>
+
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+}
