@@ -72,6 +72,10 @@ public class Subjects extends Model {
         this.formCombined = formCombined;
     }
 
+    public static Subjects findById(long id) {
+        return find.where().eq("id",id).findUnique();
+    }
+
     public static Map<String,String> options() {
         List<Subjects> subjectSets = Subjects.find.all();
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();

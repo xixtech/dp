@@ -2,6 +2,7 @@ package controllers;
 
 import models.Employees;
 import models.StudyGroups;
+import models.StudyGroups1;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -49,7 +50,11 @@ public class StudyGroupsController extends Controller {
     }
 
     private void saveStudyGroups (StudyGroups studyGroups) throws Exception {
+        StudyGroups sg=new StudyGroups(studyGroups.studyGroup,studyGroups.studyGroupP,studyGroups.studyGroupV,studyGroups.studyGroupsNote);
+        sg.save();
 
+        StudyGroups1 sg1=new StudyGroups1(studyGroups.studyGroup,studyGroups.studyGroupP,studyGroups.studyGroupV,studyGroups.studyGroupsNote);
+        sg1.save();
     }
 
 }

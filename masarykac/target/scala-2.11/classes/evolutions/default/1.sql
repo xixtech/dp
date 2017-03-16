@@ -65,6 +65,7 @@ create table employees (
 
 create table fields_of_study (
   id                            bigserial not null,
+  field_of_study                varchar(255),
   field_of_study_v              varchar(255),
   study                         varchar(255),
   fields_of_study_language      varchar(255),
@@ -181,17 +182,19 @@ create table schedule_in_weeks (
 
 create table semesters (
   id                            bigserial not null,
+  semester_value                varchar(255),
   semester_vk                   varchar(255),
   semester_vd                   varchar(255),
   semester_ar                   varchar(255),
-  semester_from                 varchar(255),
-  semester_to                   varchar(255),
+  semester_from                 timestamp,
+  semester_to                   timestamp,
   constraint pk_semesters primary key (id)
 );
 
 create table study_groups (
   id                            bigserial not null,
-  study_group_p                 varchar(255),
+  study_group                   varchar(255),
+  study_group_p                 integer,
   study_group_v                 varchar(255),
   study_groups_note             varchar(255),
   constraint pk_study_groups primary key (id)
@@ -199,10 +202,10 @@ create table study_groups (
 
 create table study_groups1 (
   id                            bigserial not null,
-  field_of_study_v              varchar(255),
-  study                         varchar(255),
-  group_fields_of_study_language varchar(255),
-  form_of_teaching              varchar(255),
+  study_group                   varchar(255),
+  study_group_p                 integer,
+  study_group_v                 varchar(255),
+  study_groups_note             varchar(255),
   constraint pk_study_groups1 primary key (id)
 );
 
@@ -211,7 +214,7 @@ create table study_plans (
   subjects_id                   bigint,
   fields_of_study_id            bigint,
   semesters_id                  bigint,
-  semester                      integer,
+  semester_value                integer,
   study_groups_id               bigint,
   study_groups1_id              bigint,
   constraint pk_study_plans primary key (id)

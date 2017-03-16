@@ -23,6 +23,14 @@
                     <fieldset>
                         <legend>Zadání předmětu</legend>
                         @inputText(
+                            semesterForm("semesterValue"),
+                            '_label -> "Semestr",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident.",
+                            '_error -> semesterForm.globalError
+                        )
+
+                        @inputText(
                             semesterForm("semesterVK"),
                             '_label -> "Semestr_v_k",
                             'class -> "form-control",
@@ -49,6 +57,7 @@
                         @inputText(
                             semesterForm("semesterFrom"),
                             '_label -> "Od",
+
                             'class -> "form-control",
                             '_help -> "Prosím zadejte ident_old.",
                             '_error -> semesterForm.globalError
@@ -57,6 +66,7 @@
                         @inputText(
                             semesterForm("semesterTo"),
                             '_label -> "Do",
+
                             'class -> "form-control",
                             '_help -> "Prosím zadejte ident_old.",
                             '_error -> semesterForm.globalError

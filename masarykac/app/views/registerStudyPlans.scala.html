@@ -21,53 +21,57 @@
                 @helper.form(action = routes.StudyPlansController.save) {
 
                     <fieldset>
-                        <legend>Zadání předmětu</legend>
+                        <legend>Zadání studijního plánu</legend>
 
 
                         @select(
                             studyPlansForm("subjects.id"),
                             options(Subjects.options()),
-                            '_label -> "Semestr_v_k",
+                            '_label -> "Ident",
                             'class -> "form-control",
                             '_help -> "Prosím zadejte ident.",
                             '_error -> studyPlansForm.globalError
                         )
 
-                        @inputText(
-                            studyPlansForm("semesterVD"),
-                            '_label -> "Semestr_v_d",
+                        @select(
+                            studyPlansForm("fieldsOfStudy.id"),
+                            options(FieldsOfStudy.options()),
+                            '_label -> "Obor",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte ident_old.",
+                            '_error -> studyPlansForm.globalError
+                        )
+
+                        @select(
+                            studyPlansForm("semesters.id"),
+                            options(Semesters.options()),
+                            '_label -> "Semestr nástupu",
                             'class -> "form-control",
                             '_help -> "Prosím zadejte ident_old.",
                             '_error -> studyPlansForm.globalError
                         )
 
                         @inputText(
-                            studyPlansForm("semesterAr"),
-                            '_label -> "Akademický rok",
+                            studyPlansForm("semesterValue"),
+                            '_label -> "Semestr",
                             'class -> "form-control",
                             '_help -> "Prosím zadejte ident_old.",
                             '_error -> studyPlansForm.globalError
                         )
 
-                        @inputText(
-                            studyPlansForm("semesterFrom"),
-                            '_label -> "Od",
+                        @select(
+                            studyPlansForm("studyGroups.id"),
+                            options(StudyGroups.options()),
+                            '_label -> "Skupina",
                             'class -> "form-control",
                             '_help -> "Prosím zadejte ident_old.",
                             '_error -> studyPlansForm.globalError
                         )
 
-                        @inputText(
-                            studyPlansForm("semesterTo"),
-                            '_label -> "Do",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte ident_old.",
-                            '_error -> studyPlansForm.globalError
-                        )
-
-                        @inputText(
-                            studyPlansForm("semesterTo"),
-                            '_label -> "Do",
+                        @select(
+                            studyPlansForm("studyGroups1.id"),
+                            options(StudyGroups1.options()),
+                            '_label -> "Skupina_obor",
                             'class -> "form-control",
                             '_help -> "Prosím zadejte ident_old.",
                             '_error -> studyPlansForm.globalError

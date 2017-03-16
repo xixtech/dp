@@ -11,6 +11,7 @@ import play.mvc.Security;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static play.data.Form.form;
 
@@ -28,10 +29,16 @@ public class SalaryController extends Controller {
     }
 
     public Result getPerson() {
-        DynamicForm form = formFactory.form().bindFromRequest();
-        String id=form.get("id");
-        Long idLong=Long.parseLong(id);
-        return redirect(routes.SalaryController.printLector(1));
+        Map<String,String[]> formData = request().body().asFormUrlEncoded();
+
+        long val=0;
+
+        // get all institutionCollection select value
+        for (String insId : formData.get("email")) {
+            val=Long.parseLong(insId);
+
+        }
+        return redirect(routes.SalaryController.printLector(val));
 
     }
 

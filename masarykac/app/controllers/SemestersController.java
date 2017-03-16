@@ -17,6 +17,7 @@ public class SemestersController extends Controller {
 
     @Inject
     private FormFactory formFactory;
+
     /**
      * přesměrování na registrační formulář
      *
@@ -31,7 +32,6 @@ public class SemestersController extends Controller {
      * uložení osoby, profilu a zákazníka z formuláře
      *
      * @return
-     *
      */
     public Result save() {
         Form<Semesters> semestersForm = formFactory.form(Semesters.class).bindFromRequest();
@@ -47,8 +47,9 @@ public class SemestersController extends Controller {
         }
     }
 
-    private void saveSemester (Semesters semesters) throws Exception {
-
+    private void saveSemester(Semesters semesters) throws Exception {
+        Semesters s = new Semesters(semesters.semesterValue, semesters.semesterVK, semesters.semesterVD, semesters.semesterAr, semesters.semesterFrom, semesters.semesterTo);
+        s.save();
     }
 
 }

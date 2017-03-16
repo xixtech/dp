@@ -49,7 +49,9 @@ public class FieldOfStudyController extends Controller {
     }
 
     private void saveFieldsOfStudy(FieldsOfStudy fieldsOfStudyForm) throws Exception {
-
+        FieldsOfStudy fieldsOfStudy=new FieldsOfStudy(fieldsOfStudyForm.fieldOfStudy,fieldsOfStudyForm.fieldOfStudyV,fieldsOfStudyForm.study,
+                fieldsOfStudyForm.fieldsOfStudyLanguage,fieldsOfStudyForm.formOfTeaching);
+        fieldsOfStudy.save();
 
     }
 

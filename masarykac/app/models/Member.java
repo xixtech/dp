@@ -7,7 +7,9 @@ import play.data.format.Formats;
 import play.data.validation.Constraints;
 import play.data.validation.Constraints.Email;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Martin on 02.02.2017.
@@ -99,5 +101,14 @@ public class Member extends Model{
     }
     public static List<Member> memberDetail(long id) {
         return find.where().eq("id",id).findList();
+    }
+
+    public static Map<String,String> options() {
+        List<Member> subjectSets = Member.find.all();
+        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+        for(Member set: subjectSets) {
+            options.put(set.id.toString(), set.email.toString());
+        }
+        return options;
     }
 }

@@ -1,4 +1,3 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SemestersController.java:28: cannot find symbol
-[error]   symbol:   class Semesters
-[error]   location: package views.html
-[error] views.html.Semesters
+[error] C:\Users\Martin\dp\masarykac\app\controllers\StudyPlansController.java:72:  java.util.List<models.Subjects> cannot be converted to models.Subjects
+[error] Subjects.findById(subjectsId)
+[info] Some messages have been simplified; recompile with -Xdiags:verbose to get full output

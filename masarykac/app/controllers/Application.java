@@ -2,6 +2,9 @@ package controllers;
 
 import models.Member;
 import models.Roles;
+import models.StudyPlans;
+import play.data.Form;
+import play.data.FormFactory;
 import play.mvc.*;
 import it.innove.play.pdf.PdfGenerator;
 
@@ -14,6 +17,9 @@ import java.util.Map;
 public class Application extends Controller {
     @Inject
     public PdfGenerator pdfGenerator;
+
+    @Inject
+    private FormFactory formFactory;
 
     public Result pdf() {
 
@@ -52,7 +58,9 @@ public class Application extends Controller {
     }
 
     public Result kpiChoosePerson(){
-        return ok(views.html.kpiChoosePerson.render(Member.search()));
+
+        Form<Member> memberForm = formFactory.form(Member.class);
+        return ok(views.html.kpiChoosePerson.render(memberForm));
     }
 
     /**
