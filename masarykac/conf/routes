@@ -47,6 +47,10 @@ POST        /studygroups/saved                   controllers.StudyGroupsControll
 GET         /semester/add                        controllers.SemestersController.index()
 POST        /semester/saved                      controllers.SemestersController.save()
 
+# Přidat předmět
+GET         /studyplan/add                       controllers.StudyPlansController.index()
+POST        /srudyplan/saved                     controllers.StudyPlansController.save()
+
 # Přidat meetodiku
 GET         /m/add                               controllers.MethodicsController.index()
 POST        /m/saved                             controllers.MethodicsController.save()

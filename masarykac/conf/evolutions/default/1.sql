@@ -208,10 +208,10 @@ create table study_groups1 (
 
 create table study_plans (
   id                            bigserial not null,
-  semester                      varchar(255),
   subjects_id                   bigint,
   fields_of_study_id            bigint,
   semesters_id                  bigint,
+  semester                      integer,
   study_groups_id               bigint,
   study_groups1_id              bigint,
   constraint pk_study_plans primary key (id)

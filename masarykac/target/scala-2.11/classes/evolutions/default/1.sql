@@ -72,15 +72,6 @@ create table fields_of_study (
   constraint pk_fields_of_study primary key (id)
 );
 
-create table group_fields_of_study (
-  id                            bigserial not null,
-  field_of_study_v              varchar(255),
-  study                         varchar(255),
-  group_fields_of_study_language varchar(255),
-  form_of_teaching              varchar(255),
-  constraint pk_group_fields_of_study primary key (id)
-);
-
 create table items_kpi (
   id                            bigserial not null,
   identificator                 varchar(255),
@@ -201,19 +192,28 @@ create table semesters (
 create table study_groups (
   id                            bigserial not null,
   study_group_p                 varchar(255),
-  get_study_group_v             varchar(255),
+  study_group_v                 varchar(255),
   study_groups_note             varchar(255),
   constraint pk_study_groups primary key (id)
 );
 
+create table study_groups1 (
+  id                            bigserial not null,
+  field_of_study_v              varchar(255),
+  study                         varchar(255),
+  group_fields_of_study_language varchar(255),
+  form_of_teaching              varchar(255),
+  constraint pk_study_groups1 primary key (id)
+);
+
 create table study_plans (
   id                            bigserial not null,
-  semester                      varchar(255),
   subjects_id                   bigint,
   fields_of_study_id            bigint,
   semesters_id                  bigint,
+  semester                      integer,
   study_groups_id               bigint,
-  group_fields_of_study_id      bigint,
+  study_groups1_id              bigint,
   constraint pk_study_plans primary key (id)
 );
 
@@ -273,8 +273,8 @@ create index ix_study_plans_semesters_id on study_plans (semesters_id);
 alter table study_plans add constraint fk_study_plans_study_groups_id foreign key (study_groups_id) references study_groups (id) on delete restrict on update restrict;
 create index ix_study_plans_study_groups_id on study_plans (study_groups_id);
 
-alter table study_plans add constraint fk_study_plans_group_fields_of_study_id foreign key (group_fields_of_study_id) references group_fields_of_study (id) on delete restrict on update restrict;
-create index ix_study_plans_group_fields_of_study_id on study_plans (group_fields_of_study_id);
+alter table study_plans add constraint fk_study_plans_study_groups1_id foreign key (study_groups1_id) references study_groups1 (id) on delete restrict on update restrict;
+create index ix_study_plans_study_groups1_id on study_plans (study_groups1_id);
 
 alter table teachers add constraint fk_teachers_courses_id foreign key (courses_id) references courses (id) on delete restrict on update restrict;
 create index ix_teachers_courses_id on teachers (courses_id);
@@ -314,8 +314,8 @@ drop index if exists ix_study_plans_semesters_id;
 alter table if exists study_plans drop constraint if exists fk_study_plans_study_groups_id;
 drop index if exists ix_study_plans_study_groups_id;
 
-alter table if exists study_plans drop constraint if exists fk_study_plans_group_fields_of_study_id;
-drop index if exists ix_study_plans_group_fields_of_study_id;
+alter table if exists study_plans drop constraint if exists fk_study_plans_study_groups1_id;
+drop index if exists ix_study_plans_study_groups1_id;
 
 alter table if exists teachers drop constraint if exists fk_teachers_courses_id;
 drop index if exists ix_teachers_courses_id;
@@ -338,8 +338,6 @@ drop table if exists days cascade;
 drop table if exists employees cascade;
 
 drop table if exists fields_of_study cascade;
-
-drop table if exists group_fields_of_study cascade;
 
 drop table if exists items_kpi cascade;
 
@@ -366,6 +364,8 @@ drop table if exists schedule_in_weeks cascade;
 drop table if exists semesters cascade;
 
 drop table if exists study_groups cascade;
+
+drop table if exists study_groups1 cascade;
 
 drop table if exists study_plans cascade;
 

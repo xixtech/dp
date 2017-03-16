@@ -17,8 +17,6 @@ public class StudyPlans extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
-    public String semester;
-
     @ManyToOne
     public Subjects subjects;
 
@@ -27,6 +25,8 @@ public class StudyPlans extends Model {
 
     @ManyToOne
     public Semesters semesters;
+
+    public int semester;
 
     @ManyToOne
     public StudyGroups studyGroups;
