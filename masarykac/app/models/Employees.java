@@ -3,7 +3,9 @@ package models;
 import com.avaje.ebean.Model;
 
 import javax.persistence.*;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Martin on 12.03.2017.
@@ -85,5 +87,22 @@ public class Employees extends Model {
 
     public void setTeachers(List<Teachers> teachers) {
         this.teachers = teachers;
+    }
+
+    public static Employees findById(long id) {
+        return find.where().eq("id", id).findUnique();
+    }
+
+    public static List<Employees> search() {
+        return Employees.find.all();
+    }
+
+    public static Map<String,String> options() {
+        List<Employees> subjectSets = Employees.find.all();
+        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+        for(Employees set: subjectSets) {
+            options.put(set.id.toString(), set.personalNumber+"");
+        }
+        return options;
     }
 }

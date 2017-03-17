@@ -1,20 +1,8 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:80: comparing values of types Int and Null using `==' will always yield false
-[warn]                                         @if(member.getScheduleDay == null) {
-[warn]                                                                   ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:108: comparing values of types Int and Null using `==' will always yield false
-[warn]                                         @if(member.getScheduleWeek == null) {
-[warn]                                                                    ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:115: comparing values of types Int and Null using `==' will always yield false
-[warn]                                         @if(member.getScheduleYear == null) {
-[warn]                                                                    ^
-[warn] three warnings found
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:80: comparing values of types Int and Null using `==' will always yield false
-[warn]                                         @if(member.getScheduleDay == null) {
-[warn]                                                                   ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:108: comparing values of types Int and Null using `==' will always yield false
-[warn]                                         @if(member.getScheduleWeek == null) {
-[warn]                                                                    ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:115: comparing values of types Int and Null using `==' will always yield false
-[warn]                                         @if(member.getScheduleYear == null) {
-[warn]                                                                    ^
-[warn] three warnings found
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployees.scala.html:55: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getPersonalNumber == null) {
+[warn]                                                                  ^
+[warn] one warning found
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployees.scala.html:55: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getPersonalNumber == null) {
+[warn]                                                                  ^
+[warn] one warning found

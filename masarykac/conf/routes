@@ -52,6 +52,11 @@ POST        /studyplan/saved                     controllers.StudyPlansControlle
 GET         /studyplans                          controllers.TableController.listStudyPlans()
 
 GET         /scheduleinweeks                     controllers.TableController.listScheduleInWeeks()
+GET         /employees                           controllers.TableController.listEmployees()
+GET         /teachers                            controllers.TableController.listTeachers()
+
+GET         /teachers/add                        controllers.TeachersController.index()
+POST        /teachers/saved                      controllers.TeachersController.save()
 
 # Přidat meetodiku
 GET         /m/add                               controllers.MethodicsController.index()

@@ -34,6 +34,14 @@
                     <li>
                         <a href='@routes.TableController.listScheduleInWeeks()'><i class="fa fa-table fa-fw"></i> Rozvrh v týdnech</a>
                     </li>
+
+                    <li>
+                        <a href='@routes.TableController.listEmployees()'><i class="fa fa-table fa-fw"></i> Zaměstnanci</a>
+                    </li>
+
+                    <li>
+                        <a href='@routes.TableController.listTeachers()'><i class="fa fa-table fa-fw"></i> Vyučující</a>
+                    </li>
                 </ul>
                     <!-- /.nav-second-level -->
             </li>
@@ -56,7 +64,7 @@
                         <a href="@routes.PersonController.index()">Registrace osoby</a>
                     </li>
                     <li>
-                        <a href="@routes.EmployeesController.index()">Registrace vyučujícího</a>
+                        <a href="@routes.EmployeesController.index()">Registrace zaměstnance</a>
                     </li>
 
                     <li>
@@ -77,6 +85,10 @@
 
                     <li>
                         <a href="@routes.StudyPlansController.index()">Registrace studijního plánu</a>
+                    </li>
+
+                    <li>
+                        <a href="@routes.TeachersController.index()">Registrace učitele</a>
                     </li>
 
                 </ul>

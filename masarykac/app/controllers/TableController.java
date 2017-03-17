@@ -1,8 +1,6 @@
 package controllers;
 
-import models.Member;
-import models.ScheduleInWeeks;
-import models.StudyPlans;
+import models.*;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
@@ -24,5 +22,13 @@ public class TableController extends Controller {
 
     public Result listScheduleInWeeks() {
         return ok(views.html.tables.tableScheduleInWeeks.render(ScheduleInWeeks.search()));
+    }
+
+    public Result listEmployees() {
+        return ok(views.html.tables.tableEmployees.render(Employees.search()));
+    }
+
+    public Result listTeachers() {
+        return ok(views.html.tables.tableTeachers.render(Teachers.search()));
     }
 }
