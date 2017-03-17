@@ -23,8 +23,16 @@
                 <a href="#"><i class="fa fa-table fa-fw"></i>Seznamy<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
 
+
                     <li>
-                        <a href='@routes.Application.workers()'><i class="fa fa-table fa-fw"></i> Pracovníci</a>
+                        <a href='@routes.TableController.listPerson()'><i class="fa fa-table fa-fw"></i> Pracovníci</a>
+                    </li>
+                    <li>
+                        <a href='@routes.TableController.listStudyPlans()'><i class="fa fa-table fa-fw"></i> Studijní plány</a>
+                    </li>
+
+                    <li>
+                        <a href='@routes.TableController.listScheduleInWeeks()'><i class="fa fa-table fa-fw"></i> Rozvrh v týdnech</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
@@ -48,7 +56,7 @@
                         <a href="@routes.PersonController.index()">Registrace osoby</a>
                     </li>
                     <li>
-                        <a href="@routes.EmployeesController.index()">Registrace zaměstnance</a>
+                        <a href="@routes.EmployeesController.index()">Registrace vyučujícího</a>
                     </li>
 
                     <li>

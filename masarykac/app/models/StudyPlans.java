@@ -3,6 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Martin on 12.03.2017.
@@ -89,5 +90,9 @@ public class StudyPlans extends Model {
 
     public void setStudyGroups1(StudyGroups1 studyGroups1) {
         this.studyGroups1 = studyGroups1;
+    }
+
+    public static List<StudyPlans> search() {
+        return StudyPlans.find.all();
     }
 }

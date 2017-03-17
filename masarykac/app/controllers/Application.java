@@ -46,9 +46,6 @@ public class Application extends Controller {
         return ok(views.html.tables.tables.render());
     }
 
-    public Result workers() {
-        return redirect(routes.TableController.listPerson());    }
-
     public Result forms() {
         return ok(views.html.forms.render());
     }

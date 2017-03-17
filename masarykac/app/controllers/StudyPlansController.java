@@ -36,40 +36,40 @@ public class StudyPlansController extends Controller {
      */
     public Result save() {
 
-        Map<String,String[]> formData = request().body().asFormUrlEncoded();
+        Map<String, String[]> formData = request().body().asFormUrlEncoded();
 
-        long subjectsId=0;
-        long fieldsOfStudyId=0;
-        long semestersId=0;
-        long val=0;
-        long studyGroupsId=0;
-        long studyGroups1Id=0;
+        long subjectsId = 0;
+        long fieldsOfStudyId = 0;
+        long semestersId = 0;
+        long val = 0;
+        long studyGroupsId = 0;
+        long studyGroups1Id = 0;
 
         for (String insId : formData.get("subjects.id")) {
-            subjectsId=Long.parseLong(insId);
+            subjectsId = Long.parseLong(insId);
         }
 
         for (String insId : formData.get("fieldsOfStudy.id")) {
-            fieldsOfStudyId=Long.parseLong(insId);
+            fieldsOfStudyId = Long.parseLong(insId);
         }
 
         for (String insId : formData.get("semesters.id")) {
-            semestersId=Long.parseLong(insId);
+            semestersId = Long.parseLong(insId);
         }
 
         for (String insId : formData.get("semesterValue")) {
-            val=Long.parseLong(insId);
+            val = Long.parseLong(insId);
         }
 
         for (String insId : formData.get("studyGroups.id")) {
-            studyGroupsId=Long.parseLong(insId);
+            studyGroupsId = Long.parseLong(insId);
         }
 
         for (String insId : formData.get("studyGroups1.id")) {
-            studyGroups1Id=Long.parseLong(insId);
+            studyGroups1Id = Long.parseLong(insId);
         }
 
-        StudyPlans sp = new StudyPlans(Subjects.findById(subjectsId), FieldsOfStudy.findById(fieldsOfStudyId),Semesters.findById(semestersId), (int)val,
+        StudyPlans sp = new StudyPlans(Subjects.findById(subjectsId), FieldsOfStudy.findById(fieldsOfStudyId), Semesters.findById(semestersId), (int) val,
                 StudyGroups.findById(studyGroupsId), StudyGroups1.findById(studyGroups1Id));
         sp.save();
 

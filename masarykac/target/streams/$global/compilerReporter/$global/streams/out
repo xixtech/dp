@@ -1,3 +1,20 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\StudyPlansController.java:72:  java.util.List<models.Subjects> cannot be converted to models.Subjects
-[error] Subjects.findById(subjectsId)
-[info] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:80: comparing values of types Int and Null using `==' will always yield false
+[warn]                                         @if(member.getScheduleDay == null) {
+[warn]                                                                   ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:108: comparing values of types Int and Null using `==' will always yield false
+[warn]                                         @if(member.getScheduleWeek == null) {
+[warn]                                                                    ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:115: comparing values of types Int and Null using `==' will always yield false
+[warn]                                         @if(member.getScheduleYear == null) {
+[warn]                                                                    ^
+[warn] three warnings found
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:80: comparing values of types Int and Null using `==' will always yield false
+[warn]                                         @if(member.getScheduleDay == null) {
+[warn]                                                                   ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:108: comparing values of types Int and Null using `==' will always yield false
+[warn]                                         @if(member.getScheduleWeek == null) {
+[warn]                                                                    ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:115: comparing values of types Int and Null using `==' will always yield false
+[warn]                                         @if(member.getScheduleYear == null) {
+[warn]                                                                    ^
+[warn] three warnings found

@@ -13,7 +13,6 @@ POST        /login                               controllers.Login.authenticate(
 GET         /charts/flot                         controllers.Charts.flot()
 GET         /charts/morris                       controllers.Charts.morris()
 GET         /tables                              controllers.Application.tables()
-GET         /workers                             controllers.Application.workers()
 GET         /forms                               controllers.Application.forms()
 GET         /ui-elements/panels-and-wells        controllers.UiElements.panelsAndWells()
 GET         /ui-elements/buttons                 controllers.UiElements.buttons()
@@ -49,15 +48,18 @@ POST        /semester/saved                      controllers.SemestersController
 
 # Přidat předmět
 GET         /studyplan/add                       controllers.StudyPlansController.index()
-POST        /srudyplan/saved                     controllers.StudyPlansController.save()
+POST        /studyplan/saved                     controllers.StudyPlansController.save()
+GET         /studyplans                          controllers.TableController.listStudyPlans()
+
+GET         /scheduleinweeks                     controllers.TableController.listScheduleInWeeks()
 
 # Přidat meetodiku
 GET         /m/add                               controllers.MethodicsController.index()
 POST        /m/saved                             controllers.MethodicsController.save()
 
 GET         /roles                               controllers.Application.roles()
+
 # Vypsat zákazníky
-POST        /users                               controllers.Application.workers()
 GET         /users                               controllers.TableController.listPerson()
 
 # Odhlásit
