@@ -1,5 +1,5 @@
-New log file opened at Sat Mar 18 09:50:17 CET 2017 by 10760@Martin-pc
-jvm 10760@Martin-pc
+New log file opened at Sat Mar 18 20:31:44 CET 2017 by 2060@Martin-pc
+jvm 2060@Martin-pc
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.25-b02
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in C:\Users\Martin\dp\masarykac\project, returning: (masarykac-build)
 Loading project definition from C:\Users\Martin\dp\masarykac\project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@3f16d524, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@6694c0f9, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -73,4 +73,4 @@ Waiting for socket thread
 Waiting for request processor thread
 Waiting for command engine result
 Returning control to sbt launcher with result Exit(0)
-Closing the 10760@Martin-pc logs at Sat Mar 18 09:50:23 CET 2017, goodbye.
+Closing the 2060@Martin-pc logs at Sat Mar 18 20:31:51 CET 2017, goodbye.
