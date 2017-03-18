@@ -41,10 +41,12 @@ POST        /fields/saved                        controllers.FieldOfStudyControl
 # Přidat předmět
 GET         /studygroups/add                     controllers.StudyGroupsController.index()
 POST        /studygroups/saved                   controllers.StudyGroupsController.save()
+GET         /studygroups                         controllers.TableController.listStudyGroups()
 
 # Přidat předmět
 GET         /semester/add                        controllers.SemestersController.index()
 POST        /semester/saved                      controllers.SemestersController.save()
+GET         /semester                            controllers.TableController.listSemesters()
 
 # Přidat předmět
 GET         /studyplan/add                       controllers.StudyPlansController.index()
@@ -52,8 +54,16 @@ POST        /studyplan/saved                     controllers.StudyPlansControlle
 GET         /studyplans                          controllers.TableController.listStudyPlans()
 
 GET         /scheduleinweeks                     controllers.TableController.listScheduleInWeeks()
+
+GET         /schedule                            controllers.TableController.listSchedule()
 GET         /employees                           controllers.TableController.listEmployees()
 GET         /teachers                            controllers.TableController.listTeachers()
+GET         /subjects                            controllers.TableController.listSubjects()
+GET         /fields                              controllers.TableController.listFieldsOfStudy()
+GET         /courses                             controllers.TableController.listCourses()
+GET         /currentsemesters                    controllers.TableController.listCurrentSemesters()
+GET         /lcsuteos                            controllers.TableController.listCurrentSemestersUntilTheEndOfStudy()
+GET         /days                                controllers.TableController.listDays()
 
 GET         /teachers/add                        controllers.TeachersController.index()
 POST        /teachers/saved                      controllers.TeachersController.save()

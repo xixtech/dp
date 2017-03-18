@@ -1,0 +1,86 @@
+@(currentPage: List[Days])
+@import helper._
+@localStylesheets = {
+    <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
+}
+
+@localScripts = {
+        <!-- DataTables JavaScript -->
+    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
+    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>
+
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+            $(document).ready(function () {
+                $('#dataTables-example').DataTable({
+                    responsive: true
+                });
+            });
+    </script>
+}
+
+@main(scripts = localScripts, stylesheets = localStylesheets) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Předměty</h1>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Výpis předmětů
+                </div>
+                    <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="dataTable_wrapper">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>Den_p</th>
+                                    <th>Den</th>
+                                    <th>Den_v</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            @for(member <- currentPage) {
+                                <tr>
+                                    <td class="center">
+                                    @if(member.getDayP == null) {
+                                        <em>-</em>
+                                    } else {
+                                        @member.getDayP
+                                    }
+                                    </td>
+                                    <td class="center">
+                                    @if(member.getDay == null) {
+                                        <em>-</em>
+                                    } else {
+                                        @member.getDay
+                                    }
+                                    </td>
+                                    <td class="center">
+                                    @if(member.getDayV == null) {
+                                        <em>-</em>
+                                    } else {
+                                        @member.getDayV
+                                    }
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                        <!-- /.table-responsive -->
+                </div>
+                    <!-- /.panel-body -->
+            </div>
+                <!-- /.panel -->
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+
+}

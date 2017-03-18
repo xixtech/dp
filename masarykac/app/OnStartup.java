@@ -3,6 +3,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.management.relation.Role;
 
+import controllers.DaysStart;
 import models.Member;
 import models.utils.Hash;
 import models.Person;
@@ -46,6 +47,8 @@ public class OnStartup {
                 member.update();
                 KPIStart kpi=new KPIStart();
                 kpi.insertKPIStart();
+                DaysStart ds=new DaysStart();
+                ds.insertDaysStart();
 
             } catch (Exception e) {
                 // TODO Auto-generated catch block

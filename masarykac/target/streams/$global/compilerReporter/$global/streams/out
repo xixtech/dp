@@ -1,8 +1,7 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployees.scala.html:55: comparing values of types Int and Null using `==' will always yield false
-[warn]                                     @if(member.getPersonalNumber == null) {
-[warn]                                                                  ^
-[warn] one warning found
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployees.scala.html:55: comparing values of types Int and Null using `==' will always yield false
-[warn]                                     @if(member.getPersonalNumber == null) {
-[warn]                                                                  ^
-[warn] one warning found
+[error] C:\Users\Martin\dp\masarykac\app\controllers\DaysStart.java:15: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\DaysStart.java:16: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\DaysStart.java:17: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\DaysStart.java:18: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\DaysStart.java:19: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\DaysStart.java:20: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\DaysStart.java:21: illegal start of expression

@@ -99,6 +99,10 @@ public class FieldsOfStudy extends Model {
         return options;
     }
 
+    public static List<FieldsOfStudy> search() {
+        return FieldsOfStudy.find.all();
+    }
+
     public static FieldsOfStudy findById(long id) {
         return find.where().eq("id",id).findUnique();
     }

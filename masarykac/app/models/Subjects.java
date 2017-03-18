@@ -72,6 +72,134 @@ public class Subjects extends Model {
         this.formCombined = formCombined;
     }
 
+    public String getIdent() {
+        return ident;
+    }
+
+    public void setIdent(String ident) {
+        this.ident = ident;
+    }
+
+    public String getIdentOld() {
+        return identOld;
+    }
+
+    public void setIdentOld(String identOld) {
+        this.identOld = identOld;
+    }
+
+    public String getTitleC() {
+        return titleC;
+    }
+
+    public void setTitleC(String titleC) {
+        this.titleC = titleC;
+    }
+
+    public String getTitleA() {
+        return titleA;
+    }
+
+    public void setTitleA(String titleA) {
+        this.titleA = titleA;
+    }
+
+    public int getHoursP() {
+        return hoursP;
+    }
+
+    public void setHoursP(int hoursP) {
+        this.hoursP = hoursP;
+    }
+
+    public int getHoursC() {
+        return hoursC;
+    }
+
+    public void setHoursC(int hoursC) {
+        this.hoursC = hoursC;
+    }
+
+    public int getHoursSemester() {
+        return hoursSemester;
+    }
+
+    public void setHoursSemester(int hoursSemester) {
+        this.hoursSemester = hoursSemester;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
+
+    public boolean isCredit() {
+        return credit;
+    }
+
+    public void setCredit(boolean credit) {
+        this.credit = credit;
+    }
+
+    public boolean isExam() {
+        return exam;
+    }
+
+    public void setExam(boolean exam) {
+        this.exam = exam;
+    }
+
+    public boolean isClassifiedCredit() {
+        return classifiedCredit;
+    }
+
+    public void setClassifiedCredit(boolean classifiedCredit) {
+        this.classifiedCredit = classifiedCredit;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public boolean isFormPresentation() {
+        return formPresentation;
+    }
+
+    public void setFormPresentation(boolean formPresentation) {
+        this.formPresentation = formPresentation;
+    }
+
+    public boolean isFormCombined() {
+        return formCombined;
+    }
+
+    public void setFormCombined(boolean formCombined) {
+        this.formCombined = formCombined;
+    }
+
+    public List<StudyPlans> getStudyPlans() {
+        return studyPlans;
+    }
+
+    public void setStudyPlans(List<StudyPlans> studyPlans) {
+        this.studyPlans = studyPlans;
+    }
+
+    public List<Courses> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Courses> courses) {
+        this.courses = courses;
+    }
+
     public static Subjects findById(long id) {
         return find.where().eq("id",id).findUnique();
     }
@@ -83,5 +211,9 @@ public class Subjects extends Model {
             options.put(set.id.toString(), set.ident.toString());
         }
         return options;
+    }
+
+    public static List<Subjects> search() {
+        return Subjects.find.all();
     }
 }

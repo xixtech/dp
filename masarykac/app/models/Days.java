@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 /**
  * Created by Martin on 12.03.2017.
@@ -54,5 +55,9 @@ public class Days extends Model {
 
     public void setDayV(String dayV) {
         this.dayV = dayV;
+    }
+
+    public static List<Days> search() {
+        return Days.find.all();
     }
 }

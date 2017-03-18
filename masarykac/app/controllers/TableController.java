@@ -24,11 +24,47 @@ public class TableController extends Controller {
         return ok(views.html.tables.tableScheduleInWeeks.render(ScheduleInWeeks.search()));
     }
 
+    public Result listSchedule() {
+        return ok(views.html.tables.tableSchedule.render(Schedule.search()));
+    }
+
     public Result listEmployees() {
         return ok(views.html.tables.tableEmployees.render(Employees.search()));
     }
 
     public Result listTeachers() {
         return ok(views.html.tables.tableTeachers.render(Teachers.search()));
+    }
+
+    public Result listStudyGroups() {
+        return ok(views.html.tables.tableStudyGroups.render(StudyGroups.search()));
+    }
+
+    public Result listSemesters() {
+        return ok(views.html.tables.tableSemesters.render(Semesters.search()));
+    }
+
+    public Result listSubjects() {
+        return ok(views.html.tables.tableSubjects.render(Subjects.search()));
+    }
+
+    public Result listFieldsOfStudy() {
+        return ok(views.html.tables.tableFieldsOfStudy.render(FieldsOfStudy.search()));
+    }
+
+    public Result listCourses() {
+        return ok(views.html.tables.tableCourses.render(Courses.search()));
+    }
+
+    public Result listCurrentSemesters() {
+        return ok(views.html.tables.tableCurrentSemesters.render(CurrentSemesters.search()));
+    }
+
+    public Result listCurrentSemestersUntilTheEndOfStudy() {
+        return ok(views.html.tables.tableCurrentSemestersUntilTheEndOfStudy.render(CurrentSemestersUntilTheEndOfStudy.search()));
+    }
+
+    public Result listDays() {
+        return ok(views.html.tables.tableDays.render(Days.search()));
     }
 }

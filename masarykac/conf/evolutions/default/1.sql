@@ -5,6 +5,8 @@
 
 create table courses (
   id                            bigserial not null,
+  course                        varchar(255),
+  number_of_students            integer,
   subjects_id                   bigint,
   constraint pk_courses primary key (id)
 );

@@ -91,5 +91,7 @@ public class StudyGroups extends Model {
         return find.where().eq("id",id).findUnique();
     }
 
-
+    public static List<StudyGroups> search() {
+        return StudyGroups.find.all();
+    }
 }

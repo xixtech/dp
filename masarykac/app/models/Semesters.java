@@ -33,10 +33,10 @@ public class Semesters extends Model {
 
     public String semesterAr;
 
-    @Formats.DateTime(pattern="dd.MM.yyyy")
+    @Formats.DateTime(pattern = "dd.MM.yyyy")
     public Date semesterFrom;
 
-    @Formats.DateTime(pattern="dd.MM.yyyy")
+    @Formats.DateTime(pattern = "dd.MM.yyyy")
     public Date semesterTo;
 
     public Semesters(String semesterValue, String semesterVK, String semesterVD, String semesterAr, Date semesterFrom, Date semesterTo) {
@@ -104,16 +104,20 @@ public class Semesters extends Model {
         this.semesterTo = semesterTo;
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<Semesters> semestersSet = Semesters.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Semesters set: semestersSet) {
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Semesters set : semestersSet) {
             options.put(set.id.toString(), set.semesterValue.toString());
         }
         return options;
     }
 
+    public static List<Semesters> search() {
+        return Semesters.find.all();
+    }
+
     public static Semesters findById(long id) {
-        return find.where().eq("id",id).findUnique();
+        return find.where().eq("id", id).findUnique();
     }
 }
