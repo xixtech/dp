@@ -62,11 +62,5 @@ public class TeachersController extends Controller {
         return redirect(routes.Application.index());
     }
 
-    private void saveStudyPlans(StudyPlans studyPlans) throws Exception {
-        StudyPlans sp = new StudyPlans(studyPlans.subjects, studyPlans.fieldsOfStudy, studyPlans.semesters, studyPlans.semesterValue,
-                studyPlans.studyGroups, studyPlans.studyGroups1);
-        sp.save();
-
-    }
 
 }

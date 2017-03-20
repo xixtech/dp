@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sat Mar 18 11:21:59 CET 2017
+// @DATE:Mon Mar 20 10:59:45 CET 2017
 
 package controllers;
 
@@ -15,6 +15,7 @@ public class routes {
   public static final controllers.ReversePrintController PrintController = new controllers.ReversePrintController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReversePages Pages = new controllers.ReversePages(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseSemestersController SemestersController = new controllers.ReverseSemestersController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseTestController TestController = new controllers.ReverseTestController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseUiElements UiElements = new controllers.ReverseUiElements(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseTableController TableController = new controllers.ReverseTableController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseLogin Login = new controllers.ReverseLogin(RoutesPrefix.byNamePrefix());
@@ -36,6 +37,7 @@ public class routes {
     public static final controllers.javascript.ReversePrintController PrintController = new controllers.javascript.ReversePrintController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReversePages Pages = new controllers.javascript.ReversePages(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseSemestersController SemestersController = new controllers.javascript.ReverseSemestersController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseTestController TestController = new controllers.javascript.ReverseTestController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseUiElements UiElements = new controllers.javascript.ReverseUiElements(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseTableController TableController = new controllers.javascript.ReverseTableController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseLogin Login = new controllers.javascript.ReverseLogin(RoutesPrefix.byNamePrefix());

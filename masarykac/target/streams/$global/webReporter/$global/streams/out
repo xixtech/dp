@@ -1,16 +1,7 @@
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\jquery-3.1.1.js:133: Use '===' to compare with 'null'.
-[error] 		if ( num == null ) {
-[error] 		               ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\jquery-3.1.1.js:225: Use '!==' to compare with 'null'.
-[error] 		if ( ( options = arguments[ i ] ) != null ) {
-[error] 		                                        ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\jquery-3.1.1.js:285: Use '!==' to compare with 'null'.
-[error] 		return obj != null && obj === obj.window;
-[error] 		                 ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\jquery-3.1.1.js:348: Missing 'new' prefix when invoking a constructor.
-[error] 		DOMEval( code );
-[error] 		      ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\jquery-3.1.1.js:385: Use '===' to compare with 'null'.
-[error] 		return text == null ?
-[error] 		                  ^
-[error] 28 errors found
+[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:130: Missing semicolon.
+[error]         })
+[error]           ^
+[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:131: Missing semicolon.
+[error]     })
+[error]       ^
+[error] two errors found

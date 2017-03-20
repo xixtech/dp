@@ -1,0 +1,41 @@
+@(currentForm: Form[Test], currentPage: List[Test])
+@import helper._
+
+@localStylesheets = {
+    <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
+}
+
+@localScripts = {
+        <!-- Morris Charts JavaScript -->
+    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
+    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>
+    <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
+}
+
+
+@main(scripts = localScripts, stylesheets = localStylesheets) {
+    @helper.form(action = routes.TestController.save) {
+
+
+
+            <div id="dynamicInput">
+
+                Entry 1<br><input type="text" class="form-control" name="names[]"><input type="text" class="form-control" name="values[]">
+
+            </div>
+
+            <input type="button" class="btn btn-lg btn-success btn-block" value="Add another text input" onClick="addInput('dynamicInput');">
+
+
+
+        <div class="actions">
+
+            <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+            <a href="@routes.Application.index()" class="btn">Zrušit</a>
+        </div>
+    }
+
+}

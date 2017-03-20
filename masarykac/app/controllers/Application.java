@@ -42,6 +42,7 @@ public class Application extends Controller {
         return ok(views.html.dashboard.render());
     }
 
+
     public Result tables() {
         return ok(views.html.tables.tables.render());
     }

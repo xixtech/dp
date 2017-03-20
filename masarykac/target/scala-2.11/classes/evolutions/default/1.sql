@@ -249,6 +249,13 @@ create table teachers (
   constraint pk_teachers primary key (id)
 );
 
+create table test (
+  id                            bigserial not null,
+  name                          varchar(255),
+  value                         varchar(255),
+  constraint pk_test primary key (id)
+);
+
 alter table courses add constraint fk_courses_subjects_id foreign key (subjects_id) references subjects (id) on delete restrict on update restrict;
 create index ix_courses_subjects_id on courses (subjects_id);
 
@@ -377,4 +384,6 @@ drop table if exists study_plans cascade;
 drop table if exists subjects cascade;
 
 drop table if exists teachers cascade;
+
+drop table if exists test cascade;
 
