@@ -57,6 +57,9 @@ GET         /studyplan/add                       controllers.StudyPlansControlle
 POST        /studyplan/saved                     controllers.StudyPlansController.save()
 GET         /studyplans                          controllers.TableController.listStudyPlans()
 
+GET         /courses/add                       controllers.CourseController.index()
+POST        /courses/saved                     controllers.CourseController.save()
+
 GET         /scheduleinweeks                     controllers.TableController.listScheduleInWeeks()
 
 GET         /schedule                            controllers.TableController.listSchedule()

@@ -39,6 +39,9 @@ public class Semesters extends Model {
     @Formats.DateTime(pattern = "dd.MM.yyyy")
     public Date semesterTo;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<ScheduleInWeeks> scheduleInWeekses;
+
     public Semesters(String semesterValue, String semesterVK, String semesterVD, String semesterAr, Date semesterFrom, Date semesterTo) {
         this.semesterValue = semesterValue;
         this.semesterVK = semesterVK;
@@ -102,6 +105,14 @@ public class Semesters extends Model {
 
     public void setSemesterTo(Date semesterTo) {
         this.semesterTo = semesterTo;
+    }
+
+    public List<ScheduleInWeeks> getScheduleInWeekses() {
+        return scheduleInWeekses;
+    }
+
+    public void setScheduleInWeekses(List<ScheduleInWeeks> scheduleInWeekses) {
+        this.scheduleInWeekses = scheduleInWeekses;
     }
 
     public static Map<String, String> options() {

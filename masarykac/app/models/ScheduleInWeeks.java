@@ -3,7 +3,9 @@ package models;
 import com.avaje.ebean.Model;
 
 import javax.persistence.*;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Martin on 12.03.2017.
@@ -38,6 +40,9 @@ public class ScheduleInWeeks extends Model {
 
     @ManyToOne
     public Schedule schedule;
+
+    @ManyToOne
+    public Semesters semesters;
 
     public ScheduleInWeeks(String semester, String ident, String course, int scheduleDay, String scheduleFrom, String scheduleTo, String classRoom, int scheduleWeek, int scheduleYear) {
         this.semester = semester;
@@ -131,7 +136,24 @@ public class ScheduleInWeeks extends Model {
         this.schedule = schedule;
     }
 
+    public Semesters getSemesters() {
+        return semesters;
+    }
+
+    public void setSemesters(Semesters semesters) {
+        this.semesters = semesters;
+    }
+
     public static List<ScheduleInWeeks> search() {
         return ScheduleInWeeks.find.all();
+    }
+
+    public static Map<String,String> options() {
+        List<ScheduleInWeeks> subjectSets = ScheduleInWeeks.find.all();
+        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+        for(ScheduleInWeeks set: subjectSets) {
+            options.put(set.id.toString(), set.semester.toString());
+        }
+        return options;
     }
 }

@@ -23,8 +23,18 @@
 
             <div id="dynamicInput">
 
-                Entry 1<br><input type="text" class="form-control" name="names[]"><input type="text" class="form-control" name="values[]">
+              <br>
+                    @select(
+                        currentForm("names[]"),
+                        options(Test.options()),
+                        '_label -> "Ident",
+                        'class -> "form-control",
+                        '_help -> "Prosím zadejte ident.",
+                        '_error -> currentForm.globalError
+                    )
 
+                    <input type="text" class="form-control" name="values[]">
+                    <input type="hidden" name="testoptions" value='@Test.options()' >
             </div>
 
             <input type="button" class="btn btn-lg btn-success btn-block" value="Add another text input" onClick="addInput('dynamicInput');">
@@ -37,5 +47,16 @@
             <a href="@routes.Application.index()" class="btn">Zrušit</a>
         </div>
     }
+
+    <select style="width:200px;"  id="uc_selector_main" onchange="unitMenuChange(this);">
+        <option value="0">Select</option>
+        <option value="Area">Area</option>
+        <option value="Length">Length</option>
+    </select>
+    <br>
+    <select style="width:200px;"  id="uc_selector">
+        <option value="0">Select a unit</option>
+    </select>
+
 
 }

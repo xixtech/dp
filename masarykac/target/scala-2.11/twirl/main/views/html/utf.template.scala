@@ -135,27 +135,28 @@ Seq[Any](format.raw/*1.38*/("""
                 České vysoké učení technické v Praze</p>
         </article>
         </br></br>
+        </br></br>
         <footer>
             <table style="width: 750px">
                 <tr>
-                    <td>ČVUT v Praze</td>
-                    <td>tel.: (+420) 224 353 161</td>
-                    <td>IČO: 68 40 77 00</td>
+                    <td><p style="font-size:10px">ČVUT v Praze</p></td>
+                    <td><p style="font-size:10px">tel.: (+420) 224 353 161</p></td>
+                    <td><p style="font-size:10px">IČO: 68 40 77 00</p></td>
                 </tr>
                 <tr>
-                    <td>Masarykův ústav vyšších studií</td>
+                    <td><p style="font-size:10px">Masarykův ústav vyšších studií</p></td>
                     <td> </td>
-                    <td>DIČ: CZ 68 40 77 00</td>
+                    <td><p style="font-size:10px">DIČ: CZ 68 40 77 00</p></td>
                 </tr>
                 <tr>
-                    <td>ředitelka</td>
-                    <td>lenka.svecova&#64;cvut.cz</td>
-                    <td>Bankovní spojení: KB Praha 6 č.ú.:19-8491620277/0100 </td>
+                    <td><p style="font-size:10px">ředitelka</p></td>
+                    <td><p style="font-size:10px">lenka.svecova&#64;cvut.cz</p></td>
+                    <td><p style="font-size:10px">Bankovní spojení: KB Praha 6 č.ú.:19-8491620277/0100 </p></td>
                 </tr>
                 <tr>
-                    <td>Kolejní 2637/2a, 160 00 Praha 6</td>
-                    <td>www.muvs.cvut.cz</td>
-                    <td>Číslo jednací živnostenského listu: ŽO/0000035/99/ZAK</td>
+                    <td><p style="font-size:10px">Kolejní 2637/2a, 160 00 Praha 6</p></td>
+                    <td><p style="font-size:10px">www.muvs.cvut.cz</p></td>
+                    <td><p style="font-size:10px">Číslo jednací živnostenského listu: ŽO/0000035/99/ZAK</p></td>
                 </tr>
             </table>
         </footer>
@@ -181,9 +182,9 @@ Seq[Any](format.raw/*1.38*/("""
 object utf extends utf_Scope0.utf
               /*
                   -- GENERATED --
-                  DATE: Thu Mar 09 14:49:00 CET 2017
+                  DATE: Tue Mar 21 23:48:01 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/utf.scala.html
-                  HASH: f80538e448bff9813f0ef482417fffe90e4d0e79
+                  HASH: cfa67e62355c9b32b9b84d2b538debb259b93659
                   MATRIX: 764->1|895->37|923->39|1138->226|1167->227|1208->240|1266->271|1295->272|1332->282|2217->1140|2229->1143|2262->1155|2450->1316|2462->1319|2505->1341|2534->1342|2606->1387|2618->1390|2654->1405|2683->1407|2695->1410|2728->1422
                   LINES: 27->1|32->1|34->3|41->10|41->10|42->11|43->12|43->12|45->14|75->44|75->44|75->44|80->49|80->49|80->49|80->49|81->50|81->50|81->50|81->50|81->50|81->50
                   -- GENERATED --
