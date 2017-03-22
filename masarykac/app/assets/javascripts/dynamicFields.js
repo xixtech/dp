@@ -3,22 +3,27 @@
  */
 var counter = 1;
 var cuisines = ["Chinese", "Indian"];
-var choices = [["one", "1"],["two", "2"]];
+var choices = [["one", "1"], ["two", "2"]];
 
-function addInputT1(divName) {
+function addInputT1(divName, pole) {
 
     var newDiv = document.createElement('div');
-    var map=document.getElementById('myField').value;
+    var map = document.getElementById('myField').value;
 
     var monthArray = map.split("; ");
 
+
     for (var i = 0; i < monthArray.length; i++) {
-        monthArray[i] = monthArray[i].split(", ");
+        monthArray[i] = monthArray[i].split(" ");
+    }
+    for (var k = 0; k < map.length; k++) {
+        map[k] = new Array(2);
     }
     var selectHTML = "";
     selectHTML = "<div class='row'><div class='col-md-6'><select class='form-control' name='names[]'>";
-    for (i = 0; i < map.length; i = i + 1) {
+    for (i = 0; i < monthArray.length; i = i + 1) {
         selectHTML += "<option value='" + monthArray[i] + "'>" + monthArray[i] + "</option>";
+
     }
     selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='values[]'> </div></div></br>";
     newDiv.innerHTML = selectHTML;
