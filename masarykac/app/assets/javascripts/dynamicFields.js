@@ -3,6 +3,19 @@
  */
 var counter = 1;
 var cuisines = ["Chinese", "Indian"];
+var choices = ["one", "two"];
+
+function addInputT1(divName) {
+    var newDiv = document.createElement('div');
+    var selectHTML = "";
+    selectHTML="<select class='form-control'>";
+    for(i = 0; i < choices.length; i = i + 1) {
+        selectHTML += "<option value='" + choices[i] + "'>" + choices[i] + "</option>";
+    }
+    selectHTML += "</select>";
+    newDiv.innerHTML = selectHTML;
+    document.getElementById(divName).appendChild(newDiv);
+}
 function addInput(divName) {
 
 

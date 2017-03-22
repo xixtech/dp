@@ -21,23 +21,10 @@
 
 
 
-            <div id="dynamicInput">
 
-              <br>
-                    @select(
-                        currentForm("names[]"),
-                        options(Test.options()),
-                        '_label -> "Ident",
-                        'class -> "form-control",
-                        '_help -> "Prosím zadejte ident.",
-                        '_error -> currentForm.globalError
-                    )
+            <div id="dynamicInput"></div>
+            <input type="button" value="Add" onclick="addInputT1('dynamicInput');" />
 
-                    <input type="text" class="form-control" name="values[]">
-                    <input type="hidden" name="testoptions" value='@Test.options()' >
-            </div>
-
-            <input type="button" class="btn btn-lg btn-success btn-block" value="Add another text input" onClick="addInput('dynamicInput');">
 
 
 
