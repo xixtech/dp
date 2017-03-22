@@ -1,16 +1,4 @@
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:10: Expected an identifier and instead saw 'for'.
-[error]     newdiv.innerHTML = "<label for='names[]'>Jméno</label><select class='form-control' name='names[]'><option>"+for(var i=0;i<cuisines.length;i++){s.append($('<option/>').html(cuisines[i]));}+"</option></select><input type='text' class='form-control' name='values[]'>";
-[error]                                                                                                                 ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:10: Expected an operator and instead saw '('.
-[error]     newdiv.innerHTML = "<label for='names[]'>Jméno</label><select class='form-control' name='names[]'><option>"+for(var i=0;i<cuisines.length;i++){s.append($('<option/>').html(cuisines[i]));}+"</option></select><input type='text' class='form-control' name='values[]'>";
-[error]                                                                                                                    ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:10: Missing semicolon.
-[error]     newdiv.innerHTML = "<label for='names[]'>Jméno</label><select class='form-control' name='names[]'><option>"+for(var i=0;i<cuisines.length;i++){s.append($('<option/>').html(cuisines[i]));}+"</option></select><input type='text' class='form-control' name='values[]'>";
-[error]                                                                                                                     ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:10: Expected an assignment or function call and instead saw an expression.
-[error]     newdiv.innerHTML = "<label for='names[]'>Jméno</label><select class='form-control' name='names[]'><option>"+for(var i=0;i<cuisines.length;i++){s.append($('<option/>').html(cuisines[i]));}+"</option></select><input type='text' class='form-control' name='values[]'>";
-[error]                                                                                                                                        ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:10: Missing semicolon.
-[error]     newdiv.innerHTML = "<label for='names[]'>Jméno</label><select class='form-control' name='names[]'><option>"+for(var i=0;i<cuisines.length;i++){s.append($('<option/>').html(cuisines[i]));}+"</option></select><input type='text' class='form-control' name='values[]'>";
-[error]                                                                                                                                                  ^
-[error] 7 errors found
+[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:15: Use '!==' to compare with 'null'.
+[error]     while((M= rx.exec(map))!= null){
+[error]                            ^
+[error] one error found

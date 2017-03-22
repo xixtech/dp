@@ -10,11 +10,15 @@ function addInputT1(divName) {
     var newDiv = document.createElement('div');
     var map=document.getElementById('myField').value;
 
+    var monthArray = map.split("; ");
 
+    for (var i = 0; i < monthArray.length; i++) {
+        monthArray[i] = monthArray[i].split(", ");
+    }
     var selectHTML = "";
     selectHTML = "<div class='row'><div class='col-md-6'><select class='form-control' name='names[]'>";
     for (i = 0; i < map.length; i = i + 1) {
-        selectHTML += "<option value='" + map[i][0] + "'>" + map[i] + "</option>";
+        selectHTML += "<option value='" + monthArray[i] + "'>" + monthArray[i] + "</option>";
     }
     selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='values[]'> </div></div></br>";
     newDiv.innerHTML = selectHTML;

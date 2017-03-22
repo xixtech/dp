@@ -3,6 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 
 import javax.persistence.*;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -101,8 +102,28 @@ public class Employees extends Model {
         List<Employees> subjectSets = Employees.find.all();
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
         for(Employees set: subjectSets) {
-            options.put(set.id.toString(), set.personalNumber+"");
+            options.put(set.id.toString(),  set.getSurname().toString()+" "+set.getFirstName().toString());
         }
         return options;
+    }
+
+    public static String[][] getJS() {
+
+
+
+        final String[][] result = new String[options().size()][2];
+
+        final Iterator<?> iter = options().entrySet().iterator();
+
+        int ii = 0;
+        while(iter.hasNext()){
+            final Map.Entry<?, ?> mapping = (Map.Entry<?, ?>) iter.next();
+
+            result[ii][0] = mapping.getKey()+" ";
+            result[ii][1] = mapping.getValue()+"; ";
+
+            ii++;
+        }
+        return result;
     }
 }
