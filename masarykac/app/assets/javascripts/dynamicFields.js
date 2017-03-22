@@ -3,22 +3,25 @@
  */
 var counter = 1;
 var cuisines = ["Chinese", "Indian"];
-var choices = ["one", "two"];
+var choices = [["one", "1"],["two", "2"]];
 
 function addInputT1(divName) {
+
     var newDiv = document.createElement('div');
+    var map=document.getElementById('myField').value;
+
+
     var selectHTML = "";
-    selectHTML="<select class='form-control'>";
-    for(i = 0; i < choices.length; i = i + 1) {
-        selectHTML += "<option value='" + choices[i] + "'>" + choices[i] + "</option>";
+    selectHTML = "<div class='row'><div class='col-md-6'><select class='form-control' name='names[]'>";
+    for (i = 0; i < map.length; i = i + 1) {
+        selectHTML += "<option value='" + map[i][0] + "'>" + map[i] + "</option>";
     }
-    selectHTML += "</select>";
+    selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='values[]'> </div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
 }
+
 function addInput(divName) {
-
-
 
 
     var s = $('<select/>');

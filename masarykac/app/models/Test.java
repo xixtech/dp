@@ -1,14 +1,15 @@
 package models;
 
 import com.avaje.ebean.Model;
+import com.newrelic.agent.deps.org.json.simple.JSONObject;
+import jdk.nashorn.internal.objects.NativeObject;
 import play.data.validation.Constraints;
 
 import javax.persistence.*;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Martin on 12.03.2017.
@@ -70,6 +71,30 @@ public class Test extends Model {
             options.put(set.id.toString(), set.name.toString());
         }
         return options;
+    }
+
+    public static String[][] getJS() {
+
+
+
+        final String[][] result = new String[options().size()][2];
+
+        final Iterator<?> iter = options().entrySet().iterator();
+
+        int ii = 0;
+        while(iter.hasNext()){
+            final Map.Entry<?, ?> mapping = (Map.Entry<?, ?>) iter.next();
+
+            result[ii][0] = mapping.getKey()+" ";
+            result[ii][1] = mapping.getValue()+"; ";
+
+            ii++;
+        }
+
+
+
+
+        return result;
     }
 
     public static List<Test> search() {

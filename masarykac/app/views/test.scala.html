@@ -19,11 +19,16 @@
 @main(scripts = localScripts, stylesheets = localStylesheets) {
     @helper.form(action = routes.TestController.save) {
 
-
-
-
-            <div id="dynamicInput"></div>
-            <input type="button" value="Add" onclick="addInputT1('dynamicInput');" />
+        @select(
+            currentForm("name"),
+            options(Test.options()),
+            '_label -> "Vyučující",
+            'class -> "form-control",
+            '_help -> "",
+            '_error -> currentForm.globalError
+        )
+        <div id="dynamicInput"><input type="text" id="myField" value="@Test.getJS()" /></div>
+        <input type="button" value="Add" onclick="addInputT1('dynamicInput');" />
 
 
 
@@ -35,13 +40,13 @@
         </div>
     }
 
-    <select style="width:200px;"  id="uc_selector_main" onchange="unitMenuChange(this);">
+    <select style="width: 200px;" id="uc_selector_main" onchange="unitMenuChange(this);">
         <option value="0">Select</option>
         <option value="Area">Area</option>
         <option value="Length">Length</option>
     </select>
     <br>
-    <select style="width:200px;"  id="uc_selector">
+    <select style="width: 200px;" id="uc_selector">
         <option value="0">Select a unit</option>
     </select>
 
