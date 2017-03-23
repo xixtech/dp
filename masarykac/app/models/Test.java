@@ -73,6 +73,44 @@ public class Test extends Model {
         return options;
     }
 
+    public static String[] getJS1Key() {
+
+        String[] arr1 = new String[options().size()];
+
+        Set entries = options().entrySet();
+        Iterator entriesIterator = entries.iterator();
+
+        int i = 0;
+        String v="";
+        while(entriesIterator.hasNext()){
+            Map.Entry mapping = (Map.Entry) entriesIterator.next();
+            arr1[i] = mapping.getKey().toString()+";";
+            v=mapping.getKey().toString();
+            i++;
+        }
+        arr1[arr1.length-1]=v;
+        return arr1;
+    }
+    public static String[] getJS1Value() {
+
+        String[] arr2 = new String[options().size()];
+
+        Set entries = options().entrySet();
+        Iterator entriesIterator = entries.iterator();
+
+        int i = 0;
+        String v="";
+        while(entriesIterator.hasNext()){
+            Map.Entry mapping = (Map.Entry) entriesIterator.next();
+            arr2[i] = mapping.getValue().toString()+";";
+            v=mapping.getValue().toString();
+            i++;
+        }
+
+        arr2[arr2.length-1]=v;
+        return arr2;
+    }
+
     public static String[][] getJS() {
 
 

@@ -1,7 +1,24 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\formCourse.scala.html:115: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                 } else {
-[warn]                                       ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\formCourse.scala.html:122: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                 } else {
-[warn]                                              ^
-[warn] two warnings found
+[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:78: cannot find symbol
+[error]   symbol:   variable options
+[error]   location: class models.Test
+[error] options
+[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:80: cannot find symbol
+[error]   symbol:   variable options
+[error]   location: class models.Test
+[error] options
+[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:101: cannot find symbol
+[error]   symbol:   variable options
+[error]   location: class models.Test
+[error] options
+[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:103: cannot find symbol
+[error]   symbol:   variable options
+[error]   location: class models.Test
+[error] options
+[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:111: cannot find symbol
+[error]   symbol:   variable arr1
+[error]   location: class models.Test
+[error] arr1
+[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:120: cannot find symbol
+[error]   symbol:   variable arr1
+[error]   location: class models.Test
+[error] arr1

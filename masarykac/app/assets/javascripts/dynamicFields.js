@@ -8,21 +8,21 @@ var choices = [["one", "1"], ["two", "2"]];
 function addInputT1(divName, pole) {
 
     var newDiv = document.createElement('div');
-    var map = document.getElementById('myField').value;
+    var mapKey = document.getElementById('myField').value;
+    var mapValue = document.getElementById('myField2').value;
+    var testKey = mapKey.split(";");
+    var testValue = mapValue.split(";");
 
-    var monthArray = map.split("; ");
-
-
-    for (var i = 0; i < monthArray.length; i++) {
-        monthArray[i] = monthArray[i].split(" ");
+    var i, out = [];//literal new array
+    for(i=0;i<testKey.length;i++)
+    {
+        out.push([testKey[i],testValue[i]]);
     }
-    for (var k = 0; k < map.length; k++) {
-        map[k] = new Array(2);
-    }
+
     var selectHTML = "";
     selectHTML = "<div class='row'><div class='col-md-6'><select class='form-control' name='names[]'>";
-    for (i = 0; i < monthArray.length; i = i + 1) {
-        selectHTML += "<option value='" + monthArray[i] + "'>" + monthArray[i] + "</option>";
+    for (i = 0; i < out.length; i = i + 1) {
+        selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
     selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='values[]'> </div></div></br>";

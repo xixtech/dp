@@ -18,16 +18,29 @@
 
 @main(scripts = localScripts, stylesheets = localStylesheets) {
     @helper.form(action = routes.TestController.save) {
+        <div class="row">
+            <div class="col-md-6">
+            @select(
+                currentForm("name"),
+                options(Test.options()),
+                '_label -> "Vyučující",
+                'class -> "form-control",
+                '_help -> "",
+                '_error -> currentForm.globalError
+            )
+            </div>
+            <div class="col-md-6">
+            @inputText(
+                currentForm("value"),
+                '_label -> "Váha",
+                'class -> "form-control",
+                '_help -> "",
+                '_error -> currentForm.globalError
+            )
+            </div>
+        </div>
 
-        @select(
-            currentForm("name"),
-            options(Test.options()),
-            '_label -> "Vyučující",
-            'class -> "form-control",
-            '_help -> "",
-            '_error -> currentForm.globalError
-        )
-        <div id="dynamicInput"><input type="hidden" id="myField" value="@Test.getJS()" /></div>
+        <div id="dynamicInput"><input type="hidden" id="myField" value="@Test.getJS1Key()" /><input type="hidden" id="myField2" value="@Test.getJS1Value()" /></div>
         <input type="button" value="Add" onclick="addInputT1('dynamicInput', '@Test.getJS()');" />
 
 
