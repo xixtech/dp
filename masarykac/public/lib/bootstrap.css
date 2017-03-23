@@ -1,6 +1,10 @@
 form .input {
 	margin-left: 150px;
 }
+dd.error {
+	color: red;
+	font-weight: bold;
+}
 
 input[type=checkbox],input[type=radio] {
 	cursor: pointer;
@@ -118,6 +122,7 @@ form .clearfix.error>label,form .clearfix.error .help-block,form .clearfix.error
 	{
 	color: #b94a48;
 }
+
 
 form .clearfix.error input,form .clearfix.error textarea {
 	color: #b94a48;

@@ -25,6 +25,11 @@
             @navigation()
 
             <div id="page-wrapper">
+                @if(flash.containsKey("success")) {
+                    <div class="alert-message warning">
+                        <strong>ERROR!</strong> @flash.get("success")
+                    </div>
+                }
                 @content
             </div>
             <!-- /#page-wrapper -->

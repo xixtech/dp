@@ -56,26 +56,31 @@ Seq[Any](format.raw/*1.109*/("""
             """),_display_(/*25.14*/navigation()),format.raw/*25.26*/("""
 
             """),format.raw/*27.13*/("""<div id="page-wrapper">
-                """),_display_(/*28.18*/content),format.raw/*28.25*/("""
-            """),format.raw/*29.13*/("""</div>
+                """),_display_(/*28.18*/if(flash.containsKey("success"))/*28.50*/ {_display_(Seq[Any](format.raw/*28.52*/("""
+                    """),format.raw/*29.21*/("""<div class="alert-message warning">
+                        <strong>ERROR!</strong> """),_display_(/*30.50*/flash/*30.55*/.get("success")),format.raw/*30.70*/("""
+                    """),format.raw/*31.21*/("""</div>
+                """)))}),format.raw/*32.18*/("""
+                """),_display_(/*33.18*/content),format.raw/*33.25*/("""
+            """),format.raw/*34.13*/("""</div>
             <!-- /#page-wrapper -->
         </div>
         <!-- /#wrapper -->
 
         <!-- jQuery -->
 
-        <script src='"""),_display_(/*36.23*/routes/*36.29*/.Assets.at("lib/jquery/jquery.min.js")),format.raw/*36.67*/("""'></script>
+        <script src='"""),_display_(/*41.23*/routes/*41.29*/.Assets.at("lib/jquery/jquery.min.js")),format.raw/*41.67*/("""'></script>
 
         <!-- Bootstrap Core JavaScript -->
-        <script src='"""),_display_(/*39.23*/routes/*39.29*/.Assets.at("lib/bootstrap/js/bootstrap.min.js")),format.raw/*39.76*/("""'></script>
+        <script src='"""),_display_(/*44.23*/routes/*44.29*/.Assets.at("lib/bootstrap/js/bootstrap.min.js")),format.raw/*44.76*/("""'></script>
 
         <!-- Metis Menu Plugin JavaScript -->
-        <script src='"""),_display_(/*42.23*/routes/*42.29*/.Assets.at("lib/metisMenu/metisMenu.min.js")),format.raw/*42.73*/("""'></script>
+        <script src='"""),_display_(/*47.23*/routes/*47.29*/.Assets.at("lib/metisMenu/metisMenu.min.js")),format.raw/*47.73*/("""'></script>
 
-        """),_display_(/*44.10*/scripts),format.raw/*44.17*/("""
-        """),format.raw/*45.9*/("""<script type="text/javascript" src=""""),_display_(/*45.46*/routes/*45.52*/.Assets.at("javascript/jquery-3.1.1.min.js")),format.raw/*45.96*/(""""></script>
+        """),_display_(/*49.10*/scripts),format.raw/*49.17*/("""
+        """),format.raw/*50.9*/("""<script type="text/javascript" src=""""),_display_(/*50.46*/routes/*50.52*/.Assets.at("javascript/jquery-3.1.1.min.js")),format.raw/*50.96*/(""""></script>
         <!-- Custom Theme JavaScript -->
-        <script src='"""),_display_(/*47.23*/routes/*47.29*/.Assets.at("javascripts/sb-admin-2.js")),format.raw/*47.68*/("""'></script>
+        <script src='"""),_display_(/*52.23*/routes/*52.29*/.Assets.at("javascripts/sb-admin-2.js")),format.raw/*52.68*/("""'></script>
     </body>
 </html>"""))
       }
@@ -97,11 +102,11 @@ Seq[Any](format.raw/*1.109*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Tue Mar 07 18:57:45 CET 2017
+                  DATE: Thu Mar 23 12:45:34 CET 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/main.scala.html
-                  HASH: ec821ac220d29180f4ab4125537e592578c63e12
-                  MATRIX: 758->1|961->108|989->110|1370->464|1385->470|1446->510|1518->555|1550->566|1587->576|2071->1033|2104->1045|2146->1059|2214->1100|2242->1107|2283->1120|2443->1253|2458->1259|2517->1297|2622->1375|2637->1381|2705->1428|2813->1509|2828->1515|2893->1559|2942->1581|2970->1588|3006->1597|3070->1634|3085->1640|3150->1684|3252->1759|3267->1765|3327->1804
-                  LINES: 27->1|32->1|34->3|44->13|44->13|44->13|45->14|45->14|47->16|56->25|56->25|58->27|59->28|59->28|60->29|67->36|67->36|67->36|70->39|70->39|70->39|73->42|73->42|73->42|75->44|75->44|76->45|76->45|76->45|76->45|78->47|78->47|78->47
+                  HASH: 9e2191fa369da9995b9ec3e661f2fddc866ae159
+                  MATRIX: 758->1|961->108|989->110|1370->464|1385->470|1446->510|1518->555|1550->566|1587->576|2071->1033|2104->1045|2146->1059|2214->1100|2255->1132|2295->1134|2344->1155|2456->1240|2470->1245|2506->1260|2555->1281|2610->1305|2655->1323|2683->1330|2724->1343|2884->1476|2899->1482|2958->1520|3063->1598|3078->1604|3146->1651|3254->1732|3269->1738|3334->1782|3383->1804|3411->1811|3447->1820|3511->1857|3526->1863|3591->1907|3693->1982|3708->1988|3768->2027
+                  LINES: 27->1|32->1|34->3|44->13|44->13|44->13|45->14|45->14|47->16|56->25|56->25|58->27|59->28|59->28|59->28|60->29|61->30|61->30|61->30|62->31|63->32|64->33|64->33|65->34|72->41|72->41|72->41|75->44|75->44|75->44|78->47|78->47|78->47|80->49|80->49|81->50|81->50|81->50|81->50|83->52|83->52|83->52
                   -- GENERATED --
               */
           
