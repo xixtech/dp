@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Tue Mar 21 23:08:36 CET 2017
+// @DATE:Fri Mar 24 22:09:49 CET 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -45,7 +45,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:100
+  // @LINE:103
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -53,7 +53,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:100
+    // @LINE:103
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -95,7 +95,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:91
+  // @LINE:94
   class ReversePrintController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -103,7 +103,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:91
+    // @LINE:94
     def printUserDetails: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.printUserDetails",
       """
@@ -113,12 +113,42 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:92
+    // @LINE:95
     def detailsList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.detailsList",
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "users/moje/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id0)})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:87
+  class ReverseSubjectPlanTeachingController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:88
+    def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SubjectPlanTeachingController.save",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "sub/saved"})
+        }
+      """
+    )
+  
+    // @LINE:87
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SubjectPlanTeachingController.index",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "sub/add"})
         }
       """
     )
@@ -553,7 +583,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:88
+    // @LINE:91
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.logout",
       """
@@ -793,7 +823,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:94
+    // @LINE:97
     def saveLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.saveLector",
       """
@@ -813,7 +843,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:96
+    // @LINE:99
     def detailsListLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.detailsListLector",
       """
@@ -823,7 +853,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:95
+    // @LINE:98
     def printLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.printLector",
       """

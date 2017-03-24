@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Tue Mar 21 23:08:36 CET 2017
+// @DATE:Fri Mar 24 22:09:49 CET 2017
 
 package controllers;
 
@@ -13,6 +13,7 @@ public class routes {
   public static final controllers.ReverseAssets Assets = new controllers.ReverseAssets(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseSubjectController SubjectController = new controllers.ReverseSubjectController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReversePrintController PrintController = new controllers.ReversePrintController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseSubjectPlanTeachingController SubjectPlanTeachingController = new controllers.ReverseSubjectPlanTeachingController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReversePages Pages = new controllers.ReversePages(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseSemestersController SemestersController = new controllers.ReverseSemestersController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseTestController TestController = new controllers.ReverseTestController(RoutesPrefix.byNamePrefix());
@@ -36,6 +37,7 @@ public class routes {
     public static final controllers.javascript.ReverseAssets Assets = new controllers.javascript.ReverseAssets(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseSubjectController SubjectController = new controllers.javascript.ReverseSubjectController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReversePrintController PrintController = new controllers.javascript.ReversePrintController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseSubjectPlanTeachingController SubjectPlanTeachingController = new controllers.javascript.ReverseSubjectPlanTeachingController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReversePages Pages = new controllers.javascript.ReversePages(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseSemestersController SemestersController = new controllers.javascript.ReverseSemestersController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseTestController TestController = new controllers.javascript.ReverseTestController(RoutesPrefix.byNamePrefix());

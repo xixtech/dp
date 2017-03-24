@@ -1,4 +1,7 @@
-[error] C:\Users\Martin\dp\masarykac\app\views\test.scala.html:28: not found: value example
-[error]     <div class="row">
-[error] ^
-[error] one error found
+[error] C:\Users\Martin\dp\masarykac\app\views\registerSubjectPlanTeaching.scala.html:1: ')' expected but ']' found.
+[error] @(subjectForm: Form[Subjects], coursesForm: Form[Courses], scheduleForm: Form[Schedule]])
+[error]                                                                                        ^
+[error] C:\Users\Martin\dp\masarykac\app\views\registerSubjectPlanTeaching.scala.html:260: '=' expected but '=>' found.
+[error] }
+[error]  ^
+[error] two errors found

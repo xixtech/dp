@@ -20,6 +20,8 @@ public class Courses extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    public String semester;
+
     public String course;
 
     public int numberOfStudents;
@@ -32,6 +34,13 @@ public class Courses extends Model {
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Schedule> schedule;
+
+    public Courses(String course, int numberOfStudents, Subjects subjects, String semester) {
+        this.course = course;
+        this.numberOfStudents = numberOfStudents;
+        this.subjects = subjects;
+        this.semester = semester;
+    }
 
     public Courses(String course, int numberOfStudents, Subjects subjects) {
         this.course = course;
@@ -79,14 +88,22 @@ public class Courses extends Model {
         this.schedule = schedule;
     }
 
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
     public static Courses findById(long id) {
         return find.where().eq("id", id).findUnique();
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<Courses> subjectSets = Courses.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Courses set: subjectSets) {
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Courses set : subjectSets) {
             options.put(set.id.toString(), set.id.toString());
         }
         return options;

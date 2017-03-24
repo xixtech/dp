@@ -84,6 +84,9 @@ GET         /roles                               controllers.Application.roles()
 # Vypsat zákazníky
 GET         /users                               controllers.TableController.listPerson()
 
+GET         /sub/add                        controllers.SubjectPlanTeachingController.index()
+POST        /sub/saved                      controllers.SubjectPlanTeachingController.save()
+
 # Odhlásit
 GET         /logout                              controllers.Application.logout()
 

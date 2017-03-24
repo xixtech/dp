@@ -5,6 +5,7 @@
 
 create table courses (
   id                            bigserial not null,
+  semester                      varchar(255),
   course                        varchar(255),
   number_of_students            integer,
   subjects_id                   bigint,
@@ -163,6 +164,13 @@ create table salary_scale (
 
 create table schedule (
   id                            bigserial not null,
+  semester                      varchar(255),
+  ident                         varchar(255),
+  course                        varchar(255),
+  schedule_day                  integer,
+  schedule_from                 varchar(255),
+  schedule_to                   varchar(255),
+  class_room                    varchar(255),
   courses_id                    bigint,
   constraint pk_schedule primary key (id)
 );
