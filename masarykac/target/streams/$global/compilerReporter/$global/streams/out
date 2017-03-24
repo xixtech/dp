@@ -1,24 +1,4 @@
-[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:78: cannot find symbol
-[error]   symbol:   variable options
-[error]   location: class models.Test
-[error] options
-[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:80: cannot find symbol
-[error]   symbol:   variable options
-[error]   location: class models.Test
-[error] options
-[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:101: cannot find symbol
-[error]   symbol:   variable options
-[error]   location: class models.Test
-[error] options
-[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:103: cannot find symbol
-[error]   symbol:   variable options
-[error]   location: class models.Test
-[error] options
-[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:111: cannot find symbol
-[error]   symbol:   variable arr1
-[error]   location: class models.Test
-[error] arr1
-[error] C:\Users\Martin\dp\masarykac\app\models\Test.java:120: cannot find symbol
-[error]   symbol:   variable arr1
-[error]   location: class models.Test
-[error] arr1
+[error] C:\Users\Martin\dp\masarykac\app\views\test.scala.html:28: not found: value example
+[error]     <div class="row">
+[error] ^
+[error] one error found

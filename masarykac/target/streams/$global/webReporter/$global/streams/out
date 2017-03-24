@@ -1,16 +1,4 @@
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:24: Expected an identifier and instead saw ']'.
-[error]         selectHTML += "<option value='" + monthArray[][i] + "'>" + monthArray[][i] + "</option>";
-[error]                                                      ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:24: Expected an operator and instead saw '['.
-[error]         selectHTML += "<option value='" + monthArray[][i] + "'>" + monthArray[][i] + "</option>";
-[error]                                                       ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:24: Expected ']' to match '[' from line 24 and instead saw 'i'.
-[error]         selectHTML += "<option value='" + monthArray[][i] + "'>" + monthArray[][i] + "</option>";
-[error]                                                        ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:24: Missing semicolon.
-[error]         selectHTML += "<option value='" + monthArray[][i] + "'>" + monthArray[][i] + "</option>";
-[error]                                                         ^
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:24: Expected an operator and instead saw '+'.
-[error]         selectHTML += "<option value='" + monthArray[][i] + "'>" + monthArray[][i] + "</option>";
-[error]                                                           ^
-[error] 13 errors found
+[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:19: Missing semicolon.
+[error]         var inputVal = parseFloat($(this).val().replace('%', '')) || 0
+[error]                                                                       ^
+[error] one error found

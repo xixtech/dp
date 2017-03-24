@@ -28,16 +28,6 @@ public class Test extends Model {
 
     public String value;
 
-    public List<Information> informations;
-
-    public Test(String name, String value, Information... informations) {
-        this.name = name;
-        this.value = value;
-        for(Information information: informations) {
-            this.informations.add(information);
-        }
-    }
-
     public Test(String name, String value) {
         this.name = name;
         this.value = value;
@@ -138,40 +128,5 @@ public class Test extends Model {
     public static List<Test> search() {
         return Test.find.all();
     }
-    public static class Information {
 
-
-        public String label;
-
-
-        public String email;
-
-
-        public List<Phone> phones;
-
-        public Information() {}
-
-        public Information(String label, String email, String... phones) {
-            this.label = label;
-            this.email = email;
-            this.phones = new ArrayList<Phone>();
-            for(String phone: phones) {
-                this.phones.add(new Phone(phone));
-            }
-        }
-
-        public static class Phone {
-
-
-            public String number;
-
-            public Phone() {}
-
-            public Phone(String number) {
-                this.number = number;
-            }
-
-        }
-
-    }
 }

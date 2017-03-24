@@ -4,6 +4,24 @@
 var counter = 1;
 var cuisines = ["Chinese", "Indian"];
 var choices = [["one", "1"], ["two", "2"]];
+(function($) {
+    var minNumber = -100;
+    var maxNumber = 100;
+
+    $('.txtinput').on("change", function() {
+        var inputVal = parseFloat($(this).val().replace('%', '')) || 0;
+
+        if (minNumber > inputVal) {
+            inputVal = -100;
+        } else if (maxNumber < inputVal) {
+            inputVal = 100;
+        }
+
+        $(this).val(inputVal + '%');
+    });
+
+
+})(jQuery);
 
 function addInputT1(divName, pole) {
 
@@ -28,6 +46,12 @@ function addInputT1(divName, pole) {
     selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='values[]'> </div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
+}
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode > 31 && (charCode != 46 &&(charCode < 48 || charCode > 57)))
+        return false;
+    return true;
 }
 
 function addInput(divName) {
