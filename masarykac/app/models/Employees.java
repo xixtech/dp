@@ -34,6 +34,21 @@ public class Employees extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Teachers> teachers;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<FinalWorksToEmployees> finalWorksToEmployees;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Visits> visits;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<ProjectsParticipants> projectsParticipants;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<PublicationsParticipants> publicationsParticipants;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<ComitteeToEmployess> comitteeToEmployess;
+
     public Employees(int personalNumber, String titleBefore, String surname, String firstName, String titleAfter) {
         this.personalNumber = personalNumber;
         this.titleBefore = titleBefore;

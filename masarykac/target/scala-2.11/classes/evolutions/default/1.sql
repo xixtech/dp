@@ -3,6 +3,22 @@
 
 # --- !Ups
 
+create table comittee (
+  id                            bigserial not null,
+  date                          timestamp,
+  semester                      varchar(255),
+  role_in_comittee              varchar(255),
+  constraint pk_comittee primary key (id)
+);
+
+create table comittee_to_employess (
+  id                            bigserial not null,
+  role_in_comittee              varchar(255),
+  comittee_id                   bigint,
+  employees_id                  bigint,
+  constraint pk_comittee_to_employess primary key (id)
+);
+
 create table courses (
   id                            bigserial not null,
   semester                      varchar(255),
@@ -76,6 +92,23 @@ create table fields_of_study (
   constraint pk_fields_of_study primary key (id)
 );
 
+create table final_works (
+  id                            bigserial not null,
+  final_works_name              varchar(255),
+  names                         varchar(255),
+  year                          timestamp,
+  semester                      varchar(255),
+  constraint pk_final_works primary key (id)
+);
+
+create table final_works_to_employees (
+  id                            bigserial not null,
+  teachers_role                 varchar(255),
+  final_works_id                bigint,
+  employees_id                  bigint,
+  constraint pk_final_works_to_employees primary key (id)
+);
+
 create table items_kpi (
   id                            bigserial not null,
   identificator                 varchar(255),
@@ -142,6 +175,44 @@ create table profile (
   member_id                     bigint,
   constraint uq_profile_member_id unique (member_id),
   constraint pk_profile primary key (id)
+);
+
+create table projects (
+  id                            bigserial not null,
+  project_name                  varchar(255),
+  project_from                  timestamp,
+  project_to                    timestamp,
+  semester                      varchar(255),
+  has_grant                     boolean,
+  grant_value                   varchar(255),
+  constraint pk_projects primary key (id)
+);
+
+create table projects_participants (
+  id                            bigserial not null,
+  employees_id                  bigint,
+  projects_id                   bigint,
+  constraint pk_projects_participants primary key (id)
+);
+
+create table publications (
+  id                            bigserial not null,
+  year_of_publication           varchar(255),
+  semester                      varchar(255),
+  type                          varchar(255),
+  citation                      varchar(255),
+  constraint pk_publications primary key (id)
+);
+
+create table publications_participants (
+  id                            bigserial not null,
+  faculty                       varchar(255),
+  order_in_publication          varchar(255),
+  department                    varchar(255),
+  share                         varchar(255),
+  publications_id               bigint,
+  employees_id                  bigint,
+  constraint pk_publications_participants primary key (id)
 );
 
 create table roles (
@@ -265,8 +336,32 @@ create table test (
   constraint pk_test primary key (id)
 );
 
+create table visits (
+  id                            bigserial not null,
+  purpose_of_visit              varchar(255),
+  country                       varchar(255),
+  event                         varchar(255),
+  visit_from                    timestamp,
+  visit_to                      timestamp,
+  semester                      varchar(255),
+  employees_id                  bigint,
+  constraint pk_visits primary key (id)
+);
+
+alter table comittee_to_employess add constraint fk_comittee_to_employess_comittee_id foreign key (comittee_id) references comittee (id) on delete restrict on update restrict;
+create index ix_comittee_to_employess_comittee_id on comittee_to_employess (comittee_id);
+
+alter table comittee_to_employess add constraint fk_comittee_to_employess_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+create index ix_comittee_to_employess_employees_id on comittee_to_employess (employees_id);
+
 alter table courses add constraint fk_courses_subjects_id foreign key (subjects_id) references subjects (id) on delete restrict on update restrict;
 create index ix_courses_subjects_id on courses (subjects_id);
+
+alter table final_works_to_employees add constraint fk_final_works_to_employees_final_works_id foreign key (final_works_id) references final_works (id) on delete restrict on update restrict;
+create index ix_final_works_to_employees_final_works_id on final_works_to_employees (final_works_id);
+
+alter table final_works_to_employees add constraint fk_final_works_to_employees_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+create index ix_final_works_to_employees_employees_id on final_works_to_employees (employees_id);
 
 alter table member add constraint fk_member_person_id foreign key (person_id) references person (id) on delete restrict on update restrict;
 
@@ -275,6 +370,18 @@ alter table member add constraint fk_member_profile_id foreign key (profile_id) 
 alter table person add constraint fk_person_member_id foreign key (member_id) references member (id) on delete restrict on update restrict;
 
 alter table profile add constraint fk_profile_member_id foreign key (member_id) references member (id) on delete restrict on update restrict;
+
+alter table projects_participants add constraint fk_projects_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+create index ix_projects_participants_employees_id on projects_participants (employees_id);
+
+alter table projects_participants add constraint fk_projects_participants_projects_id foreign key (projects_id) references projects (id) on delete restrict on update restrict;
+create index ix_projects_participants_projects_id on projects_participants (projects_id);
+
+alter table publications_participants add constraint fk_publications_participants_publications_id foreign key (publications_id) references publications (id) on delete restrict on update restrict;
+create index ix_publications_participants_publications_id on publications_participants (publications_id);
+
+alter table publications_participants add constraint fk_publications_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+create index ix_publications_participants_employees_id on publications_participants (employees_id);
 
 alter table schedule add constraint fk_schedule_courses_id foreign key (courses_id) references courses (id) on delete restrict on update restrict;
 create index ix_schedule_courses_id on schedule (courses_id);
@@ -306,11 +413,26 @@ create index ix_teachers_courses_id on teachers (courses_id);
 alter table teachers add constraint fk_teachers_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_teachers_employees_id on teachers (employees_id);
 
+alter table visits add constraint fk_visits_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+create index ix_visits_employees_id on visits (employees_id);
+
 
 # --- !Downs
 
+alter table if exists comittee_to_employess drop constraint if exists fk_comittee_to_employess_comittee_id;
+drop index if exists ix_comittee_to_employess_comittee_id;
+
+alter table if exists comittee_to_employess drop constraint if exists fk_comittee_to_employess_employees_id;
+drop index if exists ix_comittee_to_employess_employees_id;
+
 alter table if exists courses drop constraint if exists fk_courses_subjects_id;
 drop index if exists ix_courses_subjects_id;
+
+alter table if exists final_works_to_employees drop constraint if exists fk_final_works_to_employees_final_works_id;
+drop index if exists ix_final_works_to_employees_final_works_id;
+
+alter table if exists final_works_to_employees drop constraint if exists fk_final_works_to_employees_employees_id;
+drop index if exists ix_final_works_to_employees_employees_id;
 
 alter table if exists member drop constraint if exists fk_member_person_id;
 
@@ -319,6 +441,18 @@ alter table if exists member drop constraint if exists fk_member_profile_id;
 alter table if exists person drop constraint if exists fk_person_member_id;
 
 alter table if exists profile drop constraint if exists fk_profile_member_id;
+
+alter table if exists projects_participants drop constraint if exists fk_projects_participants_employees_id;
+drop index if exists ix_projects_participants_employees_id;
+
+alter table if exists projects_participants drop constraint if exists fk_projects_participants_projects_id;
+drop index if exists ix_projects_participants_projects_id;
+
+alter table if exists publications_participants drop constraint if exists fk_publications_participants_publications_id;
+drop index if exists ix_publications_participants_publications_id;
+
+alter table if exists publications_participants drop constraint if exists fk_publications_participants_employees_id;
+drop index if exists ix_publications_participants_employees_id;
 
 alter table if exists schedule drop constraint if exists fk_schedule_courses_id;
 drop index if exists ix_schedule_courses_id;
@@ -350,6 +484,13 @@ drop index if exists ix_teachers_courses_id;
 alter table if exists teachers drop constraint if exists fk_teachers_employees_id;
 drop index if exists ix_teachers_employees_id;
 
+alter table if exists visits drop constraint if exists fk_visits_employees_id;
+drop index if exists ix_visits_employees_id;
+
+drop table if exists comittee cascade;
+
+drop table if exists comittee_to_employess cascade;
+
 drop table if exists courses cascade;
 
 drop table if exists criteria_kpi cascade;
@@ -366,6 +507,10 @@ drop table if exists employees cascade;
 
 drop table if exists fields_of_study cascade;
 
+drop table if exists final_works cascade;
+
+drop table if exists final_works_to_employees cascade;
+
 drop table if exists items_kpi cascade;
 
 drop table if exists lector cascade;
@@ -379,6 +524,14 @@ drop table if exists person cascade;
 drop table if exists person_salary cascade;
 
 drop table if exists profile cascade;
+
+drop table if exists projects cascade;
+
+drop table if exists projects_participants cascade;
+
+drop table if exists publications cascade;
+
+drop table if exists publications_participants cascade;
 
 drop table if exists roles cascade;
 
@@ -401,4 +554,6 @@ drop table if exists subjects cascade;
 drop table if exists teachers cascade;
 
 drop table if exists test cascade;
+
+drop table if exists visits cascade;
 
