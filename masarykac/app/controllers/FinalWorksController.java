@@ -24,7 +24,7 @@ public class FinalWorksController extends Controller {
      */
     public Result index() {
         Form<FinalWorks> finalWorksForm = formFactory.form(FinalWorks.class);
-        Form<FinalWorksToEmployees> finalWorksToEmployeesForm = formFactory.form(FinalWorksToEmployees.class);
+        Form<FinalWorksParticipants> finalWorksToEmployeesForm = formFactory.form(FinalWorksParticipants.class);
         return ok(views.html.registerFinalWorks.render(finalWorksForm,finalWorksToEmployeesForm));
     }
 
@@ -36,7 +36,7 @@ public class FinalWorksController extends Controller {
      */
     public Result save() {
         Form<FinalWorks> finalWorksForm = formFactory.form(FinalWorks.class).bindFromRequest();
-        Form<FinalWorksToEmployees> finalWorksToEmployeesForm = formFactory.form(FinalWorksToEmployees.class).bindFromRequest();
+        Form<FinalWorksParticipants> finalWorksToEmployeesForm = formFactory.form(FinalWorksParticipants.class).bindFromRequest();
         if (finalWorksForm.hasErrors()) {
             return badRequest(views.html.registerFinalWorks.render(finalWorksForm,finalWorksToEmployeesForm));
         }

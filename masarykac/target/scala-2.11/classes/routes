@@ -39,8 +39,11 @@ POST        /project/saved                       controllers.ProjectController.s
 GET         /finalwork/register                  controllers.FinalWorksController.index()
 POST        /finalwork/saved                     controllers.FinalWorksController.save()
 
-GET         /publication/register                  controllers.PublicationsController.index()
-POST        /publication/saved                     controllers.PublicationsController.save()
+GET         /publication/register                controllers.PublicationsController.index()
+POST        /publication/saved                   controllers.PublicationsController.save()
+
+GET         /ou/register                         controllers.OrganizationalUnitsController.index()
+POST        /ou/saved                            controllers.OrganizationalUnitsController.save()
 
 # Přidat zaměstnance
 GET         /employee/register                   controllers.EmployeesController.index()

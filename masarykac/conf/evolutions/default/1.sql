@@ -101,12 +101,12 @@ create table final_works (
   constraint pk_final_works primary key (id)
 );
 
-create table final_works_to_employees (
+create table final_works_participants (
   id                            bigserial not null,
   teachers_role                 varchar(255),
   final_works_id                bigint,
   employees_id                  bigint,
-  constraint pk_final_works_to_employees primary key (id)
+  constraint pk_final_works_participants primary key (id)
 );
 
 create table items_kpi (
@@ -143,6 +143,18 @@ create table methodics (
   title                         varchar(255),
   coefficient                   varchar(255),
   constraint pk_methodics primary key (id)
+);
+
+create table organizational_units (
+  id                            bigserial not null,
+  organizational_unit_number    varchar(255),
+  organizational_unit_number_parent varchar(255),
+  title_czech                   varchar(255),
+  title_english                 varchar(255),
+  function_name_of_senior_employee varchar(255),
+  function_name_of_senior_employee_appointment varchar(255),
+  organizational_unit_responsible bigint,
+  constraint pk_organizational_units primary key (id)
 );
 
 create table person (
@@ -357,11 +369,11 @@ create index ix_comittee_to_employess_employees_id on comittee_to_employess (emp
 alter table courses add constraint fk_courses_subjects_id foreign key (subjects_id) references subjects (id) on delete restrict on update restrict;
 create index ix_courses_subjects_id on courses (subjects_id);
 
-alter table final_works_to_employees add constraint fk_final_works_to_employees_final_works_id foreign key (final_works_id) references final_works (id) on delete restrict on update restrict;
-create index ix_final_works_to_employees_final_works_id on final_works_to_employees (final_works_id);
+alter table final_works_participants add constraint fk_final_works_participants_final_works_id foreign key (final_works_id) references final_works (id) on delete restrict on update restrict;
+create index ix_final_works_participants_final_works_id on final_works_participants (final_works_id);
 
-alter table final_works_to_employees add constraint fk_final_works_to_employees_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
-create index ix_final_works_to_employees_employees_id on final_works_to_employees (employees_id);
+alter table final_works_participants add constraint fk_final_works_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+create index ix_final_works_participants_employees_id on final_works_participants (employees_id);
 
 alter table member add constraint fk_member_person_id foreign key (person_id) references person (id) on delete restrict on update restrict;
 
@@ -428,11 +440,11 @@ drop index if exists ix_comittee_to_employess_employees_id;
 alter table if exists courses drop constraint if exists fk_courses_subjects_id;
 drop index if exists ix_courses_subjects_id;
 
-alter table if exists final_works_to_employees drop constraint if exists fk_final_works_to_employees_final_works_id;
-drop index if exists ix_final_works_to_employees_final_works_id;
+alter table if exists final_works_participants drop constraint if exists fk_final_works_participants_final_works_id;
+drop index if exists ix_final_works_participants_final_works_id;
 
-alter table if exists final_works_to_employees drop constraint if exists fk_final_works_to_employees_employees_id;
-drop index if exists ix_final_works_to_employees_employees_id;
+alter table if exists final_works_participants drop constraint if exists fk_final_works_participants_employees_id;
+drop index if exists ix_final_works_participants_employees_id;
 
 alter table if exists member drop constraint if exists fk_member_person_id;
 
@@ -509,7 +521,7 @@ drop table if exists fields_of_study cascade;
 
 drop table if exists final_works cascade;
 
-drop table if exists final_works_to_employees cascade;
+drop table if exists final_works_participants cascade;
 
 drop table if exists items_kpi cascade;
 
@@ -518,6 +530,8 @@ drop table if exists lector cascade;
 drop table if exists member cascade;
 
 drop table if exists methodics cascade;
+
+drop table if exists organizational_units cascade;
 
 drop table if exists person cascade;
 

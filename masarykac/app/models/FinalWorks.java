@@ -32,7 +32,7 @@ public class FinalWorks extends Model {
     public String semester;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<FinalWorksToEmployees> finalWorksToEmployees;
+    public List<FinalWorksParticipants> finalWorksToEmployees;
 
     public static FinalWorks findById(long id) {
         return find.where().eq("id",id).findUnique();

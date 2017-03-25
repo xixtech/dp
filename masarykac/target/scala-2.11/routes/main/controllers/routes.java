@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sat Mar 25 09:30:07 CET 2017
+// @DATE:Sat Mar 25 19:19:56 CET 2017
 
 package controllers;
 
@@ -24,6 +24,7 @@ public class routes {
   public static final controllers.ReverseTableController TableController = new controllers.ReverseTableController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseCourseController CourseController = new controllers.ReverseCourseController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseLogin Login = new controllers.ReverseLogin(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseOrganizationalUnitsController OrganizationalUnitsController = new controllers.ReverseOrganizationalUnitsController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseApplication Application = new controllers.ReverseApplication(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseMethodicsController MethodicsController = new controllers.ReverseMethodicsController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseStudyPlansController StudyPlansController = new controllers.ReverseStudyPlansController(RoutesPrefix.byNamePrefix());
@@ -52,6 +53,7 @@ public class routes {
     public static final controllers.javascript.ReverseTableController TableController = new controllers.javascript.ReverseTableController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseCourseController CourseController = new controllers.javascript.ReverseCourseController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseLogin Login = new controllers.javascript.ReverseLogin(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseOrganizationalUnitsController OrganizationalUnitsController = new controllers.javascript.ReverseOrganizationalUnitsController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseMethodicsController MethodicsController = new controllers.javascript.ReverseMethodicsController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseStudyPlansController StudyPlansController = new controllers.javascript.ReverseStudyPlansController(RoutesPrefix.byNamePrefix());

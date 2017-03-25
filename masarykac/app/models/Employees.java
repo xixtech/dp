@@ -35,7 +35,7 @@ public class Employees extends Model {
     public List<Teachers> teachers;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<FinalWorksToEmployees> finalWorksToEmployees;
+    public List<FinalWorksParticipants> finalWorksToEmployees;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Visits> visits;

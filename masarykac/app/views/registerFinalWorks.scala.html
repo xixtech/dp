@@ -1,4 +1,4 @@
-@(finalWorkForm: Form[FinalWorks],participantsForm: Form[FinalWorksToEmployees])
+@(finalWorkForm: Form[FinalWorks],participantsForm: Form[FinalWorksParticipants])
 @import helper._
 @localScripts = {
     <!-- Morris Charts JavaScript -->
@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel-body">
-                @helper.form(action = routes.SubjectController.save) {
+                @helper.form(action = routes.FinalWorksController.save) {
 
                     <fieldset>
                         <legend>Zadání závěrečné práce</legend>
