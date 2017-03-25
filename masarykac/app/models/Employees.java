@@ -49,6 +49,9 @@ public class Employees extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<ComitteeToEmployess> comitteeToEmployess;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses;
+
     public Employees(int personalNumber, String titleBefore, String surname, String firstName, String titleAfter) {
         this.personalNumber = personalNumber;
         this.titleBefore = titleBefore;
@@ -103,6 +106,54 @@ public class Employees extends Model {
 
     public void setTeachers(List<Teachers> teachers) {
         this.teachers = teachers;
+    }
+
+    public List<FinalWorksParticipants> getFinalWorksToEmployees() {
+        return finalWorksToEmployees;
+    }
+
+    public void setFinalWorksToEmployees(List<FinalWorksParticipants> finalWorksToEmployees) {
+        this.finalWorksToEmployees = finalWorksToEmployees;
+    }
+
+    public List<Visits> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<Visits> visits) {
+        this.visits = visits;
+    }
+
+    public List<ProjectsParticipants> getProjectsParticipants() {
+        return projectsParticipants;
+    }
+
+    public void setProjectsParticipants(List<ProjectsParticipants> projectsParticipants) {
+        this.projectsParticipants = projectsParticipants;
+    }
+
+    public List<PublicationsParticipants> getPublicationsParticipants() {
+        return publicationsParticipants;
+    }
+
+    public void setPublicationsParticipants(List<PublicationsParticipants> publicationsParticipants) {
+        this.publicationsParticipants = publicationsParticipants;
+    }
+
+    public List<ComitteeToEmployess> getComitteeToEmployess() {
+        return comitteeToEmployess;
+    }
+
+    public void setComitteeToEmployess(List<ComitteeToEmployess> comitteeToEmployess) {
+        this.comitteeToEmployess = comitteeToEmployess;
+    }
+
+    public List<OrganizationalUnitsParticipants> getOrganizationalUnitsParticipantses() {
+        return organizationalUnitsParticipantses;
+    }
+
+    public void setOrganizationalUnitsParticipantses(List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses) {
+        this.organizationalUnitsParticipantses = organizationalUnitsParticipantses;
     }
 
     public static Employees findById(long id) {

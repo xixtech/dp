@@ -1,5 +1,5 @@
-New log file opened at Sat Mar 25 19:19:37 CET 2017 by 11712@Martin-pc
-jvm 11712@Martin-pc
+New log file opened at Sat Mar 25 19:37:05 CET 2017 by 10756@Martin-pc
+jvm 10756@Martin-pc
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.25-b02
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -67,10 +67,300 @@ Set current project to masarykac (in build file:/C:/Users/Martin/dp/masarykac/)
 > iflast shell
 > server-send-ready-for-request
 > server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/compile:mainClass
+Evaluating tasks: compile:mainClass
+Running task... Cancel: sbt.server.ServerTaskCancellation@790d417d, check cycles: false
+Total time: 0 s, completed 25.3.2017 19:37:10
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/compile:discoveredMainClasses
+Evaluating tasks: compile:discoveredMainClasses
+Running task... Cancel: sbt.server.ServerTaskCancellation@7283b80, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 2 s, completed 25.3.2017 19:37:11
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/compile:mainClass
+Evaluating tasks: compile:mainClass
+Running task... Cancel: sbt.server.ServerTaskCancellation@7212dab4, check cycles: false
+Total time: 0 s, completed 25.3.2017 19:37:12
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/compile:discoveredMainClasses
+Evaluating tasks: compile:discoveredMainClasses
+Running task... Cancel: sbt.server.ServerTaskCancellation@4cc2227, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 25.3.2017 19:37:13
+> server-post-command-cleanup
+> server-handle-next-server-request
+> backgroundRun
+Evaluating tasks: compile:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@59bc6a74, check cycles: false
+Total time: 0 s, completed 25.3.2017 19:38:53
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkConfig
+Evaluating tasks: *:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@1b8ad533, check cycles: false
+Total time: 0 s, completed 25.3.2017 19:38:56
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@1eaa63cb, check cycles: false
+Total time: 0 s, completed 25.3.2017 19:38:57
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@7c27b7a, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 3 s, completed 25.3.2017 19:52:08
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2f001a2e, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 25.3.2017 19:52:12
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@38457d9, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\models\Employees.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\models\Employees.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\models\Employees.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@bb6b913 directly...
+Java compilation took 1.341381377 s
+Java analysis took 0.207319716 s
+Java compile + analysis took 1.663416998 s
+Invalidating C:\Users\Martin\dp\masarykac\app\models\Employees.java...
+Invalidating (transitively) by inheritance from C:\Users\Martin\dp\masarykac\app\models\Employees.java...
+Initial set of included nodes: Set(C:\Users\Martin\dp\masarykac\app\models\Employees.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Martin\dp\masarykac\app\models\Employees.java)
+The C:\Users\Martin\dp\masarykac\app\models\Employees.java source file has the following regular definitions changed:
+	setFinalWorksToEmployees, getPublicationsParticipants, getVisits, setOrganizationalUnits, setProjectsParticipants, getOrganizationalUnits, getFinalWorksToEmployees, organizationalUnits, getProjectsParticipants, setComitteeToEmployess, setPublicationsParticipants, setVisits, getComitteeToEmployess.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\tables\tableEmployees.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerVisits.template.scala. This dependency is not being considered for invalidation.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\models\Employees.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\models\ProjectsParticipants.java
+None of the modified names appears in C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerProjects.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\formCourse.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerPublications.template.scala. This dependency is not being considered for invalidation.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\models\Teachers.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\models\ComitteeToEmployess.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\controllers\TableController.java
+None of the modified names appears in C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerOrganizationalUnits.template.scala. This dependency is not being considered for invalidation.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\models\OrganizationalUnits.java
+None of the modified names appears in C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerEmployees.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerFinalWorks.template.scala. This dependency is not being considered for invalidation.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\models\PublicationsParticipants.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\models\Visits.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\models\FinalWorksParticipants.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\controllers\EmployeesController.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Martin\dp\masarykac\app\controllers\TeachersController.java
+None of the modified names appears in C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerTeachers.template.scala. This dependency is not being considered for invalidation.
+New invalidations:
+	Set(C:\Users\Martin\dp\masarykac\app\models\ProjectsParticipants.java, C:\Users\Martin\dp\masarykac\app\models\Teachers.java, C:\Users\Martin\dp\masarykac\app\models\ComitteeToEmployess.java, C:\Users\Martin\dp\masarykac\app\controllers\TableController.java, C:\Users\Martin\dp\masarykac\app\models\OrganizationalUnits.java, C:\Users\Martin\dp\masarykac\app\models\PublicationsParticipants.java, C:\Users\Martin\dp\masarykac\app\models\Visits.java, C:\Users\Martin\dp\masarykac\app\models\FinalWorksParticipants.java, C:\Users\Martin\dp\masarykac\app\controllers\EmployeesController.java, C:\Users\Martin\dp\masarykac\app\controllers\TeachersController.java)
+Initial set of included nodes: Set(C:\Users\Martin\dp\masarykac\app\models\ProjectsParticipants.java, C:\Users\Martin\dp\masarykac\app\models\Teachers.java, C:\Users\Martin\dp\masarykac\app\models\ComitteeToEmployess.java, C:\Users\Martin\dp\masarykac\app\controllers\TableController.java, C:\Users\Martin\dp\masarykac\app\models\OrganizationalUnits.java, C:\Users\Martin\dp\masarykac\app\models\PublicationsParticipants.java, C:\Users\Martin\dp\masarykac\app\models\Visits.java, C:\Users\Martin\dp\masarykac\app\models\FinalWorksParticipants.java, C:\Users\Martin\dp\masarykac\app\controllers\EmployeesController.java, C:\Users\Martin\dp\masarykac\app\controllers\TeachersController.java)
+Including C:\Users\Martin\dp\masarykac\app\controllers\ProjectController.java by C:\Users\Martin\dp\masarykac\app\models\ProjectsParticipants.java
+Including C:\Users\Martin\dp\masarykac\target\scala-2.11\routes\main\router\Routes.scala by C:\Users\Martin\dp\masarykac\app\controllers\ProjectController.java
+Including C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerProjects.template.scala by C:\Users\Martin\dp\masarykac\app\models\ProjectsParticipants.java
+Including C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\tables\tableTeachers.template.scala by C:\Users\Martin\dp\masarykac\app\models\Teachers.java
+Including C:\Users\Martin\dp\masarykac\app\controllers\TableController.java by C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\tables\tableTeachers.template.scala
+Including C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerSubjectPlanTeaching.template.scala by C:\Users\Martin\dp\masarykac\app\models\Teachers.java
+Including C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java by C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerSubjectPlanTeaching.template.scala
+Including C:\Users\Martin\dp\masarykac\app\controllers\TeachersController.java by C:\Users\Martin\dp\masarykac\app\models\Teachers.java
+Including C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerTeachers.template.scala by C:\Users\Martin\dp\masarykac\app\models\Teachers.java
+Including C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerOrganizationalUnits.template.scala by C:\Users\Martin\dp\masarykac\app\models\OrganizationalUnits.java
+Including C:\Users\Martin\dp\masarykac\app\controllers\OrganizationalUnitsController.java by C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerOrganizationalUnits.template.scala
+Including C:\Users\Martin\dp\masarykac\app\controllers\PublicationsController.java by C:\Users\Martin\dp\masarykac\app\models\PublicationsParticipants.java
+Including C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerPublications.template.scala by C:\Users\Martin\dp\masarykac\app\models\PublicationsParticipants.java
+Including C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerVisits.template.scala by C:\Users\Martin\dp\masarykac\app\models\Visits.java
+Including C:\Users\Martin\dp\masarykac\app\controllers\VisitsController.java by C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerVisits.template.scala
+Including C:\Users\Martin\dp\masarykac\app\controllers\FinalWorksController.java by C:\Users\Martin\dp\masarykac\app\models\FinalWorksParticipants.java
+Including C:\Users\Martin\dp\masarykac\target\scala-2.11\twirl\main\views\html\registerFinalWorks.template.scala by C:\Users\Martin\dp\masarykac\app\models\FinalWorksParticipants.java
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set(C:\Users\Martin\dp\masarykac\app\models\ProjectsParticipants.java, C:\Users\Martin\dp\masarykac\app\models\Teachers.java, C:\Users\Martin\dp\masarykac\app\models\ComitteeToEmployess.java, C:\Users\Martin\dp\masarykac\app\controllers\TableController.java, C:\Users\Martin\dp\masarykac\app\models\OrganizationalUnits.java, C:\Users\Martin\dp\masarykac\app\models\PublicationsParticipants.java, C:\Users\Martin\dp\masarykac\app\models\Visits.java, C:\Users\Martin\dp\masarykac\app\models\FinalWorksParticipants.java, C:\Users\Martin\dp\masarykac\app\controllers\EmployeesController.java, C:\Users\Martin\dp\masarykac\app\controllers\TeachersController.java)
+Read from stdout: Compiling 10 Java sources to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 10 Java sources to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@bb6b913 directly...
+Java compilation took 0.458308388 s
+Java analysis took 0.311096592 s
+Java compile + analysis took 0.854503365 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 4 s, completed 25.3.2017 20:01:45
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@737040f7, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 25.3.2017 20:01:48
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/compile:discoveredMainClasses
+Evaluating tasks: compile:discoveredMainClasses
+Running task... Cancel: sbt.server.ServerTaskCancellation@5a5237f9, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 25.3.2017 20:02:33
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/compile:mainClass
+Evaluating tasks: compile:mainClass
+Running task... Cancel: sbt.server.ServerTaskCancellation@75bb9540, check cycles: false
+Total time: 0 s, completed 25.3.2017 20:02:33
+> server-post-command-cleanup
+> server-handle-next-server-request
 Done executing sbt server engine, result Right(Exit(0))
 Closing listening server socket
 Waiting for socket thread
 Waiting for request processor thread
 Waiting for command engine result
 Returning control to sbt launcher with result Exit(0)
-Closing the 11712@Martin-pc logs at Sat Mar 25 19:19:43 CET 2017, goodbye.
+Closing the 10756@Martin-pc logs at Sat Mar 25 20:02:34 CET 2017, goodbye.

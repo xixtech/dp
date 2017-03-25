@@ -1,7 +1,120 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\OrganizationalUnitsController.java:30:  play.data.Form<models.OrganizationalUnits> cannot be converted to play.data.Form<models.Visits>
-[error] organizationalUnitsForm
-[error] C:\Users\Martin\dp\masarykac\app\controllers\OrganizationalUnitsController.java:41:  play.data.Form<models.OrganizationalUnits> cannot be converted to play.data.Form<models.Visits>
-[error] organizationalUnitsForm
-[error] C:\Users\Martin\dp\masarykac\app\controllers\OrganizationalUnitsController.java:48:  play.data.Form<models.OrganizationalUnits> cannot be converted to play.data.Form<models.Visits>
-[error] organizationalUnitsForm
-[info] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+[error] C:\Users\Martin\dp\masarykac\app\models\OrganizationalUnitsParticipants.java:14: class OrganizationalUnits is public, should be declared in a file named OrganizationalUnits.java
+[error] @Entity
+[error] public class OrganizationalUnits extends Model {
+[error] 
+[error]     public static Finder<Long, OrganizationalUnits> find = new Finder<Long, OrganizationalUnits>(
+[error]             OrganizationalUnits.class);
+[error] 
+[error]     @Id
+[error]     @GeneratedValue(strategy = GenerationType.AUTO)
+[error]     public Long id;
+[error] 
+[error]     public String organizationalUnitNumber;
+[error] 
+[error]     public String organizationalUnitNumberParent;
+[error] 
+[error]     public String titleCzech;
+[error] 
+[error]     public String titleEnglish;
+[error] 
+[error]     public String functionNameOfSeniorEmployee;
+[error] 
+[error]     public String functionNameOfSeniorEmployeeAppointment;
+[error] 
+[error]     public Long organizationalUnitResponsible;
+[error] 
+[error]     @ManyToOne
+[error]     public Employees headOfOrganizationalUnit;
+[error] 
+[error] 
+[error] 
+[error] 
+[error]     public OrganizationalUnits(String organizationalUnitNumber, String organizationalUnitNumberParent, String titleCzech, String titleEnglish, String functionNameOfSeniorEmployee, String functionNameOfSeniorEmployeeAppointment, Long organizationalUnitResponsible) {
+[error]         this.organizationalUnitNumber = organizationalUnitNumber;
+[error]         this.organizationalUnitNumberParent = organizationalUnitNumberParent;
+[error]         this.titleCzech = titleCzech;
+[error]         this.titleEnglish = titleEnglish;
+[error]         this.functionNameOfSeniorEmployee = functionNameOfSeniorEmployee;
+[error]         this.functionNameOfSeniorEmployeeAppointment = functionNameOfSeniorEmployeeAppointment;
+[error]         this.organizationalUnitResponsible = organizationalUnitResponsible;
+[error]     }
+[error] 
+[error]     public String getOrganizationalUnitNumber() {
+[error]         return organizationalUnitNumber;
+[error]     }
+[error] 
+[error]     public void setOrganizationalUnitNumber(String organizationalUnitNumber) {
+[error]         this.organizationalUnitNumber = organizationalUnitNumber;
+[error]     }
+[error] 
+[error]     public String getOrganizationalUnitNumberParent() {
+[error]         return organizationalUnitNumberParent;
+[error]     }
+[error] 
+[error]     public void setOrganizationalUnitNumberParent(String organizationalUnitNumberParent) {
+[error]         this.organizationalUnitNumberParent = organizationalUnitNumberParent;
+[error]     }
+[error] 
+[error]     public String getTitleCzech() {
+[error]         return titleCzech;
+[error]     }
+[error] 
+[error]     public void setTitleCzech(String titleCzech) {
+[error]         this.titleCzech = titleCzech;
+[error]     }
+[error] 
+[error]     public String getTitleEnglish() {
+[error]         return titleEnglish;
+[error]     }
+[error] 
+[error]     public void setTitleEnglish(String titleEnglish) {
+[error]         this.titleEnglish = titleEnglish;
+[error]     }
+[error] 
+[error]     public String getFunctionNameOfSeniorEmployee() {
+[error]         return functionNameOfSeniorEmployee;
+[error]     }
+[error] 
+[error]     public void setFunctionNameOfSeniorEmployee(String functionNameOfSeniorEmployee) {
+[error]         this.functionNameOfSeniorEmployee = functionNameOfSeniorEmployee;
+[error]     }
+[error] 
+[error]     public String getFunctionNameOfSeniorEmployeeAppointment() {
+[error]         return functionNameOfSeniorEmployeeAppointment;
+[error]     }
+[error] 
+[error]     public void setFunctionNameOfSeniorEmployeeAppointment(String functionNameOfSeniorEmployeeAppointment) {
+[error]         this.functionNameOfSeniorEmployeeAppointment = functionNameOfSeniorEmployeeAppointment;
+[error]     }
+[error] 
+[error]     public Long getOrganizationalUnitResponsible() {
+[error]         return organizationalUnitResponsible;
+[error]     }
+[error] 
+[error]     public void setOrganizationalUnitResponsible(Long organizationalUnitResponsible) {
+[error]         this.organizationalUnitResponsible = organizationalUnitResponsible;
+[error]     }
+[error] 
+[error]     public Employees getHeadOfOrganizationalUnit() {
+[error]         return headOfOrganizationalUnit;
+[error]     }
+[error] 
+[error]     public void setHeadOfOrganizationalUnit(Employees headOfOrganizationalUnit) {
+[error]         this.headOfOrganizationalUnit = headOfOrganizationalUnit;
+[error]     }
+[error] 
+[error]     
+[error] 
+[error]     public static List<OrganizationalUnits> search() {
+[error]         return OrganizationalUnits.find.all();
+[error]     }
+[error] 
+[error]     public static Map<String, String> options() {
+[error]         List<OrganizationalUnits> subjectSets = OrganizationalUnits.find.all();
+[error]         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+[error]         for (OrganizationalUnits set : subjectSets) {
+[error]             options.put(set.id.toString(), set.organizationalUnitNumber.toString());
+[error]         }
+[error]         return options;
+[error]     }
+[error] }

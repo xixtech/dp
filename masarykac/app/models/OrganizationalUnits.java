@@ -2,10 +2,7 @@ package models;
 
 import com.avaje.ebean.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,9 +34,11 @@ public class OrganizationalUnits extends Model {
 
     public Long organizationalUnitResponsible;
 
+    @ManyToOne
     public Employees headOfOrganizationalUnit;
 
-    public Employees deputyHeadOfOrganizationalUnit;
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses;
 
 
     public OrganizationalUnits(String organizationalUnitNumber, String organizationalUnitNumberParent, String titleCzech, String titleEnglish, String functionNameOfSeniorEmployee, String functionNameOfSeniorEmployeeAppointment, Long organizationalUnitResponsible) {
@@ -116,12 +115,12 @@ public class OrganizationalUnits extends Model {
         this.headOfOrganizationalUnit = headOfOrganizationalUnit;
     }
 
-    public Employees getDeputyHeadOfOrganizationalUnit() {
-        return deputyHeadOfOrganizationalUnit;
+    public List<OrganizationalUnitsParticipants> getOrganizationalUnitsParticipantses() {
+        return organizationalUnitsParticipantses;
     }
 
-    public void setDeputyHeadOfOrganizationalUnit(Employees deputyHeadOfOrganizationalUnit) {
-        this.deputyHeadOfOrganizationalUnit = deputyHeadOfOrganizationalUnit;
+    public void setOrganizationalUnitsParticipantses(List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses) {
+        this.organizationalUnitsParticipantses = organizationalUnitsParticipantses;
     }
 
     public static List<OrganizationalUnits> search() {

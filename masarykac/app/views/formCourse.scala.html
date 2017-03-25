@@ -110,10 +110,11 @@
                                         @for(member <- currentPage) {
                                             <tr>
                                                 <td>
-                                                @if(member.getScheduleWeek == null) {
-                                                    <em>-</em>
-                                                } else {
+                                                @if(member.getScheduleWeek!= null) {
                                                     @member.getScheduleWeek
+                                                } else {
+                                                    <em>-</em>
+
                                                 }
                                                 </td>
                                                 <td>
