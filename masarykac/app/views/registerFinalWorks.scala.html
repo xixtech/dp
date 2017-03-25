@@ -1,0 +1,80 @@
+@(finalWorkForm: Form[FinalWorks],participantsForm: Form[FinalWorksToEmployees])
+@import helper._
+@localScripts = {
+    <!-- Morris Charts JavaScript -->
+    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+}
+@main(scripts = localScripts) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Registrace</h1>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel-body">
+                @helper.form(action = routes.SubjectController.save) {
+
+                    <fieldset>
+                        <legend>Zadání závěrečné práce</legend>
+                        @inputText(
+                            finalWorkForm("finalWorksName"),
+                            '_label -> "Název závěrečné práce:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte název závěrečné práce.",
+                            '_error -> finalWorkForm.globalError
+                        )
+
+                        @inputText(
+                            finalWorkForm("names"),
+                            '_label -> "Jména tvůrců:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte jména.",
+                            '_error -> finalWorkForm.globalError
+                        )
+
+                        @inputText(
+                            finalWorkForm("year"),
+                            '_label -> "Závěrečná práce probíhá/probíhala v roce:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte datum.",
+                            '_error -> finalWorkForm.globalError
+                        )
+
+                        @select(
+                            finalWorkForm("semester"),
+                            options(Semesters.options()),
+                            '_label -> "Závěrečná práce proběhla v semestru:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte semestr závěrečné práce.",
+                            '_error -> finalWorkForm.globalError
+                        )
+
+                        @select(
+                            participantsForm("employees.id"),
+                            options(Employees.options()),
+                            '_label -> "Účastník:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte semestr účastníka.",
+                            '_error -> participantsForm.globalError
+                        )
+
+                    </fieldset>
+
+                    <div class="actions">
+
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                    </div>
+
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+}

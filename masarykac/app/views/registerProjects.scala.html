@@ -1,0 +1,96 @@
+@(projectsForm: Form[Projects],participantsForm: Form[ProjectsParticipants])
+@import helper._
+@localScripts = {
+    <!-- Morris Charts JavaScript -->
+    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+}
+@main(scripts = localScripts) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Registrace</h1>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel-body">
+                @helper.form(action = routes.ProjectController.save) {
+
+                    <fieldset>
+                        <legend>Zadání předmětu</legend>
+                        @inputText(
+                            projectsForm("projectName"),
+                            '_label -> "Název projektu:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte název projektu.",
+                            '_error -> projectsForm.globalError
+                        )
+
+                        @inputText(
+                            projectsForm("projectFrom"),
+                            '_label -> "Projekt probíhá od:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte datum.",
+                            '_error -> projectsForm.globalError
+                        )
+
+                        @inputText(
+                            projectsForm("projectTo"),
+                            '_label -> "Projekt probíhá do:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte datum.",
+                            '_error -> projectsForm.globalError
+                        )
+
+                        @select(
+                            projectsForm("semester"),
+                            options(Semesters.options()),
+                            '_label -> "Projekt proběhl v semestru:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte semestr projektu.",
+                            '_error -> projectsForm.globalError
+                        )
+
+                        @checkbox(
+                            projectsForm("hasGrant"),
+                            '_label -> "Projekt získal grant:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte grant.",
+                            '_error -> projectsForm.globalError
+                        )
+
+                        @inputText(
+                            projectsForm("grantValue"),
+                            '_label -> "Velikost grantu",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte velikost grantu.",
+                            '_error -> projectsForm.globalError
+                        )
+
+                        @select(
+                            participantsForm("employees.id"),
+                            options(Employees.options()),
+                            '_label -> "Účastník:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte semestr účastníka.",
+                            '_error -> participantsForm.globalError
+                        )
+
+                    </fieldset>
+
+                    <div class="actions">
+
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                    </div>
+
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -30,6 +30,18 @@ GET         /pages/blank                         controllers.Pages.blank()
 GET         /users/register                      controllers.PersonController.index()
 POST        /users/saved                         controllers.PersonController.save()
 
+GET         /visit/register                      controllers.VisitsController.index()
+POST        /visit/saved                         controllers.VisitsController.save()
+
+GET         /project/register                    controllers.ProjectController.index()
+POST        /project/saved                       controllers.ProjectController.save()
+
+GET         /finalwork/register                  controllers.FinalWorksController.index()
+POST        /finalwork/saved                     controllers.FinalWorksController.save()
+
+GET         /publication/register                  controllers.PublicationsController.index()
+POST        /publication/saved                     controllers.PublicationsController.save()
+
 # Přidat zaměstnance
 GET         /employee/register                   controllers.EmployeesController.index()
 POST        /employee/saved                      controllers.EmployeesController.save()
@@ -57,8 +69,8 @@ GET         /studyplan/add                       controllers.StudyPlansControlle
 POST        /studyplan/saved                     controllers.StudyPlansController.save()
 GET         /studyplans                          controllers.TableController.listStudyPlans()
 
-GET         /courses/add                       controllers.CourseController.index()
-POST        /courses/saved                     controllers.CourseController.save()
+GET         /courses/add                         controllers.CourseController.index()
+POST        /courses/saved                       controllers.CourseController.save()
 
 GET         /scheduleinweeks                     controllers.TableController.listScheduleInWeeks()
 
@@ -84,8 +96,8 @@ GET         /roles                               controllers.Application.roles()
 # Vypsat zákazníky
 GET         /users                               controllers.TableController.listPerson()
 
-GET         /sub/add                        controllers.SubjectPlanTeachingController.index()
-POST        /sub/saved                      controllers.SubjectPlanTeachingController.save()
+GET         /sub/add                             controllers.SubjectPlanTeachingController.index()
+POST        /sub/saved                           controllers.SubjectPlanTeachingController.save()
 
 # Odhlásit
 GET         /logout                              controllers.Application.logout()

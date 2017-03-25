@@ -1,0 +1,96 @@
+@(visitsForm: Form[Visits])
+@import helper._
+@localScripts = {
+    <!-- Morris Charts JavaScript -->
+    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+}
+@main(scripts = localScripts) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Registrace</h1>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel-body">
+                @helper.form(action = routes.VisitsController.save) {
+
+                    <fieldset>
+                        <legend>Zadání předmětu</legend>
+                        @select(
+                            visitsForm("employees.id"),
+                            options(Employees.options()),
+                            '_label -> "Účastník:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte semestr účastníka.",
+                            '_error -> visitsForm.globalError
+                        )
+                        @inputText(
+                            visitsForm("purposeOfVisit"),
+                            '_label -> "Důvod návštěvy:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte Důvod návštěvy.",
+                            '_error -> visitsForm.globalError
+                        )
+
+                        @inputText(
+                            visitsForm("country"),
+                            '_label -> "Důvod návštěvy:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte Důvod návštěvy.",
+                            '_error -> visitsForm.globalError
+                        )
+
+                        @inputText(
+                            visitsForm("event"),
+                            '_label -> "Název události:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte Název události.",
+                            '_error -> visitsForm.globalError
+                        )
+
+                        @inputText(
+                            visitsForm("visitFrom"),
+                            '_label -> "Výjezd od:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte datum.",
+                            '_error -> visitsForm.globalError
+                        )
+
+                        @inputText(
+                            visitsForm("visitTo"),
+                            '_label -> "Výjezd do:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte datum.",
+                            '_error -> visitsForm.globalError
+                        )
+
+                        @select(
+                            visitsForm("semester"),
+                            options(Semesters.options()),
+                            '_label -> "Výjezd proběhl v semestru:",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte semestr výjezdu.",
+                            '_error -> visitsForm.globalError
+                        )
+
+
+                    </fieldset>
+
+                    <div class="actions">
+
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                    </div>
+
+                }
+                </div>
+            </div>
+        </div>
+    </div>
+}

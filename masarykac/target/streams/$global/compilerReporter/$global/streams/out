@@ -1,2 +1,55 @@
-[error] C:\Users\Martin\dp\masarykac\app\models\Projects.java:36: variable hasGrant is already defined in class models.Projects
-[error] public boolean hasGrant;
+[warn] C:\Users\Martin\dp\masarykac\app\views\formCourse.scala.html:115: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 } else {
+[warn]                                       ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\formCourse.scala.html:122: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 } else {
+[warn]                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDays.scala.html:52: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getDayP == null) {
+[warn]                                                        ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployees.scala.html:55: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getPersonalNumber == null) {
+[warn]                                                                  ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:80: comparing values of types Int and Null using `==' will always yield false
+[warn]                                         @if(member.getScheduleDay == null) {
+[warn]                                                                   ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:108: comparing values of types Int and Null using `==' will always yield false
+[warn]                                         @if(member.getScheduleWeek == null) {
+[warn]                                                                    ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:115: comparing values of types Int and Null using `==' will always yield false
+[warn]                                         @if(member.getScheduleYear == null) {
+[warn]                                                                    ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableStudyGroups.scala.html:60: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getStudyGroupP == null) {
+[warn]                                                               ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableStudyPlans.scala.html:69: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.semesterValue == null) {
+[warn]                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSubjects.scala.html:91: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getHoursP == null) {
+[warn]                                                          ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSubjects.scala.html:98: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getHoursC == null) {
+[warn]                                                          ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSubjects.scala.html:105: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getHoursSemester == null) {
+[warn]                                                                 ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSubjects.scala.html:112: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getCredits == null) {
+[warn]                                                           ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSubjects.scala.html:119: comparing values of types Boolean and Null using `==' will always yield false
+[warn]                                     @if(member.isCredit == null) {
+[warn]                                                         ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSubjects.scala.html:126: comparing values of types Boolean and Null using `==' will always yield false
+[warn]                                     @if(member.isExam == null) {
+[warn]                                                       ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSubjects.scala.html:133: comparing values of types Boolean and Null using `==' will always yield false
+[warn]                                     @if(member.isClassifiedCredit == null) {
+[warn]                                                                   ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSubjects.scala.html:147: comparing values of types Boolean and Null using `==' will always yield false
+[warn]                                     @if(member.isFormPresentation == null) {
+[warn]                                                                   ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSubjects.scala.html:154: comparing values of types Boolean and Null using `==' will always yield false
+[warn]                                     @if(member.isFormCombined == null) {
+[warn]                                                               ^
+[warn] 18 warnings found
