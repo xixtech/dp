@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sat Mar 25 19:19:56 CET 2017
+// @DATE:Sun Mar 26 20:01:39 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -45,7 +45,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:118
+  // @LINE:121
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -53,7 +53,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:118
+    // @LINE:121
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -65,7 +65,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:53
+  // @LINE:56
   class ReverseSubjectController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -73,7 +73,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:54
+    // @LINE:57
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SubjectController.save",
       """
@@ -83,7 +83,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:53
+    // @LINE:56
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SubjectController.index",
       """
@@ -125,7 +125,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:109
+  // @LINE:112
   class ReversePrintController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -133,7 +133,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:109
+    // @LINE:112
     def printUserDetails: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.printUserDetails",
       """
@@ -143,7 +143,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:110
+    // @LINE:113
     def detailsList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.detailsList",
       """
@@ -155,7 +155,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:102
+  // @LINE:105
   class ReverseSubjectPlanTeachingController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -163,7 +163,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:103
+    // @LINE:106
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SubjectPlanTeachingController.save",
       """
@@ -173,7 +173,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:102
+    // @LINE:105
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SubjectPlanTeachingController.index",
       """
@@ -235,7 +235,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:66
+  // @LINE:69
   class ReverseSemestersController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -243,7 +243,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:67
+    // @LINE:70
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SemestersController.save",
       """
@@ -253,7 +253,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:66
+    // @LINE:69
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SemestersController.index",
       """
@@ -395,7 +395,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:63
+  // @LINE:66
   class ReverseTableController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -403,7 +403,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:78
+    // @LINE:81
     def listScheduleInWeeks: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listScheduleInWeeks",
       """
@@ -413,7 +413,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:68
+    // @LINE:71
     def listSemesters: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listSemesters",
       """
@@ -423,7 +423,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:85
+    // @LINE:88
     def listCourses: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listCourses",
       """
@@ -433,7 +433,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:81
+    // @LINE:84
     def listEmployees: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listEmployees",
       """
@@ -443,7 +443,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:73
+    // @LINE:76
     def listStudyPlans: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listStudyPlans",
       """
@@ -453,7 +453,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:100
+    // @LINE:103
     def listPerson: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listPerson",
       """
@@ -463,7 +463,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:63
+    // @LINE:66
     def listStudyGroups: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listStudyGroups",
       """
@@ -473,7 +473,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:86
+    // @LINE:89
     def listCurrentSemesters: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listCurrentSemesters",
       """
@@ -483,7 +483,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:87
+    // @LINE:90
     def listCurrentSemestersUntilTheEndOfStudy: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listCurrentSemestersUntilTheEndOfStudy",
       """
@@ -493,7 +493,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:88
+    // @LINE:91
     def listDays: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listDays",
       """
@@ -503,7 +503,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:80
+    // @LINE:83
     def listSchedule: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listSchedule",
       """
@@ -513,7 +513,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:84
+    // @LINE:87
     def listFieldsOfStudy: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listFieldsOfStudy",
       """
@@ -523,7 +523,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:82
+    // @LINE:85
     def listTeachers: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listTeachers",
       """
@@ -533,7 +533,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:83
+    // @LINE:86
     def listSubjects: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TableController.listSubjects",
       """
@@ -545,7 +545,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:75
+  // @LINE:78
   class ReverseCourseController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -553,7 +553,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:76
+    // @LINE:79
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CourseController.save",
       """
@@ -563,7 +563,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:75
+    // @LINE:78
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CourseController.index",
       """
@@ -613,6 +613,26 @@ package controllers.javascript {
     }
 
   
+    // @LINE:48
+    def indexParticipants: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.OrganizationalUnitsController.indexParticipants",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "oup/register"})
+        }
+      """
+    )
+  
+    // @LINE:49
+    def saveParticipants: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.OrganizationalUnitsController.saveParticipants",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "oup/saved"})
+        }
+      """
+    )
+  
     // @LINE:46
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.OrganizationalUnitsController.save",
@@ -643,7 +663,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:97
+    // @LINE:100
     def roles: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.roles",
       """
@@ -703,7 +723,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:106
+    // @LINE:109
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.logout",
       """
@@ -725,7 +745,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:94
+  // @LINE:97
   class ReverseMethodicsController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -733,7 +753,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:95
+    // @LINE:98
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MethodicsController.save",
       """
@@ -743,7 +763,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:94
+    // @LINE:97
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.MethodicsController.index",
       """
@@ -755,7 +775,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:71
+  // @LINE:74
   class ReverseStudyPlansController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -763,7 +783,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:72
+    // @LINE:75
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.StudyPlansController.save",
       """
@@ -773,7 +793,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:71
+    // @LINE:74
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.StudyPlansController.index",
       """
@@ -815,7 +835,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:90
+  // @LINE:93
   class ReverseTeachersController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -823,7 +843,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:91
+    // @LINE:94
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TeachersController.save",
       """
@@ -833,7 +853,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:90
+    // @LINE:93
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TeachersController.index",
       """
@@ -845,7 +865,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:57
+  // @LINE:60
   class ReverseFieldOfStudyController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -853,7 +873,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:58
+    // @LINE:61
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FieldOfStudyController.save",
       """
@@ -863,7 +883,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:57
+    // @LINE:60
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FieldOfStudyController.index",
       """
@@ -875,7 +895,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:61
+  // @LINE:64
   class ReverseStudyGroupsController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -883,7 +903,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:62
+    // @LINE:65
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.StudyGroupsController.save",
       """
@@ -893,7 +913,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:61
+    // @LINE:64
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.StudyGroupsController.index",
       """
@@ -905,7 +925,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:49
+  // @LINE:52
   class ReverseEmployeesController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -913,7 +933,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:50
+    // @LINE:53
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EmployeesController.save",
       """
@@ -923,7 +943,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:49
+    // @LINE:52
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EmployeesController.index",
       """
@@ -943,7 +963,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:112
+    // @LINE:115
     def saveLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.saveLector",
       """
@@ -963,7 +983,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:114
+    // @LINE:117
     def detailsListLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.detailsListLector",
       """
@@ -973,7 +993,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:113
+    // @LINE:116
     def printLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.printLector",
       """

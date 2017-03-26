@@ -9,6 +9,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
+import java.util.List;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -40,6 +41,11 @@ public class SubjectController extends Controller {
             return badRequest(views.html.registerSubject.render(subjectsForm));
         }
         Subjects subjects = subjectsForm.get();
+
+        List<Subjects> ou = Subjects.findIdent(subjects.getIdent());
+        if(ou.size()>0){
+            return badRequest(views.html.registerSubject.render(subjectsForm));
+        }
         try {
             saveSubject(subjects);
             return redirect(routes.Application.index());

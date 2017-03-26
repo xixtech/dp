@@ -200,6 +200,10 @@ public class Subjects extends Model {
         this.courses = courses;
     }
 
+    public static List<Subjects> findIdent(String ident) {
+        return find.where().eq("ident", ident).findList();
+    }
+
     public static Subjects findById(long id) {
         return find.where().eq("id",id).findUnique();
     }

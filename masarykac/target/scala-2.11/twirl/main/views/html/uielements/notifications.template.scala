@@ -210,7 +210,7 @@ Seq[Any](format.raw/*1.4*/("""
 object notifications extends notifications_Scope0.notifications
               /*
                   -- GENERATED --
-                  DATE: Sun Feb 12 17:54:43 CET 2017
+                  DATE: Sun Mar 26 20:01:43 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/uielements/notifications.scala.html
                   HASH: deafe06c5625454f7a70004c4332dc2c641419f4
                   MATRIX: 765->1|845->6|865->18|945->22|976->27|1140->164|1168->165|1206->176|1302->245|1330->246|1451->3|1480->329|1509->332|1546->360|1586->362|1618->367

@@ -34,8 +34,9 @@ public class OrganizationalUnits extends Model {
 
     public Long organizationalUnitResponsible;
 
-    @ManyToOne
-    public Employees headOfOrganizationalUnit;
+    public boolean hasHeadOfOrganization;
+
+    public boolean hasDeputydeadOfOrganization;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses;
@@ -49,6 +50,16 @@ public class OrganizationalUnits extends Model {
         this.functionNameOfSeniorEmployee = functionNameOfSeniorEmployee;
         this.functionNameOfSeniorEmployeeAppointment = functionNameOfSeniorEmployeeAppointment;
         this.organizationalUnitResponsible = organizationalUnitResponsible;
+        this.hasHeadOfOrganization = false;
+        this.hasDeputydeadOfOrganization = false;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getOrganizationalUnitNumber() {
@@ -107,16 +118,24 @@ public class OrganizationalUnits extends Model {
         this.organizationalUnitResponsible = organizationalUnitResponsible;
     }
 
-    public Employees getHeadOfOrganizationalUnit() {
-        return headOfOrganizationalUnit;
-    }
-
-    public void setHeadOfOrganizationalUnit(Employees headOfOrganizationalUnit) {
-        this.headOfOrganizationalUnit = headOfOrganizationalUnit;
-    }
-
     public List<OrganizationalUnitsParticipants> getOrganizationalUnitsParticipantses() {
         return organizationalUnitsParticipantses;
+    }
+
+    public boolean isHasHeadOfOrganization() {
+        return hasHeadOfOrganization;
+    }
+
+    public void setHasHeadOfOrganization(boolean hasHeadOfOrganization) {
+        this.hasHeadOfOrganization = hasHeadOfOrganization;
+    }
+
+    public boolean isHasDeputydeadOfOrganization() {
+        return hasDeputydeadOfOrganization;
+    }
+
+    public void setHasDeputydeadOfOrganization(boolean hasDeputydeadOfOrganization) {
+        this.hasDeputydeadOfOrganization = hasDeputydeadOfOrganization;
     }
 
     public void setOrganizationalUnitsParticipantses(List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses) {

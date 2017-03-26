@@ -7,6 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.avaje.ebean.Expr.eq;
+
 /**
  * Created by Martin on 12.03.2017.
  */
@@ -69,6 +71,18 @@ public class OrganizationalUnitsParticipants extends Model {
         this.organizationalUnits = organizationalUnits;
     }
 
+    public static List<OrganizationalUnitsParticipants>  findEmployeesID(Employees employees) {
+        return find.where().eq("employees.id", employees.getId()).findList();
+    }
+
+    public static List<OrganizationalUnitsParticipants> findOUID(OrganizationalUnits organizationalUnits) {
+        return find.where().eq("organizationalUnits.id", organizationalUnits.getId()).findList();
+    }
+
+    public static List<OrganizationalUnitsParticipants> findFunction(String function) {
+        return find.where().eq("function", function).findList();
+    }
+
     public static List<OrganizationalUnitsParticipants> search() {
         return OrganizationalUnitsParticipants.find.all();
     }
@@ -79,6 +93,15 @@ public class OrganizationalUnitsParticipants extends Model {
         for (OrganizationalUnitsParticipants set : subjectSets) {
             options.put(set.id.toString(), set.function.toString());
         }
+        return options;
+    }
+
+    public static Map<String, String> optionsFunction() {
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+
+        options.put("head", "Vedoucí oddělení");
+        options.put("deputy", "Zástupce vedoucího");
+
         return options;
     }
 }

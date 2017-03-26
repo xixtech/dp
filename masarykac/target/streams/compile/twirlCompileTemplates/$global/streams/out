@@ -1,3 +1,0 @@
-[error] C:\Users\Martin\dp\masarykac\app\views\test.scala.html:28: Expected '}' but found '@'
-[error]         pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
-[error]                                                    ^

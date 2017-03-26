@@ -154,7 +154,8 @@ create table organizational_units (
   function_name_of_senior_employee varchar(255),
   function_name_of_senior_employee_appointment varchar(255),
   organizational_unit_responsible bigint,
-  head_of_organizational_unit_id bigint,
+  has_head_of_organization      boolean,
+  has_deputydead_of_organization boolean,
   constraint pk_organizational_units primary key (id)
 );
 
@@ -389,9 +390,6 @@ alter table member add constraint fk_member_person_id foreign key (person_id) re
 
 alter table member add constraint fk_member_profile_id foreign key (profile_id) references profile (id) on delete restrict on update restrict;
 
-alter table organizational_units add constraint fk_organizational_units_head_of_organizational_unit_id foreign key (head_of_organizational_unit_id) references employees (id) on delete restrict on update restrict;
-create index ix_organizational_units_head_of_organizational_unit_id on organizational_units (head_of_organizational_unit_id);
-
 alter table organizational_units_participants add constraint fk_organizational_units_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_organizational_units_participants_employees_id on organizational_units_participants (employees_id);
 
@@ -468,9 +466,6 @@ drop index if exists ix_final_works_participants_employees_id;
 alter table if exists member drop constraint if exists fk_member_person_id;
 
 alter table if exists member drop constraint if exists fk_member_profile_id;
-
-alter table if exists organizational_units drop constraint if exists fk_organizational_units_head_of_organizational_unit_id;
-drop index if exists ix_organizational_units_head_of_organizational_unit_id;
 
 alter table if exists organizational_units_participants drop constraint if exists fk_organizational_units_participants_employees_id;
 drop index if exists ix_organizational_units_participants_employees_id;

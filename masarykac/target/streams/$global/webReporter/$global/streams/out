@@ -1,4 +1,0 @@
-[error] C:\Users\Martin\dp\masarykac\app\assets\javascripts\dynamicFields.js:19: Missing semicolon.
-[error]         var inputVal = parseFloat($(this).val().replace('%', '')) || 0
-[error]                                                                       ^
-[error] one error found

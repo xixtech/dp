@@ -282,7 +282,7 @@ Seq[Any](format.raw/*1.4*/("""
 object typography extends typography_Scope0.typography
               /*
                   -- GENERATED --
-                  DATE: Sun Feb 12 17:54:43 CET 2017
+                  DATE: Sun Mar 26 20:01:43 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/uielements/typography.scala.html
                   HASH: 705f5aff4a2b252929087b04f0d2ca6dad1950b1
                   MATRIX: 759->1|855->3|882->5|895->11|934->13|965->18

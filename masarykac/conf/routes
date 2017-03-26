@@ -45,6 +45,9 @@ POST        /publication/saved                   controllers.PublicationsControl
 GET         /ou/register                         controllers.OrganizationalUnitsController.index()
 POST        /ou/saved                            controllers.OrganizationalUnitsController.save()
 
+GET         /oup/register                         controllers.OrganizationalUnitsController.indexParticipants()
+POST        /oup/saved                            controllers.OrganizationalUnitsController.saveParticipants()
+
 # Přidat zaměstnance
 GET         /employee/register                   controllers.EmployeesController.index()
 POST        /employee/saved                      controllers.EmployeesController.save()
