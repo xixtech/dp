@@ -101,6 +101,7 @@ public class OrganizationalUnitsParticipants extends Model {
 
         options.put("head", "Vedoucí oddělení");
         options.put("deputy", "Zástupce vedoucího");
+        options.put("employee", "Zaměstnanec");
 
         return options;
     }

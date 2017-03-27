@@ -36,7 +36,7 @@ public class OrganizationalUnits extends Model {
 
     public boolean hasHeadOfOrganization;
 
-    public boolean hasDeputydeadOfOrganization;
+    public boolean hasDeputyHeadOfOrganization;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses;
@@ -51,7 +51,7 @@ public class OrganizationalUnits extends Model {
         this.functionNameOfSeniorEmployeeAppointment = functionNameOfSeniorEmployeeAppointment;
         this.organizationalUnitResponsible = organizationalUnitResponsible;
         this.hasHeadOfOrganization = false;
-        this.hasDeputydeadOfOrganization = false;
+        this.hasDeputyHeadOfOrganization = false;
     }
 
     public Long getId() {
@@ -130,12 +130,12 @@ public class OrganizationalUnits extends Model {
         this.hasHeadOfOrganization = hasHeadOfOrganization;
     }
 
-    public boolean isHasDeputydeadOfOrganization() {
-        return hasDeputydeadOfOrganization;
+    public boolean isHasDeputyHeadOfOrganization() {
+        return hasDeputyHeadOfOrganization;
     }
 
-    public void setHasDeputydeadOfOrganization(boolean hasDeputydeadOfOrganization) {
-        this.hasDeputydeadOfOrganization = hasDeputydeadOfOrganization;
+    public void setHasDeputyHeadOfOrganization(boolean hasDeputyHeadOfOrganization) {
+        this.hasDeputyHeadOfOrganization = hasDeputyHeadOfOrganization;
     }
 
     public void setOrganizationalUnitsParticipantses(List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses) {
@@ -144,6 +144,9 @@ public class OrganizationalUnits extends Model {
 
     public static List<OrganizationalUnits> search() {
         return OrganizationalUnits.find.all();
+    }
+    public static OrganizationalUnits findById(long id) {
+        return find.where().eq("id", id).findUnique();
     }
 
     public static Map<String, String> options() {

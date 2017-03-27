@@ -15,7 +15,7 @@
     <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
     <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>
     <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
-
+    <script src='@routes.Assets.at("javascripts/combodate.js")'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
@@ -27,6 +27,29 @@
 
     <div class="row">
 
+            <!-- cdn for modernizr, if you haven't included it already -->
+        <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+            <!-- polyfiller file to detect and load polyfills -->
+        <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+        <script>
+                webshim.setOptions("forms-ext", {
+                    "date": {
+                        "startView": 2,
+                        "inlinePicker": true
+                    }
+                });
+                webshims.setOptions('waitReady', false);
+                webshims.setOptions('forms-ext', {types: 'date'});
+                webshims.polyfill('forms forms-ext');
+        </script>
+
+
+        <input
+        min="2011-01-01"
+        max="2049-12-31"
+        placeholder="dd.mm.yyyy"
+        type="date"
+        />
     </div>
     <div class="row">
         <input type="email" placeholder="me&#64;example.com">

@@ -54,10 +54,10 @@ public class Test extends Model {
         return find.where().eq("id", id).findUnique();
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<Test> subjectSets = Test.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Test set: subjectSets) {
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Test set : subjectSets) {
             options.put(set.id.toString(), set.name.toString());
         }
         return options;
@@ -71,16 +71,19 @@ public class Test extends Model {
         Iterator entriesIterator = entries.iterator();
 
         int i = 0;
-        String v="";
-        while(entriesIterator.hasNext()){
+        String v = "";
+        while (entriesIterator.hasNext()) {
             Map.Entry mapping = (Map.Entry) entriesIterator.next();
-            arr1[i] = mapping.getKey().toString()+";";
-            v=mapping.getKey().toString();
+            arr1[i] = mapping.getKey().toString() + ";";
+            v = mapping.getKey().toString();
             i++;
         }
-        arr1[arr1.length-1]=v;
+        if (arr1.length > 0) {
+            arr1[arr1.length - 1] = v;
+        }
         return arr1;
     }
+
     public static String[] getJS1Value() {
 
         String[] arr2 = new String[options().size()];
@@ -89,20 +92,20 @@ public class Test extends Model {
         Iterator entriesIterator = entries.iterator();
 
         int i = 0;
-        String v="";
-        while(entriesIterator.hasNext()){
+        String v = "";
+        while (entriesIterator.hasNext()) {
             Map.Entry mapping = (Map.Entry) entriesIterator.next();
-            arr2[i] = mapping.getValue().toString()+";";
-            v=mapping.getValue().toString();
+            arr2[i] = mapping.getValue().toString() + ";";
+            v = mapping.getValue().toString();
             i++;
         }
-
-        arr2[arr2.length-1]=v;
+        if (arr2.length > 0) {
+            arr2[arr2.length - 1] = v;
+        }
         return arr2;
     }
 
     public static String[][] getJS() {
-
 
 
         final String[][] result = new String[options().size()][2];
@@ -110,16 +113,14 @@ public class Test extends Model {
         final Iterator<?> iter = options().entrySet().iterator();
 
         int ii = 0;
-        while(iter.hasNext()){
+        while (iter.hasNext()) {
             final Map.Entry<?, ?> mapping = (Map.Entry<?, ?>) iter.next();
 
-            result[ii][0] = mapping.getKey()+" ";
-            result[ii][1] = mapping.getValue()+"; ";
+            result[ii][0] = mapping.getKey() + " ";
+            result[ii][1] = mapping.getValue() + "; ";
 
             ii++;
         }
-
-
 
 
         return result;

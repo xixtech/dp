@@ -62,6 +62,11 @@ public class OrganizationalUnitsController extends Controller {
             return badRequest(views.html.registerOUParticipants.render(organizationalUnitsParticipantsForm));
         }
         OrganizationalUnitsParticipants organizationalUnits = organizationalUnitsParticipantsForm.get();
+
+        boolean hasHead=false;
+        hasHead=OrganizationalUnits.findById(organizationalUnits.getOrganizationalUnits().getId()).isHasHeadOfOrganization();
+        boolean hasDeputy=false;
+        hasDeputy=OrganizationalUnits.findById(organizationalUnits.getOrganizationalUnits().getId()).isHasDeputyHeadOfOrganization();
         String head = "head";
         String deputy = "deputy";
         int state = 0;
@@ -69,21 +74,31 @@ public class OrganizationalUnitsController extends Controller {
         if (ou.size() == 0) {
             state = 1;
 
-        } else if (ou.size() == 1) {
+        } else if (ou.size() >0) {
             for (OrganizationalUnitsParticipants set : ou) {
                 if (set.getEmployees().getId() == organizationalUnits.getEmployees().getId()) {
                     state = 0;
                 } else {
-                    if (set.getFunction().equals(organizationalUnits.getFunction())) {
-                        state = 0;
-                    } else {
-                        state = 1;
+                    if(hasHead){
+                        if(set.getFunction().equals(organizationalUnits.getFunction())){
+                            state=0;
+                        }else{
+                            state=1;
+                        }
+                    }else if(hasDeputy){
+                        if(set.getFunction().equals(organizationalUnits.getFunction())){
+                            state=0;
+                        }else{
+                            state=1;
+                        }
+                    }else{
+                        state=1;
                     }
+
+
                 }
 
             }
-        } else {
-            state = 0;
         }
 
 
@@ -108,7 +123,19 @@ public class OrganizationalUnitsController extends Controller {
 
     private void saveOUParticipants(OrganizationalUnitsParticipants orUnits) throws Exception {
         OrganizationalUnitsParticipants ou = new OrganizationalUnitsParticipants(orUnits.function, orUnits.functionName, orUnits.employees, orUnits.organizationalUnits);
+
         ou.save();
+        if(orUnits.function.equals("head")){
+            OrganizationalUnits o= OrganizationalUnits.findById(ou.getOrganizationalUnits().getId());
+            o.setHasHeadOfOrganization(true);
+            o.update();
+        }
+        if(orUnits.function.equals("deputy")){
+            OrganizationalUnits o= OrganizationalUnits.findById(ou.getOrganizationalUnits().getId());
+            o.setHasDeputyHeadOfOrganization(true);
+            o.update();
+        }
+
 
     }
 

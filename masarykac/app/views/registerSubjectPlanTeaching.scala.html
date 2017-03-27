@@ -17,7 +17,7 @@
         <!-- /.row -->
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-16">
                 <div class="panel-body">
                 @helper.form(action = routes.SubjectController.save) {
 
@@ -29,7 +29,7 @@
                                 subjectForm("ident"),
                                 '_label -> "Ident",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -38,7 +38,7 @@
                                 subjectForm("hoursP"),
                                 '_label -> "Počet hodin přednášek za týden",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -47,7 +47,7 @@
                                 subjectForm("credit"),
                                 '_label -> "Zápočet",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -56,7 +56,7 @@
                                 subjectForm("formPresentation"),
                                 '_label -> "Prezenční forma",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -67,7 +67,7 @@
                                 subjectForm("identOld"),
                                 '_label -> "Ident_old",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -76,7 +76,7 @@
                                 subjectForm("hoursC"),
                                 '_label -> "Počet hodin cvičení za týden",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -85,7 +85,7 @@
                                 subjectForm("exam"),
                                 '_label -> "Zkouška",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -94,36 +94,36 @@
                                 subjectForm("formCombined"),
                                 '_label -> "Kombinovaná forma",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                             @inputText(
                                 subjectForm("titleC"),
                                 '_label -> "Název česky",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                             @inputText(
                                 subjectForm("credits"),
                                 '_label -> "Počet kreditů",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                             @checkbox(
                                 subjectForm("classifiedCredit"),
                                 '_label -> "Klasifikovaný zápočet",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -134,7 +134,7 @@
                                 subjectForm("titleA"),
                                 '_label -> "Název anglicky",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -143,7 +143,7 @@
                                 subjectForm("hoursSemester"),
                                 '_label -> "Počet hodin za semestr",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>
@@ -152,7 +152,7 @@
                                 subjectForm("department"),
                                 '_label -> "Oddělení",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte ident_old.",
+                                '_help -> "",
                                 '_error -> subjectForm.globalError
                             )
                             </div>

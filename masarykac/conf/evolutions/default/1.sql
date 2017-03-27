@@ -155,7 +155,7 @@ create table organizational_units (
   function_name_of_senior_employee_appointment varchar(255),
   organizational_unit_responsible bigint,
   has_head_of_organization      boolean,
-  has_deputydead_of_organization boolean,
+  has_deputy_head_of_organization boolean,
   constraint pk_organizational_units primary key (id)
 );
 
