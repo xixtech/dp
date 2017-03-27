@@ -2,26 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c2beb26-3c63-43aa-8b60-e106e0ae02db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/connections/master.log" afterPath="$PROJECT_DIR$/.sbtserver/connections/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/master.log" afterPath="$PROJECT_DIR$/.sbtserver/master.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/previous.log" afterPath="$PROJECT_DIR$/.sbtserver/previous.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java" afterPath="$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/OrganizationalUnits.java" afterPath="$PROJECT_DIR$/app/models/OrganizationalUnits.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/OrganizationalUnitsParticipants.java" afterPath="$PROJECT_DIR$/app/models/OrganizationalUnitsParticipants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Test.java" afterPath="$PROJECT_DIR$/app/models/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerStudyPlans.scala.html" afterPath="$PROJECT_DIR$/app/views/registerStudyPlans.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerSubject.scala.html" afterPath="$PROJECT_DIR$/app/views/registerSubject.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" afterPath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerTeachers.scala.html" afterPath="$PROJECT_DIR$/app/views/registerTeachers.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/test.scala.html" afterPath="$PROJECT_DIR$/app/views/test.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/evolutions/default/1.sql" afterPath="$PROJECT_DIR$/conf/evolutions/default/1.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/.sbtserver" afterPath="$PROJECT_DIR$/project/.sbtserver" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerOUParticipants.scala.html" afterPath="$PROJECT_DIR$/app/views/registerOUParticipants.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerOrganizationalUnits.scala.html" afterPath="$PROJECT_DIR$/app/views/registerOrganizationalUnits.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" />
     </list>
     <ignored path="masarykac.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,7 +50,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OrganizationalUnitsController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OrganizationalUnitsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
@@ -97,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registerOUParticipants.scala.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="registerOUParticipants.scala.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/registerOUParticipants.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+            <state relative-caret-position="714">
+              <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -120,8 +108,18 @@
       <file leaf-file-name="OrganizationalUnitsParticipants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/OrganizationalUnitsParticipants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
+            <state relative-caret-position="1360">
               <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registerOrganizationalUnits.scala.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/registerOrganizationalUnits.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -216,11 +214,9 @@
         <option value="$PROJECT_DIR$/app/views/registerFinalWorks.scala.html" />
         <option value="$PROJECT_DIR$/app/views/formCourse.scala.html" />
         <option value="$PROJECT_DIR$/app/models/ComitteeToEmployess.java" />
-        <option value="$PROJECT_DIR$/app/views/registerOrganizationalUnits.scala.html" />
         <option value="$PROJECT_DIR$/app/models/Employees.java" />
         <option value="$PROJECT_DIR$/app/views/sidebar.scala.html" />
         <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/app/views/registerOUParticipants.scala.html" />
         <option value="$PROJECT_DIR$/app/models/Subjects.java" />
         <option value="$PROJECT_DIR$/app/controllers/SubjectController.java" />
         <option value="$PROJECT_DIR$/app/views/registerStudyPlans.scala.html" />
@@ -232,6 +228,8 @@
         <option value="$PROJECT_DIR$/app/models/OrganizationalUnitsParticipants.java" />
         <option value="$PROJECT_DIR$/app/models/OrganizationalUnits.java" />
         <option value="$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java" />
+        <option value="$PROJECT_DIR$/app/views/registerOrganizationalUnits.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/registerOUParticipants.scala.html" />
       </list>
     </option>
   </component>
@@ -1200,7 +1198,7 @@
       <workItem from="1490464737117" duration="4754000" />
       <workItem from="1490514924295" duration="9052000" />
       <workItem from="1490536632325" duration="7851000" />
-      <workItem from="1490595395581" duration="9062000" />
+      <workItem from="1490595395581" duration="9913000" />
     </task>
     <task id="LOCAL-00001" summary="10_02">
       <created>1486739731621</created>
@@ -1510,11 +1508,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490551525213</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="27_03">
+      <created>1490606744901</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1490606744901</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308365000" />
+    <option name="totallyTimeSpent" value="309216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1582,7 +1587,8 @@
     <MESSAGE value="24_03" />
     <MESSAGE value="25_03" />
     <MESSAGE value="26_03&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="26_03&#10;" />
+    <MESSAGE value="27_03" />
+    <option name="LAST_COMMIT_MESSAGE" value="27_03" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1767,14 +1773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/registerOrganizationalUnits.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -2016,22 +2014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/registerOUParticipants.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/OrganizationalUnitsParticipants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -2077,6 +2059,30 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/OrganizationalUnitsParticipants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/registerOrganizationalUnits.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/registerOUParticipants.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
