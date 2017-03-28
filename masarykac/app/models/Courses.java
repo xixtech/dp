@@ -20,7 +20,8 @@ public class Courses extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
-    public String semester;
+    @ManyToOne
+    public Semesters semester;
 
     public String course;
 
@@ -35,7 +36,7 @@ public class Courses extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Schedule> schedule;
 
-    public Courses(String course, int numberOfStudents, Subjects subjects, String semester) {
+    public Courses(String course, int numberOfStudents, Subjects subjects, Semesters semester) {
         this.course = course;
         this.numberOfStudents = numberOfStudents;
         this.subjects = subjects;
@@ -88,11 +89,11 @@ public class Courses extends Model {
         this.schedule = schedule;
     }
 
-    public String getSemester() {
+    public Semesters getSemester() {
         return semester;
     }
 
-    public void setSemester(String semester) {
+    public void setSemester(Semesters semester) {
         this.semester = semester;
     }
 

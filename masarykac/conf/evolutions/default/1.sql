@@ -79,6 +79,9 @@ create table employees (
   surname                       varchar(255),
   first_name                    varchar(255),
   title_after                   varchar(255),
+  access_role                   varchar(255),
+  member_id                     bigint,
+  constraint uq_employees_member_id unique (member_id),
   constraint pk_employees primary key (id)
 );
 
@@ -131,8 +134,10 @@ create table member (
   active                        boolean,
   email                         varchar(255),
   password                      varchar(255),
+  employees_id                  bigint,
   person_id                     bigint,
   profile_id                    bigint,
+  constraint uq_member_employees_id unique (employees_id),
   constraint uq_member_person_id unique (person_id),
   constraint uq_member_profile_id unique (profile_id),
   constraint pk_member primary key (id)
@@ -380,11 +385,15 @@ create index ix_comittee_to_employess_employees_id on comittee_to_employess (emp
 alter table courses add constraint fk_courses_subjects_id foreign key (subjects_id) references subjects (id) on delete restrict on update restrict;
 create index ix_courses_subjects_id on courses (subjects_id);
 
+alter table employees add constraint fk_employees_member_id foreign key (member_id) references member (id) on delete restrict on update restrict;
+
 alter table final_works_participants add constraint fk_final_works_participants_final_works_id foreign key (final_works_id) references final_works (id) on delete restrict on update restrict;
 create index ix_final_works_participants_final_works_id on final_works_participants (final_works_id);
 
 alter table final_works_participants add constraint fk_final_works_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_final_works_participants_employees_id on final_works_participants (employees_id);
+
+alter table member add constraint fk_member_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 
 alter table member add constraint fk_member_person_id foreign key (person_id) references person (id) on delete restrict on update restrict;
 
@@ -457,11 +466,15 @@ drop index if exists ix_comittee_to_employess_employees_id;
 alter table if exists courses drop constraint if exists fk_courses_subjects_id;
 drop index if exists ix_courses_subjects_id;
 
+alter table if exists employees drop constraint if exists fk_employees_member_id;
+
 alter table if exists final_works_participants drop constraint if exists fk_final_works_participants_final_works_id;
 drop index if exists ix_final_works_participants_final_works_id;
 
 alter table if exists final_works_participants drop constraint if exists fk_final_works_participants_employees_id;
 drop index if exists ix_final_works_participants_employees_id;
+
+alter table if exists member drop constraint if exists fk_member_employees_id;
 
 alter table if exists member drop constraint if exists fk_member_person_id;
 

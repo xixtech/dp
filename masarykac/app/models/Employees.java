@@ -28,6 +28,8 @@ public class Employees extends Model {
 
     public String titleAfter;
 
+    public String accessRole;
+
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Teachers> teachers;
 
@@ -49,12 +51,16 @@ public class Employees extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    public Member member;
+
     public Employees(int personalNumber, String titleBefore, String surname, String firstName, String titleAfter) {
         this.personalNumber = personalNumber;
         this.titleBefore = titleBefore;
         this.surname = surname;
         this.firstName = firstName;
         this.titleAfter = titleAfter;
+        this.accessRole="Zaměstnanec";
     }
 
     public Long getId() {
@@ -103,6 +109,14 @@ public class Employees extends Model {
 
     public void setTitleAfter(String titleAfter) {
         this.titleAfter = titleAfter;
+    }
+
+    public String getAccessRole() {
+        return accessRole;
+    }
+
+    public void setAccessRole(String accessRole) {
+        this.accessRole = accessRole;
     }
 
     public List<Teachers> getTeachers() {
@@ -159,6 +173,14 @@ public class Employees extends Model {
 
     public void setOrganizationalUnitsParticipantses(List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses) {
         this.organizationalUnitsParticipantses = organizationalUnitsParticipantses;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
     }
 
     public static Employees findById(long id) {

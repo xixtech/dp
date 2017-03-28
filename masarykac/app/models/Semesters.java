@@ -22,9 +22,6 @@ public class Semesters extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<StudyPlans> studyPlans;
-
     public String semesterValue;
 
     public String semesterVK;
@@ -40,7 +37,13 @@ public class Semesters extends Model {
     public Date semesterTo;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StudyPlans> studyPlans;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<ScheduleInWeeks> scheduleInWeekses;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Courses> courses;
 
     public Semesters(String semesterValue, String semesterVK, String semesterVD, String semesterAr, Date semesterFrom, Date semesterTo) {
         this.semesterValue = semesterValue;
@@ -113,6 +116,14 @@ public class Semesters extends Model {
 
     public void setScheduleInWeekses(List<ScheduleInWeeks> scheduleInWeekses) {
         this.scheduleInWeekses = scheduleInWeekses;
+    }
+
+    public List<Courses> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Courses> courses) {
+        this.courses = courses;
     }
 
     public static Map<String, String> options() {

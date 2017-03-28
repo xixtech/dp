@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sun Mar 26 20:01:39 CEST 2017
+// @DATE:Tue Mar 28 13:01:31 CEST 2017
 
 package controllers;
 
@@ -12,6 +12,7 @@ public class routes {
   public static final controllers.ReversePersonController PersonController = new controllers.ReversePersonController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseAssets Assets = new controllers.ReverseAssets(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseSubjectController SubjectController = new controllers.ReverseSubjectController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReversePersonalStatisticController PersonalStatisticController = new controllers.ReversePersonalStatisticController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseProjectController ProjectController = new controllers.ReverseProjectController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReversePrintController PrintController = new controllers.ReversePrintController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseSubjectPlanTeachingController SubjectPlanTeachingController = new controllers.ReverseSubjectPlanTeachingController(RoutesPrefix.byNamePrefix());
@@ -41,6 +42,7 @@ public class routes {
     public static final controllers.javascript.ReversePersonController PersonController = new controllers.javascript.ReversePersonController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseAssets Assets = new controllers.javascript.ReverseAssets(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseSubjectController SubjectController = new controllers.javascript.ReverseSubjectController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReversePersonalStatisticController PersonalStatisticController = new controllers.javascript.ReversePersonalStatisticController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseProjectController ProjectController = new controllers.javascript.ReverseProjectController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReversePrintController PrintController = new controllers.javascript.ReversePrintController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseSubjectPlanTeachingController SubjectPlanTeachingController = new controllers.javascript.ReverseSubjectPlanTeachingController(RoutesPrefix.byNamePrefix());

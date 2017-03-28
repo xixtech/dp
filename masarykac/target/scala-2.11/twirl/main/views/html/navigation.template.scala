@@ -39,7 +39,7 @@ Seq[Any](format.raw/*1.4*/("""
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Masarykáč beta v0.1</a>
+            <a class="navbar-brand" href="/">Masarykáč beta v0.2</a>
         </div>
         <!-- /.navbar-header -->
         <img src=""""),_display_(/*14.20*/routes/*14.26*/.Assets.at("images/logo_MUVS.jpg")),format.raw/*14.60*/("""" width="140" height="40" align="center"/>
@@ -76,9 +76,9 @@ Seq[Any](format.raw/*1.4*/("""
 object navigation extends navigation_Scope0.navigation
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 26 20:01:41 CEST 2017
+                  DATE: Tue Mar 28 11:28:21 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/navigation.scala.html
-                  HASH: d39ea8ec9672a034874b728e967766cde415164b
+                  HASH: 4e41e887092aaf51022b779de7c9ecd130026905
                   MATRIX: 748->1|844->3|875->8|1532->638|1547->644|1602->678|1789->838|1804->844|1846->865|2031->1023|2061->1032|2097->1041
                   LINES: 27->1|32->1|33->2|45->14|45->14|45->14|50->19|50->19|50->19|56->25|56->25|57->26
                   -- GENERATED --

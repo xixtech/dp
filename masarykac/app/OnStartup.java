@@ -4,11 +4,8 @@ import javax.inject.Singleton;
 import javax.management.relation.Role;
 
 import controllers.DaysStart;
-import models.Member;
+import models.*;
 import models.utils.Hash;
-import models.Person;
-import models.Profile;
-import models.Roles;
 
 /**
  * This class is a Guice module that tells Guice how to bind several
@@ -37,6 +34,18 @@ public class OnStartup {
                 Member member = new Member("a@a.cz", Hash.createPassword("secret"));
                 member.setActive(true);
                 member.save();
+
+                Member member2 = new Member("b@b.cz", Hash.createPassword("heslo"));
+                member2.setActive(true);
+                member2.save();
+
+                Employees e=new Employees(123456,"Ing.", "Karel","Novák","Ph.D.");
+                e.save();
+                e.setMember(member2);
+                e.update();
+
+                member2.setEmployees(e);
+                member2.update();
 
                 Profile profile= new Profile("Jan", "Novák", "123456789", member);
                 profile.save();

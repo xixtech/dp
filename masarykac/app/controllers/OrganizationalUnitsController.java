@@ -94,8 +94,6 @@ public class OrganizationalUnitsController extends Controller {
                     }else{
                         state=1;
                     }
-
-
                 }
 
             }

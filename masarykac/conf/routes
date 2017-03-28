@@ -45,8 +45,8 @@ POST        /publication/saved                   controllers.PublicationsControl
 GET         /ou/register                         controllers.OrganizationalUnitsController.index()
 POST        /ou/saved                            controllers.OrganizationalUnitsController.save()
 
-GET         /oup/register                         controllers.OrganizationalUnitsController.indexParticipants()
-POST        /oup/saved                            controllers.OrganizationalUnitsController.saveParticipants()
+GET         /oup/register                        controllers.OrganizationalUnitsController.indexParticipants()
+POST        /oup/saved                           controllers.OrganizationalUnitsController.saveParticipants()
 
 # Přidat zaměstnance
 GET         /employee/register                   controllers.EmployeesController.index()
@@ -59,6 +59,8 @@ POST        /subject/saved                       controllers.SubjectController.s
 # Přidat předmět
 GET         /fields/add                          controllers.FieldOfStudyController.index()
 POST        /fields/saved                        controllers.FieldOfStudyController.save()
+
+GET         /statistics                          controllers.PersonalStatisticController.index()
 
 # Přidat předmět
 GET         /studygroups/add                     controllers.StudyGroupsController.index()

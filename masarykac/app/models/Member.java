@@ -34,6 +34,9 @@ public class Member extends Model{
     public String password;
 
     @OneToOne(cascade = CascadeType.ALL)
+    public Employees employees;
+
+    @OneToOne(cascade = CascadeType.ALL)
     public Person person;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -68,7 +71,15 @@ public class Member extends Model{
         this.profile = profile;
     }
 
-        /**
+    public Employees getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Employees employees) {
+        this.employees = employees;
+    }
+
+    /**
      * @param email
      * @param password
      * @return

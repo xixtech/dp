@@ -1,4 +1,4 @@
-@(employeesForm: Form[Employees])
+@(signupForm: Form[Member],employeesForm: Form[Employees])
     @import helper._
     @localScripts = {
         <!-- Morris Charts JavaScript -->
@@ -22,6 +22,29 @@
 
                         <fieldset>
                             <legend>Přihlašovací údaje</legend>
+                            @inputText(
+                                signupForm("email"),
+                                '_label -> "Email",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte platnou e-mailovou adresu.",
+                                '_error -> signupForm.globalError
+                            )
+
+                            @inputPassword(
+                                signupForm("password"),
+                                '_label -> "Heslo",
+                                'class -> "form-control",
+                                '_help -> "Heslo musí mít nejméně 6 znaků."
+                            )
+
+                            @inputPassword(
+                                signupForm("repeatPassword"),
+                                '_label -> "Heslo pro kontrolu",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte znovu heslo.",
+                                '_error -> signupForm.error("password")
+                            )
+
                             @inputText(
                                 employeesForm("personalNumber"),
                                 '_label -> "Osobní číslo",
