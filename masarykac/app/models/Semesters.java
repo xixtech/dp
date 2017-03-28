@@ -124,6 +124,15 @@ public class Semesters extends Model {
         return options;
     }
 
+    public static Map<String, String> optionsValues() {
+        List<Semesters> semestersSet = Semesters.find.all();
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Semesters set : semestersSet) {
+            options.put(set.semesterValue.toString(), set.semesterValue.toString());
+        }
+        return options;
+    }
+
     public static List<Semesters> search() {
         return Semesters.find.all();
     }

@@ -4,6 +4,44 @@
 var counter = 1;
 var cuisines = ["Chinese", "Indian"];
 var choices = [["one", "1"], ["two", "2"]];
+
+
+
+function addPublicationParticipant(divName, pole) {
+
+    var newDiv = document.createElement('div');
+    var mapKey = document.getElementById('myField').value;
+    var mapValue = document.getElementById('myField2').value;
+    var testKey = mapKey.split(";");
+    var testValue = mapValue.split(";");
+
+    var i, out = [];//literal new array
+    for(i=0;i<testKey.length;i++)
+    {
+        out.push([testKey[i],testValue[i]]);
+    }
+
+    var selectHTML = "";
+    selectHTML = "<div class='row'><div class='col-md-4'><select class='form-control' name='employees.id'>";
+    for (i = 0; i < out.length; i = i + 1) {
+        selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
+
+    }
+    selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' name='faculty'> </div>";
+    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' onkeypress='return isNumberKey(event)' name='orderInPublication'> </div>";
+    selectHTML += "<div class='col-md-3'><input type='text' class='form-control' name='department'> </div>";
+    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share'> </div></div></br>";
+    newDiv.innerHTML = selectHTML;
+    document.getElementById(divName).appendChild(newDiv);
+}
+
+
+
+
+
+
+
+
 (function($) {
     var minNumber = -100;
     var maxNumber = 100;

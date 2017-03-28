@@ -31,6 +31,61 @@ public class Publications extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<PublicationsParticipants> publicationsParticipants;
 
+    public Publications(String yearOfPublication, String semester, String type, String citation) {
+        this.yearOfPublication = yearOfPublication;
+        this.semester = semester;
+        this.type = type;
+        this.citation = citation;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getYearOfPublication() {
+        return yearOfPublication;
+    }
+
+    public void setYearOfPublication(String yearOfPublication) {
+        this.yearOfPublication = yearOfPublication;
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCitation() {
+        return citation;
+    }
+
+    public void setCitation(String citation) {
+        this.citation = citation;
+    }
+
+    public List<PublicationsParticipants> getPublicationsParticipants() {
+        return publicationsParticipants;
+    }
+
+    public void setPublicationsParticipants(List<PublicationsParticipants> publicationsParticipants) {
+        this.publicationsParticipants = publicationsParticipants;
+    }
+
     public static Publications findById(long id) {
         return find.where().eq("id",id).findUnique();
     }

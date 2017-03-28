@@ -1,10 +1,11 @@
-@(publicationsForm: Form[Publications],participantsForm: Form[PublicationsParticipants])
+@(publicationsForm: Form[Publications], participantsForm: Form[PublicationsParticipants])
 @import helper._
 @localScripts = {
     <!-- Morris Charts JavaScript -->
     <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
     <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
     <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+    <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
 }
 @main(scripts = localScripts) {
     <div class="row">
@@ -16,53 +17,102 @@
         <!-- /.row -->
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-12 ">
                 <div class="panel-body">
                 @helper.form(action = routes.PublicationsController.save) {
 
                     <fieldset>
                         <legend>Zadání publikace</legend>
-                        @inputText(
-                            publicationsForm("citation"),
-                            '_label -> "Citace:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte citaci.",
-                            '_error -> publicationsForm.globalError
-                        )
+                        <div class="col-md-12">
+                            <div class="row">
+                            @inputText(
+                                publicationsForm("citation"),
+                                '_label -> "Citace:",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte citaci.",
+                                '_error -> publicationsForm.globalError
+                            )
+                            </div>
+                            <div class="row">
+                            @inputText(
+                                publicationsForm("type"),
+                                '_label -> "Typ publikace:",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte typ publikace.",
+                                '_error -> publicationsForm.globalError
+                            )
+                            </div>
+                            <div class="row">
+                            @select(
+                                publicationsForm("semester"),
+                                options(Semesters.optionsValues()),
+                                '_label -> "Semestr publikace:",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte semestr publikace.",
+                                '_error -> publicationsForm.globalError
+                            )
+                            </div>
+                            <div class="row">
+                            @inputText(
+                                publicationsForm("yearOfPublication"),
+                                '_label -> "Rok:",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte rok.",
+                                '_error -> publicationsForm.globalError
+                            )
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                            @select(
+                                participantsForm("employees.id"),
+                                options(Employees.options()),
+                                '_label -> "Účastník:",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> participantsForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-3">
+                            @inputText(
+                                participantsForm("faculty"),
+                                '_label -> "Fakulta:",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> participantsForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-1">
+                            @inputText(
+                                participantsForm("orderInPublication"),
+                                '_label -> "Pořadí:",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> participantsForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-3">
+                            @inputText(
+                                participantsForm("department"),
+                                '_label -> "Oddělení:",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> participantsForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-1">
+                            @inputText(
+                                participantsForm("share"),
+                                '_label -> "Podíl:",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> participantsForm.globalError
+                            )
+                            </div>
+                        </div>
 
-                        @inputText(
-                            publicationsForm("type"),
-                            '_label -> "Typ publikace:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte typ publiakce.",
-                            '_error -> publicationsForm.globalError
-                        )
-
-                        @select(
-                            publicationsForm("semester"),
-                            options(Semesters.options()),
-                            '_label -> "Semestr publikace:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte semestr publikace.",
-                            '_error -> publicationsForm.globalError
-                        )
-
-                        @inputText(
-                            publicationsForm("yearOfPublication"),
-                            '_label -> "Rok:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte rok.",
-                            '_error -> publicationsForm.globalError
-                        )
-
-                        @select(
-                            participantsForm("employees.id"),
-                            options(Employees.options()),
-                            '_label -> "Účastník:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte účastníka.",
-                            '_error -> participantsForm.globalError
-                        )
+                        <div id="dynamicInput"><input type="hidden" id="myField" value="@Employees.getJS1Key()" /><input type="hidden" id="myField2" value="@Employees.getJS1Value()" /></div>
+                        <input type="button" value="Přidat autora" class="btn btn-lg" onclick="addPublicationParticipant('dynamicInput', '@Employees.getJS()');" />
 
                     </fieldset>
 
