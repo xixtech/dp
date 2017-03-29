@@ -33,10 +33,85 @@ public class Visits extends Model {
     @Formats.DateTime(pattern = "dd.MM.yyyy")
     public Date visitTo;
 
-    public String semester;
+    @ManyToOne
+    public Semesters semester;
 
     @ManyToOne
     public Employees employees;
+
+    public Visits(String purposeOfVisit, String country, String event, Date visitFrom, Date visitTo, Employees employees, Semesters semester) {
+        this.purposeOfVisit = purposeOfVisit;
+        this.country = country;
+        this.event = event;
+        this.visitFrom = visitFrom;
+        this.visitTo = visitTo;
+        this.employees=employees;
+        this.semester=semester;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPurposeOfVisit() {
+        return purposeOfVisit;
+    }
+
+    public void setPurposeOfVisit(String purposeOfVisit) {
+        this.purposeOfVisit = purposeOfVisit;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getEvent() {
+        return event;
+    }
+
+    public void setEvent(String event) {
+        this.event = event;
+    }
+
+    public Date getVisitFrom() {
+        return visitFrom;
+    }
+
+    public void setVisitFrom(Date visitFrom) {
+        this.visitFrom = visitFrom;
+    }
+
+    public Date getVisitTo() {
+        return visitTo;
+    }
+
+    public void setVisitTo(Date visitTo) {
+        this.visitTo = visitTo;
+    }
+
+    public Employees getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Employees employees) {
+        this.employees = employees;
+    }
+
+    public Semesters getSemester() {
+        return semester;
+    }
+
+    public void setSemester(Semesters semester) {
+        this.semester = semester;
+    }
 
     public static Visits findById(long id) {
         return find.where().eq("id",id).findUnique();

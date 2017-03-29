@@ -135,6 +135,10 @@ public class Employees extends Model {
         this.finalWorksToEmployees = finalWorksToEmployees;
     }
 
+    public String getFullName(){
+        return this.getFirstName()+" "+this.getSurname();
+    }
+
     public List<Visits> getVisits() {
         return visits;
     }

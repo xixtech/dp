@@ -45,6 +45,9 @@ public class Semesters extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Courses> courses;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Visits> visits;
+
     public Semesters(String semesterValue, String semesterVK, String semesterVD, String semesterAr, Date semesterFrom, Date semesterTo) {
         this.semesterValue = semesterValue;
         this.semesterVK = semesterVK;

@@ -21,7 +21,7 @@ create table comittee_to_employess (
 
 create table courses (
   id                            bigserial not null,
-  semester                      varchar(255),
+  semester_id                   bigint,
   course                        varchar(255),
   number_of_students            integer,
   subjects_id                   bigint,
@@ -371,7 +371,7 @@ create table visits (
   event                         varchar(255),
   visit_from                    timestamp,
   visit_to                      timestamp,
-  semester                      varchar(255),
+  semester_id                   bigint,
   employees_id                  bigint,
   constraint pk_visits primary key (id)
 );
@@ -381,6 +381,9 @@ create index ix_comittee_to_employess_comittee_id on comittee_to_employess (comi
 
 alter table comittee_to_employess add constraint fk_comittee_to_employess_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_comittee_to_employess_employees_id on comittee_to_employess (employees_id);
+
+alter table courses add constraint fk_courses_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
+create index ix_courses_semester_id on courses (semester_id);
 
 alter table courses add constraint fk_courses_subjects_id foreign key (subjects_id) references subjects (id) on delete restrict on update restrict;
 create index ix_courses_subjects_id on courses (subjects_id);
@@ -451,6 +454,9 @@ create index ix_teachers_courses_id on teachers (courses_id);
 alter table teachers add constraint fk_teachers_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_teachers_employees_id on teachers (employees_id);
 
+alter table visits add constraint fk_visits_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
+create index ix_visits_semester_id on visits (semester_id);
+
 alter table visits add constraint fk_visits_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_visits_employees_id on visits (employees_id);
 
@@ -462,6 +468,9 @@ drop index if exists ix_comittee_to_employess_comittee_id;
 
 alter table if exists comittee_to_employess drop constraint if exists fk_comittee_to_employess_employees_id;
 drop index if exists ix_comittee_to_employess_employees_id;
+
+alter table if exists courses drop constraint if exists fk_courses_semester_id;
+drop index if exists ix_courses_semester_id;
 
 alter table if exists courses drop constraint if exists fk_courses_subjects_id;
 drop index if exists ix_courses_subjects_id;
@@ -531,6 +540,9 @@ drop index if exists ix_teachers_courses_id;
 
 alter table if exists teachers drop constraint if exists fk_teachers_employees_id;
 drop index if exists ix_teachers_employees_id;
+
+alter table if exists visits drop constraint if exists fk_visits_semester_id;
+drop index if exists ix_visits_semester_id;
 
 alter table if exists visits drop constraint if exists fk_visits_employees_id;
 drop index if exists ix_visits_employees_id;

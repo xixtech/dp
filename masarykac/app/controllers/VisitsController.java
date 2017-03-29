@@ -41,18 +41,16 @@ public class VisitsController extends Controller {
         }
         Visits visits = visitsForm.get();
         try {
-
+            saveVisit(visits);
             return redirect(routes.Application.index());
         } catch (Exception e) {
             return badRequest(views.html.registerVisits.render(visitsForm));
         }
     }
 
-    private void saveSubject(Subjects subjectForm) throws Exception {
-        Subjects subjects=new Subjects(subjectForm.ident, subjectForm.identOld,subjectForm.titleC, subjectForm.titleA,
-                subjectForm.hoursP, subjectForm.hoursC,subjectForm.hoursSemester,subjectForm.credits,subjectForm.credit,subjectForm.exam,subjectForm.classifiedCredit,
-                subjectForm.department,subjectForm.formPresentation,subjectForm.formCombined);
-        subjects.save();
+    private void saveVisit(Visits visits) throws Exception {
+       Visits v=new Visits(visits.purposeOfVisit,visits.country,visits.event,visits.visitFrom,visits.visitTo,visits.employees,visits.semester);
+        v.save();
 
     }
 

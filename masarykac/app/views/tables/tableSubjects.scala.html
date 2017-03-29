@@ -88,53 +88,47 @@
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(member.getHoursP == null) {
+                                    @if(member.getHoursP == 0) {
                                         <em>-</em>
                                     } else {
                                         @member.getHoursP
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(member.getHoursC == null) {
+                                    @if(member.getHoursC == 0) {
                                         <em>-</em>
                                     } else {
                                         @member.getHoursC
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(member.getHoursSemester == null) {
+                                    @if(member.getHoursSemester == 0) {
                                         <em>-</em>
                                     } else {
                                         @member.getHoursSemester
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(member.getCredits == null) {
+                                    @if(member.getCredits == 0) {
                                         <em>-</em>
                                     } else {
                                         @member.getCredits
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(member.isCredit == null) {
-                                        <em>-</em>
-                                    } else {
+
                                         @member.isCredit
-                                    }
+
                                     </td>
                                     <td class="center">
-                                    @if(member.isExam == null) {
-                                        <em>-</em>
-                                    } else {
+
                                         @member.isExam
-                                    }
+
                                     </td>
                                     <td class="center">
-                                    @if(member.isClassifiedCredit == null) {
-                                        <em>-</em>
-                                    } else {
+
                                         @member.isClassifiedCredit
-                                    }
+
                                     </td>
                                     <td class="center">
                                     @if(member.getDepartment == null) {
@@ -144,19 +138,14 @@
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(member.isFormPresentation == null) {
-                                        <em>-</em>
-                                    } else {
+
                                         @member.isFormPresentation
-                                    }
+
                                     </td>
                                     <td class="center">
-                                    @if(member.isFormCombined == null) {
-                                        <em>-</em>
-                                    } else {
 
                                         @member.isFormCombined
-                                    }
+
                                     </td>
                                 </tr>
                             }

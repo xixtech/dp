@@ -49,7 +49,7 @@
                             @for(member <- currentPage) {
                                 <tr>
                                     <td class="center">
-                                    @if(member.getDayP == null) {
+                                    @if(member.getDayP == 0) {
                                         <em>-</em>
                                     } else {
                                         @member.getDayP

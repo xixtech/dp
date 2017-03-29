@@ -1,9 +1,6 @@
 package controllers;
 
-import models.Courses;
-import models.Employees;
-import models.Member;
-import models.ScheduleInWeeks;
+import models.*;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -11,6 +8,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
+import java.util.List;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -26,10 +24,11 @@ public class PersonalStatisticController extends Controller {
      * @return
      */
     public Result index() {
-        Member m=Member.findByEmail(request().username());
-        Employees e=Employees.findById(m.getEmployees().getId());
+        List<Employees> e=Employees.search();
+        List<OrganizationalUnits> oj=OrganizationalUnits.search();
+        List<Courses> c=Courses.search();
 
-        return ok(views.html.tables.tableTeachingDepartmentEmployee.render());
+        return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj,e,c));
     }
 
     /**

@@ -40,9 +40,9 @@
 
                         @inputText(
                             visitsForm("country"),
-                            '_label -> "Důvod návštěvy:",
+                            '_label -> "Země:",
                             'class -> "form-control",
-                            '_help -> "Prosím zadejte Důvod návštěvy.",
+                            '_help -> "Prosím zadejte zemi.",
                             '_error -> visitsForm.globalError
                         )
 
@@ -71,7 +71,7 @@
                         )
 
                         @select(
-                            visitsForm("semester"),
+                            visitsForm("semester.id"),
                             options(Semesters.options()),
                             '_label -> "Výjezd proběhl v semestru:",
                             'class -> "form-control",

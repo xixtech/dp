@@ -10,6 +10,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
+import java.util.Map;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -44,6 +45,7 @@ public class SubjectPlanTeachingController extends Controller {
         if (subjectsForm.hasErrors()) {
             return badRequest(views.html.registerSubjectPlanTeaching.render(subjectsForm,coursesForm,scheduleForm));
         }
+        Map<String, String[]> formData = request().body().asFormUrlEncoded();
         Subjects subjects = subjectsForm.get();
         try {
 
