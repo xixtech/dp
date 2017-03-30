@@ -25,7 +25,8 @@ public class Comittee extends Model {
     @Formats.DateTime(pattern = "dd.MM.yyyy")
     public Date date;
 
-    public String semester;
+    @ManyToOne
+    public Semesters semester;
 
     public String roleInComittee;
 

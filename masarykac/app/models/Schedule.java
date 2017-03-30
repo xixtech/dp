@@ -18,7 +18,9 @@ public class Schedule extends Model {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
-    public String semester;
+
+    @ManyToOne
+    public Semesters semester;
 
     public String ident;
 
@@ -43,7 +45,7 @@ public class Schedule extends Model {
         this.courses = courses;
     }
 
-    public Schedule(String semester, String ident, String course, int scheduleDay, String scheduleFrom, String scheduleTo, String classRoom) {
+    public Schedule(Semesters semester, String ident, String course, int scheduleDay, String scheduleFrom, String scheduleTo, String classRoom) {
         this.semester = semester;
         this.ident = ident;
         this.course = course;
@@ -69,11 +71,11 @@ public class Schedule extends Model {
         this.courses = courses;
     }
 
-    public String getSemester() {
+    public Semesters getSemester() {
         return semester;
     }
 
-    public void setSemester(String semester) {
+    public void setSemester(Semesters semester) {
         this.semester = semester;
     }
 

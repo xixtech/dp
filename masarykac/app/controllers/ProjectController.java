@@ -114,7 +114,7 @@ public class ProjectController extends Controller {
 
         for (int i = 0; i < projectName.size(); i++) {
 
-            Projects p = new Projects(projectName.get(i), projectFrom.get(i), projectTo.get(i), semester.get(i), hasGrant.get(i), grantValue.get(i));
+            Projects p = new Projects(projectName.get(i), projectFrom.get(i), projectTo.get(i), Semesters.findById(i), hasGrant.get(i), grantValue.get(i));
             p.save();
             projectId = p.getId();
         }

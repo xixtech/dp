@@ -30,7 +30,8 @@ public class Projects extends Model {
     @Formats.DateTime(pattern = "dd.MM.yyyy")
     public Date projectTo;
 
-    public String semester;
+    @ManyToOne
+    public Semesters semester;
 
     public boolean hasGrant;
 
@@ -39,7 +40,7 @@ public class Projects extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<ProjectsParticipants> projectsParticipants;
 
-    public Projects(String projectName, Date projectFrom, Date projectTo, String semester, boolean hasGrant, String grantValue) {
+    public Projects(String projectName, Date projectFrom, Date projectTo, Semesters semester, boolean hasGrant, String grantValue) {
         this.projectName = projectName;
         this.projectFrom = projectFrom;
         this.projectTo = projectTo;
@@ -80,11 +81,11 @@ public class Projects extends Model {
         this.projectTo = projectTo;
     }
 
-    public String getSemester() {
+    public Semesters getSemester() {
         return semester;
     }
 
-    public void setSemester(String semester) {
+    public void setSemester(Semesters semester) {
         this.semester = semester;
     }
 

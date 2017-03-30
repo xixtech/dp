@@ -2,10 +2,7 @@ package models;
 
 import com.avaje.ebean.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -25,9 +22,10 @@ public class CurrentSemestersUntilTheEndOfStudy extends Model {
 
     public String semesterEntry;
 
-    public String semester;
+    @ManyToOne
+    public Semesters semester;
 
-    public CurrentSemestersUntilTheEndOfStudy(String fieldOfStudy, String semesterEntry, String semester) {
+    public CurrentSemestersUntilTheEndOfStudy(String fieldOfStudy, String semesterEntry, Semesters semester) {
         this.fieldOfStudy = fieldOfStudy;
         this.semesterEntry = semesterEntry;
         this.semester = semester;
@@ -49,11 +47,19 @@ public class CurrentSemestersUntilTheEndOfStudy extends Model {
         this.semesterEntry = semesterEntry;
     }
 
-    public String getSemester() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Semesters getSemester() {
         return semester;
     }
 
-    public void setSemester(String semester) {
+    public void setSemester(Semesters semester) {
         this.semester = semester;
     }
 

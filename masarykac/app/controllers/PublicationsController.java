@@ -32,15 +32,24 @@ public class PublicationsController extends Controller {
         return ok(views.html.registerPublications.render(publicationsForm, publicationsParticipantsForm));
     }
 
-    /**
-     * uložení osoby, profilu a zákazníka z formuláře
-     *
-     * @return
-     */
+
     public Result save() {
+        Form<Publications> publicationsForm = formFactory.form(Publications.class).bindFromRequest();
+        Form<PublicationsParticipants> publicationsParticipantsForm = formFactory.form(PublicationsParticipants.class).bindFromRequest();
+        if (publicationsForm.hasErrors() || publicationsParticipantsForm.hasErrors()) {
+            return badRequest(views.html.registerPublications.render(publicationsForm, publicationsParticipantsForm));
+        }
 
-        Map<String, String[]> formData = request().body().asFormUrlEncoded();
+        try {
+            Map<String, String[]> formData = request().body().asFormUrlEncoded();
+            savePublication(formData);
+            return redirect(routes.Application.index());
+        } catch (Exception e) {
+            return badRequest(views.html.registerPublications.render(publicationsForm, publicationsParticipantsForm));
+        }
+    }
 
+    private void savePublication(Map<String, String[]> formData) {
 
         List<String> citation = new ArrayList<>();
 
@@ -98,7 +107,7 @@ public class PublicationsController extends Controller {
 
         for (int i = 0; i < citation.size(); i++) {
 
-            Publications p = new Publications(yearOfPublication.get(i), semester.get(i), type.get(i), citation.get(i));
+            Publications p = new Publications(yearOfPublication.get(i), Semesters.findById(i), type.get(i), citation.get(i));
             p.save();
             publicationId = p.getId();
         }
@@ -109,7 +118,6 @@ public class PublicationsController extends Controller {
             pp.save();
 
         }
-        return redirect(routes.Application.index());
 
     }
 

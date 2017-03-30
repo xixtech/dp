@@ -48,6 +48,21 @@ public class Semesters extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Visits> visits;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Comittee> comittee;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<FinalWorks> finalWorks;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Projects> projects;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Schedule> schedul;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Publications> publications;
+
     public Semesters(String semesterValue, String semesterVK, String semesterVD, String semesterAr, Date semesterFrom, Date semesterTo) {
         this.semesterValue = semesterValue;
         this.semesterVK = semesterVK;
@@ -127,6 +142,62 @@ public class Semesters extends Model {
 
     public void setCourses(List<Courses> courses) {
         this.courses = courses;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Visits> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<Visits> visits) {
+        this.visits = visits;
+    }
+
+    public List<Comittee> getComittee() {
+        return comittee;
+    }
+
+    public void setComittee(List<Comittee> comittee) {
+        this.comittee = comittee;
+    }
+
+    public List<FinalWorks> getFinalWorks() {
+        return finalWorks;
+    }
+
+    public void setFinalWorks(List<FinalWorks> finalWorks) {
+        this.finalWorks = finalWorks;
+    }
+
+    public List<Projects> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Projects> projects) {
+        this.projects = projects;
+    }
+
+    public List<Schedule> getSchedul() {
+        return schedul;
+    }
+
+    public void setSchedul(List<Schedule> schedul) {
+        this.schedul = schedul;
+    }
+
+    public List<Publications> getPublications() {
+        return publications;
+    }
+
+    public void setPublications(List<Publications> publications) {
+        this.publications = publications;
     }
 
     public static Map<String, String> options() {

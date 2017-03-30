@@ -36,14 +36,13 @@ public class FinalWorks extends Model {
     @Formats.DateTime(pattern = "yyyy")
     public Date year;
 
-    @Constraints.Required(message = "Semestr je povinný")
-    @Formats.NonEmpty
-    public String semester;
+    @ManyToOne
+    public Semesters semester;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<FinalWorksParticipants> finalWorksToEmployees;
 
-    public FinalWorks(String finalWorksName, String names, Date year, String semester) {
+    public FinalWorks(String finalWorksName, String names, Date year, Semesters semester) {
         this.finalWorksName = finalWorksName;
         this.names = names;
         this.year = year;
@@ -82,11 +81,11 @@ public class FinalWorks extends Model {
         this.year = year;
     }
 
-    public String getSemester() {
+    public Semesters getSemester() {
         return semester;
     }
 
-    public void setSemester(String semester) {
+    public void setSemester(Semesters semester) {
         this.semester = semester;
     }
 

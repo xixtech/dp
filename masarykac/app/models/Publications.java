@@ -22,7 +22,8 @@ public class Publications extends Model {
 
     public String yearOfPublication;
 
-    public String semester;
+    @ManyToOne
+    public Semesters semester;
 
     public String type;
 
@@ -31,7 +32,7 @@ public class Publications extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<PublicationsParticipants> publicationsParticipants;
 
-    public Publications(String yearOfPublication, String semester, String type, String citation) {
+    public Publications(String yearOfPublication, Semesters semester, String type, String citation) {
         this.yearOfPublication = yearOfPublication;
         this.semester = semester;
         this.type = type;
@@ -54,11 +55,11 @@ public class Publications extends Model {
         this.yearOfPublication = yearOfPublication;
     }
 
-    public String getSemester() {
+    public Semesters getSemester() {
         return semester;
     }
 
-    public void setSemester(String semester) {
+    public void setSemester(Semesters semester) {
         this.semester = semester;
     }
 

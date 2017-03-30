@@ -36,7 +36,30 @@ function addPublicationParticipant(divName, pole) {
 }
 
 
+function addCourseTeacher(divName) {
 
+    var newDiv = document.createElement('div');
+    var mapKey = document.getElementById('myField').value;
+    var mapValue = document.getElementById('myField2').value;
+    var testKey = mapKey.split(";");
+    var testValue = mapValue.split(";");
+
+    var i, out = [];//literal new array
+    for(i=0;i<testKey.length;i++)
+    {
+        out.push([testKey[i],testValue[i]]);
+    }
+
+    var selectHTML = "";
+    selectHTML = "<div class='row'><div class='col-md-6'><select class='form-control' name='teachers.id'>";
+    for (i = 0; i < out.length; i = i + 1) {
+        selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
+
+    }
+    selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='teachers.scale'> </div></div></br>";
+    newDiv.innerHTML = selectHTML;
+    document.getElementById(divName).appendChild(newDiv);
+}
 
 
 

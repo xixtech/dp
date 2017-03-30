@@ -255,18 +255,30 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-6">
                                     @select(
                                         coursesForm("teachers.id"),
-                                        options(Teachers.options()),
+                                        options(Employees.options()),
                                         '_label -> "Vyučující",
                                         'class -> "form-control",
                                         '_help -> "",
                                         '_error -> coursesForm.globalError
                                     )
                                     </div>
-                                    <div class="col-md-3">
-                                        <input type='text' class='form-control' name='scale[]' onkeypress="return isNumberKey(event)">
+                                    <div class="col-md-6">
+                                    @inputText(
+                                        coursesForm("teachers.scale"),
+                                        '_label -> "Váha",
+                                        'class -> "form-control",
+                                        '_help -> "",
+                                        '_error -> coursesForm.globalError
+                                    )
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="dynamicInput"><input type="hidden" id="myField" value="@Employees.getJS1Key()" /><input type="hidden" id="myField2" value="@Employees.getJS1Value()" /></div>
+                                        <input type="button" class="btn btn" value="Přidat vyučujícího" onclick="addCourseTeacher('dynamicInput');" />
                                     </div>
                                 </div>
                             </div>

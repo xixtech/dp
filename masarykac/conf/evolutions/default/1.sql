@@ -6,7 +6,7 @@
 create table comittee (
   id                            bigserial not null,
   date                          timestamp,
-  semester                      varchar(255),
+  semester_id                   bigint,
   role_in_comittee              varchar(255),
   constraint pk_comittee primary key (id)
 );
@@ -60,7 +60,7 @@ create table current_semesters_until_the_end_of_study (
   id                            bigserial not null,
   field_of_study                varchar(255),
   semester_entry                varchar(255),
-  semester                      varchar(255),
+  semester_id                   bigint,
   constraint pk_current_semesters_until_the_end_of_study primary key (id)
 );
 
@@ -100,7 +100,7 @@ create table final_works (
   final_works_name              varchar(255),
   names                         varchar(255),
   year                          timestamp,
-  semester                      varchar(255),
+  semester_id                   bigint,
   constraint pk_final_works primary key (id)
 );
 
@@ -210,7 +210,7 @@ create table projects (
   project_name                  varchar(255),
   project_from                  timestamp,
   project_to                    timestamp,
-  semester                      varchar(255),
+  semester_id                   bigint,
   has_grant                     boolean,
   grant_value                   varchar(255),
   constraint pk_projects primary key (id)
@@ -226,7 +226,7 @@ create table projects_participants (
 create table publications (
   id                            bigserial not null,
   year_of_publication           varchar(255),
-  semester                      varchar(255),
+  semester_id                   bigint,
   type                          varchar(255),
   citation                      varchar(255),
   constraint pk_publications primary key (id)
@@ -263,7 +263,7 @@ create table salary_scale (
 
 create table schedule (
   id                            bigserial not null,
-  semester                      varchar(255),
+  semester_id                   bigint,
   ident                         varchar(255),
   course                        varchar(255),
   schedule_day                  integer,
@@ -376,6 +376,9 @@ create table visits (
   constraint pk_visits primary key (id)
 );
 
+alter table comittee add constraint fk_comittee_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
+create index ix_comittee_semester_id on comittee (semester_id);
+
 alter table comittee_to_employess add constraint fk_comittee_to_employess_comittee_id foreign key (comittee_id) references comittee (id) on delete restrict on update restrict;
 create index ix_comittee_to_employess_comittee_id on comittee_to_employess (comittee_id);
 
@@ -388,7 +391,13 @@ create index ix_courses_semester_id on courses (semester_id);
 alter table courses add constraint fk_courses_subjects_id foreign key (subjects_id) references subjects (id) on delete restrict on update restrict;
 create index ix_courses_subjects_id on courses (subjects_id);
 
+alter table current_semesters_until_the_end_of_study add constraint fk_current_semesters_until_the_end_of_study_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
+create index ix_current_semesters_until_the_end_of_study_semester_id on current_semesters_until_the_end_of_study (semester_id);
+
 alter table employees add constraint fk_employees_member_id foreign key (member_id) references member (id) on delete restrict on update restrict;
+
+alter table final_works add constraint fk_final_works_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
+create index ix_final_works_semester_id on final_works (semester_id);
 
 alter table final_works_participants add constraint fk_final_works_participants_final_works_id foreign key (final_works_id) references final_works (id) on delete restrict on update restrict;
 create index ix_final_works_participants_final_works_id on final_works_participants (final_works_id);
@@ -412,17 +421,26 @@ alter table person add constraint fk_person_member_id foreign key (member_id) re
 
 alter table profile add constraint fk_profile_member_id foreign key (member_id) references member (id) on delete restrict on update restrict;
 
+alter table projects add constraint fk_projects_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
+create index ix_projects_semester_id on projects (semester_id);
+
 alter table projects_participants add constraint fk_projects_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_projects_participants_employees_id on projects_participants (employees_id);
 
 alter table projects_participants add constraint fk_projects_participants_projects_id foreign key (projects_id) references projects (id) on delete restrict on update restrict;
 create index ix_projects_participants_projects_id on projects_participants (projects_id);
 
+alter table publications add constraint fk_publications_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
+create index ix_publications_semester_id on publications (semester_id);
+
 alter table publications_participants add constraint fk_publications_participants_publications_id foreign key (publications_id) references publications (id) on delete restrict on update restrict;
 create index ix_publications_participants_publications_id on publications_participants (publications_id);
 
 alter table publications_participants add constraint fk_publications_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_publications_participants_employees_id on publications_participants (employees_id);
+
+alter table schedule add constraint fk_schedule_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
+create index ix_schedule_semester_id on schedule (semester_id);
 
 alter table schedule add constraint fk_schedule_courses_id foreign key (courses_id) references courses (id) on delete restrict on update restrict;
 create index ix_schedule_courses_id on schedule (courses_id);
@@ -463,6 +481,9 @@ create index ix_visits_employees_id on visits (employees_id);
 
 # --- !Downs
 
+alter table if exists comittee drop constraint if exists fk_comittee_semester_id;
+drop index if exists ix_comittee_semester_id;
+
 alter table if exists comittee_to_employess drop constraint if exists fk_comittee_to_employess_comittee_id;
 drop index if exists ix_comittee_to_employess_comittee_id;
 
@@ -475,7 +496,13 @@ drop index if exists ix_courses_semester_id;
 alter table if exists courses drop constraint if exists fk_courses_subjects_id;
 drop index if exists ix_courses_subjects_id;
 
+alter table if exists current_semesters_until_the_end_of_study drop constraint if exists fk_current_semesters_until_the_end_of_study_semester_id;
+drop index if exists ix_current_semesters_until_the_end_of_study_semester_id;
+
 alter table if exists employees drop constraint if exists fk_employees_member_id;
+
+alter table if exists final_works drop constraint if exists fk_final_works_semester_id;
+drop index if exists ix_final_works_semester_id;
 
 alter table if exists final_works_participants drop constraint if exists fk_final_works_participants_final_works_id;
 drop index if exists ix_final_works_participants_final_works_id;
@@ -499,17 +526,26 @@ alter table if exists person drop constraint if exists fk_person_member_id;
 
 alter table if exists profile drop constraint if exists fk_profile_member_id;
 
+alter table if exists projects drop constraint if exists fk_projects_semester_id;
+drop index if exists ix_projects_semester_id;
+
 alter table if exists projects_participants drop constraint if exists fk_projects_participants_employees_id;
 drop index if exists ix_projects_participants_employees_id;
 
 alter table if exists projects_participants drop constraint if exists fk_projects_participants_projects_id;
 drop index if exists ix_projects_participants_projects_id;
 
+alter table if exists publications drop constraint if exists fk_publications_semester_id;
+drop index if exists ix_publications_semester_id;
+
 alter table if exists publications_participants drop constraint if exists fk_publications_participants_publications_id;
 drop index if exists ix_publications_participants_publications_id;
 
 alter table if exists publications_participants drop constraint if exists fk_publications_participants_employees_id;
 drop index if exists ix_publications_participants_employees_id;
+
+alter table if exists schedule drop constraint if exists fk_schedule_semester_id;
+drop index if exists ix_schedule_semester_id;
 
 alter table if exists schedule drop constraint if exists fk_schedule_courses_id;
 drop index if exists ix_schedule_courses_id;

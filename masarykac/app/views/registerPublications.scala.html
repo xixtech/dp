@@ -44,8 +44,8 @@
                             </div>
                             <div class="row">
                             @select(
-                                publicationsForm("semester"),
-                                options(Semesters.optionsValues()),
+                                publicationsForm("semester.id"),
+                                options(Semesters.options()),
                                 '_label -> "Semestr publikace:",
                                 'class -> "form-control",
                                 '_help -> "Prosím zadejte semestr publikace.",

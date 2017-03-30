@@ -95,7 +95,7 @@ public class FinalWorksController extends Controller {
         long finalWorkId = 0;
 
         for (int i = 0; i < finalWorksName.size(); i++) {
-            FinalWorks fw = new FinalWorks(finalWorksName.get(i), names.get(i), year.get(i), semester.get(i));
+            FinalWorks fw = new FinalWorks(finalWorksName.get(i), names.get(i), year.get(i), Semesters.findById(i));
             fw.save();
             finalWorkId = fw.getId();
         }

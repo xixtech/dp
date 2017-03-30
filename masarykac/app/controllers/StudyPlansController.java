@@ -29,14 +29,23 @@ public class StudyPlansController extends Controller {
         return ok(views.html.registerStudyPlans.render(studyPlansForm));
     }
 
-    /**
-     * uložení osoby, profilu a zákazníka z formuláře
-     *
-     * @return
-     */
     public Result save() {
+        Form<StudyPlans> studyPlansForm = formFactory.form(StudyPlans.class).bindFromRequest();
 
-        Map<String, String[]> formData = request().body().asFormUrlEncoded();
+        if (studyPlansForm.hasErrors()) {
+            return badRequest(views.html.registerStudyPlans.render(studyPlansForm));
+        }
+
+        try {
+            Map<String, String[]> formData = request().body().asFormUrlEncoded();
+            saveStudyPlan(formData);
+            return redirect(routes.Application.index());
+        } catch (Exception e) {
+            return badRequest(views.html.registerStudyPlans.render(studyPlansForm));
+        }
+    }
+
+    private void saveStudyPlan(Map<String, String[]> formData) {
 
         long subjectsId = 0;
         long fieldsOfStudyId = 0;
@@ -72,8 +81,6 @@ public class StudyPlansController extends Controller {
         StudyPlans sp = new StudyPlans(Subjects.findById(subjectsId), FieldsOfStudy.findById(fieldsOfStudyId), Semesters.findById(semestersId), (int) val,
                 StudyGroups.findById(studyGroupsId), StudyGroups1.findById(studyGroups1Id));
         sp.save();
-
-        return redirect(routes.Application.index());
     }
 
     private void saveStudyPlans(StudyPlans studyPlans) throws Exception {
