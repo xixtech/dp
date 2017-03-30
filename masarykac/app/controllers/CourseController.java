@@ -10,6 +10,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
+import java.util.Map;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -44,6 +45,7 @@ public class CourseController extends Controller {
         }
         Courses courses = coursesForm.get();
         try {
+            Map<String, String[]> formData = request().body().asFormUrlEncoded();
 
             return redirect(routes.Application.index());
         } catch (Exception e) {

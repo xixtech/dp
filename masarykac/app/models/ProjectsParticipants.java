@@ -26,6 +26,35 @@ public class ProjectsParticipants extends Model {
     @ManyToOne
     public Projects projects;
 
+    public ProjectsParticipants(Employees employees, Projects projects) {
+        this.employees = employees;
+        this.projects = projects;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Employees getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Employees employees) {
+        this.employees = employees;
+    }
+
+    public Projects getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Projects projects) {
+        this.projects = projects;
+    }
+
     public static ProjectsParticipants findById(long id) {
         return find.where().eq("id",id).findUnique();
     }

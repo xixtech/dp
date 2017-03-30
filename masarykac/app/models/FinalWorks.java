@@ -34,6 +34,61 @@ public class FinalWorks extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<FinalWorksParticipants> finalWorksToEmployees;
 
+    public FinalWorks(String finalWorksName, String names, Date year, String semester) {
+        this.finalWorksName = finalWorksName;
+        this.names = names;
+        this.year = year;
+        this.semester = semester;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFinalWorksName() {
+        return finalWorksName;
+    }
+
+    public void setFinalWorksName(String finalWorksName) {
+        this.finalWorksName = finalWorksName;
+    }
+
+    public String getNames() {
+        return names;
+    }
+
+    public void setNames(String names) {
+        this.names = names;
+    }
+
+    public Date getYear() {
+        return year;
+    }
+
+    public void setYear(Date year) {
+        this.year = year;
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    public List<FinalWorksParticipants> getFinalWorksToEmployees() {
+        return finalWorksToEmployees;
+    }
+
+    public void setFinalWorksToEmployees(List<FinalWorksParticipants> finalWorksToEmployees) {
+        this.finalWorksToEmployees = finalWorksToEmployees;
+    }
+
     public static FinalWorks findById(long id) {
         return find.where().eq("id",id).findUnique();
     }

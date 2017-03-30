@@ -39,6 +39,79 @@ public class Projects extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<ProjectsParticipants> projectsParticipants;
 
+    public Projects(String projectName, Date projectFrom, Date projectTo, String semester, boolean hasGrant, String grantValue) {
+        this.projectName = projectName;
+        this.projectFrom = projectFrom;
+        this.projectTo = projectTo;
+        this.semester = semester;
+        this.hasGrant = hasGrant;
+        this.grantValue = grantValue;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public Date getProjectFrom() {
+        return projectFrom;
+    }
+
+    public void setProjectFrom(Date projectFrom) {
+        this.projectFrom = projectFrom;
+    }
+
+    public Date getProjectTo() {
+        return projectTo;
+    }
+
+    public void setProjectTo(Date projectTo) {
+        this.projectTo = projectTo;
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    public boolean isHasGrant() {
+        return hasGrant;
+    }
+
+    public void setHasGrant(boolean hasGrant) {
+        this.hasGrant = hasGrant;
+    }
+
+    public String getGrantValue() {
+        return grantValue;
+    }
+
+    public void setGrantValue(String grantValue) {
+        this.grantValue = grantValue;
+    }
+
+    public List<ProjectsParticipants> getProjectsParticipants() {
+        return projectsParticipants;
+    }
+
+    public void setProjectsParticipants(List<ProjectsParticipants> projectsParticipants) {
+        this.projectsParticipants = projectsParticipants;
+    }
+
     public static Projects findById(long id) {
         return find.where().eq("id",id).findUnique();
     }

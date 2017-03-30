@@ -28,12 +28,21 @@
     </div>
         <!-- /.row -->
     <div class="row">
+        @if(ojPage.size()==0){
+            <p>Žádné údaje k zobrazení</p>
+        }
     @for(ounits <- ojPage) {
         Oddělení: @ounits.organizationalUnitNumber </br>
         <hr>
+        @if(ePage.size()==0){
+            <p>Žádné údaje k zobrazení</p>
+        }
         @for(empl <- ePage) {
             Jméno: @empl.getFullName </br>
             <hr>
+            @if(cPage.size()==0){
+                <p>Žádné údaje k zobrazení</p>
+            }
             @for(courses <- cPage) {
                 @courses.semester.semesterVD </br>
             <div class="col-lg-12">

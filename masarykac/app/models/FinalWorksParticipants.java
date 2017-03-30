@@ -28,6 +28,44 @@ public class FinalWorksParticipants extends Model {
     @ManyToOne
     public Employees employees;
 
+    public FinalWorksParticipants(String teachersRole, FinalWorks finalWorks, Employees employees) {
+        this.teachersRole = teachersRole;
+        this.finalWorks = finalWorks;
+        this.employees = employees;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTeachersRole() {
+        return teachersRole;
+    }
+
+    public void setTeachersRole(String teachersRole) {
+        this.teachersRole = teachersRole;
+    }
+
+    public FinalWorks getFinalWorks() {
+        return finalWorks;
+    }
+
+    public void setFinalWorks(FinalWorks finalWorks) {
+        this.finalWorks = finalWorks;
+    }
+
+    public Employees getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Employees employees) {
+        this.employees = employees;
+    }
+
     public static FinalWorksParticipants findById(long id) {
         return find.where().eq("id",id).findUnique();
     }

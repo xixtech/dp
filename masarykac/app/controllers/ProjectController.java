@@ -1,9 +1,7 @@
 package controllers;
 
-import models.Projects;
-import models.ProjectsParticipants;
-import models.Subjects;
-import models.Visits;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import models.*;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -11,6 +9,9 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -20,6 +21,7 @@ public class ProjectController extends Controller {
 
     @Inject
     private FormFactory formFactory;
+
     /**
      * přesměrování na registrační formulář
      *
@@ -28,35 +30,91 @@ public class ProjectController extends Controller {
     public Result index() {
         Form<Projects> projectsForm = formFactory.form(Projects.class);
         Form<ProjectsParticipants> projectsParticipantsForm = formFactory.form(ProjectsParticipants.class);
-        return ok(views.html.registerProjects.render(projectsForm,projectsParticipantsForm));
+        return ok(views.html.registerProjects.render(projectsForm, projectsParticipantsForm));
     }
 
     /**
      * uložení osoby, profilu a zákazníka z formuláře
      *
      * @return
-     *
      */
     public Result save() {
         Form<Projects> projectsForm = formFactory.form(Projects.class).bindFromRequest();
         Form<ProjectsParticipants> projectsParticipantsForm = formFactory.form(ProjectsParticipants.class).bindFromRequest();
         if (projectsForm.hasErrors()) {
-            return badRequest(views.html.registerProjects.render(projectsForm,projectsParticipantsForm));
+            return badRequest(views.html.registerProjects.render(projectsForm, projectsParticipantsForm));
         }
 
         try {
-
+            Map<String, String[]> formData = request().body().asFormUrlEncoded();
+            saveProject(formData);
             return redirect(routes.Application.index());
         } catch (Exception e) {
-            return badRequest(views.html.registerProjects.render(projectsForm,projectsParticipantsForm));
+            return badRequest(views.html.registerProjects.render(projectsForm, projectsParticipantsForm));
         }
     }
 
-    private void saveSubject(Subjects subjectForm) throws Exception {
-        Subjects subjects=new Subjects(subjectForm.ident, subjectForm.identOld,subjectForm.titleC, subjectForm.titleA,
-                subjectForm.hoursP, subjectForm.hoursC,subjectForm.hoursSemester,subjectForm.credits,subjectForm.credit,subjectForm.exam,subjectForm.classifiedCredit,
-                subjectForm.department,subjectForm.formPresentation,subjectForm.formCombined);
-        subjects.save();
+    private void saveProject(Map<String, String[]> formData) throws Exception {
+        List<String> projectName = new ArrayList<>();
+
+        for (String insId : formData.get("projectName")) {
+            projectName.add(insId);
+        }
+
+        List<Date> projectFrom = new ArrayList<>();
+        DateFormat format = new SimpleDateFormat("dd.mm.yyyy", Locale.ENGLISH);
+
+        for (String insId : formData.get("projectFrom")) {
+
+            projectFrom.add(format.parse(insId));
+        }
+
+        List<Date> projectTo = new ArrayList<>();
+
+        for (String insId : formData.get("projectTo")) {
+            projectTo.add(format.parse(insId));
+        }
+
+        List<String> semester = new ArrayList<>();
+
+        for (String insId : formData.get("semester")) {
+            semester.add(insId);
+        }
+
+        List<Boolean> hasGrant = new ArrayList<>();
+
+        for (String insId : formData.get("hasGrant")) {
+            hasGrant.add(Boolean.parseBoolean(insId));
+        }
+
+
+        List<String> grantValue = new ArrayList<>();
+
+        for (String insId : formData.get("grantValue")) {
+            grantValue.add(insId);
+        }
+
+        List<String> employees = new ArrayList<>();
+
+        for (String insId : formData.get("employees.id")) {
+            employees.add(insId);
+        }
+
+
+        long projectId = 0;
+
+        for (int i = 0; i < projectName.size(); i++) {
+
+            Projects p = new Projects(projectName.get(i), projectFrom.get(i), projectTo.get(i), semester.get(i), hasGrant.get(i), grantValue.get(i));
+            p.save();
+            projectId = p.getId();
+        }
+
+        for (int i = 0; i < employees.size(); i++) {
+
+            ProjectsParticipants pp = new ProjectsParticipants(Employees.findById(Long.parseLong(employees.get(i))), Projects.findById(projectId));
+            pp.save();
+        }
 
     }
 

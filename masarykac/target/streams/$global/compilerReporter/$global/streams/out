@@ -1,7 +1,4 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\formCourse.scala.html:115: comparing values of types Int and Null using `!=' will always yield true
-[warn]                                                 } else {
-[warn]                          ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\formCourse.scala.html:123: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                 } else {
-[warn]                                               ^
-[warn] two warnings found
+[error] C:\Users\Martin\dp\masarykac\app\controllers\CourseController.java:49: cannot find symbol
+[error]   symbol:   method saveFinalWork(java.util.Map<java.lang.String,java.lang.String[]>)
+[error]   location: class controllers.CourseController
+[error] saveFinalWork
