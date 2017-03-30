@@ -2,6 +2,7 @@ package models;
 
 import com.avaje.ebean.Model;
 import play.data.format.Formats;
+import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -22,13 +23,21 @@ public class FinalWorks extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Constraints.Required(message = "Název práce je povinný")
+    @Formats.NonEmpty
+    @Constraints.MinLength(value = 2, message = "Název práce musí mít alespoň 2 znaky")
     public String finalWorksName;
 
+    @Constraints.Required(message = "Jména jsou povinná")
+    @Formats.NonEmpty
+    @Constraints.MinLength(value = 2, message = "Jména musejí mít alespoň 2 znaky")
     public String names;
 
-    @Formats.DateTime(pattern = "dd.MM.yyyy")
+    @Formats.DateTime(pattern = "yyyy")
     public Date year;
 
+    @Constraints.Required(message = "Semestr je povinný")
+    @Formats.NonEmpty
     public String semester;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})

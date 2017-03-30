@@ -40,10 +40,9 @@ public class FinalWorksController extends Controller {
     public Result save() {
         Form<FinalWorks> finalWorksForm = formFactory.form(FinalWorks.class).bindFromRequest();
         Form<FinalWorksParticipants> finalWorksToEmployeesForm = formFactory.form(FinalWorksParticipants.class).bindFromRequest();
-        if (finalWorksForm.hasErrors()) {
+        if (finalWorksForm.hasErrors()||finalWorksToEmployeesForm.hasErrors()) {
             return badRequest(views.html.registerFinalWorks.render(finalWorksForm, finalWorksToEmployeesForm));
         }
-
         try {
             Map<String, String[]> formData = request().body().asFormUrlEncoded();
             saveFinalWork(formData);
@@ -68,7 +67,7 @@ public class FinalWorksController extends Controller {
         }
 
         List<Date> year = new ArrayList<>();
-        DateFormat format = new SimpleDateFormat("dd.mm.yyyy", Locale.ENGLISH);
+        DateFormat format = new SimpleDateFormat("yyyy", Locale.ENGLISH);
 
         for (String insId : formData.get("year")) {
 
@@ -92,7 +91,6 @@ public class FinalWorksController extends Controller {
         for (String insId : formData.get("teachersRole")) {
             teachersRole.add(insId);
         }
-
 
         long finalWorkId = 0;
 

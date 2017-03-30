@@ -41,7 +41,7 @@ public class ProjectController extends Controller {
     public Result save() {
         Form<Projects> projectsForm = formFactory.form(Projects.class).bindFromRequest();
         Form<ProjectsParticipants> projectsParticipantsForm = formFactory.form(ProjectsParticipants.class).bindFromRequest();
-        if (projectsForm.hasErrors()) {
+        if (projectsForm.hasErrors() || projectsParticipantsForm.hasErrors()) {
             return badRequest(views.html.registerProjects.render(projectsForm, projectsParticipantsForm));
         }
 
@@ -82,10 +82,19 @@ public class ProjectController extends Controller {
         }
 
         List<Boolean> hasGrant = new ArrayList<>();
-
-        for (String insId : formData.get("hasGrant")) {
-            hasGrant.add(Boolean.parseBoolean(insId));
+        if(formData.containsKey("hasGrant")) {
+            for (String insId : formData.get("hasGrant")) {
+                if (insId != null) {
+                    hasGrant.add(Boolean.parseBoolean(insId));
+                } else {
+                    hasGrant.add(false);
+                }
+            }
+        }else{
+            hasGrant.add(false);
         }
+
+
 
 
         List<String> grantValue = new ArrayList<>();
