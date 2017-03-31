@@ -64,7 +64,7 @@ public class PublicationsController extends Controller {
 
         List<String> semester = new ArrayList<>();
 
-        for (String insId : formData.get("semester")) {
+        for (String insId : formData.get("semester.id")) {
             semester.add(insId);
         }
 
@@ -107,7 +107,7 @@ public class PublicationsController extends Controller {
 
         for (int i = 0; i < citation.size(); i++) {
 
-            Publications p = new Publications(yearOfPublication.get(i), Semesters.findById(i), type.get(i), citation.get(i));
+            Publications p = new Publications(yearOfPublication.get(i), Semesters.findById(Long.parseLong(semester.get(i))), type.get(i), citation.get(i));
             p.save();
             publicationId = p.getId();
         }

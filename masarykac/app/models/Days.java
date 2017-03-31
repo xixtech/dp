@@ -2,10 +2,7 @@ package models;
 
 import com.avaje.ebean.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +25,9 @@ public class Days extends Model {
     public String day;
 
     public String dayV;
+
+    @OneToMany(mappedBy="days",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<ScheduleInWeeks> scheduleInWeeks;
 
     public Days(int dayP, String day, String dayV) {
         this.dayP = dayP;
@@ -59,8 +59,28 @@ public class Days extends Model {
         this.dayV = dayV;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<ScheduleInWeeks> getScheduleInWeeks() {
+        return scheduleInWeeks;
+    }
+
+    public void setScheduleInWeeks(List<ScheduleInWeeks> scheduleInWeeks) {
+        this.scheduleInWeeks = scheduleInWeeks;
+    }
+
     public static List<Days> search() {
         return Days.find.all();
+    }
+
+    public static Days findById(long id) {
+        return find.where().eq("id", id).findUnique();
     }
 
     public static Map<String,String> options() {
@@ -68,6 +88,15 @@ public class Days extends Model {
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
         for(Days set: subjectSets) {
             options.put(set.id.toString(), set.day.toString());
+        }
+        return options;
+    }
+
+    public static Map<String,String> optionsDay() {
+        List<Days> subjectSets = Days.find.all();
+        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+        for(Days set: subjectSets) {
+            options.put(set.day.toString(), set.day.toString());
         }
         return options;
     }

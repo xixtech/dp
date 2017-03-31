@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import org.joda.time.*;
 
 import javax.persistence.*;
 import java.util.LinkedHashMap;
@@ -20,13 +21,14 @@ public class ScheduleInWeeks extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
-    public String semester;
+    @ManyToOne
+    public Semesters semester;
 
     public String ident;
 
-    public String course;
 
-    public int scheduleDay;
+    @ManyToOne
+    public Days days;
 
     public String scheduleFrom;
 
@@ -39,16 +41,16 @@ public class ScheduleInWeeks extends Model {
     public int scheduleYear;
 
     @ManyToOne
-    public Schedule schedule;
+    public Courses courses;
 
     @ManyToOne
-    public Semesters semesters;
+    public Schedule schedule;
 
-    public ScheduleInWeeks(String semester, String ident, String course, int scheduleDay, String scheduleFrom, String scheduleTo, String classRoom, int scheduleWeek, int scheduleYear) {
+    public ScheduleInWeeks(Semesters semester, String ident, Courses courses, Days days, String scheduleFrom, String scheduleTo, String classRoom, int scheduleWeek, int scheduleYear) {
         this.semester = semester;
         this.ident = ident;
-        this.course = course;
-        this.scheduleDay = scheduleDay;
+        this.courses = courses;
+        this.days = days;
         this.scheduleFrom = scheduleFrom;
         this.scheduleTo = scheduleTo;
         this.classRoom = classRoom;
@@ -56,11 +58,22 @@ public class ScheduleInWeeks extends Model {
         this.scheduleYear = scheduleYear;
     }
 
-    public String getSemester() {
+    public ScheduleInWeeks(Semesters semester, Courses courses, Days days, String scheduleFrom, String scheduleTo, String classRoom, int scheduleWeek, int scheduleYear) {
+        this.semester = semester;
+        this.courses = courses;
+        this.days = days;
+        this.scheduleFrom = scheduleFrom;
+        this.scheduleTo = scheduleTo;
+        this.classRoom = classRoom;
+        this.scheduleWeek = scheduleWeek;
+        this.scheduleYear = scheduleYear;
+    }
+
+    public Semesters getSemester() {
         return semester;
     }
 
-    public void setSemester(String semester) {
+    public void setSemester(Semesters semester) {
         this.semester = semester;
     }
 
@@ -72,20 +85,20 @@ public class ScheduleInWeeks extends Model {
         this.ident = ident;
     }
 
-    public String getCourse() {
-        return course;
+    public Courses getCourse() {
+        return courses;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public void setCourse(Courses courses) {
+        this.courses = courses;
     }
 
-    public int getScheduleDay() {
-        return scheduleDay;
+    public String getDay() {
+        return days.getDay();
     }
 
-    public void setScheduleDay(int scheduleDay) {
-        this.scheduleDay = scheduleDay;
+    public void setDay(Days scheduleDay) {
+        this.days = days;
     }
 
     public String getScheduleFrom() {
@@ -136,13 +149,7 @@ public class ScheduleInWeeks extends Model {
         this.schedule = schedule;
     }
 
-    public Semesters getSemesters() {
-        return semesters;
-    }
 
-    public void setSemesters(Semesters semesters) {
-        this.semesters = semesters;
-    }
 
     public static List<ScheduleInWeeks> search() {
         return ScheduleInWeeks.find.all();

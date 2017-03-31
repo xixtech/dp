@@ -43,10 +43,18 @@ public class Courses extends Model {
         this.semester = semester;
     }
 
-    public Courses(String course, int numberOfStudents, Subjects subjects) {
+    public Courses(String course, int numberOfStudents, Semesters semester) {
         this.course = course;
         this.numberOfStudents = numberOfStudents;
-        this.subjects = subjects;
+        this.semester = semester;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCourse() {

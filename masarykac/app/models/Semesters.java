@@ -58,10 +58,14 @@ public class Semesters extends Model {
     public List<Projects> projects;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<Schedule> schedul;
+    public List<Schedule> schedule;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Publications> publications;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<ScheduleInWeeks> scheduleInWeeks;
+
 
     public Semesters(String semesterValue, String semesterVK, String semesterVD, String semesterAr, Date semesterFrom, Date semesterTo) {
         this.semesterValue = semesterValue;
@@ -184,12 +188,12 @@ public class Semesters extends Model {
         this.projects = projects;
     }
 
-    public List<Schedule> getSchedul() {
-        return schedul;
+    public List<Schedule> getSchedule() {
+        return schedule;
     }
 
-    public void setSchedul(List<Schedule> schedul) {
-        this.schedul = schedul;
+    public void setSchedule(List<Schedule> schedule) {
+        this.schedule = schedule;
     }
 
     public List<Publications> getPublications() {
@@ -198,6 +202,14 @@ public class Semesters extends Model {
 
     public void setPublications(List<Publications> publications) {
         this.publications = publications;
+    }
+
+    public List<ScheduleInWeeks> getScheduleInWeeks() {
+        return scheduleInWeeks;
+    }
+
+    public void setScheduleInWeeks(List<ScheduleInWeeks> scheduleInWeeks) {
+        this.scheduleInWeeks = scheduleInWeeks;
     }
 
     public static Map<String, String> options() {
