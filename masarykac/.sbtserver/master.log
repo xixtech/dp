@@ -1742,3 +1742,163 @@ Copy resource mappings:
 Total time: 3 s, completed 1.4.2017 10:32:25
 > server-post-command-cleanup
 > server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5fac1f88, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@317279b3 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:249:  java.lang.String cannot be converted to int
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:249:  java.lang.String cannot be converted to int
+Read from stdout: numberOfStudents.get(i)
+numberOfStudents.get(i)
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:253:  java.lang.String cannot be converted to int
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:253:  java.lang.String cannot be converted to int
+Read from stdout: teachersScale.get(j)
+teachersScale.get(j)
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:259: cannot find symbol
+Read from stdout: symbol:   variable days
+Read from stdout: location: class controllers.SubjectPlanTeachingController
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:259: cannot find symbol
+  symbol:   variable days
+  location: class controllers.SubjectPlanTeachingController
+Read from stdout: days
+days
+Read from stdout: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed 1.4.2017 10:50:49
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@24dcdd09, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@115d66cc directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:254:  java.lang.String cannot be converted to int
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:254:  java.lang.String cannot be converted to int
+Read from stdout: teachersScale.get(j)
+teachersScale.get(j)
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:260: cannot find symbol
+Read from stdout: symbol:   variable days
+Read from stdout: location: class controllers.SubjectPlanTeachingController
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:260: cannot find symbol
+  symbol:   variable days
+  location: class controllers.SubjectPlanTeachingController
+Read from stdout: days
+days
+Read from stdout: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed 1.4.2017 10:52:15
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@f8fca34, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@4d95adac directly...
+Java compilation took 0.274724023 s
+Java analysis took 0.121955304 s
+Java compile + analysis took 0.45984755 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 1.4.2017 10:54:36
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@3e088d77, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 1.4.2017 10:54:37
+> server-post-command-cleanup
+> server-handle-next-server-request

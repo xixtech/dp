@@ -1,8 +1,6 @@
 package controllers;
 
-import models.Courses;
-import models.Schedule;
-import models.Subjects;
+import models.*;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -190,16 +188,17 @@ public class SubjectPlanTeachingController extends Controller {
             course.add(insId);
         }
 
-        List<String> numberOfStudents = new ArrayList<>();
+
+        List<Integer> numberOfStudents = new ArrayList<>();
 
         for (String insId : formData.get("numberOfStudents")) {
-            numberOfStudents.add(insId);
+            numberOfStudents.add(Integer.parseInt(insId));
         }
 
-        List<String> scheduleDay = new ArrayList<>();
+        List<String> days = new ArrayList<>();
 
         for (String insId : formData.get("days.id")) {
-            scheduleDay.add(insId);
+            days.add(insId);
         }
 
 
@@ -227,11 +226,12 @@ public class SubjectPlanTeachingController extends Controller {
             teachers.add(insId);
         }
 
-        List<String> teachersScale = new ArrayList<>();
+        List<Integer> teachersScale = new ArrayList<>();
 
         for (String insId : formData.get("teachers.scale")) {
-            teachersScale.add(insId);
+            teachersScale.add(Integer.parseInt(insId));
         }
+
 
         List<Integer> scheduleWeek = new ArrayList<>();
 
@@ -246,17 +246,23 @@ public class SubjectPlanTeachingController extends Controller {
         }
 
         long courseID = 0;
-
+        Courses c = null;
         for (int i = 0; i < course.size(); i++) {
-
-
+            c = new Courses(course.get(i), numberOfStudents.get(i), Semesters.findById(Long.parseLong(semesters.get(i))));
+            c.save();
+            courseID = c.getId();
+            for (int j = 0; j < teachers.size(); j++) {
+                Teachers t=new Teachers(c,Employees.findById(Long.parseLong(teachers.get(j))),teachersScale.get(j));
+                t.save();
+            }
         }
 
-        for (int i = 0; i < teachers.size(); i++) {
+        for (int i = 0; i < scheduleWeek.size(); i++) {
+            ScheduleInWeeks sw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0),
+                    scheduleWeek.get(i), scheduleYear.get(i));
 
-        }
+            sw.save();
 
-        for (int i = 0; i < teachers.size(); i++) {
 
         }
 
