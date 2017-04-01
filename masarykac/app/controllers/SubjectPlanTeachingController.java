@@ -70,16 +70,30 @@ public class SubjectPlanTeachingController extends Controller {
             hoursP.add(insId);
         }
 
-        List<String> credit = new ArrayList<>();
-
-        for (String insId : formData.get("credit")) {
-            credit.add(insId);
+        List<Boolean> credit = new ArrayList<>();
+        if (formData.containsKey("credit")) {
+            for (String insId : formData.get("credit")) {
+                if (insId != null) {
+                    credit.add(Boolean.parseBoolean(insId));
+                } else {
+                    credit.add(false);
+                }
+            }
+        } else {
+            credit.add(false);
         }
 
-        List<String> formPresentation = new ArrayList<>();
-
-        for (String insId : formData.get("formPresentation")) {
-            formPresentation.add(insId);
+        List<Boolean> formPresentation = new ArrayList<>();
+        if (formData.containsKey("formPresentation")) {
+            for (String insId : formData.get("formPresentation")) {
+                if (insId != null) {
+                    formPresentation.add(Boolean.parseBoolean(insId));
+                } else {
+                    formPresentation.add(false);
+                }
+            }
+        } else {
+            formPresentation.add(false);
         }
 
         List<String> identOld = new ArrayList<>();
@@ -94,16 +108,30 @@ public class SubjectPlanTeachingController extends Controller {
             hoursC.add(insId);
         }
 
-        List<String> exam = new ArrayList<>();
-
-        for (String insId : formData.get("exam")) {
-            exam.add(insId);
+        List<Boolean> exam = new ArrayList<>();
+        if (formData.containsKey("exam")) {
+            for (String insId : formData.get("exam")) {
+                if (insId != null) {
+                    exam.add(Boolean.parseBoolean(insId));
+                } else {
+                    exam.add(false);
+                }
+            }
+        } else {
+            exam.add(false);
         }
 
-        List<String> formCombined = new ArrayList<>();
-
-        for (String insId : formData.get("formCombined")) {
-            formCombined.add(insId);
+        List<Boolean> formCombined = new ArrayList<>();
+        if (formData.containsKey("formCombined")) {
+            for (String insId : formData.get("formCombined")) {
+                if (insId != null) {
+                    formCombined.add(Boolean.parseBoolean(insId));
+                } else {
+                    formCombined.add(false);
+                }
+            }
+        } else {
+            formCombined.add(false);
         }
 
         List<String> titleC = new ArrayList<>();
@@ -118,10 +146,18 @@ public class SubjectPlanTeachingController extends Controller {
             credits.add(insId);
         }
 
-        List<String> classifiedCredit = new ArrayList<>();
+        List<Boolean> classifiedCredit = new ArrayList<>();
+        if (formData.containsKey("classifiedCredit")) {
+            for (String insId : formData.get("classifiedCredit")) {
+                if (insId != null) {
 
-        for (String insId : formData.get("classifiedCredit")) {
-            classifiedCredit.add(insId);
+                    classifiedCredit.add(Boolean.parseBoolean(insId));
+                } else {
+                    classifiedCredit.add(false);
+                }
+            }
+        } else {
+            classifiedCredit.add(false);
         }
 
         List<String> titleA = new ArrayList<>();
@@ -144,7 +180,7 @@ public class SubjectPlanTeachingController extends Controller {
 
         List<String> semesters = new ArrayList<>();
 
-        for (String insId : formData.get("semester")) {
+        for (String insId : formData.get("semester.id")) {
             semesters.add(insId);
         }
 
@@ -162,7 +198,7 @@ public class SubjectPlanTeachingController extends Controller {
 
         List<String> scheduleDay = new ArrayList<>();
 
-        for (String insId : formData.get("scheduleDay")) {
+        for (String insId : formData.get("days.id")) {
             scheduleDay.add(insId);
         }
 
@@ -195,6 +231,18 @@ public class SubjectPlanTeachingController extends Controller {
 
         for (String insId : formData.get("teachers.scale")) {
             teachersScale.add(insId);
+        }
+
+        List<Integer> scheduleWeek = new ArrayList<>();
+
+        for (String insId : formData.get("scheduleWeek")) {
+            scheduleWeek.add(Integer.parseInt(insId));
+        }
+
+        List<Integer> scheduleYear = new ArrayList<>();
+
+        for (String insId : formData.get("scheduleYear")) {
+            scheduleYear.add(Integer.parseInt(insId));
         }
 
         long courseID = 0;

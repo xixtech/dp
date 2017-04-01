@@ -79,6 +79,10 @@ public class Member extends Model{
         this.employees = employees;
     }
 
+    public Profile getProfile() {
+        return profile;
+    }
+
     /**
      * @param email
      * @param password

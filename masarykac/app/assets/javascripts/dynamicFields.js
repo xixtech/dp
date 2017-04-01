@@ -17,6 +17,18 @@ function appendRow() {
     }
 }
 
+function appendRowOne() {
+
+    for (i = 0; i < 1; i++) {
+        var tbl = document.getElementById('my-table'), // table reference
+            row = tbl.insertRow(tbl.rows.length),      // append table row
+            j;
+
+        createCellscheduleWeek(row.insertCell(0), i+1, 'row');
+        createCellscheduleYear(row.insertCell(1), 2017, 'row');
+    }
+}
+
 function createCellscheduleWeek(cell, text, style) {
     var div = document.createElement('tr'), // create DIV element
         txt = document.createTextNode(text); // create text node

@@ -26,7 +26,6 @@ public class ScheduleInWeeks extends Model {
 
     public String ident;
 
-
     @ManyToOne
     public Days days;
 
@@ -150,15 +149,14 @@ public class ScheduleInWeeks extends Model {
     }
 
 
-
     public static List<ScheduleInWeeks> search() {
         return ScheduleInWeeks.find.all();
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<ScheduleInWeeks> subjectSets = ScheduleInWeeks.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(ScheduleInWeeks set: subjectSets) {
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (ScheduleInWeeks set : subjectSets) {
             options.put(set.id.toString(), set.semester.toString());
         }
         return options;

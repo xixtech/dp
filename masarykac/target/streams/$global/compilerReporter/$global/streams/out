@@ -1,2 +1,2 @@
-[error] C:\Users\Martin\dp\masarykac\app\models\ScheduleInWeeks.java:30: <identifier> expected
-[error] C:\Users\Martin\dp\masarykac\app\models\ScheduleInWeeks.java:30: <identifier> expected
+[warn] C:\Users\Martin\dp\masarykac\app\controllers\ProjectController.java:3: com.sun.org.apache.xpath.internal.operations.Bool is internal proprietary API and may be removed in a future release
+[warn] com.sun.org.apache.xpath.internal.operations.Bool

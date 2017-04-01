@@ -266,7 +266,7 @@ create table schedule (
   semester_id                   bigint,
   ident                         varchar(255),
   course                        varchar(255),
-  schedule_day                  integer,
+  days_id                       bigint,
   schedule_from                 varchar(255),
   schedule_to                   varchar(255),
   class_room                    varchar(255),
@@ -441,6 +441,9 @@ create index ix_publications_participants_employees_id on publications_participa
 alter table schedule add constraint fk_schedule_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_schedule_semester_id on schedule (semester_id);
 
+alter table schedule add constraint fk_schedule_days_id foreign key (days_id) references days (id) on delete restrict on update restrict;
+create index ix_schedule_days_id on schedule (days_id);
+
 alter table schedule add constraint fk_schedule_courses_id foreign key (courses_id) references courses (id) on delete restrict on update restrict;
 create index ix_schedule_courses_id on schedule (courses_id);
 
@@ -551,6 +554,9 @@ drop index if exists ix_publications_participants_employees_id;
 
 alter table if exists schedule drop constraint if exists fk_schedule_semester_id;
 drop index if exists ix_schedule_semester_id;
+
+alter table if exists schedule drop constraint if exists fk_schedule_days_id;
+drop index if exists ix_schedule_days_id;
 
 alter table if exists schedule drop constraint if exists fk_schedule_courses_id;
 drop index if exists ix_schedule_courses_id;

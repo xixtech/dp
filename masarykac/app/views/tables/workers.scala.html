@@ -51,35 +51,45 @@
                                 <tr>
 
                                     <td class="center">
-                                    @if(member.profile.getFirstName == null) {
-                                        <em>-</em>
-                                    } else {
-                                        @member.profile.getFirstName
+                                    @if(member.profile != null) {
+                                        @if(member.profile.getFirstName == null) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.profile.getFirstName
+                                        }
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(member.profile.getLastName == null) {
-                                        <em>-</em>
-                                    } else {
-                                        @member.profile.getLastName
+                                    @if(member.profile != null) {
+                                        @if(member.profile.getLastName == null) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.profile.getLastName
+                                        }
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(member.profile.phoneNumber == null) {
-                                        <em>-</em>
-                                    } else {
-                                        @member.profile.phoneNumber
+                                    @if(member.profile != null) {
+                                        @if(member.profile.phoneNumber == null) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.profile.phoneNumber
+                                        }
                                     }
                                     </td>
                                     <td class="center">
+                                    @if(member.profile != null) {
                                         @form(routes.PrintController.printUserDetails(member.id), 'class -> "topRight") {
-                                        <input type="submit" value="@member.email" class="btn success">
-                                        }
+                                            <input type="submit" value="@member.email" class="btn success">
+                                            }
+                                    }
                                     </td>
                                     <td class="center">
-                                    @form(routes.SalaryController.printLector(member.id), 'class -> "topRight") {
-                                        <input type="submit" value="@member.email" class="btn success">
-                                        }
+                                    @if(member.profile != null) {
+                                        @form(routes.SalaryController.printLector(member.id), 'class -> "topRight") {
+                                            <input type="submit" value="@member.email" class="btn success">
+                                            }
+                                    }
                                     </td>
                                 </tr>
                             }
