@@ -79,17 +79,32 @@
                                                         <tr>
 
                                                             <td class="center">
-                                                                11
-
+                                                            @if(course.subjects.getIdent == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @course.subjects.getIdent
+                                                            }
                                                             </td>
                                                             <td class="center">
-
+                                                            @if(course.subjects.getTitleC == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @course.subjects.getTitleC
+                                                            }
                                                             </td>
                                                             <td class="center">
-
+                                                            @if(course.course == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @course.course
+                                                            }
                                                             </td>
                                                             <td class="center">
-
+                                                            @if(course.numberOfStudents == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @course.numberOfStudents
+                                                            }
                                                             </td>
                                                             <td class="center">
 
