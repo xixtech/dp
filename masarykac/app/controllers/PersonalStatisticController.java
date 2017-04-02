@@ -27,8 +27,9 @@ public class PersonalStatisticController extends Controller {
         List<Employees> e=Employees.search();
         List<OrganizationalUnits> oj=OrganizationalUnits.search();
         List<Courses> c=Courses.search();
+        List<Subjects> s=Subjects.searchAAA();
 
-        return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj,e,c));
+        return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj,e,c,s));
     }
 
     /**

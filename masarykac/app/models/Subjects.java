@@ -3,6 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 
 import javax.persistence.*;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -213,13 +214,13 @@ public class Subjects extends Model {
     }
 
     public static Subjects findById(long id) {
-        return find.where().eq("id",id).findUnique();
+        return find.where().eq("id", id).findUnique();
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<Subjects> subjectSets = Subjects.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Subjects set: subjectSets) {
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Subjects set : subjectSets) {
             options.put(set.id.toString(), set.ident.toString());
         }
         return options;
@@ -227,5 +228,44 @@ public class Subjects extends Model {
 
     public static List<Subjects> search() {
         return Subjects.find.all();
+    }
+
+    public static List<Subjects> searchAAA() {
+        List<Subjects> list = search();
+        for (Iterator<Subjects> iterator = list.iterator(); iterator.hasNext(); ) {
+            Subjects subjects = iterator.next();
+            String identToCheck = subjects.getIdent();
+
+            if (identToCheck.startsWith("p") || identToCheck.startsWith("P")) {
+                iterator.remove();
+            }
+        }
+        return list;
+    }
+
+    public static List<Subjects> searchAAB() {
+        List<Subjects> list = search();
+        for (Iterator<Subjects> iterator = list.iterator(); iterator.hasNext(); ) {
+            Subjects subjects = iterator.next();
+            String identToCheck = subjects.getIdent();
+
+            if (identToCheck.startsWith("p")==false || identToCheck.startsWith("P")==false) {
+                iterator.remove();
+            }
+        }
+        return list;
+    }
+
+    public static List<Subjects> searchCB() {
+        List<Subjects> list = search();
+        for (Iterator<Subjects> iterator = list.iterator(); iterator.hasNext(); ) {
+            Subjects subjects = iterator.next();
+            String identToCheck = subjects.getIdent();
+            char fourth = identToCheck.charAt(3);
+            if (fourth!='e' || fourth!='E') {
+                iterator.remove();
+            }
+        }
+        return list;
     }
 }

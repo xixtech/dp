@@ -1,6 +1,5 @@
 package controllers;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import models.*;
 import play.data.Form;
 import play.data.FormFactory;
@@ -82,7 +81,7 @@ public class ProjectController extends Controller {
         }
 
         List<Boolean> hasGrant = new ArrayList<>();
-        if(formData.containsKey("hasGrant")) {
+        if (formData.containsKey("hasGrant")) {
             for (String insId : formData.get("hasGrant")) {
                 if (insId != null) {
                     hasGrant.add(Boolean.parseBoolean(insId));
@@ -90,12 +89,9 @@ public class ProjectController extends Controller {
                     hasGrant.add(false);
                 }
             }
-        }else{
+        } else {
             hasGrant.add(false);
         }
-
-
-
 
         List<String> grantValue = new ArrayList<>();
 

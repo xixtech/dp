@@ -30,7 +30,8 @@ public class SubjectPlanTeachingController extends Controller {
         Form<Subjects> subjectsForm = formFactory.form(Subjects.class);
         Form<Courses> coursesForm = formFactory.form(Courses.class);
         Form<Schedule> scheduleForm = formFactory.form(Schedule.class);
-        return ok(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm));
+        Form<StudyPlans> studyPlansForm = formFactory.form(StudyPlans.class);
+        return ok(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm, studyPlansForm));
     }
 
     /**
@@ -42,8 +43,9 @@ public class SubjectPlanTeachingController extends Controller {
         Form<Subjects> subjectsForm = formFactory.form(Subjects.class).bindFromRequest();
         Form<Courses> coursesForm = formFactory.form(Courses.class).bindFromRequest();
         Form<Schedule> scheduleForm = formFactory.form(Schedule.class).bindFromRequest();
-        if (subjectsForm.hasErrors()) {
-            return badRequest(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm));
+        Form<StudyPlans> studyPlansForm = formFactory.form(StudyPlans.class).bindFromRequest();
+        if (subjectsForm.hasErrors() || coursesForm.hasErrors() || scheduleForm.hasErrors() || studyPlansForm.hasErrors()) {
+            return badRequest(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm, studyPlansForm));
         }
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
 
@@ -51,7 +53,7 @@ public class SubjectPlanTeachingController extends Controller {
             saveCourse(formData);
             return redirect(routes.Application.index());
         } catch (Exception e) {
-            return badRequest(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm));
+            return badRequest(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm, studyPlansForm));
         }
     }
 
@@ -245,6 +247,31 @@ public class SubjectPlanTeachingController extends Controller {
             scheduleYear.add(Integer.parseInt(insId));
         }
 
+        List<Integer> fieldsOfStudy = new ArrayList<>();
+
+        for (String insId : formData.get("fieldsOfStudy.id")) {
+            fieldsOfStudy.add(Integer.parseInt(insId));
+        }
+
+        List<Integer> semesterValue = new ArrayList<>();
+
+        for (String insId : formData.get("semesterValue")) {
+            semesterValue.add(Integer.parseInt(insId));
+        }
+
+
+        List<Integer> studyGroups = new ArrayList<>();
+
+        for (String insId : formData.get("studyGroups.id")) {
+            studyGroups.add(Integer.parseInt(insId));
+        }
+
+        List<Integer> studyGroups1 = new ArrayList<>();
+
+        for (String insId : formData.get("studyGroups1.id")) {
+            studyGroups1.add(Integer.parseInt(insId));
+        }
+
 
         Subjects subjects = null;
         for (int i = 0; i < ident.size(); i++) {
@@ -252,6 +279,14 @@ public class SubjectPlanTeachingController extends Controller {
                     hoursP.get(i), hoursC.get(i), hoursSemester.get(i), credits.get(i), credit.get(i), exam.get(i), classifiedCredit.get(i),
                     department.get(i), formPresentation.get(i), formCombined.get(i));
             subjects.save();
+
+        }
+
+        StudyPlans sp = null;
+        for (int i = 0; i < ident.size(); i++) {
+            sp = new StudyPlans(subjects, FieldsOfStudy.findById(fieldsOfStudy.get(0)), Semesters.findById(Long.parseLong(semesters.get(0))), semesterValue.get(0),
+                    StudyGroups.findById(studyGroups.get(0)), StudyGroups1.findById(studyGroups1.get(0)));
+            sp.save();
 
         }
 
