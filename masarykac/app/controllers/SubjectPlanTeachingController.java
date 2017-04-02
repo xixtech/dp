@@ -62,10 +62,10 @@ public class SubjectPlanTeachingController extends Controller {
             ident.add(insId);
         }
 
-        List<String> hoursP = new ArrayList<>();
+        List<Integer> hoursP = new ArrayList<>();
 
         for (String insId : formData.get("hoursP")) {
-            hoursP.add(insId);
+            hoursP.add(Integer.parseInt(insId));
         }
 
         List<Boolean> credit = new ArrayList<>();
@@ -100,10 +100,10 @@ public class SubjectPlanTeachingController extends Controller {
             identOld.add(insId);
         }
 
-        List<String> hoursC = new ArrayList<>();
+        List<Integer> hoursC = new ArrayList<>();
 
         for (String insId : formData.get("hoursC")) {
-            hoursC.add(insId);
+            hoursC.add(Integer.parseInt(insId));
         }
 
         List<Boolean> exam = new ArrayList<>();
@@ -138,10 +138,10 @@ public class SubjectPlanTeachingController extends Controller {
             titleC.add(insId);
         }
 
-        List<String> credits = new ArrayList<>();
+        List<Integer> credits = new ArrayList<>();
 
         for (String insId : formData.get("credits")) {
-            credits.add(insId);
+            credits.add(Integer.parseInt(insId));
         }
 
         List<Boolean> classifiedCredit = new ArrayList<>();
@@ -164,10 +164,10 @@ public class SubjectPlanTeachingController extends Controller {
             titleA.add(insId);
         }
 
-        List<String> hoursSemester = new ArrayList<>();
+        List<Integer> hoursSemester = new ArrayList<>();
 
         for (String insId : formData.get("hoursSemester")) {
-            hoursSemester.add(insId);
+            hoursSemester.add(Integer.parseInt(insId));
         }
 
         List<String> department = new ArrayList<>();
@@ -245,26 +245,45 @@ public class SubjectPlanTeachingController extends Controller {
             scheduleYear.add(Integer.parseInt(insId));
         }
 
-        long courseID = 0;
+
+        Subjects subjects = null;
+        for (int i = 0; i < ident.size(); i++) {
+            subjects = new Subjects(ident.get(i), identOld.get(i), titleC.get(i), titleA.get(i),
+                    hoursP.get(i), hoursC.get(i), hoursSemester.get(i), credits.get(i), credit.get(i), exam.get(i), classifiedCredit.get(i),
+                    department.get(i), formPresentation.get(i), formCombined.get(i));
+            subjects.save();
+
+        }
+
         Courses c = null;
         for (int i = 0; i < course.size(); i++) {
-            c = new Courses(course.get(i), numberOfStudents.get(i), Semesters.findById(Long.parseLong(semesters.get(i))));
+            c = new Courses(course.get(i), numberOfStudents.get(i), subjects, Semesters.findById(Long.parseLong(semesters.get(0))));
             c.save();
-            courseID = c.getId();
+
             for (int j = 0; j < teachers.size(); j++) {
-                Teachers t=new Teachers(c,Employees.findById(Long.parseLong(teachers.get(j))),teachersScale.get(j));
+                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(teachers.get(j))), teachersScale.get(j));
                 t.save();
             }
         }
 
-        for (int i = 0; i < scheduleWeek.size(); i++) {
-            ScheduleInWeeks sw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0),
-                    scheduleWeek.get(i), scheduleYear.get(i));
+        for (int i = 0; i < days.size(); i++) {
+            Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
 
-            sw.save();
+            s.save();
 
+            for (int j = 0; j < scheduleWeek.size(); j++) {
+
+
+                ScheduleInWeeks sw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0),
+                        scheduleWeek.get(j), scheduleYear.get(j), s);
+
+                sw.save();
+
+
+            }
 
         }
+
 
     }
 

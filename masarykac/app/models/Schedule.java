@@ -24,8 +24,6 @@ public class Schedule extends Model {
 
     public String ident;
 
-    public String course;
-
     @ManyToOne
     public Days days;
 
@@ -46,10 +44,10 @@ public class Schedule extends Model {
         this.courses = courses;
     }
 
-    public Schedule(Semesters semester, String ident, String course, Days days, String scheduleFrom, String scheduleTo, String classRoom) {
+    public Schedule(Semesters semester, String ident, Courses courses, Days days, String scheduleFrom, String scheduleTo, String classRoom) {
         this.semester = semester;
         this.ident = ident;
-        this.course = course;
+        this.courses = courses;
         this.days = days;
         this.scheduleFrom = scheduleFrom;
         this.scheduleTo = scheduleTo;
@@ -88,13 +86,6 @@ public class Schedule extends Model {
         this.ident = ident;
     }
 
-    public String getCourse() {
-        return course;
-    }
-
-    public void setCourse(String course) {
-        this.course = course;
-    }
 
     public Days getDay() {
         return days;

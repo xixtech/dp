@@ -265,7 +265,6 @@ create table schedule (
   id                            bigserial not null,
   semester_id                   bigint,
   ident                         varchar(255),
-  course                        varchar(255),
   days_id                       bigint,
   schedule_from                 varchar(255),
   schedule_to                   varchar(255),

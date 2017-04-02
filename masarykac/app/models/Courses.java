@@ -36,6 +36,9 @@ public class Courses extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Schedule> schedule;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<ScheduleInWeeks> scheduleInWeeks;
+
     public Courses(String course, int numberOfStudents, Subjects subjects, Semesters semester) {
         this.course = course;
         this.numberOfStudents = numberOfStudents;
@@ -103,6 +106,14 @@ public class Courses extends Model {
 
     public void setSemester(Semesters semester) {
         this.semester = semester;
+    }
+
+    public List<ScheduleInWeeks> getScheduleInWeeks() {
+        return scheduleInWeeks;
+    }
+
+    public void setScheduleInWeeks(List<ScheduleInWeeks> scheduleInWeeks) {
+        this.scheduleInWeeks = scheduleInWeeks;
     }
 
     public static Courses findById(long id) {

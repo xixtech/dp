@@ -1,2 +1,7 @@
-[warn] C:\Users\Martin\dp\masarykac\app\controllers\ProjectController.java:3: com.sun.org.apache.xpath.internal.operations.Bool is internal proprietary API and may be removed in a future release
-[warn] com.sun.org.apache.xpath.internal.operations.Bool
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:59: value getValue is not a member of models.Semesters
+[error]                                     @if(member.semester.getValue == null) {
+[error]                                                         ^
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableScheduleInWeeks.scala.html:62: value getValue is not a member of models.Semesters
+[error]                                         @member.semester.getValue
+[error]                                                          ^
+[error] two errors found

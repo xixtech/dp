@@ -45,7 +45,7 @@ public class ScheduleInWeeks extends Model {
     @ManyToOne
     public Schedule schedule;
 
-    public ScheduleInWeeks(Semesters semester, String ident, Courses courses, Days days, String scheduleFrom, String scheduleTo, String classRoom, int scheduleWeek, int scheduleYear) {
+    public ScheduleInWeeks(Semesters semester, String ident, Courses courses, Days days, String scheduleFrom, String scheduleTo, String classRoom, int scheduleWeek, int scheduleYear, Schedule schedule) {
         this.semester = semester;
         this.ident = ident;
         this.courses = courses;
@@ -55,6 +55,7 @@ public class ScheduleInWeeks extends Model {
         this.classRoom = classRoom;
         this.scheduleWeek = scheduleWeek;
         this.scheduleYear = scheduleYear;
+        this.schedule=schedule;
     }
 
     public ScheduleInWeeks(Semesters semester, Courses courses, Days days, String scheduleFrom, String scheduleTo, String classRoom, int scheduleWeek, int scheduleYear) {
