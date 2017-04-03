@@ -26,12 +26,9 @@ public class StatisticController extends Controller {
      */
     public Result index() {
         List<StudyPlans> sp = StudyPlans.search();
-
         List<FieldsOfStudy> f = FieldsOfStudy.search();
-
         List<Subjects> s = Subjects.search();
-
-        List<Semesters> sem = Semesters.search();
+        List<StudyGroups> sg = StudyGroups.search();
         return ok(views.html.tables.tableDCPS.render(sp,f,s));
     }
 

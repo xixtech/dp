@@ -92,6 +92,6 @@ public class StudyGroups extends Model {
     }
 
     public static List<StudyGroups> search() {
-        return StudyGroups.find.all();
+        return StudyGroups.find.where().orderBy("studyGroupP asc").findList();
     }
 }
