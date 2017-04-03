@@ -1,13 +1,13 @@
-New log file opened at Sun Apr 02 17:51:14 CEST 2017 by 5056@Martin-pc
-Taking next connection to: 55664
-New client attempting to connect on port: 55665-55664
-  Address = /192.168.56.1:55664
-This client on port 55665 has uuid d902894a-e77a-4bd4-ae86-91a7ccf54da1 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-d902894a-e77a-4bd4-ae86-91a7ccf54da1
-Taking next connection to: 55664
-New client attempting to connect on port: 55667-55664
-  Address = /192.168.56.1:55664
-Handshake exception on socket: 55667
+New log file opened at Mon Apr 03 08:31:50 CEST 2017 by 11028@Martin-pc
+Taking next connection to: 50444
+New client attempting to connect on port: 50445-50444
+  Address = /192.168.56.1:50444
+This client on port 50445 has uuid 949ce8c6-d113-4721-8f19-8b56a8aa1619 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-949ce8c6-d113-4721-8f19-8b56a8aa1619
+Taking next connection to: 50444
+New client attempting to connect on port: 50465-50444
+  Address = /192.168.56.1:50444
+Handshake exception on socket: 50465
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -22,66 +22,54 @@ Caused by: java.net.SocketException: Software caused connection abort: recv fail
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 55664
-New client attempting to connect on port: 55668-55664
-  Address = /192.168.56.1:55664
-This client on port 55668 has uuid 1c63884b-d788-424c-b509-cc284a51f5ef configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: activator-d902894a-e77a-4bd4-ae86-91a7ccf54da1, play-fork-run-1c63884b-d788-424c-b509-cc284a51f5ef
-Taking next connection to: 55664
+Taking next connection to: 50444
+New client attempting to connect on port: 50466-50444
+  Address = /192.168.56.1:50444
+This client on port 50466 has uuid add37bd7-b89f-4d71-937c-cb1f3f65706a configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-949ce8c6-d113-4721-8f19-8b56a8aa1619, play-fork-run-add37bd7-b89f-4d71-937c-cb1f3f65706a
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 55664
+Taking next connection to: 50444

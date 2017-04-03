@@ -1,3 +1,20 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\PersonalStatisticController.java:33:  java.util.List<models.OrganizationalUnits> cannot be converted to java.util.List<models.OrganizationalUnitsParticipants>
-[error] oj
-[info] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:98: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                         @if(member.numberOfStudents == null) {
+[warn]                                                                                     ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:191: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                         @if(member.numberOfStudents == null) {
+[warn]                                                                                     ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:283: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                         @if(member.numberOfStudents == null) {
+[warn]                                                                                     ^
+[warn] three warnings found
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:98: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                         @if(member.numberOfStudents == null) {
+[warn]                                                                                     ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:191: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                         @if(member.numberOfStudents == null) {
+[warn]                                                                                     ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:283: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                         @if(member.numberOfStudents == null) {
+[warn]                                                                                     ^
+[warn] three warnings found

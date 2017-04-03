@@ -3,9 +3,7 @@ package models;
 import com.avaje.ebean.Model;
 
 import javax.persistence.*;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Martin on 12.03.2017.
@@ -127,6 +125,47 @@ public class Courses extends Model {
             options.put(set.id.toString(), set.id.toString());
         }
         return options;
+    }
+
+    public static List<Courses> searchAAA() {
+
+        List<Courses> list =search();
+        for (Iterator<Courses> iterator = list.iterator(); iterator.hasNext(); ) {
+            Courses courses = iterator.next();
+            String identToCheck = courses.getSubjects().getIdent();
+
+            if (identToCheck.toUpperCase().startsWith("P")) {
+                iterator.remove();
+            }
+        }
+        return list;
+    }
+
+    public static List<Courses> searchAAB() {
+
+        List<Courses> list =search();
+        for (Iterator<Courses> iterator = list.iterator(); iterator.hasNext(); ) {
+            Courses courses = iterator.next();
+            String identToCheck = courses.getSubjects().getIdent();
+
+            if (identToCheck.toUpperCase().startsWith("P")==false) {
+                iterator.remove();
+            }
+        }
+        return list;
+    }
+
+    public static List<Courses> searchCB() {
+        List<Courses> list = search();
+        for (Iterator<Courses> iterator = list.iterator(); iterator.hasNext(); ) {
+            Courses courses = iterator.next();
+            String identToCheck = courses.getSubjects().getIdent();
+            char fourth = identToCheck.toUpperCase().charAt(3);
+            if (fourth!='E') {
+                iterator.remove();
+            }
+        }
+        return list;
     }
 
     public static List<Courses> search() {
