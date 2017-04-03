@@ -16,28 +16,34 @@
         <!-- /.row -->
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel-body">
                 @helper.form(action = routes.SubjectController.save) {
 
                     <fieldset>
                         <legend>Zadání předmětu</legend>
-                        @inputText(
-                            subjectForm("ident"),
-                            '_label -> "Ident",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
-
-                        @inputText(
-                            subjectForm("identOld"),
-                            '_label -> "Ident_old",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
-
+                        <div class="row">
+                            <div class="col-md-6">
+                            @inputText(
+                                subjectForm("ident"),
+                                '_label -> "Ident",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> subjectForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-6">
+                            @inputText(
+                                subjectForm("identOld"),
+                                '_label -> "Ident_old",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> subjectForm.globalError
+                            )
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
                         @inputText(
                             subjectForm("titleC"),
                             '_label -> "Název česky",
@@ -45,7 +51,8 @@
                             '_help -> "",
                             '_error -> subjectForm.globalError
                         )
-
+                            </div>
+                            <div class="col-md-6">
                         @inputText(
                             subjectForm("titleA"),
                             '_label -> "Název anglicky",
@@ -53,7 +60,10 @@
                             '_help -> "",
                             '_error -> subjectForm.globalError
                         )
-
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                         @inputText(
                             subjectForm("hoursP"),
                             '_label -> "Počet hodin přednášek za týden",
@@ -61,7 +71,8 @@
                             '_help -> "",
                             '_error -> subjectForm.globalError
                         )
-
+                            </div>
+                            <div class="col-md-4">
                         @inputText(
                             subjectForm("hoursC"),
                             '_label -> "Počet hodin cvičení za týden",
@@ -69,7 +80,8 @@
                             '_help -> "",
                             '_error -> subjectForm.globalError
                         )
-
+                            </div>
+                            <div class="col-md-4">
                         @inputText(
                             subjectForm("hoursSemester"),
                             '_label -> "Počet hodin za semestr",
@@ -77,16 +89,19 @@
                             '_help -> "",
                             '_error -> subjectForm.globalError
                         )
-
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                         @inputText(
                             subjectForm("credits"),
                             '_label -> "Počet kreditů",
                             'class -> "form-control",
                             '_help -> "",
                             '_error -> subjectForm.globalError
-                        )
+                        )</div>
 
-
+                                <div class="col-md-8">
                         @checkbox(
                             subjectForm("credit"),
                             '_label -> "Zápočet",
@@ -110,7 +125,8 @@
                             '_help -> "",
                             '_error -> subjectForm.globalError
                         )
-
+                                </div>
+                            </div>
                         @inputText(
                             subjectForm("department"),
                             '_label -> "Oddělení",

@@ -93,6 +93,6 @@ public class StudyPlans extends Model {
     }
 
     public static List<StudyPlans> search() {
-        return StudyPlans.find.all();
+        return StudyPlans.find.where().orderBy("semesterValue asc").findList();
     }
 }

@@ -1,0 +1,162 @@
+@(spPage: List[StudyPlans], fPage: List[FieldsOfStudy], sbjPage: List[Subjects])
+@import helper._
+@import scala.Predef; var x = 0
+@localStylesheets = {
+    <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
+}
+
+@localScripts = {
+        <!-- DataTables JavaScript -->
+    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
+    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>
+
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+            $(document).ready(function () {
+                $('#dataTables-example').DataTable({
+                    responsive: true
+                });
+            });
+    </script>
+}
+
+@main(scripts = localScripts, stylesheets = localStylesheets) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"></h1>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="row">
+        @if(fPage.size() == 0) {
+            <p>Žádné údaje k zobrazení</p>
+        }
+
+        @for(f <- fPage) {
+
+            <p>@f.getFieldOfStudyV (@f.getFieldOfStudy)</p>
+            @if(spPage.size() == 0) {
+                <p>Žádné údaje k zobrazení</p>
+            }
+            @(x = 0)
+            @for(sp <- spPage) {
+
+                @if(f.getId == sp.getFieldsOfStudy.getId) {
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            @if(x != sp.getSemesterValue) {
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        @sp.getSemesterValue. semestr
+                                        @(x = sp.getSemesterValue)
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            Kód
+                                        </div>
+                                        <div class="col-md-2">
+                                            Název
+                                        </div>
+                                        <div class="col-md-1">
+                                            Př.
+                                        </div>
+                                        <div class="col-md-1">
+                                            Cv.
+                                        </div>
+                                        <div class="col-md-1">
+                                            Kr.
+                                        </div>
+                                        <div class="col-md-1">
+                                            Z
+                                        </div>
+                                        <div class="col-md-1">
+                                            Zk
+                                        </div>
+                                        <div class="col-md-1">
+                                            KZ
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            }
+                                <!-- /.panel-heading -->
+                            @for(member <- sbjPage) {
+                                @if(sp.getSubjects.getId == member.getId) {
+
+                                    <div class="col-md-2">
+                                    @if(member.getIdent == null) {
+                                        <em>-</em>
+                                    } else {
+                                        @member.getIdent
+                                    }
+                                    </div>
+                                    <div class="col-md-2">
+                                    @if(member.getTitleC == null) {
+                                        <em>-</em>
+                                    } else {
+                                        @member.getTitleC
+                                    }
+                                    </div>
+                                    <div class="col-md-1">
+                                    @if(member.getHoursP == null) {
+                                        <em>-</em>
+                                    } else {
+                                        @member.getHoursP
+                                    }
+                                    </div>
+                                    <div class="col-md-1">
+                                    @if(member.getHoursC == null) {
+                                        <em>-</em>
+                                    } else {
+                                        @member.getHoursC
+                                    }
+                                    </div>
+                                    <div class="col-md-1">
+                                    @if(member.getCredits == null) {
+                                        <em>-</em>
+                                    } else {
+                                        @member.getCredits
+                                    }
+                                    </div>
+                                    <div class="col-md-1">
+                                    @if(member.isCredit  == true) {
+                                        <input type="checkbox" disabled="disabled" checked="checked">
+                                    } else {
+                                        <input type="checkbox" disabled="disabled">
+                                    }
+                                    </div>
+                                    <div class="col-md-1">
+                                    @if(member.isExam  == true) {
+                                        <input type="checkbox" disabled="disabled" checked="checked">
+                                    } else {
+                                        <input type="checkbox" disabled="disabled">
+                                    }
+                                    </div>
+                                    <div class="col-md-1">
+                                    @if(member.isClassifiedCredit == true) {
+                                        <input type="checkbox" disabled="disabled" checked="checked">
+                                    } else {
+                                        <input type="checkbox" disabled="disabled">
+                                    }
+                                    </div>
+
+
+                                }
+
+                            }
+
+
+                        </div>
+                    </div>
+
+                }
+
+            }
+        }
+
+    </div>
+
+}

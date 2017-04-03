@@ -62,6 +62,8 @@ POST        /fields/saved                        controllers.FieldOfStudyControl
 
 GET         /statistics                          controllers.PersonalStatisticController.index()
 
+GET         /dcps                          controllers.StatisticController.index()
+
 # Přidat předmět
 GET         /studygroups/add                     controllers.StudyGroupsController.index()
 POST        /studygroups/saved                   controllers.StudyGroupsController.save()

@@ -24,10 +24,10 @@ public class Projects extends Model {
 
     public String projectName;
 
-    @Formats.DateTime(pattern = "dd.MM.yyyy")
+    @Formats.DateTime(pattern = "HH:mm")
     public Date projectFrom;
 
-    @Formats.DateTime(pattern = "dd.MM.yyyy")
+    @Formats.DateTime(pattern = "HH:mm")
     public Date projectTo;
 
     @ManyToOne

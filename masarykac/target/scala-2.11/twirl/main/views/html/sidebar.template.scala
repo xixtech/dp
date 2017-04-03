@@ -54,6 +54,7 @@ Seq[Any](format.raw/*1.4*/("""
                 <ul class="nav nav-second-level">
                     <li>
                         <a href=""""),_display_(/*25.35*/routes/*25.41*/.PersonalStatisticController.index()),format.raw/*25.77*/("""">Zobrazit údaje</a>
+                        <a href=""""),_display_(/*26.35*/routes/*26.41*/.StatisticController.index()),format.raw/*26.69*/("""">Zobrazit DCPS</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
@@ -65,56 +66,56 @@ Seq[Any](format.raw/*1.4*/("""
 
 
                     <li>
-                        <a href='"""),_display_(/*37.35*/routes/*37.41*/.TableController.listPerson()),format.raw/*37.70*/("""'><i class="fa fa-table fa-fw"></i> Pracovníci</a>
+                        <a href='"""),_display_(/*38.35*/routes/*38.41*/.TableController.listPerson()),format.raw/*38.70*/("""'><i class="fa fa-table fa-fw"></i> Pracovníci</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*40.35*/routes/*40.41*/.TableController.listStudyPlans()),format.raw/*40.74*/("""'><i class="fa fa-table fa-fw"></i>
+                        <a href='"""),_display_(/*41.35*/routes/*41.41*/.TableController.listStudyPlans()),format.raw/*41.74*/("""'><i class="fa fa-table fa-fw"></i>
                             Studijní plány</a>
                     </li>
 
                     <li>
-                        <a href='"""),_display_(/*45.35*/routes/*45.41*/.TableController.listScheduleInWeeks()),format.raw/*45.79*/("""'><i class="fa fa-table fa-fw"></i>
+                        <a href='"""),_display_(/*46.35*/routes/*46.41*/.TableController.listScheduleInWeeks()),format.raw/*46.79*/("""'><i class="fa fa-table fa-fw"></i>
                             Rozvrh v týdnech</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*49.35*/routes/*49.41*/.TableController.listSchedule()),format.raw/*49.72*/("""'><i class="fa fa-table fa-fw"></i>
+                        <a href='"""),_display_(/*50.35*/routes/*50.41*/.TableController.listSchedule()),format.raw/*50.72*/("""'><i class="fa fa-table fa-fw"></i>
                             Rozvrh</a>
                     </li>
 
                     <li>
-                        <a href='"""),_display_(/*54.35*/routes/*54.41*/.TableController.listEmployees()),format.raw/*54.73*/("""'><i class="fa fa-table fa-fw"></i>
+                        <a href='"""),_display_(/*55.35*/routes/*55.41*/.TableController.listEmployees()),format.raw/*55.73*/("""'><i class="fa fa-table fa-fw"></i>
                             Zaměstnanci</a>
                     </li>
 
                     <li>
-                        <a href='"""),_display_(/*59.35*/routes/*59.41*/.TableController.listTeachers()),format.raw/*59.72*/("""'><i class="fa fa-table fa-fw"></i> Vyučující</a>
+                        <a href='"""),_display_(/*60.35*/routes/*60.41*/.TableController.listTeachers()),format.raw/*60.72*/("""'><i class="fa fa-table fa-fw"></i> Vyučující</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*62.35*/routes/*62.41*/.TableController.listStudyGroups()),format.raw/*62.75*/("""'><i class="fa fa-table fa-fw"></i>
+                        <a href='"""),_display_(/*63.35*/routes/*63.41*/.TableController.listStudyGroups()),format.raw/*63.75*/("""'><i class="fa fa-table fa-fw"></i>
                             Studijní skupiny</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*66.35*/routes/*66.41*/.TableController.listSemesters()),format.raw/*66.73*/("""'><i class="fa fa-table fa-fw"></i> Semestry</a>
+                        <a href='"""),_display_(/*67.35*/routes/*67.41*/.TableController.listSemesters()),format.raw/*67.73*/("""'><i class="fa fa-table fa-fw"></i> Semestry</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*69.35*/routes/*69.41*/.TableController.listSubjects()),format.raw/*69.72*/("""'><i class="fa fa-table fa-fw"></i> Předměty</a>
+                        <a href='"""),_display_(/*70.35*/routes/*70.41*/.TableController.listSubjects()),format.raw/*70.72*/("""'><i class="fa fa-table fa-fw"></i> Předměty</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*72.35*/routes/*72.41*/.TableController.listFieldsOfStudy()),format.raw/*72.77*/("""'><i class="fa fa-table fa-fw"></i> Obory</a>
+                        <a href='"""),_display_(/*73.35*/routes/*73.41*/.TableController.listFieldsOfStudy()),format.raw/*73.77*/("""'><i class="fa fa-table fa-fw"></i> Obory</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*75.35*/routes/*75.41*/.TableController.listCourses()),format.raw/*75.71*/("""'><i class="fa fa-table fa-fw"></i> Kurzy</a>
+                        <a href='"""),_display_(/*76.35*/routes/*76.41*/.TableController.listCourses()),format.raw/*76.71*/("""'><i class="fa fa-table fa-fw"></i> Kurzy</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*78.35*/routes/*78.41*/.TableController.listCurrentSemesters()),format.raw/*78.80*/("""'><i class="fa fa-table fa-fw"></i>
+                        <a href='"""),_display_(/*79.35*/routes/*79.41*/.TableController.listCurrentSemesters()),format.raw/*79.80*/("""'><i class="fa fa-table fa-fw"></i>
                             Aktuální semestry</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*82.35*/routes/*82.41*/.TableController.listCurrentSemestersUntilTheEndOfStudy()),format.raw/*82.98*/("""'><i class="fa fa-table fa-fw"></i>
+                        <a href='"""),_display_(/*83.35*/routes/*83.41*/.TableController.listCurrentSemestersUntilTheEndOfStudy()),format.raw/*83.98*/("""'><i class="fa fa-table fa-fw"></i>
                             Aktuální semestry do konce studia</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*86.35*/routes/*86.41*/.TableController.listDays()),format.raw/*86.68*/("""'><i class="fa fa-table fa-fw"></i> Dny</a>
+                        <a href='"""),_display_(/*87.35*/routes/*87.41*/.TableController.listDays()),format.raw/*87.68*/("""'><i class="fa fa-table fa-fw"></i> Dny</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
@@ -123,75 +124,75 @@ Seq[Any](format.raw/*1.4*/("""
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Další stránky<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href=""""),_display_(/*95.35*/routes/*95.41*/.Pages.blank),format.raw/*95.53*/("""">Blank Page</a>
+                        <a href=""""),_display_(/*96.35*/routes/*96.41*/.Pages.blank),format.raw/*96.53*/("""">Blank Page</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*98.35*/routes/*98.41*/.Application.pdf()),format.raw/*98.59*/("""">pdf</a>
+                        <a href=""""),_display_(/*99.35*/routes/*99.41*/.Application.pdf()),format.raw/*99.59*/("""">pdf</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*101.35*/routes/*101.41*/.TestController.test()),format.raw/*101.63*/("""">test</a>
+                        <a href=""""),_display_(/*102.35*/routes/*102.41*/.TestController.test()),format.raw/*102.63*/("""">test</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*104.35*/routes/*104.41*/.SubjectPlanTeachingController.index()),format.raw/*104.79*/("""">Přidání předmětu do kurzu</a>
+                        <a href=""""),_display_(/*105.35*/routes/*105.41*/.SubjectPlanTeachingController.index()),format.raw/*105.79*/("""">Přidání předmětu do kurzu</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*107.35*/routes/*107.41*/.VisitsController.index()),format.raw/*107.66*/("""">Registrace výjezdu</a>
+                        <a href=""""),_display_(/*108.35*/routes/*108.41*/.VisitsController.index()),format.raw/*108.66*/("""">Registrace výjezdu</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*110.35*/routes/*110.41*/.ProjectController.index()),format.raw/*110.67*/("""">Registrace projektu</a>
+                        <a href=""""),_display_(/*111.35*/routes/*111.41*/.ProjectController.index()),format.raw/*111.67*/("""">Registrace projektu</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*113.35*/routes/*113.41*/.PublicationsController.index()),format.raw/*113.72*/("""">Registrace publikace</a>
+                        <a href=""""),_display_(/*114.35*/routes/*114.41*/.PublicationsController.index()),format.raw/*114.72*/("""">Registrace publikace</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*116.35*/routes/*116.41*/.OrganizationalUnitsController.index()),format.raw/*116.79*/("""">Registrace organizační jednotky</a>
+                        <a href=""""),_display_(/*117.35*/routes/*117.41*/.OrganizationalUnitsController.index()),format.raw/*117.79*/("""">Registrace organizační jednotky</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*119.35*/routes/*119.41*/.OrganizationalUnitsController.indexParticipants()),format.raw/*119.91*/("""">OJ zaměstnanec</a>
+                        <a href=""""),_display_(/*120.35*/routes/*120.41*/.OrganizationalUnitsController.indexParticipants()),format.raw/*120.91*/("""">OJ zaměstnanec</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*122.35*/routes/*122.41*/.FinalWorksController.index()),format.raw/*122.70*/("""">Registrace závěrečné práce</a>
-                    </li>
-
-                    <li>
-                        <a href=""""),_display_(/*126.35*/routes/*126.41*/.Application.kpiChoosePerson()),format.raw/*126.71*/("""">KPI výběr osoby</a>
-                    </li>
-                    <li>
-                        <a href=""""),_display_(/*129.35*/routes/*129.41*/.Application.roles()),format.raw/*129.61*/("""">Role</a>
-                    </li>
-                    <li>
-                        <a href=""""),_display_(/*132.35*/routes/*132.41*/.PersonController.index()),format.raw/*132.66*/("""">Registrace osoby</a>
-                    </li>
-                    <li>
-                        <a href=""""),_display_(/*135.35*/routes/*135.41*/.EmployeesController.index()),format.raw/*135.69*/("""">Registrace zaměstnance</a>
+                        <a href=""""),_display_(/*123.35*/routes/*123.41*/.FinalWorksController.index()),format.raw/*123.70*/("""">Registrace závěrečné práce</a>
                     </li>
 
                     <li>
-                        <a href=""""),_display_(/*139.35*/routes/*139.41*/.SubjectController.index()),format.raw/*139.67*/("""">Registrace předmětu</a>
+                        <a href=""""),_display_(/*127.35*/routes/*127.41*/.Application.kpiChoosePerson()),format.raw/*127.71*/("""">KPI výběr osoby</a>
+                    </li>
+                    <li>
+                        <a href=""""),_display_(/*130.35*/routes/*130.41*/.Application.roles()),format.raw/*130.61*/("""">Role</a>
+                    </li>
+                    <li>
+                        <a href=""""),_display_(/*133.35*/routes/*133.41*/.PersonController.index()),format.raw/*133.66*/("""">Registrace osoby</a>
+                    </li>
+                    <li>
+                        <a href=""""),_display_(/*136.35*/routes/*136.41*/.EmployeesController.index()),format.raw/*136.69*/("""">Registrace zaměstnance</a>
                     </li>
 
                     <li>
-                        <a href=""""),_display_(/*143.35*/routes/*143.41*/.FieldOfStudyController.index()),format.raw/*143.72*/("""">Registrace oboru</a>
+                        <a href=""""),_display_(/*140.35*/routes/*140.41*/.SubjectController.index()),format.raw/*140.67*/("""">Registrace předmětu</a>
                     </li>
 
                     <li>
-                        <a href=""""),_display_(/*147.35*/routes/*147.41*/.StudyGroupsController.index()),format.raw/*147.71*/("""">Registrace skupiny</a>
+                        <a href=""""),_display_(/*144.35*/routes/*144.41*/.FieldOfStudyController.index()),format.raw/*144.72*/("""">Registrace oboru</a>
                     </li>
 
                     <li>
-                        <a href=""""),_display_(/*151.35*/routes/*151.41*/.SemestersController.index()),format.raw/*151.69*/("""">Registrace semestru</a>
+                        <a href=""""),_display_(/*148.35*/routes/*148.41*/.StudyGroupsController.index()),format.raw/*148.71*/("""">Registrace skupiny</a>
                     </li>
 
                     <li>
-                        <a href=""""),_display_(/*155.35*/routes/*155.41*/.StudyPlansController.index()),format.raw/*155.70*/("""">Registrace studijního plánu</a>
+                        <a href=""""),_display_(/*152.35*/routes/*152.41*/.SemestersController.index()),format.raw/*152.69*/("""">Registrace semestru</a>
                     </li>
 
                     <li>
-                        <a href=""""),_display_(/*159.35*/routes/*159.41*/.TeachersController.index()),format.raw/*159.68*/("""">Registrace učitele</a>
+                        <a href=""""),_display_(/*156.35*/routes/*156.41*/.StudyPlansController.index()),format.raw/*156.70*/("""">Registrace studijního plánu</a>
                     </li>
 
                     <li>
-                        <a href=""""),_display_(/*163.35*/routes/*163.41*/.CourseController.index()),format.raw/*163.66*/("""">Registrace kurzu</a>
+                        <a href=""""),_display_(/*160.35*/routes/*160.41*/.TeachersController.index()),format.raw/*160.68*/("""">Registrace učitele</a>
+                    </li>
+
+                    <li>
+                        <a href=""""),_display_(/*164.35*/routes/*164.41*/.CourseController.index()),format.raw/*164.66*/("""">Registrace kurzu</a>
                     </li>
 
                 </ul>
@@ -201,34 +202,34 @@ Seq[Any](format.raw/*1.4*/("""
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Metodika<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href=""""),_display_(/*173.35*/routes/*173.41*/.MethodicsController.index()),format.raw/*173.69*/("""">Přidat metodiku</a>
+                        <a href=""""),_display_(/*174.35*/routes/*174.41*/.MethodicsController.index()),format.raw/*174.69*/("""">Přidat metodiku</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href='"""),_display_(/*179.27*/routes/*179.33*/.Application.forms),format.raw/*179.51*/("""'><i class="fa fa-edit fa-fw"></i> Formuláře</a>
+                <a href='"""),_display_(/*180.27*/routes/*180.33*/.Application.forms),format.raw/*180.51*/("""'><i class="fa fa-edit fa-fw"></i> Formuláře</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> UI prvky<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href=""""),_display_(/*185.35*/routes/*185.41*/.UiElements.panelsAndWells),format.raw/*185.67*/("""">Panels and Wells</a>
+                        <a href=""""),_display_(/*186.35*/routes/*186.41*/.UiElements.panelsAndWells),format.raw/*186.67*/("""">Panels and Wells</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*188.35*/routes/*188.41*/.UiElements.buttons),format.raw/*188.60*/("""">Buttons</a>
+                        <a href=""""),_display_(/*189.35*/routes/*189.41*/.UiElements.buttons),format.raw/*189.60*/("""">Buttons</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*191.35*/routes/*191.41*/.UiElements.notifications),format.raw/*191.66*/("""">Notifications</a>
+                        <a href=""""),_display_(/*192.35*/routes/*192.41*/.UiElements.notifications),format.raw/*192.66*/("""">Notifications</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*194.35*/routes/*194.41*/.UiElements.typography),format.raw/*194.63*/("""">Typography</a>
+                        <a href=""""),_display_(/*195.35*/routes/*195.41*/.UiElements.typography),format.raw/*195.63*/("""">Typography</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*197.35*/routes/*197.41*/.UiElements.icons),format.raw/*197.58*/(""""> Icons</a>
+                        <a href=""""),_display_(/*198.35*/routes/*198.41*/.UiElements.icons),format.raw/*198.58*/(""""> Icons</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*200.35*/routes/*200.41*/.UiElements.grid),format.raw/*200.57*/("""">Grid</a>
+                        <a href=""""),_display_(/*201.35*/routes/*201.41*/.UiElements.grid),format.raw/*201.57*/("""">Grid</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
@@ -270,10 +271,10 @@ Seq[Any](format.raw/*1.4*/("""
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href='"""),_display_(/*242.35*/routes/*242.41*/.Charts.flot),format.raw/*242.53*/("""'>Flot Charts</a>
+                        <a href='"""),_display_(/*243.35*/routes/*243.41*/.Charts.flot),format.raw/*243.53*/("""'>Flot Charts</a>
                     </li>
                     <li>
-                        <a href='"""),_display_(/*245.35*/routes/*245.41*/.Charts.morris),format.raw/*245.55*/("""'>Morris.js Charts</a>
+                        <a href='"""),_display_(/*246.35*/routes/*246.41*/.Charts.morris),format.raw/*246.55*/("""'>Morris.js Charts</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
@@ -302,11 +303,11 @@ Seq[Any](format.raw/*1.4*/("""
 object sidebar extends sidebar_Scope0.sidebar
               /*
                   -- GENERATED --
-                  DATE: Tue Mar 28 13:07:37 CEST 2017
+                  DATE: Mon Apr 03 14:26:02 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/sidebar.scala.html
-                  HASH: f878a7c0171899ed11602c54e84065cae5169298
-                  MATRIX: 742->1|838->3|865->4|1586->698|1601->704|1644->726|2017->1072|2032->1078|2089->1114|2483->1481|2498->1487|2548->1516|2711->1652|2726->1658|2780->1691|2976->1860|2991->1866|3050->1904|3247->2074|3262->2080|3314->2111|3502->2272|3517->2278|3570->2310|3763->2476|3778->2482|3830->2513|3992->2648|4007->2654|4062->2688|4259->2858|4274->2864|4327->2896|4488->3030|4503->3036|4555->3067|4716->3201|4731->3207|4788->3243|4946->3374|4961->3380|5012->3410|5170->3541|5185->3547|5245->3586|5443->3757|5458->3763|5536->3820|5750->4007|5765->4013|5813->4040|6236->4436|6251->4442|6284->4454|6413->4556|6428->4562|6467->4580|6590->4675|6606->4681|6650->4703|6774->4799|6790->4805|6850->4843|6995->4960|7011->4966|7058->4991|7196->5101|7212->5107|7260->5133|7399->5244|7415->5250|7468->5281|7608->5393|7624->5399|7684->5437|7835->5560|7851->5566|7923->5616|8057->5722|8073->5728|8124->5757|8271->5876|8287->5882|8339->5912|8474->6019|8490->6025|8532->6045|8656->6141|8672->6147|8719->6172|8855->6280|8871->6286|8921->6314|9064->6429|9080->6435|9128->6461|9268->6573|9284->6579|9337->6610|9474->6719|9490->6725|9542->6755|9681->6866|9697->6872|9747->6900|9887->7012|9903->7018|9954->7047|10102->7167|10118->7173|10167->7200|10306->7311|10322->7317|10369->7342|10768->7713|10784->7719|10834->7747|11041->7926|11057->7932|11097->7950|11424->8249|11440->8255|11488->8281|11624->8389|11640->8395|11681->8414|11808->8513|11824->8519|11871->8544|12004->8649|12020->8655|12064->8677|12194->8779|12210->8785|12249->8802|12375->8900|12391->8906|12429->8922|14170->10635|14186->10641|14220->10653|14351->10756|14367->10762|14403->10776
-                  LINES: 27->1|32->1|33->2|48->17|48->17|48->17|56->25|56->25|56->25|68->37|68->37|68->37|71->40|71->40|71->40|76->45|76->45|76->45|80->49|80->49|80->49|85->54|85->54|85->54|90->59|90->59|90->59|93->62|93->62|93->62|97->66|97->66|97->66|100->69|100->69|100->69|103->72|103->72|103->72|106->75|106->75|106->75|109->78|109->78|109->78|113->82|113->82|113->82|117->86|117->86|117->86|126->95|126->95|126->95|129->98|129->98|129->98|132->101|132->101|132->101|135->104|135->104|135->104|138->107|138->107|138->107|141->110|141->110|141->110|144->113|144->113|144->113|147->116|147->116|147->116|150->119|150->119|150->119|153->122|153->122|153->122|157->126|157->126|157->126|160->129|160->129|160->129|163->132|163->132|163->132|166->135|166->135|166->135|170->139|170->139|170->139|174->143|174->143|174->143|178->147|178->147|178->147|182->151|182->151|182->151|186->155|186->155|186->155|190->159|190->159|190->159|194->163|194->163|194->163|204->173|204->173|204->173|210->179|210->179|210->179|216->185|216->185|216->185|219->188|219->188|219->188|222->191|222->191|222->191|225->194|225->194|225->194|228->197|228->197|228->197|231->200|231->200|231->200|273->242|273->242|273->242|276->245|276->245|276->245
+                  HASH: 5e2f34806aef7f557bb8ed5207322f95f70699c3
+                  MATRIX: 742->1|838->3|865->4|1586->698|1601->704|1644->726|2017->1072|2032->1078|2089->1114|2171->1169|2186->1175|2235->1203|2628->1569|2643->1575|2693->1604|2856->1740|2871->1746|2925->1779|3121->1948|3136->1954|3195->1992|3392->2162|3407->2168|3459->2199|3647->2360|3662->2366|3715->2398|3908->2564|3923->2570|3975->2601|4137->2736|4152->2742|4207->2776|4404->2946|4419->2952|4472->2984|4633->3118|4648->3124|4700->3155|4861->3289|4876->3295|4933->3331|5091->3462|5106->3468|5157->3498|5315->3629|5330->3635|5390->3674|5588->3845|5603->3851|5681->3908|5895->4095|5910->4101|5958->4128|6381->4524|6396->4530|6429->4542|6558->4644|6573->4650|6612->4668|6735->4763|6751->4769|6795->4791|6919->4887|6935->4893|6995->4931|7140->5048|7156->5054|7203->5079|7341->5189|7357->5195|7405->5221|7544->5332|7560->5338|7613->5369|7753->5481|7769->5487|7829->5525|7980->5648|7996->5654|8068->5704|8202->5810|8218->5816|8269->5845|8416->5964|8432->5970|8484->6000|8619->6107|8635->6113|8677->6133|8801->6229|8817->6235|8864->6260|9000->6368|9016->6374|9066->6402|9209->6517|9225->6523|9273->6549|9413->6661|9429->6667|9482->6698|9619->6807|9635->6813|9687->6843|9826->6954|9842->6960|9892->6988|10032->7100|10048->7106|10099->7135|10247->7255|10263->7261|10312->7288|10451->7399|10467->7405|10514->7430|10913->7801|10929->7807|10979->7835|11186->8014|11202->8020|11242->8038|11569->8337|11585->8343|11633->8369|11769->8477|11785->8483|11826->8502|11953->8601|11969->8607|12016->8632|12149->8737|12165->8743|12209->8765|12339->8867|12355->8873|12394->8890|12520->8988|12536->8994|12574->9010|14315->10723|14331->10729|14365->10741|14496->10844|14512->10850|14548->10864
+                  LINES: 27->1|32->1|33->2|48->17|48->17|48->17|56->25|56->25|56->25|57->26|57->26|57->26|69->38|69->38|69->38|72->41|72->41|72->41|77->46|77->46|77->46|81->50|81->50|81->50|86->55|86->55|86->55|91->60|91->60|91->60|94->63|94->63|94->63|98->67|98->67|98->67|101->70|101->70|101->70|104->73|104->73|104->73|107->76|107->76|107->76|110->79|110->79|110->79|114->83|114->83|114->83|118->87|118->87|118->87|127->96|127->96|127->96|130->99|130->99|130->99|133->102|133->102|133->102|136->105|136->105|136->105|139->108|139->108|139->108|142->111|142->111|142->111|145->114|145->114|145->114|148->117|148->117|148->117|151->120|151->120|151->120|154->123|154->123|154->123|158->127|158->127|158->127|161->130|161->130|161->130|164->133|164->133|164->133|167->136|167->136|167->136|171->140|171->140|171->140|175->144|175->144|175->144|179->148|179->148|179->148|183->152|183->152|183->152|187->156|187->156|187->156|191->160|191->160|191->160|195->164|195->164|195->164|205->174|205->174|205->174|211->180|211->180|211->180|217->186|217->186|217->186|220->189|220->189|220->189|223->192|223->192|223->192|226->195|226->195|226->195|229->198|229->198|229->198|232->201|232->201|232->201|274->243|274->243|274->243|277->246|277->246|277->246
                   -- GENERATED --
               */
           

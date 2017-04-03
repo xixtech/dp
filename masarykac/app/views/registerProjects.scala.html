@@ -22,6 +22,8 @@
 
                     <fieldset>
                         <legend>Zadání projektu</legend>
+                        <div class="form-group row">
+
                         @inputText(
                             projectsForm("projectName"),
                             '_label -> "Název projektu:",
@@ -29,7 +31,7 @@
                             '_help -> "Prosím zadejte název projektu.",
                             '_error -> projectsForm.globalError
                         )
-
+                        </div>
                         @inputText(
                             projectsForm("projectFrom"),
                             '_label -> "Projekt probíhá od:",

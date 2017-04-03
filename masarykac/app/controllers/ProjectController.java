@@ -61,7 +61,7 @@ public class ProjectController extends Controller {
         }
 
         List<Date> projectFrom = new ArrayList<>();
-        DateFormat format = new SimpleDateFormat("dd.mm.yyyy", Locale.ENGLISH);
+        DateFormat format = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
 
         for (String insId : formData.get("projectFrom")) {
 
@@ -73,10 +73,13 @@ public class ProjectController extends Controller {
         for (String insId : formData.get("projectTo")) {
             projectTo.add(format.parse(insId));
         }
+        long duration  = projectTo.get(0).getTime() - projectFrom.get(0).getTime();
+        long diffMinutes = duration / (60 * 1000) % 60;
+        long diffHours = duration / (60 * 60 * 1000);
 
         List<String> semester = new ArrayList<>();
 
-        for (String insId : formData.get("semester")) {
+        for (String insId : formData.get("semester.id")) {
             semester.add(insId);
         }
 
@@ -96,7 +99,7 @@ public class ProjectController extends Controller {
         List<String> grantValue = new ArrayList<>();
 
         for (String insId : formData.get("grantValue")) {
-            grantValue.add(insId);
+            grantValue.add(diffHours+":"+diffMinutes);
         }
 
         List<String> employees = new ArrayList<>();
@@ -110,7 +113,7 @@ public class ProjectController extends Controller {
 
         for (int i = 0; i < projectName.size(); i++) {
 
-            Projects p = new Projects(projectName.get(i), projectFrom.get(i), projectTo.get(i), Semesters.findById(i), hasGrant.get(i), grantValue.get(i));
+            Projects p = new Projects(projectName.get(i), projectFrom.get(i), projectTo.get(i),Semesters.findById(Long.parseLong(semester.get(i))), hasGrant.get(i), grantValue.get(i));
             p.save();
             projectId = p.getId();
         }

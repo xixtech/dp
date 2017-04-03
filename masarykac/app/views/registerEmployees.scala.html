@@ -1,27 +1,29 @@
-@(signupForm: Form[Member],employeesForm: Form[Employees])
-    @import helper._
-    @localScripts = {
-        <!-- Morris Charts JavaScript -->
-        <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
-        <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
-        <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
-    }
-    @main(scripts = localScripts) {
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Registrace zaměstnance</h1>
-            </div>
-                <!-- /.col-lg-12 -->
+@(signupForm: Form[Member], employeesForm: Form[Employees])
+@import helper._
+@localScripts = {
+    <!-- Morris Charts JavaScript -->
+    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+}
+@main(scripts = localScripts) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Registrace zaměstnance</h1>
         </div>
-            <!-- /.row -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel-body">
-                    @helper.form(action = routes.EmployeesController.save) {
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel-body">
+                @helper.form(action = routes.EmployeesController.save) {
 
-                        <fieldset>
-                            <legend>Přihlašovací údaje</legend>
+                    <fieldset>
+                        <legend>Přihlašovací údaje</legend>
+                        <div class="row">
+                            <div class="col-md-12">
                             @inputText(
                                 signupForm("email"),
                                 '_label -> "Email",
@@ -29,14 +31,18 @@
                                 '_help -> "Prosím zadejte platnou e-mailovou adresu.",
                                 '_error -> signupForm.globalError
                             )
-
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
                             @inputPassword(
                                 signupForm("password"),
                                 '_label -> "Heslo",
                                 'class -> "form-control",
                                 '_help -> "Heslo musí mít nejméně 6 znaků."
                             )
-
+                            </div>
+                            <div class="col-md-6">
                             @inputPassword(
                                 signupForm("repeatPassword"),
                                 '_label -> "Heslo pro kontrolu",
@@ -44,15 +50,17 @@
                                 '_help -> "Prosím zadejte znovu heslo.",
                                 '_error -> signupForm.error("password")
                             )
-
-                            @inputText(
-                                employeesForm("personalNumber"),
-                                '_label -> "Osobní číslo",
-                                'class -> "form-control",
-                                '_help -> "Prosím zadejte osobní číslo.",
-                                '_error -> employeesForm.globalError
-                            )
-
+                            </div>
+                        </div>
+                        @inputText(
+                            employeesForm("personalNumber"),
+                            '_label -> "Osobní číslo",
+                            'class -> "form-control",
+                            '_help -> "Prosím zadejte osobní číslo.",
+                            '_error -> employeesForm.globalError
+                        )
+                        <div class="row">
+                            <div class="col-md-2">
                             @inputText(
                                 employeesForm("titleBefore"),
                                 '_label -> "Titul před",
@@ -60,7 +68,8 @@
                                 '_help -> "Prosím zadejte titul před.",
                                 '_error -> employeesForm.globalError
                             )
-
+                            </div>
+                            <div class="col-md-4">
                             @inputText(
                                 employeesForm("firstName"),
                                 '_label -> "Jméno",
@@ -68,6 +77,8 @@
                                 '_help -> "Prosím zadejte jméno.",
                                 '_error -> employeesForm.globalError
                             )
+                            </div>
+                            <div class="col-md-4">
 
                             @inputText(
                                 employeesForm("surname"),
@@ -77,6 +88,8 @@
                                 '_error -> employeesForm.globalError
                             )
 
+                            </div>
+                            <div class="col-md-2">
                             @inputText(
                                 employeesForm("titleAfter"),
                                 '_label -> "Titul za",
@@ -84,18 +97,19 @@
                                 '_help -> "Prosím zadejte titul za.",
                                 '_error -> employeesForm.globalError
                             )
-
-                        </fieldset>
-
-                        <div class="actions">
-
-                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                            <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                            </div>
                         </div>
+                    </fieldset>
 
-                    }
+                    <div class="actions">
+
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
                     </div>
+
+                }
                 </div>
             </div>
         </div>
-    }
+    </div>
+}
