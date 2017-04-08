@@ -9,8 +9,22 @@ $('body').on('click', 'input.deleteDep', function() {
     $(this).parents('tr').remove();
 });
 
+$(document).ready(function () {
+    $('#content1').hide();
+    $("input").click(function () {
+        if ($('tr#' + $(this).data("href")).is(":visible")) {
+            $('tr#' + $(this).data("href")).remove();
+        } else {
+            $(this).closest('tr').after('<tr id="' + $(this).data("href") + '"><td colspan="4">' + $('#' + $(this).data("href")).html() + '</td></tr>');
+        }
+    });
 
+});
 
+$(document).delegate('input[type="button"]','click',function(){
+    $('[colspan="4"]').parent('tr').remove();
+    $(this).parents('tr').after('<tr/>').next().append('<td colspan="4"/>').children('td').append('<div/>').children().css('background','#f0f0f0').html($('#content1').html());
+});
 
 function appendRow() {
 
@@ -22,6 +36,7 @@ function appendRow() {
         createCellscheduleWeek(row.insertCell(0), i+1, 'row');
         createCellscheduleYear(row.insertCell(1), 2017, 'row');
         createCellDeleteButton(row.insertCell(2), 2017, 'row');
+        addDivToTable(row.insertCell(3), 2017, 'row');
     }
 }
 
@@ -102,6 +117,19 @@ function addPublicationParticipant(divName, pole) {
     document.getElementById(divName).appendChild(newDiv);
 }
 
+function addDivToTable(cell, text, style) {
+    var div = document.createElement('tr'), // create DIV element
+        txt = document.createTextNode(text); // create text node
+    var selectHTML = "";
+    selectHTML = "<input type='button' name='' value='' data-href='xxx'/>";
+    selectHTML += "<input type='button' name='' value='#'/>";
+
+    div.innerHTML = selectHTML;
+    // append text node to the DIV
+    div.setAttribute('class', style);        // set DIV class attribute
+    div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+    cell.appendChild(div);                   // append DIV to the table cell
+}
 
 function addCourseTeacher(divName) {
 

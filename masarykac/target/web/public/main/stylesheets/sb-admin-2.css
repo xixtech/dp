@@ -9687,6 +9687,107 @@ dd.error {
     margin-left: auto;
   }
 }
+.tblcollapse {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.deleteDep {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.deleteDep:focus,
+.deleteDep:active:focus,
+.deleteDep.active:focus,
+.deleteDep.focus,
+.deleteDep:active.focus,
+.deleteDep.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.deleteDep:hover,
+.deleteDep:focus,
+.deleteDep.focus {
+  color: #333333;
+  text-decoration: none;
+}
+.deleteDep:active,
+.deleteDep.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.deleteDep.disabled,
+.deleteDep[disabled],
+fieldset[disabled] .deleteDep {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.deleteDep:hover,
+.deleteDep:focus,
+.deleteDep.focus,
+.deleteDep:active,
+.deleteDep.active,
+.open > .dropdown-toggle.deleteDep {
+  color: #ffffff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.deleteDep:active,
+.deleteDep.active,
+.open > .dropdown-toggle.deleteDep {
+  background-image: none;
+}
+.deleteDep.disabled,
+.deleteDep[disabled],
+fieldset[disabled] .deleteDep,
+.deleteDep.disabled:hover,
+.deleteDep[disabled]:hover,
+fieldset[disabled] .deleteDep:hover,
+.deleteDep.disabled:focus,
+.deleteDep[disabled]:focus,
+fieldset[disabled] .deleteDep:focus,
+.deleteDep.disabled.focus,
+.deleteDep[disabled].focus,
+fieldset[disabled] .deleteDep.focus,
+.deleteDep.disabled:active,
+.deleteDep[disabled]:active,
+fieldset[disabled] .deleteDep:active,
+.deleteDep.disabled.active,
+.deleteDep[disabled].active,
+fieldset[disabled] .deleteDep.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.deleteDep .badge {
+  color: #d9534f;
+  background-color: #ffffff;
+}
 .btn-outline {
   color: inherit;
   background-color: transparent;
