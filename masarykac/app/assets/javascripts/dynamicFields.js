@@ -5,6 +5,13 @@ var counter = 1;
 var cuisines = ["Chinese", "Indian"];
 var choices = [["one", "1"], ["two", "2"]];
 
+$('body').on('click', 'input.deleteDep', function() {
+    $(this).parents('tr').remove();
+});
+
+
+
+
 function appendRow() {
 
     for (i = 0; i < 14; i++) {
@@ -14,6 +21,7 @@ function appendRow() {
 
         createCellscheduleWeek(row.insertCell(0), i+1, 'row');
         createCellscheduleYear(row.insertCell(1), 2017, 'row');
+        createCellDeleteButton(row.insertCell(2), 2017, 'row');
     }
 }
 
@@ -26,6 +34,8 @@ function appendRowOne() {
 
         createCellscheduleWeek(row.insertCell(0), i+1, 'row');
         createCellscheduleYear(row.insertCell(1), 2017, 'row');
+        createCellDeleteButton(row.insertCell(2), 2017, 'row');
+
     }
 }
 
@@ -52,7 +62,17 @@ function createCellscheduleYear(cell, text, style) {
     div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
     cell.appendChild(div);                   // append DIV to the table cell
 }
-
+function createCellDeleteButton(cell, text, style) {
+    var div = document.createElement('tr'), // create DIV element
+        txt = document.createTextNode(text); // create text node
+    var selectHTML = "";
+    selectHTML = " <input type='button' id='delPOIbutton' value='Smazat' class='deleteDep'/>";
+    div.innerHTML = selectHTML;
+    // append text node to the DIV
+    div.setAttribute('class', style);        // set DIV class attribute
+    div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+    cell.appendChild(div);                   // append DIV to the table cell
+}
 
 function addPublicationParticipant(divName, pole) {
 
