@@ -253,8 +253,7 @@
                                                     <td>
                                                     </td>
                                                     <td>
-                                                        <input type="button" name="" value="" data-href="#content1"/>
-                                                        <input type="button" name="" value="#"/>
+
                                                     </td>
 
 
@@ -263,13 +262,10 @@
 
                                             </tbody>
                                         </table>
-                                        <div id="content1">
-                                            <p>fsdfsdfs</p>
-                                        </div>
+
                                     </div>
 
                                 </div>
-
 
 
                                 <div class="col-md-6">
@@ -355,8 +351,99 @@
                             )
                             </div>
                         </div>
+
+
+
                     </fieldset>
 
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+
+                            $(document).ready(function () {
+
+                                $("input").click(function () {
+                                    if ($('tr#' + $(this).data("href")).is(":visible")) {
+                                        $('tr#' + $(this).data("href")).remove();
+                                    } else {
+
+
+
+                                        $(this).closest('tr').after('<tr id="' + $(this).data("href") + '"><td colspan="5"> <div class="row"><div class="col-md-12"><div id="' + $(this).data("href") + '"><input type="hidden" id="' + "myFieldX" + '" value="' + "1" + '" /><input type="hidden" id="' + "myField2X" + '" value="' + "1" + '" /><input type="button" class="btn btn" value="Přidat vyučujícího" onclick="addCourseTeacherTable(dynamicInputY);" />' + $(this).data("href") + ' </div></div></div></td></tr>');
+                                    }
+                                });
+
+                            });
+
+                    </script>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div id="table-wrap">
+                                <table summary="test" cellspacing="0" id="master">
+                                    <colgroup>
+                                        <col width="40px">
+                                        <col span="4" width="25%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th><span>Customer</span>
+                                            </th>
+                                            <th><span>OrderID</span>
+                                            </th>
+                                            <th><span>Order date</span>
+                                            </th>
+                                            <th><span>Order Total</span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="button" name="" value=" " data-href="content1">
+                                            </td>
+                                            <td>Ernst Handel</td>
+                                            <td>10258</td>
+                                            <td>07/17/1996</td>
+                                            <td>$403.72</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="button" name="" value=" " data-href="content2">
+                                            </td>
+                                            <td>Wartian Herkku</td>
+                                            <td>10270</td>
+                                            <td>08/01/1996</td>
+                                            <td>$1,376.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="button" name="" value=" " data-href="content3">
+                                            </td>
+                                            <td>Magazzini Alimentari Riuniti</td>
+                                            <td>10275</td>
+                                            <td>08/07/1996</td>
+                                            <td>$15.36</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                                <!-- table-wrap -->
+                        </div>
+                    </div>
+                    <style>
+                    table {
+                        table-layout: fixed;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+
+                    td {
+                        border: 1px solid #000;
+                        padding: 5px;
+                        vertical-align: top;
+                    }
+                    </style>
                     <div class="actions">
 
                         <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
