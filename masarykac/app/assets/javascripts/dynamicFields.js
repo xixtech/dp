@@ -2,6 +2,12 @@
  * Created by Martin on 19.03.2017.
  */
 var counter = 1;
+var hodnotaValue=0;
+var hodnotaKey;
+var pocitadlo=0;
+var pocitadlo1=0;
+var ob = {};
+var ob1 = {};
 var cuisines = ["Chinese", "Indian"];
 var choices = [["one", "1"], ["two", "2"]];
 
@@ -9,18 +15,48 @@ $('body').on('click', 'input.deleteDep', function() {
     $(this).parents('tr').remove();
 });
 
+$(".showhr").click(function() {
+    $(this).closest('tr').nextUntil("tr:has(.showhr)").toggle("slow", function() {});
+});
+
+function hokuspokus() {
+    var div = document.createElement('div');
+    div.setAttribute('class', 'someClass');
+    div.innerHTML = document.getElementById('blockOfStuff').innerHTML;
+    document.getElementById(pocitadlo).appendChild(div);
+    pocitadlo++;
+    document.getElementById(pocitadlo-1).setAttribute("id", pocitadlo);
+
+    var div1 = document.createElement('div');
+    div1.setAttribute('class', 'someClass');
+    div1.innerHTML = document.getElementById('blockOfStuff1').innerHTML;
+    document.getElementById('ooo').appendChild(div1);
 
 
+}
+function hokuspokusCislo(o) {
+    ob={};
+  ob=o;
+
+
+}
+function hokuspokusCislo1(o) {
+    ob1={};
+    ob1=o;
+
+
+}
 function appendRow() {
 
     for (i = 0; i < 14; i++) {
         var tbl = document.getElementById('my-table'), // table reference
-            row = tbl.insertRow(tbl.rows.length),      // append table row
-            j;
+            row = tbl.insertRow(tbl.rows.length);
 
-        createCellscheduleWeek(row.insertCell(0), i+1, 'row');
-        createCellscheduleYear(row.insertCell(1), 2017, 'row');
-        createCellDeleteButton(row.insertCell(2), 2017, 'row');
+        createCellAddButton(row.insertCell(0), i+1, 'row');
+        createCellscheduleWeek(row.insertCell(1), i+1, 'row');
+        createCellscheduleYear(row.insertCell(2), 2017, 'row');
+        createCellDeleteButton(row.insertCell(3), 2017, 'row');
+
 
     }
 }
@@ -31,14 +67,33 @@ function appendRowOne() {
         var tbl = document.getElementById('my-table'), // table reference
             row = tbl.insertRow(tbl.rows.length),      // append table row
             j;
-
         createCellscheduleWeek(row.insertCell(0), i+1, 'row');
         createCellscheduleYear(row.insertCell(1), 2017, 'row');
         createCellDeleteButton(row.insertCell(2), 2017, 'row');
 
     }
 }
+function createCellTButton() {
+    var div = document.createElement('tr'); // create DIV element
+    div.setAttribute('class', 'aser');
+    var selectHTML = "";
+    selectHTML = " <td colspan='4'></td>";
+    div.innerHTML = selectHTML;
+    // append text node to the DIV
 
+}
+
+function createCellAddButton(cell, text, style) {
+    var div = document.createElement('tr'), // create DIV element
+        txt = document.createTextNode(text); // create text node
+    var selectHTML = "";
+    selectHTML = "<input type='button' id='addB' value='Přidat' class='showhr'/>";
+    div.innerHTML = selectHTML;
+    // append text node to the DIV
+            // set DIV class attribute
+    div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+    cell.appendChild(div);                   // append DIV to the table cell
+}
 function createCellscheduleWeek(cell, text, style) {
     var div = document.createElement('tr'), // create DIV element
         txt = document.createTextNode(text); // create text node
@@ -46,7 +101,7 @@ function createCellscheduleWeek(cell, text, style) {
     selectHTML = "<input type='text' class='form-control' name='scheduleWeek' value='" + text + "'>";
     div.innerHTML = selectHTML;
                       // append text node to the DIV
-    div.setAttribute('class', style);        // set DIV class attribute
+            // set DIV class attribute
     div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
     cell.appendChild(div);                   // append DIV to the table cell
 }
@@ -58,7 +113,7 @@ function createCellscheduleYear(cell, text, style) {
     selectHTML = "<input type='text' class='form-control' name='scheduleYear' value='" + text + "'>";
     div.innerHTML = selectHTML;
                  // append text node to the DIV
-    div.setAttribute('class', style);        // set DIV class attribute
+          // set DIV class attribute
     div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
     cell.appendChild(div);                   // append DIV to the table cell
 }
@@ -116,11 +171,11 @@ function addDivToTable(cell, text, style) {
     cell.appendChild(div);                   // append DIV to the table cell
 }
 
-function addCourseTeacher(divName) {
+function addCourseTeacher() {
 
     var newDiv = document.createElement('div');
-    var mapKey = document.getElementById('myField').value;
-    var mapValue = document.getElementById('myField2').value;
+    var mapKey = ob.krk1;
+    var mapValue = ob.prd1;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
 
@@ -138,7 +193,37 @@ function addCourseTeacher(divName) {
     }
     selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='teachers.scale'> </div></div></br>";
     newDiv.innerHTML = selectHTML;
-    document.getElementById(divName).appendChild(newDiv);
+    document.getElementById(pocitadlo).appendChild(newDiv);
+
+    pocitadlo++;
+    document.getElementById(pocitadlo-1).setAttribute("id", pocitadlo);
+}
+function addCourseTeacher1() {
+
+    var newDiv = document.createElement('div');
+    var mapKey = ob1.krk1;
+    var mapValue = ob1.prd1;
+    var testKey = mapKey.split(";");
+    var testValue = mapValue.split(";");
+
+    var i, out = [];//literal new array
+    for(i=0;i<testKey.length;i++)
+    {
+        out.push([testKey[i],testValue[i]]);
+    }
+
+    var selectHTML = "";
+    selectHTML = "<div class='row'><div class='col-md-6'><select class='form-control' name='teachers.id'>";
+    for (i = 0; i < out.length; i = i + 1) {
+        selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
+
+    }
+    selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='teachers.scale'> </div></div></br>";
+    newDiv.innerHTML = selectHTML;
+    document.getElementById(pocitadlo1).appendChild(newDiv);
+
+    pocitadlo1++;
+    document.getElementById(pocitadlo1-1).setAttribute("id", pocitadlo1);
 }
 
 function addCourseTeacherTable(divName) {

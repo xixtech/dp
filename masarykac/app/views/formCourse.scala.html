@@ -6,6 +6,16 @@
     <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
     <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
     <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
+    <script>
+            $(document).ready(function () {
+
+                var MyUserObject = {};
+                MyUserObject["prd1"] = "@Employees.getJS1Value()";
+                MyUserObject["krk1"] = "@Employees.getJS1Key()";
+
+                hokuspokusCislo1(MyUserObject);
+            });
+    </script>
 }
 @main(scripts = localScripts) {
     <div class="row">
@@ -147,8 +157,8 @@
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div id="dynamicInput"><input type="hidden" id="myField" value="@Employees.getJS1Key()" /><input type="hidden" id="myField2" value="@Employees.getJS1Value()" /></div>
-                                        <input type="button" class="btn btn" value="Přidat vyučujícího" onclick="addCourseTeacher('dynamicInput');" />
+                                        <div id="0"></div>
+                                        <input type="button" class="btn btn" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
                                     </div>
                                 </div>
                             </div>

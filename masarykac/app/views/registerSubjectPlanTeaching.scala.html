@@ -1,14 +1,31 @@
 @(subjectForm: Form[Subjects], coursesForm: Form[Courses], scheduleForm: Form[Schedule], studyPlansForm: Form[StudyPlans])
 @import helper._
+
+@localStylesheets = {
+
+
+}
 @localScripts = {
+
     <!-- Morris Charts JavaScript -->
     <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
     <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
     <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
     <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
+
+    <script>
+            $(document).ready(function () {
+
+                var MyUserObject = {};
+                MyUserObject["prd1"] = "@Employees.getJS1Value()";
+                MyUserObject["krk1"] = "@Employees.getJS1Key()";
+
+                hokuspokusCislo1(MyUserObject);
+            });
+    </script>
 }
 
-@main(scripts = localScripts) {
+@main(scripts = localScripts, stylesheets = localStylesheets) {
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Registrace</h1>
@@ -236,10 +253,11 @@
                                         <table class="table table-striped table-bordered table-hover tblcollapse" id="my-table" name="weeks">
                                             <thead>
                                                 <tr>
+                                                    <th></th>
                                                     <th>Týden</th>
                                                     <th>Rok</th>
                                                     <th>Smazat</th>
-                                                    <th>Vyučující</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -247,18 +265,30 @@
 
                                                 <tr>
                                                     <td>
-                                                        <input type="button" class="btn btn" value="Přidat týdny" onclick="appendRow()" /></td>
-                                                    <td>
-                                                        <input type="button" class="btn btn" value="Přidat jeden týden" onclick="appendRowOne()" /> </td>
-                                                    <td>
+                                                        <input type="button" id="addB" value="Přidat" class="showhr"/>
                                                     </td>
                                                     <td>
-
+                                                        <input type="button" class="btn btn" value="Přidat týdny" onclick="appendRow()" /></td>
+                                                    <td>
+                                                        <input type="button" class="btn btn" value="Přidat 1 týden" onclick="appendRowOne()" /> </td>
+                                                    <td>
                                                     </td>
 
 
                                                 </tr>
-
+                                                <tr class="aser">
+                                                        <!--child row-->
+                                                    <td colspan="4"><div class="row">
+                                                        <div class="col-md-12">
+                                                            <div id="dynamicInput3"><input type="hidden" id="myField" value="@Employees.getJS1Key()" /><input type="hidden" id="myField2" value="@Employees.getJS1Value()" /></div>
+                                                            <input type="button" class="btn btn" value="Přidat vyučujícího" onclick="addCourseTeacher('dynamicInput3');" />
+                                                        </div>
+                                                    </div></td>
+                                                </tr>
+                                                <tr class="aser">
+                                                        <!--child row-->
+                                                    <td colspan="4"></td>
+                                                </tr>
 
                                             </tbody>
                                         </table>
@@ -356,94 +386,6 @@
 
                     </fieldset>
 
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
-                    <script type="text/javascript">
-
-                            $(document).ready(function () {
-
-                                $("input").click(function () {
-                                    if ($('tr#' + $(this).data("href")).is(":visible")) {
-                                        $('tr#' + $(this).data("href")).remove();
-                                    } else {
-
-
-
-                                        $(this).closest('tr').after('<tr id="' + $(this).data("href") + '"><td colspan="5"> <div class="row"><div class="col-md-12"><div id="' + $(this).data("href") + '"><input type="hidden" id="' + "myFieldX" + '" value="' + "1" + '" /><input type="hidden" id="' + "myField2X" + '" value="' + "1" + '" /><input type="button" class="btn btn" value="Přidat vyučujícího" onclick="addCourseTeacherTable(dynamicInputY);" />' + $(this).data("href") + ' </div></div></div></td></tr>');
-                                    }
-                                });
-
-                            });
-
-                    </script>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div id="table-wrap">
-                                <table summary="test" cellspacing="0" id="master">
-                                    <colgroup>
-                                        <col width="40px">
-                                        <col span="4" width="25%">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th>&nbsp;</th>
-                                            <th><span>Customer</span>
-                                            </th>
-                                            <th><span>OrderID</span>
-                                            </th>
-                                            <th><span>Order date</span>
-                                            </th>
-                                            <th><span>Order Total</span>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <input type="button" name="" value=" " data-href="content1">
-                                            </td>
-                                            <td>Ernst Handel</td>
-                                            <td>10258</td>
-                                            <td>07/17/1996</td>
-                                            <td>$403.72</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input type="button" name="" value=" " data-href="content2">
-                                            </td>
-                                            <td>Wartian Herkku</td>
-                                            <td>10270</td>
-                                            <td>08/01/1996</td>
-                                            <td>$1,376.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input type="button" name="" value=" " data-href="content3">
-                                            </td>
-                                            <td>Magazzini Alimentari Riuniti</td>
-                                            <td>10275</td>
-                                            <td>08/07/1996</td>
-                                            <td>$15.36</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                                <!-- table-wrap -->
-                        </div>
-                    </div>
-                    <style>
-                    table {
-                        table-layout: fixed;
-                        width: 100%;
-                        border-collapse: collapse;
-                    }
-
-                    td {
-                        border: 1px solid #000;
-                        padding: 5px;
-                        vertical-align: top;
-                    }
-                    </style>
                     <div class="actions">
 
                         <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
