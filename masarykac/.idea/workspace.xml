@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c2beb26-3c63-43aa-8b60-e106e0ae02db" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank_Scope0$blank.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank_Scope0$blank.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/connections/master.log" afterPath="$PROJECT_DIR$/.sbtserver/connections/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/master.log" afterPath="$PROJECT_DIR$/.sbtserver/master.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/formCourse.scala.html" afterPath="$PROJECT_DIR$/app/views/formCourse.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/previous.log" afterPath="$PROJECT_DIR$/.sbtserver/previous.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TestController.java" afterPath="$PROJECT_DIR$/app/controllers/TestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/blank.scala.html" afterPath="$PROJECT_DIR$/app/views/pages/blank.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerPublications.scala.html" afterPath="$PROJECT_DIR$/app/views/registerPublications.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" afterPath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/test.scala.html" afterPath="$PROJECT_DIR$/app/views/test.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/.sbtserver" afterPath="$PROJECT_DIR$/project/.sbtserver" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/pages/blank.template.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/pages/blank.template.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" />
@@ -56,8 +66,8 @@
       <file leaf-file-name="dynamicFields.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="225" column="71" selection-start-line="225" selection-start-column="71" selection-end-line="225" selection-end-column="71" />
+            <state relative-caret-position="297">
+              <caret line="309" column="9" selection-start-line="309" selection-start-column="9" selection-end-line="309" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -66,18 +76,61 @@
       <file leaf-file-name="blank.scala.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/blank.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="71" selection-start-line="19" selection-start-column="1" selection-end-line="20" selection-end-column="71" />
+            <state relative-caret-position="662">
+              <caret line="105" column="26" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formCourse.scala.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="formCourse.scala.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/formCourse.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2141">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state relative-caret-position="306">
+              <caret line="18" column="13" selection-start-line="8" selection-start-column="0" selection-end-line="18" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registerSubjectPlanTeaching.scala.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="281" column="143" selection-start-line="281" selection-start-column="143" selection-end-line="281" selection-end-column="143" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/TestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="679">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.scala.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/test.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-443">
+              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -86,8 +139,8 @@
       <file leaf-file-name="registerPublications.scala.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/registerPublications.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="114" column="163" selection-start-line="113" selection-start-column="22" selection-end-line="114" selection-end-column="163" />
+            <state relative-caret-position="2074">
+              <caret line="122" column="51" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -115,7 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/models/Visits.java" />
         <option value="$PROJECT_DIR$/app/controllers/VisitsController.java" />
         <option value="$PROJECT_DIR$/app/models/ProjectsParticipants.java" />
         <option value="$PROJECT_DIR$/app/models/FinalWorksParticipants.java" />
@@ -124,7 +176,6 @@
         <option value="$PROJECT_DIR$/app/models/Comittee.java" />
         <option value="$PROJECT_DIR$/app/models/FinalWorks.java" />
         <option value="$PROJECT_DIR$/app/models/Publications.java" />
-        <option value="$PROJECT_DIR$/app/views/registerPublications.scala.html" />
         <option value="$PROJECT_DIR$/app/views/registerFinalWorks.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/FinalWorksController.java" />
         <option value="$PROJECT_DIR$/app/models/CurrentSemestersUntilTheEndOfStudy.java" />
@@ -161,11 +212,13 @@
         <option value="$PROJECT_DIR$/app/controllers/StatisticController.java" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/sb-admin-2.less" />
         <option value="$PROJECT_DIR$/app/models/FieldsOfStudy.java" />
-        <option value="$PROJECT_DIR$/app/views/test.scala.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
+        <option value="$PROJECT_DIR$/app/views/formCourse.scala.html" />
         <option value="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
         <option value="$PROJECT_DIR$/app/views/pages/blank.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/formCourse.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/registerPublications.scala.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
+        <option value="$PROJECT_DIR$/app/controllers/TestController.java" />
+        <option value="$PROJECT_DIR$/app/views/test.scala.html" />
       </list>
     </option>
   </component>
@@ -192,7 +245,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -222,6 +275,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -606,7 +660,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1228,14 +1281,9 @@
       <workItem from="1491725465063" duration="12682000" />
       <workItem from="1491761347334" duration="4652000" />
       <workItem from="1491807748078" duration="18049000" />
-      <workItem from="1491925150804" duration="10896000" />
-    </task>
-    <task id="LOCAL-00018" summary="10_03">
-      <created>1489141126634</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1489141126634</updated>
+      <workItem from="1491925150804" duration="10936000" />
+      <workItem from="1491992007952" duration="4001000" />
+      <workItem from="1492067322796" duration="10286000" />
     </task>
     <task id="LOCAL-00019" summary="12_03">
       <created>1489314726261</created>
@@ -1573,14 +1621,21 @@
       <option name="project" value="LOCAL" />
       <updated>1491945643530</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="11_04">
+      <created>1491945994429</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1491945994429</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="477272000" />
+    <option name="totallyTimeSpent" value="491599000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1666,20 +1721,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/charts/morris.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-729">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/registerProjects.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/registerSubject.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1980,14 +2021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/test.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="120" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tables/tableCourses.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -1995,43 +2028,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="328" column="38" selection-start-line="328" selection-start-column="38" selection-end-line="328" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="225" column="71" selection-start-line="225" selection-start-column="71" selection-end-line="225" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/registerPublications.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="114" column="163" selection-start-line="113" selection-start-column="22" selection-end-line="114" selection-end-column="163" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/blank.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="71" selection-start-line="19" selection-start-column="1" selection-end-line="20" selection-end-column="71" />
+        <state relative-caret-position="662">
+          <caret line="105" column="26" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/formCourse.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2141">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="306">
+          <caret line="18" column="13" selection-start-line="8" selection-start-column="0" selection-end-line="18" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="281" column="143" selection-start-line="281" selection-start-column="143" selection-end-line="281" selection-end-column="143" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/registerPublications.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="122" column="51" selection-start-line="122" selection-start-column="28" selection-end-line="122" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="309" column="9" selection-start-line="309" selection-start-column="9" selection-end-line="309" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-443">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/test.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

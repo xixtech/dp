@@ -46,6 +46,16 @@ public class TestController extends Controller {
             t.save();
         }
 
+        List<String> f=new ArrayList<>();
+        for (String insId : formData.get("field-name")) {
+            f.add(insId);
+        }
+
+        for (int i = 0; i < f.size(); i++) {
+            Test t=new Test(f.get(i),"yy");
+            t.save();
+        }
+
 
         return redirect(routes.Application.index());
     }
