@@ -8,6 +8,10 @@ var pocitadlo = 1;
 var pocitadlo1 = 0;
 var ob = {};
 var ob1 = {};
+var fieldsOfStudyArray = {};
+var semestersArray = {};
+var studyGroupsArray = {};
+var studyGroups1Array = {};
 var cuisines = ["Chinese", "Indian"];
 var choices = [["one", "1"], ["two", "2"]];
 
@@ -53,6 +57,18 @@ function hokuspokusCislo1(o) {
 
 
 }
+function studyplansArrays(fields, sem, stud, stud1) {
+    fieldsOfStudyArray = {};
+    semestersArray = {};
+    studyGroupsArray = {};
+    studyGroups1Array = {};
+
+    fieldsOfStudyArray = fields;
+    semestersArray = sem;
+    studyGroupsArray = stud;
+    studyGroups1Array = stud1;
+}
+
 
 function appendRow() {
 
@@ -140,8 +156,8 @@ function createCellDeleteButton(cell, text, style) {
 function addPublicationParticipant(divName) {
 
     var newDiv = document.createElement('div');
-    var mapKey = ob1.krk1;
-    var mapValue = ob1.prd1;
+    var mapKey = ob1.js1key;
+    var mapValue = ob1.js1value;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
 
@@ -164,13 +180,86 @@ function addPublicationParticipant(divName) {
     document.getElementById(divName).appendChild(newDiv);
 }
 
+function addStudyPlan(divName) {
+
+    var newDiv = document.createElement('div');
+    var mapKeyfieldsOfStudy = fieldsOfStudyArray.k;
+    var mapValuefieldsOfStudy = fieldsOfStudyArray.v;
+    var testKeyfieldsOfStudy = mapKeyfieldsOfStudy.split(";");
+    var testValuefieldsOfStudy = mapValuefieldsOfStudy.split(";");
+
+    var mapKeysemesters = semestersArray.k;
+    var mapValuesemesters = semestersArray.v;
+    var testKeysemesters = mapKeysemesters.split(";");
+    var testValuesemesters = mapValuesemesters.split(";");
+
+    var mapKeystudyGroups = studyGroupsArray.k;
+    var mapValuestudyGroups = studyGroupsArray.v;
+    var testKeystudyGroups = mapKeystudyGroups.split(";");
+    var testValuestudyGroups = mapValuestudyGroups.split(";");
+
+    var mapKeystudyGroups1 = studyGroups1Array.k;
+    var mapValuestudyGroups1 = studyGroups1Array.v;
+    var testKeystudyGroups1 = mapKeystudyGroups1.split(";");
+    var testValuestudyGroups1 = mapValuestudyGroups1.split(";");
+
+    var i, outfieldsOfStudy = [];//literal new array
+    for (i = 0; i < testKeyfieldsOfStudy.length; i++) {
+        outfieldsOfStudy.push([testKeyfieldsOfStudy[i], testValuefieldsOfStudy[i]]);
+    }
+
+    var outsemesters = [];//literal new array
+    for (i = 0; i < testKeysemesters.length; i++) {
+        outsemesters.push([testKeysemesters[i], testValuesemesters[i]]);
+    }
+
+    var outstudyGroups = [];//literal new array
+    for (i = 0; i < testKeystudyGroups.length; i++) {
+        outstudyGroups.push([testKeystudyGroups[i], testValuestudyGroups[i]]);
+    }
+
+    var outstudyGroups1 = [];//literal new array
+    for (i = 0; i < testKeystudyGroups1.length; i++) {
+        outstudyGroups1.push([testKeystudyGroups1[i], testValuestudyGroups1[i]]);
+    }
+
+    var selectHTML = "";
+    selectHTML = "<div class='row'><div class='col-md-2'><select class='form-control' name='fieldsOfStudy.id'>";
+    for (i = 0; i < outfieldsOfStudy.length; i = i + 1) {
+        selectHTML += "<option value='" + outfieldsOfStudy[i][0] + "'>" + outfieldsOfStudy[i][1] + "</option>";
+
+    }
+    selectHTML += "</select></div>";
+    selectHTML += "<div class='col-md-2'><select class='form-control' name='semesters.id'>";
+    for (i = 0; i < outsemesters.length; i = i + 1) {
+        selectHTML += "<option value='" + outsemesters[i][0] + "'>" + outsemesters[i][1] + "</option>";
+
+    }
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue'> </div>";
+    selectHTML += "<div class='col-md-2'><select class='form-control' name='studyGroups.id'>";
+    for (i = 0; i < outstudyGroups.length; i = i + 1) {
+        selectHTML += "<option value='" + outstudyGroups[i][0] + "'>" + outstudyGroups[i][1] + "</option>";
+
+    }
+    selectHTML += "</select></div>";
+    selectHTML += "<div class='col-md-2'><select class='form-control' name='studyGroups1.id'>";
+    for (i = 0; i < outstudyGroups1.length; i = i + 1) {
+        selectHTML += "<option value='" + outstudyGroups1[i][0] + "'>" + outstudyGroups1[i][1] + "</option>";
+
+    }
+    selectHTML += "</select></div></div></br>";
+
+    newDiv.innerHTML = selectHTML;
+    document.getElementById(divName).appendChild(newDiv);
+}
+
 function addPokusRadek(divName) {
 
     var newDiv = document.createElement('div');
     var ident = divName + "" + pocitadlo1;
     newDiv.setAttribute("id", ident);
-    var mapKey = ob.krk1;
-    var mapValue = ob.prd1;
+    var mapKey = ob.js1key;
+    var mapValue = ob.js1value;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
 
@@ -213,8 +302,8 @@ function addCourseTeacher() {
 
     var newDiv = document.createElement('div');
     newDiv.setAttribute("id", pocitadlo);
-    var mapKey = ob.krk1;
-    var mapValue = ob.prd1;
+    var mapKey = ob.js1key;
+    var mapValue = ob.js1value;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
     var p = pocitadlo;
@@ -239,8 +328,8 @@ function addCourseTeacher() {
 function addCourseTeacher1() {
 
     var newDiv = document.createElement('div');
-    var mapKey = ob1.krk1;
-    var mapValue = ob1.prd1;
+    var mapKey = ob1.js1key;
+    var mapValue = ob1.js1value;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
 

@@ -46,10 +46,15 @@ public class TestController extends Controller {
             t.save();
         }
 
+        Set<String> keys = request().body().asFormUrlEncoded().keySet();
         List<String> f=new ArrayList<>();
-        for (String insId : formData.get("field-name")) {
-            f.add(insId);
+        for (String key : keys) {
+           if(key.startsWith("field-name")){
+               f.add(key);
+           }
         }
+
+
 
         for (int i = 0; i < f.size(); i++) {
             Test t=new Test(f.get(i),"yy");

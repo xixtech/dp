@@ -4,10 +4,7 @@ import com.avaje.ebean.Model;
 import play.data.format.Formats;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Martin on 12.03.2017.
@@ -228,6 +225,48 @@ public class Semesters extends Model {
             options.put(set.semesterValue.toString(), set.semesterValue.toString());
         }
         return options;
+    }
+
+    public static String[] getKey() {
+
+        String[] arr1 = new String[options().size()];
+
+        Set entries = options().entrySet();
+        Iterator entriesIterator = entries.iterator();
+
+        int i = 0;
+        String v = "";
+        while (entriesIterator.hasNext()) {
+            Map.Entry mapping = (Map.Entry) entriesIterator.next();
+            arr1[i] = mapping.getKey().toString() + ";";
+            v = mapping.getKey().toString();
+            i++;
+        }
+        if (arr1.length > 0) {
+            arr1[arr1.length - 1] = v;
+        }
+        return arr1;
+    }
+
+    public static String[] getValue() {
+
+        String[] arr2 = new String[options().size()];
+
+        Set entries = options().entrySet();
+        Iterator entriesIterator = entries.iterator();
+
+        int i = 0;
+        String v = "";
+        while (entriesIterator.hasNext()) {
+            Map.Entry mapping = (Map.Entry) entriesIterator.next();
+            arr2[i] = mapping.getValue().toString() + ";";
+            v = mapping.getValue().toString();
+            i++;
+        }
+        if (arr2.length > 0) {
+            arr2[arr2.length - 1] = v;
+        }
+        return arr2;
     }
 
     public static List<Semesters> search() {
