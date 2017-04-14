@@ -87,7 +87,7 @@ public class Days extends Model {
         List<Days> subjectSets = Days.find.all();
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
         for(Days set: subjectSets) {
-            options.put(set.id.toString(), set.day.toString());
+            options.put(set.id.toString(), set.dayV.toString());
         }
         return options;
     }

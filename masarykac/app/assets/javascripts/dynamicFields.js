@@ -8,6 +8,8 @@ var pocitadlo = 1;
 var pocitadlo1 = 0;
 var countStudyPlan = 1;
 var countEmployees = 1;
+var weeksCount = 1;
+var weeksTeacher=0;
 var ob = {};
 var ob1 = {};
 var emplArray = {};
@@ -91,6 +93,25 @@ function appendRow() {
         createCellscheduleYear(row.insertCell(1), 2017, 'row');
         createCellDeleteButton(row.insertCell(2), 2017, 'row');
 
+    }
+}
+
+function appendRowDiv() {
+
+    for (i = 0; i < 14; i++) {
+
+        var newDiv = document.createElement('div');
+        newDiv.setAttribute("id", weeksCount);
+        var selectHTML = "";
+        selectHTML = "<div class='row'><div class='col-md-10'>";
+        selectHTML += "<div class='col-md-2'><input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeks(" + weeksCount + ");'/> </div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek' value='" + (i + 1) + "'/></div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear' value='" + 2017 + "'/></div>";
+        selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
+        selectHTML += "</div></div></br>";
+        newDiv.innerHTML = selectHTML;
+        document.getElementById('r').appendChild(newDiv);
+        weeksCount++;
 
     }
 }
@@ -362,6 +383,34 @@ function addCourseTeacher1() {
     document.getElementById('radky').appendChild(newDiv);
 
     pocitadlo++;
+}
+
+function addCourseTeacherWeeks(divName) {
+
+    var newDiv = document.createElement('div');
+    newDiv.setAttribute("id", weeksTeacher);
+    var ident = divName + "" + weeksTeacher;
+    newDiv.setAttribute("id", ident);
+    var mapKey = emplArray.k;
+    var mapValue = emplArray.v;
+    var testKey = mapKey.split(";");
+    var testValue = mapValue.split(";");
+
+    var i, out = [];//literal new array
+    for (i = 0; i < testKey.length; i++) {
+        out.push([testKey[i], testValue[i]]);
+    }
+
+    var selectHTML = "";
+    selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' name='teachers.id'>";
+    for (i = 0; i < out.length; i = i + 1) {
+        selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
+    }
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='teachers.scale'></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
+    newDiv.innerHTML = selectHTML;
+    document.getElementById(divName).appendChild(newDiv);
+
+    weeksTeacher++;
 }
 
 function addCourseTeacherTable(divName) {

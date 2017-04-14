@@ -77,7 +77,7 @@
                                     '_error -> subjectForm.globalError
                                 )
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-1">
                                 @checkbox(
                                     subjectForm("credit"),
                                     '_label -> "Zápočet",
@@ -86,15 +86,25 @@
                                     '_error -> subjectForm.globalError
                                 )
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-1">
                                 @checkbox(
-                                    subjectForm("formPresentation"),
-                                    '_label -> "Prezenční forma",
+                                    subjectForm("exam"),
+                                    '_label -> "Zkouška",
                                     'class -> "form-control",
                                     '_help -> "",
                                     '_error -> subjectForm.globalError
                                 )
                                 </div>
+                                <div class="col-md-2">
+                                @checkbox(
+                                    subjectForm("classifiedCredit"),
+                                    '_label -> "Klasifikovaný zápočet",
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> subjectForm.globalError
+                                )
+                                </div>
+
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
@@ -115,16 +125,16 @@
                                     '_error -> subjectForm.globalError
                                 )
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                 @checkbox(
-                                    subjectForm("exam"),
-                                    '_label -> "Zkouška",
+                                    subjectForm("formPresentation"),
+                                    '_label -> "Prezenční forma",
                                     'class -> "form-control",
                                     '_help -> "",
                                     '_error -> subjectForm.globalError
                                 )
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                 @checkbox(
                                     subjectForm("formCombined"),
                                     '_label -> "Kombinovaná forma",
@@ -153,18 +163,10 @@
                                     '_error -> subjectForm.globalError
                                 )
                                 </div>
-                                <div class="col-md-3">
-                                @checkbox(
-                                    subjectForm("classifiedCredit"),
-                                    '_label -> "Klasifikovaný zápočet",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
-                                </div>
+
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                 @inputText(
                                     subjectForm("titleA"),
                                     '_label -> "Název anglicky",
@@ -173,7 +175,7 @@
                                     '_error -> subjectForm.globalError
                                 )
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                 @inputText(
                                     subjectForm("hoursSemester"),
                                     '_label -> "Počet hodin za semestr",
@@ -194,7 +196,7 @@
 
                             </div>
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                 @select(
                                     coursesForm("semester.id"),
                                     options(Semesters.options()),
@@ -204,7 +206,7 @@
                                     '_error -> coursesForm.globalError
                                 )
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                 @inputText(
                                     coursesForm("course"),
                                     '_label -> "Kurz",
@@ -344,13 +346,29 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input type="button" class="btn btn-default" value="Přidat týdny" onclick="appendRowDiv()" />
+
+                                                    <div id="r"></div>
+
+
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                         <div class="tab-pane fade" id="studyplans">
                                         </br>
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <input type="button" class="btn btn" value="Přidat studijní plán" onclick="addStudyPlan('studyplan');" />
+                                                    <div class="row">
                                                     </br>
+                                                    </div>
+
                                                     <div id="studyplan"></div>
                                                 </div>
                                             </div>
