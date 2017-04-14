@@ -2,30 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c2beb26-3c63-43aa-8b60-e106e0ae02db" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank_Scope0$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank_Scope0$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank_Scope0$blank$$anonfun$f$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank_Scope0$blank$$anonfun$f$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank_Scope0$blank.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/pages/blank_Scope0$blank.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson_Scope0$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson_Scope0$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson_Scope0$registerPerson$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson_Scope0$registerPerson$$anonfun$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson_Scope0$registerPerson$$anonfun$f$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson_Scope0$registerPerson$$anonfun$f$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson_Scope0$registerPerson.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/registerPerson_Scope0$registerPerson.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/connections/master.log" afterPath="$PROJECT_DIR$/.sbtserver/connections/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/master.log" afterPath="$PROJECT_DIR$/.sbtserver/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/FinalWorksController.java" afterPath="$PROJECT_DIR$/app/controllers/FinalWorksController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ProjectController.java" afterPath="$PROJECT_DIR$/app/controllers/ProjectController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Projects.java" afterPath="$PROJECT_DIR$/app/models/Projects.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/formCourse.scala.html" afterPath="$PROJECT_DIR$/app/views/formCourse.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/blank.scala.html" afterPath="$PROJECT_DIR$/app/views/pages/blank.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerFieldsOfStudy.scala.html" afterPath="$PROJECT_DIR$/app/views/registerFieldsOfStudy.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerFinalWorks.scala.html" afterPath="$PROJECT_DIR$/app/views/registerFinalWorks.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerOrganizationalUnits.scala.html" afterPath="$PROJECT_DIR$/app/views/registerOrganizationalUnits.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerPerson.scala.html" afterPath="$PROJECT_DIR$/app/views/registerPerson.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerProjects.scala.html" afterPath="$PROJECT_DIR$/app/views/registerProjects.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerPublications.scala.html" afterPath="$PROJECT_DIR$/app/views/registerPublications.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerSemester.scala.html" afterPath="$PROJECT_DIR$/app/views/registerSemester.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerStudyGroups.scala.html" afterPath="$PROJECT_DIR$/app/views/registerStudyGroups.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerStudyPlans.scala.html" afterPath="$PROJECT_DIR$/app/views/registerStudyPlans.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" afterPath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerVisits.scala.html" afterPath="$PROJECT_DIR$/app/views/registerVisits.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/pages/blank.template.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/pages/blank.template.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/registerPerson.template.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/registerPerson.template.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" />
     </list>
     <ignored path="masarykac.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,33 +63,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dynamicFields.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dynamicFields.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4012">
-              <caret line="261" column="69" selection-start-line="261" selection-start-column="69" selection-end-line="261" selection-end-column="76" />
-              <folding>
-                <element signature="n#!!block;n#addPublicationParticipant#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registerStudyGroups.scala.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/registerStudyGroups.scala.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="54" column="34" selection-start-line="53" selection-start-column="31" selection-end-line="54" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registerPerson.scala.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/registerPerson.scala.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="91" column="34" selection-start-line="90" selection-start-column="26" selection-end-line="91" selection-end-column="34" />
+            <state relative-caret-position="399">
+              <caret line="414" column="47" selection-start-line="414" selection-start-column="47" selection-end-line="414" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -101,28 +76,18 @@
       <file leaf-file-name="blank.scala.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/blank.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="103" column="30" selection-start-line="102" selection-start-column="3" selection-end-line="103" selection-end-column="30" />
+            <state relative-caret-position="662">
+              <caret line="54" column="26" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formCourse.scala.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/formCourse.scala.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="162" column="42" selection-start-line="159" selection-start-column="35" selection-end-line="162" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registerSubjectPlanTeaching.scala.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="registerSubjectPlanTeaching.scala.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="329" column="156" selection-start-line="329" selection-start-column="156" selection-end-line="329" selection-end-column="156" />
+            <state relative-caret-position="458">
+              <caret line="340" column="158" selection-start-line="340" selection-start-column="158" selection-end-line="340" selection-end-column="158" />
               <folding />
             </state>
           </provider>
@@ -185,9 +150,6 @@
         <option value="$PROJECT_DIR$/app/models/StudyGroups.java" />
         <option value="$PROJECT_DIR$/app/models/StudyGroups1.java" />
         <option value="$PROJECT_DIR$/app/views/formCourse.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pages/blank.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
         <option value="$PROJECT_DIR$/app/views/registerStudyPlans.scala.html" />
         <option value="$PROJECT_DIR$/app/views/registerSemester.scala.html" />
         <option value="$PROJECT_DIR$/app/views/registerStudyGroups.scala.html" />
@@ -201,6 +163,9 @@
         <option value="$PROJECT_DIR$/app/controllers/ProjectController.java" />
         <option value="$PROJECT_DIR$/app/views/registerFinalWorks.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/FinalWorksController.java" />
+        <option value="$PROJECT_DIR$/app/views/pages/blank.scala.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
+        <option value="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
       </list>
     </option>
   </component>
@@ -1267,14 +1232,7 @@
       <workItem from="1491992007952" duration="4001000" />
       <workItem from="1492067322796" duration="10353000" />
       <workItem from="1492118999552" duration="1216000" />
-      <workItem from="1492153820199" duration="13355000" />
-    </task>
-    <task id="LOCAL-00021" summary="14_03">
-      <created>1489521241733</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1489521241733</updated>
+      <workItem from="1492153820199" duration="16082000" />
     </task>
     <task id="LOCAL-00022" summary="16_03">
       <created>1489667453748</created>
@@ -1612,11 +1570,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492161147553</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="14_04">
+      <created>1492172398712</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1492172398713</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="506237000" />
+    <option name="totallyTimeSpent" value="508964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1819,13 +1784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/sb-admin-2.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="165" column="10" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tables/tableCourses.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -1887,14 +1845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/SubjectPlanTeachingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3026">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/StudyGroups.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1943,24 +1893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4012">
-          <caret line="261" column="69" selection-start-line="261" selection-start-column="69" selection-end-line="261" selection-end-column="76" />
-          <folding>
-            <element signature="n#!!block;n#addPublicationParticipant#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/blank.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="103" column="30" selection-start-line="102" selection-start-column="3" selection-end-line="103" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/registerStudyPlans.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -1997,30 +1929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="501">
           <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/formCourse.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="162" column="42" selection-start-line="159" selection-start-column="35" selection-end-line="162" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/registerStudyGroups.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="54" column="34" selection-start-line="53" selection-start-column="31" selection-end-line="54" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/registerPerson.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="91" column="34" selection-start-line="90" selection-start-column="26" selection-end-line="91" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -2105,10 +2013,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/registerStudyGroups.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="54" column="34" selection-start-line="53" selection-start-column="31" selection-end-line="54" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/registerPerson.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="91" column="34" selection-start-line="90" selection-start-column="26" selection-end-line="91" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/formCourse.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="149" column="58" selection-start-line="149" selection-start-column="58" selection-end-line="149" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/sb-admin-2.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="172" column="1" selection-start-line="172" selection-start-column="1" selection-end-line="172" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SubjectPlanTeachingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="280" column="28" selection-start-line="280" selection-start-column="28" selection-end-line="280" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/blank.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="54" column="26" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="329" column="156" selection-start-line="329" selection-start-column="156" selection-end-line="329" selection-end-column="156" />
+        <state relative-caret-position="458">
+          <caret line="340" column="158" selection-start-line="340" selection-start-column="158" selection-end-line="340" selection-end-column="158" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="414" column="47" selection-start-line="414" selection-start-column="47" selection-end-line="414" selection-end-column="47" />
           <folding />
         </state>
       </provider>

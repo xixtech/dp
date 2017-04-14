@@ -74,59 +74,7 @@ Seq[Any](format.raw/*1.16*/("""
 """),_display_(/*39.2*/main(scripts = localScripts, stylesheets = localStylesheets)/*39.62*/ {_display_(Seq[Any](format.raw/*39.64*/("""
     """),format.raw/*40.5*/("""<div class="col-md-12">
         <div class="row">
-            <div class="dataTable_wrapper">
-                <table id="example" class="table table-striped table-bordered table-hover" cellspacing=" 0" width="100%">
-                    <thead>
-                        <tr>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                            <th>Extn.</th>
-                            <th>E-mail</th>
-                        </tr>
-                    </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>Tiger</td>
-                            <td>Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                            <td>5421</td>
-                            <td>yy</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett</td>
-                            <td>Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
-                            <td>8422</td>
-                            <td>xx</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton</td>
-                            <td>Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
-                            <td>1562</td>
-                            <td>cc</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 
@@ -165,9 +113,9 @@ Seq[Any](format.raw/*1.16*/("""
 object blank extends blank_Scope0.blank
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 14 12:07:36 CEST 2017
+                  DATE: Fri Apr 14 14:44:58 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/pages/blank.scala.html
-                  HASH: cc897bdcd040d69850bd6a9452415051ccaed240
+                  HASH: cd78c7a049f606b977610204bc8e8f1950b49525
                   MATRIX: 751->1|843->18|867->34|947->38|978->43|1134->172|1162->173|1197->182|1359->317|1387->318|1420->324|1476->352|1505->353|1541->362|1679->473|1707->474|1739->479|1772->492|1793->504|1874->508|1906->513|2112->692|2127->698|2190->740|2547->1069|2576->1070|2622->1088|2669->1107|2698->1108|2727->1109|2794->1149|2812->1158|2847->1172|2915->1213|2933->1222|2966->1234|3103->1343|3132->1344|3189->15|3218->489|3247->1362|3276->1365|3345->1425|3385->1427|3417->1432
                   LINES: 27->1|31->3|31->3|33->3|34->4|38->8|38->8|39->9|41->11|41->11|43->13|43->13|43->13|44->14|45->15|45->15|46->16|47->19|47->19|49->19|50->20|52->22|52->22|52->22|57->27|57->27|59->29|59->29|59->29|59->29|60->30|60->30|60->30|61->31|61->31|61->31|65->35|65->35|68->1|70->17|72->37|74->39|74->39|74->39|75->40
                   -- GENERATED --

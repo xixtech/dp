@@ -6,7 +6,8 @@ var hodnotaValue = 0;
 var hodnotaKey;
 var pocitadlo = 1;
 var pocitadlo1 = 0;
-var countStudyPlan=1;
+var countStudyPlan = 1;
+var countEmployees = 1;
 var ob = {};
 var ob1 = {};
 var emplArray = {};
@@ -259,7 +260,7 @@ function addStudyPlan(divName) {
 
     }
     selectHTML += "</select></div>";
-    selectHTML += "<div class='col-md-1'><input type='button' class='btn btn' value='Smazat' onclick='del(" + idn + ");'/></div></div></br>";
+    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idn + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
     countStudyPlan++;
@@ -318,7 +319,6 @@ function addCourseTeacher() {
     var mapValue = emplArray.v;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
-    var p = pocitadlo;
     var i, out = [];//literal new array
     for (i = 0; i < testKey.length; i++) {
         out.push([testKey[i], testValue[i]]);
@@ -340,6 +340,7 @@ function addCourseTeacher() {
 function addCourseTeacher1() {
 
     var newDiv = document.createElement('div');
+    newDiv.setAttribute("id", pocitadlo);
     var mapKey = emplArray.k;
     var mapValue = emplArray.v;
     var testKey = mapKey.split(";");
@@ -356,12 +357,11 @@ function addCourseTeacher1() {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='teachers.scale'><input type='button' class='btn btn' value='Př' onclick='appendRow();' /> </div></div> </br>";
+    selectHTML += "</select></div><div class='col-md-5'><input type='text' class='form-control' name='teachers.scale'></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + pocitadlo + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
-    document.getElementById(pocitadlo1).appendChild(newDiv);
+    document.getElementById('radky').appendChild(newDiv);
 
-    pocitadlo1++;
-    document.getElementById(pocitadlo1 - 1).setAttribute("id", pocitadlo1);
+    pocitadlo++;
 }
 
 function addCourseTeacherTable(divName) {
