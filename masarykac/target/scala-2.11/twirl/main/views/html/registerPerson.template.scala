@@ -55,97 +55,119 @@ Seq[Any](format.raw/*1.82*/("""
 
                         """),format.raw/*24.25*/("""<fieldset>
                             <legend>Přihlašovací údaje</legend>
-                            """),_display_(/*26.30*/inputText(
-                                signupForm("email"),
-                                '_label -> "Email",
-                                'class -> "form-control",
-                                '_help -> "Prosím zadejte platnou e-mailovou adresu.",
-                                '_error -> signupForm.globalError
-                            )),format.raw/*32.30*/("""
-
-                            """),_display_(/*34.30*/inputPassword(
-                                signupForm("password"),
-                                '_label -> "Heslo",
-                                'class -> "form-control",
-                                '_help -> "Heslo musí mít nejméně 6 znaků."
-                            )),format.raw/*39.30*/("""
-
-                            """),_display_(/*41.30*/inputPassword(
-                                signupForm("repeatPassword"),
-                                '_label -> "Heslo pro kontrolu",
-                                'class -> "form-control",
-                                '_help -> "Prosím zadejte znovu heslo.",
-                                '_error -> signupForm.error("password")
-                            )),format.raw/*47.30*/("""
-
-                        """),format.raw/*49.25*/("""</fieldset>
+                            <div class="row">
+                                <div class="col-md-12">
+                                """),_display_(/*28.34*/inputText(
+                                    signupForm("email"),
+                                    '_label -> "Email",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte platnou e-mailovou adresu.",
+                                    '_error -> signupForm.globalError
+                                )),format.raw/*34.34*/("""
+                                """),format.raw/*35.33*/("""</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                """),_display_(/*39.34*/inputPassword(
+                                    signupForm("password"),
+                                    '_label -> "Heslo",
+                                    'class -> "form-control",
+                                    '_help -> "Heslo musí mít nejméně 6 znaků."
+                                )),format.raw/*44.34*/("""
+                                """),format.raw/*45.33*/("""</div>
+                                <div class="col-md-6">
+                                """),_display_(/*47.34*/inputPassword(
+                                    signupForm("repeatPassword"),
+                                    '_label -> "Heslo pro kontrolu",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte znovu heslo.",
+                                    '_error -> signupForm.error("password")
+                                )),format.raw/*53.34*/("""
+                                """),format.raw/*54.33*/("""</div>
+                            </div>
+                        </fieldset>
 
                         <fieldset>
 
                             <legend>Kontaktní informace</legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                """),_display_(/*63.34*/inputText(
+                                    personForm("salary"),
+                                    '_label -> "Plat",
+                                    'class -> "form-control",
+                                    '_help -> "Zadejte plat.",
+                                    '_error -> personForm.globalError
+                                )),format.raw/*69.34*/("""
+                                """),format.raw/*70.33*/("""</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                """),_display_(/*74.34*/inputText(
+                                    personForm("jobTitle"),
+                                    '_label -> "Zařazení",
+                                    'class -> "form-control",
+                                    '_help -> "Zadejte zařazení.",
+                                    '_error -> personForm.globalError
+                                )),format.raw/*80.34*/("""
+                                """),format.raw/*81.33*/("""</div>
+                                <div class="col-md-6">
+                                """),_display_(/*83.34*/select(
+                                    personForm("role"),
+                                    options = options(Roles.selectCollection),
+                                    '_label -> "Role",
+                                    'class -> "form-control",
+                                    '_help -> "Vyberte zařazení.",
+                                    '_error -> personForm.globalError
+                                )),format.raw/*90.34*/("""
+                                """),format.raw/*91.33*/("""</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                """),_display_(/*95.34*/inputText(
+                                    profileForm("firstName"),
+                                    '_label -> "Křestní jméno",
+                                    'class -> "form-control",
+                                    '_help -> "Zadejte křestní jméno.",
+                                    '_error -> profileForm.globalError
+                                )),format.raw/*101.34*/("""
+                                """),format.raw/*102.33*/("""</div>
+                                <div class="col-md-6">
+                                """),_display_(/*104.34*/inputText(
+                                    profileForm("lastName"),
+                                    '_label -> "Příjmení",
+                                    'class -> "form-control",
+                                    '_help -> "Zadejte příjmení.",
+                                    '_error -> profileForm.globalError
+                                )),format.raw/*110.34*/("""
+                                """),format.raw/*111.33*/("""</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                """),_display_(/*115.34*/inputText(
+                                    profileForm("phoneNumber"),
+                                    '_label -> "Telefonní číslo",
+                                    'class -> "form-control",
+                                    '_help -> "Zadejte telefonní číslo.",
+                                    '_error -> profileForm.globalError
+                                )),format.raw/*121.34*/("""
+                                """),format.raw/*122.33*/("""</div>
+                            </div>
 
-                            """),_display_(/*55.30*/inputText(
-                                personForm("salary"),
-                                '_label -> "Plat",
-                                'class -> "form-control",
-                                '_help -> "Zadejte plat.",
-                                '_error -> personForm.globalError
-                            )),format.raw/*61.30*/("""
-                            """),_display_(/*62.30*/inputText(
-                                personForm("jobTitle"),
-                                '_label -> "Zařazení",
-                                'class -> "form-control",
-                                '_help -> "Zadejte zařazení.",
-                                '_error -> personForm.globalError
-                            )),format.raw/*68.30*/("""
-
-                            """),_display_(/*70.30*/select(
-                                personForm("role"),
-                                options = options(Roles.selectCollection),
-                                '_label -> "Role",
-                                'class -> "form-control",
-                                '_help -> "Vyberte zařazení.",
-                                '_error -> personForm.globalError
-                            )),format.raw/*77.30*/("""
-
-                            """),_display_(/*79.30*/inputText(
-                                profileForm("firstName"),
-                                '_label -> "Křestní jméno",
-                                'class -> "form-control",
-                                '_help -> "Zadejte křestní jméno.",
-                                '_error -> profileForm.globalError
-                            )),format.raw/*85.30*/("""
-
-                            """),_display_(/*87.30*/inputText(
-                                profileForm("lastName"),
-                                '_label -> "Příjmení",
-                                'class -> "form-control",
-                                '_help -> "Zadejte příjmení.",
-                                '_error -> profileForm.globalError
-                            )),format.raw/*93.30*/("""
-
-                            """),_display_(/*95.30*/inputText(
-                                profileForm("phoneNumber"),
-                                '_label -> "Telefonní číslo",
-                                'class -> "form-control",
-                                '_help -> "Zadejte telefonní číslo.",
-                                '_error -> profileForm.globalError
-                            )),format.raw/*101.30*/("""
-
-                        """),format.raw/*103.25*/("""</fieldset>
+                        </fieldset>
 
                         <div class="actions">
 
                             <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                            <a href=""""),_display_(/*108.39*/routes/*108.45*/.Application.index()),format.raw/*108.65*/("""" class="btn">Zrušit</a>
+                            <a href=""""),_display_(/*130.39*/routes/*130.45*/.Application.index()),format.raw/*130.65*/("""" class="btn">Zrušit</a>
                         </div>
 
-                    """)))}),format.raw/*111.22*/("""
-                    """),format.raw/*112.21*/("""</div>
+                    """)))}),format.raw/*133.22*/("""
+                    """),format.raw/*134.21*/("""</div>
                 </div>
             </div>
         </div>
-    """)))}),format.raw/*116.6*/("""
+    """)))}),format.raw/*138.6*/("""
 """))
       }
     }
@@ -166,11 +188,11 @@ Seq[Any](format.raw/*1.82*/("""
 object registerPerson extends registerPerson_Scope0.registerPerson
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 09 10:50:46 CEST 2017
+                  DATE: Fri Apr 14 13:27:43 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/registerPerson.scala.html
-                  HASH: 56bad0a7d81133eada0e9936207af1fcd7428040
-                  MATRIX: 796->1|969->110|989->122|1069->126|1105->136|1188->193|1202->199|1264->241|1325->276|1339->282|1399->322|1460->357|1474->363|1534->403|1591->81|1623->105|1653->421|1688->430|1725->458|1765->460|1802->470|2231->872|2246->878|2299->922|2339->924|2395->952|2528->1058|2911->1420|2971->1453|3283->1744|3343->1777|3744->2157|3800->2185|3977->2335|4332->2669|4390->2700|4755->3044|4815->3077|5245->3486|5305->3519|5683->3876|5743->3909|6110->4255|6170->4288|6555->4651|6612->4679|6849->4888|6865->4894|6907->4914|7020->4995|7071->5017|7175->5090
-                  LINES: 27->1|31->3|31->3|33->3|34->4|35->5|35->5|35->5|36->6|36->6|36->6|37->7|37->7|37->7|39->1|40->3|40->8|42->10|42->10|42->10|43->11|54->22|54->22|54->22|54->22|56->24|58->26|64->32|66->34|71->39|73->41|79->47|81->49|87->55|93->61|94->62|100->68|102->70|109->77|111->79|117->85|119->87|125->93|127->95|133->101|135->103|140->108|140->108|140->108|143->111|144->112|148->116
+                  HASH: 491c6804510f3b2ee6a4cc587052933b265e8dfe
+                  MATRIX: 796->1|969->110|989->122|1069->126|1105->136|1188->193|1202->199|1264->241|1325->276|1339->282|1399->322|1460->357|1474->363|1534->403|1591->81|1623->105|1653->421|1688->430|1725->458|1765->460|1802->470|2231->872|2246->878|2299->922|2339->924|2395->952|2636->1166|3043->1552|3105->1586|3312->1766|3644->2077|3706->2111|3830->2208|4255->2612|4317->2646|4668->2970|5047->3328|5109->3362|5316->3542|5705->3910|5767->3944|5891->4041|6349->4478|6411->4512|6618->4692|7021->5073|7084->5107|7209->5204|7601->5574|7664->5608|7873->5789|8282->6176|8345->6210|8652->6489|8668->6495|8710->6515|8823->6596|8874->6618|8978->6691
+                  LINES: 27->1|31->3|31->3|33->3|34->4|35->5|35->5|35->5|36->6|36->6|36->6|37->7|37->7|37->7|39->1|40->3|40->8|42->10|42->10|42->10|43->11|54->22|54->22|54->22|54->22|56->24|60->28|66->34|67->35|71->39|76->44|77->45|79->47|85->53|86->54|95->63|101->69|102->70|106->74|112->80|113->81|115->83|122->90|123->91|127->95|133->101|134->102|136->104|142->110|143->111|147->115|153->121|154->122|162->130|162->130|162->130|165->133|166->134|170->138
                   -- GENERATED --
               */
           

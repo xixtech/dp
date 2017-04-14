@@ -1,4 +1,4 @@
-@(projectsForm: Form[Projects],participantsForm: Form[ProjectsParticipants])
+@(projectsForm: Form[Projects], participantsForm: Form[ProjectsParticipants])
 @import helper._
 @localScripts = {
     <!-- Morris Charts JavaScript -->
@@ -22,66 +22,81 @@
 
                     <fieldset>
                         <legend>Zadání projektu</legend>
-                        <div class="form-group row">
-
-                        @inputText(
-                            projectsForm("projectName"),
-                            '_label -> "Název projektu:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte název projektu.",
-                            '_error -> projectsForm.globalError
-                        )
+                        <div class="row">
+                            <div class="col-md-12">
+                            @inputText(
+                                projectsForm("projectName"),
+                                '_label -> "Název projektu:",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte název projektu.",
+                                '_error -> projectsForm.globalError
+                            )
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                @inputText(
+                                    projectsForm("projectFrom"),
+                                    '_label -> "Projekt probíhá od:",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte datum.",
+                                    '_error -> projectsForm.globalError
+                                )
+                                </div>
+                                <div class="col-md-6">
+                                @inputText(
+                                    projectsForm("projectTo"),
+                                    '_label -> "Projekt probíhá do:",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte datum.",
+                                    '_error -> projectsForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @select(
+                                    projectsForm("semester.id"),
+                                    options(Semesters.options()),
+                                    '_label -> "Projekt proběhl v semestru:",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte semestr projektu.",
+                                    '_error -> projectsForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                @checkbox(
+                                    projectsForm("hasGrant"),
+                                    '_label -> "Projekt získal grant:",
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> projectsForm.globalError
+                                )
+                                </div>
+                                <div class="col-md-8">
+                                @inputText(
+                                    projectsForm("grantValue"),
+                                    '_label -> "Velikost grantu",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte velikost grantu.",
+                                    '_error -> projectsForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @select(
+                                    participantsForm("employees.id"),
+                                    options(Employees.options()),
+                                    '_label -> "Účastník:",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte semestr účastníka.",
+                                    '_error -> participantsForm.globalError
+                                )
+                                </div>
+                            </div>
                         </div>
-                        @inputText(
-                            projectsForm("projectFrom"),
-                            '_label -> "Projekt probíhá od:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte datum.",
-                            '_error -> projectsForm.globalError
-                        )
-
-                        @inputText(
-                            projectsForm("projectTo"),
-                            '_label -> "Projekt probíhá do:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte datum.",
-                            '_error -> projectsForm.globalError
-                        )
-
-                        @select(
-                            projectsForm("semester.id"),
-                            options(Semesters.options()),
-                            '_label -> "Projekt proběhl v semestru:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte semestr projektu.",
-                            '_error -> projectsForm.globalError
-                        )
-
-                        @checkbox(
-                            projectsForm("hasGrant"),
-                            '_label -> "Projekt získal grant:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte grant.",
-                            '_error -> projectsForm.globalError
-                        )
-
-                        @inputText(
-                            projectsForm("grantValue"),
-                            '_label -> "Velikost grantu",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte velikost grantu.",
-                            '_error -> projectsForm.globalError
-                        )
-
-                        @select(
-                            participantsForm("employees.id"),
-                            options(Employees.options()),
-                            '_label -> "Účastník:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte semestr účastníka.",
-                            '_error -> participantsForm.globalError
-                        )
-
                     </fieldset>
 
                     <div class="actions">
@@ -90,9 +105,11 @@
                         <a href="@routes.Application.index()" class="btn">Zrušit</a>
                     </div>
 
-                }
                 </div>
+
+                }
             </div>
         </div>
+    </div>
     </div>
 }

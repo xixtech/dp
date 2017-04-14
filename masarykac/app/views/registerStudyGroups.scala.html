@@ -1,70 +1,80 @@
 @(studyGroupsForm: Form[StudyGroups])
-@import helper._
-@localScripts = {
-    <!-- Morris Charts JavaScript -->
-    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
-    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
-    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
-}
-@main(scripts = localScripts) {
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Registrace</h1>
-        </div>
-            <!-- /.col-lg-12 -->
-    </div>
-        <!-- /.row -->
-    <div class="container">
+    @import helper._
+    @localScripts = {
+        <!-- Morris Charts JavaScript -->
+        <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+        <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+        <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+    }
+    @main(scripts = localScripts) {
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel-body">
-                @helper.form(action = routes.StudyGroupsController.save) {
+            <div class="col-lg-12">
+                <h1 class="page-header">Registrace</h1>
+            </div>
+                <!-- /.col-lg-12 -->
+        </div>
+            <!-- /.row -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel-body">
+                    @helper.form(action = routes.StudyGroupsController.save) {
 
-                    <fieldset>
-                        <legend>Zadání údajů</legend>
-                        @inputText(
-                            studyGroupsForm("studyGroup"),
-                            '_label -> "Skupina",
-                            'class -> "form-control",
-                            '_help -> "Prosím skupinu.",
-                            '_error -> studyGroupsForm.globalError
-                        )
+                        <fieldset>
+                            <legend>Zadání údajů</legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @inputText(
+                                    studyGroupsForm("studyGroup"),
+                                    '_label -> "Skupina",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím skupinu.",
+                                    '_error -> studyGroupsForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                @inputText(
+                                    studyGroupsForm("studyGroupP"),
+                                    '_label -> "Skupina_P",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím skupinu.",
+                                    '_error -> studyGroupsForm.globalError
+                                )
+                                </div>
+                                <div class="col-md-6">
+                                @inputText(
+                                    studyGroupsForm("studyGroupV"),
+                                    '_label -> "Skupina_V",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte skupinu.",
+                                    '_error -> studyGroupsForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @inputText(
+                                    studyGroupsForm("studyGroupsNote"),
+                                    '_label -> "Poznámka",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte poznámku.",
+                                    '_error -> studyGroupsForm.globalError
+                                )
+                                </div>
+                            </div>
+                        </fieldset>
 
-                        @inputText(
-                            studyGroupsForm("studyGroupP"),
-                            '_label -> "Skupina_P",
-                            'class -> "form-control",
-                            '_help -> "Prosím skupinu.",
-                            '_error -> studyGroupsForm.globalError
-                        )
+                        <div class="actions">
 
-                        @inputText(
-                            studyGroupsForm("studyGroupV"),
-                            '_label -> "Skupina_V",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte skupinu.",
-                            '_error -> studyGroupsForm.globalError
-                        )
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                            <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                        </div>
 
-                        @inputText(
-                            studyGroupsForm("studyGroupsNote"),
-                            '_label -> "Poznámka",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte poznámku.",
-                            '_error -> studyGroupsForm.globalError
-                        )
-
-                    </fieldset>
-
-                    <div class="actions">
-
-                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                    }
                     </div>
-
-                }
                 </div>
             </div>
         </div>
-    </div>
-}
+    }

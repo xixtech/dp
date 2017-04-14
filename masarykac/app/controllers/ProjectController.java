@@ -61,7 +61,7 @@ public class ProjectController extends Controller {
         }
 
         List<Date> projectFrom = new ArrayList<>();
-        DateFormat format = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
+        DateFormat format = new SimpleDateFormat("dd.mm.yyyy", Locale.ENGLISH);
 
         for (String insId : formData.get("projectFrom")) {
 
@@ -73,9 +73,6 @@ public class ProjectController extends Controller {
         for (String insId : formData.get("projectTo")) {
             projectTo.add(format.parse(insId));
         }
-        long duration  = projectTo.get(0).getTime() - projectFrom.get(0).getTime();
-        long diffMinutes = duration / (60 * 1000) % 60;
-        long diffHours = duration / (60 * 60 * 1000);
 
         List<String> semester = new ArrayList<>();
 
@@ -99,7 +96,7 @@ public class ProjectController extends Controller {
         List<String> grantValue = new ArrayList<>();
 
         for (String insId : formData.get("grantValue")) {
-            grantValue.add(diffHours+":"+diffMinutes);
+            grantValue.add(insId);
         }
 
         List<String> employees = new ArrayList<>();

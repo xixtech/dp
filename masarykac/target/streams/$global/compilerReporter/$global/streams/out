@@ -1,10 +1,4 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\TestController.java:37: illegal start of type
-[error]         return redirect(routes.Application.index());
-[error]         ^
-[error] C:\Users\Martin\dp\masarykac\app\controllers\TestController.java:37: identifier expected but `;' found.
-[error]         return redirect(routes.Application.index());
-[error]                                                    ^
-[error] C:\Users\Martin\dp\masarykac\app\controllers\TestController.java:39: eof expected but `}' found.
-[error] }
-[error] ^
-[error] three errors found
+[error] C:\Users\Martin\dp\masarykac\app\controllers\ProjectController.java:99: cannot find symbol
+[error]   symbol:   variable insIds
+[error]   location: class controllers.ProjectController
+[error] insIds

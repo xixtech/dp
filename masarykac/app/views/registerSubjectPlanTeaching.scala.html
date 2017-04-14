@@ -32,6 +32,12 @@
                 studygroups1["k"] = "@StudyGroups1.getKey()";
 
                 studyplansArrays(fields, semesters, studygroups, studygroups1);
+
+                var MyUserObject = {};
+                MyUserObject["v"] = "@Employees.getJS1Value()";
+                MyUserObject["k"] = "@Employees.getJS1Key()";
+
+                employeeArray(MyUserObject);
             });
     </script>
 }
@@ -278,46 +284,56 @@
                                     <div class="tab-content">
                                         <div class="tab-pane fade in active" id="home">
                                             <div class="row">
+                                            </br>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Vygenerování týdnů</label>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                                                Všechny týdny
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                                Sudé týdny
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                                                Liché týdny
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </br>
+                                            </div>
+
+                                            <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="dataTable_wrapper">
                                                         <table class="table table-striped table-bordered table-hover tblcollapse" id="my-table" name="weeks">
                                                             <thead>
                                                                 <tr>
-                                                                    <th></th>
+
                                                                     <th>Týden</th>
                                                                     <th>Rok</th>
-                                                                    <th>Smazat</th>
+                                                                    <th></th>
 
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-
-
                                                                 <tr>
                                                                     <td>
-                                                                        <input type="button" id="addB" value="Přidat" class="showhr"/>
-                                                                    </td>
+                                                                        <input type="button" class="btn btn-default" value="Přidat týdny" onclick="appendRow()" /></td>
                                                                     <td>
-                                                                        <input type="button" class="btn btn" value="Přidat týdny" onclick="appendRow()" /></td>
-                                                                    <td>
-                                                                        <input type="button" class="btn btn" value="Přidat 1 týden" onclick="appendRowOne()" /> </td>
+                                                                        <input type="button" class="btn btn-default" value="Přidat 1 týden" onclick="appendRowOne()" /> </td>
                                                                     <td>
                                                                     </td>
 
 
-                                                                </tr>
-                                                                <tr class="aser">
-                                                                        <!--child row-->
-                                                                    <td colspan="4"><div class="row">
-                                                                        <div class="col-md-12">
-                                                                            <div id="dynamicInput3"><input type="hidden" id="myField" value="@Employees.getJS1Key()" /><input type="hidden" id="myField2" value="@Employees.getJS1Value()" /></div>
-                                                                            <input type="button" class="btn btn" value="Přidat vyučujícího" onclick="addCourseTeacher('dynamicInput3');" />
-                                                                        </div>
-                                                                    </div></td>
-                                                                </tr>
-                                                                <tr class="aser">
-                                                                        <!--child row-->
-                                                                    <td colspan="4"></td>
                                                                 </tr>
 
                                                             </tbody>
@@ -329,31 +345,11 @@
 
 
                                                 <div class="col-md-6">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                        @select(
-                                                            coursesForm("teachers.id"),
-                                                            options(Employees.options()),
-                                                            '_label -> "Vyučující",
-                                                            'class -> "form-control",
-                                                            '_help -> "",
-                                                            '_error -> coursesForm.globalError
-                                                        )
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                        @inputText(
-                                                            coursesForm("teachers.scale"),
-                                                            '_label -> "Váha",
-                                                            'class -> "form-control",
-                                                            '_help -> "",
-                                                            '_error -> coursesForm.globalError
-                                                        )
-                                                        </div>
-                                                    </div>
+
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <div id="dynamicInput"><input type="hidden" id="myField" value="@Employees.getJS1Key()" /><input type="hidden" id="myField2" value="@Employees.getJS1Value()" /></div>
-                                                            <input type="button" class="btn btn" value="Přidat vyučujícího" onclick="addCourseTeacher('dynamicInput');" />
+                                                            <input type="button" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
+                                                            <div id="0"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -361,61 +357,13 @@
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="studyplans">
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                @select(
-                                                    studyPlansForm("fieldsOfStudy.id"),
-                                                    options(FieldsOfStudy.options()),
-                                                    '_label -> "Obor",
-                                                    'class -> "form-control",
-                                                    '_help -> "",
-                                                    '_error -> studyPlansForm.globalError
-                                                )
-                                                </div>
-                                                <div class="col-md-2">
-                                                @select(
-                                                    studyPlansForm("semesters.id"),
-                                                    options(Semesters.options()),
-                                                    '_label -> "Semestr nástupu",
-                                                    'class -> "form-control",
-                                                    '_help -> "",
-                                                    '_error -> studyPlansForm.globalError
-                                                )
-                                                </div>
-                                                <div class="col-md-2">
-                                                @inputText(
-                                                    studyPlansForm("semesterValue"),
-                                                    '_label -> "Semestr",
-                                                    'class -> "form-control",
-                                                    '_help -> "",
-                                                    '_error -> studyPlansForm.globalError
-                                                )
-                                                </div>
-                                                <div class="col-md-2">
-                                                @select(
-                                                    studyPlansForm("studyGroups.id"),
-                                                    options(StudyGroups.options()),
-                                                    '_label -> "Skupina",
-                                                    'class -> "form-control",
-                                                    '_help -> "",
-                                                    '_error -> studyPlansForm.globalError
-                                                )
-                                                </div>
-                                                <div class="col-md-2">
-                                                @select(
-                                                    studyPlansForm("studyGroups1.id"),
-                                                    options(StudyGroups1.options()),
-                                                    '_label -> "Skupina_obor",
-                                                    'class -> "form-control",
-                                                    '_help -> "",
-                                                    '_error -> studyPlansForm.globalError
-                                                )
-                                                </div>
-                                            </div>
+                                            </br>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <div id="studyplan"></div>
+
                                                     <input type="button" class="btn btn" value="Přidat studijní plán" onclick="addStudyPlan('studyplan');" />
+                                                    </br>
+                                                    <div id="studyplan"></div>
                                                 </div>
                                             </div>
                                         </div>

@@ -6,8 +6,11 @@ var hodnotaValue = 0;
 var hodnotaKey;
 var pocitadlo = 1;
 var pocitadlo1 = 0;
+var countStudyPlan=1;
 var ob = {};
 var ob1 = {};
+var emplArray = {};
+var publParticipantArray = {};
 var fieldsOfStudyArray = {};
 var semestersArray = {};
 var studyGroupsArray = {};
@@ -48,14 +51,20 @@ function del(elem) {
 function hokuspokusCislo(o) {
     ob = {};
     ob = o;
-
-
 }
 function hokuspokusCislo1(o) {
     ob1 = {};
     ob1 = o;
+}
 
+function publicationArray(publPart) {
+    publParticipantArray = {};
+    publParticipantArray = publPart;
+}
 
+function employeeArray(empl) {
+    emplArray = {};
+    emplArray = empl;
 }
 function studyplansArrays(fields, sem, stud, stud1) {
     fieldsOfStudyArray = {};
@@ -76,10 +85,10 @@ function appendRow() {
         var tbl = document.getElementById('my-table'), // table reference
             row = tbl.insertRow(tbl.rows.length);
 
-        createCellAddButton(row.insertCell(0), i + 1, 'row');
-        createCellscheduleWeek(row.insertCell(1), i + 1, 'row');
-        createCellscheduleYear(row.insertCell(2), 2017, 'row');
-        createCellDeleteButton(row.insertCell(3), 2017, 'row');
+
+        createCellscheduleWeek(row.insertCell(0), i + 1, 'row');
+        createCellscheduleYear(row.insertCell(1), 2017, 'row');
+        createCellDeleteButton(row.insertCell(2), 2017, 'row');
 
 
     }
@@ -156,8 +165,8 @@ function createCellDeleteButton(cell, text, style) {
 function addPublicationParticipant(divName) {
 
     var newDiv = document.createElement('div');
-    var mapKey = ob1.js1key;
-    var mapValue = ob1.js1value;
+    var mapKey = publParticipantArray.k;
+    var mapValue = publParticipantArray.v;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
 
@@ -183,6 +192,8 @@ function addPublicationParticipant(divName) {
 function addStudyPlan(divName) {
 
     var newDiv = document.createElement('div');
+    var idn = countStudyPlan;
+    newDiv.setAttribute("id", idn);
     var mapKeyfieldsOfStudy = fieldsOfStudyArray.k;
     var mapValuefieldsOfStudy = fieldsOfStudyArray.v;
     var testKeyfieldsOfStudy = mapKeyfieldsOfStudy.split(";");
@@ -247,10 +258,11 @@ function addStudyPlan(divName) {
         selectHTML += "<option value='" + outstudyGroups1[i][0] + "'>" + outstudyGroups1[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div></div></br>";
-
+    selectHTML += "</select></div>";
+    selectHTML += "<div class='col-md-1'><input type='button' class='btn btn' value='Smazat' onclick='del(" + idn + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
+    countStudyPlan++;
 }
 
 function addPokusRadek(divName) {
@@ -258,8 +270,8 @@ function addPokusRadek(divName) {
     var newDiv = document.createElement('div');
     var ident = divName + "" + pocitadlo1;
     newDiv.setAttribute("id", ident);
-    var mapKey = ob.js1key;
-    var mapValue = ob.js1value;
+    var mapKey = publParticipantArray.k;
+    var mapValue = publParticipantArray.v;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
 
@@ -302,8 +314,8 @@ function addCourseTeacher() {
 
     var newDiv = document.createElement('div');
     newDiv.setAttribute("id", pocitadlo);
-    var mapKey = ob.js1key;
-    var mapValue = ob.js1value;
+    var mapKey = emplArray.k;
+    var mapValue = emplArray.v;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
     var p = pocitadlo;
@@ -328,8 +340,8 @@ function addCourseTeacher() {
 function addCourseTeacher1() {
 
     var newDiv = document.createElement('div');
-    var mapKey = ob1.js1key;
-    var mapValue = ob1.js1value;
+    var mapKey = emplArray.k;
+    var mapValue = emplArray.v;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
 

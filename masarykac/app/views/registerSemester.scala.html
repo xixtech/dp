@@ -1,89 +1,99 @@
 @(semesterForm: Form[Semesters])
-@import helper._
-@localScripts = {
-    <!-- Morris Charts JavaScript -->
-    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
-    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
-    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
-}
-@main(scripts = localScripts) {
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Registrace</h1>
-        </div>
-            <!-- /.col-lg-12 -->
-    </div>
-        <!-- /.row -->
-    <div class="container">
+    @import helper._
+    @localScripts = {
+        <!-- Morris Charts JavaScript -->
+        <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+        <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+        <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+    }
+    @main(scripts = localScripts) {
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel-body">
-                @helper.form(action = routes.SemestersController.save) {
+            <div class="col-lg-12">
+                <h1 class="page-header">Registrace</h1>
+            </div>
+                <!-- /.col-lg-12 -->
+        </div>
+            <!-- /.row -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel-body">
+                    @helper.form(action = routes.SemestersController.save) {
 
-                    <fieldset>
-                        <legend>Zadání předmětu</legend>
-                        @inputText(
-                            semesterForm("semesterValue"),
-                            '_label -> "Semestr",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> semesterForm.globalError
-                        )
+                        <fieldset>
+                            <legend>Zadání předmětu</legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @inputText(
+                                    semesterForm("semesterValue"),
+                                    '_label -> "Semestr",
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> semesterForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                @inputText(
+                                    semesterForm("semesterVK"),
+                                    '_label -> "Semestr_v_k",
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> semesterForm.globalError
+                                )
+                                </div>
+                                <div class="col-md-6">
+                                @inputText(
+                                    semesterForm("semesterVD"),
+                                    '_label -> "Semestr_v_d",
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> semesterForm.globalError
+                                )
+                                </div>
+                            </div>
+                            @inputText(
+                                semesterForm("semesterAr"),
+                                '_label -> "Akademický rok",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> semesterForm.globalError
+                            )
+                            <div class="row">
+                                <div class="col-md-6">
+                                @inputText(
+                                    semesterForm("semesterFrom"),
+                                    '_label -> "Od",
 
-                        @inputText(
-                            semesterForm("semesterVK"),
-                            '_label -> "Semestr_v_k",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> semesterForm.globalError
-                        )
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> semesterForm.globalError
+                                )
+                                </div>
+                                <div class="col-md-6">
+                                @inputText(
+                                    semesterForm("semesterTo"),
+                                    '_label -> "Do",
 
-                        @inputText(
-                            semesterForm("semesterVD"),
-                            '_label -> "Semestr_v_d",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> semesterForm.globalError
-                        )
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> semesterForm.globalError
+                                )
+                                </div>
+                            </div>
 
-                        @inputText(
-                            semesterForm("semesterAr"),
-                            '_label -> "Akademický rok",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> semesterForm.globalError
-                        )
+                        </fieldset>
 
-                        @inputText(
-                            semesterForm("semesterFrom"),
-                            '_label -> "Od",
+                        <div class="actions">
 
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> semesterForm.globalError
-                        )
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                            <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                        </div>
 
-                        @inputText(
-                            semesterForm("semesterTo"),
-                            '_label -> "Do",
-
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> semesterForm.globalError
-                        )
-
-
-                    </fieldset>
-
-                    <div class="actions">
-
-                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                    }
                     </div>
-
-                }
                 </div>
             </div>
         </div>
-    </div>
-}
+    }

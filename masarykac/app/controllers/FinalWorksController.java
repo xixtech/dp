@@ -76,7 +76,7 @@ public class FinalWorksController extends Controller {
 
         List<String> semester = new ArrayList<>();
 
-        for (String insId : formData.get("semester")) {
+        for (String insId : formData.get("semester.id")) {
             semester.add(insId);
         }
 
@@ -95,7 +95,7 @@ public class FinalWorksController extends Controller {
         long finalWorkId = 0;
 
         for (int i = 0; i < finalWorksName.size(); i++) {
-            FinalWorks fw = new FinalWorks(finalWorksName.get(i), names.get(i), year.get(i), Semesters.findById(i));
+            FinalWorks fw = new FinalWorks(finalWorksName.get(i), names.get(i), year.get(i), Semesters.findById(Long.parseLong(semester.get(i))));
             fw.save();
             finalWorkId = fw.getId();
         }
