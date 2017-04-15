@@ -105,8 +105,8 @@ function appendRowDiv() {
         var selectHTML = "";
         selectHTML = "<div class='row'><div class='col-md-10'>";
         selectHTML += "<div class='col-md-2'><input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeks(" + weeksCount + ");'/> </div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek' value='" + (i + 1) + "'/></div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear' value='" + 2017 + "'/></div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek"+weeksCount+"' value='" + (i + 1) + "'/></div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear"+weeksCount+"' value='" + 2017 + "'/></div>";
         selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
         selectHTML += "</div></div></br>";
         newDiv.innerHTML = selectHTML;
@@ -402,11 +402,11 @@ function addCourseTeacherWeeks(divName) {
     }
 
     var selectHTML = "";
-    selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' name='teachers.id'>";
+    selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' name='tname"+divName+""+weeksTeacher+"'>";
     for (i = 0; i < out.length; i = i + 1) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
     }
-    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='teachers.scale'></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='tvalue"+divName+""+weeksTeacher+"'></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
 

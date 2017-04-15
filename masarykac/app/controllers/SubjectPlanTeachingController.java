@@ -9,8 +9,10 @@ import play.mvc.Security;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import play.Logger;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -52,7 +54,8 @@ public class SubjectPlanTeachingController extends Controller {
         try {
             saveCourse(formData);
             return redirect(routes.Application.index());
-        } catch (Exception e) {
+        } catch (Throwable t) {
+            Logger.error("Exception ", t);
             return badRequest(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm, studyPlansForm));
         }
     }
@@ -223,29 +226,100 @@ public class SubjectPlanTeachingController extends Controller {
         }
 
         List<String> teachers = new ArrayList<>();
+        List<String> teacherKey = new ArrayList<>();
+        List<String> teacherValue = new ArrayList<>();
 
-        for (String insId : formData.get("teachers.id")) {
-            teachers.add(insId);
+        for (Map.Entry<String, String[]> entry : formData.entrySet()) {
+            String key = entry.getKey();
+            if (key.startsWith("tname")) {
+                for (String insId : entry.getValue()) {
+                    teachers.add(insId);
+                    String subKey = entry.getKey();
+
+                    teacherKey.add(subKey.substring(5));
+                    teacherValue.add(insId);
+                }
+            }
+
+        }
+
+        String[][] tn = new String[teacherKey.size()][2];
+        for (int i = 0; i < teacherKey.size(); i++) {
+            tn[i][0] = teacherKey.get(i);
+            tn[i][1] = teacherValue.get(i);
         }
 
         List<Integer> teachersScale = new ArrayList<>();
+        List<String> scaleKey = new ArrayList<>();
+        List<String> scaleValue = new ArrayList<>();
+        for (Map.Entry<String, String[]> entry : formData.entrySet()) {
+            String key = entry.getKey();
+            if (key.startsWith("tvalue")) {
+                for (String insId : entry.getValue()) {
+                    teachersScale.add(Integer.parseInt(insId));
+                    String subKey = entry.getKey();
 
-        for (String insId : formData.get("teachers.scale")) {
-            teachersScale.add(Integer.parseInt(insId));
+                    scaleKey.add(subKey.substring(6));
+                    scaleValue.add(insId);
+                }
+            }
+
+        }
+        String[][] ts = new String[scaleKey.size()][2];
+        for (int i = 0; i < scaleKey.size(); i++) {
+            ts[i][0] = scaleKey.get(i);
+            ts[i][1] = scaleValue.get(i);
+        }
+
+        String[][] uchodnota = new String[teacherKey.size()][3];
+        for (int i = 0; i < teacherKey.size(); i++) {
+
+                uchodnota[i][0] = teacherKey.get(i);
+                uchodnota[i][1] = teacherValue.get(i);
+                uchodnota[i][2] = scaleValue.get(i);
+
+
+
         }
 
 
         List<Integer> scheduleWeek = new ArrayList<>();
+        List<String> scheduleWeekKey = new ArrayList<>();
+        List<Integer> scheduleWeekValue = new ArrayList<>();
 
-        for (String insId : formData.get("scheduleWeek")) {
-            scheduleWeek.add(Integer.parseInt(insId));
+        for (Map.Entry<String, String[]> entry : formData.entrySet()) {
+            String key = entry.getKey();
+            if (key.startsWith("scheduleWeek")) {
+                for (String insId : entry.getValue()) {
+                    scheduleWeek.add(Integer.parseInt(insId));
+                    String subKey = entry.getKey();
+
+                    scheduleWeekKey.add(subKey.substring(6));
+                    scheduleWeekValue.add(Integer.parseInt(insId));
+                }
+            }
+
         }
+
 
         List<Integer> scheduleYear = new ArrayList<>();
+        List<String> scheduleYearKey = new ArrayList<>();
+        List<Integer> scheduleYearValue = new ArrayList<>();
 
-        for (String insId : formData.get("scheduleYear")) {
-            scheduleYear.add(Integer.parseInt(insId));
+        for (Map.Entry<String, String[]> entry : formData.entrySet()) {
+            String key = entry.getKey();
+            if (key.startsWith("scheduleYear")) {
+                for (String insId : entry.getValue()) {
+                    scheduleYear.add(Integer.parseInt(insId));
+                    String subKey = entry.getKey();
+
+                    scheduleYearKey.add(subKey.substring(6));
+                    scheduleYearValue.add(Integer.parseInt(insId));
+                }
+            }
+
         }
+
 
         List<Integer> fieldsOfStudy = new ArrayList<>();
 
@@ -295,8 +369,11 @@ public class SubjectPlanTeachingController extends Controller {
             c = new Courses(course.get(i), numberOfStudents.get(i), subjects, Semesters.findById(Long.parseLong(semesters.get(0))));
             c.save();
 
-            for (int j = 0; j < teachers.size(); j++) {
-                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(teachers.get(j))), teachersScale.get(j));
+            for (int j = 0; j < teacherKey.size(); j++) {
+                Test test=new Test(teacherKey.get(j),uchodnota[j][2]);
+                test.save();
+
+                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(uchodnota[j][1])), Integer.parseInt(uchodnota[j][2]));
                 t.save();
             }
         }
