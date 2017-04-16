@@ -9,7 +9,7 @@ var pocitadlo1 = 0;
 var countStudyPlan = 1;
 var countEmployees = 1;
 var weeksCount = 101;
-var weeksTeacher=1;
+var weeksTeacher = 1;
 var ob = {};
 var ob1 = {};
 var emplArray = {};
@@ -105,8 +105,8 @@ function appendRowDiv() {
         var selectHTML = "";
         selectHTML = "<div class='row'><div class='col-md-10'>";
         selectHTML += "<div class='col-md-2'><input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeks(" + weeksCount + ");'/> </div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek"+weeksCount+"' value='" + (i + 1) + "' onkeypress='return isNumberKey(event)'/></div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear"+weeksCount+"' value='" + 2017 + "' onkeypress='return isNumberKey(event)'/></div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek" + weeksCount + "' value='" + (i + 1) + "' onkeypress='return isNumberKey(event)'/></div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear" + weeksCount + "' value='" + 2017 + "' onkeypress='return isNumberKey(event)'/></div>";
         selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
         selectHTML += "</div></div></br>";
         newDiv.innerHTML = selectHTML;
@@ -206,7 +206,7 @@ function addPublicationParticipant(divName) {
     selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' name='faculty'> </div>";
     selectHTML += "<div class='col-md-1'><input type='text' class='form-control' onkeypress='return isNumberKey(event)' name='orderInPublication'> </div>";
     selectHTML += "<div class='col-md-3'><input type='text' class='form-control' name='department'> </div>";
-    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share'> </div></div></br>";
+    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share' onkeypress='return isDecimalNumberKey(event)'> </div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
 }
@@ -268,7 +268,7 @@ function addStudyPlan(divName) {
         selectHTML += "<option value='" + outsemesters[i][0] + "'>" + outsemesters[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue'> </div>";
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue' onkeypress='return isNumberKey(event)'> </div>";
     selectHTML += "<div class='col-md-2'><select class='form-control' name='studyGroups.id'>";
     for (i = 0; i < outstudyGroups.length; i = i + 1) {
         selectHTML += "<option value='" + outstudyGroups[i][0] + "'>" + outstudyGroups[i][1] + "</option>";
@@ -311,7 +311,7 @@ function addPokusRadek(divName) {
     selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' name='faculty'> </div>";
     selectHTML += "<div class='col-md-1'><input type='text' class='form-control' onkeypress='return isNumberKey(event)' name='orderInPublication'> </div>";
     selectHTML += "<div class='col-md-3'><input type='text' class='form-control' name='department'> </div>";
-    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share'> </div>";
+    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share' onkeypress='return isDecimalNumberKey(event)'> </div>";
     selectHTML += "<div class='col-md-1'><input type='button' class='btn btn' value='D' onclick='del(" + ident + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
@@ -351,7 +351,7 @@ function addCourseTeacher() {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-4'><input type='text' class='form-control' name='teachers.scale'></div><div class='col-md-2'><input type='button' class='btn btn' value='Př' onclick='addPokusRadek(" + pocitadlo + ");'/>  </div></div></br>";
+    selectHTML += "</select></div><div class='col-md-4'><input type='text' class='form-control' name='teachers.scale' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-2'><input type='button' class='btn btn' value='Př' onclick='addPokusRadek(" + pocitadlo + ");'/>  </div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('radky').appendChild(newDiv);
 
@@ -378,7 +378,7 @@ function addCourseTeacher1() {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-5'><input type='text' class='form-control' name='teachers.scale'></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + pocitadlo + ");'/></div></div> </br>";
+    selectHTML += "</select></div><div class='col-md-5'><input type='text' class='form-control' name='teachers.scale' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + pocitadlo + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('radky').appendChild(newDiv);
 
@@ -402,11 +402,11 @@ function addCourseTeacherWeeks(divName) {
     }
 
     var selectHTML = "";
-    selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' name='tname"+divName+""+weeksTeacher+"'>";
+    selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' name='tname" + divName + "" + weeksTeacher + "'>";
     for (i = 0; i < out.length; i = i + 1) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
     }
-    selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' name='tvalue"+divName+""+weeksTeacher+"' onkeypress='return isNumberKey(event)'></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
+    selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' name='tvalue" + divName + "" + weeksTeacher + "' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
 
@@ -482,7 +482,14 @@ function addInputT1(divName, pole) {
 }
 function isNumberKey(evt) {
     var charCode = (evt.which) ? evt.which : event.keyCode;
-    if (!((charCode >47 && charCode <=57) || ( charCode ==8)||(charCode==44)|| ( charCode ==46)||( charCode === 0)||(charCode==127)))
+    if (charCode > 31 && ((charCode < 48 || charCode > 57)))
+        return false;
+    return true;
+}
+
+function isDecimalNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    if (!((charCode > 47 && charCode <= 57) || ( charCode == 8) || (charCode == 44) || ( charCode == 46) || ( charCode === 0) || (charCode == 127)))
         return false;
     return true;
 }

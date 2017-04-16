@@ -28,6 +28,9 @@ public class Teachers extends Model {
 
     public double scale;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<TeachersInWeeks> teachersInWeeks;
+
     public Teachers(Courses courses, Employees employees, double scale) {
         this.courses = courses;
         this.employees = employees;
@@ -56,6 +59,22 @@ public class Teachers extends Model {
 
     public void setScale(double scale) {
         this.scale = scale;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<TeachersInWeeks> getTeachersInWeeks() {
+        return teachersInWeeks;
+    }
+
+    public void setTeachersInWeeks(List<TeachersInWeeks> teachersInWeeks) {
+        this.teachersInWeeks = teachersInWeeks;
     }
 
     public static List<Teachers> search() {

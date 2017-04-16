@@ -45,6 +45,9 @@ public class ScheduleInWeeks extends Model {
     @ManyToOne
     public Schedule schedule;
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<TeachersInWeeks> teachersInWeeks;
+
     public ScheduleInWeeks(Semesters semester, String ident, Courses courses, Days days, String scheduleFrom, String scheduleTo, String classRoom, int scheduleWeek, int scheduleYear, Schedule schedule) {
         this.semester = semester;
         this.ident = ident;
@@ -55,7 +58,7 @@ public class ScheduleInWeeks extends Model {
         this.classRoom = classRoom;
         this.scheduleWeek = scheduleWeek;
         this.scheduleYear = scheduleYear;
-        this.schedule=schedule;
+        this.schedule = schedule;
     }
 
     public ScheduleInWeeks(Semesters semester, Courses courses, Days days, String scheduleFrom, String scheduleTo, String classRoom, int scheduleWeek, int scheduleYear) {
@@ -149,6 +152,37 @@ public class ScheduleInWeeks extends Model {
         this.schedule = schedule;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Days getDays() {
+        return days;
+    }
+
+    public void setDays(Days days) {
+        this.days = days;
+    }
+
+    public Courses getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Courses courses) {
+        this.courses = courses;
+    }
+
+    public List<TeachersInWeeks> getTeachersInWeeks() {
+        return teachersInWeeks;
+    }
+
+    public void setTeachersInWeeks(List<TeachersInWeeks> teachersInWeeks) {
+        this.teachersInWeeks = teachersInWeeks;
+    }
 
     public static List<ScheduleInWeeks> search() {
         return ScheduleInWeeks.find.all();

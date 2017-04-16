@@ -26,9 +26,9 @@ public class TeachersInWeeks extends Model {
     @ManyToOne
     public ScheduleInWeeks scheduleInWeeks;
 
-    public float scale;
+    public double scale;
 
-    public TeachersInWeeks(Teachers teachers, ScheduleInWeeks scheduleInWeeks, float scale) {
+    public TeachersInWeeks(Teachers teachers, ScheduleInWeeks scheduleInWeeks, double scale) {
         this.teachers = teachers;
         this.scheduleInWeeks = scheduleInWeeks;
         this.scale = scale;
@@ -58,11 +58,11 @@ public class TeachersInWeeks extends Model {
         this.scheduleInWeeks = scheduleInWeeks;
     }
 
-    public float getScale() {
+    public double getScale() {
         return scale;
     }
 
-    public void setScale(float scale) {
+    public void setScale(double scale) {
         this.scale = scale;
     }
 
