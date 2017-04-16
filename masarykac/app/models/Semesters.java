@@ -46,7 +46,7 @@ public class Semesters extends Model {
     public List<Visits> visits;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<Comittee> comittee;
+    public List<Committee> committee;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<FinalWorks> finalWorks;
@@ -161,12 +161,12 @@ public class Semesters extends Model {
         this.visits = visits;
     }
 
-    public List<Comittee> getComittee() {
-        return comittee;
+    public List<Committee> getCommittee() {
+        return committee;
     }
 
-    public void setComittee(List<Comittee> comittee) {
-        this.comittee = comittee;
+    public void setCommittee(List<Committee> committee) {
+        this.committee = committee;
     }
 
     public List<FinalWorks> getFinalWorks() {

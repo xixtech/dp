@@ -223,7 +223,6 @@ public class SubjectPlanTeachingController extends Controller {
             classRoom.add(insId);
         }
 
-        List<String> teachers = new ArrayList<>();
         List<String> teacherKey = new ArrayList<>();
         List<String> teacherValue = new ArrayList<>();
 
@@ -231,16 +230,12 @@ public class SubjectPlanTeachingController extends Controller {
             String key = entry.getKey();
             if (key.startsWith("tname")) {
                 for (String insId : entry.getValue()) {
-                    teachers.add(insId);
                     String subKey = entry.getKey();
-
                     teacherKey.add(subKey.substring(5));
                     teacherValue.add(insId);
                 }
             }
-
         }
-
 
         String[][] tn = new String[teacherKey.size()][2];
         for (int i = 0; i < teacherKey.size(); i++) {
@@ -257,22 +252,19 @@ public class SubjectPlanTeachingController extends Controller {
             }
         });
 
-        List<Integer> teachersScale = new ArrayList<>();
         List<String> scaleKey = new ArrayList<>();
         List<String> scaleValue = new ArrayList<>();
         for (Map.Entry<String, String[]> entry : formData.entrySet()) {
             String key = entry.getKey();
             if (key.startsWith("tvalue")) {
                 for (String insId : entry.getValue()) {
-                    teachersScale.add(Integer.parseInt(insId));
                     String subKey = entry.getKey();
-
                     scaleKey.add(subKey.substring(6));
                     scaleValue.add(insId);
                 }
             }
-
         }
+
         String[][] ts = new String[scaleKey.size()][2];
         for (int i = 0; i < scaleKey.size(); i++) {
             ts[i][0] = scaleKey.get(i);
@@ -289,14 +281,13 @@ public class SubjectPlanTeachingController extends Controller {
 
 
         String[][] uchodnota = new String[ts.length][3];
-        String prev="";
-        int sameKey=0;
+        String prev = "";
+        int sameKey = 0;
         for (int i = 0; i < tn.length; i++) {
-            if(prev.equals(tn[i][0].substring(0,3))){
+            if (prev.equals(tn[i][0].substring(0, 3))) {
                 sameKey++;
-            }
-            else{
-                prev=tn[i][0].substring(0,3);
+            } else {
+                prev = tn[i][0].substring(0, 3);
             }
             uchodnota[i][0] = tn[i][0];
             uchodnota[i][1] = tn[i][1];
@@ -304,29 +295,25 @@ public class SubjectPlanTeachingController extends Controller {
 
         }
 
-
-        List<Integer> scheduleWeek = new ArrayList<>();
         List<String> scheduleWeekKey = new ArrayList<>();
         List<String> scheduleWeekValue = new ArrayList<>();
-
         for (Map.Entry<String, String[]> entry : formData.entrySet()) {
             String key = entry.getKey();
             if (key.startsWith("scheduleWeek")) {
                 for (String insId : entry.getValue()) {
-                    scheduleWeek.add(Integer.parseInt(insId));
                     String subKey = entry.getKey();
-
                     scheduleWeekKey.add(subKey.substring(12));
                     scheduleWeekValue.add(insId);
                 }
             }
-
         }
+
         String[][] sw = new String[scheduleWeekKey.size()][2];
         for (int i = 0; i < scheduleWeekKey.size(); i++) {
             sw[i][0] = scheduleWeekKey.get(i);
             sw[i][1] = scheduleWeekValue.get(i);
         }
+
         Arrays.sort(sw, new Comparator<String[]>() {
             @Override
             public int compare(final String[] entry1, final String[] entry2) {
@@ -336,28 +323,25 @@ public class SubjectPlanTeachingController extends Controller {
             }
         });
 
-        List<Integer> scheduleYear = new ArrayList<>();
         List<String> scheduleYearKey = new ArrayList<>();
         List<String> scheduleYearValue = new ArrayList<>();
-
         for (Map.Entry<String, String[]> entry : formData.entrySet()) {
             String key = entry.getKey();
             if (key.startsWith("scheduleYear")) {
                 for (String insId : entry.getValue()) {
-                    scheduleYear.add(Integer.parseInt(insId));
                     String subKey = entry.getKey();
-
                     scheduleYearKey.add(subKey.substring(12));
                     scheduleYearValue.add(insId);
                 }
             }
-
         }
+
         String[][] sy = new String[scheduleYearKey.size()][2];
         for (int i = 0; i < scheduleYearKey.size(); i++) {
             sy[i][0] = scheduleYearKey.get(i);
             sy[i][1] = scheduleYearValue.get(i);
         }
+
         Arrays.sort(sy, new Comparator<String[]>() {
             @Override
             public int compare(final String[] entry1, final String[] entry2) {
@@ -367,44 +351,38 @@ public class SubjectPlanTeachingController extends Controller {
             }
         });
 
-
         String[][] swyear = new String[sy.length][3];
         for (int i = 0; i < sy.length; i++) {
             swyear[i][0] = sw[i][0];
             swyear[i][1] = sw[i][1];
             swyear[i][2] = sy[i][1];
-
         }
-        String[][] teacherWeeks = new String[swyear.length+sameKey][5];
-        int index = 0;
 
+        String[][] teacherWeeks = new String[swyear.length + sameKey][5];
+        int index = 0;
         for (int i = 0; i < swyear.length; i++) {
-            int countEquals=0;
+            int countEquals = 0;
             for (int j = 0; j < uchodnota.length; j++) {
-                String pom=uchodnota[j][0].substring(0,3);
+                String pom = uchodnota[j][0].substring(0, 3);
                 if (swyear[i][0].equals(pom)) {
                     countEquals++;
                     teacherWeeks[index][0] = swyear[i][0];
                     teacherWeeks[index][1] = swyear[i][1];
                     teacherWeeks[index][2] = swyear[i][2];
-
                     teacherWeeks[index][3] = uchodnota[j][1];
                     teacherWeeks[index][4] = uchodnota[j][2];
                     index++;
                 }
             }
-            if(countEquals==0){
+            if (countEquals == 0) {
                 teacherWeeks[index][0] = swyear[i][0];
                 teacherWeeks[index][1] = swyear[i][1];
                 teacherWeeks[index][2] = swyear[i][2];
-
                 teacherWeeks[index][3] = null;
                 teacherWeeks[index][4] = null;
                 index++;
             }
-
         }
-
 
         List<Integer> fieldsOfStudy = new ArrayList<>();
 
@@ -431,14 +409,12 @@ public class SubjectPlanTeachingController extends Controller {
             studyGroups1.add(Integer.parseInt(insId));
         }
 
-
         Subjects subjects = null;
         for (int i = 0; i < ident.size(); i++) {
             subjects = new Subjects(ident.get(i), identOld.get(i), titleC.get(i), titleA.get(i),
                     hoursP.get(i), hoursC.get(i), hoursSemester.get(i), credits.get(i), credit.get(i), exam.get(i), classifiedCredit.get(i),
                     department.get(i), formPresentation.get(i), formCombined.get(i));
             subjects.save();
-
         }
 
         StudyPlans sp = null;
@@ -446,9 +422,7 @@ public class SubjectPlanTeachingController extends Controller {
             sp = new StudyPlans(subjects, FieldsOfStudy.findById(fieldsOfStudy.get(0)), Semesters.findById(Long.parseLong(semesters.get(0))), semesterValue.get(0),
                     StudyGroups.findById(studyGroups.get(0)), StudyGroups1.findById(studyGroups1.get(0)));
             sp.save();
-
         }
-
 
         for (int i = 0; i < teacherWeeks.length; i++) {
             Test test = new Test("teacherWeeks " + teacherWeeks[i][0] + ":" + teacherWeeks[i][1] + ":" + teacherWeeks[i][2] + ":" + teacherWeeks[i][3] + ":" + teacherWeeks[i][4], " sy " + teacherWeeks[i][0] + ":" + teacherWeeks[i][2]);
@@ -460,33 +434,20 @@ public class SubjectPlanTeachingController extends Controller {
             c.save();
 
             for (int j = 0; j < uchodnota.length; j++) {
-                Test test = new Test("tn " + uchodnota[j][0] + ":" + uchodnota[j][1], " same " + sameKey + ":" + swyear[j][2]);
-                test.save();
-
-                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(uchodnota[j][1])), Integer.parseInt(uchodnota[j][2]));
+                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(uchodnota[j][1])), Double.parseDouble(uchodnota[j][2].replace(",",".")));
                 t.save();
             }
         }
 
         for (int i = 0; i < days.size(); i++) {
             Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
-
             s.save();
 
-            for (int j = 0; j < scheduleWeek.size(); j++) {
-
-
+            for (int j = 0; j < swyear.length; j++) {
                 ScheduleInWeeks siw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0),
-                        scheduleWeek.get(j), scheduleYear.get(j), s);
-
+                       Integer.parseInt(swyear[j][1]), Integer.parseInt(swyear[j][2]), s);
                 siw.save();
-
-
             }
-
         }
-
-
     }
-
 }

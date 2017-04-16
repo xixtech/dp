@@ -26,9 +26,9 @@ public class Teachers extends Model {
     @ManyToOne
     public Employees employees;
 
-    public int scale;
+    public double scale;
 
-    public Teachers(Courses courses, Employees employees, int scale) {
+    public Teachers(Courses courses, Employees employees, double scale) {
         this.courses = courses;
         this.employees = employees;
         this.scale = scale;
@@ -50,11 +50,11 @@ public class Teachers extends Model {
         this.employees = employees;
     }
 
-    public int getScale() {
+    public double getScale() {
         return scale;
     }
 
-    public void setScale(int scale) {
+    public void setScale(double scale) {
         this.scale = scale;
     }
 

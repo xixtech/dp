@@ -46,7 +46,7 @@ public class Employees extends Model {
     public List<PublicationsParticipants> publicationsParticipants;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<ComitteeToEmployess> comitteeToEmployess;
+    public List<CommitteeToEmployess> committeeToEmployes;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses;
@@ -163,12 +163,12 @@ public class Employees extends Model {
         this.publicationsParticipants = publicationsParticipants;
     }
 
-    public List<ComitteeToEmployess> getComitteeToEmployess() {
-        return comitteeToEmployess;
+    public List<CommitteeToEmployess> getCommitteeToEmployes() {
+        return committeeToEmployes;
     }
 
-    public void setComitteeToEmployess(List<ComitteeToEmployess> comitteeToEmployess) {
-        this.comitteeToEmployess = comitteeToEmployess;
+    public void setCommitteeToEmployes(List<CommitteeToEmployess> committeeToEmployes) {
+        this.committeeToEmployes = committeeToEmployes;
     }
 
     public List<OrganizationalUnitsParticipants> getOrganizationalUnitsParticipantses() {

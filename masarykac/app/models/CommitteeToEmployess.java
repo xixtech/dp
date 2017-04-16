@@ -11,10 +11,10 @@ import java.util.Map;
  * Created by Martin on 12.03.2017.
  */
 @Entity
-public class ComitteeToEmployess extends Model {
+public class CommitteeToEmployess extends Model {
 
-    public static Finder<Long, ComitteeToEmployess> find = new Finder<Long, ComitteeToEmployess>(
-            ComitteeToEmployess.class);
+    public static Finder<Long, CommitteeToEmployess> find = new Finder<Long, CommitteeToEmployess>(
+            CommitteeToEmployess.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,26 +23,26 @@ public class ComitteeToEmployess extends Model {
     public String roleInComittee;
 
     @ManyToOne
-    public Comittee comittee;
+    public Committee committee;
 
     @ManyToOne
     public Employees employees;
 
 
-    public static ComitteeToEmployess findById(long id) {
+    public static CommitteeToEmployess findById(long id) {
         return find.where().eq("id",id).findUnique();
     }
 
     public static Map<String,String> options() {
-        List<ComitteeToEmployess> subjectSets = ComitteeToEmployess.find.all();
+        List<CommitteeToEmployess> subjectSets = CommitteeToEmployess.find.all();
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(ComitteeToEmployess set: subjectSets) {
+        for(CommitteeToEmployess set: subjectSets) {
             options.put(set.id.toString(), set.id.toString());
         }
         return options;
     }
 
-    public static List<ComitteeToEmployess> search() {
-        return ComitteeToEmployess.find.all();
+    public static List<CommitteeToEmployess> search() {
+        return CommitteeToEmployess.find.all();
     }
 }

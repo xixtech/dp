@@ -126,6 +126,15 @@ public class Visits extends Model {
         return options;
     }
 
+    public static Map<String,String> optionsCountries() {
+        List<Visits> subjectSets = Visits.find.all();
+        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+        for(Visits set: subjectSets) {
+            options.put(set.id.toString(), set.purposeOfVisit.toString());
+        }
+        return options;
+    }
+
     public static List<Visits> search() {
         return Visits.find.all();
     }

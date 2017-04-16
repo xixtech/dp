@@ -3,20 +3,20 @@
 
 # --- !Ups
 
-create table comittee (
+create table committee (
   id                            bigserial not null,
   date                          timestamp,
   semester_id                   bigint,
   role_in_comittee              varchar(255),
-  constraint pk_comittee primary key (id)
+  constraint pk_committee primary key (id)
 );
 
-create table comittee_to_employess (
+create table committee_to_employess (
   id                            bigserial not null,
   role_in_comittee              varchar(255),
-  comittee_id                   bigint,
+  committee_id                  bigint,
   employees_id                  bigint,
-  constraint pk_comittee_to_employess primary key (id)
+  constraint pk_committee_to_employess primary key (id)
 );
 
 create table courses (
@@ -351,8 +351,16 @@ create table teachers (
   id                            bigserial not null,
   courses_id                    bigint,
   employees_id                  bigint,
-  scale                         integer,
+  scale                         float,
   constraint pk_teachers primary key (id)
+);
+
+create table teachers_in_weeks (
+  id                            bigserial not null,
+  teachers_id                   bigint,
+  schedule_in_weeks_id          bigint,
+  scale                         float,
+  constraint pk_teachers_in_weeks primary key (id)
 );
 
 create table test (
@@ -374,14 +382,14 @@ create table visits (
   constraint pk_visits primary key (id)
 );
 
-alter table comittee add constraint fk_comittee_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
-create index ix_comittee_semester_id on comittee (semester_id);
+alter table committee add constraint fk_committee_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
+create index ix_committee_semester_id on committee (semester_id);
 
-alter table comittee_to_employess add constraint fk_comittee_to_employess_comittee_id foreign key (comittee_id) references comittee (id) on delete restrict on update restrict;
-create index ix_comittee_to_employess_comittee_id on comittee_to_employess (comittee_id);
+alter table committee_to_employess add constraint fk_committee_to_employess_committee_id foreign key (committee_id) references committee (id) on delete restrict on update restrict;
+create index ix_committee_to_employess_committee_id on committee_to_employess (committee_id);
 
-alter table comittee_to_employess add constraint fk_comittee_to_employess_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
-create index ix_comittee_to_employess_employees_id on comittee_to_employess (employees_id);
+alter table committee_to_employess add constraint fk_committee_to_employess_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+create index ix_committee_to_employess_employees_id on committee_to_employess (employees_id);
 
 alter table courses add constraint fk_courses_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_courses_semester_id on courses (semester_id);
@@ -479,6 +487,12 @@ create index ix_teachers_courses_id on teachers (courses_id);
 alter table teachers add constraint fk_teachers_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_teachers_employees_id on teachers (employees_id);
 
+alter table teachers_in_weeks add constraint fk_teachers_in_weeks_teachers_id foreign key (teachers_id) references teachers (id) on delete restrict on update restrict;
+create index ix_teachers_in_weeks_teachers_id on teachers_in_weeks (teachers_id);
+
+alter table teachers_in_weeks add constraint fk_teachers_in_weeks_schedule_in_weeks_id foreign key (schedule_in_weeks_id) references schedule_in_weeks (id) on delete restrict on update restrict;
+create index ix_teachers_in_weeks_schedule_in_weeks_id on teachers_in_weeks (schedule_in_weeks_id);
+
 alter table visits add constraint fk_visits_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_visits_semester_id on visits (semester_id);
 
@@ -488,14 +502,14 @@ create index ix_visits_employees_id on visits (employees_id);
 
 # --- !Downs
 
-alter table if exists comittee drop constraint if exists fk_comittee_semester_id;
-drop index if exists ix_comittee_semester_id;
+alter table if exists committee drop constraint if exists fk_committee_semester_id;
+drop index if exists ix_committee_semester_id;
 
-alter table if exists comittee_to_employess drop constraint if exists fk_comittee_to_employess_comittee_id;
-drop index if exists ix_comittee_to_employess_comittee_id;
+alter table if exists committee_to_employess drop constraint if exists fk_committee_to_employess_committee_id;
+drop index if exists ix_committee_to_employess_committee_id;
 
-alter table if exists comittee_to_employess drop constraint if exists fk_comittee_to_employess_employees_id;
-drop index if exists ix_comittee_to_employess_employees_id;
+alter table if exists committee_to_employess drop constraint if exists fk_committee_to_employess_employees_id;
+drop index if exists ix_committee_to_employess_employees_id;
 
 alter table if exists courses drop constraint if exists fk_courses_semester_id;
 drop index if exists ix_courses_semester_id;
@@ -593,15 +607,21 @@ drop index if exists ix_teachers_courses_id;
 alter table if exists teachers drop constraint if exists fk_teachers_employees_id;
 drop index if exists ix_teachers_employees_id;
 
+alter table if exists teachers_in_weeks drop constraint if exists fk_teachers_in_weeks_teachers_id;
+drop index if exists ix_teachers_in_weeks_teachers_id;
+
+alter table if exists teachers_in_weeks drop constraint if exists fk_teachers_in_weeks_schedule_in_weeks_id;
+drop index if exists ix_teachers_in_weeks_schedule_in_weeks_id;
+
 alter table if exists visits drop constraint if exists fk_visits_semester_id;
 drop index if exists ix_visits_semester_id;
 
 alter table if exists visits drop constraint if exists fk_visits_employees_id;
 drop index if exists ix_visits_employees_id;
 
-drop table if exists comittee cascade;
+drop table if exists committee cascade;
 
-drop table if exists comittee_to_employess cascade;
+drop table if exists committee_to_employess cascade;
 
 drop table if exists courses cascade;
 
@@ -668,6 +688,8 @@ drop table if exists study_plans cascade;
 drop table if exists subjects cascade;
 
 drop table if exists teachers cascade;
+
+drop table if exists teachers_in_weeks cascade;
 
 drop table if exists test cascade;
 

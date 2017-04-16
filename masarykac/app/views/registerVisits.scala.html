@@ -1,3 +1,4 @@
+@import models.utils.Countries
 @(visitsForm: Form[Visits])
     @import helper._
     @localScripts = {
@@ -21,7 +22,7 @@
                     @helper.form(action = routes.VisitsController.save) {
 
                         <fieldset>
-                            <legend>Zadání předmětu</legend>
+                            <legend>Zadání výjezdu</legend>
                             <div class="row">
                                 <div class="col-md-12">
                                 @select(
@@ -47,8 +48,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                @inputText(
+                                @select(
                                     visitsForm("country"),
+                                    options(Countries.options()),
+                                    '_default -> "ČESKÁ REPUBLIKA",
                                     '_label -> "Země:",
                                     'class -> "form-control",
                                     '_help -> "Prosím zadejte zemi.",
