@@ -1,4 +1,3 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\ProjectController.java:99: cannot find symbol
-[error]   symbol:   variable insIds
-[error]   location: class controllers.ProjectController
-[error] insIds
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:430: variable sw is already defined in method saveCourse(java.util.Map<java.lang.String,java.lang.String[]>)
+[error] ScheduleInWeeks sw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0),
+[error]                         scheduleWeek.get(j), scheduleYear.get(j), s);
