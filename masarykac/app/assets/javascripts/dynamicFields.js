@@ -97,15 +97,40 @@ function appendRow() {
 }
 
 function appendRowDiv() {
+    var radios = document.getElementsByName('optionsRadios');
+    var value = 0;
+    for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            // do whatever you want with the checked radio
+            value = radios[i].value;
 
-    for (i = 0; i < 14; i++) {
+            // only one radio can be logically checked, don't check the rest
+            break;
+        }
+    }
+    var count = 0;
+    var num=0;
+    if (value == 1) {
+        count = 14;
+
+    }
+    if (value == 2) {
+        count = 7;
+        num=2;
+    }
+    if (value == 3) {
+        count = 7;
+        num=1;
+    }
+    for (i = 0; i < count; i++) {
+
 
         var newDiv = document.createElement('div');
         newDiv.setAttribute("id", weeksCount);
         var selectHTML = "";
         selectHTML = "<div class='row'><div class='col-md-10'>";
         selectHTML += "<div class='col-md-2'><input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeks(" + weeksCount + ");'/> </div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek" + weeksCount + "' value='" + (i + 1) + "' onkeypress='return isNumberKey(event)'/></div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek" + weeksCount + "' value='" + num + "' onkeypress='return isNumberKey(event)'/></div>";
         selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear" + weeksCount + "' value='" + 2017 + "' onkeypress='return isNumberKey(event)'/></div>";
         selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
         selectHTML += "</div></div></br>";
@@ -113,6 +138,16 @@ function appendRowDiv() {
         document.getElementById('r').appendChild(newDiv);
         weeksCount++;
 
+        if (value == 1) {
+            num=i;
+
+        }
+        if (value == 2) {
+            num=num+2;
+        }
+        if (value == 3) {
+            num=num+2;
+        }
     }
 }
 

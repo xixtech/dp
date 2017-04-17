@@ -188,6 +188,10 @@ public class ScheduleInWeeks extends Model {
         return ScheduleInWeeks.find.all();
     }
 
+    public static ScheduleInWeeks findById(long id) {
+        return find.where().eq("id", id).findUnique();
+    }
+
     public static Map<String, String> options() {
         List<ScheduleInWeeks> subjectSets = ScheduleInWeeks.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();

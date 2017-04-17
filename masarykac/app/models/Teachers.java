@@ -81,6 +81,10 @@ public class Teachers extends Model {
         return Teachers.find.all();
     }
 
+    public static Teachers findById(long id) {
+        return find.where().eq("id", id).findUnique();
+    }
+
     public static Map<String,String> options() {
         List<Teachers> subjectSets = Teachers.find.all();
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();

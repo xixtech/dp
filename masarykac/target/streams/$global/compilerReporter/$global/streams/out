@@ -1,10 +1,4 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:109: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                                 @if(member.numberOfStudents == null) {
-[warn]                                                                                             ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:204: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                                 @if(member.numberOfStudents == null) {
-[warn]                                                                                             ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:298: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                                 @if(member.numberOfStudents == null) {
-[warn]                                                                                             ^
-[warn] three warnings found
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:530: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:531: illegal start of expression
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:531: ';' expected
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:533: reached end of file while parsing
