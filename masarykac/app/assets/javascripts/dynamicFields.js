@@ -80,6 +80,13 @@ function studyplansArrays(fields, sem, stud, stud1) {
     studyGroupsArray = stud;
     studyGroups1Array = stud1;
 }
+function displaySpecialWeeks(){
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    }
+    else document.getElementById('ifYes').style.display = 'none';
+
+}
 
 
 function appendRow() {
@@ -121,6 +128,10 @@ function appendRowDiv() {
     if (value == 3) {
         count = 7;
         num=1;
+    }
+    if (value == 4) {
+        count = document.getElementById('numOfRows').value;
+
     }
     for (i = 0; i < count; i++) {
 

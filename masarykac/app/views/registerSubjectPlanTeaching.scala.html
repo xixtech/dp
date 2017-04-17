@@ -289,21 +289,30 @@
                                                         <label>Vygenerování týdnů</label>
                                                         <div class="radio">
                                                             <label>
-                                                                <input type="radio" name="optionsRadios" value="1" checked>
+                                                                <input type="radio" id="noCheck" name="optionsRadios" value="1" checked>
                                                                 Všechny týdny
                                                             </label>
                                                         </div>
                                                         <div class="radio">
                                                             <label>
-                                                                <input type="radio" name="optionsRadios" value="2">
+                                                                <input type="radio" id="noCheck" name="optionsRadios" value="2">
                                                                 Sudé týdny
                                                             </label>
                                                         </div>
                                                         <div class="radio">
                                                             <label>
-                                                                <input type="radio" name="optionsRadios" value="3">
+                                                                <input type="radio" id="noCheck" name="optionsRadios" value="3">
                                                                 Liché týdny
                                                             </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <label>
+                                                                <input type="radio" id="yesCheck" name="optionsRadios" value="4" onclick="displaySpecialWeeks();">
+                                                                Individuální zadání počtu týdnů
+                                                            </label>
+                                                            <div id="ifYes" style="display:none">
+                                                               <input type="text" id="numOfRows" name="numOfRows">
+                                                            </div>
                                                         </div>
                                                     </div>
 
