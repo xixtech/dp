@@ -409,7 +409,7 @@ public class SubjectPlanTeachingController extends Controller {
 
         String[][] pole = new String[numberOfTeachersInWeeks][5];
         int indexPole = 0;
-        HashMap<String, Integer> m = new HashMap<String, Integer>();
+
         HashMap<String, Double> tval = new HashMap<String, Double>();
         for (int i = 0; i < teacherWeeks.length; i++) {
             if (teacherWeeks[i][3] != null) {
@@ -421,33 +421,29 @@ public class SubjectPlanTeachingController extends Controller {
                 indexPole++;
                 String key = teacherWeeks[i][0] + " " + teacherWeeks[i][3];
 
-                if (!m.containsKey(key) || !tval.containsKey(key)) {
-                    m.put(key, 1);
+                if (!tval.containsKey(key)) {
                     tval.put(key, Double.parseDouble(teacherWeeks[i][4].replace(",", ".")));
                 } else {
-                    int value = m.get(key);
-                    m.put(key, value + 1);
-
                     double scale = tval.get(key);
                     scale = scale + Double.parseDouble(teacherWeeks[i][4].replace(",", "."));
                     tval.put(key, scale);
                 }
-
             }
 
         }
-        String[][] p = new String[tval.size()][6];
+        String[][] p = new String[tval.size()][7];
         List <String> usedIndexes=new ArrayList<>();
+        HashMap<String, Double> numberOfTeachers = new HashMap<String, Double>();
+        HashMap<String, Integer> numberOfTeachersInEveryWeek = new HashMap<String, Integer>();
         for (int i = 0; i < p.length; i++) {
-
             for (int j = i; j <  pole.length; j++) {
                 if(!usedIndexes.contains(j+"")) {
                     if (p[i][0] != null) {
                         if (p[i][0].equals(pole[j][0])) {
                             if (p[i][1].equals(pole[j][1])) {
                                 if (p[i][3].equals(pole[j][3])) {
-                                    double v = Double.parseDouble(p[i][4]);
-                                    v = v + Double.parseDouble(pole[j][4]);
+                                    double v = Double.parseDouble(p[i][4].replace(",", "."));
+                                    v = v + Double.parseDouble(pole[j][4].replace(",", "."));
                                     p[i][4] = v + "";
                                     p[i][5] = pole[j][4];
                                     usedIndexes.add(j + "");
@@ -468,6 +464,7 @@ public class SubjectPlanTeachingController extends Controller {
                         p[i][3] = pole[j][3];
                         p[i][4] = pole[j][4];
                         p[i][5] = pole[j][4];
+                        p[i][6] = pole[j][4];
                         usedIndexes.add(j + "");
                     }
                 }else{
@@ -475,6 +472,40 @@ public class SubjectPlanTeachingController extends Controller {
                 }
 
             }
+            if(!numberOfTeachers.containsKey(p[i][3])){
+                numberOfTeachers.put(p[i][3],0.0);
+            }
+
+            if (!numberOfTeachersInEveryWeek.containsKey(p[i][0]) ) {
+                numberOfTeachersInEveryWeek.put(p[i][0], 1);
+
+            } else {
+                int value = numberOfTeachersInEveryWeek.get(p[i][0]);
+                numberOfTeachersInEveryWeek.put(p[i][0], value + 1);
+
+            }
+        }
+        for (int i = 0; i < p.length; i++) {
+            if(numberOfTeachersInEveryWeek.containsKey(p[i][0])){
+                double part1=(1.0/scheduleWeekKey.size());
+                double part2=part1/numberOfTeachersInEveryWeek.get(p[i][0]);
+                double part3=Double.parseDouble(p[i][4].replace(",", "."))*0.01;
+                double part4=part2*part3;
+                double scaleOfThisTeacher=Math.round(part4 * 10000.0)/10000.0;
+
+                p[i][5]=scaleOfThisTeacher+"";
+                p[i][6]=numberOfTeachersInEveryWeek.get(p[i][0])+"";
+            }
+
+        }
+
+        for (int i = 0; i < p.length; i++) {
+            if(numberOfTeachers.containsKey(p[i][3])){
+                double val=numberOfTeachers.get(p[i][3]);
+                val+= Double.parseDouble(p[i][5]);
+                numberOfTeachers.put(p[i][3],val);
+            }
+
         }
 
 
@@ -525,11 +556,10 @@ public class SubjectPlanTeachingController extends Controller {
             c = new Courses(course.get(i), numberOfStudents.get(i), subjects, Semesters.findById(Long.parseLong(semesters.get(0))));
             c.save();
 
-            for (int j = 0; j < uchodnota.length; j++) {
-                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(uchodnota[j][1])), Double.parseDouble(uchodnota[j][2].replace(",", ".")));
+            for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()){
+                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue());
                 t.save();
-                teachersID[j][0] = t.getId();
-                teachersID[j][1] = Long.parseLong(uchodnota[j][1]);
+
             }
         }
 
@@ -546,40 +576,9 @@ public class SubjectPlanTeachingController extends Controller {
             }
         }
 
-        for (int k = 0; k < teacherWeeks.length; k++) {
-            if (teacherWeeks[k][3] != null) {
-                for (int l = 0; l < teachersID.length; l++) {
-                    if (teacherWeeks[k][3].equals(teachersID[l][1].toString())) {
-                        TeachersInWeeks tiw = new TeachersInWeeks(Teachers.findById(teachersID[l][0]), ScheduleInWeeks.findById(scheduleInW[0]), Double.parseDouble(teacherWeeks[k][4].replace(",", ".")));
-                        tiw.save();
-                        Test t = new Test("teacherWeeks[k][3: " + teacherWeeks[k][3] + " teachersID[l][1].toString() " + teachersID[l][1].toString(), " teacherWeeks ");
-                        t.save();
-                    } else {
-                        Test t = new Test("teacherWeeks[k][3: " + teacherWeeks[k][3] + " teachersID[l][1].toString() " + teachersID[l][1].toString(), " teacherWeeks ");
-                        t.save();
-                    }
-                }
-            } else {
-                Test t = new Test("twl: " + teacherWeeks.length + " teachersID length " + teachersID.length, " teacherWeeks " + teacherWeeks[k][0] + ":" + teacherWeeks[k][1] + ":" + teacherWeeks[k][2] + ":" + teacherWeeks[k][3] + ":" + teacherWeeks[k][4]);
-                t.save();
-            }
-
-        }
-        Test tt = new Test("--", "--");
-        tt.save();
-        for (int k = 0; k < uniqueWeekWithTeacher.size(); k++) {
-
-            Test t = new Test(" uniqueWeekWithTeacher.size() " + uniqueWeekWithTeacher.size(), " uniqueWeekWithTeacher " + uniqueWeekWithTeacher.get(k) + " numberOfTeachersInWeeks " + numberOfTeachersInWeeks + " m.length " + m.size());
-            t.save();
-
-
-        }
-
         for (int k = 0; k < p.length; k++) {
-
-            Test t = new Test("p: " + p[k][0] + " p " + p[k][1] + " p " + p[k][2] + " p " + p[k][3] + " p " + p[k][4] + " p " + p[k][5], " p length " +p.length);
-            t.save();
-
+            TeachersInWeeks tiw=new TeachersInWeeks(Teachers.findById(Long.parseLong(p[k][3])), ScheduleInWeeks.findById(1), Double.parseDouble(p[k][5].replace(",", ".")));
+            tiw.save();
 
         }
     }

@@ -1,3 +1,3 @@
-[error] C:\Users\Martin\dp\masarykac\app\views\test.scala.html:241: Expected ending '}'
+[error] C:\Users\Martin\dp\masarykac\app\views\test.scala.html:296: Expected '}' but found 'EOF'
 [error] }
 [error]  ^

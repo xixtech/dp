@@ -1,4 +1,2 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:530: illegal start of expression
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:531: illegal start of expression
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:531: ';' expected
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:533: reached end of file while parsing
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:559: not a statement
+[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:559: ';' expected

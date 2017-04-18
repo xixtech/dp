@@ -4583,3 +4583,2993 @@ Copy resource mappings:
 Total time: 1 s, completed 18.4.2017 22:15:36
 > server-post-command-cleanup
 > server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1f8060eb, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@18e037de directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:578: cannot find symbol
+Read from stdout: symbol:   variable m
+Read from stdout: location: class controllers.SubjectPlanTeachingController
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:578: cannot find symbol
+  symbol:   variable m
+  location: class controllers.SubjectPlanTeachingController
+Read from stdout: m
+m
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed 18.4.2017 22:57:05
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@63a23960, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@55b45738 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:578: cannot find symbol
+Read from stdout: symbol:   variable m
+Read from stdout: location: class controllers.SubjectPlanTeachingController
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:578: cannot find symbol
+  symbol:   variable m
+  location: class controllers.SubjectPlanTeachingController
+Read from stdout: m
+m
+Total time: 1 s, completed 18.4.2017 22:57:07
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@14a098bb, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@606674f0 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:578: cannot find symbol
+Read from stdout: symbol:   variable m
+Read from stdout: location: class controllers.SubjectPlanTeachingController
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:578: cannot find symbol
+  symbol:   variable m
+  location: class controllers.SubjectPlanTeachingController
+Read from stdout: m
+m
+Total time: 1 s, completed 18.4.2017 22:57:08
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@24907540, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5ec08b46 directly...
+Java compilation took 0.312348078 s
+Java analysis took 0.197108082 s
+Java compile + analysis took 0.613414554 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 22:57:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1a6af262, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 22:57:28
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@502241e7, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 22:57:30
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4771100, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@4ca19f90 directly...
+Java compilation took 0.396140151 s
+Java analysis took 0.1964096 s
+Java compile + analysis took 0.679278651 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:00:34
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@74b2af33, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:00:36
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@17e1d7ee, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@4417d90a directly...
+Java compilation took 0.273115019 s
+Java analysis took 0.127942099 s
+Java compile + analysis took 0.52884375 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:01:08
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@6c25e8c2, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:01:09
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@290351ce, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@2dffd60 directly...
+Java compilation took 0.31766698 s
+Java analysis took 0.221328828 s
+Java compile + analysis took 0.611921138 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 2 s, completed 18.4.2017 23:01:29
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@58159234, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:01:30
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@57be2a35, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@38cf0740 directly...
+Java compilation took 0.265004561 s
+Java analysis took 0.12193994 s
+Java compile + analysis took 0.476592835 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:03:42
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@1c10a414, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:03:44
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@27f2e946, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@227643a8 directly...
+Java compilation took 0.345515282 s
+Java analysis took 0.130520638 s
+Java compile + analysis took 0.559640331 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:08:09
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@22c8392c, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:08:12
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@917f533, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@6ac0dcbb directly...
+Java compilation took 0.35238473 s
+Java analysis took 0.145135066 s
+Java compile + analysis took 0.570191114 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:10:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@78bdeaff, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:10:28
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@30c1e65b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@107fd637 directly...
+Java compilation took 0.427793057 s
+Java analysis took 0.211313868 s
+Java compile + analysis took 0.7165315 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 2 s, completed 18.4.2017 23:14:33
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@751527f6, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:15:38
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@13c83ac2, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@7c5f5def directly...
+Java compilation took 0.296969517 s
+Java analysis took 0.122495597 s
+Java compile + analysis took 0.487332119 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:22:05
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@2efdc73a, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:22:09
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@19c76894, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@7359409e directly...
+Java compilation took 0.279272226 s
+Java analysis took 0.180240784 s
+Java compile + analysis took 0.578974911 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:23:57
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@252cb862, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:23:58
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2aa7a2ca, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@66353551 directly...
+Java compilation took 0.245298216 s
+Java analysis took 0.118664733 s
+Java compile + analysis took 0.47605827 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:25:12
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@327b1827, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:25:14
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@25e03c19, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@14250bd5 directly...
+Java compilation took 0.334926296 s
+Java analysis took 0.126132092 s
+Java compile + analysis took 0.535464703 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:30:06
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@1a3fd3b8, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:30:08
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4cef6534, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3b937c8e directly...
+Java compilation took 0.244027174 s
+Java analysis took 0.125243292 s
+Java compile + analysis took 0.458402604 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:31:26
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@3f70ca43, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:31:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@45aad1f3, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@e5d5fe6 directly...
+Java compilation took 0.306544197 s
+Java analysis took 0.259266681 s
+Java compile + analysis took 0.761240186 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:33:42
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@36aefe8a, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:33:42
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1596b7f0, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@52d316bf directly...
+Java compilation took 0.291968742 s
+Java analysis took 0.125809914 s
+Java compile + analysis took 0.487158703 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:34:52
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@5fdf83a2, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@29c83289 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:554: variable s is already defined in method saveCourse(java.util.Map<java.lang.String,java.lang.String[]>)
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:554: variable s is already defined in method saveCourse(java.util.Map<java.lang.String,java.lang.String[]>)
+Read from stdout: Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
+Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
+Total time: 1 s, completed 18.4.2017 23:36:11
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1bb317f7, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@85c8ba3 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:554: variable s is already defined in method saveCourse(java.util.Map<java.lang.String,java.lang.String[]>)
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:554: variable s is already defined in method saveCourse(java.util.Map<java.lang.String,java.lang.String[]>)
+Read from stdout: Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
+Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed 18.4.2017 23:36:11
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@47060c72, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@2f064f31 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:554: variable s is already defined in method saveCourse(java.util.Map<java.lang.String,java.lang.String[]>)
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:554: variable s is already defined in method saveCourse(java.util.Map<java.lang.String,java.lang.String[]>)
+Read from stdout: Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
+Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
+Total time: 1 s, completed 18.4.2017 23:36:13
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@62328f05, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@52c91ed9 directly...
+Java compilation took 0.382108341 s
+Java analysis took 0.16522051 s
+Java compile + analysis took 0.655239003 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:36:30
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@41fd9991, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:36:30
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@4d32038e, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:36:32
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@484a7771, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@65778122 directly...
+Java compilation took 0.232965154 s
+Java analysis took 0.168787443 s
+Java compile + analysis took 0.515924859 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:37:30
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@7b4b940d, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:37:31
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@79eef581, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@21cce5c7 directly...
+Java compilation took 0.319949253 s
+Java analysis took 0.19910233 s
+Java compile + analysis took 0.637507001 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:37:48
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5030ebfe, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:37:49
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@2617f80f, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:37:50
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@520189e1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@70f8e6e1 directly...
+Java compilation took 0.277012721 s
+Java analysis took 0.14390572 s
+Java compile + analysis took 0.523885578 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:38:13
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1279f359, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:38:13
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@3d5b98a7, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:38:15
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@6fb8e5a8, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3042326 directly...
+Java compilation took 0.301303936 s
+Java analysis took 0.166023126 s
+Java compile + analysis took 0.557385296 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:39:19
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@6c8376a9, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:39:19
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@648b6ced, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@21cf730 directly...
+Java compilation took 0.341268164 s
+Java analysis took 0.211896275 s
+Java compile + analysis took 0.6258514 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:39:46
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@39799c4, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:39:48
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@785f4161, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@59290c4f directly...
+Java compilation took 0.269257127 s
+Java analysis took 0.167423444 s
+Java compile + analysis took 0.573002784 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:41:09
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4388b7cf, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:41:10
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@984ef5b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@6779a459 directly...
+Java compilation took 0.380891635 s
+Java analysis took 0.217509068 s
+Java compile + analysis took 0.72493159 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:41:33
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@61f7a26d, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.4.2017 23:41:33
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@623bf0c4, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:41:35
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@6cb125d5, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@67a9c841 directly...
+Java compilation took 0.272132841 s
+Java analysis took 0.128783546 s
+Java compile + analysis took 0.477812892 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:42:31
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@4aa2704, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 2 s, completed 18.4.2017 23:42:33
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@118836ab, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@13104cfb directly...
+Java compilation took 0.392701377 s
+Java analysis took 0.143551275 s
+Java compile + analysis took 0.626126435 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:43:12
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@47551ba7, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:43:13
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4c088d4c, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3080bf11 directly...
+Java compilation took 0.288371846 s
+Java analysis took 0.129989706 s
+Java compile + analysis took 0.488802417 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:43:47
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@34fbb6c2, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:43:48
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@37406b90, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3b156484 directly...
+Java compilation took 0.298286444 s
+Java analysis took 0.121667698 s
+Java compile + analysis took 0.487439675 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:44:36
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@70ce3712, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:44:37
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4956c267, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@23efcf44 directly...
+Java compilation took 0.350137448 s
+Java analysis took 0.134800443 s
+Java compile + analysis took 0.571351596 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:44:58
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@6a89a991, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:44:59
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@6555c588, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@500c2012 directly...
+Java compilation took 0.335832277 s
+Java analysis took 0.11927305 s
+Java compile + analysis took 0.570523349 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:45:18
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@76b075a3, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:45:19
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@492d6c16, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@72a4b1d0 directly...
+Java compilation took 0.26845912 s
+Java analysis took 0.12324632 s
+Java compile + analysis took 0.463387595 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:45:41
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@1e084992, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:45:42
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@7869993d, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@54eaf66a directly...
+Java compilation took 0.241695802 s
+Java analysis took 0.117756097 s
+Java compile + analysis took 0.525447718 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:46:23
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@4fd8324f, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:46:29
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2f22734f, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@4c168ac0 directly...
+Java compilation took 0.340728011 s
+Java analysis took 0.139669567 s
+Java compile + analysis took 0.554186007 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:47:07
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@29105668, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 18.4.2017 23:47:08
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@77dd5585, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@745616e3 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:476: ';' expected
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:476: ';' expected
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed 18.4.2017 23:51:38
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@305efce8, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@9c80dae directly...
+Java compilation took 0.342391002 s
+Java analysis took 0.117846263 s
+Java compile + analysis took 0.561861214 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:57:22
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@13551d07, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5ea55d65 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:559: not a statement
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:559: not a statement
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:559: ';' expected
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:559: ';' expected
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed 18.4.2017 23:57:45
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@6f3bb01b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@73eea312 directly...
+Java compilation took 0.262609494 s
+Java analysis took 0.117590713 s
+Java compile + analysis took 0.45847517 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 18.4.2017 23:58:23
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@365ed3e9, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@2346840e directly...
+Java compilation took 0.282848378 s
+Java analysis took 0.125811381 s
+Java compile + analysis took 0.541955192 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 19.4.2017 0:03:22
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4afe188b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3158dd67 directly...
+Java compilation took 0.252328997 s
+Java analysis took 0.119128408 s
+Java compile + analysis took 0.442157802 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 19.4.2017 0:03:42
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@470544a3, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5d989ea9 directly...
+Java compilation took 0.261648897 s
+Java analysis took 0.175101933 s
+Java compile + analysis took 0.559978084 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 19.4.2017 0:07:26
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@2e643ff6, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 19.4.2017 0:07:28
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@6670f15a, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@62577783 directly...
+Java compilation took 0.246769352 s
+Java analysis took 0.118706638 s
+Java compile + analysis took 0.431771147 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 19.4.2017 0:10:57
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@1b0974d4, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 19.4.2017 0:10:58
+> server-post-command-cleanup
+> server-handle-next-server-request
