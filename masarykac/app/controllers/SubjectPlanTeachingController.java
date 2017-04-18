@@ -379,6 +379,7 @@ public class SubjectPlanTeachingController extends Controller {
                     teacherWeeks[index][3] = uchodnota[j][1];
                     teacherWeeks[index][4] = uchodnota[j][2];
                     index++;
+                    numberOfTeachersInWeeks++;
                     if (!entriesInWeeks.containsKey(swyear[i][0])) {
                         entriesInWeeks.put(swyear[i][0], 1);
                     } else {
@@ -388,6 +389,7 @@ public class SubjectPlanTeachingController extends Controller {
                     }
                     if (!uniqueWeekWithTeacher.contains(swyear[i][0])) {
                         uniqueWeekWithTeacher.add(swyear[i][0]);
+                        numberOfTeachersInWeeks++;
                     }
                 }
             }

@@ -22,16 +22,23 @@ public class Application extends Controller {
     private FormFactory formFactory;
 
     public Result pdf() {
-
         Map<String, String> test = new HashMap<String, String>();
         test.put("name", "Jan");
         test.put("surname","Novák");
         test.put("date","1. 1. 2017");
         test.put("personalNumber","3456789");
 
-
         pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
         return pdfGenerator.ok(views.html.utf.render(test), "http://localhost:9000");
+    }
+    public Result raw() {
+
+        Map<String, String> test = new HashMap<String, String>();
+        test.put("name", "Jan");
+        test.put("surname","Novák");
+        test.put("date","1. 1. 2017");
+        test.put("personalNumber","3456789");
+        return ok(views.html.utf.render(test));
     }
 
     public Result dashboard() {

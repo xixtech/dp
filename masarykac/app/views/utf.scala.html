@@ -12,8 +12,12 @@
         }
 
         --></style>
+        <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
     </head>
     <body>
+        <button onclick="export2Word(window.docx)">Export</button>
+        <div id="docx">
+            <div class="WordSection1">
         <header>
             <table style="width: 500px">
                 <tr>
@@ -129,6 +133,8 @@
                 </tr>
             </table>
         </footer>
-
+            </div>
+        </div>
     </body>
+
 </html>

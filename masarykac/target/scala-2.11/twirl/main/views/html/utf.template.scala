@@ -43,8 +43,12 @@ Seq[Any](format.raw/*1.38*/("""
         """),format.raw/*12.9*/("""}"""),format.raw/*12.10*/("""
 
         """),format.raw/*14.9*/("""--></style>
+        <script src='"""),_display_(/*15.23*/routes/*15.29*/.Assets.at("javascripts/dynamicFields.js")),format.raw/*15.71*/("""'></script>
     </head>
     <body>
+        <button onclick="export2Word(window.docx)">Export</button>
+        <div id="docx">
+            <div class="WordSection1">
         <header>
             <table style="width: 500px">
                 <tr>
@@ -72,13 +76,13 @@ Seq[Any](format.raw/*1.38*/("""
                     <h2>Změna platu</h2>
                 </header>
 
-                <p>Žádám Vás o změnu platového výměru k """),_display_(/*44.58*/map/*44.61*/.get("date")),format.raw/*44.73*/(""".</br>Zároveň Vás žádám, aby kmenovost pracovnice byla na středisku 32165. </p>
+                <p>Žádám Vás o změnu platového výměru k """),_display_(/*48.58*/map/*48.61*/.get("date")),format.raw/*48.73*/(""".</br>Zároveň Vás žádám, aby kmenovost pracovnice byla na středisku 32165. </p>
 
             </article>
 
             <article>
-                <p>Osobní číslo: """),_display_(/*49.35*/map/*49.38*/.get("personalNumber")),format.raw/*49.60*/(""" """),format.raw/*49.61*/("""</br>
-                    Příjmení a jméno: """),_display_(/*50.40*/map/*50.43*/.get("surname")),format.raw/*50.58*/(""" """),_display_(/*50.60*/map/*50.63*/.get("name")),format.raw/*50.75*/("""</p>
+                <p>Osobní číslo: """),_display_(/*53.35*/map/*53.38*/.get("personalNumber")),format.raw/*53.60*/(""" """),format.raw/*53.61*/("""</br>
+                    Příjmení a jméno: """),_display_(/*54.40*/map/*54.43*/.get("surname")),format.raw/*54.58*/(""" """),_display_(/*54.60*/map/*54.63*/.get("name")),format.raw/*54.75*/("""</p>
             </article>
 
             <article>
@@ -160,8 +164,10 @@ Seq[Any](format.raw/*1.38*/("""
                 </tr>
             </table>
         </footer>
-
+            </div>
+        </div>
     </body>
+
 </html>"""))
       }
     }
@@ -182,11 +188,11 @@ Seq[Any](format.raw/*1.38*/("""
 object utf extends utf_Scope0.utf
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 09 10:50:47 CEST 2017
+                  DATE: Wed Apr 19 00:33:48 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/utf.scala.html
-                  HASH: cfa67e62355c9b32b9b84d2b538debb259b93659
-                  MATRIX: 764->1|895->37|923->39|1138->226|1167->227|1208->240|1266->271|1295->272|1332->282|2217->1140|2229->1143|2262->1155|2450->1316|2462->1319|2505->1341|2534->1342|2606->1387|2618->1390|2654->1405|2683->1407|2695->1410|2728->1422
-                  LINES: 27->1|32->1|34->3|41->10|41->10|42->11|43->12|43->12|45->14|75->44|75->44|75->44|80->49|80->49|80->49|80->49|81->50|81->50|81->50|81->50|81->50|81->50
+                  HASH: 1bb9109e33bf5a16a8a58529699ef591ac545f75
+                  MATRIX: 764->1|895->37|923->39|1138->226|1167->227|1208->240|1266->271|1295->272|1332->282|1393->316|1408->322|1471->364|2486->1352|2498->1355|2531->1367|2719->1528|2731->1531|2774->1553|2803->1554|2875->1599|2887->1602|2923->1617|2952->1619|2964->1622|2997->1634
+                  LINES: 27->1|32->1|34->3|41->10|41->10|42->11|43->12|43->12|45->14|46->15|46->15|46->15|79->48|79->48|79->48|84->53|84->53|84->53|84->53|85->54|85->54|85->54|85->54|85->54|85->54
                   -- GENERATED --
               */
           

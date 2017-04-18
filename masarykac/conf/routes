@@ -5,6 +5,7 @@
 # Home page
 GET         /                                    controllers.Application.dashboard()
 GET         /pdf                                 controllers.Application.pdf()
+GET         /raw                                 controllers.Application.raw()
 GET         /                                    controllers.Application.index()
 GET         /test                                controllers.TestController.test()
 
