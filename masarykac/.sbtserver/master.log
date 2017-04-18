@@ -7573,3 +7573,207 @@ Copy resource mappings:
 Total time: 1 s, completed 19.4.2017 0:10:58
 > server-post-command-cleanup
 > server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4e7c23bb, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@2724320e directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:575: array required, but java.util.List<java.lang.Long> found
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:575: array required, but java.util.List<java.lang.Long> found
+Read from stdout: scheduleInW[j]
+scheduleInW[j]
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed 19.4.2017 0:18:41
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@10f82792, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@1a8d299 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:575: ';' expected
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:575: ';' expected
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed 19.4.2017 0:20:12
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@74474741, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@54efe8c9 directly...
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:580: illegal start of expression
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:580: illegal start of expression
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:580: ')' expected
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:580: ')' expected
+Read from stdout: C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:581: variable declaration not allowed here
+C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:581: variable declaration not allowed here
+Read from stdout: TeachersInWeeks 
+TeachersInWeeks 
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 1 s, completed 19.4.2017 0:21:45
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@226375cd, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@554139c2 directly...
+Java compilation took 0.255608115 s
+Java analysis took 0.127524238 s
+Java compile + analysis took 0.496815726 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 19.4.2017 0:22:38
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@7241f792, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
+	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
+	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
+	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
+	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
+Total time: 1 s, completed 19.4.2017 0:22:40
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@62a4d0e4, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@5ac1c80d directly...
+Java compilation took 0.253965099 s
+Java analysis took 0.121223088 s
+Java compile + analysis took 0.444465009 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 19.4.2017 0:24:14
+> server-post-command-cleanup
+> server-handle-next-server-request

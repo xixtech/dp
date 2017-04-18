@@ -362,7 +362,6 @@ public class SubjectPlanTeachingController extends Controller {
         String[][] teacherWeeks = new String[swyear.length + sameKey][5];
         int index = 0;
         int numberOfTeachersInWeeks = 0;
-        int numberOfUniqueWeeks = 0;
         List<String> uniqueWeekWithTeacher = new ArrayList<>();
         HashMap<String, Integer> entriesInWeeks = new HashMap<String, Integer>();
         String[][] uniqueWeeks = new String[swyear.length][2];
@@ -380,7 +379,6 @@ public class SubjectPlanTeachingController extends Controller {
                     teacherWeeks[index][3] = uchodnota[j][1];
                     teacherWeeks[index][4] = uchodnota[j][2];
                     index++;
-                    numberOfTeachersInWeeks++;
                     if (!entriesInWeeks.containsKey(swyear[i][0])) {
                         entriesInWeeks.put(swyear[i][0], 1);
                     } else {
@@ -390,7 +388,6 @@ public class SubjectPlanTeachingController extends Controller {
                     }
                     if (!uniqueWeekWithTeacher.contains(swyear[i][0])) {
                         uniqueWeekWithTeacher.add(swyear[i][0]);
-                        numberOfUniqueWeeks++;
                     }
                 }
             }
@@ -432,12 +429,12 @@ public class SubjectPlanTeachingController extends Controller {
 
         }
         String[][] p = new String[tval.size()][7];
-        List <String> usedIndexes=new ArrayList<>();
+        List<String> usedIndexes = new ArrayList<>();
         HashMap<String, Double> numberOfTeachers = new HashMap<String, Double>();
         HashMap<String, Integer> numberOfTeachersInEveryWeek = new HashMap<String, Integer>();
         for (int i = 0; i < p.length; i++) {
-            for (int j = i; j <  pole.length; j++) {
-                if(!usedIndexes.contains(j+"")) {
+            for (int j = i; j < pole.length; j++) {
+                if (!usedIndexes.contains(j + "")) {
                     if (p[i][0] != null) {
                         if (p[i][0].equals(pole[j][0])) {
                             if (p[i][1].equals(pole[j][1])) {
@@ -467,16 +464,16 @@ public class SubjectPlanTeachingController extends Controller {
                         p[i][6] = pole[j][4];
                         usedIndexes.add(j + "");
                     }
-                }else{
+                } else {
                     continue;
                 }
 
             }
-            if(!numberOfTeachers.containsKey(p[i][3])){
-                numberOfTeachers.put(p[i][3],0.0);
+            if (!numberOfTeachers.containsKey(p[i][3])) {
+                numberOfTeachers.put(p[i][3], 0.0);
             }
 
-            if (!numberOfTeachersInEveryWeek.containsKey(p[i][0]) ) {
+            if (!numberOfTeachersInEveryWeek.containsKey(p[i][0])) {
                 numberOfTeachersInEveryWeek.put(p[i][0], 1);
 
             } else {
@@ -486,24 +483,24 @@ public class SubjectPlanTeachingController extends Controller {
             }
         }
         for (int i = 0; i < p.length; i++) {
-            if(numberOfTeachersInEveryWeek.containsKey(p[i][0])){
-                double part1=(1.0/scheduleWeekKey.size());
-                double part2=part1/numberOfTeachersInEveryWeek.get(p[i][0]);
-                double part3=Double.parseDouble(p[i][4].replace(",", "."))*0.01;
-                double part4=part2*part3;
-                double scaleOfThisTeacher=Math.round(part4 * 10000.0)/10000.0;
+            if (numberOfTeachersInEveryWeek.containsKey(p[i][0])) {
+                double part1 = (1.0 / scheduleWeekKey.size());
+                double part2 = part1 / numberOfTeachersInEveryWeek.get(p[i][0]);
+                double part3 = Double.parseDouble(p[i][4].replace(",", ".")) * 0.01;
+                double part4 = part2 * part3;
+                double scaleOfThisTeacher = Math.round(part4 * 10000.0) / 10000.0;
 
-                p[i][5]=scaleOfThisTeacher+"";
-                p[i][6]=numberOfTeachersInEveryWeek.get(p[i][0])+"";
+                p[i][5] = scaleOfThisTeacher + "";
+                p[i][6] = numberOfTeachersInEveryWeek.get(p[i][0]) + "";
             }
 
         }
 
         for (int i = 0; i < p.length; i++) {
-            if(numberOfTeachers.containsKey(p[i][3])){
-                double val=numberOfTeachers.get(p[i][3]);
-                val+= Double.parseDouble(p[i][5]);
-                numberOfTeachers.put(p[i][3],val);
+            if (numberOfTeachers.containsKey(p[i][3])) {
+                double val = numberOfTeachers.get(p[i][3]);
+                val += Double.parseDouble(p[i][5]);
+                numberOfTeachers.put(p[i][3], val);
             }
 
         }
@@ -556,14 +553,14 @@ public class SubjectPlanTeachingController extends Controller {
             c = new Courses(course.get(i), numberOfStudents.get(i), subjects, Semesters.findById(Long.parseLong(semesters.get(0))));
             c.save();
 
-            for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()){
+            for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()) {
                 Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue());
                 t.save();
 
             }
         }
 
-        Long[] scheduleInW = new Long[swyear.length];
+        HashMap<String, Long> scheduleInW = new HashMap<String, Long>();
         for (int i = 0; i < days.size(); i++) {
             Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
             s.save();
@@ -572,14 +569,15 @@ public class SubjectPlanTeachingController extends Controller {
                 ScheduleInWeeks siw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0),
                         Integer.parseInt(swyear[j][1]), Integer.parseInt(swyear[j][2]), s);
                 siw.save();
-                scheduleInW[j] = siw.getId();
+                scheduleInW.put(swyear[j][1], siw.getId());
             }
         }
 
         for (int k = 0; k < p.length; k++) {
-            TeachersInWeeks tiw=new TeachersInWeeks(Teachers.findById(Long.parseLong(p[k][3])), ScheduleInWeeks.findById(1), Double.parseDouble(p[k][5].replace(",", ".")));
-            tiw.save();
-
+            if (scheduleInW.containsKey(p[k][1])) {
+                TeachersInWeeks tiw = new TeachersInWeeks(Teachers.findById(Long.parseLong(p[k][3])), ScheduleInWeeks.findById(scheduleInW.get(p[k][1])), Double.parseDouble(p[k][5].replace(",", ".")));
+                tiw.save();
+            }
         }
     }
 }
