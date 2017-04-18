@@ -57,10 +57,16 @@ tr.shown td.details-control {
                 webshim.setOptions("forms-ext", {
                     "date": {
                         "startView": 2,
-                        "inlinePicker": true
+                        "inlinePicker": false
                     }
                 });
-                webshims.setOptions('waitReady', false);
+                webshim.setOptions("forms-ext", {
+                    "widgets": {
+                        "stepfactor": 1,
+                        "nopicker": true
+                    }
+                });
+                webshims.activeLang('cs');
                 webshims.setOptions('forms-ext', {types: 'date'});
                 webshims.polyfill('forms forms-ext');
         </script>
@@ -245,5 +251,52 @@ tr.shown td.details-control {
 
     ------------
 
+    <h2>Demo</h2>
 
+
+    <button onclick="export2Word(window.docx)">Export</button>
+    <div id="docx">
+        <div class="WordSection1">
+
+            <table>
+                <tr>
+                    <td>A1</td>
+                    <td>B1</td>
+                    <td>C1</td>
+                    <td>E1</td>
+                </tr>
+                <tr>
+                    <td>A2</td>
+                    <td>B2</td>
+                    <td>C2</td>
+                    <td>E2</td>
+                </tr>
+                <tr>
+                    <td>A3</td>
+                    <td>B3</td>
+                    <td>C3</td>
+                    <td>E3</td>
+                </tr>
+                <tr>
+                    <td>A4</td>
+                    <td>B4</td>
+                    <td>C4</td>
+                    <td>E4</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+
+    <input  type="text" id="startSemester"/>
+    <input  type="date" id="endSemester"/>
+    <input
+    min="00:00"
+    max="23:59"
+    step="60"
+    value="00:00"
+    placeholder="hh:mm"
+    type="time"
+    />
 }

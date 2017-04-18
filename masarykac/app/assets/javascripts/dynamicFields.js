@@ -30,6 +30,32 @@ $(".showhr").click(function () {
     });
 });
 
+function export2Word(element) {
+
+    var html, link, blob, url, css;
+
+    css = (
+        '<style>' +
+        '@page WordSection1{size: 841.95pt 595.35pt;mso-page-orientation: portrait;}' +
+        'div.WordSection1 {page: WordSection1;}' +
+        'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;}' +
+        '</style>'
+    );
+
+    html = element.innerHTML;
+    blob = new Blob(['\ufeff', css + html], {
+        type: 'application/msword'
+    });
+    url = URL.createObjectURL(blob);
+    link = document.createElement('A');
+    link.href = url;
+    link.download = 'Document';  // default name without extension
+    document.body.appendChild(link);
+    if (navigator.msSaveOrOpenBlob) navigator.msSaveOrOpenBlob(blob, 'Document.doc'); // IE10-11
+    else link.click();  // other browsers
+    document.body.removeChild(link);
+}
+
 function hokuspokus() {
     var div = document.createElement('div');
     div.setAttribute('class', 'someClass');
@@ -80,7 +106,7 @@ function studyplansArrays(fields, sem, stud, stud1) {
     studyGroupsArray = stud;
     studyGroups1Array = stud1;
 }
-function displaySpecialWeeks(){
+function displaySpecialWeeks() {
     if (document.getElementById('yesCheck').checked) {
         document.getElementById('ifYes').style.display = 'block';
     }
@@ -104,6 +130,10 @@ function appendRow() {
 }
 
 function appendRowDiv() {
+    var startDate = new Date(document.getElementById('startSemester').value);
+    var endDate = new Date(document.getElementById('endSemester').value);
+    var weekDiff = Math.floor((endDate - startDate + 1) / (1000 * 60 * 60 * 24) / 7);
+    document.getElementById('MyEdit').innerHTML = "Počet týdnů výuky: " + weekDiff;
     var radios = document.getElementsByName('optionsRadios');
     var value = 0;
     for (var i = 0, length = radios.length; i < length; i++) {
@@ -116,28 +146,30 @@ function appendRowDiv() {
         }
     }
     var count = 0;
-    var num=0;
+    var num = 0;
     if (value == 1) {
         count = 14;
-
+        num = 1;
     }
     if (value == 2) {
-        count = 7;
-        num=2;
+        count = 14 / 2;
+        num = 2;
     }
     if (value == 3) {
-        count = 7;
-        num=1;
+        count = 14 / 2;
+        num = 1;
     }
     if (value == 4) {
         count = document.getElementById('numOfRows').value;
+        num = 1;
 
     }
+    var current = startDate;
     for (i = 0; i < count; i++) {
-
-
         var newDiv = document.createElement('div');
         newDiv.setAttribute("id", weeksCount);
+
+
         var selectHTML = "";
         selectHTML = "<div class='row'><div class='col-md-10'>";
         selectHTML += "<div class='col-md-2'><input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeks(" + weeksCount + ");'/> </div>";
@@ -150,14 +182,19 @@ function appendRowDiv() {
         weeksCount++;
 
         if (value == 1) {
-            num=i;
+            num = num + 1;
 
         }
         if (value == 2) {
-            num=num+2;
+            num = num + 2;
         }
         if (value == 3) {
-            num=num+2;
+            num = num + 2;
+        }
+
+        if (value == 4) {
+            num = num + 1;
+
         }
     }
 }

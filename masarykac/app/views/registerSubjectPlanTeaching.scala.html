@@ -42,6 +42,27 @@
 }
 
 @main(scripts = localScripts, stylesheets = localStylesheets) {
+        <!-- cdn for modernizr, if you haven't included it already -->
+    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+        <!-- polyfiller file to detect and load polyfills -->
+    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+    <script>
+            webshim.setOptions("forms-ext", {
+                "date": {
+                    "startView": 2,
+                    "inlinePicker": false
+                }
+            });
+            webshim.setOptions("forms-ext", {
+                "widgets": {
+                    "stepfactor": 1,
+                    "nopicker": true
+                }
+            });
+            webshims.activeLang('cs');
+            webshims.setOptions('forms-ext', {types: 'date'});
+            webshims.polyfill('forms forms-ext');
+    </script>
     <div class="row">
         <div class="col-lg-30">
             <h1 class="page-header">Registrace</h1>
@@ -285,11 +306,17 @@
                                             <div class="row">
                                             </br>
                                                 <div class="col-md-3">
+                                                    <label>Vygenerování týdnů</label>
                                                     <div class="form-group">
-                                                        <label>Vygenerování týdnů</label>
+
+                                                        <label>Výuka začíná: <input type="date" class="form-control" id="startSemester"/> </label>
+                                                        <label>Výuka končí: <input type="date" class="form-control" id="endSemester"/> </label>
+                                                        <div id="MyEdit">
+
+                                                        </div>
                                                         <div class="radio">
                                                             <label>
-                                                                <input type="radio" id="noCheck" name="optionsRadios" value="1" checked>
+                                                                <input type="radio" id="noCheck" name="optionsRadios" value="1">
                                                                 Všechny týdny
                                                             </label>
                                                         </div>
@@ -310,15 +337,15 @@
                                                                 <input type="radio" id="yesCheck" name="optionsRadios" value="4" onclick="displaySpecialWeeks();">
                                                                 Individuální zadání počtu týdnů
                                                             </label>
-                                                            <div id="ifYes" style="display:none">
-                                                               <input type="text" id="numOfRows" name="numOfRows">
+                                                            <div id="ifYes" style="display: none">
+                                                                <input type="text" class="form-control" id="numOfRows" name="numOfRows">
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <input type="button" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
+                                                    <input type="hidden" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
                                                     <div id="radky"></div>
                                                 </div>
                                             </br>

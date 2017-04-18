@@ -1,5 +1,5 @@
-New log file opened at Mon Apr 17 09:54:24 CEST 2017 by 13192@Martin-pc
-jvm 13192@Martin-pc
+New log file opened at Tue Apr 18 13:46:36 CEST 2017 by 696@Martin-pc
+jvm 696@Martin-pc
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.25-b02
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in C:\Users\Martin\dp\masarykac\project, returning: (masarykac-build)
 Loading project definition from C:\Users\Martin\dp\masarykac\project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@2127b67f, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@14f9e525, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -67,143 +67,10 @@ Set current project to masarykac (in build file:/C:/Users/Martin/dp/masarykac/)
 > iflast shell
 > server-send-ready-for-request
 > server-handle-next-server-request
-> compile
-Evaluating tasks: compile:compile
-Running task... Cancel: sbt.server.ServerTaskCancellation@a50bda8, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Total time: 2 s, completed 17.4.2017 9:54:33
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/C:/Users/Martin/dp/masarykac/}root/compile:discoveredMainClasses
-Evaluating tasks: compile:discoveredMainClasses
-Running task... Cancel: sbt.server.ServerTaskCancellation@721a5db4, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Total time: 1 s, completed 17.4.2017 9:54:34
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/C:/Users/Martin/dp/masarykac/}root/compile:mainClass
-Evaluating tasks: compile:mainClass
-Running task... Cancel: sbt.server.ServerTaskCancellation@5454fb7d, check cycles: false
-Total time: 0 s, completed 17.4.2017 9:54:34
-> server-post-command-cleanup
-> server-handle-next-server-request
-> backgroundRun
-Evaluating tasks: compile:backgroundRun
-Running task... Cancel: sbt.server.ServerTaskCancellation@5011b4a1, check cycles: false
-Total time: 0 s, completed 17.4.2017 10:14:23
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkConfig
-Evaluating tasks: *:playForkConfig
-Running task... Cancel: sbt.server.ServerTaskCancellation@a518943, check cycles: false
-Total time: 1 s, completed 17.4.2017 10:14:26
-> server-post-command-cleanup
-> server-handle-next-server-request
-> root/playForkNotifyStart http://localhost:9000
-Evaluating tasks: *:playForkNotifyStart
-Running task... Cancel: sbt.server.ServerTaskCancellation@40afcb8b, check cycles: false
-Total time: 0 s, completed 17.4.2017 10:14:27
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/C:/Users/Martin/dp/masarykac/}root/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@199f2524, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Copy resource mappings: 
-	(C:\Users\Martin\dp\masarykac\conf\application.conf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\application.conf)
-	(C:\Users\Martin\dp\masarykac\conf\evolutions,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions)
-	(C:\Users\Martin\dp\masarykac\conf\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts)
-	(C:\Users\Martin\dp\masarykac\conf\resources,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources)
-	(C:\Users\Martin\dp\masarykac\conf\routes,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\routes)
-	(C:\Users\Martin\dp\masarykac\conf\evolutions\default,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default)
-	(C:\Users\Martin\dp\masarykac\conf\evolutions\default\1.sql,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\evolutions\default\1.sql)
-	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Bold.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Bold.ttf)
-	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-BoldItalic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-BoldItalic.ttf)
-	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Italic.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Italic.ttf)
-	(C:\Users\Martin\dp\masarykac\conf\fonts\OpenSans-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\OpenSans-Regular.ttf)
-	(C:\Users\Martin\dp\masarykac\conf\fonts\osifont.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\osifont.ttf)
-	(C:\Users\Martin\dp\masarykac\conf\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\fonts\Technika-Regular.ttf)
-	(C:\Users\Martin\dp\masarykac\conf\resources\fonts,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts)
-	(C:\Users\Martin\dp\masarykac\conf\resources\fonts\Technika-Regular.ttf,C:\Users\Martin\dp\masarykac\target\scala-2.11\classes\resources\fonts\Technika-Regular.ttf)
-Total time: 2 s, completed 17.4.2017 10:14:50
-> server-post-command-cleanup
-> server-handle-next-server-request
-> compile
-Evaluating tasks: compile:compile
-Running task... Cancel: sbt.server.ServerTaskCancellation@e3fb949, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java)
-
-Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
-Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
-Attempting to call com.sun.tools.javac.api.JavacTool@7f38af97 directly...
-Java compilation took 1.349603301 s
-Java analysis took 8.166954808 s
-Java compile + analysis took 9.870431298 s
-New invalidations:
-	Set()
-Initial set of included nodes: Set()
-Previously invalidated, but (transitively) depend on new invalidations:
-	Set()
-All newly invalidated sources after taking into account (previously) recompiled sources:Set()
-Total time: 12 s, completed 17.4.2017 10:39:56
-> server-post-command-cleanup
-> server-handle-next-server-request
+Done executing sbt server engine, result Right(Exit(0))
+Closing listening server socket
+Waiting for socket thread
+Waiting for request processor thread
+Waiting for command engine result
+Returning control to sbt launcher with result Exit(0)
+Closing the 696@Martin-pc logs at Tue Apr 18 13:46:44 CEST 2017, goodbye.
