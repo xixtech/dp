@@ -30,18 +30,19 @@ $(".showhr").click(function () {
     });
 });
 
-function export2Word(element) {
+
+function export2Word(element,surname,name) {
 
     var html, link, blob, url, css;
 
     css = (
         '<style>' +
-        '@page WordSection1{size: 841.95pt 595.35pt;mso-page-orientation: portrait;}' +
+        '@page WordSection1{size: 841.95pt 595.35pt;size: portrait;}' +
         'div.WordSection1 {page: WordSection1;}' +
         'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;}' +
         '</style>'
     );
-
+    var filename=surname+""+name;
     html = element.innerHTML;
     blob = new Blob(['\ufeff', css + html], {
         type: 'application/msword'
@@ -49,7 +50,7 @@ function export2Word(element) {
     url = URL.createObjectURL(blob);
     link = document.createElement('A');
     link.href = url;
-    link.download = 'Document';  // default name without extension
+    link.download = filename;  // default name without extension
     document.body.appendChild(link);
     if (navigator.msSaveOrOpenBlob) navigator.msSaveOrOpenBlob(blob, 'Document.doc'); // IE10-11
     else link.click();  // other browsers

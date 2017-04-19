@@ -12,7 +12,7 @@ public class AccessRoles {
         all.add("Zaměstnanec");
         all.add("Vedoucí organizační jednotky");
         all.add("Zástupce vedoucího organizační jednotky");
-        all.add("Ředitel/ka");
+        all.add("Reditel");
         return all;
     }
 

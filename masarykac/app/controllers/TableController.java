@@ -1,6 +1,7 @@
 package controllers;
 
 import models.*;
+import models.utils.Check;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
@@ -65,6 +66,16 @@ public class TableController extends Controller {
     }
 
     public Result listDays() {
-        return ok(views.html.tables.tableDays.render(Days.search()));
+        if (Check.isNormalEmployee(Member.findByEmail(request().username()))) {
+            return ok(views.html.tables.tableDays.render(Days.search()));
+        }
+        notAccess();
+        return redirect(routes.Application.index());
+
+    }
+
+
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
     }
 }

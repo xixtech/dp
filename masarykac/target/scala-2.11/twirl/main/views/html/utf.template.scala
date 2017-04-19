@@ -33,7 +33,7 @@ Seq[Any](format.raw/*1.38*/("""
 
 """),format.raw/*3.1*/("""<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
     <head>
         <title>Platy tisk</title>
         <meta charset="UTF-8" />
@@ -43,10 +43,11 @@ Seq[Any](format.raw/*1.38*/("""
         """),format.raw/*12.9*/("""}"""),format.raw/*12.10*/("""
 
         """),format.raw/*14.9*/("""--></style>
-        <script src='"""),_display_(/*15.23*/routes/*15.29*/.Assets.at("javascripts/dynamicFields.js")),format.raw/*15.71*/("""'></script>
+
+        <script src='"""),_display_(/*16.23*/routes/*16.29*/.Assets.at("javascripts/dynamicFields.js")),format.raw/*16.71*/("""'></script>
     </head>
-    <body>
-        <button onclick="export2Word(window.docx)">Export</button>
+    <body onload="export2Word(window.docx,'"""),_display_(/*18.45*/map/*18.48*/.get("surname")),format.raw/*18.63*/("""','"""),_display_(/*18.67*/map/*18.70*/.get("name")),format.raw/*18.82*/("""').click();">
+
         <div id="docx">
             <div class="WordSection1">
         <header>
@@ -76,13 +77,13 @@ Seq[Any](format.raw/*1.38*/("""
                     <h2>Změna platu</h2>
                 </header>
 
-                <p>Žádám Vás o změnu platového výměru k """),_display_(/*48.58*/map/*48.61*/.get("date")),format.raw/*48.73*/(""".</br>Zároveň Vás žádám, aby kmenovost pracovnice byla na středisku 32165. </p>
+                <p>Žádám Vás o změnu platového výměru k """),_display_(/*49.58*/map/*49.61*/.get("date")),format.raw/*49.73*/(""".</br>Zároveň Vás žádám, aby kmenovost pracovnice byla na středisku 32165. </p>
 
             </article>
 
             <article>
-                <p>Osobní číslo: """),_display_(/*53.35*/map/*53.38*/.get("personalNumber")),format.raw/*53.60*/(""" """),format.raw/*53.61*/("""</br>
-                    Příjmení a jméno: """),_display_(/*54.40*/map/*54.43*/.get("surname")),format.raw/*54.58*/(""" """),_display_(/*54.60*/map/*54.63*/.get("name")),format.raw/*54.75*/("""</p>
+                <p>Osobní číslo: """),_display_(/*54.35*/map/*54.38*/.get("personalNumber")),format.raw/*54.60*/(""" """),format.raw/*54.61*/("""</br>
+                    Příjmení a jméno: """),_display_(/*55.40*/map/*55.43*/.get("surname")),format.raw/*55.58*/(""" """),_display_(/*55.60*/map/*55.63*/.get("name")),format.raw/*55.75*/("""</p>
             </article>
 
             <article>
@@ -188,11 +189,11 @@ Seq[Any](format.raw/*1.38*/("""
 object utf extends utf_Scope0.utf
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 19 00:33:48 CEST 2017
+                  DATE: Wed Apr 19 17:42:54 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/utf.scala.html
-                  HASH: 1bb9109e33bf5a16a8a58529699ef591ac545f75
-                  MATRIX: 764->1|895->37|923->39|1138->226|1167->227|1208->240|1266->271|1295->272|1332->282|1393->316|1408->322|1471->364|2486->1352|2498->1355|2531->1367|2719->1528|2731->1531|2774->1553|2803->1554|2875->1599|2887->1602|2923->1617|2952->1619|2964->1622|2997->1634
-                  LINES: 27->1|32->1|34->3|41->10|41->10|42->11|43->12|43->12|45->14|46->15|46->15|46->15|79->48|79->48|79->48|84->53|84->53|84->53|84->53|85->54|85->54|85->54|85->54|85->54|85->54
+                  HASH: 046b19a1db1233facc80408f87b3b7577805e5c3
+                  MATRIX: 764->1|895->37|923->39|1240->328|1269->329|1310->342|1368->373|1397->374|1434->384|1496->419|1511->425|1574->467|1669->535|1681->538|1717->553|1748->557|1760->560|1793->572|2721->1473|2733->1476|2766->1488|2954->1649|2966->1652|3009->1674|3038->1675|3110->1720|3122->1723|3158->1738|3187->1740|3199->1743|3232->1755
+                  LINES: 27->1|32->1|34->3|41->10|41->10|42->11|43->12|43->12|45->14|47->16|47->16|47->16|49->18|49->18|49->18|49->18|49->18|49->18|80->49|80->49|80->49|85->54|85->54|85->54|85->54|86->55|86->55|86->55|86->55|86->55|86->55
                   -- GENERATED --
               */
           

@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
     <head>
         <title>Platy tisk</title>
         <meta charset="UTF-8" />
@@ -12,10 +12,11 @@
         }
 
         --></style>
+
         <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
     </head>
-    <body>
-        <button onclick="export2Word(window.docx)">Export</button>
+    <body onload="export2Word(window.docx,'@map.get("surname")','@map.get("name")').click();">
+
         <div id="docx">
             <div class="WordSection1">
         <header>

@@ -42,6 +42,7 @@ public class OnStartup {
                 Employees e=new Employees(123456,"Ing.", "Karel","Novák","Ph.D.");
                 e.save();
                 e.setMember(member2);
+                e.setAccessRole("Ředitel/ka");
                 e.update();
 
                 member2.setEmployees(e);
