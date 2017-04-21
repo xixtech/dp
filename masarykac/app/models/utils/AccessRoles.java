@@ -9,10 +9,10 @@ import java.util.List;
 public class AccessRoles {
     public static List<String> accessRolesList() {
         List<String> all = new ArrayList<String>();
-        all.add("Zaměstnanec");
-        all.add("Vedoucí organizační jednotky");
-        all.add("Zástupce vedoucího organizační jednotky");
-        all.add("Reditel");
+        all.add("employee");
+        all.add("headOfOU");
+        all.add("deputyHeadOfOU");
+        all.add("director");
         return all;
     }
 

@@ -7,7 +7,7 @@ import models.Member;
  */
 public class Check {
     public static boolean isEmployee(final Member m) {
-        if (m.employees!= null) {
+        if (m.employees != null) {
             return true;
         }
         return false;
@@ -15,7 +15,7 @@ public class Check {
 
     public static boolean isNormalEmployee(final Member m) {
         if (isEmployee(m)) {
-            if (m.employees.accessRole.equals("employee")) {
+            if (m.getEmployees().getAccessRole().equals("employee")) {
                 return true;
             }
             return false;
@@ -25,7 +25,7 @@ public class Check {
 
     public static boolean isHeadOfOU(final Member m) {
         if (isEmployee(m)) {
-            if (m.employees.accessRole.equals("Vedoucí organizační jednotky")) {
+            if (m.getEmployees().getAccessRole().equals("headOfOU")) {
                 return true;
             }
             return false;
@@ -35,16 +35,17 @@ public class Check {
 
     public static boolean isDeputyHeadOfOU(final Member m) {
         if (isEmployee(m)) {
-            if (m.employees.accessRole.equals("Zástupce vedoucího organizační jednotky")) {
+            if (m.getEmployees().getAccessRole().equals("deputyHeadOfOU")) {
                 return true;
             }
             return false;
         }
         return false;
     }
+
     public static boolean isDirector(final Member m) {
         if (isEmployee(m)) {
-            if (m.employees.accessRole.equals("Reditel")) {
+            if (m.getEmployees().getAccessRole().equals("director")) {
                 return true;
             }
             return false;

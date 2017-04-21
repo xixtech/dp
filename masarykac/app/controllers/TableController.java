@@ -66,7 +66,7 @@ public class TableController extends Controller {
     }
 
     public Result listDays() {
-        if (Check.isNormalEmployee(Member.findByEmail(request().username()))) {
+        if (Check.isDirector(Member.findByEmail(request().username()))) {
             return ok(views.html.tables.tableDays.render(Days.search()));
         }
         notAccess();

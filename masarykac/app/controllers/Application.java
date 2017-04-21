@@ -24,31 +24,36 @@ public class Application extends Controller {
     public Result pdf() {
         Map<String, String> test = new HashMap<String, String>();
         test.put("name", "Jan");
-        test.put("surname","Novák");
-        test.put("date","1. 1. 2017");
-        test.put("personalNumber","3456789");
+        test.put("surname", "Novák");
+        test.put("date", "1. 1. 2017");
+        test.put("personalNumber", "3456789");
 
         pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
         return pdfGenerator.ok(views.html.utf.render(test), "http://localhost:9000");
     }
+
     public Result raw() {
 
         Map<String, String> test = new HashMap<String, String>();
         test.put("name", "Jan");
-        test.put("surname","Novák");
-        test.put("date","1. 1. 2017");
-        test.put("personalNumber","3456789");
+        test.put("surname", "Novák");
+        test.put("date", "1. 1. 2017");
+        test.put("personalNumber", "3456789");
         return ok(views.html.utf.render(test));
     }
 
     public Result dashboard() {
-        return ok(views.html.dashboard.render());
+        Member m=Member.findByEmail(request()
+                .username());
+        session().put("role", m.getEmployees().getAccessRole());
+        return ok(views.html.dashboard.render(m));
     }
 
     public Result index() {
-        return ok(views.html.dashboard.render());
-    }
+        return ok(views.html.dashboard.render(Member.findByEmail(request()
+                .username())));
 
+    }
 
     public Result tables() {
         return ok(views.html.tables.tables.render());
@@ -62,7 +67,7 @@ public class Application extends Controller {
         return ok(views.html.roles.render(Roles.rolesList()));
     }
 
-    public Result kpiChoosePerson(){
+    public Result kpiChoosePerson() {
 
         Form<Member> memberForm = formFactory.form(Member.class);
         return ok(views.html.kpiChoosePerson.render(memberForm));
