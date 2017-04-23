@@ -1,25 +1,18 @@
 /**
  * Created by Martin on 19.03.2017.
  */
-var counter = 1;
-var hodnotaValue = 0;
-var hodnotaKey;
 var pocitadlo = 1;
 var pocitadlo1 = 0;
+var pocitadloPublicationParticipant=1;
 var countStudyPlan = 1;
-var countEmployees = 1;
 var weeksCount = 101;
 var weeksTeacher = 1;
-var ob = {};
-var ob1 = {};
 var emplArray = {};
 var publParticipantArray = {};
 var fieldsOfStudyArray = {};
 var semestersArray = {};
 var studyGroupsArray = {};
 var studyGroups1Array = {};
-var cuisines = ["Chinese", "Indian"];
-var choices = [["one", "1"], ["two", "2"]];
 
 $('body').on('click', 'input.deleteDep', function () {
     $(this).parents('tr').remove();
@@ -30,11 +23,8 @@ $(".showhr").click(function () {
     });
 });
 
-
 function export2Word(element,surname,name) {
-
     var html, link, blob, url, css;
-
     css = (
         '<style>' +
         '@page WordSection1{size: 841.95pt 595.35pt;size: portrait;}' +
@@ -57,35 +47,10 @@ function export2Word(element,surname,name) {
     document.body.removeChild(link);
 }
 
-function hokuspokus() {
-    var div = document.createElement('div');
-    div.setAttribute('class', 'someClass');
-    div.innerHTML = document.getElementById('blockOfStuff').innerHTML;
-    document.getElementById(pocitadlo).appendChild(div);
-    pocitadlo++;
-    document.getElementById(pocitadlo - 1).setAttribute("id", pocitadlo);
-
-    var div1 = document.createElement('div');
-    div1.setAttribute('class', 'someClass');
-    div1.innerHTML = document.getElementById('blockOfStuff1').innerHTML;
-    document.getElementById('ooo').appendChild(div1);
-
-
-}
-
 function del(elem) {
     document.getElementById(elem).remove();
-
 }
 
-function hokuspokusCislo(o) {
-    ob = {};
-    ob = o;
-}
-function hokuspokusCislo1(o) {
-    ob1 = {};
-    ob1 = o;
-}
 
 function publicationArray(publPart) {
     publParticipantArray = {};
@@ -96,6 +61,7 @@ function employeeArray(empl) {
     emplArray = {};
     emplArray = empl;
 }
+
 function studyplansArrays(fields, sem, stud, stud1) {
     fieldsOfStudyArray = {};
     semestersArray = {};
@@ -107,14 +73,13 @@ function studyplansArrays(fields, sem, stud, stud1) {
     studyGroupsArray = stud;
     studyGroups1Array = stud1;
 }
+
 function displaySpecialWeeks() {
     if (document.getElementById('yesCheck').checked) {
         document.getElementById('ifYes').style.display = 'block';
     }
     else document.getElementById('ifYes').style.display = 'none';
-
 }
-
 
 function appendRow() {
 
@@ -122,11 +87,9 @@ function appendRow() {
         var tbl = document.getElementById('my-table'), // table reference
             row = tbl.insertRow(tbl.rows.length);
 
-
         createCellscheduleWeek(row.insertCell(0), i + 1, 'row');
         createCellscheduleYear(row.insertCell(1), 2017, 'row');
         createCellDeleteButton(row.insertCell(2), 2017, 'row');
-
     }
 }
 
@@ -141,7 +104,6 @@ function appendRowDiv() {
         if (radios[i].checked) {
             // do whatever you want with the checked radio
             value = radios[i].value;
-
             // only one radio can be logically checked, don't check the rest
             break;
         }
@@ -237,7 +199,7 @@ function createCellscheduleWeek(cell, text, style) {
     var div = document.createElement('tr'), // create DIV element
         txt = document.createTextNode(text); // create text node
     var selectHTML = "";
-    selectHTML = "<input type='text' class='form-control' name='scheduleWeek' value='" + text + "'>";
+    selectHTML = "<input type='text' class='form-control' name='scheduleWeek' value='" + text + "' onkeypress='return isNumberKey(event)'>";
     div.innerHTML = selectHTML;
     // append text node to the DIV
     // set DIV class attribute
@@ -249,7 +211,7 @@ function createCellscheduleYear(cell, text, style) {
     var div = document.createElement('tr'), // create DIV element
         txt = document.createTextNode(text); // create text node
     var selectHTML = "";
-    selectHTML = "<input type='text' class='form-control' name='scheduleYear' value='" + text + "'>";
+    selectHTML = "<input type='text' class='form-control' name='scheduleYear' value='" + text + "' onkeypress='return isNumberKey(event)'>";
     div.innerHTML = selectHTML;
     // append text node to the DIV
     // set DIV class attribute
@@ -268,9 +230,11 @@ function createCellDeleteButton(cell, text, style) {
     cell.appendChild(div);                   // append DIV to the table cell
 }
 
-function addPublicationParticipant(divName) {
+function addPublicationParticipant() {
 
     var newDiv = document.createElement('div');
+    var idnt = pocitadloPublicationParticipant;
+    newDiv.setAttribute("id", idnt);
     var mapKey = publParticipantArray.k;
     var mapValue = publParticipantArray.v;
     var testKey = mapKey.split(";");
@@ -282,17 +246,18 @@ function addPublicationParticipant(divName) {
     }
 
     var selectHTML = "";
-    selectHTML = "<div class='row'><div class='col-md-4'><select class='form-control' name='employees.id'>";
+    selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' name='employees.id'>";
     for (i = 0; i < out.length; i = i + 1) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' name='faculty'> </div>";
-    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' onkeypress='return isNumberKey(event)' name='orderInPublication'> </div>";
-    selectHTML += "<div class='col-md-3'><input type='text' class='form-control' name='department'> </div>";
-    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share' onkeypress='return isDecimalNumberKey(event)'> </div></div></br>";
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' placeholder='Fakulta' name='faculty'> </div>";
+    selectHTML += "<div class='col-md-2'><input type='text' class='form-control' onkeyup='handleChange(this);' onkeypress='return isNumberKey(event)' placeholder='Pořadí' name='orderInPublication'> </div>";
+    selectHTML += "<div class='col-md-3'><input type='text' class='form-control' placeholder='Oddělení' name='department'> </div>";
+    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share' placeholder='Podíl' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)'> </div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idnt + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
-    document.getElementById(divName).appendChild(newDiv);
+    document.getElementById('publpart').appendChild(newDiv);
+    pocitadloPublicationParticipant++;
 }
 
 function addStudyPlan(divName) {
@@ -352,7 +317,7 @@ function addStudyPlan(divName) {
         selectHTML += "<option value='" + outsemesters[i][0] + "'>" + outsemesters[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue' onkeypress='return isNumberKey(event)'> </div>";
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue' onkeyup='handleChange(this);' onkeypress='return isNumberKey(event)'> </div>";
     selectHTML += "<div class='col-md-2'><select class='form-control' name='studyGroups.id'>";
     for (i = 0; i < outstudyGroups.length; i = i + 1) {
         selectHTML += "<option value='" + outstudyGroups[i][0] + "'>" + outstudyGroups[i][1] + "</option>";
@@ -393,10 +358,10 @@ function addPokusRadek(divName) {
 
     }
     selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' name='faculty'> </div>";
-    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' onkeypress='return isNumberKey(event)' name='orderInPublication'> </div>";
+    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' name='orderInPublication'> </div>";
     selectHTML += "<div class='col-md-3'><input type='text' class='form-control' name='department'> </div>";
     selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share' onkeypress='return isDecimalNumberKey(event)'> </div>";
-    selectHTML += "<div class='col-md-1'><input type='button' class='btn btn' value='D' onclick='del(" + ident + ");'/></div></div></br>";
+    selectHTML += "<div class='col-md-1'><input type='button' class='btn btn' value='Smazat' onclick='del(" + ident + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
     pocitadlo1++;
@@ -435,7 +400,7 @@ function addCourseTeacher() {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-4'><input type='text' class='form-control' name='teachers.scale' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-2'><input type='button' class='btn btn' value='Př' onclick='addPokusRadek(" + pocitadlo + ");'/>  </div></div></br>";
+    selectHTML += "</select></div><div class='col-md-4'><input type='text' class='form-control' name='teachers.scale' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-2'><input type='button' class='btn btn' value='Př' onclick='addPokusRadek(" + pocitadlo + ");'/>  </div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('radky').appendChild(newDiv);
 
@@ -462,7 +427,7 @@ function addCourseTeacher1() {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-5'><input type='text' class='form-control' name='teachers.scale' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + pocitadlo + ");'/></div></div> </br>";
+    selectHTML += "</select></div><div class='col-md-5'><input type='text' class='form-control' name='teachers.scale' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + pocitadlo + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('radky').appendChild(newDiv);
 
@@ -516,7 +481,7 @@ function addCourseTeacherTable(divName) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='teachers.scale'> </div></div></br>";
+    selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' name='teachers.scale'> </div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
 }
@@ -560,7 +525,7 @@ function addInputT1(divName, pole) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='values[]'> </div></div></br>";
+    selectHTML += "</select></div><div class='col-md-6'><input type='text' class='form-control' name='values[]' onkeyup='handleChange(this);'> </div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
 }
@@ -583,50 +548,7 @@ function handleChange(input) {
     if (input.value > 100) input.value = 100;
 }
 
-function addInput(divName) {
 
-
-    var s = $('<select/>');
-    var o = [1, 2, 3];
-    for (var i in cuisines) {
-        s.append($('<option/>').html(cuisines[i]));
-    }
-    $('body').append(s);
-
-
-    var newdiv = document.createElement('div');
-    newdiv.innerHTML = "<label for='names[]'>Jméno</label><select id='CuisineList' class='form-control' name='names[]'>+'s.outerHTML'+</select><input type='text' class='form-control' name='values[]'>";
-    document.getElementById(divName).appendChild(newdiv);
-
-
-    var sel = document.getElementById('CuisineList');
-    for (var j = 0; j < cuisines.length; j++) {
-        var opt = document.createElement('option');
-        opt.innerHTML = cuisines[j];
-        opt.value = cuisines[j];
-        sel.appendChild(opt);
-    }
-    counter++;
-
-}
-
-function addInput1(divName) {
-
-    var newdiv = document.createElement('div');
-    newdiv.innerHTML = " <div class='row'><div class='col-md-6'><select id='CuisineList' class='form-control' name='teachers.id[]'></select>  </div><div class='col-md-6'><input type='text' class='form-control' name='teachers.scale[]'> </div></div>";
-    document.getElementById(divName).appendChild(newdiv);
-
-
-    var sel = document.getElementById('CuisineList');
-    for (var j = 0; j < cuisines.length; j++) {
-        var opt = document.createElement('option');
-        opt.innerHTML = cuisines[j];
-        opt.value = cuisines[j];
-        sel.appendChild(opt);
-    }
-    counter++;
-
-}
 
 
 

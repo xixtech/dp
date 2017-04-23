@@ -77,58 +77,14 @@
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-4">
-                                @select(
-                                    participantsForm("employees.id"),
-                                    options(Employees.options()),
-                                    '_label -> "Účastník:",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> participantsForm.globalError
-                                )
-                                </div>
-                                <div class="col-md-3">
-                                @inputText(
-                                    participantsForm("faculty"),
-                                    '_label -> "Fakulta:",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> participantsForm.globalError
-                                )
-                                </div>
-                                <div class="col-md-1">
-                                @inputText(
-                                    participantsForm("orderInPublication"),
-                                    '_label -> "Pořadí:",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> participantsForm.globalError
-                                )
-                                </div>
-                                <div class="col-md-3">
-                                @inputText(
-                                    participantsForm("department"),
-                                    '_label -> "Oddělení:",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> participantsForm.globalError
-                                )
-                                </div>
-                                <div class="col-md-1">
-                                @inputText(
-                                    participantsForm("share"),
-                                    '_label -> "Podíl:",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> participantsForm.globalError
-                                )
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div id="dynamicInput"></div>
-                                    <input type="button" value="Přidat autora" class="btn btn-default" onclick="addPublicationParticipant('dynamicInput');" />
+                                    <input type="button" value="Přidat autora" class="btn btn-default" onclick="addPublicationParticipant();" />
+                                    <div class="row">
+                                    </br>
+                                    </div>
+                                    <div id="publpart"></div>
                                 </div>
                             </div>
 
