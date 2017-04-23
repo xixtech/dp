@@ -589,7 +589,7 @@ format.raw(""" <p class="fa fa-share-alt"> fa-share-alt </p><br/>
 object icons extends icons_Scope0.icons
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 09 10:50:49 CEST 2017
+                  DATE: Sat Apr 22 23:23:01 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/uielements/icons.scala.html
                   HASH: df5441d268944201b7636f03dab848fcd67daa4e
                   MATRIX: 749->1|845->3|872->5|885->11|924->13|955->18

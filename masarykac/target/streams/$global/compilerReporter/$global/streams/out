@@ -1,7 +1,4 @@
-[error] C:\Users\Martin\dp\masarykac\app\views\dashboard.scala.html:9: illegal start of simple expression
-[error] @session().put("u", @user.getEmail)
-[error]                     ^
-[error] C:\Users\Martin\dp\masarykac\app\views\dashboard.scala.html:210: ')' expected but '}' found.
-[error] }
-[error]  ^
-[error] two errors found
+[error] C:\Users\Martin\dp\masarykac\app\models\Employees.java:24: cannot find symbol
+[error]   symbol:   class Range
+[error]   location: class models.Employees
+[error] Range

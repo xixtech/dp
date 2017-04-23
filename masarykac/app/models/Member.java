@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+
 import com.avaje.ebean.*;
 import models.utils.Hash;
 import play.data.format.Formats;
@@ -15,7 +16,7 @@ import java.util.Map;
  * Created by Martin on 02.02.2017.
  */
 @Entity
-public class Member extends Model{
+public class Member extends Model {
     public static Model.Finder<Long, Member> find = new Model.Finder<Long, Member>(Member.class);
 
     @Id
@@ -30,7 +31,7 @@ public class Member extends Model{
 
     @Constraints.Required(message = "Heslo je povinné")
     @Formats.NonEmpty
-    @Constraints.MinLength(value = 6)
+    @Constraints.MinLength(message = "Minimální délka je 6 znaků",value = 6)
     public String password;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -41,6 +42,7 @@ public class Member extends Model{
 
     @OneToOne(cascade = CascadeType.ALL)
     public Profile profile;
+
     /**
      * @param email
      * @param password
@@ -54,9 +56,11 @@ public class Member extends Model{
     public Long getId() {
         return id;
     }
+
     public void setActive(boolean active) {
         this.active = active;
     }
+
     /**
      * @param person
      */
@@ -119,8 +123,7 @@ public class Member extends Model{
     public static Member authenticate(String email, String password) {
         Member member = findByEmail(email);
         if (member != null) {
-            if (member.active == true) {
-
+            if (member.isActive()) {
                 if (Hash.checkPassword(password, member.password)) {
 
                     return member;
@@ -129,6 +132,7 @@ public class Member extends Model{
         }
         return null;
     }
+
     /**
      * vrací osobu podle emailu
      *
@@ -142,15 +146,18 @@ public class Member extends Model{
     public static List<Member> search() {
         return Member.find.all();
     }
+
     public static List<Member> memberDetail(long id) {
-        return find.where().eq("id",id).findList();
+        return find.where().eq("id", id).findList();
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<Member> subjectSets = Member.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Member set: subjectSets) {
-            options.put(set.id.toString(), set.email.toString());
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Member set : subjectSets) {
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.email.toString());
+            }
         }
         return options;
     }

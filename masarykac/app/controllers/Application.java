@@ -43,7 +43,10 @@ public class Application extends Controller {
     }
 
     public Result dashboard() {
+
         Member m=Member.findByEmail(request()
+                .username());
+        session().put("email",request()
                 .username());
         session().put("role", m.getEmployees().getAccessRole());
         return ok(views.html.dashboard.render(m));

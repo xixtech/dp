@@ -1,6 +1,8 @@
 package models;
 
 import com.avaje.ebean.Model;
+import play.data.format.Formats;
+import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.*;
@@ -18,12 +20,20 @@ public class Employees extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Formats.NonEmpty
+    @Constraints.Required(message = "Vyplňte osobní číslo")
     public int personalNumber;
 
     public String titleBefore;
 
+    @Constraints.Required(message = "Vyplňte příjmení")
+    @Formats.NonEmpty
+    @Constraints.MinLength(message = "Zadejte alespoň 2 znaky", value = 2)
     public String surname;
 
+    @Constraints.Required(message = "Vyplňte křestní jméno")
+    @Formats.NonEmpty
+    @Constraints.MinLength(message = "Zadejte alespoň 2 znaky", value = 2)
     public String firstName;
 
     public String titleAfter;
@@ -60,7 +70,7 @@ public class Employees extends Model {
         this.surname = surname;
         this.firstName = firstName;
         this.titleAfter = titleAfter;
-        this.accessRole="Zaměstnanec";
+        this.accessRole = "employee";
     }
 
     public Long getId() {
@@ -135,8 +145,8 @@ public class Employees extends Model {
         this.finalWorksToEmployees = finalWorksToEmployees;
     }
 
-    public String getFullName(){
-        return this.getFirstName()+" "+this.getSurname();
+    public String getFullName() {
+        return this.getFirstName() + " " + this.getSurname();
     }
 
     public List<Visits> getVisits() {
@@ -195,22 +205,21 @@ public class Employees extends Model {
         return Employees.find.all();
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<Employees> subjectSets = Employees.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Employees set: subjectSets) {
-            options.put(set.id.toString(),  set.getSurname().toString()+" "+set.getFirstName().toString());
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Employees set : subjectSets) {
+            if (set.getMember().isActive()) {
+                options.put(set.id.toString(), set.getSurname().toString() + " " + set.getFirstName().toString());
+            }
         }
         return options;
     }
 
     public static String[] getJS1Key() {
-
         String[] arr1 = new String[options().size()];
-
         Set entries = options().entrySet();
         Iterator entriesIterator = entries.iterator();
-
         int i = 0;
         String v = "";
         while (entriesIterator.hasNext()) {
@@ -226,12 +235,9 @@ public class Employees extends Model {
     }
 
     public static String[] getJS1Value() {
-
         String[] arr2 = new String[options().size()];
-
         Set entries = options().entrySet();
         Iterator entriesIterator = entries.iterator();
-
         int i = 0;
         String v = "";
         while (entriesIterator.hasNext()) {
@@ -247,20 +253,13 @@ public class Employees extends Model {
     }
 
     public static String[][] getJS() {
-
-
-
         final String[][] result = new String[options().size()][2];
-
         final Iterator<?> iter = options().entrySet().iterator();
-
         int ii = 0;
-        while(iter.hasNext()){
+        while (iter.hasNext()) {
             final Map.Entry<?, ?> mapping = (Map.Entry<?, ?>) iter.next();
-
-            result[ii][0] = mapping.getKey()+" ";
-            result[ii][1] = mapping.getValue()+"; ";
-
+            result[ii][0] = mapping.getKey() + " ";
+            result[ii][1] = mapping.getValue() + "; ";
             ii++;
         }
         return result;

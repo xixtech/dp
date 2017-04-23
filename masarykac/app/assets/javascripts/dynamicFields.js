@@ -490,7 +490,7 @@ function addCourseTeacherWeeks(divName) {
     for (i = 0; i < out.length; i = i + 1) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
     }
-    selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' name='tvalue" + divName + "" + weeksTeacher + "' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
+    selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' name='tvalue" + divName + "" + weeksTeacher + "' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='btn btn-outline btn-danger' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
 
@@ -576,6 +576,11 @@ function isDecimalNumberKey(evt) {
     if (!((charCode > 47 && charCode <= 57) || ( charCode == 8) || (charCode == 44) || ( charCode == 46) || ( charCode === 0) || (charCode == 127)))
         return false;
     return true;
+}
+
+function handleChange(input) {
+    if (input.value < 0) input.value = 0;
+    if (input.value > 100) input.value = 100;
 }
 
 function addInput(divName) {

@@ -41,17 +41,19 @@ Seq[Any](format.raw/*1.16*/("""
 
 
 """),_display_(/*10.2*/main(scripts = localScripts)/*10.30*/ {_display_(Seq[Any](format.raw/*10.32*/("""
-   """),format.raw/*11.4*/("""<div class="row">
+    """),format.raw/*11.5*/("""<div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Nástěnka</h1>
         </div>
-        <!-- /.col-lg-12 -->
+            <!-- /.col-lg-12 -->
     </div>
-    <!-- /.row -->
+        <!-- /.row -->
     <div class="row">
-        <h4>Rychlý přístup """),_display_(/*19.29*/user/*19.33*/.getEmail),format.raw/*19.42*/(""" """),format.raw/*19.43*/("""</h4>
+        <h4>Rychlý přístup</h4>
+
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
+        """),_display_(/*22.10*/if(session().get("role").equals("director"))/*22.54*/ {_display_(Seq[Any](format.raw/*22.56*/("""
+            """),format.raw/*23.13*/("""<div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
@@ -63,7 +65,7 @@ Seq[Any](format.raw/*1.16*/("""
                         </div>
                     </div>
                 </div>
-                <a href=""""),_display_(/*33.27*/routes/*33.33*/.PersonController.index()),format.raw/*33.58*/("""">
+                <a href=""""),_display_(/*35.27*/routes/*35.33*/.PersonController.index()),format.raw/*35.58*/("""">
                     <div class="panel-footer">
                         <span class="pull-left">Registrace osoby</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -71,9 +73,12 @@ Seq[Any](format.raw/*1.16*/("""
                     </div>
                 </a>
             </div>
-        </div>
+        """)))}),format.raw/*43.10*/("""
+        """),format.raw/*44.9*/("""</div>
+
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-green">
+        """),_display_(/*47.10*/if(session().get("role").equals("director"))/*47.54*/ {_display_(Seq[Any](format.raw/*47.56*/("""
+            """),format.raw/*48.13*/("""<div class="panel panel-green">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
@@ -85,7 +90,7 @@ Seq[Any](format.raw/*1.16*/("""
                         </div>
                     </div>
                 </div>
-                <a href=""""),_display_(/*55.27*/routes/*55.33*/.Application.kpiChoosePerson()),format.raw/*55.63*/("""">
+                <a href=""""),_display_(/*60.27*/routes/*60.33*/.Application.kpiChoosePerson()),format.raw/*60.63*/("""">
                     <div class="panel-footer">
                         <span class="pull-left">KPI Kalkulace</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -93,9 +98,11 @@ Seq[Any](format.raw/*1.16*/("""
                     </div>
                 </a>
             </div>
-        </div>
+        """)))}),format.raw/*68.10*/("""
+        """),format.raw/*69.9*/("""</div>
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-yellow">
+        """),_display_(/*71.10*/if(session().get("role").equals("director"))/*71.54*/ {_display_(Seq[Any](format.raw/*71.56*/("""
+            """),format.raw/*72.13*/("""<div class="panel panel-yellow">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
@@ -107,7 +114,7 @@ Seq[Any](format.raw/*1.16*/("""
                         </div>
                     </div>
                 </div>
-                <a href=""""),_display_(/*77.27*/routes/*77.33*/.TableController.listPerson()),format.raw/*77.62*/("""">
+                <a href=""""),_display_(/*84.27*/routes/*84.33*/.TableController.listPerson()),format.raw/*84.62*/("""">
                     <div class="panel-footer">
                         <span class="pull-left">Seznam pracovníků</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -115,10 +122,12 @@ Seq[Any](format.raw/*1.16*/("""
                     </div>
                 </a>
             </div>
-        </div>
+        """)))}),format.raw/*92.10*/("""
+        """),format.raw/*93.9*/("""</div>
 
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
+        """),_display_(/*96.10*/if(session().get("role").equals("director"))/*96.54*/ {_display_(Seq[Any](format.raw/*96.56*/("""
+            """),format.raw/*97.13*/("""<div class="panel panel-red">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
@@ -138,15 +147,17 @@ Seq[Any](format.raw/*1.16*/("""
                     </div>
                 </a>
             </div>
-        </div>
+        """)))}),format.raw/*117.10*/("""
+        """),format.raw/*118.9*/("""</div>
 
     </div>
 
-    <!-- /.row -->
+        <!-- /.row -->
     <div class="row">
 
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
+        """),_display_(/*126.10*/if(session().get("role").equals("director"))/*126.54*/ {_display_(Seq[Any](format.raw/*126.56*/("""
+            """),format.raw/*127.13*/("""<div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
@@ -158,7 +169,7 @@ Seq[Any](format.raw/*1.16*/("""
                         </div>
                     </div>
                 </div>
-                <a href=""""),_display_(/*128.27*/routes/*128.33*/.CourseController.index()),format.raw/*128.58*/("""">
+                <a href=""""),_display_(/*139.27*/routes/*139.33*/.CourseController.index()),format.raw/*139.58*/("""">
                     <div class="panel-footer">
                         <span class="pull-left">Registrace kurzu</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -166,9 +177,11 @@ Seq[Any](format.raw/*1.16*/("""
                     </div>
                 </a>
             </div>
-        </div>
+        """)))}),format.raw/*147.10*/("""
+        """),format.raw/*148.9*/("""</div>
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-green">
+        """),_display_(/*150.10*/if(session().get("role").equals("director"))/*150.54*/ {_display_(Seq[Any](format.raw/*150.56*/("""
+            """),format.raw/*151.13*/("""<div class="panel panel-green">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
@@ -180,7 +193,7 @@ Seq[Any](format.raw/*1.16*/("""
                         </div>
                     </div>
                 </div>
-                <a href=""""),_display_(/*150.27*/routes/*150.33*/.StudyPlansController.index()),format.raw/*150.62*/("""">
+                <a href=""""),_display_(/*163.27*/routes/*163.33*/.StudyPlansController.index()),format.raw/*163.62*/("""">
                     <div class="panel-footer">
                         <span class="pull-left">Registrace studijního plánu</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -188,9 +201,11 @@ Seq[Any](format.raw/*1.16*/("""
                     </div>
                 </a>
             </div>
-        </div>
+        """)))}),format.raw/*171.10*/("""
+        """),format.raw/*172.9*/("""</div>
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-yellow">
+        """),_display_(/*174.10*/if(session().get("role").equals("director"))/*174.54*/ {_display_(Seq[Any](format.raw/*174.56*/("""
+            """),format.raw/*175.13*/("""<div class="panel panel-yellow">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
@@ -202,7 +217,7 @@ Seq[Any](format.raw/*1.16*/("""
                         </div>
                     </div>
                 </div>
-                <a href=""""),_display_(/*172.27*/routes/*172.33*/.TableController.listSemesters()),format.raw/*172.65*/("""">
+                <a href=""""),_display_(/*187.27*/routes/*187.33*/.TableController.listSemesters()),format.raw/*187.65*/("""">
                     <div class="panel-footer">
                         <span class="pull-left">Seznam semestrů</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -210,10 +225,12 @@ Seq[Any](format.raw/*1.16*/("""
                     </div>
                 </a>
             </div>
-        </div>
+        """)))}),format.raw/*195.10*/("""
+        """),format.raw/*196.9*/("""</div>
 
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-red">
+        """),_display_(/*199.10*/if(session().get("role").equals("director"))/*199.54*/ {_display_(Seq[Any](format.raw/*199.56*/("""
+            """),format.raw/*200.13*/("""<div class="panel panel-red">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
@@ -233,13 +250,14 @@ Seq[Any](format.raw/*1.16*/("""
                     </div>
                 </a>
             </div>
-        </div>
+        """)))}),format.raw/*220.10*/("""
+        """),format.raw/*221.9*/("""</div>
 
     </div>
 
 
-    <!-- /.row -->
-""")))}),format.raw/*209.2*/("""
+        <!-- /.row -->
+""")))}),format.raw/*227.2*/("""
 """))
       }
     }
@@ -260,11 +278,11 @@ Seq[Any](format.raw/*1.16*/("""
 object dashboard extends dashboard_Scope0.dashboard
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 21 13:44:27 CEST 2017
+                  DATE: Sat Apr 22 23:22:59 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/dashboard.scala.html
-                  HASH: a77a380c85dadf0a3d7b349a40ff77a3f4195249
-                  MATRIX: 753->1|845->17|865->29|945->33|976->38|1054->90|1068->96|1130->138|1186->168|1200->174|1260->214|1316->244|1330->250|1390->290|1442->15|1469->303|1499->307|1536->335|1576->337|1607->341|1858->565|1871->569|1901->578|1930->579|2545->1167|2560->1173|2606->1198|3564->2129|3579->2135|3630->2165|4590->3098|4605->3104|4655->3133|6586->5036|6602->5042|6649->5067|7622->6012|7638->6018|7689->6047|8662->6992|8678->6998|8732->7030|10061->8328
-                  LINES: 27->1|31->2|31->2|33->2|34->3|35->4|35->4|35->4|36->5|36->5|36->5|37->6|37->6|37->6|39->1|40->7|43->10|43->10|43->10|44->11|52->19|52->19|52->19|52->19|66->33|66->33|66->33|88->55|88->55|88->55|110->77|110->77|110->77|161->128|161->128|161->128|183->150|183->150|183->150|205->172|205->172|205->172|242->209
+                  HASH: 4eced53fd43b6fba15f536ea394755cf38e80380
+                  MATRIX: 753->1|845->17|865->29|945->33|976->38|1054->90|1068->96|1130->138|1186->168|1200->174|1260->214|1316->244|1330->250|1390->290|1442->15|1469->303|1499->307|1536->335|1576->337|1608->342|1921->628|1974->672|2014->674|2055->687|2612->1217|2627->1223|2673->1248|3052->1596|3088->1605|3172->1662|3225->1706|3265->1708|3306->1721|3858->2246|3873->2252|3924->2282|4300->2627|4336->2636|4419->2692|4472->2736|4512->2738|4553->2751|5110->3281|5125->3287|5175->3316|5555->3665|5591->3674|5675->3731|5728->3775|5768->3777|5809->3790|6693->4642|6730->4651|6873->4766|6927->4810|6968->4812|7010->4825|7568->5355|7584->5361|7631->5386|8011->5734|8048->5743|8132->5799|8186->5843|8227->5845|8269->5858|8836->6397|8852->6403|8903->6432|9294->6791|9331->6800|9415->6856|9469->6900|9510->6902|9552->6915|10108->7443|10124->7449|10178->7481|10557->7828|10594->7837|10679->7894|10733->7938|10774->7940|10816->7953|11700->8805|11737->8814|11813->8859
+                  LINES: 27->1|31->2|31->2|33->2|34->3|35->4|35->4|35->4|36->5|36->5|36->5|37->6|37->6|37->6|39->1|40->7|43->10|43->10|43->10|44->11|55->22|55->22|55->22|56->23|68->35|68->35|68->35|76->43|77->44|80->47|80->47|80->47|81->48|93->60|93->60|93->60|101->68|102->69|104->71|104->71|104->71|105->72|117->84|117->84|117->84|125->92|126->93|129->96|129->96|129->96|130->97|150->117|151->118|159->126|159->126|159->126|160->127|172->139|172->139|172->139|180->147|181->148|183->150|183->150|183->150|184->151|196->163|196->163|196->163|204->171|205->172|207->174|207->174|207->174|208->175|220->187|220->187|220->187|228->195|229->196|232->199|232->199|232->199|233->200|253->220|254->221|260->227
                   -- GENERATED --
               */
           

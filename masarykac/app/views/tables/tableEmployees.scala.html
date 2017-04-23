@@ -44,51 +44,65 @@
                                     <th>Příjmení</th>
                                     <th>Jméno</th>
                                     <th>Titul za</th>
+                                    <th>Upravit</th>
+                                    <th>Smazat</th>
                                 </tr>
                             </thead>
                             <tbody>
 
                             @for(member <- currentPage) {
-                                <tr>
+                                @if(member.member.isActive == true) {
+                                    <tr>
 
-                                    <td class="center">
-                                    @if(member.getPersonalNumber == 0) {
-                                        <em>-</em>
-                                    } else {
-                                        @member.getPersonalNumber
-                                    }
-                                    </td>
-                                    <td class="center">
+                                        <td class="center">
+                                        @if(member.getPersonalNumber == 0) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.getPersonalNumber
+                                        }
+                                        </td>
+                                        <td class="center">
                                         @if(member.getTitleBefore == null) {
-                                        <em>-</em>
-                                    } else {
-                                        @member.getTitleBefore
-                                    }
-                                    </td>
-                                    <td class="center">
+                                            <em>-</em>
+                                        } else {
+                                            @member.getTitleBefore
+                                        }
+                                        </td>
+                                        <td class="center">
                                         @if(member.getSurname == null) {
-                                        <em>-</em>
-                                    } else {
-                                        @member.getSurname
-                                    }
-                                    </td>
-                                    <td class="center">
+                                            <em>-</em>
+                                        } else {
+                                            @member.getSurname
+                                        }
+                                        </td>
+                                        <td class="center">
                                         @if(member.getFirstName == null) {
-                                        <em>-</em>
-                                    } else {
-                                        @member.getFirstName
-                                    }
-                                    </td>
-                                    <td class="center">
+                                            <em>-</em>
+                                        } else {
+                                            @member.getFirstName
+                                        }
+                                        </td>
+                                        <td class="center">
                                         @if(member.getTitleAfter == null) {
-                                        <em>-</em>
-                                    } else {
-                                        @member.getTitleAfter
-                                    }
-                                    </td>
+                                            <em>-</em>
+                                        } else {
+                                            @member.getTitleAfter
+                                        }
+                                        </td>
+                                        <td class="center">
+                                        @form(routes.EmployeesController.edit(member.member.getEmail())) {
+                                            <input type="submit" value="Upravit" class="btn btn-info">
+                                            }
+                                        </td>
+                                        <td class="center">
+                                        @form(routes.EmployeesController.delete(member.member.getEmail())) {
+                                            <input type="submit" value="Smazat" class="btn btn-danger">
+                                            }
+                                        </td>
 
 
-                                </tr>
+                                    </tr>
+                                }
                             }
                             </tbody>
                         </table>

@@ -35,14 +35,24 @@ public class OnStartup {
                 member.setActive(true);
                 member.save();
 
+
+                Employees em=new Employees(123456,"Bc.", "Černý","Tomáš","Ph.D.");
+                em.save();
+                em.setMember(member);
+                em.setAccessRole("employee");
+                em.update();
+
+                member.setEmployees(em);
+                member.update();
+
                 Member member2 = new Member("b@b.cz", Hash.createPassword("heslo"));
                 member2.setActive(true);
                 member2.save();
 
-                Employees e=new Employees(123456,"Ing.", "Karel","Novák","Ph.D.");
+                Employees e=new Employees(123456,"Ing.", "Novák","Karel","Ph.D.");
                 e.save();
                 e.setMember(member2);
-                e.setAccessRole("Ředitel/ka");
+                e.setAccessRole("director");
                 e.update();
 
                 member2.setEmployees(e);
