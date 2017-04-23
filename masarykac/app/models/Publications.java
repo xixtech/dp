@@ -1,6 +1,8 @@
 package models;
 
 import com.avaje.ebean.Model;
+import play.data.format.Formats;
+import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.LinkedHashMap;
@@ -20,13 +22,21 @@ public class Publications extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Constraints.Required(message = "Vyplňte rok")
+    @Formats.NonEmpty
     public String yearOfPublication;
 
     @ManyToOne
     public Semesters semester;
 
+    @Constraints.Required(message = "Vyplňte typ publikace")
+    @Formats.NonEmpty
+    @Constraints.MinLength(message = "Zadejte alespoň 2 znaky", value = 2)
     public String type;
 
+    @Constraints.Required(message = "Vyplňte citaci")
+    @Formats.NonEmpty
+    @Constraints.MinLength(message = "Zadejte alespoň 2 znaky", value = 2)
     public String citation;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})

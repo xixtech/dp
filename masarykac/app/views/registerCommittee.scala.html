@@ -1,118 +1,85 @@
-@(projectsForm: Form[Projects], participantsForm: Form[ProjectsParticipants])
-    @import helper._
-    @localScripts = {
-        <!-- Morris Charts JavaScript -->
-        <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
-        <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
-        <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
-    }
-    @main(scripts = localScripts) {
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Registrace</h1>
-            </div>
-                <!-- /.col-lg-12 -->
-        </div>
-            <!-- /.row -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel-body">
-                    @helper.form(action = routes.ProjectController.save) {
+@(committeeForm: Form[Committee], participantsForm: Form[CommitteeParticipants])
+@import helper._
+@localScripts = {
+    <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
 
-                        <fieldset>
-                            <legend>Zadání projektu</legend>
-                            <div class="row">
-                                <div class="col-md-14">
-                                @inputText(
-                                    projectsForm("projectName"),
-                                    '_label -> "Název projektu:",
-                                    'class -> "form-control",
-                                    '_help -> "Prosím zadejte název projektu.",
-                                    '_error -> projectsForm.globalError
-                                )
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                    @inputText(
-                                        projectsForm("projectFrom"),
-                                        '_label -> "Projekt probíhá od:",
-                                        'class -> "form-control",
-                                        '_help -> "Prosím zadejte datum.",
-                                        '_error -> projectsForm.globalError
-                                    )
-                                    </div>
-                                    <div class="col-md-6">
-                                    @inputText(
-                                        projectsForm("projectTo"),
-                                        '_label -> "Projekt probíhá do:",
-                                        'class -> "form-control",
-                                        '_help -> "Prosím zadejte datum.",
-                                        '_error -> projectsForm.globalError
-                                    )
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                    @select(
-                                        projectsForm("semester.id"),
-                                        options(Semesters.options()),
-                                        '_label -> "Projekt proběhl v semestru:",
-                                        'class -> "form-control",
-                                        '_help -> "Prosím zadejte semestr projektu.",
-                                        '_error -> projectsForm.globalError
-                                    )
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                    @checkbox(
-                                        projectsForm("hasGrant"),
-                                        '_label -> "Projekt získal grant:",
-                                        'class -> "form-control",
-                                        '_help -> "",
-                                        '_error -> projectsForm.globalError
-                                    )
-                                    </div>
-                                    <div class="col-md-8">
-                                    @inputText(
-                                        projectsForm("grantValue"),
-                                        '_label -> "Velikost grantu",
-                                        'class -> "form-control",
-                                        '_help -> "Prosím zadejte velikost grantu.",
-                                        '_error -> projectsForm.globalError
-                                    )
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                    @select(
-                                        participantsForm("employees.id"),
-                                        options(Employees.options()),
-                                        '_label -> "Účastník:",
-                                        'class -> "form-control",
-                                        '_help -> "Prosím zadejte semestr účastníka.",
-                                        '_error -> participantsForm.globalError
-                                    )
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
+    <script>
+            $(document).ready(function () {
+
+                var MyUserObject = {};
+                MyUserObject["v"] = "@Employees.getJS1Value()";
+                MyUserObject["k"] = "@Employees.getJS1Key()";
+
+                committeeArray(MyUserObject);
+            });
+    </script>
+}
+@main(scripts = localScripts) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Vyplnění komise</h1>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel-body">
+                @helper.form(action = routes.CommitteeController.save) {
+
+                    <fieldset>
+                        <legend>Zadání projektu</legend>
                         <div class="row">
                             <div class="col-md-14">
-                                <div class="actions">
-
-                                    <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                                    <a href="@routes.Application.index()" class="btn">Zrušit</a>
-                                </div>
+                            @inputText(
+                                committeeForm("dateOfCommittee"),
+                                '_label -> "Datum:",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte datum.",
+                                '_error -> committeeForm.globalError
+                            )
                             </div>
                         </div>
+                            <div class="row">
+                                <div class="col-md-14">
+                                @select(
+                                    committeeForm("semester.id"),
+                                    options(Semesters.options()),
+                                    '_label -> "Semestr:",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte semestr.",
+                                    '_error -> committeeForm.globalError
+                                )
+                                </div>
+                            </div>
 
+
+                        <div class="row">
+                            <div class="col-md-14">
+                                <input type="button" value="Přidat účastníka" class="btn btn-default" onclick="addCommitteeParticipant();" />
+                                <div class="row">
+                                </br>
+                                </div>
+                                <div id="committeepart"></div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="col-md-14">
+                            <div class="actions">
+
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                                <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                            </div>
+                        </div>
                     </div>
 
-                    }
                 </div>
+
+                }
             </div>
         </div>
-        </div>
-    }
+    </div>
+    </div>
+}

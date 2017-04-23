@@ -153,6 +153,11 @@
                     }
                     @if(session().get("role").equals("director")) {
                         <li>
+                            <a href="@routes.CommitteeController.index()">Registrace komise</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director")) {
+                        <li>
                             <a href="@routes.PublicationsController.index()">Registrace publikace</a>
                         </li>
                     }

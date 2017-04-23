@@ -54,8 +54,8 @@ GET         /employee/register                   controllers.EmployeesController
 POST        /employee/saved                      controllers.EmployeesController.save()
 GET         /employee/info/:email                controllers.EmployeesController.info(email:String)
 GET         /employee/edit/:email                controllers.EmployeesController.edit(email:String)
-POST        /employee/updated/             controllers.EmployeesController.update(email:String)
-POST   /employee/delete                            controllers.EmployeesController.delete(email:String)
+POST        /employee/updated/                   controllers.EmployeesController.update(email:String)
+POST        /employee/delete                     controllers.EmployeesController.delete(email:String)
 
 # Přidat předmět
 GET         /subject/add                         controllers.SubjectController.index()
@@ -64,6 +64,9 @@ POST        /subject/saved                       controllers.SubjectController.s
 # Přidat předmět
 GET         /fields/add                          controllers.FieldOfStudyController.index()
 POST        /fields/saved                        controllers.FieldOfStudyController.save()
+
+GET         /committee/add                       controllers.CommitteeController.index()
+POST        /committee/saved                     controllers.CommitteeController.save()
 
 GET         /statistics                          controllers.PersonalStatisticController.index()
 

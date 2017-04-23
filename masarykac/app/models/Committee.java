@@ -23,15 +23,51 @@ public class Committee extends Model {
     public Long id;
 
     @Formats.DateTime(pattern = "dd.MM.yyyy")
-    public Date date;
+    public Date dateOfCommittee;
 
     @ManyToOne
     public Semesters semester;
 
-    public String roleInComittee;
-
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<CommitteeToEmployess> committeeToEmployes;
+    public List<CommitteeParticipants> committeeToEmployes;
+
+    public Committee(Date dateOfCommittee, Semesters semester) {
+        this.dateOfCommittee = dateOfCommittee;
+        this.semester = semester;
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getDateOfCommittee() {
+        return dateOfCommittee;
+    }
+
+    public void setDateOfCommittee(Date dateOfCommittee) {
+        this.dateOfCommittee = dateOfCommittee;
+    }
+
+    public Semesters getSemester() {
+        return semester;
+    }
+
+    public void setSemester(Semesters semester) {
+        this.semester = semester;
+    }
+
+    public List<CommitteeParticipants> getCommitteeToEmployes() {
+        return committeeToEmployes;
+    }
+
+    public void setCommitteeToEmployes(List<CommitteeParticipants> committeeToEmployes) {
+        this.committeeToEmployes = committeeToEmployes;
+    }
 
     public static Committee findById(long id) {
         return find.where().eq("id",id).findUnique();

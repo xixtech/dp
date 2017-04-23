@@ -1,6 +1,8 @@
 package models;
 
 import com.avaje.ebean.Model;
+import play.data.format.Formats;
+import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.LinkedHashMap;
@@ -20,12 +22,20 @@ public class PublicationsParticipants extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Constraints.Required(message = "Vyplňte fakultu")
+    @Formats.NonEmpty
     public String faculty;
 
+    @Constraints.Required(message = "Vyplňte pořadí v publikaci")
+    @Formats.NonEmpty
     public String orderInPublication;
 
+    @Constraints.Required(message = "Vyplňte oddělení")
+    @Formats.NonEmpty
     public String department;
 
+    @Constraints.Required(message = "Vyplňte podíl")
+    @Formats.NonEmpty
     public String share;
 
     @ManyToOne
