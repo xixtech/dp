@@ -1,25 +1,19 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:113: comparing values of types Int and Null using `==' will always yield false
-[warn]                                             @if(member.getHoursP == null) {
-[warn]                                                                  ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:120: comparing values of types Int and Null using `==' will always yield false
-[warn]                                             @if(member.getHoursC == null) {
-[warn]                                                                  ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:127: comparing values of types Int and Null using `==' will always yield false
-[warn]                                             @if(member.getCredits == null) {
-[warn]                                                                   ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSchedule.scala.html:78: models.Days and Int are unrelated: they will most likely never compare equal
-[warn]                                     @if(member.getDay == 0) {
-[warn]                                                       ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableStudyGroups.scala.html:60: comparing values of types Int and Null using `==' will always yield false
-[warn]                                     @if(member.getStudyGroupP == null) {
-[warn]                                                               ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:109: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                                 @if(member.numberOfStudents == null) {
-[warn]                                                                                             ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:204: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                                 @if(member.numberOfStudents == null) {
-[warn]                                                                                             ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingDepartmentEmployee.scala.html:298: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                                 @if(member.numberOfStudents == null) {
-[warn]                                                                                             ^
-[warn] 8 warnings found
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableCommittees.scala.html:39: value getFieldOfStudyV is not a member of (java.util.List[models.Committee], java.util.List[models.CommitteeParticipants], java.util.List[models.Semesters]) => play.twirl.api.HtmlFormat.Appendable
+[error]                         @f.getFieldOfStudyV (@f.getFieldOfStudy)
+[error]                            ^
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableCommittees.scala.html:39: value getFieldOfStudy is not a member of (java.util.List[models.Committee], java.util.List[models.CommitteeParticipants], java.util.List[models.Semesters]) => play.twirl.api.HtmlFormat.Appendable
+[error]                         @f.getFieldOfStudyV (@f.getFieldOfStudy)
+[error]                                                 ^
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableCommittees.scala.html:41: not found: value spPage
+[error]                     @if(spPage.size() == 0) {
+[error]                         ^
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableCommittees.scala.html:45: not found: value spPage
+[error]                     @for(sp <- spPage) {
+[error]                                ^
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableCommittees.scala.html:47: value getId is not a member of (java.util.List[models.Committee], java.util.List[models.CommitteeParticipants], java.util.List[models.Semesters]) => play.twirl.api.HtmlFormat.Appendable
+[error]                         @if(f.getId == sp.getFieldsOfStudy.getId) {
+[error]                               ^
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableCommittees.scala.html:95: not found: value sbjPage
+[error]                                     @for(member <- sbjPage) {
+[error]                                                    ^
+[error] 6 errors found

@@ -14,6 +14,7 @@
                     <li>
                         <a href="@routes.PersonalStatisticController.index()">Zobrazit údaje</a>
                         <a href="@routes.StatisticController.index()">Zobrazit DCPS</a>
+
                         <a href="@routes.EmployeesController.info(session().get("email"))">Info</a>
 
                     </li>
@@ -106,6 +107,11 @@
                     @if(session().get("role").equals("director")) {
                         <li>
                             <a href='@routes.TableController.listDays()'><i class="fa fa-table fa-fw"></i> Dny</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director")) {
+                        <li>
+                            <a href='@routes.TableController.listCommittees()'><i class="fa fa-table fa-fw"></i> Komise</a>
                         </li>
                     }
                 </ul>

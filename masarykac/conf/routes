@@ -101,6 +101,8 @@ GET         /courses                             controllers.TableController.lis
 GET         /currentsemesters                    controllers.TableController.listCurrentSemesters()
 GET         /lcsuteos                            controllers.TableController.listCurrentSemestersUntilTheEndOfStudy()
 GET         /days                                controllers.TableController.listDays()
+GET         /committees                          controllers.TableController.listCommittees()
+
 
 GET         /teachers/add                        controllers.TeachersController.index()
 POST        /teachers/saved                      controllers.TeachersController.save()

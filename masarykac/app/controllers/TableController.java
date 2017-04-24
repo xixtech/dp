@@ -6,6 +6,8 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
 
+import java.util.List;
+
 /**
  * Created by Martin on 03.02.2017.
  */
@@ -72,6 +74,13 @@ public class TableController extends Controller {
         notAccess();
         return redirect(routes.Application.index());
 
+    }
+
+    public Result listCommittees() {
+        List<Committee> com = Committee.search();
+        List<CommitteeParticipants> compart = CommitteeParticipants.search();
+        List<Semesters> s = Semesters.search();
+        return ok(views.html.tables.tableCommittees.render(com,compart,s));
     }
 
 

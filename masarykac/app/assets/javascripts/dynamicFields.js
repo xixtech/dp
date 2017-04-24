@@ -143,8 +143,8 @@ function appendRowDiv() {
         var selectHTML = "";
         selectHTML = "<div class='row'><div class='col-md-10'>";
         selectHTML += "<div class='col-md-2'><input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeks(" + weeksCount + ");'/> </div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek" + weeksCount + "' value='" + num + "' onkeypress='return isNumberKey(event)'/></div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear" + weeksCount + "' value='" + 2017 + "' onkeypress='return isNumberKey(event)'/></div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek" + weeksCount + "' value='" + num + "' onkeypress='return isNumberKey(event)' required/></div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear" + weeksCount + "' value='" + 2017 + "' onkeypress='return isNumberKey(event)' required/></div>";
         selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
         selectHTML += "</div></div></br>";
         newDiv.innerHTML = selectHTML;
@@ -204,7 +204,7 @@ function createCellscheduleWeek(cell, text, style) {
     var div = document.createElement('tr'), // create DIV element
         txt = document.createTextNode(text); // create text node
     var selectHTML = "";
-    selectHTML = "<input type='text' class='form-control' name='scheduleWeek' value='" + text + "' onkeypress='return isNumberKey(event)'>";
+    selectHTML = "<input type='text' class='form-control' name='scheduleWeek' value='" + text + "' onkeypress='return isNumberKey(event)' required>";
     div.innerHTML = selectHTML;
     // append text node to the DIV
     // set DIV class attribute
@@ -216,7 +216,7 @@ function createCellscheduleYear(cell, text, style) {
     var div = document.createElement('tr'), // create DIV element
         txt = document.createTextNode(text); // create text node
     var selectHTML = "";
-    selectHTML = "<input type='text' class='form-control' name='scheduleYear' value='" + text + "' onkeypress='return isNumberKey(event)'>";
+    selectHTML = "<input type='text' class='form-control' name='scheduleYear' value='" + text + "' onkeypress='return isNumberKey(event)' required>";
     div.innerHTML = selectHTML;
     // append text node to the DIV
     // set DIV class attribute
@@ -256,10 +256,10 @@ function addPublicationParticipant() {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' placeholder='Fakulta' name='faculty'> </div>";
-    selectHTML += "<div class='col-md-2'><input type='text' class='form-control' onkeyup='handleChange(this);' onkeypress='return isNumberKey(event)' placeholder='Pořadí' name='orderInPublication'> </div>";
-    selectHTML += "<div class='col-md-3'><input type='text' class='form-control' placeholder='Oddělení' name='department'> </div>";
-    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share' placeholder='Podíl' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)'> </div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idnt + ");'/></div></div></br>";
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' placeholder='Fakulta' name='faculty' required> </div>";
+    selectHTML += "<div class='col-md-2'><input type='text' class='form-control' onkeyup='handleChange(this);' onkeypress='return isNumberKey(event)' placeholder='Pořadí' name='orderInPublication' required> </div>";
+    selectHTML += "<div class='col-md-3'><input type='text' class='form-control' placeholder='Oddělení' name='department' required> </div>";
+    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share' placeholder='Podíl' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idnt + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('publpart').appendChild(newDiv);
     pocitadloPublicationParticipant++;
@@ -285,7 +285,7 @@ function addCommitteeParticipant() {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' placeholder='Pozice v komisi' name='roleInCommittee'> </div>";
+    selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' placeholder='Pozice v komisi' name='roleInCommittee' required> </div>";
     selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idCommittee + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('committeepart').appendChild(newDiv);
@@ -349,7 +349,7 @@ function addStudyPlan(divName) {
         selectHTML += "<option value='" + outsemesters[i][0] + "'>" + outsemesters[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue' onkeyup='handleChange(this);' onkeypress='return isNumberKey(event)'> </div>";
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue' onkeyup='handleChange(this);' onkeypress='return isNumberKey(event)' required> </div>";
     selectHTML += "<div class='col-md-2'><select class='form-control' name='studyGroups.id'>";
     for (i = 0; i < outstudyGroups.length; i = i + 1) {
         selectHTML += "<option value='" + outstudyGroups[i][0] + "'>" + outstudyGroups[i][1] + "</option>";
@@ -389,10 +389,10 @@ function addPokusRadek(divName) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' name='faculty'> </div>";
-    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' name='orderInPublication'> </div>";
-    selectHTML += "<div class='col-md-3'><input type='text' class='form-control' name='department'> </div>";
-    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share' onkeypress='return isDecimalNumberKey(event)'> </div>";
+    selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' name='faculty' required> </div>";
+    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' name='orderInPublication' required> </div>";
+    selectHTML += "<div class='col-md-3'><input type='text' class='form-control' name='department' required> </div>";
+    selectHTML += "<div class='col-md-1'><input type='text' class='form-control' name='share' onkeypress='return isDecimalNumberKey(event)' required> </div>";
     selectHTML += "<div class='col-md-1'><input type='button' class='btn btn' value='Smazat' onclick='del(" + ident + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
@@ -432,7 +432,7 @@ function addCourseTeacher() {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-4'><input type='text' class='form-control' name='teachers.scale' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-2'><input type='button' class='btn btn' value='Př' onclick='addPokusRadek(" + pocitadlo + ");'/>  </div></div></br>";
+    selectHTML += "</select></div><div class='col-md-4'><input type='text' class='form-control' name='teachers.scale' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-2'><input type='button' class='btn btn' value='Př' onclick='addPokusRadek(" + pocitadlo + ");'/>  </div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('radky').appendChild(newDiv);
 
@@ -459,7 +459,7 @@ function addCourseTeacher1() {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-5'><input type='text' class='form-control' name='teachers.scale' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + pocitadlo + ");'/></div></div> </br>";
+    selectHTML += "</select></div><div class='col-md-5'><input type='text' class='form-control' name='teachers.scale' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + pocitadlo + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('radky').appendChild(newDiv);
 
@@ -487,7 +487,7 @@ function addCourseTeacherWeeks(divName) {
     for (i = 0; i < out.length; i = i + 1) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
     }
-    selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' name='tvalue" + divName + "" + weeksTeacher + "' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)'></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='btn btn-outline btn-danger' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
+    selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' name='tvalue" + divName + "" + weeksTeacher + "' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='btn btn-outline btn-danger' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
 

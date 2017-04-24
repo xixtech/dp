@@ -27,7 +27,6 @@ public class Person extends Model {
     @Formats.NonEmpty
     public double salary;
 
-
     public String jobTitle;
 
     @OneToOne(cascade = CascadeType.ALL)
