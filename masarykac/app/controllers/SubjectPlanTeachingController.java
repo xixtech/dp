@@ -550,15 +550,18 @@ public class SubjectPlanTeachingController extends Controller {
 
 
         Courses c = null;
-        Long[][] teachersID = new Long[uchodnota.length][2];
+        HashMap<String, Long> teachersFromRows = new HashMap<String, Long>();
         for (int i = 0; i < course.size(); i++) {
             c = new Courses(course.get(i), numberOfStudents.get(i), subjects, Semesters.findById(Long.parseLong(semesters.get(0))));
             c.save();
 
             for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()) {
+
                 Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue());
                 t.save();
-
+                if(!teachersFromRows.containsKey(entry.getKey())){
+                    teachersFromRows.put(entry.getKey(),t.getId());
+                }
             }
         }
 
@@ -577,7 +580,11 @@ public class SubjectPlanTeachingController extends Controller {
 
         for (int k = 0; k < p.length; k++) {
             if (scheduleInW.containsKey(p[k][1])) {
-                TeachersInWeeks tiw = new TeachersInWeeks(Teachers.findById(Long.parseLong(p[k][3])), ScheduleInWeeks.findById(scheduleInW.get(p[k][1])), Double.parseDouble(p[k][5].replace(",", ".")));
+                long t=0;
+
+                    t=teachersFromRows.get(p[k][3]);
+
+                TeachersInWeeks tiw = new TeachersInWeeks(Teachers.findById(t), ScheduleInWeeks.findById(scheduleInW.get(p[k][1])), Double.parseDouble(p[k][5].replace(",", ".")));
                 tiw.save();
             }
         }

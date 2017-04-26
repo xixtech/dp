@@ -83,6 +83,22 @@ public class TableController extends Controller {
         return ok(views.html.tables.tableCommittees.render(com,compart,s));
     }
 
+    public Result listPublications() {
+        List<Publications> pub = Publications.search();
+        List<PublicationsParticipants> pubpart = PublicationsParticipants.search();
+        List<Semesters> s = Semesters.search();
+        return ok(views.html.tables.tablePublications.render(pub,pubpart,s));
+    }
+
+    public Result listTeachersInWeeks() {
+        List<TeachersInWeeks> tiw = TeachersInWeeks.search();
+        List<ScheduleInWeeks> siw = ScheduleInWeeks.search();
+        List<Semesters> s = Semesters.search();
+        List<Courses> c = Courses.search();
+        List<Teachers> t = Teachers.search();
+        return ok(views.html.tables.tableTeachersInWeeks.render(s,tiw,siw,c,t));
+    }
+
 
     public static void notAccess() {
         flash("success", "Pro tuto činnost nemáte přístup!");
