@@ -116,19 +116,25 @@
                                     }
                                     </td>
                                     <td class="center">
-
-                                        @member.isCredit
-
+                                    @if(member.isCredit == true) {
+                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                    } else {
+                                        <input type="checkbox"  onclick="return false;">
+                                        }
                                     </td>
                                     <td class="center">
-
-                                        @member.isExam
-
+                                    @if(member.isExam == true) {
+                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                    } else {
+                                        <input type="checkbox"  onclick="return false;">
+                                        }
                                     </td>
                                     <td class="center">
-
-                                        @member.isClassifiedCredit
-
+                                    @if(member.isClassifiedCredit == true) {
+                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                    } else {
+                                        <input type="checkbox"  onclick="return false;">
+                                        }
                                     </td>
                                     <td class="center">
                                     @if(member.getDepartment == null) {
@@ -138,13 +144,18 @@
                                     }
                                     </td>
                                     <td class="center">
-
-                                        @member.isFormPresentation
-
+                                    @if(member.isFormPresentation == true) {
+                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                    } else {
+                                        <input type="checkbox"  onclick="return false;">
+                                        }
                                     </td>
                                     <td class="center">
-
-                                        @member.isFormCombined
+                                    @if(member.isFormCombined == true) {
+                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                    } else {
+                                        <input type="checkbox"  onclick="return false;">
+                                        }
 
                                     </td>
                                 </tr>

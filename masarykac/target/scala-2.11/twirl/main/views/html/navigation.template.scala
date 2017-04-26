@@ -76,7 +76,7 @@ Seq[Any](format.raw/*1.4*/("""
 object navigation extends navigation_Scope0.navigation
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 23 18:22:08 CEST 2017
+                  DATE: Wed Apr 26 19:37:07 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/navigation.scala.html
                   HASH: 4e41e887092aaf51022b779de7c9ecd130026905
                   MATRIX: 748->1|844->3|875->8|1532->638|1547->644|1602->678|1789->838|1804->844|1846->865|2031->1023|2061->1032|2097->1041

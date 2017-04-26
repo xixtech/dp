@@ -216,6 +216,17 @@ public class Employees extends Model {
         return options;
     }
 
+    public static Map<String, Long> employeesIds() {
+        List<Employees> subjectSets = Employees.find.all();
+        LinkedHashMap<String, Long> options = new LinkedHashMap<String, Long>();
+        for (Employees set : subjectSets) {
+            if (set.getMember().isActive()) {
+                options.put(set.id.toString(), set.getId());
+            }
+        }
+        return options;
+    }
+
     public static String[] getJS1Key() {
         String[] arr1 = new String[options().size()];
         Set entries = options().entrySet();

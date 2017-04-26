@@ -85,11 +85,20 @@ public class Teachers extends Model {
         return find.where().eq("id", id).findUnique();
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<Teachers> subjectSets = Teachers.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Teachers set: subjectSets) {
-            options.put(set.id.toString(), set.employees.getSurname().toString()+" "+set.employees.getFirstName().toString());
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Teachers set : subjectSets) {
+            options.put(set.id.toString(), set.employees.getSurname().toString() + " " + set.employees.getFirstName().toString());
+        }
+        return options;
+    }
+
+    public static Map<String, Long> teachersIds() {
+        List<Teachers> subjectSets = Teachers.find.all();
+        LinkedHashMap<String, Long> options = new LinkedHashMap<String, Long>();
+        for (Teachers set : subjectSets) {
+            options.put(set.id.toString(), set.getEmployees().getId());
         }
         return options;
     }
