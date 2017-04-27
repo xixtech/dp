@@ -16,6 +16,7 @@
                         <a href="@routes.StatisticController.index()">Zobrazit DCPS</a>
 
                         <a href="@routes.EmployeesController.info(session().get("email"))">Info</a>
+                        <a href="@routes.StatisticController.listEmployeerActvitiy(session().get("email"))">Můj souhrn aktivity v semestrech</a>
 
                     </li>
                 </ul>
@@ -26,7 +27,18 @@
             @if(session().get("role").equals("director")) {
                 <a href="#"><i class="fa fa-table fa-fw"></i>Seznamy<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-
+                    @if(session().get("role").equals("director")) {
+                        <li>
+                            <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToPersons()'><i class="fa fa-table fa-fw"></i>
+                                Výuka dle osob</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director")) {
+                        <li>
+                            <a href='@routes.StatisticController.listEmployeesActvitiy()'><i class="fa fa-table fa-fw"></i>
+                                Souhrn výuky dle osob v semestrech</a>
+                        </li>
+                    }
                     @if(session().get("role").equals("director")) {
                         <li>
                             <a href='@routes.TableController.listPerson()'><i class="fa fa-table fa-fw"></i>

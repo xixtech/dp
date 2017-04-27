@@ -57,7 +57,7 @@ public class TeachersController extends Controller {
         }
 
 
-        Teachers t=new Teachers(Courses.findById(courseId),Employees.findById(employeesId),(int)val);
+        Teachers t=new Teachers(Courses.findById(courseId),Employees.findById(employeesId),(int)val,0.0);
         t.save();
         return redirect(routes.Application.index());
     }

@@ -18,33 +18,43 @@ public class PersonalStatisticController extends Controller {
 
     @Inject
     private FormFactory formFactory;
+
     /**
      * přesměrování na registrační formulář
      *
      * @return
      */
     public Result index() {
-        List<Employees> e=Employees.search();
-        List<Teachers> t=Teachers.search();
-        List<OrganizationalUnitsParticipants> oj=OrganizationalUnitsParticipants.search();
-        List<Courses> c=Courses.search();
-        List<Subjects> s=Subjects.searchAAA();
-        List<Courses> caaa=Courses.searchAAA();
-        List<Courses> caab=Courses.searchAAB();
-        List<Courses> cb=Courses.searchCB();
-        List<Semesters> sem=Semesters.search();
-        return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj,e,c,s,t,caaa,caab,cb,sem));
+        List<Employees> e = Employees.search();
+        List<Teachers> t = Teachers.search();
+        List<OrganizationalUnitsParticipants> oj = OrganizationalUnitsParticipants.search();
+        List<Courses> c = Courses.search();
+        List<Subjects> s = Subjects.searchAAA();
+        List<Courses> caaa = Courses.searchAAA();
+        List<Courses> caab = Courses.searchAAB();
+        List<Courses> cb = Courses.searchCB();
+        List<Semesters> sem = Semesters.search();
+        return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj, e, c, s, t, caaa, caab, cb, sem));
+    }
+
+    public Result listTableTeachingAccordingToPersons() {
+        List<Employees> empl = Employees.find.all();
+        List<Teachers> teachers = Teachers.find.all();
+        List<Courses> c = Courses.find.all();
+        List<Semesters> s = Semesters.search();
+        List<Schedule> schedules = Schedule.search();
+        List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
+        return ok(views.html.tables.tableTeachingAccordingToPersons.render(empl, c, teachers, s,schedules,scheduleInWeekses));
     }
 
     /**
      * uložení osoby, profilu a zákazníka z formuláře
      *
      * @return
-     *
      */
     public Result save() {
 
-            return redirect(routes.Application.index());
+        return redirect(routes.Application.index());
 
     }
 }

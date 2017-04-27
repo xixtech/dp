@@ -1,4 +1,10 @@
-[error] C:\Users\Martin\dp\masarykac\conf\routes:108: not enough arguments for method listEmployeerActvitiy: (x$1: Long)play.mvc.Result.
-[error] Unspecified value parameter x$1.
-[error] GET         /estat                               controllers.StatisticController.listEmployeerActvitiy()
-[error] one error found
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingAccordingToPersons.scala.html:102: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                                     @if(member.numberOfStudents == null) {
+[warn]                                                                                                 ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingAccordingToPersons.scala.html:148: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                                         @if(t.getScale == null) {
+[warn]                                                                                        ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingAccordingToPersons.scala.html:157: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                                     @if(t.getSummary == null) {
+[warn]                                                                                      ^
+[warn] three warnings found

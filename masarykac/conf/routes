@@ -104,9 +104,10 @@ GET         /days                                controllers.TableController.lis
 GET         /committees                          controllers.TableController.listCommittees()
 GET         /publications                        controllers.TableController.listPublications()
 GET         /tiw                                 controllers.TableController.listTeachersInWeeks()
-GET         /estat                               controllers.StatisticController.listEmployeesActvitiy()
-GET         /estat/info/:email                               controllers.StatisticController.listEmployeerActvitiy(email:String)
 
+GET         /estat                               controllers.StatisticController.listEmployeesActvitiy()
+GET         /estat/info/:email                   controllers.StatisticController.listEmployeerActvitiy(email:String)
+GET         /teaching                            controllers.PersonalStatisticController.listTableTeachingAccordingToPersons()
 
 GET         /teachers/add                        controllers.TeachersController.index()
 POST        /teachers/saved                      controllers.TeachersController.save()

@@ -8,9 +8,12 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import play.Logger;
+
+import static jdk.nashorn.internal.objects.NativeMath.round;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -430,9 +433,10 @@ public class SubjectPlanTeachingController extends Controller {
             }
 
         }
-        String[][] p = new String[tval.size()][7];
+        String[][] p = new String[tval.size()][8];
         List<String> usedIndexes = new ArrayList<>();
         HashMap<String, Double> numberOfTeachers = new HashMap<String, Double>();
+        HashMap<String, Double> numberOfSummaryTeachers = new HashMap<String, Double>();
         HashMap<String, Integer> numberOfTeachersInEveryWeek = new HashMap<String, Integer>();
         for (int i = 0; i < p.length; i++) {
             for (int j = i; j < pole.length; j++) {
@@ -464,6 +468,7 @@ public class SubjectPlanTeachingController extends Controller {
                         p[i][4] = pole[j][4];
                         p[i][5] = pole[j][4];
                         p[i][6] = pole[j][4];
+                        p[i][7] = pole[j][4];
                         usedIndexes.add(j + "");
                     }
                 } else {
@@ -507,6 +512,24 @@ public class SubjectPlanTeachingController extends Controller {
 
         }
 
+
+        for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()) {
+            String k = entry.getKey();
+            Double v = entry.getValue();
+
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+            Date dateFrom = simpleDateFormat.parse(scheduleFrom.get(0));
+            Date dateTo = simpleDateFormat.parse(scheduleTo.get(0));
+            long diff = dateTo.getTime() - dateFrom.getTime();
+            long to = ((dateTo.getTime()) / (60000));
+            long from = ((dateFrom.getTime()) / (60000));
+            double diffMinutes = to-from;
+            double vyuka = (diffMinutes) / 45.0;
+            double val = vyuka*v;
+            double valRounded=(double)Math.round(val * 10d) / 10d;
+            numberOfSummaryTeachers.put(k, valRounded);
+
+        }
 
         List<Integer> fieldsOfStudy = new ArrayList<>();
 
@@ -556,11 +579,11 @@ public class SubjectPlanTeachingController extends Controller {
             c.save();
 
             for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()) {
-
-                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue());
+                Double summary = numberOfSummaryTeachers.get(entry.getKey());
+                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue(), summary);
                 t.save();
-                if(!teachersFromRows.containsKey(entry.getKey())){
-                    teachersFromRows.put(entry.getKey(),t.getId());
+                if (!teachersFromRows.containsKey(entry.getKey())) {
+                    teachersFromRows.put(entry.getKey(), t.getId());
                 }
             }
         }
@@ -580,9 +603,9 @@ public class SubjectPlanTeachingController extends Controller {
 
         for (int k = 0; k < p.length; k++) {
             if (scheduleInW.containsKey(p[k][1])) {
-                long t=0;
+                long t = 0;
 
-                    t=teachersFromRows.get(p[k][3]);
+                t = teachersFromRows.get(p[k][3]);
 
                 TeachersInWeeks tiw = new TeachersInWeeks(Teachers.findById(t), ScheduleInWeeks.findById(scheduleInW.get(p[k][1])), Double.parseDouble(p[k][5].replace(",", ".")));
                 tiw.save();

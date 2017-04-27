@@ -1,4 +1,4 @@
-@(ePage: List[Employees], teached: HashMap[Long, HashMap[Long, Integer]], publications: Map[Long, Integer], finalWorks: Map[Long, Integer],semPage: List[Semesters])
+@(ePage: List[Employees], teached: HashMap[Long, HashMap[Long, Integer]], publications: HashMap[Long, HashMap[Long, Integer]], finalWorks: HashMap[Long, HashMap[Long, Integer]], semPage: List[Semesters])
 @import helper._
 @import scala.Predef; var x = 0
 @localStylesheets = {
@@ -73,23 +73,31 @@
                                                         }
                                                     }
                                                 }
-                                                @for((key, value) <- publications) {
-                                                    <tr>
-                                                    @if(e.getId == key) {
-                                                        <td class="center">
-                                                            Napsáno publikací: @value
-                                                        </td>
+                                                @for((key, map) <- publications) {
+                                                    @for((sem, value) <- map) {
+                                                        @if(s.getId == sem) {
+                                                            <tr>
+                                                            @if(e.getId == key) {
+                                                                <td class="center">
+                                                                    Napsáno publikací: @value
+                                                                </td>
+                                                            }
+                                                            </tr>
+                                                        }
                                                     }
-                                                    </tr>
                                                 }
-                                                @for((key, value) <- finalWorks) {
-                                                    <tr>
-                                                    @if(e.getId == key) {
-                                                        <td class="center">
-                                                            Účast na závěrečných prací: @value
-                                                        </td>
+                                                @for((key, map) <- finalWorks) {
+                                                    @for((sem, value) <- map) {
+                                                        @if(s.getId == sem) {
+                                                            <tr>
+                                                            @if(e.getId == key) {
+                                                                <td class="center">
+                                                                    Účast na závěrečných prací: @value
+                                                                </td>
+                                                            }
+                                                            </tr>
+                                                        }
                                                     }
-                                                    </tr>
                                                 }
                                             </table>
                                         </td>
