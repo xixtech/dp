@@ -80,22 +80,12 @@
                         <div class="col-md-30">
                             <div class="row">
                                 <div class="col-md-3">
-                                @inputText(
-                                    subjectForm("ident"),
-                                    '_label -> "Ident",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="ident">Ident*:</label>
+                                    <input type="text" id="ident" class="form-control" name="ident" required/>
                                 </div>
                                 <div class="col-md-3">
-                                @inputText(
-                                    subjectForm("hoursP"),
-                                    '_label -> "Počet hodin přednášek za týden",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="hoursP">Počet hodin přednášek za týden*:</label>
+                                    <input type="text" id="hoursP" class="form-control" name="hoursP" required/>
                                 </div>
                                 <div class="col-md-1">
                                 @checkbox(
@@ -128,22 +118,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                @inputText(
-                                    subjectForm("identOld"),
-                                    '_label -> "Ident_old",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="identOld">Ident old:</label>
+                                    <input type="text" id="identOld" class="form-control" name="identOld" required/>
                                 </div>
                                 <div class="col-md-3">
-                                @inputText(
-                                    subjectForm("hoursC"),
-                                    '_label -> "Počet hodin cvičení za týden",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="hoursC">Počet hodin cvičení za týden*:</label>
+                                    <input type="text" id="hoursC" class="form-control" name="hoursC" required/>
                                 </div>
                                 <div class="col-md-2">
                                 @checkbox(
@@ -166,52 +146,27 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                @inputText(
-                                    subjectForm("titleC"),
-                                    '_label -> "Název česky",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="titleC">Název česky*:</label>
+                                    <input type="text" id="titleC" class="form-control" name="titleC" required/>
                                 </div>
                                 <div class="col-md-3">
-                                @inputText(
-                                    subjectForm("credits"),
-                                    '_label -> "Počet kreditů",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="credits">Počet kreditů*:</label>
+                                    <input type="text" id="credits" class="form-control" name="credits" required/>
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                @inputText(
-                                    subjectForm("titleA"),
-                                    '_label -> "Název anglicky",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="titleA">Název anglicky*:</label>
+                                    <input type="text" id="titleA" class="form-control" name="titleA" required/>
                                 </div>
                                 <div class="col-md-3">
-                                @inputText(
-                                    subjectForm("hoursSemester"),
-                                    '_label -> "Počet hodin za semestr",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="hoursSemester">Počet hodin za semestr*:</label>
+                                    <input type="text" id="hoursSemester" class="form-control" name="hoursSemester" required/>
                                 </div>
                                 <div class="col-md-4">
-                                @inputText(
-                                    subjectForm("department"),
-                                    '_label -> "Oddělení",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="department">Oddělení*:</label>
+                                    <input type="text" id="department" class="form-control" name="department" required/>
                                 </div>
 
                             </div>
@@ -227,22 +182,12 @@
                                 )
                                 </div>
                                 <div class="col-md-3">
-                                @inputText(
-                                    coursesForm("course"),
-                                    '_label -> "Kurz",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> coursesForm.globalError
-                                )
+                                    <label for="course">Kurz*:</label>
+                                    <input type="text" id="course" class="form-control" name="course" required/>
                                 </div>
                                 <div class="col-md-4">
-                                @inputText(
-                                    coursesForm("numberOfStudents"),
-                                    '_label -> "Studentů",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> coursesForm.globalError
-                                )
+                                    <label for="numberOfStudents">Počet studentů*:</label>
+                                    <input type="text" id="numberOfStudents" class="form-control" name="numberOfStudents" onkeypress="return isNumberKey(event)" required/>
                                 </div>
                             </div>
 
@@ -258,31 +203,16 @@
                                 )
                                 </div>
                                 <div class="col-md-3">
-                                @inputText(
-                                    scheduleForm("scheduleFrom"),
-                                    '_label -> "Od",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> scheduleForm.globalError
-                                )
+                                    <label for="scheduleFrom">Od*:</label>
+                                    <input type="text" id="scheduleFrom" class="form-control" name="scheduleFrom" required/>
                                 </div>
                                 <div class="col-md-3">
-                                @inputText(
-                                    scheduleForm("scheduleTo"),
-                                    '_label -> "Do",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> scheduleForm.globalError
-                                )
+                                    <label for="scheduleTo">Do*:</label>
+                                    <input type="text" id="scheduleTo" class="form-control" name="scheduleTo" required/>
                                 </div>
                                 <div class="col-md-3">
-                                @inputText(
-                                    scheduleForm("classRoom"),
-                                    '_label -> "Učebna",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> scheduleForm.globalError
-                                )
+                                    <label for="classRoom">Učebna*:</label>
+                                    <input type="text" id="classRoom" class="form-control" name="classRoom" required/>
                                 </div>
                             </div>
 
@@ -363,7 +293,9 @@
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <input type="button" class="btn btn-default" value="Přidat týdny" onclick="appendRowDiv()" />
-
+                                                            <div class="row">
+                                                            </br>
+                                                            </div>
                                                             <div id="r"></div>
                                                         </div>
                                                     </div>

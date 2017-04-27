@@ -108,6 +108,7 @@ GET         /tiw                                 controllers.TableController.lis
 GET         /estat                               controllers.StatisticController.listEmployeesActvitiy()
 GET         /estat/info/:email                   controllers.StatisticController.listEmployeerActvitiy(email:String)
 GET         /teaching                            controllers.PersonalStatisticController.listTableTeachingAccordingToPersons()
+GET         /teaching/t/:email                   controllers.PersonalStatisticController.listTableTeachingAccordingToId(email:String)
 
 GET         /teachers/add                        controllers.TeachersController.index()
 POST        /teachers/saved                      controllers.TeachersController.save()

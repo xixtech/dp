@@ -8,6 +8,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,11 +35,25 @@ public class PersonalStatisticController extends Controller {
         List<Courses> caab = Courses.searchAAB();
         List<Courses> cb = Courses.searchCB();
         List<Semesters> sem = Semesters.search();
-        return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj, e, c, s, t, caaa, caab, cb, sem));
+        List<Schedule> schedules = Schedule.search();
+        List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
+        return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj, e, c, s, t, caaa, caab, cb, sem,schedules,scheduleInWeekses));
     }
 
     public Result listTableTeachingAccordingToPersons() {
         List<Employees> empl = Employees.find.all();
+        List<Teachers> teachers = Teachers.find.all();
+        List<Courses> c = Courses.find.all();
+        List<Semesters> s = Semesters.search();
+        List<Schedule> schedules = Schedule.search();
+        List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
+        return ok(views.html.tables.tableTeachingAccordingToPersons.render(empl, c, teachers, s,schedules,scheduleInWeekses));
+    }
+
+    public Result listTableTeachingAccordingToId(String email) {
+        Member m = Member.findByEmail(email);
+        List<Employees> empl = new ArrayList<>();
+        empl.add(Employees.findById(m.getEmployees().getId()));
         List<Teachers> teachers = Teachers.find.all();
         List<Courses> c = Courses.find.all();
         List<Semesters> s = Semesters.search();

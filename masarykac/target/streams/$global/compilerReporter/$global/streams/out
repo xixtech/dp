@@ -1,10 +1,9 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingAccordingToPersons.scala.html:102: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                                     @if(member.numberOfStudents == null) {
-[warn]                                                                                                 ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingAccordingToPersons.scala.html:148: comparing values of types Double and Null using `==' will always yield false
-[warn]                                                                         @if(t.getScale == null) {
-[warn]                                                                                        ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableTeachingAccordingToPersons.scala.html:157: comparing values of types Double and Null using `==' will always yield false
-[warn]                                                                     @if(t.getSummary == null) {
-[warn]                                                                                      ^
-[warn] three warnings found
+[error] C:\Users\Martin\dp\masarykac\app\controllers\PersonalStatisticController.java:55: method findById in class models.Employees cannot be applied to given types;
+[error]   required: long
+[error]   found: no arguments
+[error]   reason: actual and formal argument lists differ in length
+[error] Employees.findById
+[error] C:\Users\Martin\dp\masarykac\app\controllers\PersonalStatisticController.java:61: cannot find symbol
+[error]   symbol:   class tableTeachingAccordingToId
+[error]   location: package views.html.tables
+[error] views.html.tables.tableTeachingAccordingToId
