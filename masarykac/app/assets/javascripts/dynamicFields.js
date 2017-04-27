@@ -568,6 +568,13 @@ function isNumberKey(evt) {
     return true;
 }
 
+function isDateKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode > 31 && ((charCode < 48 || charCode > 58)))
+        return false;
+    return true;
+}
+
 function isDecimalNumberKey(evt) {
     var charCode = (evt.which) ? evt.which : event.keyCode;
     if (!((charCode > 47 && charCode <= 57) || ( charCode == 8) || (charCode == 44) || ( charCode == 46) || ( charCode === 0) || (charCode == 127)))

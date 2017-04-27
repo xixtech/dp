@@ -2,105 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c2beb26-3c63-43aa-8b60-e106e0ae02db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseApplication.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseCharts.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseCharts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseLogin.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseLogin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReversePages.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReversePages.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReversePrintController.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReversePrintController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseTableController.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseTableController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseUiElements.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseUiElements.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseApplication.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseCharts.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseCharts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseLogin.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseLogin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReversePages.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReversePages.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReversePrintController.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReversePrintController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseTableController.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseTableController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseUiElements.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseUiElements.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$documentation$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$documentation$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_Application_dashboard0_invoker$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_Application_dashboard0_invoker$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_Application_pdf1_invoker$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_Application_pdf1_invoker$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$10$$anonfun$apply$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$10$$anonfun$apply$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$11$$anonfun$apply$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$12$$anonfun$apply$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$14$$anonfun$apply$14.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$14$$anonfun$apply$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$14.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$15$$anonfun$apply$15.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$15$$anonfun$apply$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$15.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$16$$anonfun$apply$16.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$16$$anonfun$apply$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$16.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$17$$anonfun$apply$17.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$17$$anonfun$apply$17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$17.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$18$$anonfun$apply$18.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$18$$anonfun$apply$18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$18.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$19$$anonfun$apply$19.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$19$$anonfun$apply$19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$19.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$20$$anonfun$apply$20.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$20$$anonfun$apply$20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$20.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$21$$anonfun$apply$21.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$21$$anonfun$apply$21.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$21.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$21.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$22$$anonfun$apply$22.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$22$$anonfun$apply$22.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$22.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$22.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$23$$anonfun$apply$23.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$23$$anonfun$apply$23.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$23.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$23.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$24$$anonfun$apply$24.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$24$$anonfun$apply$24.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$24.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$24.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$25$$anonfun$apply$25.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$25.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$25.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$4$$anonfun$apply$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$5$$anonfun$apply$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$5$$anonfun$apply$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$6$$anonfun$apply$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$6$$anonfun$apply$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$7$$anonfun$apply$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$7$$anonfun$apply$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$8$$anonfun$apply$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$8$$anonfun$apply$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$9$$anonfun$apply$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$9$$anonfun$apply$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar$$anonfun$f$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar$$anonfun$f$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/op-cache" afterPath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/op-cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/connections/master.log" afterPath="$PROJECT_DIR$/.sbtserver/connections/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/master.log" afterPath="$PROJECT_DIR$/.sbtserver/master.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/previous.log" afterPath="$PROJECT_DIR$/.sbtserver/previous.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PersonalStatisticController.java" afterPath="$PROJECT_DIR$/app/controllers/PersonalStatisticController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" afterPath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sidebar.scala.html" afterPath="$PROJECT_DIR$/app/views/sidebar.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPersons.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPersons.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableTeachingDepartmentEmployee.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachingDepartmentEmployee.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/.sbtserver" afterPath="$PROJECT_DIR$/project/.sbtserver" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/routes.java" afterPath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/routes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/routes/main/router/Routes.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/routes/main/router/Routes.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/routes/main/router/RoutesPrefix.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/routes/main/router/RoutesPrefix.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/sidebar.template.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/sidebar.template.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" />
     </list>
     <ignored path="masarykac.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -176,8 +82,8 @@
       <file leaf-file-name="registerSubjectPlanTeaching.scala.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="189" column="161" selection-start-line="189" selection-start-column="161" selection-end-line="189" selection-end-column="161" />
+            <state relative-caret-position="441">
+              <caret line="130" column="105" selection-start-line="130" selection-start-column="105" selection-end-line="130" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -186,8 +92,8 @@
       <file leaf-file-name="dynamicFields.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="351" column="185" selection-start-line="351" selection-start-column="147" selection-end-line="351" selection-end-column="185" />
+            <state relative-caret-position="521">
+              <caret line="572" column="57" selection-start-line="572" selection-start-column="57" selection-end-line="572" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -324,7 +230,6 @@
         <option value="$PROJECT_DIR$/app/models/CommitteeParticipants.java" />
         <option value="$PROJECT_DIR$/app/controllers/CommitteeController.java" />
         <option value="$PROJECT_DIR$/app/models/Person.java" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
         <option value="$PROJECT_DIR$/app/views/tables/tableCommittees.scala.html" />
         <option value="$PROJECT_DIR$/app/views/tables/tablePublications.scala.html" />
         <option value="$PROJECT_DIR$/app/views/tables/tableStudyPlans.scala.html" />
@@ -349,6 +254,7 @@
         <option value="$PROJECT_DIR$/app/controllers/PersonalStatisticController.java" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/views/sidebar.scala.html" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
         <option value="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
       </list>
     </option>
@@ -1345,14 +1251,7 @@
       <workItem from="1493127785096" duration="7012000" />
       <workItem from="1493192734710" duration="13693000" />
       <workItem from="1493275979827" duration="13603000" />
-      <workItem from="1493298070436" duration="6101000" />
-    </task>
-    <task id="LOCAL-00044" summary="26_03&#10;">
-      <created>1490551525213</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1490551525213</updated>
+      <workItem from="1493298070436" duration="9494000" />
     </task>
     <task id="LOCAL-00045" summary="27_03">
       <created>1490606744901</created>
@@ -1690,11 +1589,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493289447696</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="27_04">
+      <created>1493313577554</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1493313577555</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="690618000" />
+    <option name="totallyTimeSpent" value="694011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -2294,16 +2200,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="351" column="185" selection-start-line="351" selection-start-column="147" selection-end-line="351" selection-end-column="185" />
+        <state relative-caret-position="521">
+          <caret line="572" column="57" selection-start-line="572" selection-start-column="57" selection-end-line="572" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="189" column="161" selection-start-line="189" selection-start-column="161" selection-end-line="189" selection-end-column="161" />
+        <state relative-caret-position="441">
+          <caret line="130" column="105" selection-start-line="130" selection-start-column="105" selection-end-line="130" selection-end-column="105" />
           <folding />
         </state>
       </provider>
