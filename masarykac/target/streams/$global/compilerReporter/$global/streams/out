@@ -1,10 +1,10 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:114: comparing values of types Int and Null using `==' will always yield false
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP.scala.html:110: comparing values of types Int and Null using `==' will always yield false
 [warn]                                             @if(member.getSubjects.getHoursP == null) {
 [warn]                                                                              ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:121: comparing values of types Int and Null using `==' will always yield false
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP.scala.html:117: comparing values of types Int and Null using `==' will always yield false
 [warn]                                             @if(member.getSubjects.getHoursC == null) {
 [warn]                                                                              ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:128: comparing values of types Int and Null using `==' will always yield false
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP.scala.html:124: comparing values of types Int and Null using `==' will always yield false
 [warn]                                             @if(member.getSubjects.getCredits == null) {
 [warn]                                                                               ^
 [warn] three warnings found

@@ -1,6 +1,6 @@
-@(spPage: List[StudyPlans], fPage: List[FieldsOfStudy], sbjPage: List[Subjects],semPage: List[Semesters],cPage: List[Courses],tPage: List[Teachers])
+@(spPage: List[StudyPlans], fPage: List[FieldsOfStudy], sbjPage: List[Subjects], semPage: List[Semesters], cPage: List[Courses], tPage: List[Teachers])
 @import helper._
-@import scala.Predef; var x = 0;var y=0;
+@import scala.Predef; var x = 0;var y = 0;
 @localStylesheets = {
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
 }
@@ -47,7 +47,7 @@
                                 <div class="panel-heading">
                                     <p>Studijní plán pro studenty přijaté ke studiu v @sp.getSemesters.getSemesterValue</p>
                                     <p>@f.getFieldOfStudyV (@f.getFieldOfStudy)</p>
-                                    @(y=y+1)
+                                    @(y = y + 1)
                                 </div>
                             }
                             <div class="col-lg-12">
@@ -64,37 +64,36 @@
                                                 <div class="col-md-8">
                                                 @sp.getStudyGroups.getStudyGroupsNote
                                                 </div>
-
                                                 @(x = sp.getSemesterValue)
                                             </div>
-
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    Kód
+                                                    <p>&nbsp</p>
+                                                    <p>Kód</p>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    Název
+                                                    <p>&nbsp</p>
+                                                    <p>Název</p>
                                                 </div>
                                                 <div class="col-md-1">
-                                                    Př.
+                                                    <p>&nbsp</p>
+                                                    <p>Př.</p>
                                                 </div>
                                                 <div class="col-md-1">
-                                                    Cv.
+                                                    <p>&nbsp</p>
+                                                    <p>Cv.</p>
                                                 </div>
                                                 <div class="col-md-1">
-                                                    Kr.
+                                                    <p>&nbsp</p>
+                                                    <p>Kr.</p>
                                                 </div>
                                                 <div class="col-md-1">
-                                                    Z
+                                                    <p>&nbsp</p>
+                                                    <p>&nbspZ&nbsp&nbspZk&nbsp&nbspKZ</p>
                                                 </div>
                                                 <div class="col-md-1">
-                                                    Zk
-                                                </div>
-                                                <div class="col-md-1">
-                                                    KZ
-                                                </div>
-                                                <div class="col-md-1">
-                                                    Učí
+                                                    <p>Doporuč. sem.</p>
+                                                    <p>&nbsp1.&nbsp2.&nbsp3.&nbsp4.&nbsp5.&nbsp6.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -139,38 +138,53 @@
                                             }
                                             </div>
                                             <div class="col-md-1">
-                                            @if(member.getSubjects.isCredit == true) {
-                                                <input type="checkbox" checked="checked" onclick="return false;">
-                                            } else {
-                                                <input type="checkbox"  onclick="return false;">
-                                                }
-                                            </div>
-                                            <div class="col-md-1">
-                                            @if(member.getSubjects.isExam == true) {
-                                                <input type="checkbox" checked="checked" onclick="return false;">
-                                            } else {
-                                                <input type="checkbox"  onclick="return false;">
-                                                }
-                                            </div>
-                                            <div class="col-md-1">
-                                            @if(member.getSubjects.isClassifiedCredit == true) {
-                                                <input type="checkbox" checked="checked" onclick="return false;">
-                                            } else {
-                                                <input type="checkbox"  onclick="return false;">
-                                                }
-                                            </div>
-                                            <div class="col-md-1">
-                                                <table>
-                                                @for(t <- tPage) {
-                                                    @if(t.getCourses.getId == member.getId) {
-                                                            <tr>
-                                                                <td class="center">
-                                                                    @t.getEmployees.getSurname
-                                                                </td>
-                                                            </tr>
+                                                @if(member.getSubjects.isCredit == true) {
+                                                    <input type="checkbox" checked="checked" onclick="return false;">
+                                                } else {
+                                                    <input type="checkbox" onclick="return false;">
+                                                }&nbsp
+                                                @if(member.getSubjects.isExam == true) {
+                                                    <input type="checkbox" checked="checked" onclick="return false;">
+                                                } else {
+                                                    <input type="checkbox" onclick="return false;">
+                                                }&nbsp
+                                                @if(member.getSubjects.isClassifiedCredit == true) {
+                                                    <input type="checkbox" checked="checked" onclick="return false;">
+                                                } else {
+                                                    <input type="checkbox" onclick="return false;">
                                                     }
+                                            </div>
+                                            <div class="col-md-1">
+                                                @if(sp.getSemesterValue == 1) {
+                                                    <input type="checkbox" checked="checked" onclick="return false;">
+                                                } else {
+                                                    <input type="checkbox" onclick="return false;">
                                                 }
-                                                    </table>
+                                                @if(sp.getSemesterValue == 2) {
+                                                    <input type="checkbox" checked="checked" onclick="return false;">
+                                                } else {
+                                                    <input type="checkbox" onclick="return false;">
+                                                }
+                                                @if(sp.getSemesterValue == 3) {
+                                                    <input type="checkbox" checked="checked" onclick="return false;">
+                                                } else {
+                                                    <input type="checkbox" onclick="return false;">
+                                                }
+                                                @if(sp.getSemesterValue == 4) {
+                                                    <input type="checkbox" checked="checked" onclick="return false;">
+                                                } else {
+                                                    <input type="checkbox" onclick="return false;">
+                                                }
+                                                @if(sp.getSemesterValue == 5) {
+                                                    <input type="checkbox" checked="checked" onclick="return false;">
+                                                } else {
+                                                    <input type="checkbox" onclick="return false;">
+                                                }
+                                                @if(sp.getSemesterValue == 6) {
+                                                    <input type="checkbox" checked="checked" onclick="return false;">
+                                                } else {
+                                                    <input type="checkbox" onclick="return false;">
+                                                    }
                                             </div>
                                         }
                                     }
@@ -181,7 +195,5 @@
                 </div>
             </div>
         }
-
     </div>
-
 }
