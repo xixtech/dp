@@ -1,4 +1,4 @@
-@(spPage: List[StudyPlans], fPage: List[FieldsOfStudy], sbjPage: List[Subjects])
+@(spPage: List[StudyPlans], fPage: List[FieldsOfStudy], sbjPage: List[Subjects],semPage: List[Semesters],cPage: List[Courses],tPage: List[Teachers])
 @import helper._
 @import scala.Predef; var x = 0
 @localStylesheets = {
@@ -43,7 +43,6 @@
                     }
                     @(x = 0)
                     @for(sp <- spPage) {
-
                         @if(f.getId == sp.getFieldsOfStudy.getId) {
                             <div class="col-lg-12">
                                 <div class="panel panel-default">
@@ -88,68 +87,84 @@
                                                 <div class="col-md-1">
                                                     KZ
                                                 </div>
+                                                <div class="col-md-1">
+                                                    Učí
+                                                </div>
                                             </div>
                                         </div>
                                     }
                                         <!-- /.panel-heading -->
-                                    @for(member <- sbjPage) {
-                                        @if(sp.getSubjects.getId == member.getId) {
+                                    @for(member <- cPage) {
+                                        @if(sp.getSubjects.getId == member.getSubjects.getId) {
 
                                             <div class="col-md-2">
-                                            @if(member.getIdent == null) {
+                                            @if(member.getSubjects.getIdent == null) {
                                                 <em>-</em>
                                             } else {
-                                                @member.getIdent
+                                                @member.getSubjects.getIdent
                                             }
                                             </div>
                                             <div class="col-md-2">
-                                            @if(member.getTitleC == null) {
+                                            @if(member.getSubjects.getTitleC == null) {
                                                 <em>-</em>
                                             } else {
-                                                @member.getTitleC
+                                                @member.getSubjects.getTitleC
                                             }
                                             </div>
                                             <div class="col-md-1">
-                                            @if(member.getHoursP == 0) {
+                                            @if(member.getSubjects.getHoursP == null) {
                                                 <em>-</em>
                                             } else {
-                                                @member.getHoursP
+                                                @member.getSubjects.getHoursP
                                             }
                                             </div>
                                             <div class="col-md-1">
-                                            @if(member.getHoursC == 0) {
+                                            @if(member.getSubjects.getHoursC == null) {
                                                 <em>-</em>
                                             } else {
-                                                @member.getHoursC
+                                                @member.getSubjects.getHoursC
                                             }
                                             </div>
                                             <div class="col-md-1">
-                                            @if(member.getCredits == 0) {
+                                            @if(member.getSubjects.getCredits == null) {
                                                 <em>-</em>
                                             } else {
-                                                @member.getCredits
+                                                @member.getSubjects.getCredits
                                             }
                                             </div>
                                             <div class="col-md-1">
-                                            @if(member.isCredit == true) {
+                                            @if(member.getSubjects.isCredit == true) {
                                                 <input type="checkbox" checked="checked" onclick="return false;">
                                             } else {
                                                 <input type="checkbox"  onclick="return false;">
                                                 }
                                             </div>
                                             <div class="col-md-1">
-                                            @if(member.isExam == true) {
+                                            @if(member.getSubjects.isExam == true) {
                                                 <input type="checkbox" checked="checked" onclick="return false;">
                                             } else {
                                                 <input type="checkbox"  onclick="return false;">
                                                 }
                                             </div>
                                             <div class="col-md-1">
-                                            @if(member.isClassifiedCredit == true) {
+                                            @if(member.getSubjects.isClassifiedCredit == true) {
                                                 <input type="checkbox" checked="checked" onclick="return false;">
                                             } else {
                                                 <input type="checkbox"  onclick="return false;">
                                                 }
+                                            </div>
+                                            <div class="col-md-1">
+                                                <table>
+                                                @for(t <- tPage) {
+                                                    @if(t.getCourses.getId == member.getId) {
+                                                            <tr>
+                                                                <td class="center">
+                                                                    @t.getEmployees.getSurname
+                                                                </td>
+                                                            </tr>
+                                                    }
+                                                }
+                                                    </table>
                                             </div>
                                         }
                                     }

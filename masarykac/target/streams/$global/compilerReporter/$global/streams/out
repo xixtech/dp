@@ -1,5 +1,10 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\PersonalStatisticController.java:52: method render in class views.html.tables.tableTeachingAAA cannot be applied to given types;
-[error]   required: java.util.List<models.Courses>,java.util.List<models.Subjects>,java.util.List<models.Teachers>,java.util.List<models.Courses>,java.util.List<models.Semesters>,java.util.List<models.Schedule>,java.util.List<models.ScheduleInWeeks>
-[error]   found: java.util.List<models.Employees>,java.util.List<models.Courses>,java.util.List<models.Subjects>,java.util.List<models.Teachers>,java.util.List<models.Courses>,java.util.List<models.Semesters>,java.util.List<models.Schedule>,java.util.List<models.ScheduleInWeeks>
-[error]   reason: actual and formal argument lists differ in length
-[error] views.html.tables.tableTeachingAAA.render
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:114: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursP == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:121: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursC == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:128: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getCredits == null) {
+[warn]                                                                               ^
+[warn] three warnings found

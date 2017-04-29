@@ -31,10 +31,11 @@ public class StatisticController extends Controller {
         List<FieldsOfStudy> f = FieldsOfStudy.search();
         List<Subjects> s = Subjects.search();
         List<StudyGroups> sg = StudyGroups.search();
-        return ok(views.html.tables.tableDCPS.render(sp, f, s));
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.search();
+        List<Teachers> teachers = Teachers.find.all();
+        return ok(views.html.tables.tableDCPS.render(sp, f, s,sem,c,teachers));
     }
-
-
 
     public Result listEmployeesActvitiy() {
         List<Employees> empl = Employees.find.all();

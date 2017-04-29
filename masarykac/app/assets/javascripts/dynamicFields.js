@@ -349,7 +349,7 @@ function addStudyPlan(divName) {
         selectHTML += "<option value='" + outsemesters[i][0] + "'>" + outsemesters[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue' onkeyup='handleChange(this);' onkeypress='return isNumberKey(event)' required> </div>";
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue' onkeyup='sv(this);' onkeypress='return isNumberKey(event)' required> </div>";
     selectHTML += "<div class='col-md-2'><select class='form-control' name='studyGroups.id'>";
     for (i = 0; i < outstudyGroups.length; i = i + 1) {
         selectHTML += "<option value='" + outstudyGroups[i][0] + "'>" + outstudyGroups[i][1] + "</option>";
@@ -585,6 +585,11 @@ function isDecimalNumberKey(evt) {
 function handleChange(input) {
     if (input.value < 0) input.value = 0;
     if (input.value > 100) input.value = 100;
+}
+
+function sv(input) {
+    if (input.value < 0) input.value = 0;
+    if (input.value > 6) input.value = 6;
 }
 
 

@@ -537,6 +537,12 @@ public class SubjectPlanTeachingController extends Controller {
             fieldsOfStudy.add(Integer.parseInt(insId));
         }
 
+        List<String> semestersStudyGroups = new ArrayList<>();
+
+        for (String insId : formData.get("semesters.id")) {
+            semestersStudyGroups.add(insId);
+        }
+
         List<Integer> semesterValue = new ArrayList<>();
 
         for (String insId : formData.get("semesterValue")) {
@@ -565,9 +571,9 @@ public class SubjectPlanTeachingController extends Controller {
         }
 
         StudyPlans sp = null;
-        for (int i = 0; i < ident.size(); i++) {
-            sp = new StudyPlans(subjects, FieldsOfStudy.findById(fieldsOfStudy.get(0)), Semesters.findById(Long.parseLong(semesters.get(0))), semesterValue.get(0),
-                    StudyGroups.findById(studyGroups.get(0)), StudyGroups1.findById(studyGroups1.get(0)));
+        for (int i = 0; i < fieldsOfStudy.size(); i++) {
+            sp = new StudyPlans(subjects, FieldsOfStudy.findById(fieldsOfStudy.get(i)), Semesters.findById(Long.parseLong(semestersStudyGroups.get(i))), semesterValue.get(i),
+                    StudyGroups.findById(studyGroups.get(i)), StudyGroups1.findById(studyGroups1.get(i)));
             sp.save();
         }
 
