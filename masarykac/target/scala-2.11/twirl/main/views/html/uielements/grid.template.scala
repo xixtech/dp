@@ -352,7 +352,7 @@ Seq[Any](format.raw/*1.4*/("""
 object grid extends grid_Scope0.grid
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 26 19:37:10 CEST 2017
+                  DATE: Sat Apr 29 09:13:05 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/uielements/grid.scala.html
                   HASH: a8854b293b4a9f29affd58cb593e94262893772a
                   MATRIX: 747->1|843->3|870->5|883->11|922->13|953->18

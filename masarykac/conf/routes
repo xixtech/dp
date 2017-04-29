@@ -69,6 +69,10 @@ GET         /committee/add                       controllers.CommitteeController
 POST        /committee/saved                     controllers.CommitteeController.save()
 
 GET         /statistics                          controllers.PersonalStatisticController.index()
+GET         /statistics/aaa                      controllers.PersonalStatisticController.teachingAAA()
+GET         /statistics/aab                      controllers.PersonalStatisticController.teachingAAB()
+GET         /statistics/cb                       controllers.PersonalStatisticController.teachingCB()
+
 
 GET         /dcps                                controllers.StatisticController.index()
 

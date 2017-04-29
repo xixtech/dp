@@ -40,6 +40,34 @@ public class PersonalStatisticController extends Controller {
         return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj, e, c, s, t, caaa, caab, cb, sem,schedules,scheduleInWeekses));
     }
 
+    public Result teachingAAA() {
+        List<Teachers> t = Teachers.search();
+        List<Courses> c = Courses.search();
+        List<Courses> caaa = Courses.searchAAA();
+        List<Semesters> sem = Semesters.search();
+        List<Schedule> schedules = Schedule.search();
+        List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
+        return ok(views.html.tables.tableTeachingAAA.render(c, t, caaa, sem,schedules,scheduleInWeekses));
+    }
+    public Result teachingAAB() {
+        List<Teachers> t = Teachers.search();
+        List<Courses> c = Courses.search();
+        List<Courses> caab = Courses.searchAAB();
+        List<Semesters> sem = Semesters.search();
+        List<Schedule> schedules = Schedule.search();
+        List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
+        return ok(views.html.tables.tableTeachingAAB.render(c, t, caab, sem,schedules,scheduleInWeekses));
+    }
+    public Result teachingCB() {
+        List<Teachers> t = Teachers.search();
+        List<Courses> c = Courses.search();
+        List<Courses> cb = Courses.searchCB();
+        List<Semesters> sem = Semesters.search();
+        List<Schedule> schedules = Schedule.search();
+        List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
+        return ok(views.html.tables.tableTeachingCB.render(c, t, cb, sem,schedules,scheduleInWeekses));
+    }
+
     public Result listTableTeachingAccordingToPersons() {
         List<Employees> empl = Employees.find.all();
         List<Teachers> teachers = Teachers.find.all();

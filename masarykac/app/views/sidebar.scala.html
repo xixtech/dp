@@ -12,7 +12,11 @@
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Osobní údaje<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="@routes.PersonalStatisticController.index()">Zobrazit údaje</a>
+                        <a href="@routes.PersonalStatisticController.index()">Výuka dle oddělení a osob</a>
+                        <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToPersons()'>Výuka dle osob</a>
+                        <a href="@routes.PersonalStatisticController.teachingAAA()">Výuka AAA</a>
+                        <a href="@routes.PersonalStatisticController.teachingAAB()">Výuka AAB</a>
+                        <a href="@routes.PersonalStatisticController.teachingCB()">Výuka CB</a>
                         <a href="@routes.StatisticController.index()">Zobrazit DCPS</a>
 
                         <a href="@routes.EmployeesController.info(session().get("email"))">Info</a>

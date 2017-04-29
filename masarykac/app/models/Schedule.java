@@ -86,6 +86,21 @@ public class Schedule extends Model {
         this.ident = ident;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Days getDays() {
+        return days;
+    }
+
+    public void setDays(Days days) {
+        this.days = days;
+    }
 
     public Days getDay() {
         return days;

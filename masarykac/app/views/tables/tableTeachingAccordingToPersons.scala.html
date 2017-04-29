@@ -99,7 +99,7 @@
                                                                         }
                                                                         </td>
                                                                         <td class="center">
-                                                                        @if(member.numberOfStudents == null) {
+                                                                        @if(member.numberOfStudents == 0) {
                                                                             <em>-</em>
                                                                         } else {
                                                                             @member.numberOfStudents
@@ -145,7 +145,7 @@
                                                                         @x
                                                                     </td>
                                                                         <td class="center">
-                                                                        @if(t.getScale == null) {
+                                                                        @if(t.getScale == 0) {
                                                                             <em>-</em>
                                                                         } else {
                                                                             @(math.ceil(t.getScale * 100))
@@ -154,7 +154,7 @@
 
                                                                         </td>
                                                                         <td class="center">
-                                                                        @if(t.getSummary == null) {
+                                                                        @if(t.getSummary == 0) {
                                                                             <em>-</em>
                                                                         } else {
                                                                             @(t.getSummary)

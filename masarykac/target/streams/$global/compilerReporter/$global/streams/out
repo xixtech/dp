@@ -1,9 +1,5 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\PersonalStatisticController.java:55: method findById in class models.Employees cannot be applied to given types;
-[error]   required: long
-[error]   found: no arguments
+[error] C:\Users\Martin\dp\masarykac\app\controllers\PersonalStatisticController.java:52: method render in class views.html.tables.tableTeachingAAA cannot be applied to given types;
+[error]   required: java.util.List<models.Courses>,java.util.List<models.Subjects>,java.util.List<models.Teachers>,java.util.List<models.Courses>,java.util.List<models.Semesters>,java.util.List<models.Schedule>,java.util.List<models.ScheduleInWeeks>
+[error]   found: java.util.List<models.Employees>,java.util.List<models.Courses>,java.util.List<models.Subjects>,java.util.List<models.Teachers>,java.util.List<models.Courses>,java.util.List<models.Semesters>,java.util.List<models.Schedule>,java.util.List<models.ScheduleInWeeks>
 [error]   reason: actual and formal argument lists differ in length
-[error] Employees.findById
-[error] C:\Users\Martin\dp\masarykac\app\controllers\PersonalStatisticController.java:61: cannot find symbol
-[error]   symbol:   class tableTeachingAccordingToId
-[error]   location: package views.html.tables
-[error] views.html.tables.tableTeachingAccordingToId
+[error] views.html.tables.tableTeachingAAA.render
