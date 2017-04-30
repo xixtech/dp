@@ -1,7 +1,8 @@
-[error] C:\Users\Martin\dp\masarykac\app\views\formCourse.scala.html:101: not found: value scheduleForm
-[error]                                 '_label -> "Učebna",
-[error]       ^
-[error] C:\Users\Martin\dp\masarykac\app\views\formCourse.scala.html:107: not found: value scheduleForm
-[error]                         </div>
-[error]              ^
-[error] two errors found
+[error] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomStart.java:19: cannot find symbol
+[error]   symbol:   variable M105
+[error]   location: class controllers.ClassroomStart
+[error] M105
+[error] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomStart.java:20: cannot find symbol
+[error]   symbol:   variable M110
+[error]   location: class controllers.ClassroomStart
+[error] M110

@@ -3,8 +3,8 @@
  */
 var pocitadlo = 1;
 var pocitadlo1 = 0;
-var pocitadloPublicationParticipant=1;
-var pocitadloCommitteeParticipant=1;
+var pocitadloPublicationParticipant = 1;
+var pocitadloCommitteeParticipant = 1;
 var countStudyPlan = 1;
 var weeksCount = 101;
 var weeksTeacher = 1;
@@ -15,6 +15,11 @@ var fieldsOfStudyArray = {};
 var semestersArray = {};
 var studyGroupsArray = {};
 var studyGroups1Array = {};
+var teachersScaleGen = [];
+var teachersScaleGeneral = [];
+var teachersScaleGeneralLastIndex = 0;
+var xxoo = 0;
+
 
 $('body').on('click', 'input.deleteDep', function () {
     $(this).parents('tr').remove();
@@ -25,7 +30,7 @@ $(".showhr").click(function () {
     });
 });
 
-function export2Word(element,surname,name) {
+function export2Word(element, surname, name) {
     var html, link, blob, url, css;
     css = (
         '<style>' +
@@ -34,7 +39,7 @@ function export2Word(element,surname,name) {
         'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;}' +
         '</style>'
     );
-    var filename=surname+""+name;
+    var filename = surname + "" + name;
     html = element.innerHTML;
     blob = new Blob(['\ufeff', css + html], {
         type: 'application/msword'
@@ -52,7 +57,28 @@ function export2Word(element,surname,name) {
 function del(elem) {
     document.getElementById(elem).remove();
 }
+function delGeneralTeacher(elem) {
+    var pole = [];
+    var teachindex = 0;
+    pole.length = 0;
+    var p = 0;
 
+    for (var i = 0; i < teachersScaleGeneral.length; i++) {
+        if (teachersScaleGeneral[i] == elem) {
+            p = i;
+        } else {
+            pole[teachindex] = teachersScaleGeneral[i];
+            teachindex++;
+        }
+
+    }
+    teachersScaleGeneralLastIndex = teachindex;
+    teachersScaleGeneral.length = 0;
+
+    teachersScaleGeneral = pole;
+
+    document.getElementById(elem).remove();
+}
 
 function publicationArray(publPart) {
     publParticipantArray = {};
@@ -165,7 +191,7 @@ function appendRowDivByDefault() {
 
 function addCourseTeacherWeeksByDefault() {
     for (j = 101; j < weeksCount; j++) {
-        for (o = 0; o < 2; o++) {
+        for (o = 0; o < teachersScaleGeneral.length; o++) {
             var newDiv = document.createElement('div');
             newDiv.setAttribute("id", weeksTeacher);
             var ident = j + "" + weeksTeacher;
@@ -185,15 +211,18 @@ function addCourseTeacherWeeksByDefault() {
             for (i = 0; i < out.length; i = i + 1) {
                 selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
             }
-
-            selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' name='tvalue" + j + "" + weeksTeacher + "' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' value='"+20+"' required></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='btn btn-outline btn-danger' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
+            selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' id='tvalue" + j + "" + weeksTeacher + "' name='tvalue" + j + "" + weeksTeacher + "' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='btn btn-outline btn-danger' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
             newDiv.innerHTML = selectHTML;
 
             document.getElementById(j).appendChild(newDiv);
-            document.getElementById('tname' + j + "" + weeksTeacher).value=2;
+            document.getElementById('tname' + j + "" + weeksTeacher).value = document.getElementById('tc' + teachersScaleGeneral[o]).value;
+            document.getElementById('tvalue' + j + "" + weeksTeacher).value = document.getElementById('vc' + teachersScaleGeneral[o]).value;
+
             weeksTeacher++;
+
         }
     }
+
 }
 
 function appendRowDiv() {
@@ -213,7 +242,7 @@ function appendRowDiv() {
     }
     var count = 0;
     var num = 0;
-    var year=2017;
+    var year = 2017;
     if (value == 1) {
         count = 14;
         num = 1;
@@ -231,19 +260,19 @@ function appendRowDiv() {
         num = 1;
 
     }
-    num=48;
+    num = 48;
     var current = startDate;
     for (i = 0; i < count; i++) {
         var newDiv = document.createElement('div');
         newDiv.setAttribute("id", weeksCount);
 
-    if(num>52){
-        num=1;
-        if (value == 2) {
-            num = 2;
+        if (num > 52) {
+            num = 1;
+            if (value == 2) {
+                num = 2;
+            }
+            year++;
         }
-        year++;
-    }
 
         var selectHTML = "";
         selectHTML = "<div class='row'><div class='col-md-10'>";
@@ -559,15 +588,17 @@ function addCourseTeacher1() {
     }
 
     var selectHTML = "";
-    selectHTML = "<div class='row'><div class='col-md-6'><select class='form-control' name='teachers.id'>";
+    selectHTML = "<div class='row'><div class='col-md-5'><select class='form-control' id='tc" + pocitadlo + "' name='teachers.id'>";
     for (i = 0; i < out.length; i = i + 1) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-5'><input type='text' class='form-control' name='teachers.scale' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + pocitadlo + ");'/></div></div> </br>";
+    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' id='vc" + pocitadlo + "' name='teachers.scale' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='delGeneralTeacher(" + pocitadlo + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('radky').appendChild(newDiv);
-
+    document.getElementById('addToAllWeeks').style.visibility = 'visible';
+    teachersScaleGeneral[teachersScaleGeneralLastIndex] = pocitadlo;
+    teachersScaleGeneralLastIndex++;
     pocitadlo++;
 }
 

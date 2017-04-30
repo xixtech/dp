@@ -38,6 +38,7 @@
                 MyUserObject["k"] = "@Employees.getJS1Key()";
 
                 employeeArray(MyUserObject);
+                document.getElementById('addToAllWeeks').style.visibility='hidden';
             });
 
             $('.timepicker').timepicker({
@@ -297,8 +298,9 @@
 
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <input type="button" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacherWeeksByDefault();" />
+                                                    <input type="button" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
                                                     <div id="radky"></div>
+                                                    <input type="button" id="addToAllWeeks" class="btn btn-default" value="Přidat" onclick="addCourseTeacherWeeksByDefault()" />
                                                 </div>
                                             </br>
                                             </div>
