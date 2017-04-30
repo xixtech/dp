@@ -1,8 +1,2 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomStart.java:19: cannot find symbol
-[error]   symbol:   variable M105
-[error]   location: class controllers.ClassroomStart
-[error] M105
-[error] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomStart.java:20: cannot find symbol
-[error]   symbol:   variable M110
-[error]   location: class controllers.ClassroomStart
-[error] M110
+[warn] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomController.java:3: com.sun.org.apache.bcel.internal.util.ClassQueue is internal proprietary API and may be removed in a future release
+[warn] com.sun.org.apache.bcel.internal.util.ClassQueue

@@ -37,6 +37,12 @@
                 <ul class="nav nav-second-level">
                     @if(session().get("role").equals("director")) {
                         <li>
+                            <a href='@routes.TableController.listClassrooms()'><i class="fa fa-table fa-fw"></i>
+                                Místnosti</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director")) {
+                        <li>
                             <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToPersons()'><i class="fa fa-table fa-fw"></i>
                                 Výuka dle osob</a>
                         </li>
@@ -156,6 +162,11 @@
             @if(session().get("role").equals("director")) {
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Další stránky<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
+                    @if(session().get("role").equals("director")) {
+                        <li>
+                            <a href="@routes.ClassroomController.index()">Místnosti</a>
+                        </li>
+                    }
                     @if(session().get("role").equals("director")) {
                         <li>
                             <a href="@routes.Pages.blank">Blank Page</a>

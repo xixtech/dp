@@ -26,9 +26,12 @@ public class Classroom extends Model {
 
     public String classroomName;
 
+    public boolean active;
+
     public Classroom(int capacity, String classroomName) {
         this.capacity = capacity;
         this.classroomName = classroomName;
+        this.active=true;
     }
 
     public Long getId() {
@@ -55,6 +58,14 @@ public class Classroom extends Model {
         this.classroomName = classroomName;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public static Classroom findById(long id) {
         return find.where().eq("id",id).findUnique();
     }
@@ -63,7 +74,9 @@ public class Classroom extends Model {
         List<Classroom> subjectSets = Classroom.find.all();
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
         for(Classroom set: subjectSets) {
-            options.put(set.id.toString(), set.classroomName.toString()+" , max. kapacita: "+set.capacity);
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.classroomName.toString() + " , max. kapacita: " + set.capacity);
+            }
         }
         return options;
     }

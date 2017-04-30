@@ -15,10 +15,13 @@ var fieldsOfStudyArray = {};
 var semestersArray = {};
 var studyGroupsArray = {};
 var studyGroups1Array = {};
-var teachersScaleGen = [];
+
 var teachersScaleGeneral = [];
 var teachersScaleGeneralLastIndex = 0;
-var xxoo = 0;
+var weeksUsedGeneral = [];
+var weeksUsedGeneralLastIndex = 0;
+
+var weekStart=1;
 
 
 $('body').on('click', 'input.deleteDep', function () {
@@ -54,6 +57,11 @@ function export2Word(element, surname, name) {
     document.body.removeChild(link);
 }
 
+function setStartWeek() {
+    var startWeek=document.getElementById('startSemester');
+
+}
+
 function del(elem) {
     document.getElementById(elem).remove();
 }
@@ -70,7 +78,6 @@ function delGeneralTeacher(elem) {
             pole[teachindex] = teachersScaleGeneral[i];
             teachindex++;
         }
-
     }
     teachersScaleGeneralLastIndex = teachindex;
     teachersScaleGeneral.length = 0;
@@ -79,6 +86,28 @@ function delGeneralTeacher(elem) {
 
     document.getElementById(elem).remove();
 }
+function delWeekUsed(elem) {
+    var pole = [];
+    var weekindex = 0;
+    pole.length = 0;
+    var p = 0;
+
+    for (var i = 0; i < weeksUsedGeneral.length; i++) {
+        if (weeksUsedGeneral [i] == elem) {
+            p = i;
+        } else {
+            pole[weekindex] = weeksUsedGeneral [i];
+            weekindex++;
+        }
+
+    }
+    weeksUsedGeneralLastIndex = weekindex;
+    weeksUsedGeneral.length = 0;
+
+    weeksUsedGeneral = pole;
+    document.getElementById(elem).remove();
+}
+
 
 function publicationArray(publPart) {
     publParticipantArray = {};
@@ -188,7 +217,6 @@ function appendRowDivByDefault() {
     }
 }
 
-
 function addCourseTeacherWeeksByDefault() {
     for (j = 101; j < weeksCount; j++) {
         for (o = 0; o < teachersScaleGeneral.length; o++) {
@@ -211,7 +239,7 @@ function addCourseTeacherWeeksByDefault() {
             for (i = 0; i < out.length; i = i + 1) {
                 selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
             }
-            selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' id='tvalue" + j + "" + weeksTeacher + "' name='tvalue" + j + "" + weeksTeacher + "' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='btn btn-outline btn-danger' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
+            selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' id='tvalue" + j + "" + weeksTeacher + "' name='tvalue" + j + "" + weeksTeacher + "' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='btn btn-outline btn-danger' value='Smazat' onclick='delWeekUsed(" + ident + ");'/></div></div> </br>";
             newDiv.innerHTML = selectHTML;
 
             document.getElementById(j).appendChild(newDiv);
@@ -219,10 +247,10 @@ function addCourseTeacherWeeksByDefault() {
             document.getElementById('tvalue' + j + "" + weeksTeacher).value = document.getElementById('vc' + teachersScaleGeneral[o]).value;
 
             weeksTeacher++;
-
         }
     }
-
+    document.getElementById('addToAllWeeks').style.visibility = 'hidden';
+    document.getElementById('addCourseT').style.visibility = 'hidden';
 }
 
 function appendRowDiv() {
@@ -260,7 +288,7 @@ function appendRowDiv() {
         num = 1;
 
     }
-    num = 48;
+    num = weekStart;
     var current = startDate;
     for (i = 0; i < count; i++) {
         var newDiv = document.createElement('div');

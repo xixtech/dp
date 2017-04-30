@@ -7,6 +7,7 @@ create table classroom (
   id                            bigserial not null,
   capacity                      integer,
   classroom_name                varchar(255),
+  active                        boolean,
   constraint pk_classroom primary key (id)
 );
 

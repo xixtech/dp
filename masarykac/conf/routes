@@ -61,6 +61,12 @@ POST        /employee/delete                     controllers.EmployeesController
 GET         /subject/add                         controllers.SubjectController.index()
 POST        /subject/saved                       controllers.SubjectController.save()
 
+GET         /classroom/add                          controllers.ClassroomController.index()
+POST        /classroom/saved                        controllers.ClassroomController.save()
+GET         /classroom/edit/:id                controllers.ClassroomController.edit(id:Long)
+POST        /classroom/updated/                   controllers.ClassroomController.update(id:Long)
+POST        /classroom/delete                     controllers.ClassroomController.delete(id:Long)
+
 # Přidat předmět
 GET         /fields/add                          controllers.FieldOfStudyController.index()
 POST        /fields/saved                        controllers.FieldOfStudyController.save()
@@ -75,8 +81,8 @@ GET         /statistics/cb                       controllers.PersonalStatisticCo
 
 
 GET         /dcps                                controllers.StatisticController.index()
-GET         /sp                                controllers.StatisticController.studyPlansTable()
-GET         /spprint                                controllers.StatisticController.studyPlansTablePrint()
+GET         /sp                                  controllers.StatisticController.studyPlansTable()
+GET         /spprint                             controllers.StatisticController.studyPlansTablePrint()
 
 # Přidat předmět
 GET         /studygroups/add                     controllers.StudyGroupsController.index()
@@ -107,6 +113,7 @@ GET         /courses                             controllers.TableController.lis
 GET         /currentsemesters                    controllers.TableController.listCurrentSemesters()
 GET         /lcsuteos                            controllers.TableController.listCurrentSemestersUntilTheEndOfStudy()
 GET         /days                                controllers.TableController.listDays()
+GET         /classrooms                          controllers.TableController.listClassrooms()
 GET         /committees                          controllers.TableController.listCommittees()
 GET         /publications                        controllers.TableController.listPublications()
 GET         /tiw                                 controllers.TableController.listTeachersInWeeks()

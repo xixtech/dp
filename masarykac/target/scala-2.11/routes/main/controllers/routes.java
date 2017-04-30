@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sat Apr 29 15:26:39 CEST 2017
+// @DATE:Mon May 01 01:01:50 CEST 2017
 
 package controllers;
 
@@ -21,6 +21,7 @@ public class routes {
   public static final controllers.ReversePages Pages = new controllers.ReversePages(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseSemestersController SemestersController = new controllers.ReverseSemestersController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseTestController TestController = new controllers.ReverseTestController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseClassroomController ClassroomController = new controllers.ReverseClassroomController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseUiElements UiElements = new controllers.ReverseUiElements(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseVisitsController VisitsController = new controllers.ReverseVisitsController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseTableController TableController = new controllers.ReverseTableController(RoutesPrefix.byNamePrefix());
@@ -53,6 +54,7 @@ public class routes {
     public static final controllers.javascript.ReversePages Pages = new controllers.javascript.ReversePages(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseSemestersController SemestersController = new controllers.javascript.ReverseSemestersController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseTestController TestController = new controllers.javascript.ReverseTestController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseClassroomController ClassroomController = new controllers.javascript.ReverseClassroomController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseUiElements UiElements = new controllers.javascript.ReverseUiElements(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseVisitsController VisitsController = new controllers.javascript.ReverseVisitsController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseTableController TableController = new controllers.javascript.ReverseTableController(RoutesPrefix.byNamePrefix());

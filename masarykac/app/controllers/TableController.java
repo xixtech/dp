@@ -76,6 +76,15 @@ public class TableController extends Controller {
 
     }
 
+    public Result listClassrooms() {
+        if (Check.isDirector(Member.findByEmail(request().username()))) {
+            return ok(views.html.tables.tableClassroom.render(Classroom.search()));
+        }
+        notAccess();
+        return redirect(routes.Application.index());
+
+    }
+
     public Result listCommittees() {
         List<Committee> com = Committee.search();
         List<CommitteeParticipants> compart = CommitteeParticipants.search();

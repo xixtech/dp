@@ -257,11 +257,11 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <label>
-                                                                    Výuka začíná: <input type="date" class="form-control" id="startSemester"/> </label>
+                                                                    Semestr začíná: <input type="date" class="form-control" id="startSemester"/> </label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label>
-                                                                    Výuka končí: <input type="date" class="form-control" id="endSemester"/> </label>
+                                                                    Semestr končí: <input type="date" class="form-control" id="endSemester"/> </label>
                                                             </div>
                                                         </div>
                                                         <div id="MyEdit">
@@ -276,13 +276,13 @@
                                                         <div class="radio">
                                                             <label>
                                                                 <input type="radio" id="noCheck" name="optionsRadios" value="2">
-                                                                Sudé týdny
+                                                                Pouze sudé týdny
                                                             </label>
                                                         </div>
                                                         <div class="radio">
                                                             <label>
                                                                 <input type="radio" id="noCheck" name="optionsRadios" value="3">
-                                                                Liché týdny
+                                                                Pouze liché týdny
                                                             </label>
                                                         </div>
                                                         <div class="radio">
@@ -298,7 +298,7 @@
 
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <input type="button" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
+                                                    <input type="button" id="addCourseT" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
                                                     <div id="radky"></div>
                                                     <input type="button" id="addToAllWeeks" class="btn btn-default" value="Přidat" onclick="addCourseTeacherWeeksByDefault()" />
                                                 </div>
