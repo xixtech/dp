@@ -76,6 +76,7 @@ GET         /statistics/cb                       controllers.PersonalStatisticCo
 
 GET         /dcps                                controllers.StatisticController.index()
 GET         /sp                                controllers.StatisticController.studyPlansTable()
+GET         /spprint                                controllers.StatisticController.studyPlansTablePrint()
 
 # Přidat předmět
 GET         /studygroups/add                     controllers.StudyGroupsController.index()

@@ -31,7 +31,8 @@ public class Schedule extends Model {
 
     public String scheduleTo;
 
-    public String classRoom;
+    @ManyToOne
+    public Classroom classRoom;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<ScheduleInWeeks> scheduleInWeeks;
@@ -44,7 +45,7 @@ public class Schedule extends Model {
         this.courses = courses;
     }
 
-    public Schedule(Semesters semester, String ident, Courses courses, Days days, String scheduleFrom, String scheduleTo, String classRoom) {
+    public Schedule(Semesters semester, String ident, Courses courses, Days days, String scheduleFrom, String scheduleTo, Classroom classRoom) {
         this.semester = semester;
         this.ident = ident;
         this.courses = courses;
@@ -126,11 +127,11 @@ public class Schedule extends Model {
         this.scheduleTo = scheduleTo;
     }
 
-    public String getClassRoom() {
+    public Classroom getClassRoom() {
         return classRoom;
     }
 
-    public void setClassRoom(String classRoom) {
+    public void setClassRoom(Classroom classRoom) {
         this.classRoom = classRoom;
     }
 

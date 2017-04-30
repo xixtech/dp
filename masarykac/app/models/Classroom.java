@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Created by Martin on 12.03.2017.
  */
-
+@Entity
 public class Classroom extends Model {
 
     public static Finder<Long, Classroom> find = new Finder<Long, Classroom>(
@@ -22,19 +22,13 @@ public class Classroom extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
-    @Formats.DateTime(pattern = "dd.MM.yyyy")
-    public Date dateOfCommittee;
+    public int capacity;
 
-    @ManyToOne
-    public Semesters semester;
+    public String classroomName;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<CommitteeParticipants> committeeToEmployes;
-
-    public Classroom(Date dateOfCommittee, Semesters semester) {
-        this.dateOfCommittee = dateOfCommittee;
-        this.semester = semester;
-
+    public Classroom(int capacity, String classroomName) {
+        this.capacity = capacity;
+        this.classroomName = classroomName;
     }
 
     public Long getId() {
@@ -45,28 +39,20 @@ public class Classroom extends Model {
         this.id = id;
     }
 
-    public Date getDateOfCommittee() {
-        return dateOfCommittee;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setDateOfCommittee(Date dateOfCommittee) {
-        this.dateOfCommittee = dateOfCommittee;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
-    public Semesters getSemester() {
-        return semester;
+    public String getClassroomName() {
+        return classroomName;
     }
 
-    public void setSemester(Semesters semester) {
-        this.semester = semester;
-    }
-
-    public List<CommitteeParticipants> getCommitteeToEmployes() {
-        return committeeToEmployes;
-    }
-
-    public void setCommitteeToEmployes(List<CommitteeParticipants> committeeToEmployes) {
-        this.committeeToEmployes = committeeToEmployes;
+    public void setClassroomName(String classroomName) {
+        this.classroomName = classroomName;
     }
 
     public static Classroom findById(long id) {
@@ -77,7 +63,7 @@ public class Classroom extends Model {
         List<Classroom> subjectSets = Classroom.find.all();
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
         for(Classroom set: subjectSets) {
-            options.put(set.id.toString(), set.id.toString());
+            options.put(set.id.toString(), set.classroomName.toString()+" , max. kapacita: "+set.capacity);
         }
         return options;
     }

@@ -3,6 +3,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.management.relation.Role;
 
+import controllers.ClassroomStart;
 import controllers.DaysStart;
 import models.*;
 import models.utils.Hash;
@@ -69,6 +70,8 @@ public class OnStartup {
                 kpi.insertKPIStart();
                 DaysStart ds=new DaysStart();
                 ds.insertDaysStart();
+                ClassroomStart classroom=new ClassroomStart();
+                classroom.insertClassroomStart();
 
             } catch (Exception e) {
                 // TODO Auto-generated catch block

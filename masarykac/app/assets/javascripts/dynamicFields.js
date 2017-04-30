@@ -100,7 +100,7 @@ function appendRow() {
     }
 }
 
-function appendRowDiv() {
+function appendRowDivByDefault() {
     var startDate = new Date(document.getElementById('startSemester').value);
     var endDate = new Date(document.getElementById('endSemester').value);
     var weekDiff = Math.floor((endDate - startDate + 1) / (1000 * 60 * 60 * 24) / 7);
@@ -135,16 +135,121 @@ function appendRowDiv() {
 
     }
     var current = startDate;
+    for (i = 101; i < weeksCount; i++) {
+        var newDiv = document.getElementById(i);
+
+        var selectHTML = "";
+        selectHTML = "<div class='row'><div class='col-md-10'>";
+        selectHTML += "<div class='col-md-2'><input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeksByDefault(" + i + ");'/> </div>";
+        selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + i + ");'/></div>";
+        selectHTML += "</div></div></br>";
+        newDiv.innerHTML = selectHTML;
+        document.getElementById('r').appendChild(newDiv);
+
+        if (value == 1) {
+            num = num + 1;
+        }
+        if (value == 2) {
+            num = num + 2;
+        }
+        if (value == 3) {
+            num = num + 2;
+        }
+
+        if (value == 4) {
+            num = num + 1;
+        }
+    }
+}
+
+
+function addCourseTeacherWeeksByDefault() {
+    for (j = 101; j < weeksCount; j++) {
+        for (o = 0; o < 2; o++) {
+            var newDiv = document.createElement('div');
+            newDiv.setAttribute("id", weeksTeacher);
+            var ident = j + "" + weeksTeacher;
+            newDiv.setAttribute("id", ident);
+            var mapKey = emplArray.k;
+            var mapValue = emplArray.v;
+            var testKey = mapKey.split(";");
+            var testValue = mapValue.split(";");
+
+            var i, out = [];//literal new array
+            for (i = 0; i < testKey.length; i++) {
+                out.push([testKey[i], testValue[i]]);
+            }
+
+            var selectHTML = "";
+            selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' id='tname" + j + "" + weeksTeacher + "' name='tname" + j + "" + weeksTeacher + "'>";
+            for (i = 0; i < out.length; i = i + 1) {
+                selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
+            }
+
+            selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' name='tvalue" + j + "" + weeksTeacher + "' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' value='"+20+"' required></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='btn btn-outline btn-danger' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
+            newDiv.innerHTML = selectHTML;
+
+            document.getElementById(j).appendChild(newDiv);
+            document.getElementById('tname' + j + "" + weeksTeacher).value=2;
+            weeksTeacher++;
+        }
+    }
+}
+
+function appendRowDiv() {
+    var startDate = new Date(document.getElementById('startSemester').value);
+    var endDate = new Date(document.getElementById('endSemester').value);
+    var weekDiff = Math.floor((endDate - startDate + 1) / (1000 * 60 * 60 * 24) / 7);
+    document.getElementById('MyEdit').innerHTML = "Počet týdnů výuky: " + weekDiff;
+    var radios = document.getElementsByName('optionsRadios');
+    var value = 0;
+    for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            // do whatever you want with the checked radio
+            value = radios[i].value;
+            // only one radio can be logically checked, don't check the rest
+            break;
+        }
+    }
+    var count = 0;
+    var num = 0;
+    var year=2017;
+    if (value == 1) {
+        count = 14;
+        num = 1;
+    }
+    if (value == 2) {
+        count = 14 / 2;
+        num = 2;
+    }
+    if (value == 3) {
+        count = 14 / 2;
+        num = 1;
+    }
+    if (value == 4) {
+        count = document.getElementById('numOfRows').value;
+        num = 1;
+
+    }
+    num=48;
+    var current = startDate;
     for (i = 0; i < count; i++) {
         var newDiv = document.createElement('div');
         newDiv.setAttribute("id", weeksCount);
 
+    if(num>52){
+        num=1;
+        if (value == 2) {
+            num = 2;
+        }
+        year++;
+    }
 
         var selectHTML = "";
         selectHTML = "<div class='row'><div class='col-md-10'>";
         selectHTML += "<div class='col-md-2'><input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeks(" + weeksCount + ");'/> </div>";
         selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek" + weeksCount + "' value='" + num + "' onkeypress='return isNumberKey(event)' required/></div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear" + weeksCount + "' value='" + 2017 + "' onkeypress='return isNumberKey(event)' required/></div>";
+        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear" + weeksCount + "' value='" + year + "' onkeypress='return isNumberKey(event)' required/></div>";
         selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
         selectHTML += "</div></div></br>";
         newDiv.innerHTML = selectHTML;
@@ -483,7 +588,7 @@ function addCourseTeacherWeeks(divName) {
     }
 
     var selectHTML = "";
-    selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' name='tname" + divName + "" + weeksTeacher + "'>";
+    selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' id='tname" + divName + "" + weeksTeacher + "' name='tname" + divName + "" + weeksTeacher + "'>";
     for (i = 0; i < out.length; i = i + 1) {
         selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
     }

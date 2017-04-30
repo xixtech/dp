@@ -222,7 +222,7 @@ public class SubjectPlanTeachingController extends Controller {
 
         List<String> classRoom = new ArrayList<>();
 
-        for (String insId : formData.get("classRoom")) {
+        for (String insId : formData.get("classroom.id")) {
             classRoom.add(insId);
         }
 
@@ -282,7 +282,6 @@ public class SubjectPlanTeachingController extends Controller {
             }
         });
 
-
         String[][] uchodnota = new String[ts.length][3];
         String prev = "";
         int sameKey = 0;
@@ -295,9 +294,7 @@ public class SubjectPlanTeachingController extends Controller {
             uchodnota[i][0] = tn[i][0];
             uchodnota[i][1] = tn[i][1];
             uchodnota[i][2] = ts[i][1];
-
         }
-
 
         List<String> scheduleWeekKey = new ArrayList<>();
         List<String> scheduleWeekValue = new ArrayList<>();
@@ -431,8 +428,8 @@ public class SubjectPlanTeachingController extends Controller {
                     tval.put(key, scale);
                 }
             }
-
         }
+
         String[][] p = new String[tval.size()][8];
         List<String> usedIndexes = new ArrayList<>();
         HashMap<String, Double> numberOfTeachers = new HashMap<String, Double>();
@@ -474,7 +471,6 @@ public class SubjectPlanTeachingController extends Controller {
                 } else {
                     continue;
                 }
-
             }
             if (!numberOfTeachers.containsKey(p[i][3])) {
                 numberOfTeachers.put(p[i][3], 0.0);
@@ -500,7 +496,6 @@ public class SubjectPlanTeachingController extends Controller {
                 p[i][5] = scaleOfThisTeacher + "";
                 p[i][6] = numberOfTeachersInEveryWeek.get(p[i][0]) + "";
             }
-
         }
 
         for (int i = 0; i < p.length; i++) {
@@ -509,9 +504,7 @@ public class SubjectPlanTeachingController extends Controller {
                 val += Double.parseDouble(p[i][5]);
                 numberOfTeachers.put(p[i][3], val);
             }
-
         }
-
 
         for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()) {
             String k = entry.getKey();
@@ -523,10 +516,10 @@ public class SubjectPlanTeachingController extends Controller {
             long diff = dateTo.getTime() - dateFrom.getTime();
             long to = ((dateTo.getTime()) / (60000));
             long from = ((dateFrom.getTime()) / (60000));
-            double diffMinutes = to-from;
+            double diffMinutes = to - from;
             double vyuka = (diffMinutes) / 45.0;
-            double val = vyuka*v;
-            double valRounded=(double)Math.round(val * 10d) / 10d;
+            double val = vyuka * v;
+            double valRounded = (double) Math.round(val * 10d) / 10d;
             numberOfSummaryTeachers.put(k, valRounded);
 
         }
@@ -577,7 +570,6 @@ public class SubjectPlanTeachingController extends Controller {
             sp.save();
         }
 
-
         Courses c = null;
         HashMap<String, Long> teachersFromRows = new HashMap<String, Long>();
         for (int i = 0; i < course.size(); i++) {
@@ -596,11 +588,11 @@ public class SubjectPlanTeachingController extends Controller {
 
         HashMap<String, Long> scheduleInW = new HashMap<String, Long>();
         for (int i = 0; i < days.size(); i++) {
-            Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0));
+            Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))));
             s.save();
 
             for (int j = 0; j < swyear.length; j++) {
-                ScheduleInWeeks siw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0),
+                ScheduleInWeeks siw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))),
                         Integer.parseInt(swyear[j][1]), Integer.parseInt(swyear[j][2]), s);
                 siw.save();
                 scheduleInW.put(swyear[j][1], siw.getId());
@@ -610,9 +602,7 @@ public class SubjectPlanTeachingController extends Controller {
         for (int k = 0; k < p.length; k++) {
             if (scheduleInW.containsKey(p[k][1])) {
                 long t = 0;
-
                 t = teachersFromRows.get(p[k][3]);
-
                 TeachersInWeeks tiw = new TeachersInWeeks(Teachers.findById(t), ScheduleInWeeks.findById(scheduleInW.get(p[k][1])), Double.parseDouble(p[k][5].replace(",", ".")));
                 tiw.save();
             }

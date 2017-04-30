@@ -3,6 +3,13 @@
 
 # --- !Ups
 
+create table classroom (
+  id                            bigserial not null,
+  capacity                      integer,
+  classroom_name                varchar(255),
+  constraint pk_classroom primary key (id)
+);
+
 create table committee (
   id                            bigserial not null,
   date_of_committee             timestamp,
@@ -267,7 +274,7 @@ create table schedule (
   days_id                       bigint,
   schedule_from                 varchar(255),
   schedule_to                   varchar(255),
-  class_room                    varchar(255),
+  class_room_id                 bigint,
   courses_id                    bigint,
   constraint pk_schedule primary key (id)
 );
@@ -279,7 +286,7 @@ create table schedule_in_weeks (
   days_id                       bigint,
   schedule_from                 varchar(255),
   schedule_to                   varchar(255),
-  class_room                    varchar(255),
+  class_room_id                 bigint,
   schedule_week                 integer,
   schedule_year                 integer,
   courses_id                    bigint,
@@ -451,6 +458,9 @@ create index ix_schedule_semester_id on schedule (semester_id);
 alter table schedule add constraint fk_schedule_days_id foreign key (days_id) references days (id) on delete restrict on update restrict;
 create index ix_schedule_days_id on schedule (days_id);
 
+alter table schedule add constraint fk_schedule_class_room_id foreign key (class_room_id) references classroom (id) on delete restrict on update restrict;
+create index ix_schedule_class_room_id on schedule (class_room_id);
+
 alter table schedule add constraint fk_schedule_courses_id foreign key (courses_id) references courses (id) on delete restrict on update restrict;
 create index ix_schedule_courses_id on schedule (courses_id);
 
@@ -459,6 +469,9 @@ create index ix_schedule_in_weeks_semester_id on schedule_in_weeks (semester_id)
 
 alter table schedule_in_weeks add constraint fk_schedule_in_weeks_days_id foreign key (days_id) references days (id) on delete restrict on update restrict;
 create index ix_schedule_in_weeks_days_id on schedule_in_weeks (days_id);
+
+alter table schedule_in_weeks add constraint fk_schedule_in_weeks_class_room_id foreign key (class_room_id) references classroom (id) on delete restrict on update restrict;
+create index ix_schedule_in_weeks_class_room_id on schedule_in_weeks (class_room_id);
 
 alter table schedule_in_weeks add constraint fk_schedule_in_weeks_courses_id foreign key (courses_id) references courses (id) on delete restrict on update restrict;
 create index ix_schedule_in_weeks_courses_id on schedule_in_weeks (courses_id);
@@ -571,6 +584,9 @@ drop index if exists ix_schedule_semester_id;
 alter table if exists schedule drop constraint if exists fk_schedule_days_id;
 drop index if exists ix_schedule_days_id;
 
+alter table if exists schedule drop constraint if exists fk_schedule_class_room_id;
+drop index if exists ix_schedule_class_room_id;
+
 alter table if exists schedule drop constraint if exists fk_schedule_courses_id;
 drop index if exists ix_schedule_courses_id;
 
@@ -579,6 +595,9 @@ drop index if exists ix_schedule_in_weeks_semester_id;
 
 alter table if exists schedule_in_weeks drop constraint if exists fk_schedule_in_weeks_days_id;
 drop index if exists ix_schedule_in_weeks_days_id;
+
+alter table if exists schedule_in_weeks drop constraint if exists fk_schedule_in_weeks_class_room_id;
+drop index if exists ix_schedule_in_weeks_class_room_id;
 
 alter table if exists schedule_in_weeks drop constraint if exists fk_schedule_in_weeks_courses_id;
 drop index if exists ix_schedule_in_weeks_courses_id;
@@ -618,6 +637,8 @@ drop index if exists ix_visits_semester_id;
 
 alter table if exists visits drop constraint if exists fk_visits_employees_id;
 drop index if exists ix_visits_employees_id;
+
+drop table if exists classroom cascade;
 
 drop table if exists committee cascade;
 

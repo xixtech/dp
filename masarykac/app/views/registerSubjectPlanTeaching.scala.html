@@ -220,8 +220,14 @@
                                     <input type="text" id="scheduleTo" class="timepicker form-control" name="scheduleTo" onkeypress="return isDateKey(event)" maxlength="5" required/>
                                 </div>
                                 <div class="col-md-3">
-                                    <label for="classRoom">Učebna*:</label>
-                                    <input type="text" id="classRoom" class="form-control" name="classRoom" required/>
+                                    @select(
+                                        scheduleForm("classroom.id"),
+                                        options(Classroom.options()),
+                                        '_label -> "Učebna",
+                                        'class -> "form-control",
+                                        '_help -> "",
+                                        '_error -> scheduleForm.globalError
+                                    )
                                 </div>
                             </div>
 
@@ -291,7 +297,7 @@
 
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <input type="hidden" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
+                                                    <input type="button" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacherWeeksByDefault();" />
                                                     <div id="radky"></div>
                                                 </div>
                                             </br>

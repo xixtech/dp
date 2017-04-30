@@ -108,7 +108,7 @@ public class CourseController extends Controller {
 
         List<String> classRoom = new ArrayList<>();
 
-        for (String insId : formData.get("classRoom")) {
+        for (String insId : formData.get("classroom.id")) {
             classRoom.add(insId);
         }
 
@@ -137,7 +137,7 @@ public class CourseController extends Controller {
         }
 
         for (int i = 0; i < scheduleWeek.size(); i++) {
-            ScheduleInWeeks sw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), classRoom.get(0),
+            ScheduleInWeeks sw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))),
                     scheduleWeek.get(i), scheduleYear.get(i));
 
             sw.save();

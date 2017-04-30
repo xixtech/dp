@@ -95,8 +95,9 @@
                             )
                             </div>
                             <div class="col-md-3">
-                            @inputText(
-                                scheduleInWeeksForm("classRoom"),
+                            @select(
+                                scheduleInWeeksForm("classroom.id"),
+                                options(Classroom.options()),
                                 '_label -> "Učebna",
                                 'class -> "form-control",
                                 '_help -> "",
