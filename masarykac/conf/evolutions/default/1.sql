@@ -371,6 +371,13 @@ create table teachers_in_weeks (
   constraint pk_teachers_in_weeks primary key (id)
 );
 
+create table teachers_role (
+  id                            bigserial not null,
+  role                          varchar(255),
+  active                        boolean,
+  constraint pk_teachers_role primary key (id)
+);
+
 create table test (
   id                            bigserial not null,
   name                          varchar(255),
@@ -712,6 +719,8 @@ drop table if exists subjects cascade;
 drop table if exists teachers cascade;
 
 drop table if exists teachers_in_weeks cascade;
+
+drop table if exists teachers_role cascade;
 
 drop table if exists test cascade;
 

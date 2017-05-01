@@ -3,8 +3,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.management.relation.Role;
 
-import controllers.ClassroomStart;
-import controllers.DaysStart;
+import controllers.StartMethods;
 import models.*;
 import models.utils.Hash;
 
@@ -26,10 +25,10 @@ public class OnStartup {
         if (member1.find.findRowCount() == 0) {
 
             try {
-                Roles roles=new Roles("Lektor");
+                Roles roles = new Roles("Lektor");
                 roles.save();
 
-                Roles rolesAsistent=new Roles("Asistent");
+                Roles rolesAsistent = new Roles("Asistent");
                 rolesAsistent.save();
 
                 Member member = new Member("a@a.cz", Hash.createPassword("secret"));
@@ -37,7 +36,7 @@ public class OnStartup {
                 member.save();
 
 
-                Employees em=new Employees(123456,"Bc.", "Černý","Tomáš","Ph.D.");
+                Employees em = new Employees(123456, "Bc.", "Černý", "Tomáš", "Ph.D.");
                 em.save();
                 em.setMember(member);
                 em.setAccessRole("employee");
@@ -50,7 +49,7 @@ public class OnStartup {
                 member2.setActive(true);
                 member2.save();
 
-                Employees e=new Employees(123456,"Ing.", "Novák","Karel","Ph.D.");
+                Employees e = new Employees(123456, "Ing.", "Novák", "Karel", "Ph.D.");
                 e.save();
                 e.setMember(member2);
                 e.setAccessRole("director");
@@ -59,19 +58,19 @@ public class OnStartup {
                 member2.setEmployees(e);
                 member2.update();
 
-                Profile profile= new Profile("Jan", "Novák", "123456789", member);
+                Profile profile = new Profile("Jan", "Novák", "123456789", member);
                 profile.save();
                 Person person = new Person(20000, "Lektor", member, roles.roleName);
                 person.save();
                 member.setPerson(person);
                 member.setProfile(profile);
                 member.update();
-                KPIStart kpi=new KPIStart();
+                KPIStart kpi = new KPIStart();
                 kpi.insertKPIStart();
-                DaysStart ds=new DaysStart();
-                ds.insertDaysStart();
-                ClassroomStart classroom=new ClassroomStart();
-                classroom.insertClassroomStart();
+                StartMethods sm = new StartMethods();
+                sm.insertDaysStart();
+                sm.insertClassroomStart();
+                sm.insertTeachersRole();
 
             } catch (Exception e) {
                 // TODO Auto-generated catch block

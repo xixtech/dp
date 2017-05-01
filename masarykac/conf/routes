@@ -61,11 +61,17 @@ POST        /employee/delete                     controllers.EmployeesController
 GET         /subject/add                         controllers.SubjectController.index()
 POST        /subject/saved                       controllers.SubjectController.save()
 
-GET         /classroom/add                          controllers.ClassroomController.index()
-POST        /classroom/saved                        controllers.ClassroomController.save()
-GET         /classroom/edit/:id                controllers.ClassroomController.edit(id:Long)
-POST        /classroom/updated/                   controllers.ClassroomController.update(id:Long)
-POST        /classroom/delete                     controllers.ClassroomController.delete(id:Long)
+GET         /classroom/add                       controllers.ClassroomController.index()
+POST        /classroom/saved                     controllers.ClassroomController.save()
+GET         /classroom/edit/:id                  controllers.ClassroomController.edit(id:Long)
+POST        /classroom/updated/                  controllers.ClassroomController.update(id:Long)
+POST        /classroom/delete                    controllers.ClassroomController.delete(id:Long)
+
+GET         /teachersrole/add                    controllers.TeachersRoleController.index()
+POST        /teachersrole/saved                  controllers.TeachersRoleController.save()
+GET         /teachersrole/edit/:id               controllers.TeachersRoleController.edit(id:Long)
+POST        /teachersrole/updated/               controllers.TeachersRoleController.update(id:Long)
+POST        /teachersrole/delete                 controllers.TeachersRoleController.delete(id:Long)
 
 # Přidat předmět
 GET         /fields/add                          controllers.FieldOfStudyController.index()
@@ -114,6 +120,7 @@ GET         /currentsemesters                    controllers.TableController.lis
 GET         /lcsuteos                            controllers.TableController.listCurrentSemestersUntilTheEndOfStudy()
 GET         /days                                controllers.TableController.listDays()
 GET         /classrooms                          controllers.TableController.listClassrooms()
+GET         /teachroles                          controllers.TableController.listTeachersRole()
 GET         /committees                          controllers.TableController.listCommittees()
 GET         /publications                        controllers.TableController.listPublications()
 GET         /tiw                                 controllers.TableController.listTeachersInWeeks()

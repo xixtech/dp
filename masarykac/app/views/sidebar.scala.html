@@ -43,6 +43,12 @@
                     }
                     @if(session().get("role").equals("director")) {
                         <li>
+                            <a href='@routes.TableController.listTeachersRole()'><i class="fa fa-table fa-fw"></i>
+                                Role předmětů</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director")) {
+                        <li>
                             <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToPersons()'><i class="fa fa-table fa-fw"></i>
                                 Výuka dle osob</a>
                         </li>
@@ -165,6 +171,11 @@
                     @if(session().get("role").equals("director")) {
                         <li>
                             <a href="@routes.ClassroomController.index()">Místnosti</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director")) {
+                        <li>
+                            <a href="@routes.TeachersRoleController.index()">Role u předmětů</a>
                         </li>
                     }
                     @if(session().get("role").equals("director")) {
