@@ -90,6 +90,8 @@ public class PersonalStatisticController extends Controller {
         return ok(views.html.tables.tableTeachingAccordingToPersons.render(empl, c, teachers, s,schedules,scheduleInWeekses));
     }
 
+
+
     /**
      * uložení osoby, profilu a zákazníka z formuláře
      *

@@ -1,3 +1,0 @@
-[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:46: Expected '}' but found '@'
-[error]                         <p>Studijní plán pro studenty přijaté ke studiu v @ sp.getSemesters.getSemesterValue</p></br>
-[error]                                                                           ^

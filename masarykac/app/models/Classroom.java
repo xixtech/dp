@@ -28,10 +28,16 @@ public class Classroom extends Model {
 
     public boolean active;
 
+    @OneToMany(mappedBy = "classRoom", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Schedule> schedule;
+
+    @OneToMany(mappedBy = "classRoom", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<ScheduleInWeeks> scheduleInWeeks;
+
     public Classroom(int capacity, String classroomName) {
         this.capacity = capacity;
         this.classroomName = classroomName;
-        this.active=true;
+        this.active = true;
     }
 
     public Long getId() {
@@ -66,14 +72,30 @@ public class Classroom extends Model {
         this.active = active;
     }
 
-    public static Classroom findById(long id) {
-        return find.where().eq("id",id).findUnique();
+    public List<Schedule> getSchedule() {
+        return schedule;
     }
 
-    public static Map<String,String> options() {
+    public void setSchedule(List<Schedule> schedule) {
+        this.schedule = schedule;
+    }
+
+    public List<ScheduleInWeeks> getScheduleInWeeks() {
+        return scheduleInWeeks;
+    }
+
+    public void setScheduleInWeeks(List<ScheduleInWeeks> scheduleInWeeks) {
+        this.scheduleInWeeks = scheduleInWeeks;
+    }
+
+    public static Classroom findById(long id) {
+        return find.where().eq("id", id).findUnique();
+    }
+
+    public static Map<String, String> options() {
         List<Classroom> subjectSets = Classroom.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Classroom set: subjectSets) {
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Classroom set : subjectSets) {
             if (set.isActive()) {
                 options.put(set.id.toString(), set.classroomName.toString() + " , max. kapacita: " + set.capacity);
             }

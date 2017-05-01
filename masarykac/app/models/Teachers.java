@@ -30,6 +30,9 @@ public class Teachers extends Model {
 
     public double summary;
 
+    @ManyToOne
+    public TeachersRole teachersRole;
+
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<TeachersInWeeks> teachersInWeeks;
 
@@ -86,6 +89,14 @@ public class Teachers extends Model {
 
     public void setTeachersInWeeks(List<TeachersInWeeks> teachersInWeeks) {
         this.teachersInWeeks = teachersInWeeks;
+    }
+
+    public TeachersRole getTeachersRole() {
+        return teachersRole;
+    }
+
+    public void setTeachersRole(TeachersRole teachersRole) {
+        this.teachersRole = teachersRole;
     }
 
     public static List<Teachers> search() {

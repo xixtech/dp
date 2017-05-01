@@ -48,17 +48,28 @@ public class TeachersRole extends Model {
         this.role = role;
     }
 
+    @OneToMany(mappedBy="teachersRole",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Teachers> teachers;
+
     public TeachersRole(String role) {
         this.role = role;
-        this.active=true;
+        this.active = true;
     }
 
     public static TeachersRole findById(long id) {
-        return find.where().eq("id",id).findUnique();
+        return find.where().eq("id", id).findUnique();
     }
 
     public static List<TeachersRole> search() {
         return TeachersRole.find.all();
+    }
+
+    public List<Teachers> getTeachers() {
+        return teachers;
+    }
+
+    public void setTeachers(List<Teachers> teachers) {
+        this.teachers = teachers;
     }
 
     public static Map<String, String> options() {

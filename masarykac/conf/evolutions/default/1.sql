@@ -306,6 +306,23 @@ create table semesters (
   constraint pk_semesters primary key (id)
 );
 
+create table statement (
+  id                            bigserial not null,
+  date_of_committee             timestamp,
+  state                         varchar(255),
+  constraint pk_statement primary key (id)
+);
+
+create table statement_participants (
+  id                            bigserial not null,
+  date                          timestamp,
+  state                         varchar(255),
+  note                          varchar(255),
+  employees_id                  bigint,
+  statement_id                  bigint,
+  constraint pk_statement_participants primary key (id)
+);
+
 create table study_groups (
   id                            bigserial not null,
   study_group                   varchar(255),
@@ -360,6 +377,7 @@ create table teachers (
   employees_id                  bigint,
   scale                         float,
   summary                       float,
+  teachers_role_id              bigint,
   constraint pk_teachers primary key (id)
 );
 
@@ -487,6 +505,12 @@ create index ix_schedule_in_weeks_courses_id on schedule_in_weeks (courses_id);
 alter table schedule_in_weeks add constraint fk_schedule_in_weeks_schedule_id foreign key (schedule_id) references schedule (id) on delete restrict on update restrict;
 create index ix_schedule_in_weeks_schedule_id on schedule_in_weeks (schedule_id);
 
+alter table statement_participants add constraint fk_statement_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+create index ix_statement_participants_employees_id on statement_participants (employees_id);
+
+alter table statement_participants add constraint fk_statement_participants_statement_id foreign key (statement_id) references statement (id) on delete restrict on update restrict;
+create index ix_statement_participants_statement_id on statement_participants (statement_id);
+
 alter table study_plans add constraint fk_study_plans_subjects_id foreign key (subjects_id) references subjects (id) on delete restrict on update restrict;
 create index ix_study_plans_subjects_id on study_plans (subjects_id);
 
@@ -507,6 +531,9 @@ create index ix_teachers_courses_id on teachers (courses_id);
 
 alter table teachers add constraint fk_teachers_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_teachers_employees_id on teachers (employees_id);
+
+alter table teachers add constraint fk_teachers_teachers_role_id foreign key (teachers_role_id) references teachers_role (id) on delete restrict on update restrict;
+create index ix_teachers_teachers_role_id on teachers (teachers_role_id);
 
 alter table teachers_in_weeks add constraint fk_teachers_in_weeks_teachers_id foreign key (teachers_id) references teachers (id) on delete restrict on update restrict;
 create index ix_teachers_in_weeks_teachers_id on teachers_in_weeks (teachers_id);
@@ -613,6 +640,12 @@ drop index if exists ix_schedule_in_weeks_courses_id;
 alter table if exists schedule_in_weeks drop constraint if exists fk_schedule_in_weeks_schedule_id;
 drop index if exists ix_schedule_in_weeks_schedule_id;
 
+alter table if exists statement_participants drop constraint if exists fk_statement_participants_employees_id;
+drop index if exists ix_statement_participants_employees_id;
+
+alter table if exists statement_participants drop constraint if exists fk_statement_participants_statement_id;
+drop index if exists ix_statement_participants_statement_id;
+
 alter table if exists study_plans drop constraint if exists fk_study_plans_subjects_id;
 drop index if exists ix_study_plans_subjects_id;
 
@@ -633,6 +666,9 @@ drop index if exists ix_teachers_courses_id;
 
 alter table if exists teachers drop constraint if exists fk_teachers_employees_id;
 drop index if exists ix_teachers_employees_id;
+
+alter table if exists teachers drop constraint if exists fk_teachers_teachers_role_id;
+drop index if exists ix_teachers_teachers_role_id;
 
 alter table if exists teachers_in_weeks drop constraint if exists fk_teachers_in_weeks_teachers_id;
 drop index if exists ix_teachers_in_weeks_teachers_id;
@@ -707,6 +743,10 @@ drop table if exists schedule cascade;
 drop table if exists schedule_in_weeks cascade;
 
 drop table if exists semesters cascade;
+
+drop table if exists statement cascade;
+
+drop table if exists statement_participants cascade;
 
 drop table if exists study_groups cascade;
 
