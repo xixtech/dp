@@ -337,7 +337,6 @@ function appendRowDiv() {
         document.getElementById('r').appendChild(newDiv);
         weeksCount++;
 
-        var date=new Date(sDate.getFullYear(),(sDate.getMonth()),sDate.getDate());
         setDateForCalculation(currDate);
         calculateFirstAndLastDateOfWeek(currDate);
         if (value == 1) {
