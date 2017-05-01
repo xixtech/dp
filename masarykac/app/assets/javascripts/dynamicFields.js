@@ -20,7 +20,7 @@ var teachersScaleGeneral = [];
 var teachersScaleGeneralLastIndex = 0;
 var weeksUsedGeneral = [];
 var weeksUsedGeneralLastIndex = 0;
-
+var sw="";
 var weekStart=1;
 
 
@@ -58,9 +58,36 @@ function export2Word(element, surname, name) {
 }
 
 function setStartWeek() {
-    var startWeek=document.getElementById('startSemester');
+    var b=document.getElementById('startSemester').value.split('-');
+    if(b[1].substr(0, 1)=='0'){
+        weekStart=parseInt(b[1].substr(1,1));
+    }else{
+        weekStart=parseInt(b[1]);
+    }
+    var mydate = new Date(b[0],b[1]-1,b[2]);
 
+    calcDate = new Date(mydate);
+    calcDate.setHours(0,0,0,0);
+    // Set to nearest Thursday: current date + 4 - current day number
+    // Make Sunday's day number 7
+    calcDate.setDate(calcDate.getDate() + 4 - (calcDate.getDay()||7));
+    // Get first day of year
+    var yearStart = new Date(calcDate.getFullYear(),0,1);
+    // Calculate full weeks to nearest Thursday
+    weekStart = Math.ceil(( ( (calcDate - yearStart) / 86400000) + 1)/7);
+
+
+    var day1 = mydate.getDay();
+    var startD= new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day1 === 0?-6:1)-day1 );
+
+
+    var day = mydate.getDay();
+    var endD=new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day === 0?0:7)-day );
+
+    document.getElementById('titleA').value=startD.getDate() + '. ' + (startD.getMonth() + 1) + '. ' +  startD.getFullYear()+ ' - ' + endD.getDate() + '. ' + (endD.getMonth() + 1) + '. ' +  endD.getFullYear();
 }
+
+
 
 function del(elem) {
     document.getElementById(elem).remove();
@@ -273,20 +300,15 @@ function appendRowDiv() {
     var year = 2017;
     if (value == 1) {
         count = 14;
-        num = 1;
     }
     if (value == 2) {
         count = 14 / 2;
-        num = 2;
     }
     if (value == 3) {
         count = 14 / 2;
-        num = 1;
     }
     if (value == 4) {
         count = document.getElementById('numOfRows').value;
-        num = 1;
-
     }
     num = weekStart;
     var current = startDate;
