@@ -20,7 +20,9 @@ var teachersScaleGeneral = [];
 var teachersScaleGeneralLastIndex = 0;
 var weeksUsedGeneral = [];
 var weeksUsedGeneralLastIndex = 0;
-var sw="";
+var sDate=new Date();
+var eDate=new Date();
+var currDate=new Date();
 var weekStart=1;
 
 
@@ -59,14 +61,9 @@ function export2Word(element, surname, name) {
 
 function setStartWeek() {
     var b=document.getElementById('startSemester').value.split('-');
-    if(b[1].substr(0, 1)=='0'){
-        weekStart=parseInt(b[1].substr(1,1));
-    }else{
-        weekStart=parseInt(b[1]);
-    }
-    var mydate = new Date(b[0],b[1]-1,b[2]);
+    currDate = new Date(b[0],b[1]-1,b[2]);
 
-    calcDate = new Date(mydate);
+    calcDate = new Date(currDate);
     calcDate.setHours(0,0,0,0);
     // Set to nearest Thursday: current date + 4 - current day number
     // Make Sunday's day number 7
@@ -77,17 +74,19 @@ function setStartWeek() {
     weekStart = Math.ceil(( ( (calcDate - yearStart) / 86400000) + 1)/7);
 
 
+    calculateFirstAndLastDateOfWeek(currDate);
+    document.getElementById('titleA').value=sDate.getDate() + '. ' + (sDate.getMonth() + 1) + '. ' +  sDate.getFullYear()+ ' - ' + eDate.getDate() + '. ' + (eDate.getMonth() + 1) + '. ' +  eDate.getFullYear();
+}
+function setDateForCalculation(date){
+    currDate=new Date(date.getFullYear(),(date.getMonth()),date.getDate()+7);
+}
+function calculateFirstAndLastDateOfWeek(mydate) {
     var day1 = mydate.getDay();
-    var startD= new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day1 === 0?-6:1)-day1 );
-
+    sDate= new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day1 === 0?-6:1)-day1 );
 
     var day = mydate.getDay();
-    var endD=new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day === 0?0:7)-day );
-
-    document.getElementById('titleA').value=startD.getDate() + '. ' + (startD.getMonth() + 1) + '. ' +  startD.getFullYear()+ ' - ' + endD.getDate() + '. ' + (endD.getMonth() + 1) + '. ' +  endD.getFullYear();
+    eDate=new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day === 0?0:7)-day );
 }
-
-
 
 function del(elem) {
     document.getElementById(elem).remove();
@@ -330,11 +329,17 @@ function appendRowDiv() {
         selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek" + weeksCount + "' value='" + num + "' onkeypress='return isNumberKey(event)' required/></div>";
         selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear" + weeksCount + "' value='" + year + "' onkeypress='return isNumberKey(event)' required/></div>";
         selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
+        selectHTML += "</div></div>";
+        selectHTML += "<div class='row'><div class='col-md-10'>";
+        selectHTML += "  <label>"+'Týden od: ' + sDate.getDate() + '. ' + (sDate.getMonth() + 1) + '. ' +  sDate.getFullYear()+ ' do: ' + eDate.getDate() + '. ' + (eDate.getMonth() + 1) + '. ' +  eDate.getFullYear() + " </label>";
         selectHTML += "</div></div></br>";
         newDiv.innerHTML = selectHTML;
         document.getElementById('r').appendChild(newDiv);
         weeksCount++;
 
+        var date=new Date(sDate.getFullYear(),(sDate.getMonth()),sDate.getDate());
+        setDateForCalculation(currDate);
+        calculateFirstAndLastDateOfWeek(currDate);
         if (value == 1) {
             num = num + 1;
         }
