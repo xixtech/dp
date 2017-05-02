@@ -4,6 +4,7 @@
 var pocitadlo = 1;
 var pocitadlo1 = 0;
 var pocitadloPublicationParticipant = 1;
+var pocitadloVisitParticipant = 1;
 var pocitadloCommitteeParticipant = 1;
 var countStudyPlan = 1;
 var weeksCount = 101;
@@ -15,15 +16,15 @@ var fieldsOfStudyArray = {};
 var semestersArray = {};
 var studyGroupsArray = {};
 var studyGroups1Array = {};
-
+var visitParticipantArray = {};
 var teachersScaleGeneral = [];
 var teachersScaleGeneralLastIndex = 0;
 var weeksUsedGeneral = [];
 var weeksUsedGeneralLastIndex = 0;
-var sDate=new Date();
-var eDate=new Date();
-var currDate=new Date();
-var weekStart=1;
+var sDate = new Date();
+var eDate = new Date();
+var currDate = new Date();
+var weekStart = 1;
 
 
 $('body').on('click', 'input.deleteDep', function () {
@@ -60,32 +61,32 @@ function export2Word(element, surname, name) {
 }
 
 function setStartWeek() {
-    var b=document.getElementById('startSemester').value.split('-');
-    currDate = new Date(b[0],b[1]-1,b[2]);
+    var b = document.getElementById('startSemester').value.split('-');
+    currDate = new Date(b[0], b[1] - 1, b[2]);
 
     calcDate = new Date(currDate);
-    calcDate.setHours(0,0,0,0);
+    calcDate.setHours(0, 0, 0, 0);
     // Set to nearest Thursday: current date + 4 - current day number
     // Make Sunday's day number 7
-    calcDate.setDate(calcDate.getDate() + 4 - (calcDate.getDay()||7));
+    calcDate.setDate(calcDate.getDate() + 4 - (calcDate.getDay() || 7));
     // Get first day of year
-    var yearStart = new Date(calcDate.getFullYear(),0,1);
+    var yearStart = new Date(calcDate.getFullYear(), 0, 1);
     // Calculate full weeks to nearest Thursday
-    weekStart = Math.ceil(( ( (calcDate - yearStart) / 86400000) + 1)/7);
+    weekStart = Math.ceil(( ( (calcDate - yearStart) / 86400000) + 1) / 7);
 
 
     calculateFirstAndLastDateOfWeek(currDate);
-    document.getElementById('titleA').value=sDate.getDate() + '. ' + (sDate.getMonth() + 1) + '. ' +  sDate.getFullYear()+ ' - ' + eDate.getDate() + '. ' + (eDate.getMonth() + 1) + '. ' +  eDate.getFullYear();
+    document.getElementById('titleA').value = sDate.getDate() + '. ' + (sDate.getMonth() + 1) + '. ' + sDate.getFullYear() + ' - ' + eDate.getDate() + '. ' + (eDate.getMonth() + 1) + '. ' + eDate.getFullYear();
 }
-function setDateForCalculation(date){
-    currDate=new Date(date.getFullYear(),(date.getMonth()),date.getDate()+7);
+function setDateForCalculation(date) {
+    currDate = new Date(date.getFullYear(), (date.getMonth()), date.getDate() + 7);
 }
 function calculateFirstAndLastDateOfWeek(mydate) {
     var day1 = mydate.getDay();
-    sDate= new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day1 === 0?-6:1)-day1 );
+    sDate = new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day1 === 0 ? -6 : 1) - day1);
 
     var day = mydate.getDay();
-    eDate=new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day === 0?0:7)-day );
+    eDate = new Date(mydate.getFullYear(), mydate.getMonth(), mydate.getDate() + (day === 0 ? 0 : 7) - day);
 }
 
 function del(elem) {
@@ -134,6 +135,10 @@ function delWeekUsed(elem) {
     document.getElementById(elem).remove();
 }
 
+function visitArray(visitPart) {
+    visitParticipantArray = {};
+    visitParticipantArray = visitPart;
+}
 
 function publicationArray(publPart) {
     publParticipantArray = {};
@@ -331,7 +336,7 @@ function appendRowDiv() {
         selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
         selectHTML += "</div></div>";
         selectHTML += "<div class='row'><div class='col-md-10'>";
-        selectHTML += "  <label>"+'Týden od: ' + sDate.getDate() + '. ' + (sDate.getMonth() + 1) + '. ' +  sDate.getFullYear()+ ' do: ' + eDate.getDate() + '. ' + (eDate.getMonth() + 1) + '. ' +  eDate.getFullYear() + " </label>";
+        selectHTML += "  <label>" + 'Týden od: ' + sDate.getDate() + '. ' + (sDate.getMonth() + 1) + '. ' + sDate.getFullYear() + ' do: ' + eDate.getDate() + '. ' + (eDate.getMonth() + 1) + '. ' + eDate.getFullYear() + " </label>";
         selectHTML += "</div></div></br>";
         newDiv.innerHTML = selectHTML;
         document.getElementById('r').appendChild(newDiv);
@@ -452,6 +457,35 @@ function addPublicationParticipant() {
     document.getElementById('publpart').appendChild(newDiv);
     pocitadloPublicationParticipant++;
 }
+
+function addVisitParticipant() {
+
+    var newDiv = document.createElement('div');
+    var idnt = pocitadloVisitParticipant;
+    newDiv.setAttribute("id", idnt);
+    var mapKey = visitParticipantArray.k;
+    var mapValue = visitParticipantArray.v;
+    var testKey = mapKey.split(";");
+    var testValue = mapValue.split(";");
+
+    var i, out = [];//literal new array
+    for (i = 0; i < testKey.length; i++) {
+        out.push([testKey[i], testValue[i]]);
+    }
+
+    var selectHTML = "";
+    selectHTML = "<div class='row'><div class='col-md-5'><select class='form-control' name='employees.id'>";
+    for (i = 0; i < out.length; i = i + 1) {
+        selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
+
+    }
+    selectHTML += "</select></div>";
+    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idnt + ");'/></div></div></br>";
+    newDiv.innerHTML = selectHTML;
+    document.getElementById('visitpart').appendChild(newDiv);
+    pocitadloVisitParticipant++;
+}
+
 
 function addCommitteeParticipant() {
     var newDiv = document.createElement('div');

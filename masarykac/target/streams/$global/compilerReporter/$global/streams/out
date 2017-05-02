@@ -1,4 +1,4 @@
-[error] C:\Users\Martin\dp\masarykac\app\views\infoStatement.scala.html:23: not found: value email
-[error]                     <fieldset>
-[error]          ^
-[error] one error found
+[error] C:\Users\Martin\dp\masarykac\app\controllers\VisitsController.java:78: unreported exception java.text.ParseException; must be caught or declared to be thrown
+[error] format.parse(insId)
+[error] C:\Users\Martin\dp\masarykac\app\controllers\VisitsController.java:84: unreported exception java.text.ParseException; must be caught or declared to be thrown
+[error] format.parse(insId)

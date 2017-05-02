@@ -28,6 +28,9 @@ public class FinalWorksParticipants extends Model {
     @ManyToOne
     public Employees employees;
 
+    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementFinalWorksParticipants> statementFinalWorksParticipants;
+
     public FinalWorksParticipants(String teachersRole, FinalWorks finalWorks, Employees employees) {
         this.teachersRole = teachersRole;
         this.finalWorks = finalWorks;
@@ -64,6 +67,14 @@ public class FinalWorksParticipants extends Model {
 
     public void setEmployees(Employees employees) {
         this.employees = employees;
+    }
+
+    public List<StatementFinalWorksParticipants> getStatementFinalWorksParticipants() {
+        return statementFinalWorksParticipants;
+    }
+
+    public void setStatementFinalWorksParticipants(List<StatementFinalWorksParticipants> statementFinalWorksParticipants) {
+        this.statementFinalWorksParticipants = statementFinalWorksParticipants;
     }
 
     public static FinalWorksParticipants findById(long id) {

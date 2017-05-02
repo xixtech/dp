@@ -44,6 +44,9 @@ public class PublicationsParticipants extends Model {
     @ManyToOne
     public Employees employees;
 
+    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementPublicationsParticipants> statementPublicationsParticipants;
+
     public PublicationsParticipants(String faculty, String orderInPublication, String department, String share, Publications publications, Employees employees) {
         this.faculty = faculty;
         this.orderInPublication = orderInPublication;
@@ -107,6 +110,14 @@ public class PublicationsParticipants extends Model {
 
     public void setEmployees(Employees employees) {
         this.employees = employees;
+    }
+
+    public List<StatementPublicationsParticipants> getStatementPublicationsParticipants() {
+        return statementPublicationsParticipants;
+    }
+
+    public void setStatementPublicationsParticipants(List<StatementPublicationsParticipants> statementPublicationsParticipants) {
+        this.statementPublicationsParticipants = statementPublicationsParticipants;
     }
 
     public static PublicationsParticipants findById(long id) {

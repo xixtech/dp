@@ -28,6 +28,9 @@ public class CommitteeParticipants extends Model {
     @ManyToOne
     public Employees employees;
 
+    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementCommitteeParticipants> statementCommitteeParticipants;
+
     public CommitteeParticipants(String roleInCommittee, Committee committee, Employees employees) {
         this.roleInCommittee = roleInCommittee;
         this.committee = committee;
@@ -64,6 +67,14 @@ public class CommitteeParticipants extends Model {
 
     public void setEmployees(Employees employees) {
         this.employees = employees;
+    }
+
+    public List<StatementCommitteeParticipants> getStatementCommitteeParticipants() {
+        return statementCommitteeParticipants;
+    }
+
+    public void setStatementCommitteeParticipants(List<StatementCommitteeParticipants> statementCommitteeParticipants) {
+        this.statementCommitteeParticipants = statementCommitteeParticipants;
     }
 
     public static CommitteeParticipants findById(long id) {

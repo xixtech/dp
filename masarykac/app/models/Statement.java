@@ -27,8 +27,26 @@ public class Statement extends Model {
 
     public String state;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementParticipants> statementParticipants;
+
+    @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementCommitteeParticipants> statementCommitteeParticipants;
+
+    @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementFinalWorksParticipants> statementFinalWorksParticipants;
+
+    @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementProjectsParticipants> projectsParticipants;
+
+    @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementPublicationsParticipants> statementPublicationsParticipants;
+
+    @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementTeachersParticipants> statementTeachersParticipants;
+
+    @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementVisitsParticipants> statementVisitsParticipants;
 
     public Statement(Date dateOfCommittee, String state) {
         this.dateOfCommittee = dateOfCommittee;
@@ -57,6 +75,54 @@ public class Statement extends Model {
 
     public void setStatementParticipants(List<StatementParticipants> statementParticipants) {
         this.statementParticipants = statementParticipants;
+    }
+
+    public List<StatementCommitteeParticipants> getStatementCommitteeParticipants() {
+        return statementCommitteeParticipants;
+    }
+
+    public void setStatementCommitteeParticipants(List<StatementCommitteeParticipants> statementCommitteeParticipants) {
+        this.statementCommitteeParticipants = statementCommitteeParticipants;
+    }
+
+    public List<StatementFinalWorksParticipants> getStatementFinalWorksParticipants() {
+        return statementFinalWorksParticipants;
+    }
+
+    public void setStatementFinalWorksParticipants(List<StatementFinalWorksParticipants> statementFinalWorksParticipants) {
+        this.statementFinalWorksParticipants = statementFinalWorksParticipants;
+    }
+
+    public List<StatementProjectsParticipants> getProjectsParticipants() {
+        return projectsParticipants;
+    }
+
+    public void setProjectsParticipants(List<StatementProjectsParticipants> projectsParticipants) {
+        this.projectsParticipants = projectsParticipants;
+    }
+
+    public List<StatementPublicationsParticipants> getStatementPublicationsParticipants() {
+        return statementPublicationsParticipants;
+    }
+
+    public void setStatementPublicationsParticipants(List<StatementPublicationsParticipants> statementPublicationsParticipants) {
+        this.statementPublicationsParticipants = statementPublicationsParticipants;
+    }
+
+    public List<StatementTeachersParticipants> getStatementTeachersParticipants() {
+        return statementTeachersParticipants;
+    }
+
+    public void setStatementTeachersParticipants(List<StatementTeachersParticipants> statementTeachersParticipants) {
+        this.statementTeachersParticipants = statementTeachersParticipants;
+    }
+
+    public List<StatementVisitsParticipants> getStatementVisitsParticipants() {
+        return statementVisitsParticipants;
+    }
+
+    public void setStatementVisitsParticipants(List<StatementVisitsParticipants> statementVisitsParticipants) {
+        this.statementVisitsParticipants = statementVisitsParticipants;
     }
 
     public Long getId() {

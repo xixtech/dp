@@ -36,6 +36,9 @@ public class Teachers extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<TeachersInWeeks> teachersInWeeks;
 
+    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementTeachersParticipants> statementTeachersParticipants;
+
     public Teachers(Courses courses, Employees employees, double scale, double summary) {
         this.courses = courses;
         this.employees = employees;
@@ -97,6 +100,14 @@ public class Teachers extends Model {
 
     public void setTeachersRole(TeachersRole teachersRole) {
         this.teachersRole = teachersRole;
+    }
+
+    public List<StatementTeachersParticipants> getStatementTeachersParticipants() {
+        return statementTeachersParticipants;
+    }
+
+    public void setStatementTeachersParticipants(List<StatementTeachersParticipants> statementTeachersParticipants) {
+        this.statementTeachersParticipants = statementTeachersParticipants;
     }
 
     public static List<Teachers> search() {

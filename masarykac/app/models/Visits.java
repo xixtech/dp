@@ -36,16 +36,15 @@ public class Visits extends Model {
     @ManyToOne
     public Semesters semester;
 
-    @ManyToOne
-    public Employees employees;
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<VisitsParticipants> visitsParticipants;
 
-    public Visits(String purposeOfVisit, String country, String event, Date visitFrom, Date visitTo, Employees employees, Semesters semester) {
+    public Visits(String purposeOfVisit, String country, String event, Date visitFrom, Date visitTo, Semesters semester) {
         this.purposeOfVisit = purposeOfVisit;
         this.country = country;
         this.event = event;
         this.visitFrom = visitFrom;
         this.visitTo = visitTo;
-        this.employees=employees;
         this.semester=semester;
     }
 
@@ -97,20 +96,20 @@ public class Visits extends Model {
         this.visitTo = visitTo;
     }
 
-    public Employees getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(Employees employees) {
-        this.employees = employees;
-    }
-
     public Semesters getSemester() {
         return semester;
     }
 
     public void setSemester(Semesters semester) {
         this.semester = semester;
+    }
+
+    public List<VisitsParticipants> getVisitsParticipants() {
+        return visitsParticipants;
+    }
+
+    public void setVisitsParticipants(List<VisitsParticipants> visitsParticipants) {
+        this.visitsParticipants = visitsParticipants;
     }
 
     public static Visits findById(long id) {

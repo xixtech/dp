@@ -26,6 +26,9 @@ public class ProjectsParticipants extends Model {
     @ManyToOne
     public Projects projects;
 
+    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementProjectsParticipants> projectsParticipants;
+
     public ProjectsParticipants(Employees employees, Projects projects) {
         this.employees = employees;
         this.projects = projects;
@@ -53,6 +56,14 @@ public class ProjectsParticipants extends Model {
 
     public void setProjects(Projects projects) {
         this.projects = projects;
+    }
+
+    public List<StatementProjectsParticipants> getProjectsParticipants() {
+        return projectsParticipants;
+    }
+
+    public void setProjectsParticipants(List<StatementProjectsParticipants> projectsParticipants) {
+        this.projectsParticipants = projectsParticipants;
     }
 
     public static ProjectsParticipants findById(long id) {
