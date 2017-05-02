@@ -104,10 +104,12 @@ public class VisitsController extends Controller {
             visitId = v.getId();
         }
 
+        VisitsParticipants[] visitPart = new VisitsParticipants[employees.size()];
         for (int i = 0; i < employees.size(); i++) {
 
             VisitsParticipants vp = new VisitsParticipants(Employees.findById(Long.parseLong(employees.get(i))), Visits.findById(visitId));
             vp.save();
+            visitPart[i]=vp;
         }
 
         List<Statement> s = Statement.findBySemester(Long.parseLong(semester.get(0)));
@@ -116,7 +118,7 @@ public class VisitsController extends Controller {
             if (s.size() > 0) {
                 for (Statement statement : s) {
                     if (statement.getEmployees().getId() == Long.parseLong(employees.get(i))) {
-                        StatementVisitsParticipants svp = new StatementVisitsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Visits.findById(visitId), statement);
+                        StatementVisitsParticipants svp = new StatementVisitsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), visitPart[i], statement);
                         svp.save();
                         saved = true;
                     }
@@ -124,13 +126,13 @@ public class VisitsController extends Controller {
                 if (saved == false) {
                     Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
                     st.save();
-                    StatementVisitsParticipants svp = new StatementVisitsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Visits.findById(visitId), st);
+                    StatementVisitsParticipants svp = new StatementVisitsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), visitPart[i], st);
                     svp.save();
                 }
             } else {
                 Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
                 st.save();
-                StatementVisitsParticipants svp = new StatementVisitsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Visits.findById(visitId), st);
+                StatementVisitsParticipants svp = new StatementVisitsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), visitPart[i], st);
                 svp.save();
             }
         }

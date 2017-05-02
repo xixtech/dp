@@ -40,7 +40,7 @@ public class FinalWorksController extends Controller {
     public Result save() {
         Form<FinalWorks> finalWorksForm = formFactory.form(FinalWorks.class).bindFromRequest();
         Form<FinalWorksParticipants> finalWorksToEmployeesForm = formFactory.form(FinalWorksParticipants.class).bindFromRequest();
-        if (finalWorksForm.hasErrors()||finalWorksToEmployeesForm.hasErrors()) {
+        if (finalWorksForm.hasErrors() || finalWorksToEmployeesForm.hasErrors()) {
             return badRequest(views.html.registerFinalWorks.render(finalWorksForm, finalWorksToEmployeesForm));
         }
         try {
@@ -100,9 +100,36 @@ public class FinalWorksController extends Controller {
             finalWorkId = fw.getId();
         }
 
+        FinalWorksParticipants[] finalwPart = new FinalWorksParticipants[employees.size()];
         for (int i = 0; i < employees.size(); i++) {
             FinalWorksParticipants fwp = new FinalWorksParticipants(teachersRole.get(i), FinalWorks.findById(finalWorkId), Employees.findById(Long.parseLong(employees.get(i))));
             fwp.save();
+            finalwPart[i] = fwp;
+        }
+
+        List<Statement> s = Statement.findBySemester(Long.parseLong(semester.get(0)));
+        for (int i = 0; i < employees.size(); i++) {
+            boolean saved = false;
+            if (s.size() > 0) {
+                for (Statement statement : s) {
+                    if (statement.getEmployees().getId() == Long.parseLong(employees.get(i))) {
+                        StatementFinalWorksParticipants spp = new StatementFinalWorksParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), finalwPart[i], statement);
+                        spp.save();
+                        saved = true;
+                    }
+                }
+                if (saved == false) {
+                    Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                    st.save();
+                    StatementFinalWorksParticipants spp = new StatementFinalWorksParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), finalwPart[i], st);
+                    spp.save();
+                }
+            } else {
+                Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                st.save();
+                StatementFinalWorksParticipants spp = new StatementFinalWorksParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), finalwPart[i], st);
+                spp.save();
+            }
         }
 
     }

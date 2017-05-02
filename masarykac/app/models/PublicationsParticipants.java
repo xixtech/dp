@@ -44,7 +44,7 @@ public class PublicationsParticipants extends Model {
     @ManyToOne
     public Employees employees;
 
-    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "publicationsParticipants",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementPublicationsParticipants> statementPublicationsParticipants;
 
     public PublicationsParticipants(String faculty, String orderInPublication, String department, String share, Publications publications, Employees employees) {

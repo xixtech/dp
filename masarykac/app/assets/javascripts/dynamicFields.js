@@ -5,12 +5,14 @@ var pocitadlo = 1;
 var pocitadlo1 = 0;
 var pocitadloPublicationParticipant = 1;
 var pocitadloVisitParticipant = 1;
+var pocitadloProjectParticipant = 1;
 var pocitadloCommitteeParticipant = 1;
 var countStudyPlan = 1;
 var weeksCount = 101;
 var weeksTeacher = 1;
 var emplArray = {};
 var publParticipantArray = {};
+var projectParticipantArray = {};
 var committeeParticipantArray = {};
 var fieldsOfStudyArray = {};
 var semestersArray = {};
@@ -133,6 +135,11 @@ function delWeekUsed(elem) {
 
     weeksUsedGeneral = pole;
     document.getElementById(elem).remove();
+}
+
+function projectArray(projectPart) {
+    projectParticipantArray = {};
+    projectParticipantArray = projectPart;
 }
 
 function visitArray(visitPart) {
@@ -484,6 +491,35 @@ function addVisitParticipant() {
     newDiv.innerHTML = selectHTML;
     document.getElementById('visitpart').appendChild(newDiv);
     pocitadloVisitParticipant++;
+}
+
+function addProjectParticipant() {
+
+    var newDiv = document.createElement('div');
+    var idnt = pocitadloProjectParticipant;
+    newDiv.setAttribute("id", idnt);
+    var mapKey = projectParticipantArray.k;
+    var mapValue = projectParticipantArray.v;
+    var testKey = mapKey.split(";");
+    var testValue = mapValue.split(";");
+
+    var i, out = [];//literal new array
+    for (i = 0; i < testKey.length; i++) {
+        out.push([testKey[i], testValue[i]]);
+    }
+
+    var selectHTML = "";
+    selectHTML = "<div class='row'><div class='col-md-5'><select class='form-control' name='employees.id'>";
+    for (i = 0; i < out.length; i = i + 1) {
+        selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
+
+    }
+    selectHTML += "</select></div>";
+    selectHTML += "<div class='col-md-3'><input type='text' class='form-control' placeholder='Role v projektu' name='projectRole' required> </div>";
+    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idnt + ");'/></div></div></br>";
+    newDiv.innerHTML = selectHTML;
+    document.getElementById('projectpart').appendChild(newDiv);
+    pocitadloProjectParticipant++;
 }
 
 

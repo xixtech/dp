@@ -27,8 +27,8 @@ public class TeachersController extends Controller {
      * @return
      */
     public Result index() {
-        Form<Teachers> studyPlansForm = formFactory.form(Teachers.class);
-        return ok(views.html.registerTeachers.render(studyPlansForm));
+        Form<Teachers> teachersForm = formFactory.form(Teachers.class);
+        return ok(views.html.registerTeachers.render(teachersForm));
     }
 
     /**
@@ -43,8 +43,6 @@ public class TeachersController extends Controller {
         long courseId = 0;
         long employeesId = 0;
         long val = 0;
-        long studyGroupsId = 0;
-        long studyGroups1Id = 0;
 
         for (String insId : formData.get("courses.id")) {
             courseId = Long.parseLong(insId);

@@ -33,16 +33,16 @@ public class StatementVisitsParticipants extends Model {
     public Semesters semester;
 
     @ManyToOne
-    public Visits visits;
+    public VisitsParticipants visitsParticipants;
 
     @ManyToOne
     public Statement statement;
 
-    public StatementVisitsParticipants(Date date, String state, Semesters semester, Visits visits, Statement statement) {
+    public StatementVisitsParticipants(Date date, String state, Semesters semester,  VisitsParticipants visitsParticipants, Statement statement) {
         this.date = date;
         this.state = state;
         this.semester = semester;
-        this.visits = visits;
+        this.visitsParticipants = visitsParticipants;
         this.statement = statement;
     }
 
@@ -78,12 +78,12 @@ public class StatementVisitsParticipants extends Model {
         this.note = note;
     }
 
-    public Visits getVisits() {
-        return visits;
+    public VisitsParticipants getVisitsParticipants() {
+        return visitsParticipants;
     }
 
-    public void setVisits(Visits visits) {
-        this.visits = visits;
+    public void setVisitsParticipants(VisitsParticipants visitsParticipants) {
+        this.visitsParticipants = visitsParticipants;
     }
 
     public Statement getStatement() {

@@ -225,6 +225,7 @@ create table projects (
 
 create table projects_participants (
   id                            bigserial not null,
+  project_role                  varchar(255),
   employees_id                  bigint,
   projects_id                   bigint,
   constraint pk_projects_participants primary key (id)
@@ -376,7 +377,7 @@ create table statement_visits_participants (
   state                         varchar(255),
   note                          varchar(255),
   semester_id                   bigint,
-  visits_id                     bigint,
+  visits_participants_id        bigint,
   statement_id                  bigint,
   constraint pk_statement_visits_participants primary key (id)
 );
@@ -623,8 +624,8 @@ create index ix_statement_teachers_participants_statement_id on statement_teache
 alter table statement_visits_participants add constraint fk_statement_visits_participants_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_statement_visits_participants_semester_id on statement_visits_participants (semester_id);
 
-alter table statement_visits_participants add constraint fk_statement_visits_participants_visits_id foreign key (visits_id) references visits (id) on delete restrict on update restrict;
-create index ix_statement_visits_participants_visits_id on statement_visits_participants (visits_id);
+alter table statement_visits_participants add constraint fk_statement_visits_participants_visits_participants_id foreign key (visits_participants_id) references visits_participants (id) on delete restrict on update restrict;
+create index ix_statement_visits_participants_visits_participants_id on statement_visits_participants (visits_participants_id);
 
 alter table statement_visits_participants add constraint fk_statement_visits_participants_statement_id foreign key (statement_id) references statement (id) on delete restrict on update restrict;
 create index ix_statement_visits_participants_statement_id on statement_visits_participants (statement_id);
@@ -815,8 +816,8 @@ drop index if exists ix_statement_teachers_participants_statement_id;
 alter table if exists statement_visits_participants drop constraint if exists fk_statement_visits_participants_semester_id;
 drop index if exists ix_statement_visits_participants_semester_id;
 
-alter table if exists statement_visits_participants drop constraint if exists fk_statement_visits_participants_visits_id;
-drop index if exists ix_statement_visits_participants_visits_id;
+alter table if exists statement_visits_participants drop constraint if exists fk_statement_visits_participants_visits_participants_id;
+drop index if exists ix_statement_visits_participants_visits_participants_id;
 
 alter table if exists statement_visits_participants drop constraint if exists fk_statement_visits_participants_statement_id;
 drop index if exists ix_statement_visits_participants_statement_id;

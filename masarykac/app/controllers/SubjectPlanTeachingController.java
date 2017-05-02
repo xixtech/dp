@@ -586,6 +586,39 @@ public class SubjectPlanTeachingController extends Controller {
             }
         }
 
+        Teachers[] teachersPart = new Teachers[teachersFromRows.size()];
+        int in=0;
+        for (Long value : teachersFromRows.values()) {
+            Teachers t=Teachers.findById(value);
+            teachersPart[in]=t;
+            in++;
+        }
+
+        List<Statement> stat = Statement.findBySemester(Long.parseLong(semesters.get(0)));
+        for (int i = 0; i < teachersPart.length; i++) {
+            boolean saved = false;
+            if (stat.size() > 0) {
+                for (Statement statement : stat) {
+                    if (statement.getEmployees().getId() == teachersPart[i].getEmployees().getId()) {
+                        StatementTeachersParticipants stp = new StatementTeachersParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i], statement);
+                        stp.save();
+                        saved = true;
+                    }
+                }
+                if (saved == false) {
+                    Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i].getEmployees());
+                    st.save();
+                    StatementTeachersParticipants stp = new StatementTeachersParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i], st);
+                    stp.save();
+                }
+            } else {
+                Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i].getEmployees());
+                st.save();
+                StatementTeachersParticipants stp = new StatementTeachersParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i], st);
+                stp.save();
+            }
+        }
+
         HashMap<String, Long> scheduleInW = new HashMap<String, Long>();
         for (int i = 0; i < days.size(); i++) {
             Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))));

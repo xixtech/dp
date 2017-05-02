@@ -82,12 +82,37 @@ public class CommitteeController extends Controller {
             committeeId = c.getId();
         }
 
+        CommitteeParticipants[] comPart = new CommitteeParticipants[employees.size()];
         for (int i = 0; i < employees.size(); i++) {
             CommitteeParticipants cp = new CommitteeParticipants(roleInCommittee.get(i), Committee.findById(committeeId), Employees.findById(Long.parseLong(employees.get(i))));
             cp.save();
-
+            comPart[i] = cp;
         }
 
+        List<Statement> s = Statement.findBySemester(Long.parseLong(semester.get(0)));
+        for (int i = 0; i < employees.size(); i++) {
+            boolean saved = false;
+            if (s.size() > 0) {
+                for (Statement statement : s) {
+                    if (statement.getEmployees().getId() == Long.parseLong(employees.get(i))) {
+                        StatementCommitteeParticipants scp = new StatementCommitteeParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), comPart[i], statement);
+                        scp.save();
+                        saved = true;
+                    }
+                }
+                if (saved == false) {
+                    Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                    st.save();
+                    StatementCommitteeParticipants scp = new StatementCommitteeParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), comPart[i], st);
+                    scp.save();
+                }
+            } else {
+                Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                st.save();
+                StatementCommitteeParticipants scp = new StatementCommitteeParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), comPart[i], st);
+                scp.save();
+            }
+        }
     }
 
 }

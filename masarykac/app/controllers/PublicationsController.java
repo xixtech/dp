@@ -9,6 +9,7 @@ import play.mvc.Security;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -112,13 +113,39 @@ public class PublicationsController extends Controller {
             publicationId = p.getId();
         }
 
+        PublicationsParticipants[] publPart = new PublicationsParticipants[employees.size()];
         for (int i = 0; i < employees.size(); i++) {
 
             PublicationsParticipants pp = new PublicationsParticipants(faculty.get(i), orderInPublication.get(i), department.get(i), share.get(i), Publications.findById(publicationId), Employees.findById(Long.parseLong(employees.get(i))));
             pp.save();
+            publPart[i] = pp;
 
         }
 
+        List<Statement> s = Statement.findBySemester(Long.parseLong(semester.get(0)));
+        for (int i = 0; i < employees.size(); i++) {
+            boolean saved = false;
+            if (s.size() > 0) {
+                for (Statement statement : s) {
+                    if (statement.getEmployees().getId() == Long.parseLong(employees.get(i))) {
+                        StatementPublicationsParticipants spp = new StatementPublicationsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), publPart[i], statement);
+                        spp.save();
+                        saved = true;
+                    }
+                }
+                if (saved == false) {
+                    Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                    st.save();
+                    StatementPublicationsParticipants spp = new StatementPublicationsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), publPart[i], st);
+                    spp.save();
+                }
+            } else {
+                Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                st.save();
+                StatementPublicationsParticipants spp = new StatementPublicationsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), publPart[i], st);
+                spp.save();
+            }
+        }
     }
 
 }

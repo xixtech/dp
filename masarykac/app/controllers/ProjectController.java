@@ -105,22 +105,53 @@ public class ProjectController extends Controller {
             employees.add(insId);
         }
 
+        List<String> projectRole = new ArrayList<>();
+
+        for (String insId : formData.get("projectRole")) {
+            projectRole.add(insId);
+        }
+
 
         long projectId = 0;
 
         for (int i = 0; i < projectName.size(); i++) {
 
-            Projects p = new Projects(projectName.get(i), projectFrom.get(i), projectTo.get(i),Semesters.findById(Long.parseLong(semester.get(i))), hasGrant.get(i), grantValue.get(i));
+            Projects p = new Projects(projectName.get(i), projectFrom.get(i), projectTo.get(i), Semesters.findById(Long.parseLong(semester.get(i))), hasGrant.get(i), grantValue.get(i));
             p.save();
             projectId = p.getId();
         }
 
+        ProjectsParticipants[] projectPart = new ProjectsParticipants[employees.size()];
         for (int i = 0; i < employees.size(); i++) {
 
-            ProjectsParticipants pp = new ProjectsParticipants(Employees.findById(Long.parseLong(employees.get(i))), Projects.findById(projectId));
+            ProjectsParticipants pp = new ProjectsParticipants(Employees.findById(Long.parseLong(employees.get(i))), Projects.findById(projectId), projectRole.get(i));
             pp.save();
+            projectPart[i] = pp;
         }
 
+        List<Statement> s = Statement.findBySemester(Long.parseLong(semester.get(0)));
+        for (int i = 0; i < employees.size(); i++) {
+            boolean saved = false;
+            if (s.size() > 0) {
+                for (Statement statement : s) {
+                    if (statement.getEmployees().getId() == Long.parseLong(employees.get(i))) {
+                        StatementProjectsParticipants spp = new StatementProjectsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), projectPart[i], statement);
+                        spp.save();
+                        saved = true;
+                    }
+                }
+                if (saved == false) {
+                    Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                    st.save();
+                    StatementProjectsParticipants spp = new StatementProjectsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), projectPart[i], st);
+                    spp.save();
+                }
+            } else {
+                Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                st.save();
+                StatementProjectsParticipants spp = new StatementProjectsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), projectPart[i], st);
+                spp.save();
+            }
+        }
     }
-
 }

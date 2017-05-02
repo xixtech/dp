@@ -20,18 +20,21 @@ public class ProjectsParticipants extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    public String projectRole;
+
     @ManyToOne
     public Employees employees;
 
     @ManyToOne
     public Projects projects;
 
-    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "projectsParticipants", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementProjectsParticipants> projectsParticipants;
 
-    public ProjectsParticipants(Employees employees, Projects projects) {
+    public ProjectsParticipants(Employees employees, Projects projects, String projectRole) {
         this.employees = employees;
         this.projects = projects;
+        this.projectRole = projectRole;
     }
 
     public Long getId() {
@@ -58,6 +61,14 @@ public class ProjectsParticipants extends Model {
         this.projects = projects;
     }
 
+    public String getProjectRole() {
+        return projectRole;
+    }
+
+    public void setProjectRole(String projectRole) {
+        this.projectRole = projectRole;
+    }
+
     public List<StatementProjectsParticipants> getProjectsParticipants() {
         return projectsParticipants;
     }
@@ -67,13 +78,13 @@ public class ProjectsParticipants extends Model {
     }
 
     public static ProjectsParticipants findById(long id) {
-        return find.where().eq("id",id).findUnique();
+        return find.where().eq("id", id).findUnique();
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<ProjectsParticipants> subjectSets = ProjectsParticipants.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(ProjectsParticipants set: subjectSets) {
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (ProjectsParticipants set : subjectSets) {
             options.put(set.id.toString(), set.id.toString());
         }
         return options;

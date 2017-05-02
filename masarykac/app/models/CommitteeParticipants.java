@@ -28,7 +28,7 @@ public class CommitteeParticipants extends Model {
     @ManyToOne
     public Employees employees;
 
-    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "committeeParticipants",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementCommitteeParticipants> statementCommitteeParticipants;
 
     public CommitteeParticipants(String roleInCommittee, Committee committee, Employees employees) {

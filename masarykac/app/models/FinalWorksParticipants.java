@@ -28,7 +28,7 @@ public class FinalWorksParticipants extends Model {
     @ManyToOne
     public Employees employees;
 
-    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "finalWorksParticipants",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementFinalWorksParticipants> statementFinalWorksParticipants;
 
     public FinalWorksParticipants(String teachersRole, FinalWorks finalWorks, Employees employees) {

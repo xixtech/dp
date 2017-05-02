@@ -28,7 +28,7 @@ public class VisitsParticipants extends Model {
     @ManyToOne
     public Visits visits;
 
-    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "visitsParticipants",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementVisitsParticipants> statementVisitsParticipants;
 
     public VisitsParticipants(Employees employees, Visits visits) {
