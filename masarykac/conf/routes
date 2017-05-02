@@ -57,6 +57,8 @@ GET         /employee/edit/:email                controllers.EmployeesController
 POST        /employee/updated/                   controllers.EmployeesController.update(email:String)
 POST        /employee/delete                     controllers.EmployeesController.delete(email:String)
 
+GET         /statement                           controllers.StatementController.index()
+
 # Přidat předmět
 GET         /subject/add                         controllers.SubjectController.index()
 POST        /subject/saved                       controllers.SubjectController.save()

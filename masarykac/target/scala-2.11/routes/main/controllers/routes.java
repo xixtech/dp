@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Tue May 02 09:47:04 CEST 2017
+// @DATE:Tue May 02 23:19:50 CEST 2017
 
 package controllers;
 
@@ -38,6 +38,7 @@ public class routes {
   public static final controllers.ReverseFieldOfStudyController FieldOfStudyController = new controllers.ReverseFieldOfStudyController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseStudyGroupsController StudyGroupsController = new controllers.ReverseStudyGroupsController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseEmployeesController EmployeesController = new controllers.ReverseEmployeesController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseStatementController StatementController = new controllers.ReverseStatementController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseSalaryController SalaryController = new controllers.ReverseSalaryController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReversePublicationsController PublicationsController = new controllers.ReversePublicationsController(RoutesPrefix.byNamePrefix());
 
@@ -72,6 +73,7 @@ public class routes {
     public static final controllers.javascript.ReverseFieldOfStudyController FieldOfStudyController = new controllers.javascript.ReverseFieldOfStudyController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseStudyGroupsController StudyGroupsController = new controllers.javascript.ReverseStudyGroupsController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseEmployeesController EmployeesController = new controllers.javascript.ReverseEmployeesController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseStatementController StatementController = new controllers.javascript.ReverseStatementController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseSalaryController SalaryController = new controllers.javascript.ReverseSalaryController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReversePublicationsController PublicationsController = new controllers.javascript.ReversePublicationsController(RoutesPrefix.byNamePrefix());
   }
