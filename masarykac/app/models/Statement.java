@@ -30,8 +30,8 @@ public class Statement extends Model {
     @ManyToOne
     public Semesters semester;
 
-    @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<StatementParticipants> statementParticipants;
+    @ManyToOne
+    public Employees employees;
 
     @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementCommitteeParticipants> statementCommitteeParticipants;
@@ -51,10 +51,11 @@ public class Statement extends Model {
     @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementVisitsParticipants> statementVisitsParticipants;
 
-    public Statement(Date date, String state, Semesters semester) {
+    public Statement(Date date, String state, Semesters semester,Employees employees) {
         this.date = date;
         this.state = state;
         this.semester = semester;
+        this.employees=employees;
     }
 
     public Semesters getSemester() {
@@ -81,12 +82,12 @@ public class Statement extends Model {
         this.state = state;
     }
 
-    public List<StatementParticipants> getStatementParticipants() {
-        return statementParticipants;
+    public Employees getEmployees() {
+        return employees;
     }
 
-    public void setStatementParticipants(List<StatementParticipants> statementParticipants) {
-        this.statementParticipants = statementParticipants;
+    public void setEmployees(Employees employees) {
+        this.employees = employees;
     }
 
     public List<StatementCommitteeParticipants> getStatementCommitteeParticipants() {
@@ -160,5 +161,9 @@ public class Statement extends Model {
 
     public static List<Statement> search() {
         return Statement.find.all();
+    }
+
+    public static List<Statement> findBySemester(long semester) {
+        return find.where().eq("semester.id", semester).findList();
     }
 }

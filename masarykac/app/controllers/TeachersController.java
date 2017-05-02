@@ -8,6 +8,8 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
+import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -56,9 +58,10 @@ public class TeachersController extends Controller {
             val = Long.parseLong(insId);
         }
 
-
         Teachers t=new Teachers(Courses.findById(courseId),Employees.findById(employeesId),(int)val,0.0);
         t.save();
+
+
         return redirect(routes.Application.index());
     }
 

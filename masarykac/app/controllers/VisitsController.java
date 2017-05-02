@@ -8,6 +8,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
+import javax.swing.plaf.nimbus.State;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -43,8 +44,8 @@ public class VisitsController extends Controller {
 
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
 
-            saveVisit(formData);
-            return redirect(routes.Application.index());
+        saveVisit(formData);
+        return redirect(routes.Application.index());
 
     }
 
@@ -107,6 +108,31 @@ public class VisitsController extends Controller {
 
             VisitsParticipants vp = new VisitsParticipants(Employees.findById(Long.parseLong(employees.get(i))), Visits.findById(visitId));
             vp.save();
+        }
+
+        List<Statement> s = Statement.findBySemester(Long.parseLong(semester.get(0)));
+        for (int i = 0; i < employees.size(); i++) {
+            boolean saved = false;
+            if (s.size() > 0) {
+                for (Statement statement : s) {
+                    if (statement.getEmployees().getId() == Long.parseLong(employees.get(i))) {
+                        StatementVisitsParticipants svp = new StatementVisitsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Visits.findById(visitId), statement);
+                        svp.save();
+                        saved = true;
+                    }
+                }
+                if (saved == false) {
+                    Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                    st.save();
+                    StatementVisitsParticipants svp = new StatementVisitsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Visits.findById(visitId), st);
+                    svp.save();
+                }
+            } else {
+                Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Employees.findById(Long.parseLong(employees.get(i))));
+                st.save();
+                StatementVisitsParticipants svp = new StatementVisitsParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semester.get(0))), Visits.findById(visitId), st);
+                svp.save();
+            }
         }
     }
 }

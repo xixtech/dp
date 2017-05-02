@@ -311,6 +311,7 @@ create table statement (
   date                          timestamp,
   state                         varchar(255),
   semester_id                   bigint,
+  employees_id                  bigint,
   constraint pk_statement primary key (id)
 );
 
@@ -334,17 +335,6 @@ create table statement_final_works_participants (
   final_works_participants_id   bigint,
   statement_id                  bigint,
   constraint pk_statement_final_works_participants primary key (id)
-);
-
-create table statement_participants (
-  id                            bigserial not null,
-  date                          timestamp,
-  state                         varchar(255),
-  note                          varchar(255),
-  semester_id                   bigint,
-  employees_id                  bigint,
-  statement_id                  bigint,
-  constraint pk_statement_participants primary key (id)
 );
 
 create table statement_projects_participants (
@@ -582,6 +572,9 @@ create index ix_schedule_in_weeks_schedule_id on schedule_in_weeks (schedule_id)
 alter table statement add constraint fk_statement_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_statement_semester_id on statement (semester_id);
 
+alter table statement add constraint fk_statement_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+create index ix_statement_employees_id on statement (employees_id);
+
 alter table statement_committee_participants add constraint fk_statement_committee_participants_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_statement_committee_participants_semester_id on statement_committee_participants (semester_id);
 
@@ -599,15 +592,6 @@ create index ix_statement_final_works_participants_final_works_partici_2 on stat
 
 alter table statement_final_works_participants add constraint fk_statement_final_works_participants_statement_id foreign key (statement_id) references statement (id) on delete restrict on update restrict;
 create index ix_statement_final_works_participants_statement_id on statement_final_works_participants (statement_id);
-
-alter table statement_participants add constraint fk_statement_participants_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
-create index ix_statement_participants_semester_id on statement_participants (semester_id);
-
-alter table statement_participants add constraint fk_statement_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
-create index ix_statement_participants_employees_id on statement_participants (employees_id);
-
-alter table statement_participants add constraint fk_statement_participants_statement_id foreign key (statement_id) references statement (id) on delete restrict on update restrict;
-create index ix_statement_participants_statement_id on statement_participants (statement_id);
 
 alter table statement_projects_participants add constraint fk_statement_projects_participants_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_statement_projects_participants_semester_id on statement_projects_participants (semester_id);
@@ -780,6 +764,9 @@ drop index if exists ix_schedule_in_weeks_schedule_id;
 alter table if exists statement drop constraint if exists fk_statement_semester_id;
 drop index if exists ix_statement_semester_id;
 
+alter table if exists statement drop constraint if exists fk_statement_employees_id;
+drop index if exists ix_statement_employees_id;
+
 alter table if exists statement_committee_participants drop constraint if exists fk_statement_committee_participants_semester_id;
 drop index if exists ix_statement_committee_participants_semester_id;
 
@@ -797,15 +784,6 @@ drop index if exists ix_statement_final_works_participants_final_works_partici_2
 
 alter table if exists statement_final_works_participants drop constraint if exists fk_statement_final_works_participants_statement_id;
 drop index if exists ix_statement_final_works_participants_statement_id;
-
-alter table if exists statement_participants drop constraint if exists fk_statement_participants_semester_id;
-drop index if exists ix_statement_participants_semester_id;
-
-alter table if exists statement_participants drop constraint if exists fk_statement_participants_employees_id;
-drop index if exists ix_statement_participants_employees_id;
-
-alter table if exists statement_participants drop constraint if exists fk_statement_participants_statement_id;
-drop index if exists ix_statement_participants_statement_id;
 
 alter table if exists statement_projects_participants drop constraint if exists fk_statement_projects_participants_semester_id;
 drop index if exists ix_statement_projects_participants_semester_id;
@@ -949,8 +927,6 @@ drop table if exists statement cascade;
 drop table if exists statement_committee_participants cascade;
 
 drop table if exists statement_final_works_participants cascade;
-
-drop table if exists statement_participants cascade;
 
 drop table if exists statement_projects_participants cascade;
 

@@ -64,9 +64,6 @@ public class Semesters extends Model {
     public List<ScheduleInWeeks> scheduleInWeeks;
 
     @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<StatementParticipants> statementParticipants;
-
-    @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementCommitteeParticipants> statementCommitteeParticipants;
 
     @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
@@ -228,14 +225,6 @@ public class Semesters extends Model {
 
     public void setScheduleInWeeks(List<ScheduleInWeeks> scheduleInWeeks) {
         this.scheduleInWeeks = scheduleInWeeks;
-    }
-
-    public List<StatementParticipants> getStatementParticipants() {
-        return statementParticipants;
-    }
-
-    public void setStatementParticipants(List<StatementParticipants> statementParticipants) {
-        this.statementParticipants = statementParticipants;
     }
 
     public List<StatementCommitteeParticipants> getStatementCommitteeParticipants() {

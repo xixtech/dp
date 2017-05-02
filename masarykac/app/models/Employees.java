@@ -40,6 +40,9 @@ public class Employees extends Model {
 
     public String accessRole;
 
+    @OneToMany(mappedBy = "employees",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Statement> statement;
+
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Teachers> teachers;
 
@@ -127,6 +130,14 @@ public class Employees extends Model {
 
     public void setAccessRole(String accessRole) {
         this.accessRole = accessRole;
+    }
+
+    public List<Statement> getStatement() {
+        return statement;
+    }
+
+    public void setStatement(List<Statement> statement) {
+        this.statement = statement;
     }
 
     public List<Teachers> getTeachers() {
