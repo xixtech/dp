@@ -23,9 +23,12 @@ public class Statement extends Model {
     public Long id;
 
     @Formats.DateTime(pattern = "dd.MM.yyyy")
-    public Date dateOfCommittee;
+    public Date date;
 
     public String state;
+
+    @ManyToOne
+    public Semesters semester;
 
     @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementParticipants> statementParticipants;
@@ -48,17 +51,26 @@ public class Statement extends Model {
     @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementVisitsParticipants> statementVisitsParticipants;
 
-    public Statement(Date dateOfCommittee, String state) {
-        this.dateOfCommittee = dateOfCommittee;
+    public Statement(Date date, String state, Semesters semester) {
+        this.date = date;
         this.state = state;
+        this.semester = semester;
     }
 
-    public Date getDateOfCommittee() {
-        return dateOfCommittee;
+    public Semesters getSemester() {
+        return semester;
     }
 
-    public void setDateOfCommittee(Date dateOfCommittee) {
-        this.dateOfCommittee = dateOfCommittee;
+    public void setSemester(Semesters semester) {
+        this.semester = semester;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getState() {

@@ -30,12 +30,18 @@ public class StatementProjectsParticipants extends Model {
     public String note;
 
     @ManyToOne
+    public Semesters semester;
+
+    @ManyToOne
     public ProjectsParticipants projectsParticipants;
 
     @ManyToOne
     public Statement statement;
 
-    public StatementProjectsParticipants(ProjectsParticipants projectsParticipants, Statement statement) {
+    public StatementProjectsParticipants(Date date, String state, Semesters semester, ProjectsParticipants projectsParticipants, Statement statement) {
+        this.date = date;
+        this.state = state;
+        this.semester = semester;
         this.projectsParticipants = projectsParticipants;
         this.statement = statement;
     }
@@ -86,6 +92,14 @@ public class StatementProjectsParticipants extends Model {
 
     public void setStatement(Statement statement) {
         this.statement = statement;
+    }
+
+    public Semesters getSemester() {
+        return semester;
+    }
+
+    public void setSemester(Semesters semester) {
+        this.semester = semester;
     }
 
     public static StatementProjectsParticipants findById(long id) {

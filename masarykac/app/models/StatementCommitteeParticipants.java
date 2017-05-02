@@ -30,14 +30,28 @@ public class StatementCommitteeParticipants extends Model {
     public String note;
 
     @ManyToOne
+    public Semesters semester;
+
+    @ManyToOne
     public CommitteeParticipants committeeParticipants;
 
     @ManyToOne
     public Statement statement;
 
-    public StatementCommitteeParticipants(CommitteeParticipants committeeParticipants, Statement statement) {
+    public StatementCommitteeParticipants(Date date, String state, Semesters semester, CommitteeParticipants committeeParticipants, Statement statement) {
+        this.date = date;
+        this.state = state;
+        this.semester = semester;
         this.committeeParticipants = committeeParticipants;
         this.statement = statement;
+    }
+
+    public Semesters getSemester() {
+        return semester;
+    }
+
+    public void setSemester(Semesters semester) {
+        this.semester = semester;
     }
 
     public Long getId() {

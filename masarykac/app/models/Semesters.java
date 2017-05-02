@@ -63,6 +63,27 @@ public class Semesters extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<ScheduleInWeeks> scheduleInWeeks;
 
+    @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementParticipants> statementParticipants;
+
+    @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementCommitteeParticipants> statementCommitteeParticipants;
+
+    @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementFinalWorksParticipants> statementFinalWorksParticipants;
+
+    @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementProjectsParticipants> projectsParticipants;
+
+    @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementPublicationsParticipants> statementPublicationsParticipants;
+
+    @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementTeachersParticipants> statementTeachersParticipants;
+
+    @OneToMany(mappedBy = "semester", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<StatementVisitsParticipants> statementVisitsParticipants;
+
 
     public Semesters(String semesterValue, String semesterVK, String semesterVD, String semesterAr, Date semesterFrom, Date semesterTo) {
         this.semesterValue = semesterValue;
@@ -207,6 +228,62 @@ public class Semesters extends Model {
 
     public void setScheduleInWeeks(List<ScheduleInWeeks> scheduleInWeeks) {
         this.scheduleInWeeks = scheduleInWeeks;
+    }
+
+    public List<StatementParticipants> getStatementParticipants() {
+        return statementParticipants;
+    }
+
+    public void setStatementParticipants(List<StatementParticipants> statementParticipants) {
+        this.statementParticipants = statementParticipants;
+    }
+
+    public List<StatementCommitteeParticipants> getStatementCommitteeParticipants() {
+        return statementCommitteeParticipants;
+    }
+
+    public void setStatementCommitteeParticipants(List<StatementCommitteeParticipants> statementCommitteeParticipants) {
+        this.statementCommitteeParticipants = statementCommitteeParticipants;
+    }
+
+    public List<StatementFinalWorksParticipants> getStatementFinalWorksParticipants() {
+        return statementFinalWorksParticipants;
+    }
+
+    public void setStatementFinalWorksParticipants(List<StatementFinalWorksParticipants> statementFinalWorksParticipants) {
+        this.statementFinalWorksParticipants = statementFinalWorksParticipants;
+    }
+
+    public List<StatementProjectsParticipants> getProjectsParticipants() {
+        return projectsParticipants;
+    }
+
+    public void setProjectsParticipants(List<StatementProjectsParticipants> projectsParticipants) {
+        this.projectsParticipants = projectsParticipants;
+    }
+
+    public List<StatementPublicationsParticipants> getStatementPublicationsParticipants() {
+        return statementPublicationsParticipants;
+    }
+
+    public void setStatementPublicationsParticipants(List<StatementPublicationsParticipants> statementPublicationsParticipants) {
+        this.statementPublicationsParticipants = statementPublicationsParticipants;
+    }
+
+    public List<StatementTeachersParticipants> getStatementTeachersParticipants() {
+        return statementTeachersParticipants;
+    }
+
+    public void setStatementTeachersParticipants(List<StatementTeachersParticipants> statementTeachersParticipants) {
+        this.statementTeachersParticipants = statementTeachersParticipants;
+    }
+
+    public List<StatementVisitsParticipants> getStatementVisitsParticipants() {
+        return statementVisitsParticipants;
+    }
+
+    public void setStatementVisitsParticipants(List<StatementVisitsParticipants> statementVisitsParticipants) {
+        this.statementVisitsParticipants = statementVisitsParticipants;
     }
 
     public static Map<String, String> options() {

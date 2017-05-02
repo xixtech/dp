@@ -30,12 +30,18 @@ public class StatementTeachersParticipants extends Model {
     public String note;
 
     @ManyToOne
+    public Semesters semester;
+
+    @ManyToOne
     public Teachers teachers;
 
     @ManyToOne
     public Statement statement;
 
-    public StatementTeachersParticipants(Teachers teachers, Statement statement) {
+    public StatementTeachersParticipants(Date date, String state, Semesters semester, Teachers teachers, Statement statement) {
+        this.date = date;
+        this.state = state;
+        this.semester = semester;
         this.teachers = teachers;
         this.statement = statement;
     }
@@ -86,6 +92,14 @@ public class StatementTeachersParticipants extends Model {
 
     public void setStatement(Statement statement) {
         this.statement = statement;
+    }
+
+    public Semesters getSemester() {
+        return semester;
+    }
+
+    public void setSemester(Semesters semester) {
+        this.semester = semester;
     }
 
     public static StatementTeachersParticipants findById(long id) {
