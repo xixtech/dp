@@ -47,7 +47,7 @@ public class Employees extends Model {
     public List<FinalWorksParticipants> finalWorksToEmployees;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<Visits> visits;
+    public List<VisitsParticipants> visitsParticipants;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<ProjectsParticipants> projectsParticipants;
@@ -149,14 +149,6 @@ public class Employees extends Model {
         return this.getFirstName() + " " + this.getSurname();
     }
 
-    public List<Visits> getVisits() {
-        return visits;
-    }
-
-    public void setVisits(List<Visits> visits) {
-        this.visits = visits;
-    }
-
     public List<ProjectsParticipants> getProjectsParticipants() {
         return projectsParticipants;
     }
@@ -187,6 +179,14 @@ public class Employees extends Model {
 
     public void setOrganizationalUnitsParticipantses(List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses) {
         this.organizationalUnitsParticipantses = organizationalUnitsParticipantses;
+    }
+
+    public List<VisitsParticipants> getVisitsParticipants() {
+        return visitsParticipants;
+    }
+
+    public void setVisitsParticipants(List<VisitsParticipants> visitsParticipants) {
+        this.visitsParticipants = visitsParticipants;
     }
 
     public Member getMember() {

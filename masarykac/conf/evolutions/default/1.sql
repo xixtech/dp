@@ -465,7 +465,6 @@ create table test (
 
 create table visits (
   id                            bigserial not null,
-  employees_id                  bigint not null,
   purpose_of_visit              varchar(255),
   country                       varchar(255),
   event                         varchar(255),
@@ -644,9 +643,6 @@ create index ix_teachers_in_weeks_teachers_id on teachers_in_weeks (teachers_id)
 alter table teachers_in_weeks add constraint fk_teachers_in_weeks_schedule_in_weeks_id foreign key (schedule_in_weeks_id) references schedule_in_weeks (id) on delete restrict on update restrict;
 create index ix_teachers_in_weeks_schedule_in_weeks_id on teachers_in_weeks (schedule_in_weeks_id);
 
-alter table visits add constraint fk_visits_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
-create index ix_visits_employees_id on visits (employees_id);
-
 alter table visits add constraint fk_visits_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_visits_semester_id on visits (semester_id);
 
@@ -820,9 +816,6 @@ drop index if exists ix_teachers_in_weeks_teachers_id;
 
 alter table if exists teachers_in_weeks drop constraint if exists fk_teachers_in_weeks_schedule_in_weeks_id;
 drop index if exists ix_teachers_in_weeks_schedule_in_weeks_id;
-
-alter table if exists visits drop constraint if exists fk_visits_employees_id;
-drop index if exists ix_visits_employees_id;
 
 alter table if exists visits drop constraint if exists fk_visits_semester_id;
 drop index if exists ix_visits_semester_id;

@@ -37,19 +37,15 @@ public class VisitsController extends Controller {
      *
      * @return
      */
-    public Result save() {
+    public Result save() throws Exception {
         Form<Visits> visitsForm = formFactory.form(Visits.class).bindFromRequest();
         Form<VisitsParticipants> visitsParticipantsForm = formFactory.form(VisitsParticipants.class).bindFromRequest();
-        if (visitsForm.hasErrors() || visitsParticipantsForm.hasErrors()) {
-            return badRequest(views.html.registerVisits.render(visitsForm, visitsParticipantsForm));
-        }
+
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
-        try {
+
             saveVisit(formData);
             return redirect(routes.Application.index());
-        } catch (Exception e) {
-            return badRequest(views.html.registerVisits.render(visitsForm, visitsParticipantsForm));
-        }
+
     }
 
     private void saveVisit(Map<String, String[]> formData) throws Exception {
@@ -73,7 +69,7 @@ public class VisitsController extends Controller {
         }
 
         List<Date> visitFrom = new ArrayList<>();
-        DateFormat format = new SimpleDateFormat("dd.mm.yyyy", Locale.ENGLISH);
+        DateFormat format = new SimpleDateFormat("yyyy-mm-dd", Locale.ENGLISH);
 
         for (String insId : formData.get("visitFrom")) {
 
@@ -90,12 +86,6 @@ public class VisitsController extends Controller {
 
         for (String insId : formData.get("semester.id")) {
             semester.add(insId);
-        }
-
-        List<String> grantValue = new ArrayList<>();
-
-        for (String insId : formData.get("grantValue")) {
-            grantValue.add(insId);
         }
 
         List<String> employees = new ArrayList<>();
