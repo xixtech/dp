@@ -1,4 +1,4 @@
-@(subjectForm: Form[Subjects], coursesForm: Form[Courses], scheduleForm: Form[Schedule], studyPlansForm: Form[StudyPlans])
+@(msg: String, subjectForm: Form[Subjects], coursesForm: Form[Courses], scheduleForm: Form[Schedule], studyPlansForm: Form[StudyPlans])
 @import helper._
 
 @localStylesheets = {
@@ -91,6 +91,7 @@
                 @helper.form(action = routes.SubjectPlanTeachingController.save) {
                     <fieldset>
                         <legend>Zadání předmětu</legend>
+                        <p style="color:red"><strong> @msg</strong></p>
                         <div class="col-md-30">
                             <div class="row">
                                 <div class="col-md-3">
@@ -261,7 +262,7 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label>
-                                                                    Semestr končí: <input type="date" class="form-control" id="endSemester"/> </label>
+                                                                    Semestr končí: <input type="date" class="form-control" id="endSemester" /> </label>
                                                             </div>
                                                         </div>
                                                         <div id="MyEdit">
@@ -299,6 +300,9 @@
                                                 </div>
                                                 <div class="col-md-8">
                                                     <input type="button" id="addCourseT" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
+                                                    <div class="row">
+                                                    </br>
+                                                    </div>
                                                     <div id="radky"></div>
                                                     <input type="button" id="addToAllWeeks" class="btn btn-default" value="Přidat" onclick="addCourseTeacherWeeksByDefault()" />
                                                 </div>

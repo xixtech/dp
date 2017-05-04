@@ -34,7 +34,7 @@ public class SubjectPlanTeachingController extends Controller {
         Form<Courses> coursesForm = formFactory.form(Courses.class);
         Form<Schedule> scheduleForm = formFactory.form(Schedule.class);
         Form<StudyPlans> studyPlansForm = formFactory.form(StudyPlans.class);
-        return ok(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm, studyPlansForm));
+        return ok(views.html.registerSubjectPlanTeaching.render("",subjectsForm, coursesForm, scheduleForm, studyPlansForm));
     }
 
     /**
@@ -48,20 +48,25 @@ public class SubjectPlanTeachingController extends Controller {
         Form<Schedule> scheduleForm = formFactory.form(Schedule.class).bindFromRequest();
         Form<StudyPlans> studyPlansForm = formFactory.form(StudyPlans.class).bindFromRequest();
         if (subjectsForm.hasErrors() || coursesForm.hasErrors() || scheduleForm.hasErrors() || studyPlansForm.hasErrors()) {
-            return badRequest(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm, studyPlansForm));
+            return badRequest(views.html.registerSubjectPlanTeaching.render("",subjectsForm, coursesForm, scheduleForm, studyPlansForm));
         }
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
 
         try {
-            saveCourse(formData);
-            return redirect(routes.Application.index());
+            boolean res=saveCourse(formData);
+            if(res) {
+                return redirect(routes.Application.index());
+            }else{
+                String msg="Kombinace položek Ident, Kurz a Semestr je již zadaná a nelze ji použít znovu";
+                return badRequest(views.html.registerSubjectPlanTeaching.render(msg,subjectsForm, coursesForm, scheduleForm, studyPlansForm));
+            }
         } catch (Throwable t) {
             Logger.error("Exception ", t);
-            return badRequest(views.html.registerSubjectPlanTeaching.render(subjectsForm, coursesForm, scheduleForm, studyPlansForm));
+            return badRequest(views.html.registerSubjectPlanTeaching.render("",subjectsForm, coursesForm, scheduleForm, studyPlansForm));
         }
     }
 
-    private void saveCourse(Map<String, String[]> formData) throws Exception {
+    private boolean saveCourse(Map<String, String[]> formData) throws Exception {
         List<String> ident = new ArrayList<>();
 
         for (String insId : formData.get("ident")) {
@@ -555,90 +560,119 @@ public class SubjectPlanTeachingController extends Controller {
             studyGroups1.add(Integer.parseInt(insId));
         }
 
-        Subjects subjects = null;
-        for (int i = 0; i < ident.size(); i++) {
-            subjects = new Subjects(ident.get(i), identOld.get(i), titleC.get(i), titleA.get(i),
-                    hoursP.get(i), hoursC.get(i), hoursSemester.get(i), credits.get(i), credit.get(i), exam.get(i), classifiedCredit.get(i),
-                    department.get(i), formPresentation.get(i), formCombined.get(i));
-            subjects.save();
-        }
-
-        StudyPlans sp = null;
-        for (int i = 0; i < fieldsOfStudy.size(); i++) {
-            sp = new StudyPlans(subjects, FieldsOfStudy.findById(fieldsOfStudy.get(i)), Semesters.findById(Long.parseLong(semestersStudyGroups.get(i))), semesterValue.get(i),
-                    StudyGroups.findById(studyGroups.get(i)), StudyGroups1.findById(studyGroups1.get(i)));
-            sp.save();
-        }
-
-        Courses c = null;
-        HashMap<String, Long> teachersFromRows = new HashMap<String, Long>();
-        for (int i = 0; i < course.size(); i++) {
-            c = new Courses(course.get(i), numberOfStudents.get(i), subjects, Semesters.findById(Long.parseLong(semesters.get(0))));
-            c.save();
-
-            for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()) {
-                Double summary = numberOfSummaryTeachers.get(entry.getKey());
-                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue(), summary);
-                t.save();
-                if (!teachersFromRows.containsKey(entry.getKey())) {
-                    teachersFromRows.put(entry.getKey(), t.getId());
-                }
+        if (checkUniqueness(ident.get(0), course.get(0), Long.parseLong(semesters.get(0))) == true) {
+            Subjects subjects = null;
+            for (int i = 0; i < ident.size(); i++) {
+                subjects = new Subjects(ident.get(i), identOld.get(i), titleC.get(i), titleA.get(i),
+                        hoursP.get(i), hoursC.get(i), hoursSemester.get(i), credits.get(i), credit.get(i), exam.get(i), classifiedCredit.get(i),
+                        department.get(i), formPresentation.get(i), formCombined.get(i));
+                subjects.save();
             }
-        }
 
-        Teachers[] teachersPart = new Teachers[teachersFromRows.size()];
-        int in=0;
-        for (Long value : teachersFromRows.values()) {
-            Teachers t=Teachers.findById(value);
-            teachersPart[in]=t;
-            in++;
-        }
+            StudyPlans sp = null;
+            for (int i = 0; i < fieldsOfStudy.size(); i++) {
+                sp = new StudyPlans(subjects, FieldsOfStudy.findById(fieldsOfStudy.get(i)), Semesters.findById(Long.parseLong(semestersStudyGroups.get(i))), semesterValue.get(i),
+                        StudyGroups.findById(studyGroups.get(i)), StudyGroups1.findById(studyGroups1.get(i)));
+                sp.save();
+            }
 
-        List<Statement> stat = Statement.findBySemester(Long.parseLong(semesters.get(0)));
-        for (int i = 0; i < teachersPart.length; i++) {
-            boolean saved = false;
-            if (stat.size() > 0) {
-                for (Statement statement : stat) {
-                    if (statement.getEmployees().getId() == teachersPart[i].getEmployees().getId()) {
-                        StatementTeachersParticipants stp = new StatementTeachersParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i], statement);
-                        stp.save();
-                        saved = true;
+            Courses c = null;
+            HashMap<String, Long> teachersFromRows = new HashMap<String, Long>();
+            for (int i = 0; i < course.size(); i++) {
+                c = new Courses(course.get(i), numberOfStudents.get(i), subjects, Semesters.findById(Long.parseLong(semesters.get(0))));
+                c.save();
+
+                for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()) {
+                    Double summary = numberOfSummaryTeachers.get(entry.getKey());
+                    Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue(), summary);
+                    t.save();
+                    if (!teachersFromRows.containsKey(entry.getKey())) {
+                        teachersFromRows.put(entry.getKey(), t.getId());
                     }
                 }
-                if (saved == false) {
+            }
+
+
+            Teachers[] teachersPart = new Teachers[teachersFromRows.size()];
+            int in = 0;
+            for (Long value : teachersFromRows.values()) {
+                Teachers t = Teachers.findById(value);
+                teachersPart[in] = t;
+                in++;
+            }
+
+            List<Statement> stat = Statement.findBySemester(Long.parseLong(semesters.get(0)));
+            for (int i = 0; i < teachersPart.length; i++) {
+                boolean saved = false;
+                if (stat.size() > 0) {
+                    for (Statement statement : stat) {
+                        if (statement.getEmployees().getId() == teachersPart[i].getEmployees().getId()) {
+                            StatementTeachersParticipants stp = new StatementTeachersParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i], statement);
+                            stp.save();
+                            saved = true;
+                        }
+                    }
+                    if (saved == false) {
+                        Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i].getEmployees());
+                        st.save();
+                        StatementTeachersParticipants stp = new StatementTeachersParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i], st);
+                        stp.save();
+                    }
+                } else {
                     Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i].getEmployees());
                     st.save();
                     StatementTeachersParticipants stp = new StatementTeachersParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i], st);
                     stp.save();
                 }
-            } else {
-                Statement st = new Statement(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i].getEmployees());
-                st.save();
-                StatementTeachersParticipants stp = new StatementTeachersParticipants(new Date(), "Vytvořeno", Semesters.findById(Long.parseLong(semesters.get(0))), teachersPart[i], st);
-                stp.save();
+            }
+
+            HashMap<String, Long> scheduleInW = new HashMap<String, Long>();
+            for (int i = 0; i < days.size(); i++) {
+                Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))));
+                s.save();
+
+                for (int j = 0; j < swyear.length; j++) {
+                    ScheduleInWeeks siw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))),
+                            Integer.parseInt(swyear[j][1]), Integer.parseInt(swyear[j][2]), s);
+                    siw.save();
+                    scheduleInW.put(swyear[j][1], siw.getId());
+                }
+            }
+
+            for (int k = 0; k < p.length; k++) {
+                if (scheduleInW.containsKey(p[k][1])) {
+                    long t = 0;
+                    t = teachersFromRows.get(p[k][3]);
+                    TeachersInWeeks tiw = new TeachersInWeeks(Teachers.findById(t), ScheduleInWeeks.findById(scheduleInW.get(p[k][1])), Double.parseDouble(p[k][5].replace(",", ".")));
+                    tiw.save();
+                }
+            }
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public boolean checkUniqueness(String ident, String course, long idSemester) {
+        List<Subjects> sub = Subjects.findIdent(ident);
+        if (sub.size() == 0) {
+            return true;
+        }
+        List<Courses> c = Courses.findByCourse(course);
+        if (c.size() == 0) {
+            return true;
+        }
+        Semesters s = Semesters.findById(idSemester);
+        for (int i = 0; i < c.size(); i++) {
+            for (int j = 0; j < sub.size(); j++) {
+                if (c.get(i).getSubjects().getId() == sub.get(j).getId()) {
+                    if (c.get(i).getSemester().getId() == s.getId()) {
+                        return false;
+                    }
+                }
             }
         }
 
-        HashMap<String, Long> scheduleInW = new HashMap<String, Long>();
-        for (int i = 0; i < days.size(); i++) {
-            Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))));
-            s.save();
-
-            for (int j = 0; j < swyear.length; j++) {
-                ScheduleInWeeks siw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))),
-                        Integer.parseInt(swyear[j][1]), Integer.parseInt(swyear[j][2]), s);
-                siw.save();
-                scheduleInW.put(swyear[j][1], siw.getId());
-            }
-        }
-
-        for (int k = 0; k < p.length; k++) {
-            if (scheduleInW.containsKey(p[k][1])) {
-                long t = 0;
-                t = teachersFromRows.get(p[k][3]);
-                TeachersInWeeks tiw = new TeachersInWeeks(Teachers.findById(t), ScheduleInWeeks.findById(scheduleInW.get(p[k][1])), Double.parseDouble(p[k][5].replace(",", ".")));
-                tiw.save();
-            }
-        }
+        return true;
     }
 }

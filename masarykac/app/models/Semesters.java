@@ -151,9 +151,7 @@ public class Semesters extends Model {
         return scheduleInWeekses;
     }
 
-    public void setScheduleInWeekses(List<ScheduleInWeeks> scheduleInWeekses) {
-        this.scheduleInWeekses = scheduleInWeekses;
-    }
+    public void setScheduleInWeekses(List<ScheduleInWeeks> scheduleInWeekses) { this.scheduleInWeekses = scheduleInWeekses; }
 
     public List<Courses> getCourses() {
         return courses;

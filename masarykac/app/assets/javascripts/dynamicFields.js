@@ -78,8 +78,8 @@ function setStartWeek() {
 
 
     calculateFirstAndLastDateOfWeek(currDate);
-    document.getElementById('titleA').value = sDate.getDate() + '. ' + (sDate.getMonth() + 1) + '. ' + sDate.getFullYear() + ' - ' + eDate.getDate() + '. ' + (eDate.getMonth() + 1) + '. ' + eDate.getFullYear();
 }
+
 function setDateForCalculation(date) {
     currDate = new Date(date.getFullYear(), (date.getMonth()), date.getDate() + 7);
 }
@@ -310,18 +310,33 @@ function appendRowDiv() {
     var num = 0;
     var year = 2017;
     if (value == 1) {
-        count = 14;
+        count = weekDiff;
+        num = weekStart;
     }
     if (value == 2) {
-        count = 14 / 2;
+        count = weekDiff / 2;
+        if (weekStart%2 === 0){
+            num = weekStart;
+        }
+        else{
+            num = weekStart+1;
+        }
+
     }
     if (value == 3) {
-        count = 14 / 2;
+        count = weekDiff / 2;
+        if (weekStart%2 !== 0){
+
+        }
+        else{
+            num = weekStart+1;
+        }
     }
     if (value == 4) {
         count = document.getElementById('numOfRows').value;
+        num = weekStart;
     }
-    num = weekStart;
+
     var current = startDate;
     for (i = 0; i < count; i++) {
         var newDiv = document.createElement('div');

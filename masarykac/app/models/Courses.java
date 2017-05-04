@@ -118,6 +118,10 @@ public class Courses extends Model {
         return find.where().eq("id", id).findUnique();
     }
 
+    public static List<Courses> findByCourse(String course) {
+        return find.where().eq("course", course).findList();
+    }
+
     public static Map<String, String> options() {
         List<Courses> subjectSets = Courses.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
