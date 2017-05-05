@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Fri May 05 11:19:27 CEST 2017
+// @DATE:Fri May 05 23:34:29 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -1343,22 +1343,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:60
-    def sendStatementToEmployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.StatementController.sendStatementToEmployee",
-      """
-        function(idE0,idS1) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "statement/check/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idE", idE0) + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idS", idS1)})
-        }
-      """
-    )
-  
     // @LINE:61
-    def sendToAgree: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.StatementController.sendToAgree",
+    def sendToVerify: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.StatementController.sendToVerify",
       """
         function(idE0,idS1) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "statement/agree/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idE", idE0) + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idS", idS1)})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "statement/ver/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idE", idE0) + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idS", idS1)})
         }
       """
     )
@@ -1373,12 +1363,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:62
-    def sendToRepair: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.StatementController.sendToRepair",
+    // @LINE:60
+    def sendStatementToEmployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.StatementController.sendStatementToEmployee",
       """
         function(idE0,idS1) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "statement/repair/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idE", idE0) + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idS", idS1)})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "statement/check/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idE", idE0) + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("idS", idS1)})
         }
       """
     )

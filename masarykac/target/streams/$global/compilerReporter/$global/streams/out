@@ -1,10 +1,4 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployeeCheckStatement.scala.html:85: comparing values of types Double and Null using `==' will always yield false
-[warn]                                                 @if(member.getTeachers.getScale == null) {
-[warn]                                                                                 ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployeeCheckStatement.scala.html:91: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                             @if(member.getTeachers.getScale == null) {
+[warn]                                                                                             ^
 [warn] one warning found
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployeeCheckStatement.scala.html:85: comparing values of types Double and Null using `==' will always yield false
-[warn]                                                 @if(member.getTeachers.getScale == null) {
-[warn]                                                                                 ^
-[warn] one warning found
-[warn] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomController.java:3: com.sun.org.apache.bcel.internal.util.ClassQueue is internal proprietary API and may be removed in a future release
-[warn] com.sun.org.apache.bcel.internal.util.ClassQueue

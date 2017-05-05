@@ -51,7 +51,6 @@ public class SubjectPlanTeachingController extends Controller {
             return badRequest(views.html.registerSubjectPlanTeaching.render("",subjectsForm, coursesForm, scheduleForm, studyPlansForm));
         }
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
-
         try {
             boolean res=saveCourse(formData);
             if(res) {

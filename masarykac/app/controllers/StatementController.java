@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -48,7 +49,7 @@ public class StatementController extends Controller {
         e.add(Employees.findById(idE));
         List<Statement> statements=new ArrayList<>();
         Statement s=Statement.findById(idS);
-        s.setState("Odesláno ke zpracování");
+        s.setState("Odesláno ke schválení");
         statements.add(s);
         List<Semesters> sem = Semesters.search();
         List<StatementCommitteeParticipants> scp = StatementCommitteeParticipants.search();
@@ -59,16 +60,23 @@ public class StatementController extends Controller {
         List<StatementVisitsParticipants> svp = StatementVisitsParticipants.search();
         return ok(views.html.tables.tableEmployeeCheckStatement.render(idE, idS, e, sem, statements, scp, sfwp, spp, sppart, stp, svp));
     }
-    public Result sendToRepair(long idE, long idS) {
+    public Result sendToVerify(long idE, long idS) {
+        Map<String, String[]> formData = request().body().asFormUrlEncoded();
+
+        List<String> textPublication = new ArrayList<>();
+
+        for (String insId : formData.get("textPublication")) {
+            textPublication.add(insId);
+        }
+
+      boolean t=formData.containsKey("publOption2");
+
+
         List<Statement> statements=new ArrayList<>();
         Statement s=Statement.findById(idS);
-        s.setState("Vytvořeno");
+        s.setState(""+t);
+        s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements));
-    }
-
-    public Result sendToAgree(long idE, long idS) {
-        List<Statement> statements = Statement.findByEmployees(idE);
         return ok(views.html.tables.tableEmployeeStatements.render(statements));
     }
 
@@ -78,7 +86,6 @@ public class StatementController extends Controller {
      * @return
      */
     public Result save() {
-
         return redirect(routes.Application.index());
 
     }

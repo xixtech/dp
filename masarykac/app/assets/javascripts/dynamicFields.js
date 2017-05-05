@@ -28,7 +28,6 @@ var eDate = new Date();
 var currDate = new Date();
 var weekStart = 1;
 
-
 $('body').on('click', 'input.deleteDep', function () {
     $(this).parents('tr').remove();
 });
@@ -75,8 +74,6 @@ function setStartWeek() {
     var yearStart = new Date(calcDate.getFullYear(), 0, 1);
     // Calculate full weeks to nearest Thursday
     weekStart = Math.ceil(( ( (calcDate - yearStart) / 86400000) + 1) / 7);
-
-
     calculateFirstAndLastDateOfWeek(currDate);
 }
 
@@ -110,9 +107,7 @@ function delGeneralTeacher(elem) {
     }
     teachersScaleGeneralLastIndex = teachindex;
     teachersScaleGeneral.length = 0;
-
     teachersScaleGeneral = pole;
-
     document.getElementById(elem).remove();
 }
 function delWeekUsed(elem) {
@@ -128,11 +123,9 @@ function delWeekUsed(elem) {
             pole[weekindex] = weeksUsedGeneral [i];
             weekindex++;
         }
-
     }
     weeksUsedGeneralLastIndex = weekindex;
     weeksUsedGeneral.length = 0;
-
     weeksUsedGeneral = pole;
     document.getElementById(elem).remove();
 }
@@ -174,15 +167,7 @@ function studyplansArrays(fields, sem, stud, stud1) {
     studyGroups1Array = stud1;
 }
 
-function displaySpecialWeeks() {
-    if (document.getElementById('yesCheck').checked) {
-        document.getElementById('ifYes').style.display = 'block';
-    }
-    else document.getElementById('ifYes').style.display = 'none';
-}
-
 function appendRow() {
-
     for (i = 0; i < 14; i++) {
         var tbl = document.getElementById('my-table'), // table reference
             row = tbl.insertRow(tbl.rows.length);
@@ -867,7 +852,84 @@ function sv(input) {
     if (input.value > 6) input.value = 6;
 }
 
+function displaySubjectTextArea() {
+    if (document.getElementById('subjOption2').checked) {
+        document.getElementById('okSubject').style.display = 'block';
+    }
+}
 
+function displaySubjectTextAreaOff() {
+    if (document.getElementById('subjOption1').checked) {
+        document.getElementById('okSubject').style.display = 'none';
+    }
+}
+
+function displayPublicationTextArea() {
+    if (document.getElementById('publOption2').checked) {
+        document.getElementById('okPublication').style.display = 'block';
+    }
+}
+
+function displayPublicationTextAreaOff() {
+    if (document.getElementById('publOption1').checked) {
+        document.getElementById('okPublication').style.display = 'none';
+    }
+}
+
+function displayProjectTextArea() {
+    if (document.getElementById('projOption2').checked) {
+        document.getElementById('okProject').style.display = 'block';
+    }
+}
+
+function displayProjectTextAreaOff() {
+    if (document.getElementById('projOption1').checked) {
+        document.getElementById('okProject').style.display = 'none';
+    }
+}
+
+function displayCommitteeTextArea() {
+    if (document.getElementById('committeeOption2').checked) {
+        document.getElementById('okCommittee').style.display = 'block';
+    }
+}
+
+function displayCommitteeTextAreaOff() {
+    if (document.getElementById('committeeOption1').checked) {
+        document.getElementById('okCommittee').style.display = 'none';
+    }
+}
+
+function displayFinalTextArea() {
+    if (document.getElementById('finalOption2').checked) {
+        document.getElementById('okFinal').style.display = 'block';
+    }
+}
+
+function displayFinalTextAreaOff() {
+    if (document.getElementById('finalOption1').checked) {
+        document.getElementById('okFinal').style.display = 'none';
+    }
+}
+
+function displayVisitTextArea() {
+    if (document.getElementById('visitOption2').checked) {
+        document.getElementById('okVisit').style.display = 'block';
+    }
+}
+
+function displayVisitTextAreaOff() {
+    if (document.getElementById('visitOption1').checked) {
+        document.getElementById('okVisit').style.display = 'none';
+    }
+}
+
+function displaySpecialWeeks() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.display = 'block';
+    }
+    else document.getElementById('ifYes').style.display = 'none';
+}
 
 
 
