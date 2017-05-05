@@ -1,24 +1,10 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SubjectPlanTeachingController.java:67: missing return statement
-[error] {
-[error]         Form<Subjects> subjectsForm = formFactory.form(Subjects.class).bindFromRequest();
-[error]         Form<Courses> coursesForm = formFactory.form(Courses.class).bindFromRequest();
-[error]         Form<Schedule> scheduleForm = formFactory.form(Schedule.class).bindFromRequest();
-[error]         Form<StudyPlans> studyPlansForm = formFactory.form(StudyPlans.class).bindFromRequest();
-[error]         if (subjectsForm.hasErrors() || coursesForm.hasErrors() || scheduleForm.hasErrors() || studyPlansForm.hasErrors()) {
-[error]             return badRequest(views.html.registerSubjectPlanTeaching.render("",subjectsForm, coursesForm, scheduleForm, studyPlansForm));
-[error]         }
-[error]         Map<String, String[]> formData = request().body().asFormUrlEncoded();
-[error] 
-[error]         try {
-[error]             boolean res=saveCourse(formData);
-[error]             if(res) {
-[error]                 return redirect(routes.Application.index());
-[error]             }else{
-[error]                 String msg="Kombinace položek Ident, Kurz a Semestr je již zadaná a nelze ji použít znovu";
-[error]                 badRequest(views.html.registerSubjectPlanTeaching.render(msg,subjectsForm, coursesForm, scheduleForm, studyPlansForm));
-[error]             }
-[error]         } catch (Throwable t) {
-[error]             Logger.error("Exception ", t);
-[error]             return badRequest(views.html.registerSubjectPlanTeaching.render("",subjectsForm, coursesForm, scheduleForm, studyPlansForm));
-[error]         }
-[error]     }
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployeeCheckStatement.scala.html:85: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                 @if(member.getTeachers.getScale == null) {
+[warn]                                                                                 ^
+[warn] one warning found
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployeeCheckStatement.scala.html:85: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                 @if(member.getTeachers.getScale == null) {
+[warn]                                                                                 ^
+[warn] one warning found
+[warn] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomController.java:3: com.sun.org.apache.bcel.internal.util.ClassQueue is internal proprietary API and may be removed in a future release
+[warn] com.sun.org.apache.bcel.internal.util.ClassQueue

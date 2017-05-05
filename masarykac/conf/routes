@@ -8,9 +8,7 @@ GET         /pdf                                 controllers.Application.pdf()
 GET         /raw                                 controllers.Application.raw()
 GET         /                                    controllers.Application.index()
 GET         /test                                controllers.TestController.test()
-
 POST        /test/ok                             controllers.TestController.save()
-
 GET         /kpi                                 controllers.Application.kpiChoosePerson()
 POST        /kpi/k                               controllers.SalaryController.getPerson()
 GET         /login                               controllers.Login.index()
@@ -58,7 +56,10 @@ POST        /employee/updated/                   controllers.EmployeesController
 POST        /employee/delete                     controllers.EmployeesController.delete(email:String)
 
 GET         /statement                           controllers.StatementController.index()
-
+POST        /statement/employee/:email           controllers.StatementController.employeeStatement(email:String)
+POST        /statement/check/:idE:idS           controllers.StatementController.sendStatementToEmployee(idE:Long, idS:Long)
+POST        /statement/agree/:idE:idS           controllers.StatementController.sendToAgree(idE:Long, idS:Long)
+POST        /statement/repair/:idE:idS           controllers.StatementController.sendToRepair(idE:Long, idS:Long)
 # Přidat předmět
 GET         /subject/add                         controllers.SubjectController.index()
 POST        /subject/saved                       controllers.SubjectController.save()

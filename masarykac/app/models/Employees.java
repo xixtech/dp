@@ -41,7 +41,10 @@ public class Employees extends Model {
     public String accessRole;
 
     @OneToMany(mappedBy = "employees",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
-    public List<Statement> statement;
+    public List<Statement> statementEmployees;
+
+    @OneToMany(mappedBy = "managerEmployee",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Statement> statementManagers;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Teachers> teachers;
@@ -132,12 +135,20 @@ public class Employees extends Model {
         this.accessRole = accessRole;
     }
 
-    public List<Statement> getStatement() {
-        return statement;
+    public List<Statement> getStatementEmployees() {
+        return statementEmployees;
     }
 
-    public void setStatement(List<Statement> statement) {
-        this.statement = statement;
+    public void setStatementEmployees(List<Statement> statementEmployees) {
+        this.statementEmployees = statementEmployees;
+    }
+
+    public List<Statement> getStatementManagers() {
+        return statementManagers;
+    }
+
+    public void setStatementManagers(List<Statement> statementManagers) {
+        this.statementManagers = statementManagers;
     }
 
     public List<Teachers> getTeachers() {

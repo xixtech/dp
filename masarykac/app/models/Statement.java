@@ -33,6 +33,9 @@ public class Statement extends Model {
     @ManyToOne
     public Employees employees;
 
+    @ManyToOne
+    public Employees managerEmployee;
+
     @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementCommitteeParticipants> statementCommitteeParticipants;
 
@@ -88,6 +91,14 @@ public class Statement extends Model {
 
     public void setEmployees(Employees employees) {
         this.employees = employees;
+    }
+
+    public Employees getManagerEmployee() {
+        return managerEmployee;
+    }
+
+    public void setManagerEmployee(Employees managerEmployee) {
+        this.managerEmployee = managerEmployee;
     }
 
     public List<StatementCommitteeParticipants> getStatementCommitteeParticipants() {
@@ -165,5 +176,9 @@ public class Statement extends Model {
 
     public static List<Statement> findBySemester(long semester) {
         return find.where().eq("semester.id", semester).findList();
+    }
+
+    public static List<Statement> findByEmployees(long employees) {
+        return find.where().eq("employees.id", employees).findList();
     }
 }

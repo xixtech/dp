@@ -46,6 +46,7 @@
                                     <th>Titul za</th>
                                     <th>Upravit</th>
                                     <th>Smazat</th>
+                                    <th>Výkazy zaměstnance</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -97,6 +98,11 @@
                                         <td class="center">
                                         @form(routes.EmployeesController.delete(member.member.getEmail())) {
                                             <input type="submit" value="Smazat" class="btn btn-danger">
+                                            }
+                                        </td>
+                                        <td class="center">
+                                        @form(routes.StatementController.employeeStatement(member.member.getEmail())) {
+                                            <input type="submit" value="Výkazy" class="btn btn-info">
                                             }
                                         </td>
 

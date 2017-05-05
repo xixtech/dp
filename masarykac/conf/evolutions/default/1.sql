@@ -313,6 +313,7 @@ create table statement (
   state                         varchar(255),
   semester_id                   bigint,
   employees_id                  bigint,
+  manager_employee_id           bigint,
   constraint pk_statement primary key (id)
 );
 
@@ -576,6 +577,9 @@ create index ix_statement_semester_id on statement (semester_id);
 alter table statement add constraint fk_statement_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_statement_employees_id on statement (employees_id);
 
+alter table statement add constraint fk_statement_manager_employee_id foreign key (manager_employee_id) references employees (id) on delete restrict on update restrict;
+create index ix_statement_manager_employee_id on statement (manager_employee_id);
+
 alter table statement_committee_participants add constraint fk_statement_committee_participants_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_statement_committee_participants_semester_id on statement_committee_participants (semester_id);
 
@@ -767,6 +771,9 @@ drop index if exists ix_statement_semester_id;
 
 alter table if exists statement drop constraint if exists fk_statement_employees_id;
 drop index if exists ix_statement_employees_id;
+
+alter table if exists statement drop constraint if exists fk_statement_manager_employee_id;
+drop index if exists ix_statement_manager_employee_id;
 
 alter table if exists statement_committee_participants drop constraint if exists fk_statement_committee_participants_semester_id;
 drop index if exists ix_statement_committee_participants_semester_id;
