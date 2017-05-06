@@ -60,6 +60,11 @@ POST        /statement/employee/:email           controllers.StatementController
 POST        /statement/check/:idE:idS            controllers.StatementController.sendStatementToEmployee(idE:Long, idS:Long)
 POST        /statement/info/:idE:idS             controllers.StatementController.infoStatementToEmployee(idE:Long, idS:Long)
 POST        /statement/ver/:idE:idS              controllers.StatementController.sendToVerify(idE:Long, idS:Long)
+POST        /statement/agree/:idE:idS            controllers.StatementController.sendToAgree(idE:Long, idS:Long)
+POST        /statement/repair/:idE:idS           controllers.StatementController.sendToRepair(idE:Long, idS:Long)
+POST        /statement/repaired/:idE:idS         controllers.StatementController.sendRepairedStatement(idE:Long, idS:Long)
+POST        /statement/checkrepaired/:idE:idS         controllers.StatementController.checkRepairStatementToEmployee(idE:Long, idS:Long)
+
 
 # Přidat předmět
 GET         /subject/add                         controllers.SubjectController.index()

@@ -93,37 +93,9 @@
                                         </table>
                                     </div>
                                 </div>
-                                @for(member <- statTeachPart) {
-                                    @if(stat.getId == member.getStatement.getId) {
-                                        <div class="panel-body">
-                                            <label class="btn btn-outline btn-success">
-                                                @if(member.getState() == "") {
-                                                    <input type="radio" name="subjOption" id="subjOption1" checked disabled>
-                                                } else {
-                                                    <input type="radio" name="subjOption" id="subjOption1" disabled>
-                                                }
-                                                Schválit
-                                            </label>
-                                            <label class="btn btn-outline btn-warning">
-                                                @if(member.getState() == "") {
-                                                    <input type="radio" name="subjOption" id="subjOption2" checked disabled>
-                                                } else {
-                                                    <input type="radio" name="subjOption" id="subjOption2" disabled>
-                                                }
-                                                Odmítnout
-                                            </label>
-                                            @if(member.getState() != "") {
-                                                <div id="okSubject" style="display: block">
-                                                    <p><textarea id="textSubject" rows="4" cols="50" >@member.getNote()</textarea></p>
-                                                </div>
-                                            }
-                                        </div>
-                                    }
-                                }
                             </div>
                         }
                     </div>
-                    <input type="hidden" name="radioSubject" id="radioSubject" value="-1">
                     <div class="panel panel-green">
                         <div class="panel-heading">
                                 Publikace
@@ -165,37 +137,8 @@
                                     </table>
                                 </div>
                             </div>
-                            @for(member <- statPubPartPage) {
-                                @if(stat.getId == member.getStatement.getId) {
-                                    <div class="panel-body">
-                                        <label class="btn btn-outline btn-success">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="publOption" id="publOption1" checked disabled>
-                                            } else {
-                                                <input type="radio" name="publOption" id="publOption1" disabled>
-                                            }
-                                            Schválit
-                                        </label>
-                                        <label class="btn btn-outline btn-warning">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="publOption" id="publOption2" checked disabled>
-                                            } else {
-                                                <input type="radio" name="publOption" id="publOption2" checked disabled>
-                                            }
-
-                                            Odmítnout
-                                        </label>
-                                        @if(member.getState() != "") {
-                                            <div id="okPublication" style="display: block">
-                                                <p><textarea name="textPublication" id="textPublication" rows="4" cols="50" disabled>@member.getNote()</textarea></p>
-                                            </div>
-                                        }
-                                    </div>
-                                }
-                            }
                         }
                     </div>
-                    <input type="hidden" name="radioPublication" id="radioPublication" value="-1">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
                                 Projekty
@@ -239,36 +182,8 @@
                                     </table>
                                 </div>
                             </div>
-                            @for(member <- statProjPartPage) {
-                                @if(stat.getId == member.getStatement.getId) {
-                                    <div class="panel-body">
-                                        <label class="btn btn-outline btn-success">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="projOption" id="projOption1" checked disabled>
-                                            } else {
-                                                <input type="radio" name="projOption" id="projOption1" disabled>
-                                            }
-                                            Schválit
-                                        </label>
-                                        <label class="btn btn-outline btn-warning">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="projOption" id="projOption2" checked disabled>
-                                            } else {
-                                                <input type="radio" name="projOption" id="projOption2" disabled>
-                                            }
-                                            Odmítnout
-                                        </label>
-                                        @if(member.getState() != "") {
-                                            <div id="okProject" style="display: block">
-                                                <p> <textarea id="textProject" rows="4" cols="50">@member.getNote()</textarea></p>
-                                            </div>
-                                        }
-                                    </div>
-                                }
-                            }
                         }
                     </div>
-                    <input type="hidden" name="radioProject" id="radioProject" value="-1">
                     <div class="panel panel-red">
                         <div class="panel-heading">
                                 Účast v komisích Státních závěrečných zkoušek
@@ -311,36 +226,8 @@
                                     </table>
                                 </div>
                             </div>
-                            @for(member <- statComPartPage) {
-                                @if(stat.getId == member.getStatement.getId) {
-                                    <div class="panel-body">
-                                        <label class="btn btn-outline btn-success">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="committeeOption" id="committeeOption1" checked disabled>
-                                            } else {
-                                                <input type="radio" name="committeeOption" id="committeeOption1" disabled>
-                                            }
-                                            Schválit
-                                        </label>
-                                        <label class="btn btn-outline btn-warning">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="committeeOption" id="committeeOption2" checked disabled>
-                                            } else {
-                                                <input type="radio" name="committeeOption" id="committeeOption2" disabled>
-                                            }
-                                            Odmítnout
-                                        </label>
-                                        @if(member.getState() != "") {
-                                            <div id="okCommittee" style="display: block">
-                                                <p><textarea id="textCommittee" rows="4" cols="50"></textarea></p>
-                                            </div>
-                                        }
-                                    </div>
-                                }
-                            }
                         }
                     </div>
-                    <input type="hidden" name="radioCommittee" id="radioCommittee" value="-1">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
                                 Účast na závěrečných pracích studentů
@@ -384,36 +271,8 @@
                                     </table>
                                 </div>
                             </div>
-                            @for(member <- statFinalWPartPage) {
-                                @if(stat.getId == member.getStatement.getId) {
-                                    <div class="panel-body">
-                                        <label class="btn btn-outline btn-success">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="finalOption" id="finalOption1" checked disabled>
-                                            } else {
-                                                <input type="radio" name="finalOption" id="finalOption1" disabled>
-                                            }
-                                            Schválit
-                                        </label>
-                                        <label class="btn btn-outline btn-warning">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="finalOption" id="finalOption2" checked disabled>
-                                            } else {
-                                                <input type="radio" name="finalOption" id="finalOption2" disabled>
-                                            }
-                                            Odmítnout
-                                        </label>
-                                        @if(member.getState() != "") {
-                                            <div id="okFinal" style="display: block">
-                                                <p><textarea id="textFinal" rows="4" cols="50"></textarea></p>
-                                            </div>
-                                        }
-                                    </div>
-                                }
-                            }
                         }
                     </div>
-                    <input type="hidden" name="radioFinal" id="radioFinal" value="-1">
                     <div class="panel panel-info">
                         <div class="panel-heading">
                                 Účast na výjezdech
@@ -457,40 +316,12 @@
                                     </table>
                                 </div>
                             </div>
-                            @for(member <- statVisitsPart) {
-                                @if(stat.getId == member.getStatement.getId) {
-                                    <div class="panel-body">
-                                        <label class="btn btn-outline btn-success">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="visitOption" id="visitOption1" checked disabled>
-                                            } else {
-                                                <input type="radio" name="visitOption" id="visitOption1" disabled>
-                                            }
-                                            Schválit
-                                        </label>
-                                        <label class="btn btn-outline btn-warning">
-                                            @if(member.getState() == "") {
-                                                <input type="radio" name="visitOption" id="visitOption2" checked disabled>
-                                            } else {
-                                                <input type="radio" name="visitOption" id="visitOption2" disabled>
-                                            }
-                                            Odmítnout
-                                        </label>
-                                        @if(member.getState() != "") {
-                                            <div id="okVisit" style="display: block">
-                                                <p> <textarea id="textVisit" rows="4" cols="50"></textarea></p>
-                                            </div>
-                                        }
-                                    </div>
-                                }
-                            }
                         }
                     </div>
-                    <input type="hidden" name="radioVisit" id="radioVisit" value="-1">
                 </fieldset>
                 <div class="panel-body">
-                    @form(routes.StatementController.sendToAgree(idE, idS)) {
-                        <input type="submit" value="Schválit i přes výhrady" class="btn btn-info">
+                    @form(routes.StatementController.sendRepairedStatement(idE, idS)) {
+                        <input type="submit" value="Odeslat ke schválení" class="btn btn-info">
                     }
                     @form(routes.StatementController.sendToRepair(idE, idS)) {
                         <input type="submit" value="Uložit pro opravu" class="btn btn-info">

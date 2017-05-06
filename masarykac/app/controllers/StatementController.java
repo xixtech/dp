@@ -42,8 +42,9 @@ public class StatementController extends Controller {
     public Result employeeStatement(String email) {
         Member m = Member.findByEmail(email);
         List<Statement> statements = Statement.findByEmployees(m.getEmployees().getId());
-        statements.get(0).setState("Vytvořeno");
-        statements.get(0).update();
+        if(statements.size()!=0) {
+            statements.get(0).update();
+        }
         return ok(views.html.tables.tableEmployeeStatements.render(statements));
     }
 
@@ -80,6 +81,30 @@ public class StatementController extends Controller {
         return ok(views.html.tables.tableInfoEmployeeCheckStatement.render(idE, idS, e, sem, statements, scp, sfwp, spp, sppart, stp, svp));
     }
 
+    public Result checkRepairStatementToEmployee(long idE, long idS) {
+        List<Employees> e = new ArrayList<>();
+        e.add(Employees.findById(idE));
+        List<Statement> statements = new ArrayList<>();
+        Statement s = Statement.findById(idS);
+        statements.add(s);
+        List<Semesters> sem = Semesters.search();
+        List<StatementCommitteeParticipants> scp = StatementCommitteeParticipants.search();
+        List<StatementFinalWorksParticipants> sfwp = StatementFinalWorksParticipants.search();
+        List<StatementProjectsParticipants> spp = StatementProjectsParticipants.search();
+        List<StatementPublicationsParticipants> sppart = StatementPublicationsParticipants.search();
+        List<StatementTeachersParticipants> stp = StatementTeachersParticipants.search();
+        List<StatementVisitsParticipants> svp = StatementVisitsParticipants.search();
+        return ok(views.html.tables.tableCheckRepairEmployeeCheckStatement.render(idE, idS, e, sem, statements, scp, sfwp, spp, sppart, stp, svp));
+    }
+
+    public Result sendRepairedStatement(long idE, long idS) {
+        List<Statement> statements = new ArrayList<>();
+        Statement s = Statement.findById(idS);
+        s.setState("Opraveno");
+        s.update();
+        statements.add(s);
+        return ok(views.html.tables.tableEmployeeStatements.render(statements));
+    }
 
     public Result sendToVerify(long idE, long idS) {
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
@@ -105,7 +130,7 @@ public class StatementController extends Controller {
             List<StatementTeachersParticipants> stp = StatementTeachersParticipants.findByStatementId(idS);
             for (StatementTeachersParticipants set : stp) {
                 set.setNote("");
-                set.setState("Neschváleno");
+                set.setState("Schváleno");
                 set.update();
             }
             rsubject = true;
@@ -126,7 +151,7 @@ public class StatementController extends Controller {
             List<StatementPublicationsParticipants> spp = StatementPublicationsParticipants.findByStatementId(idS);
             for (StatementPublicationsParticipants set : spp) {
                 set.setNote("");
-                set.setState("Neschváleno");
+                set.setState("Schváleno");
                 set.update();
             }
             rpublication = true;
@@ -147,7 +172,7 @@ public class StatementController extends Controller {
             List<StatementProjectsParticipants> sprojp = StatementProjectsParticipants.findByStatementId(idS);
             for (StatementProjectsParticipants set : sprojp) {
                 set.setNote("");
-                set.setState("Neschváleno");
+                set.setState("Schváleno");
                 set.update();
             }
             rproject = true;
@@ -168,7 +193,7 @@ public class StatementController extends Controller {
             List<StatementCommitteeParticipants> scp = StatementCommitteeParticipants.findByStatementId(idS);
             for (StatementCommitteeParticipants set : scp) {
                 set.setNote("");
-                set.setState("Neschváleno");
+                set.setState("Schváleno");
                 set.update();
             }
             rcommittee = true;
@@ -189,7 +214,7 @@ public class StatementController extends Controller {
             List<StatementFinalWorksParticipants> sfp = StatementFinalWorksParticipants.findByStatementId(idS);
             for (StatementFinalWorksParticipants set : sfp) {
                 set.setNote("");
-                set.setState("Neschváleno");
+                set.setState("Schváleno");
                 set.update();
             }
             rfinal = true;
@@ -210,7 +235,7 @@ public class StatementController extends Controller {
             List<StatementVisitsParticipants> svp = StatementVisitsParticipants.findByStatementId(idS);
             for (StatementVisitsParticipants set : svp) {
                 set.setNote("");
-                set.setState("Neschváleno");
+                set.setState("Schváleno");
                 set.update();
             }
             rvisit = true;
@@ -228,11 +253,74 @@ public class StatementController extends Controller {
         return ok(views.html.tables.tableEmployeeStatements.render(statements));
     }
 
-    /**
-     * uložení osoby, profilu a zákazníka z formuláře
-     *
-     * @return
-     */
+    public Result sendToAgree(long idE, long idS) {
+        Map<String, String[]> formData = request().body().asFormUrlEncoded();
+
+        String textSubject = "";
+        List<StatementTeachersParticipants> stp = StatementTeachersParticipants.findByStatementId(idS);
+        for (StatementTeachersParticipants set : stp) {
+            set.setNote("");
+            set.setState("Schváleno");
+            set.update();
+        }
+
+        String textPublication = "";
+        List<StatementPublicationsParticipants> spp = StatementPublicationsParticipants.findByStatementId(idS);
+        for (StatementPublicationsParticipants set : spp) {
+            set.setNote("");
+            set.setState("Schváleno");
+            set.update();
+        }
+
+        String textProject = "";
+        List<StatementProjectsParticipants> sprojp = StatementProjectsParticipants.findByStatementId(idS);
+        for (StatementProjectsParticipants set : sprojp) {
+            set.setNote("");
+            set.setState("Schváleno");
+            set.update();
+        }
+
+        String textCommittee = "";
+        List<StatementCommitteeParticipants> scp = StatementCommitteeParticipants.findByStatementId(idS);
+        for (StatementCommitteeParticipants set : scp) {
+            set.setNote("");
+            set.setState("Schváleno");
+            set.update();
+        }
+
+        String textFinal = "";
+        List<StatementFinalWorksParticipants> sfp = StatementFinalWorksParticipants.findByStatementId(idS);
+        for (StatementFinalWorksParticipants set : sfp) {
+            set.setNote("");
+            set.setState("Schváleno");
+            set.update();
+        }
+
+        String textVisit = "";
+        List<StatementVisitsParticipants> svp = StatementVisitsParticipants.findByStatementId(idS);
+        for (StatementVisitsParticipants set : svp) {
+            set.setNote("");
+            set.setState("Schváleno");
+            set.update();
+        }
+
+        List<Statement> statements = new ArrayList<>();
+        Statement s = Statement.findById(idS);
+        s.setState("Schváleno");
+        s.update();
+        statements.add(s);
+        return ok(views.html.tables.tableEmployeeStatements.render(statements));
+    }
+
+    public Result sendToRepair(long idE, long idS) {
+        List<Statement> statements = new ArrayList<>();
+        Statement s = Statement.findById(idS);
+        s.setState("Uloženo k opravě údajů");
+        s.update();
+        statements.add(s);
+        return ok(views.html.tables.tableEmployeeStatements.render(statements));
+    }
+
     public Result save() {
         return redirect(routes.Application.index());
 
