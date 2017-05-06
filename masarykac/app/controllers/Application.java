@@ -7,10 +7,7 @@ import play.mvc.*;
 import it.innove.play.pdf.PdfGenerator;
 
 import javax.inject.Inject;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Security.Authenticated(Secured.class)
 public class Application extends Controller {
@@ -32,7 +29,6 @@ public class Application extends Controller {
     }
 
     public Result raw() {
-
         Map<String, String> test = new HashMap<String, String>();
         test.put("name", "Jan");
         test.put("surname", "Novák");
@@ -42,32 +38,41 @@ public class Application extends Controller {
     }
 
     public Result dashboard() {
-
         Member m=Member.findByEmail(request()
                 .username());
         session().put("email",request()
                 .username());
         session().put("role", m.getEmployees().getAccessRole());
 
-        List<Statement> statements = Statement.findByEmployees(m.getEmployees().getId());
+        List<Statement> statements=new ArrayList<>();
+        List<Statement> s = Statement.findByEmployees(m.getEmployees().getId());
+        for (Statement set : s) {
+            if(set.getState().equals("Odesláno ke schválení")||set.getState().equals("Opraveno")){
+                statements.add(set);
+            }
+        }
         long idS=0;
         if (statements.size() != 0) {
             idS=statements.get(0).getId();
         }
-        return ok(views.html.dashboard.render(m, m.getEmployees().getId(),idS));
+        return ok(views.html.dashboard.render(m, m.getEmployees().getId(),idS,statements));
     }
 
     public Result index() {
-
         Member m=Member.findByEmail(request()
                 .username());
-        List<Statement> statements = Statement.findByEmployees(m.getEmployees().getId());
+        List<Statement> statements=new ArrayList<>();
+        List<Statement> s = Statement.findByEmployees(m.getEmployees().getId());
+        for (Statement set : s) {
+            if(set.getState().equals("Vytvořeno")||set.getState().equals("Opraveno")){
+                statements.add(set);
+            }
+        }
         long idS=0;
         if (statements.size() != 0) {
             idS=statements.get(0).getId();
         }
-        return ok(views.html.dashboard.render(m,m.getEmployees().getId(),idS));
-
+        return ok(views.html.dashboard.render(m,m.getEmployees().getId(),idS,statements));
     }
 
     public Result tables() {

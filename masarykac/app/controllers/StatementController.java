@@ -41,12 +41,15 @@ public class StatementController extends Controller {
 
     public Result employeeStatement(String email) {
         Member m = Member.findByEmail(email);
+        Member mE = Member.findByEmail(request()
+                .username());
         List<Statement> statements = Statement.findByEmployees(m.getEmployees().getId());
         if (statements.size() != 0) {
-
+            statements.get(0).setState("Vytvořeno");
+            statements.get(0).setManagerEmployee(Employees.findById(mE.getEmployees().getId()));
             statements.get(0).update();
         }
-        return ok(views.html.tables.tableEmployeeStatements.render(statements));
+        return ok(views.html.tables.tableEmployeeStatements.render(statements, mE.getEmployees().getId()));
     }
 
     public Result employeeCheckStatement(long idE, long idS) {
@@ -66,13 +69,17 @@ public class StatementController extends Controller {
     }
 
     public Result sendStatementToEmployee(long idE, long idS) {
+        Member m = Member.findByEmail(request()
+                .username());
         List<Employees> e = new ArrayList<>();
         e.add(Employees.findById(idE));
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);
         s.setState("Odesláno ke schválení");
+        s.setManagerEmployee(Employees.findById(m.getEmployees().getId()));
+        s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements));
+        return ok(views.html.tables.tableEmployeeStatements.render(statements, m.getEmployees().getId()));
     }
 
     public Result infoStatementToEmployee(long idE, long idS) {
@@ -108,15 +115,19 @@ public class StatementController extends Controller {
     }
 
     public Result sendRepairedStatement(long idE, long idS) {
+        Member m = Member.findByEmail(request()
+                .username());
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);
         s.setState("Opraveno");
         s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements));
+        return ok(views.html.tables.tableEmployeeStatements.render(statements, m.getEmployees().getId()));
     }
 
     public Result sendToVerify(long idE, long idS) {
+        Member m = Member.findByEmail(request()
+                .username());
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
         String radioSubject = formData.get("radioSubject")[0];
         String radioPublication = formData.get("radioPublication")[0];
@@ -260,10 +271,12 @@ public class StatementController extends Controller {
         }
         s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements));
+        return ok(views.html.tables.tableEmployeeStatements.render(statements, m.getEmployees().getId()));
     }
 
     public Result sendToAgree(long idE, long idS) {
+        Member m = Member.findByEmail(request()
+                .username());
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
 
         String textSubject = "";
@@ -319,16 +332,18 @@ public class StatementController extends Controller {
         s.setState("Schváleno");
         s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements));
+        return ok(views.html.tables.tableEmployeeStatements.render(statements, m.getEmployees().getId()));
     }
 
     public Result sendToRepair(long idE, long idS) {
+        Member m = Member.findByEmail(request()
+                .username());
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);
         s.setState("Uloženo k opravě údajů");
         s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements));
+        return ok(views.html.tables.tableEmployeeStatements.render(statements, m.getEmployees().getId()));
     }
 
     public Result save() {

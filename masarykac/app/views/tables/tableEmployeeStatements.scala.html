@@ -1,4 +1,4 @@
-@(stPage: List[Statement])
+@(stPage: List[Statement], idE: Long)
 @import helper._
 @localStylesheets = {
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
@@ -65,27 +65,35 @@
                                         }
                                         </td>
                                         <td class="center">
-                                            @if(member.getState() == "Vytvořeno") {
-                                                @form(routes.StatementController.sendStatementToEmployee(member.getEmployees.getId(), member.getId())) {
-                                                    <input type="submit" value="Odeslat ke schválení" class="btn btn-info">
-                                                }
-                                            }
-                                            @if(member.getState() == "Neschváleno") {
-                                                @form(routes.StatementController.infoStatementToEmployee(member.getEmployees.getId(), member.getId())) {
-                                                    <input type="submit" value="Zobrazit neschválený výkaz" class="btn btn-info">
-                                                }
-                                            }
-
-                                            @if(member.getState() == "Uloženo k opravě údajů") {
-                                                @form(routes.StatementController.checkRepairStatementToEmployee(member.getEmployees.getId(), member.getId())) {
-                                                    <input type="submit" value="Zobrazit opravený výkaz" class="btn btn-info">
-                                                }
-                                            }
-
-                                            @if(member.getState() == "Opraveno") {
-                                                @form(routes.StatementController.sendStatementToEmployee(member.getEmployees.getId(), member.getId())) {
-                                                    <input type="submit" value="Odeslat opravený výkaz ke schválení" class="btn btn-info">
+                                            @if(member.getState() == "Vytvořeno" && member.getManagerEmployee != null) {
+                                                @if(member.getManagerEmployee.getId() == idE) {
+                                                    @form(routes.StatementController.sendStatementToEmployee(member.getEmployees.getId(), member.getId())) {
+                                                        <input type="submit" value="Odeslat ke schválení" class="btn btn-info">
                                                     }
+                                                }
+                                            }
+                                            @if(member.getState() == "Neschváleno" && member.getManagerEmployee != null) {
+                                                @if(member.getManagerEmployee.getId() == idE) {
+                                                    @form(routes.StatementController.infoStatementToEmployee(member.getEmployees.getId(), member.getId())) {
+                                                        <input type="submit" value="Zobrazit neschválený výkaz" class="btn btn-info">
+                                                    }
+                                                }
+                                            }
+
+                                            @if(member.getState() == "Uloženo k opravě údajů" && member.getManagerEmployee != null) {
+                                                @if(member.getManagerEmployee.getId() == idE) {
+                                                    @form(routes.StatementController.checkRepairStatementToEmployee(member.getEmployees.getId(), member.getId())) {
+                                                        <input type="submit" value="Zobrazit opravený výkaz" class="btn btn-info">
+                                                    }
+                                                }
+                                            }
+
+                                            @if(member.getState() == "Opraveno" && member.getManagerEmployee != null) {
+                                                @if(member.getManagerEmployee.getId() == idE) {
+                                                    @form(routes.StatementController.sendStatementToEmployee(member.getEmployees.getId(), member.getId())) {
+                                                        <input type="submit" value="Odeslat opravený výkaz ke schválení" class="btn btn-info">
+                                                        }
+                                                }
                                             }
                                         </td>
                                     </tr>
