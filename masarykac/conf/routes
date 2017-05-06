@@ -64,6 +64,8 @@ POST        /statement/agree/:idE:idS            controllers.StatementController
 POST        /statement/repair/:idE:idS           controllers.StatementController.sendToRepair(idE:Long, idS:Long)
 POST        /statement/repaired/:idE:idS         controllers.StatementController.sendRepairedStatement(idE:Long, idS:Long)
 POST        /statement/checkrepaired/:idE:idS         controllers.StatementController.checkRepairStatementToEmployee(idE:Long, idS:Long)
+GET        /statement/employeecheck/:idE:idS         controllers.StatementController.employeeCheckStatement(idE:Long, idS:Long)
+
 
 
 # Přidat předmět

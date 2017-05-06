@@ -1,8 +1,6 @@
 package controllers;
 
-import models.Member;
-import models.Roles;
-import models.StudyPlans;
+import models.*;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.*;
@@ -11,6 +9,7 @@ import it.innove.play.pdf.PdfGenerator;
 import javax.inject.Inject;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Security.Authenticated(Secured.class)
@@ -49,12 +48,25 @@ public class Application extends Controller {
         session().put("email",request()
                 .username());
         session().put("role", m.getEmployees().getAccessRole());
-        return ok(views.html.dashboard.render(m));
+
+        List<Statement> statements = Statement.findByEmployees(m.getEmployees().getId());
+        long idS=0;
+        if (statements.size() != 0) {
+            idS=statements.get(0).getId();
+        }
+        return ok(views.html.dashboard.render(m, m.getEmployees().getId(),idS));
     }
 
     public Result index() {
-        return ok(views.html.dashboard.render(Member.findByEmail(request()
-                .username())));
+
+        Member m=Member.findByEmail(request()
+                .username());
+        List<Statement> statements = Statement.findByEmployees(m.getEmployees().getId());
+        long idS=0;
+        if (statements.size() != 0) {
+            idS=statements.get(0).getId();
+        }
+        return ok(views.html.dashboard.render(m,m.getEmployees().getId(),idS));
 
     }
 

@@ -42,18 +42,18 @@ public class StatementController extends Controller {
     public Result employeeStatement(String email) {
         Member m = Member.findByEmail(email);
         List<Statement> statements = Statement.findByEmployees(m.getEmployees().getId());
-        if(statements.size()!=0) {
+        if (statements.size() != 0) {
+
             statements.get(0).update();
         }
         return ok(views.html.tables.tableEmployeeStatements.render(statements));
     }
 
-    public Result sendStatementToEmployee(long idE, long idS) {
+    public Result employeeCheckStatement(long idE, long idS) {
         List<Employees> e = new ArrayList<>();
         e.add(Employees.findById(idE));
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);
-        s.setState("Odesláno ke schválení");
         statements.add(s);
         List<Semesters> sem = Semesters.search();
         List<StatementCommitteeParticipants> scp = StatementCommitteeParticipants.search();
@@ -63,6 +63,16 @@ public class StatementController extends Controller {
         List<StatementTeachersParticipants> stp = StatementTeachersParticipants.search();
         List<StatementVisitsParticipants> svp = StatementVisitsParticipants.search();
         return ok(views.html.tables.tableEmployeeCheckStatement.render(idE, idS, e, sem, statements, scp, sfwp, spp, sppart, stp, svp));
+    }
+
+    public Result sendStatementToEmployee(long idE, long idS) {
+        List<Employees> e = new ArrayList<>();
+        e.add(Employees.findById(idE));
+        List<Statement> statements = new ArrayList<>();
+        Statement s = Statement.findById(idS);
+        s.setState("Odesláno ke schválení");
+        statements.add(s);
+        return ok(views.html.tables.tableEmployeeStatements.render(statements));
     }
 
     public Result infoStatementToEmployee(long idE, long idS) {
