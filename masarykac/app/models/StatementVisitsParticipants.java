@@ -38,7 +38,7 @@ public class StatementVisitsParticipants extends Model {
     @ManyToOne
     public Statement statement;
 
-    public StatementVisitsParticipants(Date date, String state, Semesters semester,  VisitsParticipants visitsParticipants, Statement statement) {
+    public StatementVisitsParticipants(Date date, String state, Semesters semester, VisitsParticipants visitsParticipants, Statement statement) {
         this.date = date;
         this.state = state;
         this.semester = semester;
@@ -105,6 +105,11 @@ public class StatementVisitsParticipants extends Model {
     public static StatementVisitsParticipants findById(long id) {
         return find.where().eq("id", id).findUnique();
     }
+
+    public static List<StatementVisitsParticipants> findByStatementId(long id) {
+        return find.where().eq("statement.id", id).findList();
+    }
+
 
     public static Map<String, String> options() {
         List<StatementVisitsParticipants> subjectSets = StatementVisitsParticipants.find.all();

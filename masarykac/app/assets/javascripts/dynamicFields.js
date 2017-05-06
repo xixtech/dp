@@ -300,21 +300,21 @@ function appendRowDiv() {
     }
     if (value == 2) {
         count = weekDiff / 2;
-        if (weekStart%2 === 0){
+        if (weekStart % 2 === 0) {
             num = weekStart;
         }
-        else{
-            num = weekStart+1;
+        else {
+            num = weekStart + 1;
         }
 
     }
     if (value == 3) {
         count = weekDiff / 2;
-        if (weekStart%2 !== 0){
+        if (weekStart % 2 !== 0) {
 
         }
-        else{
-            num = weekStart+1;
+        else {
+            num = weekStart + 1;
         }
     }
     if (value == 4) {
@@ -855,72 +855,96 @@ function sv(input) {
 function displaySubjectTextArea() {
     if (document.getElementById('subjOption2').checked) {
         document.getElementById('okSubject').style.display = 'block';
+        document.getElementById('textSubject').required = true;
+        document.getElementById('radioSubject').value = "0";
     }
 }
 
 function displaySubjectTextAreaOff() {
     if (document.getElementById('subjOption1').checked) {
         document.getElementById('okSubject').style.display = 'none';
+        document.getElementById('textSubject').required = false;
+        document.getElementById('radioSubject').value = "1";
     }
 }
 
 function displayPublicationTextArea() {
     if (document.getElementById('publOption2').checked) {
         document.getElementById('okPublication').style.display = 'block';
+        document.getElementById('textPublication').required = true;
+        document.getElementById('radioPublication').value = "0";
     }
 }
 
 function displayPublicationTextAreaOff() {
     if (document.getElementById('publOption1').checked) {
         document.getElementById('okPublication').style.display = 'none';
+        document.getElementById('textPublication').required = false;
+        document.getElementById('radioPublication').value = "1";
     }
 }
 
 function displayProjectTextArea() {
     if (document.getElementById('projOption2').checked) {
         document.getElementById('okProject').style.display = 'block';
+        document.getElementById('textProject').required = true;
+        document.getElementById('radioProject').value = "0";
     }
 }
 
 function displayProjectTextAreaOff() {
     if (document.getElementById('projOption1').checked) {
         document.getElementById('okProject').style.display = 'none';
+        document.getElementById('textProject').required = false;
+        document.getElementById('radioProject').value = "1";
     }
 }
 
 function displayCommitteeTextArea() {
     if (document.getElementById('committeeOption2').checked) {
         document.getElementById('okCommittee').style.display = 'block';
+        document.getElementById('textCommittee').required = true;
+        document.getElementById('radioCommittee').value = "0";
     }
 }
 
 function displayCommitteeTextAreaOff() {
     if (document.getElementById('committeeOption1').checked) {
         document.getElementById('okCommittee').style.display = 'none';
+        document.getElementById('textCommittee').required = false;
+        document.getElementById('radioCommittee').value = "1";
     }
 }
 
 function displayFinalTextArea() {
     if (document.getElementById('finalOption2').checked) {
         document.getElementById('okFinal').style.display = 'block';
+        document.getElementById('textFinal').required = true;
+        document.getElementById('radioFinal').value = "0";
     }
 }
 
 function displayFinalTextAreaOff() {
     if (document.getElementById('finalOption1').checked) {
         document.getElementById('okFinal').style.display = 'none';
+        document.getElementById('textFinal').required = false;
+        document.getElementById('radioFinal').value = "1";
     }
 }
 
 function displayVisitTextArea() {
     if (document.getElementById('visitOption2').checked) {
         document.getElementById('okVisit').style.display = 'block';
+        document.getElementById('textVisit').required = true;
+        document.getElementById('radioVisit').value = "0";
     }
 }
 
 function displayVisitTextAreaOff() {
     if (document.getElementById('visitOption1').checked) {
         document.getElementById('okVisit').style.display = 'none';
+        document.getElementById('textVisit').required = false;
+        document.getElementById('radioVisit').value = "1";
     }
 }
 

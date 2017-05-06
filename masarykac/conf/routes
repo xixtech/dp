@@ -57,8 +57,9 @@ POST        /employee/delete                     controllers.EmployeesController
 
 GET         /statement                           controllers.StatementController.index()
 POST        /statement/employee/:email           controllers.StatementController.employeeStatement(email:String)
-POST        /statement/check/:idE:idS           controllers.StatementController.sendStatementToEmployee(idE:Long, idS:Long)
-POST        /statement/ver/:idE:idS           controllers.StatementController.sendToVerify(idE:Long, idS:Long)
+POST        /statement/check/:idE:idS            controllers.StatementController.sendStatementToEmployee(idE:Long, idS:Long)
+POST        /statement/info/:idE:idS             controllers.StatementController.infoStatementToEmployee(idE:Long, idS:Long)
+POST        /statement/ver/:idE:idS              controllers.StatementController.sendToVerify(idE:Long, idS:Long)
 
 # Přidat předmět
 GET         /subject/add                         controllers.SubjectController.index()

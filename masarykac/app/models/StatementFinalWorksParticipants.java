@@ -106,6 +106,10 @@ public class StatementFinalWorksParticipants extends Model {
         return find.where().eq("id", id).findUnique();
     }
 
+    public static List<StatementFinalWorksParticipants> findByStatementId(long id) {
+        return find.where().eq("statement.id", id).findList();
+    }
+
     public static Map<String, String> options() {
         List<StatementFinalWorksParticipants> subjectSets = StatementFinalWorksParticipants.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();

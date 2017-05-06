@@ -62,11 +62,22 @@
                                     }
                                     </td>
                                     <td class="center">
-                                    @if(member.getState() == "Vytvořeno") {
-                                        @form(routes.StatementController.sendStatementToEmployee(member.getEmployees.getId(), member.getId())) {
-                                            <input type="submit" value="Zpracovat" class="btn btn-info">
+                                        @if(member.getState() == "Vytvořeno") {
+                                            @form(routes.StatementController.sendStatementToEmployee(member.getEmployees.getId(), member.getId())) {
+                                                <input type="submit" value="Odeslat ke schválení" class="btn btn-info">
                                             }
-                                    }
+                                        }
+                                        @if(member.getState() == "Neschváleno") {
+                                            @form(routes.StatementController.infoStatementToEmployee(member.getEmployees.getId(), member.getId())) {
+                                                <input type="submit" value="Zobrazit neschválený výkaz" class="btn btn-info">
+                                            }
+                                        }
+
+                                        @if(member.getState() == "Opraveno") {
+                                            @form(routes.StatementController.sendStatementToEmployee(member.getEmployees.getId(), member.getId())) {
+                                                <input type="submit" value="Odeslat opravený výkaz ke schválení" class="btn btn-info">
+                                                }
+                                        }
                                     </td>
                                 </tr>
 
