@@ -3,6 +3,14 @@
 
 # --- !Ups
 
+create table access_role (
+  id                            bigserial not null,
+  role                          varchar(255),
+  description                   varchar(255),
+  active                        boolean,
+  constraint pk_access_role primary key (id)
+);
+
 create table classroom (
   id                            bigserial not null,
   capacity                      integer,
@@ -86,7 +94,7 @@ create table employees (
   surname                       varchar(255),
   first_name                    varchar(255),
   title_after                   varchar(255),
-  access_role                   varchar(255),
+  access_role_id                bigint,
   member_id                     bigint,
   constraint uq_employees_member_id unique (member_id),
   constraint pk_employees primary key (id)
@@ -117,6 +125,12 @@ create table final_works_participants (
   final_works_id                bigint,
   employees_id                  bigint,
   constraint pk_final_works_participants primary key (id)
+);
+
+create table global_values (
+  id                            bigserial not null,
+  semester_id                   bigint,
+  constraint pk_global_values primary key (id)
 );
 
 create table items_kpi (
@@ -499,6 +513,9 @@ create index ix_courses_subjects_id on courses (subjects_id);
 alter table current_semesters_until_the_end_of_study add constraint fk_current_semesters_until_the_end_of_study_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
 create index ix_current_semesters_until_the_end_of_study_semester_id on current_semesters_until_the_end_of_study (semester_id);
 
+alter table employees add constraint fk_employees_access_role_id foreign key (access_role_id) references access_role (id) on delete restrict on update restrict;
+create index ix_employees_access_role_id on employees (access_role_id);
+
 alter table employees add constraint fk_employees_member_id foreign key (member_id) references member (id) on delete restrict on update restrict;
 
 alter table final_works add constraint fk_final_works_semester_id foreign key (semester_id) references semesters (id) on delete restrict on update restrict;
@@ -694,6 +711,9 @@ drop index if exists ix_courses_subjects_id;
 alter table if exists current_semesters_until_the_end_of_study drop constraint if exists fk_current_semesters_until_the_end_of_study_semester_id;
 drop index if exists ix_current_semesters_until_the_end_of_study_semester_id;
 
+alter table if exists employees drop constraint if exists fk_employees_access_role_id;
+drop index if exists ix_employees_access_role_id;
+
 alter table if exists employees drop constraint if exists fk_employees_member_id;
 
 alter table if exists final_works drop constraint if exists fk_final_works_semester_id;
@@ -868,6 +888,8 @@ drop index if exists ix_visits_participants_employees_id;
 alter table if exists visits_participants drop constraint if exists fk_visits_participants_visits_id;
 drop index if exists ix_visits_participants_visits_id;
 
+drop table if exists access_role cascade;
+
 drop table if exists classroom cascade;
 
 drop table if exists committee cascade;
@@ -893,6 +915,8 @@ drop table if exists fields_of_study cascade;
 drop table if exists final_works cascade;
 
 drop table if exists final_works_participants cascade;
+
+drop table if exists global_values cascade;
 
 drop table if exists items_kpi cascade;
 

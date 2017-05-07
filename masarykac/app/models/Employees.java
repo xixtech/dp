@@ -38,12 +38,13 @@ public class Employees extends Model {
 
     public String titleAfter;
 
-    public String accessRole;
+    @ManyToOne
+    public AccessRole accessRole;
 
-    @OneToMany(mappedBy = "employees",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "employees", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Statement> statementEmployees;
 
-    @OneToMany(mappedBy = "managerEmployee",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "managerEmployee", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Statement> statementManagers;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
@@ -70,13 +71,13 @@ public class Employees extends Model {
     @OneToOne(cascade = CascadeType.ALL)
     public Member member;
 
-    public Employees(int personalNumber, String titleBefore, String surname, String firstName, String titleAfter) {
+    public Employees(int personalNumber, String titleBefore, String surname, String firstName, String titleAfter, AccessRole accessRole) {
         this.personalNumber = personalNumber;
         this.titleBefore = titleBefore;
         this.surname = surname;
         this.firstName = firstName;
         this.titleAfter = titleAfter;
-        this.accessRole = "employee";
+        this.accessRole = accessRole;
     }
 
     public Long getId() {
@@ -127,11 +128,11 @@ public class Employees extends Model {
         this.titleAfter = titleAfter;
     }
 
-    public String getAccessRole() {
+    public AccessRole getAccessRole() {
         return accessRole;
     }
 
-    public void setAccessRole(String accessRole) {
+    public void setAccessRole(AccessRole accessRole) {
         this.accessRole = accessRole;
     }
 

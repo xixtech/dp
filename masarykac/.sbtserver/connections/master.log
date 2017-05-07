@@ -1,22 +1,13 @@
-New log file opened at Sat May 06 18:04:43 CEST 2017 by 8752@Martin-pc
-Taking next connection to: 62197
-New client attempting to connect on port: 62198-62197
-  Address = /192.168.56.1:62197
-This client on port 62198 has uuid 8d5e6cd7-00b9-4e04-8b88-5d894b7bdd03 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-8d5e6cd7-00b9-4e04-8b88-5d894b7bdd03
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-New client attempting to connect on port: 64006-62197
-  Address = /192.168.56.1:62197
-Handshake exception on socket: 64006
+New log file opened at Sun May 07 23:34:01 CEST 2017 by 1468@Martin-pc
+Taking next connection to: 63727
+New client attempting to connect on port: 63728-63727
+  Address = /192.168.56.1:63727
+This client on port 63728 has uuid ebc0faa6-138a-4c55-88c9-7d70bff722b7 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-ebc0faa6-138a-4c55-88c9-7d70bff722b7
+Taking next connection to: 63727
+New client attempting to connect on port: 63730-63727
+  Address = /192.168.56.1:63727
+Handshake exception on socket: 63730
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -31,246 +22,45 @@ Caused by: java.net.SocketException: Software caused connection abort: recv fail
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 62197
-New client attempting to connect on port: 64007-62197
-  Address = /192.168.56.1:62197
-This client on port 64007 has uuid 44c75f9e-46b3-4896-8eed-33280b01af6e configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: activator-8d5e6cd7-00b9-4e04-8b88-5d894b7bdd03, play-fork-run-44c75f9e-46b3-4896-8eed-33280b01af6e
-Taking next connection to: 62197
+Taking next connection to: 63727
+New client attempting to connect on port: 63731-63727
+  Address = /192.168.56.1:63727
+This client on port 63731 has uuid 118652a5-aca6-43e5-b84d-a40c5115ca3f configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-ebc0faa6-138a-4c55-88c9-7d70bff722b7, play-fork-run-118652a5-aca6-43e5-b84d-a40c5115ca3f
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 62197
+Taking next connection to: 63727

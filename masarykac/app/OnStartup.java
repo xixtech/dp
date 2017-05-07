@@ -25,6 +25,11 @@ public class OnStartup {
         if (member1.find.findRowCount() == 0) {
 
             try {
+                StartMethods sm = new StartMethods();
+                sm.insertDaysStart();
+                sm.insertClassroomStart();
+                sm.insertTeachersRole();
+                sm.insertAccessRole();
                 Roles roles = new Roles("Lektor");
                 roles.save();
 
@@ -36,12 +41,10 @@ public class OnStartup {
                 member.save();
 
 
-                Employees em = new Employees(123456, "Bc.", "Černý", "Tomáš", "Ph.D.");
+                Employees em = new Employees(123456, "Bc.", "Černý", "Tomáš", "Ph.D.", AccessRole.findById(3));
                 em.save();
                 em.setMember(member);
-                em.setAccessRole("employee");
                 em.update();
-
                 member.setEmployees(em);
                 member.update();
 
@@ -49,10 +52,9 @@ public class OnStartup {
                 member2.setActive(true);
                 member2.save();
 
-                Employees e = new Employees(123456, "Ing.", "Novák", "Karel", "Ph.D.");
+                Employees e = new Employees(123456, "Ing.", "Novák", "Karel", "Ph.D.", AccessRole.findById(1));
                 e.save();
                 e.setMember(member2);
-                e.setAccessRole("director");
                 e.update();
 
                 member2.setEmployees(e);
@@ -67,10 +69,7 @@ public class OnStartup {
                 member.update();
                 KPIStart kpi = new KPIStart();
                 kpi.insertKPIStart();
-                StartMethods sm = new StartMethods();
-                sm.insertDaysStart();
-                sm.insertClassroomStart();
-                sm.insertTeachersRole();
+
 
             } catch (Exception e) {
                 // TODO Auto-generated catch block

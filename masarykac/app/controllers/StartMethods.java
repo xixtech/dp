@@ -1,5 +1,6 @@
 package controllers;
 
+import models.AccessRole;
 import models.Classroom;
 import models.Days;
 import models.TeachersRole;
@@ -71,6 +72,19 @@ public class StartMethods {
         listTeachersRole.add(new TeachersRole("Cvičící"));
 
         for (TeachersRole items : listTeachersRole) {
+            items.save();
+        }
+
+    }
+
+    public void insertAccessRole() {
+
+        List<AccessRole> listAccessRole = new ArrayList<AccessRole>();
+        listAccessRole.add(new AccessRole("director", "Vedoucí"));
+        listAccessRole.add(new AccessRole("head", "Zadavatel"));
+        listAccessRole.add(new AccessRole("employee", "Zaměstnanec"));
+
+        for (AccessRole items : listAccessRole) {
             items.save();
         }
 

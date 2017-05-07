@@ -88,7 +88,7 @@ public class EmployeesController extends Controller {
                 Hash.createPassword(registerForm.password));
         member.setActive(true);
         member.save();
-        Employees employees = new Employees(employeesForm.personalNumber, employeesForm.titleBefore, employeesForm.surname, employeesForm.firstName, employeesForm.titleAfter);
+        Employees employees = new Employees(employeesForm.personalNumber, employeesForm.titleBefore, employeesForm.surname, employeesForm.firstName, employeesForm.titleAfter, employeesForm.accessRole);
         employees.setMember(member);
         employees.save();
 
@@ -119,6 +119,7 @@ public class EmployeesController extends Controller {
         e.setTitleBefore(employeesForm.get().getTitleBefore());
         e.setTitleAfter(employeesForm.get().getTitleAfter());
         e.setPersonalNumber(employeesForm.get().getPersonalNumber());
+        e.setAccessRole(employeesForm.get().getAccessRole());
         e.update();
         return redirect(routes.Application.index());
     }

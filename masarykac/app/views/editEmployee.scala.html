@@ -22,7 +22,20 @@
 
                     <fieldset>
                         <legend>Přihlašovací údaje</legend>
-
+                        <div class="row">
+                        @if(session().get("role").equals("director")) {
+                            <div class="col-md-4">
+                            @select(
+                                signupForm("accessRole.id"),
+                                options(AccessRole.options()),
+                                '_label -> "Role",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> signupForm.globalError
+                            )
+                            </div>
+                        }
+                        </div>
                         <div class="row">
                             <div class="col-md-6">
                             @inputPassword(
@@ -42,13 +55,17 @@
                             )
                             </div>
                         </div>
-                        @inputText(
-                            employeesForm("personalNumber"),
-                            '_label -> "Osobní číslo",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte osobní číslo.",
-                            '_error -> employeesForm.globalError
-                        )
+                        <div class="row">
+                            <div class="col-md-3">
+                            @inputText(
+                                employeesForm("personalNumber"),
+                                '_label -> "Osobní číslo",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte osobní číslo.",
+                                '_error -> employeesForm.globalError
+                            )
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-2">
                             @inputText(

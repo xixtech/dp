@@ -42,7 +42,7 @@ public class Application extends Controller {
                 .username());
         session().put("email",request()
                 .username());
-        session().put("role", m.getEmployees().getAccessRole());
+        session().put("role", m.getEmployees().getAccessRole().getRole());
 
         List<Statement> statements=new ArrayList<>();
         List<Statement> s = Statement.findByEmployees(m.getEmployees().getId());
