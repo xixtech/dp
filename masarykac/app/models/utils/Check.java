@@ -15,7 +15,7 @@ public class Check {
 
     public static boolean isNormalEmployee(final Member m) {
         if (isEmployee(m)) {
-            if (m.getEmployees().getAccessRole().equals("employee")) {
+            if (m.getEmployees().getAccessRole().getRole().equals("employee")) {
                 return true;
             }
             return false;
@@ -25,7 +25,7 @@ public class Check {
 
     public static boolean isHeadOfOU(final Member m) {
         if (isEmployee(m)) {
-            if (m.getEmployees().getAccessRole().equals("headOfOU")) {
+            if (m.getEmployees().getAccessRole().getRole().equals("headOfOU")) {
                 return true;
             }
             return false;
@@ -35,7 +35,7 @@ public class Check {
 
     public static boolean isDeputyHeadOfOU(final Member m) {
         if (isEmployee(m)) {
-            if (m.getEmployees().getAccessRole().equals("deputyHeadOfOU")) {
+            if (m.getEmployees().getAccessRole().getRole().equals("deputyHeadOfOU")) {
                 return true;
             }
             return false;
@@ -45,7 +45,7 @@ public class Check {
 
     public static boolean isDirector(final Member m) {
         if (isEmployee(m)) {
-            if (m.getEmployees().getAccessRole().equals("director")) {
+            if (m.getEmployees().getAccessRole().getRole().equals("director")) {
                 return true;
             }
             return false;

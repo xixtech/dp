@@ -32,16 +32,11 @@ public class ClassroomController extends Controller {
     }
 
     public Result edit(long id) {
-        Classroom c=Classroom.findById(id);
+        Classroom c = Classroom.findById(id);
         Form<Classroom> classroomForm = formFactory.form(Classroom.class).fill(c);
         return ok(views.html.editClassroom.render(id, classroomForm));
     }
 
-    /**
-     * uložení osoby, profilu a zákazníka z formuláře
-     *
-     * @return
-     */
     public Result save() {
         Form<Classroom> classroomForm = formFactory.form(Classroom.class).bindFromRequest();
         if (classroomForm.hasErrors()) {
@@ -75,19 +70,17 @@ public class ClassroomController extends Controller {
         c.save();
     }
 
-    private void updateClassroom(long id,Classroom classroom) throws Exception {
+    private void updateClassroom(long id, Classroom classroom) throws Exception {
         Classroom c = Classroom.findById(id);
         c.setCapacity(classroom.getCapacity());
         c.setClassroomName(classroom.getClassroomName());
         c.update();
     }
 
-
     public Result delete(long id) {
-       Classroom c=Classroom.findById(id);
+        Classroom c = Classroom.findById(id);
         c.setActive(false);
         c.update();
         return redirect(routes.TableController.listClassrooms());
     }
-
 }

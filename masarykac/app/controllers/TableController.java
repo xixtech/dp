@@ -84,6 +84,15 @@ public class TableController extends Controller {
         return redirect(routes.Application.index());
 
     }
+    public Result listAccessRole() {
+        if (Check.isDirector(Member.findByEmail(request().username()))) {
+            return ok(views.html.tables.tableAccessRole.render(AccessRole.search()));
+        }
+        notAccess();
+        return redirect(routes.Application.index());
+
+    }
+
 
     public Result listClassrooms() {
         if (Check.isDirector(Member.findByEmail(request().username()))) {

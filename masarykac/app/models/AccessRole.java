@@ -50,6 +50,14 @@ public class AccessRole extends Model {
         this.role = role;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @OneToMany(mappedBy="accessRole",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Employees> employees;
 

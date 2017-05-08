@@ -130,6 +130,7 @@ GET         /lcsuteos                                controllers.TableController
 GET         /days                                    controllers.TableController.listDays()
 GET         /classrooms                              controllers.TableController.listClassrooms()
 GET         /teachroles                              controllers.TableController.listTeachersRole()
+GET         /accessroles                              controllers.TableController.listAccessRole()
 GET         /committees                              controllers.TableController.listCommittees()
 GET         /publications                            controllers.TableController.listPublications()
 GET         /tiw                                     controllers.TableController.listTeachersInWeeks()
@@ -141,6 +142,12 @@ GET         /teaching/t/:email                       controllers.PersonalStatist
 
 GET         /teachers/add                            controllers.TeachersController.index()
 POST        /teachers/saved                          controllers.TeachersController.save()
+
+GET         /accessrole/add                        controllers.AccessRoleController.index()
+POST        /accessrole/saved                      controllers.AccessRoleController.save()
+GET         /accessrole/edit/:id                   controllers.AccessRoleController.edit(id:Long)
+POST        /accessrole/updated/                   controllers.AccessRoleController.update(id:Long)
+POST        /accessrole/delete                     controllers.AccessRoleController.delete(id:Long)
 
 # Přidat meetodiku
 GET         /m/add                                   controllers.MethodicsController.index()

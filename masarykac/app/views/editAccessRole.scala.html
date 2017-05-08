@@ -1,4 +1,4 @@
-@(id: Long, classroomForm: Form[Classroom])
+@(id: Long, accessRoleForm: Form[AccessRole])
 @import helper._
 @localScripts = {
     <!-- Morris Charts JavaScript -->
@@ -18,38 +18,39 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel-body">
-                @helper.form(action = routes.ClassroomController.update(id)) {
+                @helper.form(action = routes.AccessRoleController.update(id)) {
+
                     <fieldset>
-                        <legend>Zadání místnosti</legend>
+                        <legend>Zadání role</legend>
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                             @inputText(
-                                classroomForm("classroomName"),
-                                '_label -> "Název místnosti:",
+                                accessRoleForm("role"),
+                                '_label -> "Název role:",
                                 'class -> "form-control",
-                                '_help -> "Prosím zadejte název místnosti.",
-                                '_error -> classroomForm.globalError
+                                '_help -> "Prosím zadejte roli.",
+                                '_error -> accessRoleForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-6">
+                            @inputText(
+                                accessRoleForm("description"),
+                                '_label -> "Popis role:",
+                                'class -> "form-control",
+                                '_help -> "Prosím popis role.",
+                                '_error -> accessRoleForm.globalError
                             )
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                            @inputText(
-                                classroomForm("capacity"),
-                                '_label -> "Velikost místnosti:",
-                                'class -> "form-control",
-                                '_help -> "Prosím zadejte velikost místnosti.",
-                                '_error -> classroomForm.globalError
-                            )
-                            </div>
-                        </div>
                     </fieldset>
 
                     <div class="actions">
+
                         <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
                         <a href="@routes.Application.index()" class="btn">Zrušit</a>
                     </div>
+
                 }
                 </div>
             </div>
