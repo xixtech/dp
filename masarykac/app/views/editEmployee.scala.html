@@ -1,4 +1,4 @@
-@(email: String, signupForm: Form[Member], employeesForm: Form[Employees])
+@(email: String, signupForm: Form[Member], employeesForm: Form[Employees], unitsForm: Form[OrganizationalUnitsParticipants])
 @import helper._
 @localScripts = {
     <!-- Morris Charts JavaScript -->
@@ -103,6 +103,39 @@
                                 'class -> "form-control",
                                 '_help -> "Prosím zadejte titul za.",
                                 '_error -> employeesForm.globalError
+                            )
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                            @select(
+                                unitsForm("organizationalUnits.id"),
+                                options(OrganizationalUnits.options()),
+                                '_label -> "Organizační jednotka",
+                                '_default -> "-- Vyberte --",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> unitsForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-4">
+                            @select(
+                                unitsForm("function"),
+                                options(OrganizationalUnitsParticipants.optionsFunction()),
+                                '_label -> "Funkce",
+                                '_default -> "-- Vyberte --",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> unitsForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-4">
+                            @inputText(
+                                unitsForm("functionName"),
+                                '_label -> "Název funkce",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> unitsForm.globalError
                             )
                             </div>
                         </div>

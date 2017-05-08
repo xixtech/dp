@@ -1,9 +1,6 @@
 package controllers;
 
-import models.OrganizationalUnits;
-import models.OrganizationalUnitsParticipants;
-import models.Subjects;
-import models.Visits;
+import models.*;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -62,7 +59,21 @@ public class OrganizationalUnitsController extends Controller {
             return badRequest(views.html.registerOUParticipants.render(organizationalUnitsParticipantsForm));
         }
         OrganizationalUnitsParticipants organizationalUnits = organizationalUnitsParticipantsForm.get();
+        int state = 0;
+        try {
+            state=checkFunction(organizationalUnits);
+            if (state == 1) {
+                saveOUParticipants(organizationalUnits);
+                return redirect(routes.Application.index());
+            } else {
+                return badRequest(views.html.registerOUParticipants.render(organizationalUnitsParticipantsForm));
+            }
+        } catch (Exception e) {
+            return badRequest(views.html.registerOUParticipants.render(organizationalUnitsParticipantsForm));
+        }
+    }
 
+    public static int checkFunction(OrganizationalUnitsParticipants organizationalUnits) throws Exception {
         boolean hasHead=false;
         hasHead=OrganizationalUnits.findById(organizationalUnits.getOrganizationalUnits().getId()).isHasHeadOfOrganization();
         boolean hasDeputy=false;
@@ -73,7 +84,6 @@ public class OrganizationalUnitsController extends Controller {
         List<OrganizationalUnitsParticipants> ou = OrganizationalUnitsParticipants.findOUID(organizationalUnits.getOrganizationalUnits());
         if (ou.size() == 0) {
             state = 1;
-
         } else if (ou.size() >0) {
             for (OrganizationalUnitsParticipants set : ou) {
                 if (set.getEmployees().getId() == organizationalUnits.getEmployees().getId()) {
@@ -95,21 +105,9 @@ public class OrganizationalUnitsController extends Controller {
                         state=1;
                     }
                 }
-
             }
         }
-
-
-        try {
-            if (state == 1) {
-                saveOUParticipants(organizationalUnits);
-                return redirect(routes.Application.index());
-            } else {
-                return badRequest(views.html.registerOUParticipants.render(organizationalUnitsParticipantsForm));
-            }
-        } catch (Exception e) {
-            return badRequest(views.html.registerOUParticipants.render(organizationalUnitsParticipantsForm));
-        }
+        return state;
     }
 
     private void saveOrganizationalUnit(OrganizationalUnits orUnits) throws Exception {
@@ -119,9 +117,8 @@ public class OrganizationalUnitsController extends Controller {
 
     }
 
-    private void saveOUParticipants(OrganizationalUnitsParticipants orUnits) throws Exception {
-        OrganizationalUnitsParticipants ou = new OrganizationalUnitsParticipants(orUnits.function, orUnits.functionName, orUnits.employees, orUnits.organizationalUnits);
-
+    public static void saveOUParticipantsEmployees(OrganizationalUnitsParticipants orUnits, Employees employees) throws Exception {
+        OrganizationalUnitsParticipants ou = new OrganizationalUnitsParticipants(orUnits.function, orUnits.functionName, employees, orUnits.organizationalUnits);
         ou.save();
         if(orUnits.function.equals("head")){
             OrganizationalUnits o= OrganizationalUnits.findById(ou.getOrganizationalUnits().getId());
@@ -133,8 +130,21 @@ public class OrganizationalUnitsController extends Controller {
             o.setHasDeputyHeadOfOrganization(true);
             o.update();
         }
+    }
 
-
+    public static void saveOUParticipants(OrganizationalUnitsParticipants orUnits) throws Exception {
+        OrganizationalUnitsParticipants ou = new OrganizationalUnitsParticipants(orUnits.function, orUnits.functionName, orUnits.employees, orUnits.organizationalUnits);
+        ou.save();
+        if(orUnits.function.equals("head")){
+            OrganizationalUnits o= OrganizationalUnits.findById(ou.getOrganizationalUnits().getId());
+            o.setHasHeadOfOrganization(true);
+            o.update();
+        }
+        if(orUnits.function.equals("deputy")){
+            OrganizationalUnits o= OrganizationalUnits.findById(ou.getOrganizationalUnits().getId());
+            o.setHasDeputyHeadOfOrganization(true);
+            o.update();
+        }
     }
 
 }

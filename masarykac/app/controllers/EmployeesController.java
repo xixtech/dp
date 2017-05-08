@@ -1,9 +1,6 @@
 package controllers;
 
-import models.Employees;
-import models.Member;
-import models.Person;
-import models.Profile;
+import models.*;
 import models.utils.Hash;
 import play.data.Form;
 import play.data.FormFactory;
@@ -30,14 +27,16 @@ public class EmployeesController extends Controller {
     public Result index() {
         Form<Member> registerForm = formFactory.form(Member.class);
         Form<Employees> employeesForm = formFactory.form(Employees.class);
-        return ok(views.html.registerEmployees.render(registerForm, employeesForm));
+        Form<OrganizationalUnitsParticipants> organizationalUnitsForm = formFactory.form(OrganizationalUnitsParticipants.class);
+        return ok(views.html.registerEmployees.render(registerForm, employeesForm, organizationalUnitsForm));
     }
 
     public Result edit(String email) {
         Member m = Member.findByEmail(email);
         Form<Member> registerForm = formFactory.form(Member.class).fill(m);
         Form<Employees> employeesForm = formFactory.form(Employees.class).fill(Employees.findById(m.getEmployees().getId()));
-        return ok(views.html.editEmployee.render(email, registerForm, employeesForm));
+        Form<OrganizationalUnitsParticipants> organizationalUnitsForm = formFactory.form(OrganizationalUnitsParticipants.class);
+        return ok(views.html.editEmployee.render(email, registerForm, employeesForm,organizationalUnitsForm));
     }
 
     public Result info(String email) {
@@ -62,24 +61,36 @@ public class EmployeesController extends Controller {
     public Result save() {
         Form<Member> registerForm = formFactory.form(Member.class).bindFromRequest();
         Form<Employees> employeesForm = formFactory.form(Employees.class).bindFromRequest();
+        Form<OrganizationalUnitsParticipants> organizationalUnitsParticipantsForm = formFactory.form(OrganizationalUnitsParticipants.class).bindFromRequest();
         if (employeesForm.hasErrors()) {
-            return badRequest(views.html.registerEmployees.render(registerForm, employeesForm));
+            return badRequest(views.html.registerEmployees.render(registerForm, employeesForm, organizationalUnitsParticipantsForm));
+        }
+        if (organizationalUnitsParticipantsForm.hasErrors()) {
+            return badRequest(views.html.registerEmployees.render(registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
         if (checkRepeated(registerForm)) {
             registerForm.reject("repeatPassword", "Hesla se neshodují");
-            return badRequest(views.html.registerEmployees.render(registerForm, employeesForm));
+            return badRequest(views.html.registerEmployees.render(registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
         Employees employees = employeesForm.get();
         Member registerMember = registerForm.get();
-        Result resultError = checkBeforeSave(registerForm, registerMember.email, employeesForm);
+        OrganizationalUnitsParticipants organizationalUnits = organizationalUnitsParticipantsForm.get();
+        int state = 0;
+        Result resultError = checkBeforeSave(registerForm, registerMember.email, employeesForm, organizationalUnitsParticipantsForm);
         if (resultError != null) {
             return resultError;
         }
         try {
+            state = OrganizationalUnitsController.checkFunction(organizationalUnits);
+            if (state == 1) {
+                OrganizationalUnitsController.saveOUParticipantsEmployees(organizationalUnits, employees);
+            } else {
+                return badRequest(views.html.registerEmployees.render(registerForm, employeesForm, organizationalUnitsParticipantsForm));
+            }
             saveEmployee(registerMember, employees);
             return redirect(routes.Application.index());
         } catch (Exception e) {
-            return badRequest(views.html.registerEmployees.render(registerForm, employeesForm));
+            return badRequest(views.html.registerEmployees.render(registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
     }
 
@@ -91,24 +102,26 @@ public class EmployeesController extends Controller {
         Employees employees = new Employees(employeesForm.personalNumber, employeesForm.titleBefore, employeesForm.surname, employeesForm.firstName, employeesForm.titleAfter, employeesForm.accessRole);
         employees.setMember(member);
         employees.save();
-
         member.setEmployees(employees);
         member.update();
-
     }
 
     public Result update(String email) throws Exception {
         Form<Member> registerForm = formFactory.form(Member.class).bindFromRequest();
         Form<Employees> employeesForm = formFactory.form(Employees.class).bindFromRequest();
+        Form<OrganizationalUnitsParticipants> organizationalUnitsParticipantsForm = formFactory.form(OrganizationalUnitsParticipants.class).bindFromRequest();
         if (employeesForm.hasErrors()) {
-            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm));
+            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm, organizationalUnitsParticipantsForm));
+        }
+        if (organizationalUnitsParticipantsForm.hasErrors()) {
+            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
         if (checkRepeated(registerForm)) {
             registerForm.reject("repeatPassword", "Hesla se neshodují");
-            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm));
+            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
         if (registerForm.hasErrors()) {
-            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm));
+            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
         Member m = Member.findByEmail(email);
         m.setPassword(Hash.createPassword(registerForm.get().getPassword()));
@@ -121,6 +134,10 @@ public class EmployeesController extends Controller {
         e.setPersonalNumber(employeesForm.get().getPersonalNumber());
         e.setAccessRole(employeesForm.get().getAccessRole());
         e.update();
+        OrganizationalUnitsParticipants oup=OrganizationalUnitsParticipants.findEmployeesID(e).get(0);
+        oup.setOrganizationalUnits(organizationalUnitsParticipantsForm.get().getOrganizationalUnits());
+        oup.setFunction(organizationalUnitsParticipantsForm.get().getFunction());
+        oup.setFunctionName(organizationalUnitsParticipantsForm.get().getFunctionName());
         return redirect(routes.Application.index());
     }
 
@@ -143,15 +160,13 @@ public class EmployeesController extends Controller {
      * @return
      */
     private Result checkBeforeSave(Form<Member> registerForm, String email,
-                                   Form<Employees> employees) {
+                                   Form<Employees> employees, Form<OrganizationalUnitsParticipants> organizationalUnitsForm) {
         // Check unique email
         if (Member.findByEmail(email) != null) {
             registerForm.reject("email",
                     "Tento email již existuje, zvolte jiný");
-            return badRequest(views.html.registerEmployees.render(registerForm, employees));
-
+            return badRequest(views.html.registerEmployees.render(registerForm, employees, organizationalUnitsForm));
         }
         return null;
     }
-
 }

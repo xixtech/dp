@@ -230,6 +230,12 @@ public class SubjectPlanTeachingController extends Controller {
             classRoom.add(insId);
         }
 
+        List<String> teachersRole = new ArrayList<>();
+
+        for (String insId : formData.get("teachersRole.id")) {
+            teachersRole.add(insId);
+        }
+
         List<String> teacherKey = new ArrayList<>();
         List<String> teacherValue = new ArrayList<>();
 
