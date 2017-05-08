@@ -1,0 +1,126 @@
+@(currentPage: List[Employees])
+@import helper._
+@localStylesheets = {
+    <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
+    <meta charset="UTF-8" />
+    <style type="text/css"><!--
+    body {
+        font-family: Technika;
+    }
+
+    --></style>
+}
+
+@localScripts = {
+        <!-- DataTables JavaScript -->
+    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
+    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>
+
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+            $(document).ready(function () {
+                $('#dataTables-example').DataTable({
+                    responsive: true
+                });
+            });
+    </script>
+}
+
+@main(scripts = localScripts, stylesheets = localStylesheets) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Zaměstnanci</h1>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Výpis zaměstnanců
+                </div>
+                    <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="dataTable_wrapper">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>Uživatelské jméno</th>
+                                    <th>Email</th>
+                                    <th>Osobní číslo</th>
+                                    <th>Titul před</th>
+                                    <th>Příjmení</th>
+                                    <th>Jméno</th>
+                                    <th>Titul za</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            @for(member <- currentPage) {
+                                @if(member.member.isActive == true) {
+                                    <tr>
+                                        <td class="center">
+                                        @if(member.getMember == 0) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.getMember.getUid
+                                        }
+                                        </td>
+                                        <td class="center">
+                                        @if(member.getMember == 0) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.getMember.getEmail
+                                        }
+                                        </td>
+                                        <td class="center">
+                                        @if(member.getPersonalNumber == 0) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.getPersonalNumber
+                                        }
+                                        </td>
+                                        <td class="center">
+                                        @if(member.getTitleBefore == null) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.getTitleBefore
+                                        }
+                                        </td>
+                                        <td class="center">
+                                        @if(member.getSurname == null) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.getSurname
+                                        }
+                                        </td>
+                                        <td class="center">
+                                        @if(member.getFirstName == null) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.getFirstName
+                                        }
+                                        </td>
+                                        <td class="center">
+                                        @if(member.getTitleAfter == null) {
+                                            <em>-</em>
+                                        } else {
+                                            @member.getTitleAfter
+                                        }
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                        <!-- /.table-responsive -->
+                </div>
+                    <!-- /.panel-body -->
+            </div>
+                <!-- /.panel -->
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+}

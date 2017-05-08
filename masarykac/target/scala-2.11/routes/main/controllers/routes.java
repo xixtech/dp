@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Mon May 08 17:00:56 CEST 2017
+// @DATE:Mon May 08 19:48:26 CEST 2017
 
 package controllers;
 
@@ -32,11 +32,13 @@ public class routes {
   public static final controllers.ReverseApplication Application = new controllers.ReverseApplication(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseAccessRoleController AccessRoleController = new controllers.ReverseAccessRoleController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseStatisticController StatisticController = new controllers.ReverseStatisticController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReverseDOCController DOCController = new controllers.ReverseDOCController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseMethodicsController MethodicsController = new controllers.ReverseMethodicsController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseStudyPlansController StudyPlansController = new controllers.ReverseStudyPlansController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseCharts Charts = new controllers.ReverseCharts(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseTeachersController TeachersController = new controllers.ReverseTeachersController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseFieldOfStudyController FieldOfStudyController = new controllers.ReverseFieldOfStudyController(RoutesPrefix.byNamePrefix());
+  public static final controllers.ReversePDFController PDFController = new controllers.ReversePDFController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseStudyGroupsController StudyGroupsController = new controllers.ReverseStudyGroupsController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseEmployeesController EmployeesController = new controllers.ReverseEmployeesController(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseStatementController StatementController = new controllers.ReverseStatementController(RoutesPrefix.byNamePrefix());
@@ -68,11 +70,13 @@ public class routes {
     public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseAccessRoleController AccessRoleController = new controllers.javascript.ReverseAccessRoleController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseStatisticController StatisticController = new controllers.javascript.ReverseStatisticController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReverseDOCController DOCController = new controllers.javascript.ReverseDOCController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseMethodicsController MethodicsController = new controllers.javascript.ReverseMethodicsController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseStudyPlansController StudyPlansController = new controllers.javascript.ReverseStudyPlansController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseCharts Charts = new controllers.javascript.ReverseCharts(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseTeachersController TeachersController = new controllers.javascript.ReverseTeachersController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseFieldOfStudyController FieldOfStudyController = new controllers.javascript.ReverseFieldOfStudyController(RoutesPrefix.byNamePrefix());
+    public static final controllers.javascript.ReversePDFController PDFController = new controllers.javascript.ReversePDFController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseStudyGroupsController StudyGroupsController = new controllers.javascript.ReverseStudyGroupsController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseEmployeesController EmployeesController = new controllers.javascript.ReverseEmployeesController(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseStatementController StatementController = new controllers.javascript.ReverseStatementController(RoutesPrefix.byNamePrefix());

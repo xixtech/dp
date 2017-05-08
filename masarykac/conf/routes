@@ -161,6 +161,10 @@ GET         /users                                   controllers.TableController
 GET         /sub/add                                 controllers.SubjectPlanTeachingController.index()
 POST        /sub/saved                               controllers.SubjectPlanTeachingController.save()
 
+GET         /pdfTableEmployees                       controllers.PDFController.pdfTableEmployees()
+
+GET         /docTableEmployees                       controllers.DOCController.docTableEmployees()
+
 # Odhlásit
 GET         /logout                                  controllers.Application.logout()
 

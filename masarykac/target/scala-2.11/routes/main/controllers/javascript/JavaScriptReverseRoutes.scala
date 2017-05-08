@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Mon May 08 17:00:56 CEST 2017
+// @DATE:Mon May 08 19:48:26 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -45,7 +45,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:177
+  // @LINE:181
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -53,7 +53,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:177
+    // @LINE:181
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -225,7 +225,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:168
+  // @LINE:172
   class ReversePrintController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -233,7 +233,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:168
+    // @LINE:172
     def printUserDetails: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.printUserDetails",
       """
@@ -243,7 +243,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:169
+    // @LINE:173
     def detailsList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.detailsList",
       """
@@ -1013,7 +1013,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:165
+    // @LINE:169
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.logout",
       """
@@ -1149,6 +1149,26 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "dcps"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:166
+  class ReverseDOCController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:166
+    def docTableEmployees: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableEmployees",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableEmployees"})
         }
       """
     )
@@ -1299,6 +1319,26 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "fields/add"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:164
+  class ReversePDFController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:164
+    def pdfTableEmployees: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableEmployees",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableEmployees"})
         }
       """
     )
@@ -1523,7 +1563,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:171
+    // @LINE:175
     def saveLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.saveLector",
       """
@@ -1543,7 +1583,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:173
+    // @LINE:177
     def detailsListLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.detailsListLector",
       """
@@ -1553,7 +1593,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:172
+    // @LINE:176
     def printLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.printLector",
       """

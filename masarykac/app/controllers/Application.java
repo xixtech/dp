@@ -25,7 +25,7 @@ public class Application extends Controller {
         test.put("personalNumber", "3456789");
 
         pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
-        return pdfGenerator.ok(views.html.utf.render(test), "http://localhost:9000");
+        return pdfGenerator.ok(views.html.pdf.tableEmployeesPDF.render(Employees.search()), "http://localhost:9000");
     }
 
     public Result raw() {
@@ -34,7 +34,7 @@ public class Application extends Controller {
         test.put("surname", "Novák");
         test.put("date", "1. 1. 2017");
         test.put("personalNumber", "3456789");
-        return ok(views.html.utf.render(test));
+        return ok(views.html.doc.tableEmployeesDOC.render(Employees.search()));
     }
 
     public Result dashboard() {

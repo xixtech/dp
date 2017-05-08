@@ -1,14 +1,19 @@
 @(title: String = "", scripts: Html = HtmlFormat.empty, stylesheets: Html = HtmlFormat.empty)(content: Html)
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content="Martin Tyrol"/>
+        <meta charset="UTF-8" />
+        <style type="text/css"><!--
+        body {
+            font-family: Technika;
+        }
 
+        --></style>
         <title>Masarykáč</title>
         <link href='@routes.Assets.at("stylesheets/sb-admin-2.css")' rel="stylesheet" type="text/css">
         @stylesheets
@@ -27,7 +32,7 @@
             <div id="page-wrapper">
                 @if(flash.containsKey("success")) {
                     <div class="alert-message warning">
-                        <strong>ERROR!</strong> @flash.get("success")
+                        <strong>CHYBA!</strong> @flash.get("success")
                     </div>
                 }
                 @content
