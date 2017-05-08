@@ -29,9 +29,9 @@ public class Login  extends Controller {
 
     public static class LoginModel {
 
-        @Constraints.Email(message = "Nebyl zadán platný email")
-        @Constraints.Required(message = "Email je povinný")
-        public String email;
+        @Formats.NonEmpty
+        @Constraints.Required(message = "Uživatelské jméno je povinné")
+        public String uid;
 
         @Constraints.Required(message = "Heslo je povinné")
         @Formats.NonEmpty
@@ -41,9 +41,8 @@ public class Login  extends Controller {
          * @return validace uživatele
          */
         public String validate() {
-
-            if (Member.authenticate(email, password) == null) {
-                return "Neplatný email nebo heslo.";
+            if (Member.authenticate(uid, password) == null) {
+                return "Neplatné uživatelské jméno nebo heslo.";
             }
             return null;
         }
@@ -57,12 +56,12 @@ public class Login  extends Controller {
     public Result authenticate() {
         Form<LoginModel> form = formFactory.form(LoginModel.class).bindFromRequest();
         if (form.hasErrors()) {
-            form.reject("email", "Neexistující email nebo špatné heslo.");
-            form.reject("password", "Neexistující email nebo špatné heslo.");
+            form.reject("uid", "Neexistující uživatelské jméno nebo špatné heslo.");
+            form.reject("password", "Neexistující uživatelské jméno nebo špatné heslo.");
             return badRequest(views.html.pages.login.render(form));
         } else {
             session().clear();
-            session("email", form.get().email);
+            session("uid", form.get().uid);
             return redirect(routes.Application.dashboard());
         }
     }

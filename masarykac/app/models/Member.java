@@ -25,6 +25,10 @@ public class Member extends Model {
 
     public boolean active;
 
+    @Formats.NonEmpty
+    @Constraints.Required(message = "Uživatelské jméno je povinný")
+    public String uid;
+
     @Email(message = "Nebyl zadán platný email")
     @Constraints.Required(message = "Email je povinný")
     public String email;
@@ -47,10 +51,11 @@ public class Member extends Model {
      * @param email
      * @param password
      */
-    public Member(String email, String password) {
+    public Member(String email, String password, String uid) {
         super();
         this.email = email;
         this.password = password;
+        this.uid=uid;
     }
 
     public Long getId() {
@@ -115,17 +120,24 @@ public class Member extends Model {
         return person;
     }
 
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
     /**
-     * @param email
+     * @param uid
      * @param password
      * @return
      */
-    public static Member authenticate(String email, String password) {
-        Member member = findByEmail(email);
+    public static Member authenticate(String uid, String password) {
+        Member member = findByUID(uid);
         if (member != null) {
             if (member.isActive()) {
                 if (Hash.checkPassword(password, member.password)) {
-
                     return member;
                 }
             }
@@ -143,6 +155,10 @@ public class Member extends Model {
         return find.where().eq("email", email).findUnique();
     }
 
+    public static Member findByUID(String uid) {
+        return find.where().eq("uid", uid).findUnique();
+    }
+
     public static List<Member> search() {
         return Member.find.all();
     }
@@ -156,7 +172,7 @@ public class Member extends Model {
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
         for (Member set : subjectSets) {
             if (set.isActive()) {
-                options.put(set.id.toString(), set.email.toString());
+                options.put(set.id.toString(), set.uid.toString());
             }
         }
         return options;

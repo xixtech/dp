@@ -153,6 +153,7 @@ create table lector (
 create table member (
   id                            bigserial not null,
   active                        boolean,
+  uid                           varchar(255),
   email                         varchar(255),
   password                      varchar(255),
   employees_id                  bigint,

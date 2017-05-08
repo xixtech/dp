@@ -68,7 +68,7 @@ public class TableController extends Controller {
     }
 
     public Result listDays() {
-        if (Check.isDirector(Member.findByEmail(request().username()))) {
+        if (Check.isDirector(Member.findByUID(request().username()))) {
             return ok(views.html.tables.tableDays.render(Days.search()));
         }
         notAccess();
@@ -77,7 +77,7 @@ public class TableController extends Controller {
     }
 
     public Result listTeachersRole() {
-        if (Check.isDirector(Member.findByEmail(request().username()))) {
+        if (Check.isDirector(Member.findByUID(request().username()))) {
             return ok(views.html.tables.tableTeachersRole.render(TeachersRole.search()));
         }
         notAccess();
@@ -85,7 +85,7 @@ public class TableController extends Controller {
 
     }
     public Result listAccessRole() {
-        if (Check.isDirector(Member.findByEmail(request().username()))) {
+        if (Check.isDirector(Member.findByUID(request().username()))) {
             return ok(views.html.tables.tableAccessRole.render(AccessRole.search()));
         }
         notAccess();
@@ -95,7 +95,7 @@ public class TableController extends Controller {
 
 
     public Result listClassrooms() {
-        if (Check.isDirector(Member.findByEmail(request().username()))) {
+        if (Check.isDirector(Member.findByUID(request().username()))) {
             return ok(views.html.tables.tableClassroom.render(Classroom.search()));
         }
         notAccess();

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Mon May 08 11:07:53 CEST 2017
+// @DATE:Mon May 08 17:00:56 CEST 2017
 
 package router
 
@@ -204,12 +204,12 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """oup/saved""", """controllers.OrganizationalUnitsController.saveParticipants()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/register""", """controllers.EmployeesController.index()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/saved""", """controllers.EmployeesController.save()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/info/""" + "$" + """email<[^/]+>""", """controllers.EmployeesController.info(email:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/edit/""" + "$" + """email<[^/]+>""", """controllers.EmployeesController.edit(email:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/updated/""", """controllers.EmployeesController.update(email:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/delete""", """controllers.EmployeesController.delete(email:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/info/""" + "$" + """uid<[^/]+>""", """controllers.EmployeesController.info(uid:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/edit/""" + "$" + """uid<[^/]+>""", """controllers.EmployeesController.edit(uid:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/updated/""", """controllers.EmployeesController.update(uid:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """employee/delete""", """controllers.EmployeesController.delete(uid:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """statement""", """controllers.StatementController.index()"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """statement/employee/""" + "$" + """email<[^/]+>""", """controllers.StatementController.employeeStatement(email:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """statement/employee/""" + "$" + """uid<[^/]+>""", """controllers.StatementController.employeeStatement(uid:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """statement/check/""" + "$" + """idE<[^/]+>""" + "$" + """idS<[^/]+>""", """controllers.StatementController.sendStatementToEmployee(idE:Long, idS:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """statement/info/""" + "$" + """idE<[^/]+>""" + "$" + """idS<[^/]+>""", """controllers.StatementController.infoStatementToEmployee(idE:Long, idS:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """statement/ver/""" + "$" + """idE<[^/]+>""" + "$" + """idS<[^/]+>""", """controllers.StatementController.sendToVerify(idE:Long, idS:Long)"""),
@@ -269,9 +269,9 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """publications""", """controllers.TableController.listPublications()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tiw""", """controllers.TableController.listTeachersInWeeks()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """estat""", """controllers.StatisticController.listEmployeesActvitiy()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """estat/info/""" + "$" + """email<[^/]+>""", """controllers.StatisticController.listEmployeerActvitiy(email:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """estat/info/""" + "$" + """uid<[^/]+>""", """controllers.StatisticController.listEmployeerActvitiy(uid:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """teaching""", """controllers.PersonalStatisticController.listTableTeachingAccordingToPersons()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """teaching/t/""" + "$" + """email<[^/]+>""", """controllers.PersonalStatisticController.listTableTeachingAccordingToId(email:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """teaching/t/""" + "$" + """uid<[^/]+>""", """controllers.PersonalStatisticController.listTableTeachingAccordingToId(uid:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """teachers/add""", """controllers.TeachersController.index()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """teachers/saved""", """controllers.TeachersController.save()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """accessrole/add""", """controllers.AccessRoleController.index()"""),
@@ -930,7 +930,7 @@ class Routes(
 
   // @LINE:53
   private[this] lazy val controllers_EmployeesController_info37_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("employee/info/"), DynamicPart("email", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("employee/info/"), DynamicPart("uid", """[^/]+""",true)))
   )
   private[this] lazy val controllers_EmployeesController_info37_invoker = createInvoker(
     EmployeesController_21.info(fakeValue[String]),
@@ -941,13 +941,13 @@ class Routes(
       Seq(classOf[String]),
       "GET",
       """""",
-      this.prefix + """employee/info/""" + "$" + """email<[^/]+>"""
+      this.prefix + """employee/info/""" + "$" + """uid<[^/]+>"""
     )
   )
 
   // @LINE:54
   private[this] lazy val controllers_EmployeesController_edit38_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("employee/edit/"), DynamicPart("email", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("employee/edit/"), DynamicPart("uid", """[^/]+""",true)))
   )
   private[this] lazy val controllers_EmployeesController_edit38_invoker = createInvoker(
     EmployeesController_21.edit(fakeValue[String]),
@@ -958,7 +958,7 @@ class Routes(
       Seq(classOf[String]),
       "GET",
       """""",
-      this.prefix + """employee/edit/""" + "$" + """email<[^/]+>"""
+      this.prefix + """employee/edit/""" + "$" + """uid<[^/]+>"""
     )
   )
 
@@ -1015,7 +1015,7 @@ class Routes(
 
   // @LINE:59
   private[this] lazy val controllers_StatementController_employeeStatement42_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("statement/employee/"), DynamicPart("email", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("statement/employee/"), DynamicPart("uid", """[^/]+""",true)))
   )
   private[this] lazy val controllers_StatementController_employeeStatement42_invoker = createInvoker(
     StatementController_26.employeeStatement(fakeValue[String]),
@@ -1026,7 +1026,7 @@ class Routes(
       Seq(classOf[String]),
       "POST",
       """""",
-      this.prefix + """statement/employee/""" + "$" + """email<[^/]+>"""
+      this.prefix + """statement/employee/""" + "$" + """uid<[^/]+>"""
     )
   )
 
@@ -2035,7 +2035,7 @@ class Routes(
 
   // @LINE:139
   private[this] lazy val controllers_StatisticController_listEmployeerActvitiy102_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estat/info/"), DynamicPart("email", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estat/info/"), DynamicPart("uid", """[^/]+""",true)))
   )
   private[this] lazy val controllers_StatisticController_listEmployeerActvitiy102_invoker = createInvoker(
     StatisticController_4.listEmployeerActvitiy(fakeValue[String]),
@@ -2046,7 +2046,7 @@ class Routes(
       Seq(classOf[String]),
       "GET",
       """""",
-      this.prefix + """estat/info/""" + "$" + """email<[^/]+>"""
+      this.prefix + """estat/info/""" + "$" + """uid<[^/]+>"""
     )
   )
 
@@ -2069,7 +2069,7 @@ class Routes(
 
   // @LINE:141
   private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToId104_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("teaching/t/"), DynamicPart("email", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("teaching/t/"), DynamicPart("uid", """[^/]+""",true)))
   )
   private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToId104_invoker = createInvoker(
     PersonalStatisticController_14.listTableTeachingAccordingToId(fakeValue[String]),
@@ -2080,7 +2080,7 @@ class Routes(
       Seq(classOf[String]),
       "GET",
       """""",
-      this.prefix + """teaching/t/""" + "$" + """email<[^/]+>"""
+      this.prefix + """teaching/t/""" + "$" + """uid<[^/]+>"""
     )
   )
 
@@ -2651,26 +2651,26 @@ class Routes(
   
     // @LINE:53
     case controllers_EmployeesController_info37_route(params) =>
-      call(params.fromPath[String]("email", None)) { (email) =>
-        controllers_EmployeesController_info37_invoker.call(EmployeesController_21.info(email))
+      call(params.fromPath[String]("uid", None)) { (uid) =>
+        controllers_EmployeesController_info37_invoker.call(EmployeesController_21.info(uid))
       }
   
     // @LINE:54
     case controllers_EmployeesController_edit38_route(params) =>
-      call(params.fromPath[String]("email", None)) { (email) =>
-        controllers_EmployeesController_edit38_invoker.call(EmployeesController_21.edit(email))
+      call(params.fromPath[String]("uid", None)) { (uid) =>
+        controllers_EmployeesController_edit38_invoker.call(EmployeesController_21.edit(uid))
       }
   
     // @LINE:55
     case controllers_EmployeesController_update39_route(params) =>
-      call(params.fromQuery[String]("email", None)) { (email) =>
-        controllers_EmployeesController_update39_invoker.call(EmployeesController_21.update(email))
+      call(params.fromQuery[String]("uid", None)) { (uid) =>
+        controllers_EmployeesController_update39_invoker.call(EmployeesController_21.update(uid))
       }
   
     // @LINE:56
     case controllers_EmployeesController_delete40_route(params) =>
-      call(params.fromQuery[String]("email", None)) { (email) =>
-        controllers_EmployeesController_delete40_invoker.call(EmployeesController_21.delete(email))
+      call(params.fromQuery[String]("uid", None)) { (uid) =>
+        controllers_EmployeesController_delete40_invoker.call(EmployeesController_21.delete(uid))
       }
   
     // @LINE:58
@@ -2681,8 +2681,8 @@ class Routes(
   
     // @LINE:59
     case controllers_StatementController_employeeStatement42_route(params) =>
-      call(params.fromPath[String]("email", None)) { (email) =>
-        controllers_StatementController_employeeStatement42_invoker.call(StatementController_26.employeeStatement(email))
+      call(params.fromPath[String]("uid", None)) { (uid) =>
+        controllers_StatementController_employeeStatement42_invoker.call(StatementController_26.employeeStatement(uid))
       }
   
     // @LINE:60
@@ -3041,8 +3041,8 @@ class Routes(
   
     // @LINE:139
     case controllers_StatisticController_listEmployeerActvitiy102_route(params) =>
-      call(params.fromPath[String]("email", None)) { (email) =>
-        controllers_StatisticController_listEmployeerActvitiy102_invoker.call(StatisticController_4.listEmployeerActvitiy(email))
+      call(params.fromPath[String]("uid", None)) { (uid) =>
+        controllers_StatisticController_listEmployeerActvitiy102_invoker.call(StatisticController_4.listEmployeerActvitiy(uid))
       }
   
     // @LINE:140
@@ -3053,8 +3053,8 @@ class Routes(
   
     // @LINE:141
     case controllers_PersonalStatisticController_listTableTeachingAccordingToId104_route(params) =>
-      call(params.fromPath[String]("email", None)) { (email) =>
-        controllers_PersonalStatisticController_listTableTeachingAccordingToId104_invoker.call(PersonalStatisticController_14.listTableTeachingAccordingToId(email))
+      call(params.fromPath[String]("uid", None)) { (uid) =>
+        controllers_PersonalStatisticController_listTableTeachingAccordingToId104_invoker.call(PersonalStatisticController_14.listTableTeachingAccordingToId(uid))
       }
   
     // @LINE:143

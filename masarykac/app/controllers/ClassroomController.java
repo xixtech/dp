@@ -2,8 +2,6 @@ package controllers;
 
 import com.sun.org.apache.bcel.internal.util.ClassQueue;
 import models.Classroom;
-import models.Member;
-import models.Visits;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;

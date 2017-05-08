@@ -19,6 +19,7 @@ public class StudyGroupsController extends Controller {
 
     @Inject
     private FormFactory formFactory;
+
     /**
      * přesměrování na registrační formulář
      *
@@ -33,7 +34,6 @@ public class StudyGroupsController extends Controller {
      * uložení osoby, profilu a zákazníka z formuláře
      *
      * @return
-     *
      */
     public Result save() {
         Form<StudyGroups> studyGroupsForm = formFactory.form(StudyGroups.class).bindFromRequest();
@@ -49,11 +49,11 @@ public class StudyGroupsController extends Controller {
         }
     }
 
-    private void saveStudyGroups (StudyGroups studyGroups) throws Exception {
-        StudyGroups sg=new StudyGroups(studyGroups.studyGroup,studyGroups.studyGroupP,studyGroups.studyGroupV,studyGroups.studyGroupsNote);
+    private void saveStudyGroups(StudyGroups studyGroups) throws Exception {
+        StudyGroups sg = new StudyGroups(studyGroups.studyGroup, studyGroups.studyGroupP, studyGroups.studyGroupV, studyGroups.studyGroupsNote);
         sg.save();
 
-        StudyGroups1 sg1=new StudyGroups1(studyGroups.studyGroup,studyGroups.studyGroupP,studyGroups.studyGroupV,studyGroups.studyGroupsNote);
+        StudyGroups1 sg1 = new StudyGroups1(studyGroups.studyGroup, studyGroups.studyGroupP, studyGroups.studyGroupV, studyGroups.studyGroupsNote);
         sg1.save();
     }
 

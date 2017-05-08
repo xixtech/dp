@@ -37,7 +37,7 @@ public class PersonalStatisticController extends Controller {
         List<Semesters> sem = Semesters.search();
         List<Schedule> schedules = Schedule.search();
         List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
-        return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj, e, c, s, t, caaa, caab, cb, sem,schedules,scheduleInWeekses));
+        return ok(views.html.tables.tableTeachingDepartmentEmployee.render(oj, e, c, s, t, caaa, caab, cb, sem, schedules, scheduleInWeekses));
     }
 
     public Result teachingAAA() {
@@ -47,8 +47,9 @@ public class PersonalStatisticController extends Controller {
         List<Semesters> sem = Semesters.search();
         List<Schedule> schedules = Schedule.search();
         List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
-        return ok(views.html.tables.tableTeachingAAA.render(c, t, caaa, sem,schedules,scheduleInWeekses));
+        return ok(views.html.tables.tableTeachingAAA.render(c, t, caaa, sem, schedules, scheduleInWeekses));
     }
+
     public Result teachingAAB() {
         List<Teachers> t = Teachers.search();
         List<Courses> c = Courses.search();
@@ -56,8 +57,9 @@ public class PersonalStatisticController extends Controller {
         List<Semesters> sem = Semesters.search();
         List<Schedule> schedules = Schedule.search();
         List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
-        return ok(views.html.tables.tableTeachingAAB.render(c, t, caab, sem,schedules,scheduleInWeekses));
+        return ok(views.html.tables.tableTeachingAAB.render(c, t, caab, sem, schedules, scheduleInWeekses));
     }
+
     public Result teachingCB() {
         List<Teachers> t = Teachers.search();
         List<Courses> c = Courses.search();
@@ -65,7 +67,7 @@ public class PersonalStatisticController extends Controller {
         List<Semesters> sem = Semesters.search();
         List<Schedule> schedules = Schedule.search();
         List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
-        return ok(views.html.tables.tableTeachingCB.render(c, t, cb, sem,schedules,scheduleInWeekses));
+        return ok(views.html.tables.tableTeachingCB.render(c, t, cb, sem, schedules, scheduleInWeekses));
     }
 
     public Result listTableTeachingAccordingToPersons() {
@@ -75,11 +77,11 @@ public class PersonalStatisticController extends Controller {
         List<Semesters> s = Semesters.search();
         List<Schedule> schedules = Schedule.search();
         List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
-        return ok(views.html.tables.tableTeachingAccordingToPersons.render(empl, c, teachers, s,schedules,scheduleInWeekses));
+        return ok(views.html.tables.tableTeachingAccordingToPersons.render(empl, c, teachers, s, schedules, scheduleInWeekses));
     }
 
-    public Result listTableTeachingAccordingToId(String email) {
-        Member m = Member.findByEmail(email);
+    public Result listTableTeachingAccordingToId(String uid) {
+        Member m = Member.findByUID(uid);
         List<Employees> empl = new ArrayList<>();
         empl.add(Employees.findById(m.getEmployees().getId()));
         List<Teachers> teachers = Teachers.find.all();
@@ -87,10 +89,8 @@ public class PersonalStatisticController extends Controller {
         List<Semesters> s = Semesters.search();
         List<Schedule> schedules = Schedule.search();
         List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
-        return ok(views.html.tables.tableTeachingAccordingToPersons.render(empl, c, teachers, s,schedules,scheduleInWeekses));
+        return ok(views.html.tables.tableTeachingAccordingToPersons.render(empl, c, teachers, s, schedules, scheduleInWeekses));
     }
-
-
 
     /**
      * uložení osoby, profilu a zákazníka z formuláře

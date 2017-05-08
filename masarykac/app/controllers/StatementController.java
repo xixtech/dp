@@ -39,9 +39,9 @@ public class StatementController extends Controller {
         return ok(views.html.tables.tableStatement.render(e, sem, statements, scp, sfwp, spp, sppart, stp, svp));
     }
 
-    public Result employeeStatement(String email) {
-        Member m = Member.findByEmail(email);
-        Member mE = Member.findByEmail(request()
+    public Result employeeStatement(String uid) {
+        Member m = Member.findByUID(uid);
+        Member mE = Member.findByUID(request()
                 .username());
         List<Statement> statements = Statement.findByEmployees(m.getEmployees().getId());
         if (statements.size() != 0) {
@@ -69,7 +69,7 @@ public class StatementController extends Controller {
     }
 
     public Result sendStatementToEmployee(long idE, long idS) {
-        Member m = Member.findByEmail(request()
+        Member m = Member.findByUID(request()
                 .username());
         List<Employees> e = new ArrayList<>();
         e.add(Employees.findById(idE));
@@ -115,7 +115,7 @@ public class StatementController extends Controller {
     }
 
     public Result sendRepairedStatement(long idE, long idS) {
-        Member m = Member.findByEmail(request()
+        Member m = Member.findByUID(request()
                 .username());
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);
@@ -126,7 +126,7 @@ public class StatementController extends Controller {
     }
 
     public Result sendToVerify(long idE, long idS) {
-        Member m = Member.findByEmail(request()
+        Member m = Member.findByUID(request()
                 .username());
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
         String radioSubject = formData.get("radioSubject")[0];
@@ -275,7 +275,7 @@ public class StatementController extends Controller {
     }
 
     public Result sendToAgree(long idE, long idS) {
-        Member m = Member.findByEmail(request()
+        Member m = Member.findByUID(request()
                 .username());
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
 
@@ -336,7 +336,7 @@ public class StatementController extends Controller {
     }
 
     public Result sendToRepair(long idE, long idS) {
-        Member m = Member.findByEmail(request()
+        Member m = Member.findByUID(request()
                 .username());
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);

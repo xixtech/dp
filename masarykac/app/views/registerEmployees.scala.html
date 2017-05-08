@@ -48,6 +48,17 @@
 
                         </div>
                         <div class="row">
+                            <div class="col-md-12">
+                            @inputText(
+                                signupForm("uid"),
+                                '_label -> "Uživatelské jméno",
+                                'class -> "form-control",
+                                '_help -> "Prosím zadejte platné uživatelské jméno.",
+                                '_error -> signupForm.globalError
+                            )
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                             @inputPassword(
                                 signupForm("password"),

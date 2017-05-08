@@ -21,10 +21,10 @@
                         <a href="@routes.StatisticController.index()">Zobrazit DČPS</a>
                         <a href="@routes.StatisticController.studyPlansTable()">Zobrazit SP</a>
 
-                        <a href="@routes.EmployeesController.info(session().get("email"))">Info</a>
-                        <a href="@routes.StatisticController.listEmployeerActvitiy(session().get("email"))">
+                        <a href="@routes.EmployeesController.info(session().get("uid"))">Info</a>
+                        <a href="@routes.StatisticController.listEmployeerActvitiy(session().get("uid"))">
                             Můj souhrn aktivity v semestrech</a>
-                        <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToId(session().get("email"))'>
+                        <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToId(session().get("uid"))'>
                             Má výuka</a>
 
                     </li>

@@ -31,23 +31,23 @@ public class EmployeesController extends Controller {
         return ok(views.html.registerEmployees.render(registerForm, employeesForm, organizationalUnitsForm));
     }
 
-    public Result edit(String email) {
-        Member m = Member.findByEmail(email);
+    public Result edit(String uid) {
+        Member m = Member.findByUID(uid);
         Form<Member> registerForm = formFactory.form(Member.class).fill(m);
         Form<Employees> employeesForm = formFactory.form(Employees.class).fill(Employees.findById(m.getEmployees().getId()));
         Form<OrganizationalUnitsParticipants> organizationalUnitsForm = formFactory.form(OrganizationalUnitsParticipants.class);
-        return ok(views.html.editEmployee.render(email, registerForm, employeesForm,organizationalUnitsForm));
+        return ok(views.html.editEmployee.render(uid, registerForm, employeesForm,organizationalUnitsForm));
     }
 
-    public Result info(String email) {
-        Member m = Member.findByEmail(email);
+    public Result info(String uid) {
+        Member m = Member.findByUID(uid);
         Form<Member> registerForm = formFactory.form(Member.class).fill(m);
         Form<Employees> employeesForm = formFactory.form(Employees.class).fill(Employees.findById(m.getEmployees().getId()));
-        return ok(views.html.infoEmployee.render(email, registerForm, employeesForm));
+        return ok(views.html.infoEmployee.render(uid, registerForm, employeesForm));
     }
 
-    public Result delete(String email) {
-        Member m = Member.findByEmail(email);
+    public Result delete(String uid) {
+        Member m = Member.findByUID(uid);
         m.setActive(false);
         m.update();
         return redirect(routes.Application.index());
@@ -76,7 +76,7 @@ public class EmployeesController extends Controller {
         Member registerMember = registerForm.get();
         OrganizationalUnitsParticipants organizationalUnits = organizationalUnitsParticipantsForm.get();
         int state = 0;
-        Result resultError = checkBeforeSave(registerForm, registerMember.email, employeesForm, organizationalUnitsParticipantsForm);
+        Result resultError = checkBeforeSave(registerForm, registerMember.uid, employeesForm, organizationalUnitsParticipantsForm);
         if (resultError != null) {
             return resultError;
         }
@@ -96,7 +96,7 @@ public class EmployeesController extends Controller {
 
     private void saveEmployee(Member registerForm, Employees employeesForm) throws Exception {
         Member member = new Member(registerForm.email,
-                Hash.createPassword(registerForm.password));
+                Hash.createPassword(registerForm.password), registerForm.uid);
         member.setActive(true);
         member.save();
         Employees employees = new Employees(employeesForm.personalNumber, employeesForm.titleBefore, employeesForm.surname, employeesForm.firstName, employeesForm.titleAfter, employeesForm.accessRole);
@@ -106,24 +106,24 @@ public class EmployeesController extends Controller {
         member.update();
     }
 
-    public Result update(String email) throws Exception {
+    public Result update(String uid) throws Exception {
         Form<Member> registerForm = formFactory.form(Member.class).bindFromRequest();
         Form<Employees> employeesForm = formFactory.form(Employees.class).bindFromRequest();
         Form<OrganizationalUnitsParticipants> organizationalUnitsParticipantsForm = formFactory.form(OrganizationalUnitsParticipants.class).bindFromRequest();
         if (employeesForm.hasErrors()) {
-            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm, organizationalUnitsParticipantsForm));
+            return badRequest(views.html.editEmployee.render(uid, registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
         if (organizationalUnitsParticipantsForm.hasErrors()) {
-            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm, organizationalUnitsParticipantsForm));
+            return badRequest(views.html.editEmployee.render(uid, registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
         if (checkRepeated(registerForm)) {
             registerForm.reject("repeatPassword", "Hesla se neshodují");
-            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm, organizationalUnitsParticipantsForm));
+            return badRequest(views.html.editEmployee.render(uid, registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
         if (registerForm.hasErrors()) {
-            return badRequest(views.html.editEmployee.render(email, registerForm, employeesForm, organizationalUnitsParticipantsForm));
+            return badRequest(views.html.editEmployee.render(uid, registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
-        Member m = Member.findByEmail(email);
+        Member m = Member.findByUID(uid);
         m.setPassword(Hash.createPassword(registerForm.get().getPassword()));
         m.update();
         Employees e = Employees.findById(m.getEmployees().getId());
@@ -153,18 +153,18 @@ public class EmployeesController extends Controller {
     }
 
     /**
-     * ověření unikátního emailu před uložením
+     * ověření unikátního uživatelského jména před uložením
      *
      * @param registerForm
-     * @param email
+     * @param uid
      * @return
      */
-    private Result checkBeforeSave(Form<Member> registerForm, String email,
+    private Result checkBeforeSave(Form<Member> registerForm, String uid,
                                    Form<Employees> employees, Form<OrganizationalUnitsParticipants> organizationalUnitsForm) {
-        // Check unique email
-        if (Member.findByEmail(email) != null) {
-            registerForm.reject("email",
-                    "Tento email již existuje, zvolte jiný");
+        // Check unique uid
+        if (Member.findByUID(uid) != null) {
+            registerForm.reject("uid",
+                    "Toto uživatelské jméno již existuje, zvolte jiné");
             return badRequest(views.html.registerEmployees.render(registerForm, employees, organizationalUnitsForm));
         }
         return null;

@@ -59,7 +59,6 @@ public class FinalWorksController extends Controller {
             finalWorksName.add(insId);
         }
 
-
         List<String> names = new ArrayList<>();
 
         for (String insId : formData.get("names")) {

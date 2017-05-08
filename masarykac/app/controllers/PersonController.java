@@ -55,7 +55,7 @@ public class PersonController extends Controller {
         Member registerMember = registerForm.get();
         Person registerPerson = personForm.get();
         Profile registerProfile = profileForm.get();
-        Result resultError = checkBeforeSave(registerForm, registerMember.email, personForm, profileForm);
+        Result resultError = checkBeforeSave(registerForm, registerMember.uid, personForm, profileForm);
         if (resultError != null) {
             return resultError;
         }
@@ -70,7 +70,7 @@ public class PersonController extends Controller {
 
     private void savePerson(Member registerForm, Person personForm, Profile profileForm) throws Exception {
         Member member = new Member(registerForm.email,
-                Hash.createPassword(registerForm.password));
+                Hash.createPassword(registerForm.password), registerForm.uid);
         member.setActive(true);
         member.save();
         Profile profile = new Profile(profileForm.firstName,
@@ -82,7 +82,6 @@ public class PersonController extends Controller {
         member.setProfile(profile);
         member.setPerson(person);
         member.update();
-
     }
 
     private boolean checkRepeated(Form<Member> registerForm) {
@@ -100,17 +99,16 @@ public class PersonController extends Controller {
      * ověření unikátního emailu před uložením
      *
      * @param registerForm
-     * @param email
+     * @param uid
      * @return
      */
-    private Result checkBeforeSave(Form<Member> registerForm, String email,
+    private Result checkBeforeSave(Form<Member> registerForm, String uid,
                                    Form<Person> personForm, Form<Profile> profileForm) {
         // Check unique email
-        if (Member.findByEmail(email) != null) {
-            registerForm.reject("email",
-                    "Tento email již existuje, zvolte jiný");
+        if (Member.findByUID(uid) != null) {
+            registerForm.reject("uid",
+                    "Toto uživatelské jméno již existuje, zvolte jiné");
             return badRequest(views.html.registerPerson.render(registerForm, personForm, profileForm));
-
         }
         return null;
     }

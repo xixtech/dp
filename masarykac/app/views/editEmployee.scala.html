@@ -1,4 +1,4 @@
-@(email: String, signupForm: Form[Member], employeesForm: Form[Employees], unitsForm: Form[OrganizationalUnitsParticipants])
+@(uid: String, signupForm: Form[Member], employeesForm: Form[Employees], unitsForm: Form[OrganizationalUnitsParticipants])
 @import helper._
 @localScripts = {
     <!-- Morris Charts JavaScript -->
@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel-body">
-                @helper.form(action = routes.EmployeesController.update(email)) {
+                @helper.form(action = routes.EmployeesController.update(uid)) {
 
                     <fieldset>
                         <legend>Přihlašovací údaje</legend>

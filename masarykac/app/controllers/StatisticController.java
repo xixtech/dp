@@ -144,8 +144,8 @@ public class StatisticController extends Controller {
         return finalWSem;
     }
 
-    public Result listEmployeerActvitiy(String email) {
-        Member m = Member.findByEmail(email);
+    public Result listEmployeerActvitiy(String uid) {
+        Member m = Member.findByUID(uid);
         List<Employees> empl = new ArrayList<>();
         empl.add(Employees.findById(m.getEmployees().getId()));
         List<Teachers> teachers = Teachers.find.all();

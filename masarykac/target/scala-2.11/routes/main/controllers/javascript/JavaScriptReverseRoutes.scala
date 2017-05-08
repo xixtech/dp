@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Mon May 08 11:07:53 CEST 2017
+// @DATE:Mon May 08 17:00:56 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -167,8 +167,8 @@ package controllers.javascript {
     def listTableTeachingAccordingToId: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PersonalStatisticController.listTableTeachingAccordingToId",
       """
-        function(email0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "teaching/t/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email0))})
+        function(uid0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "teaching/t/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("uid", encodeURIComponent(uid0))})
         }
       """
     )
@@ -1137,8 +1137,8 @@ package controllers.javascript {
     def listEmployeerActvitiy: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.StatisticController.listEmployeerActvitiy",
       """
-        function(email0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "estat/info/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email0))})
+        function(uid0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "estat/info/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("uid", encodeURIComponent(uid0))})
         }
       """
     )
@@ -1347,8 +1347,8 @@ package controllers.javascript {
     def edit: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EmployeesController.edit",
       """
-        function(email0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "employee/edit/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email0))})
+        function(uid0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "employee/edit/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("uid", encodeURIComponent(uid0))})
         }
       """
     )
@@ -1357,8 +1357,8 @@ package controllers.javascript {
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EmployeesController.delete",
       """
-        function(email0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "employee/delete" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("email", email0)])})
+        function(uid0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "employee/delete" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("uid", uid0)])})
         }
       """
     )
@@ -1377,8 +1377,8 @@ package controllers.javascript {
     def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EmployeesController.update",
       """
-        function(email0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "employee/updated/" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("email", email0)])})
+        function(uid0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "employee/updated/" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("uid", uid0)])})
         }
       """
     )
@@ -1387,8 +1387,8 @@ package controllers.javascript {
     def info: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.EmployeesController.info",
       """
-        function(email0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "employee/info/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email0))})
+        function(uid0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "employee/info/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("uid", encodeURIComponent(uid0))})
         }
       """
     )
@@ -1467,8 +1467,8 @@ package controllers.javascript {
     def employeeStatement: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.StatementController.employeeStatement",
       """
-        function(email0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "statement/employee/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("email", encodeURIComponent(email0))})
+        function(uid0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "statement/employee/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("uid", encodeURIComponent(uid0))})
         }
       """
     )

@@ -51,10 +51,10 @@
                             @helper.form(routes.Login.authenticate) {
                                 <div class="form-group">
                                 @inputText(
-                                    signupForm("email"),
-                                    '_label -> "Email",
+                                    signupForm("uid"),
+                                    '_label -> "Uživatelské jméno",
                                     'class -> "form-control",
-                                    '_help -> "Prosím zadejte platnou e-mailovou adresu.",
+                                    '_help -> "Prosím zadejte platné uživatelské jméno.",
                                     '_error -> signupForm.globalError
 
                                 )

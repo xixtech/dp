@@ -36,7 +36,7 @@ public class OnStartup {
                 Roles rolesAsistent = new Roles("Asistent");
                 rolesAsistent.save();
 
-                Member member = new Member("a@a.cz", Hash.createPassword("secret"));
+                Member member = new Member("a@a.cz", Hash.createPassword("secret"), "aaa");
                 member.setActive(true);
                 member.save();
 
@@ -48,7 +48,7 @@ public class OnStartup {
                 member.setEmployees(em);
                 member.update();
 
-                Member member2 = new Member("b@b.cz", Hash.createPassword("heslo"));
+                Member member2 = new Member("b@b.cz", Hash.createPassword("heslo"), "bbb");
                 member2.setActive(true);
                 member2.save();
 

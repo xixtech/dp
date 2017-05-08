@@ -42,7 +42,7 @@
                                     <th>Jméno</th>
                                     <th>Příjmení</th>
                                     <th>Telefonní číslo</th>
-                                    <th>E-mail</th>
+                                    <th>Uživatelské jméno</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,14 +80,14 @@
                                     <td class="center">
                                     @if(member.profile != null) {
                                         @form(routes.PrintController.printUserDetails(member.id), 'class -> "topRight") {
-                                            <input type="submit" value="@member.email" class="btn success">
+                                            <input type="submit" value="@member.uid" class="btn success">
                                             }
                                     }
                                     </td>
                                     <td class="center">
                                     @if(member.profile != null) {
                                         @form(routes.SalaryController.printLector(member.id), 'class -> "topRight") {
-                                            <input type="submit" value="@member.email" class="btn success">
+                                            <input type="submit" value="@member.uid" class="btn success">
                                             }
                                     }
                                     </td>

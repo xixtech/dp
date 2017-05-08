@@ -38,9 +38,9 @@ public class Application extends Controller {
     }
 
     public Result dashboard() {
-        Member m=Member.findByEmail(request()
+        Member m=Member.findByUID(request()
                 .username());
-        session().put("email",request()
+        session().put("uid",request()
                 .username());
         session().put("role", m.getEmployees().getAccessRole().getRole());
 
@@ -59,7 +59,7 @@ public class Application extends Controller {
     }
 
     public Result index() {
-        Member m=Member.findByEmail(request()
+        Member m=Member.findByUID(request()
                 .username());
         List<Statement> statements=new ArrayList<>();
         List<Statement> s = Statement.findByEmployees(m.getEmployees().getId());
@@ -88,7 +88,6 @@ public class Application extends Controller {
     }
 
     public Result kpiChoosePerson() {
-
         Form<Member> memberForm = formFactory.form(Member.class);
         return ok(views.html.kpiChoosePerson.render(memberForm));
     }

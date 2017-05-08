@@ -7,7 +7,9 @@ import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
+
 import javax.inject.Inject;
+
 /**
  * Created by Martin on 04.02.2017.
  */
@@ -15,6 +17,7 @@ import javax.inject.Inject;
 public class PrintController extends Controller {
     @Inject
     private FormFactory formFactory;
+
     /**
      * přesměrování na vypsání údajů konkrétní osoby
      *
@@ -23,9 +26,7 @@ public class PrintController extends Controller {
      */
     public Result printUserDetails(Long id) {
         return redirect(routes.PrintController.detailsList(id));
-
     }
-
 
     /**
      * vypsání údajů konrétní osoby
@@ -34,11 +35,9 @@ public class PrintController extends Controller {
      * @return
      */
     public Result detailsList(long id) {
-        Member member=Member.find.byId(id);
+        Member member = Member.find.byId(id);
         return ok(views.html.personDetail.render(member));
     }
-
-
 
 
 }

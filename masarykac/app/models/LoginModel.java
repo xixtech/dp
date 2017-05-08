@@ -9,9 +9,9 @@ import play.data.validation.Constraints;
  */
 public class LoginModel {
 
-    @Constraints.Email(message = "Nebyl zadán platný email")
-    @Constraints.Required(message = "Email je povinný")
-    public String email;
+    @Formats.NonEmpty
+    @Constraints.Required(message = "Uživatelské jméno je povinné")
+    public String uid;
 
     @Constraints.Required(message = "Heslo je povinné")
     @Formats.NonEmpty
@@ -21,9 +21,8 @@ public class LoginModel {
      * @return validace uživatele
      */
     public String validate() {
-
-        if (Member.authenticate(email, password) == null) {
-            return "Neplatný email nebo heslo.";
+        if (Member.authenticate(uid, password) == null) {
+            return "Neplatné uživatelské jméno nebo heslo.";
         }
         return null;
     }
