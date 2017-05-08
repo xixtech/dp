@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Mon May 08 19:48:26 CEST 2017
+// @DATE:Mon May 08 22:17:57 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -45,7 +45,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:181
+  // @LINE:209
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -53,7 +53,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:181
+    // @LINE:209
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -225,7 +225,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:172
+  // @LINE:200
   class ReversePrintController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -233,7 +233,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:172
+    // @LINE:200
     def printUserDetails: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.printUserDetails",
       """
@@ -243,7 +243,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:173
+    // @LINE:201
     def detailsList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.detailsList",
       """
@@ -1013,7 +1013,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:169
+    // @LINE:197
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.logout",
       """
@@ -1155,7 +1155,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:166
+  // @LINE:180
   class ReverseDOCController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -1163,12 +1163,152 @@ package controllers.javascript {
     }
 
   
-    // @LINE:166
+    // @LINE:184
+    def docTableFieldsOfStudy: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableFieldsOfStudy",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableFieldsOfStudy"})
+        }
+      """
+    )
+  
+    // @LINE:189
+    def docfTableSubjects: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docfTableSubjects",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docfTableSubjects"})
+        }
+      """
+    )
+  
+    // @LINE:182
+    def docTableCommittee: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableCommittee",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableCommittee"})
+        }
+      """
+    )
+  
+    // @LINE:188
+    def docTableStudyPlans: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableStudyPlans",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableStudyPlans"})
+        }
+      """
+    )
+  
+    // @LINE:190
+    def docTableTeachingAAA: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableTeachingAAA",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableTeachingAAA"})
+        }
+      """
+    )
+  
+    // @LINE:183
     def docTableEmployees: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DOCController.docTableEmployees",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableEmployees"})
+        }
+      """
+    )
+  
+    // @LINE:180
+    def docTableAccessRole: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableAccessRole",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableAccessRole"})
+        }
+      """
+    )
+  
+    // @LINE:187
+    def docTableStudyGroups: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableStudyGroups",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableStudyGroups"})
+        }
+      """
+    )
+  
+    // @LINE:193
+    def docTableTeachingCB: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableTeachingCB",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableTeachingCB"})
+        }
+      """
+    )
+  
+    // @LINE:191
+    def docTableTeachingAAB: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableTeachingAAB",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableTeachingAAB"})
+        }
+      """
+    )
+  
+    // @LINE:185
+    def docTablePlublication: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTablePlublication",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTablePlublication"})
+        }
+      """
+    )
+  
+    // @LINE:186
+    def docTableSPPrint: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableSPPrint",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableSPPrint"})
+        }
+      """
+    )
+  
+    // @LINE:192
+    def docTableTeachingAccordingToPersons: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableTeachingAccordingToPersons",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableTeachingAccordingToPersons"})
+        }
+      """
+    )
+  
+    // @LINE:181
+    def docTableClassroom: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableClassroom",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableClassroom"})
+        }
+      """
+    )
+  
+    // @LINE:194
+    def docTableTeachingDepartmentEmployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableTeachingDepartmentEmployee",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableTeachingDepartmentEmployee"})
         }
       """
     )
@@ -1333,12 +1473,152 @@ package controllers.javascript {
     }
 
   
+    // @LINE:168
+    def pdfTableFieldsOfStudy: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableFieldsOfStudy",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableFieldsOfStudy"})
+        }
+      """
+    )
+  
     // @LINE:164
+    def pdfTableAccessRole: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableAccessRole",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableAccessRole"})
+        }
+      """
+    )
+  
+    // @LINE:167
     def pdfTableEmployees: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PDFController.pdfTableEmployees",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableEmployees"})
+        }
+      """
+    )
+  
+    // @LINE:172
+    def pdfTableStudyPlans: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableStudyPlans",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableStudyPlans"})
+        }
+      """
+    )
+  
+    // @LINE:169
+    def pdfTablePlublication: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTablePlublication",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTablePlublication"})
+        }
+      """
+    )
+  
+    // @LINE:177
+    def pdfTableTeachingCB: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableTeachingCB",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableTeachingCB"})
+        }
+      """
+    )
+  
+    // @LINE:178
+    def pdfTableTeachingDepartmentEmployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableTeachingDepartmentEmployee",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableTeachingDepartmentEmployee"})
+        }
+      """
+    )
+  
+    // @LINE:176
+    def pdfTableTeachingAccordingToPersons: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableTeachingAccordingToPersons",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableTeachingAccordingToPersons"})
+        }
+      """
+    )
+  
+    // @LINE:166
+    def pdfTableCommittee: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableCommittee",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableCommittee"})
+        }
+      """
+    )
+  
+    // @LINE:165
+    def pdfTableClassroom: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableClassroom",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableClassroom"})
+        }
+      """
+    )
+  
+    // @LINE:173
+    def pdfTableSubjects: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableSubjects",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableSubjects"})
+        }
+      """
+    )
+  
+    // @LINE:175
+    def pdfTableTeachingAAB: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableTeachingAAB",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableTeachingAAB"})
+        }
+      """
+    )
+  
+    // @LINE:171
+    def pdfTableStudyGroups: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableStudyGroups",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableStudyGroups"})
+        }
+      """
+    )
+  
+    // @LINE:174
+    def pdfTableTeachingAAA: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableTeachingAAA",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableTeachingAAA"})
+        }
+      """
+    )
+  
+    // @LINE:170
+    def pdfTableSPPrint: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTableSPPrint",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableSPPrint"})
         }
       """
     )
@@ -1563,7 +1843,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:175
+    // @LINE:203
     def saveLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.saveLector",
       """
@@ -1583,7 +1863,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:177
+    // @LINE:205
     def detailsListLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.detailsListLector",
       """
@@ -1593,7 +1873,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:176
+    // @LINE:204
     def printLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.printLector",
       """
