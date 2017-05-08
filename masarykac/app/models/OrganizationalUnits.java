@@ -1,6 +1,8 @@
 package models;
 
 import com.avaje.ebean.Model;
+import play.data.format.Formats;
+import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.LinkedHashMap;
@@ -20,16 +22,28 @@ public class OrganizationalUnits extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Constraints.Required(message = "Číslo je povinné")
+    @Formats.NonEmpty
     public String organizationalUnitNumber;
 
+    @Constraints.Required(message = "Nadřazená OJ je povinná")
+    @Formats.NonEmpty
     public String organizationalUnitNumberParent;
 
+    @Constraints.Required(message = "Český název je povinný")
+    @Formats.NonEmpty
     public String titleCzech;
 
+    @Constraints.Required(message = "Anglický název je povinný")
+    @Formats.NonEmpty
     public String titleEnglish;
 
+    @Constraints.Required(message = "Funkce je povinná")
+    @Formats.NonEmpty
     public String functionNameOfSeniorEmployee;
 
+    @Constraints.Required(message = "Funkce je povinná")
+    @Formats.NonEmpty
     public String functionNameOfSeniorEmployeeAppointment;
 
     public Long organizationalUnitResponsible;
@@ -145,6 +159,7 @@ public class OrganizationalUnits extends Model {
     public static List<OrganizationalUnits> search() {
         return OrganizationalUnits.find.all();
     }
+
     public static OrganizationalUnits findById(long id) {
         return find.where().eq("id", id).findUnique();
     }

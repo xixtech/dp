@@ -42,6 +42,9 @@ public class Employees extends Model {
     public AccessRole accessRole;
 
     @OneToMany(mappedBy = "employees", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Ideas> ideas;
+
+    @OneToMany(mappedBy = "employees", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Statement> statementEmployees;
 
     @OneToMany(mappedBy = "managerEmployee", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
@@ -210,6 +213,14 @@ public class Employees extends Model {
 
     public void setVisitsParticipants(List<VisitsParticipants> visitsParticipants) {
         this.visitsParticipants = visitsParticipants;
+    }
+
+    public List<Ideas> getIdeas() {
+        return ideas;
+    }
+
+    public void setIdeas(List<Ideas> ideas) {
+        this.ideas = ideas;
     }
 
     public Member getMember() {

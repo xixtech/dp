@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Mon May 08 22:17:57 CEST 2017
+// @DATE:Tue May 09 00:03:02 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -45,7 +45,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:209
+  // @LINE:211
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -53,7 +53,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:209
+    // @LINE:211
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -225,7 +225,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:200
+  // @LINE:202
   class ReversePrintController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -233,7 +233,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:200
+    // @LINE:202
     def printUserDetails: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.printUserDetails",
       """
@@ -243,7 +243,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:201
+    // @LINE:203
     def detailsList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PrintController.detailsList",
       """
@@ -1013,7 +1013,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:197
+    // @LINE:199
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.logout",
       """
@@ -1625,6 +1625,36 @@ package controllers.javascript {
   
   }
 
+  // @LINE:196
+  class ReverseIdeasController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:197
+    def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IdeasController.save",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "regidea/saved"})
+        }
+      """
+    )
+  
+    // @LINE:196
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.IdeasController.index",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "regidea"})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:103
   class ReverseStudyGroupsController(_prefix: => String) {
 
@@ -1843,7 +1873,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:203
+    // @LINE:205
     def saveLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.saveLector",
       """
@@ -1863,7 +1893,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:205
+    // @LINE:207
     def detailsListLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.detailsListLector",
       """
@@ -1873,7 +1903,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:204
+    // @LINE:206
     def printLector: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SalaryController.printLector",
       """

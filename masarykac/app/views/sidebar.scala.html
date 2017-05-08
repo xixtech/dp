@@ -2,10 +2,9 @@
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
-
             <li>
                 <a href='@routes.Application.dashboard'>
-                    <i class="fa fa-dashboard fa-fw"></i> Nástěnka
+                    <i class="fa fa-home fa-fw"></i> Hlavní plocha
                 </a>
             </li>
             <li>
@@ -20,7 +19,6 @@
                         <a href="@routes.PersonalStatisticController.teachingCB()">Výuka CB</a>
                         <a href="@routes.StatisticController.index()">Zobrazit DČPS</a>
                         <a href="@routes.StatisticController.studyPlansTable()">Zobrazit SP</a>
-
                         <a href="@routes.EmployeesController.info(session().get("uid"))">Info</a>
                         <a href="@routes.StatisticController.listEmployeerActvitiy(session().get("uid"))">
                             Můj souhrn aktivity v semestrech</a>
@@ -34,7 +32,7 @@
 
             <li>
             @if(session().get("role").equals("director")) {
-                <a href="#"><i class="fa fa-table fa-fw"></i>Seznamy<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-table fa-fw"></i>Seznamy a výstupy<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     @if(session().get("role").equals("director")) {
                         <li>
@@ -173,7 +171,7 @@
             </li>
             <li>
             @if(session().get("role").equals("director")) {
-                <a href="#"><i class="fa fa-files-o fa-fw"></i> Další stránky<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-files-o fa-fw"></i> Oblast zadávání<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     @if(session().get("role").equals("director")) {
                         <li>
@@ -351,56 +349,6 @@
                     <!-- /.nav-second-level -->
             }
             </li>
-            <li>
-            @if(session().get("role").equals("director")) {
-                <a href="#"><i class="fa fa-sitemap fa-fw"></i>
-                    Multi-Level Dropdown<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="#">Second Level Item</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Item</a>
-                    </li>
-                    <li>
-                        <a href="#">Third Level <span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                        </ul>
-                            <!-- /.nav-third-level -->
-                    </li>
-                </ul>
-                    <!-- /.nav-second-level -->
-            }
-            </li>
-            <li>
-            @if(session().get("role").equals("director")) {
-                <a href="#">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Grafy<span class="fa arrow"></span>
-                </a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href='@routes.Charts.flot'>Flot Charts</a>
-                    </li>
-                    <li>
-                        <a href='@routes.Charts.morris'>Morris.js Charts</a>
-                    </li>
-                </ul>
-                    <!-- /.nav-second-level -->
-            }
-            </li>
-
         </ul>
     </div>
         <!-- /.sidebar-collapse -->

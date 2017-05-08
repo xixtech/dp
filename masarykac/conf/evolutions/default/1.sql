@@ -133,6 +133,15 @@ create table global_values (
   constraint pk_global_values primary key (id)
 );
 
+create table ideas (
+  id                            bigserial not null,
+  idea                          varchar(255),
+  date                          timestamp,
+  employees_id                  bigint,
+  constraint uq_ideas_employees_id unique (employees_id),
+  constraint pk_ideas primary key (id)
+);
+
 create table items_kpi (
   id                            bigserial not null,
   identificator                 varchar(255),
@@ -528,6 +537,8 @@ create index ix_final_works_participants_final_works_id on final_works_participa
 alter table final_works_participants add constraint fk_final_works_participants_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 create index ix_final_works_participants_employees_id on final_works_participants (employees_id);
 
+alter table ideas add constraint fk_ideas_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
+
 alter table member add constraint fk_member_employees_id foreign key (employees_id) references employees (id) on delete restrict on update restrict;
 
 alter table member add constraint fk_member_person_id foreign key (person_id) references person (id) on delete restrict on update restrict;
@@ -726,6 +737,8 @@ drop index if exists ix_final_works_participants_final_works_id;
 alter table if exists final_works_participants drop constraint if exists fk_final_works_participants_employees_id;
 drop index if exists ix_final_works_participants_employees_id;
 
+alter table if exists ideas drop constraint if exists fk_ideas_employees_id;
+
 alter table if exists member drop constraint if exists fk_member_employees_id;
 
 alter table if exists member drop constraint if exists fk_member_person_id;
@@ -918,6 +931,8 @@ drop table if exists final_works cascade;
 drop table if exists final_works_participants cascade;
 
 drop table if exists global_values cascade;
+
+drop table if exists ideas cascade;
 
 drop table if exists items_kpi cascade;
 

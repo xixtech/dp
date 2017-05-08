@@ -1,6 +1,8 @@
 package models;
 
 import com.avaje.ebean.Model;
+import play.data.format.Formats;
+import play.data.validation.Constraints;
 
 import javax.persistence.*;
 import java.util.LinkedHashMap;
@@ -22,8 +24,12 @@ public class OrganizationalUnitsParticipants extends Model {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Constraints.Required(message = "Funkce je povinná")
+    @Formats.NonEmpty
     public String function;
 
+    @Constraints.Required(message = "Název funkce je povinný")
+    @Formats.NonEmpty
     public String functionName;
 
     @ManyToOne
