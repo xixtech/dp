@@ -75,7 +75,7 @@ public class StatementController extends Controller {
         e.add(Employees.findById(idE));
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);
-        s.setState("Odesláno ke schválení");
+        s.setState("Ke schválení");
         s.setManagerEmployee(Employees.findById(m.getEmployees().getId()));
         s.update();
         statements.add(s);

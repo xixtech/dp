@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Tue May 09 00:03:02 CEST 2017
+// @DATE:Thu May 11 10:08:54 CEST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -779,12 +779,6 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "docTableFieldsOfStudy")
     }
   
-    // @LINE:189
-    def docfTableSubjects(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "docfTableSubjects")
-    }
-  
     // @LINE:182
     def docTableCommittee(): Call = {
       import ReverseRouteContext.empty
@@ -834,9 +828,9 @@ package controllers {
     }
   
     // @LINE:185
-    def docTablePlublication(): Call = {
+    def docTablePublication(): Call = {
       import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "docTablePlublication")
+      Call("GET", _prefix + { _defaultPrefix } + "docTablePublication")
     }
   
     // @LINE:186
@@ -861,6 +855,12 @@ package controllers {
     def docTableTeachingDepartmentEmployee(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableTeachingDepartmentEmployee")
+    }
+  
+    // @LINE:189
+    def docTableSubjects(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "docTableSubjects")
     }
   
   }
@@ -1001,12 +1001,6 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableStudyPlans")
     }
   
-    // @LINE:169
-    def pdfTablePlublication(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "pdfTablePlublication")
-    }
-  
     // @LINE:177
     def pdfTableTeachingCB(): Call = {
       import ReverseRouteContext.empty
@@ -1041,6 +1035,12 @@ package controllers {
     def pdfTableSubjects(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableSubjects")
+    }
+  
+    // @LINE:169
+    def pdfTablePublication(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "pdfTablePublication")
     }
   
     // @LINE:175

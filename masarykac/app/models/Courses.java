@@ -131,7 +131,7 @@ public class Courses extends Model {
         return options;
     }
 
-    public static List<Courses> searchAAA() {
+    public static List<Courses>  searchAAA() {
 
         List<Courses> list =search();
         for (Iterator<Courses> iterator = list.iterator(); iterator.hasNext(); ) {

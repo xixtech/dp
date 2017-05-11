@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Tue May 09 00:03:02 CEST 2017
+// @DATE:Thu May 11 10:08:54 CEST 2017
 
 package router
 
@@ -302,7 +302,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """pdfTableCommittee""", """controllers.PDFController.pdfTableCommittee()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """pdfTableEmployees""", """controllers.PDFController.pdfTableEmployees()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """pdfTableFieldsOfStudy""", """controllers.PDFController.pdfTableFieldsOfStudy()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """pdfTablePlublication""", """controllers.PDFController.pdfTablePlublication()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """pdfTablePublication""", """controllers.PDFController.pdfTablePublication()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """pdfTableSPPrint""", """controllers.PDFController.pdfTableSPPrint()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """pdfTableStudyGroups""", """controllers.PDFController.pdfTableStudyGroups()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """pdfTableStudyPlans""", """controllers.PDFController.pdfTableStudyPlans()"""),
@@ -317,11 +317,11 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableCommittee""", """controllers.DOCController.docTableCommittee()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableEmployees""", """controllers.DOCController.docTableEmployees()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableFieldsOfStudy""", """controllers.DOCController.docTableFieldsOfStudy()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTablePlublication""", """controllers.DOCController.docTablePlublication()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTablePublication""", """controllers.DOCController.docTablePublication()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableSPPrint""", """controllers.DOCController.docTableSPPrint()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableStudyGroups""", """controllers.DOCController.docTableStudyGroups()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableStudyPlans""", """controllers.DOCController.docTableStudyPlans()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docfTableSubjects""", """controllers.DOCController.docfTableSubjects()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableSubjects""", """controllers.DOCController.docTableSubjects()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableTeachingAAA""", """controllers.DOCController.docTableTeachingAAA()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableTeachingAAB""", """controllers.DOCController.docTableTeachingAAB()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """docTableTeachingAccordingToPersons""", """controllers.DOCController.docTableTeachingAccordingToPersons()"""),
@@ -2435,19 +2435,19 @@ class Routes(
   )
 
   // @LINE:169
-  private[this] lazy val controllers_PDFController_pdfTablePlublication123_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTablePlublication")))
+  private[this] lazy val controllers_PDFController_pdfTablePublication123_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTablePublication")))
   )
-  private[this] lazy val controllers_PDFController_pdfTablePlublication123_invoker = createInvoker(
-    PDFController_13.pdfTablePlublication(),
+  private[this] lazy val controllers_PDFController_pdfTablePublication123_invoker = createInvoker(
+    PDFController_13.pdfTablePublication(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.PDFController",
-      "pdfTablePlublication",
+      "pdfTablePublication",
       Nil,
       "GET",
       """""",
-      this.prefix + """pdfTablePlublication"""
+      this.prefix + """pdfTablePublication"""
     )
   )
 
@@ -2690,19 +2690,19 @@ class Routes(
   )
 
   // @LINE:185
-  private[this] lazy val controllers_DOCController_docTablePlublication138_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTablePlublication")))
+  private[this] lazy val controllers_DOCController_docTablePublication138_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTablePublication")))
   )
-  private[this] lazy val controllers_DOCController_docTablePlublication138_invoker = createInvoker(
-    DOCController_29.docTablePlublication(),
+  private[this] lazy val controllers_DOCController_docTablePublication138_invoker = createInvoker(
+    DOCController_29.docTablePublication(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.DOCController",
-      "docTablePlublication",
+      "docTablePublication",
       Nil,
       "GET",
       """""",
-      this.prefix + """docTablePlublication"""
+      this.prefix + """docTablePublication"""
     )
   )
 
@@ -2758,19 +2758,19 @@ class Routes(
   )
 
   // @LINE:189
-  private[this] lazy val controllers_DOCController_docfTableSubjects142_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docfTableSubjects")))
+  private[this] lazy val controllers_DOCController_docTableSubjects142_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableSubjects")))
   )
-  private[this] lazy val controllers_DOCController_docfTableSubjects142_invoker = createInvoker(
-    DOCController_29.docfTableSubjects(),
+  private[this] lazy val controllers_DOCController_docTableSubjects142_invoker = createInvoker(
+    DOCController_29.docTableSubjects(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.DOCController",
-      "docfTableSubjects",
+      "docTableSubjects",
       Nil,
       "GET",
       """""",
-      this.prefix + """docfTableSubjects"""
+      this.prefix + """docTableSubjects"""
     )
   )
 
@@ -3754,9 +3754,9 @@ class Routes(
       }
   
     // @LINE:169
-    case controllers_PDFController_pdfTablePlublication123_route(params) =>
+    case controllers_PDFController_pdfTablePublication123_route(params) =>
       call { 
-        controllers_PDFController_pdfTablePlublication123_invoker.call(PDFController_13.pdfTablePlublication())
+        controllers_PDFController_pdfTablePublication123_invoker.call(PDFController_13.pdfTablePublication())
       }
   
     // @LINE:170
@@ -3844,9 +3844,9 @@ class Routes(
       }
   
     // @LINE:185
-    case controllers_DOCController_docTablePlublication138_route(params) =>
+    case controllers_DOCController_docTablePublication138_route(params) =>
       call { 
-        controllers_DOCController_docTablePlublication138_invoker.call(DOCController_29.docTablePlublication())
+        controllers_DOCController_docTablePublication138_invoker.call(DOCController_29.docTablePublication())
       }
   
     // @LINE:186
@@ -3868,9 +3868,9 @@ class Routes(
       }
   
     // @LINE:189
-    case controllers_DOCController_docfTableSubjects142_route(params) =>
+    case controllers_DOCController_docTableSubjects142_route(params) =>
       call { 
-        controllers_DOCController_docfTableSubjects142_invoker.call(DOCController_29.docfTableSubjects())
+        controllers_DOCController_docTableSubjects142_invoker.call(DOCController_29.docTableSubjects())
       }
   
     // @LINE:190

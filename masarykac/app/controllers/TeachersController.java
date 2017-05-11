@@ -56,7 +56,7 @@ public class TeachersController extends Controller {
             val = Long.parseLong(insId);
         }
 
-        Teachers t=new Teachers(Courses.findById(courseId),Employees.findById(employeesId),(int)val,0.0);
+        Teachers t=new Teachers(Courses.findById(courseId),Employees.findById(employeesId),(int)val,0.0, 0.0);
         t.save();
 
 

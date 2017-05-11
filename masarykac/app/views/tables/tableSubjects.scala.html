@@ -32,6 +32,24 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Výpis předmětů
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2">
+                        @form(routes.SubjectController.index()) {
+                            <input type="submit" value="+ Přidat předmět" class="btn btn-success">
+                            }
+                        </div>
+                        <div class="col-md-1">
+                        @form(routes.PDFController.pdfTableSubjects()) {
+                            <input type="submit" value="Generovat PDF" class="btn btn-success">
+                            }
+                        </div>
+                        <div class="col-md-1">
+                        @form(routes.DOCController.docTableSubjects()) {
+                            <input type="submit" value="Generovat DOC" class="btn btn-success">
+                            }
+                        </div>
+                    </div>
                 </div>
                     <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -119,21 +137,21 @@
                                     @if(member.isCredit == true) {
                                         <input type="checkbox" checked="checked" onclick="return false;">
                                     } else {
-                                        <input type="checkbox"  onclick="return false;">
+                                        <input type="checkbox" onclick="return false;">
                                         }
                                     </td>
                                     <td class="center">
                                     @if(member.isExam == true) {
                                         <input type="checkbox" checked="checked" onclick="return false;">
                                     } else {
-                                        <input type="checkbox"  onclick="return false;">
+                                        <input type="checkbox" onclick="return false;">
                                         }
                                     </td>
                                     <td class="center">
                                     @if(member.isClassifiedCredit == true) {
                                         <input type="checkbox" checked="checked" onclick="return false;">
                                     } else {
-                                        <input type="checkbox"  onclick="return false;">
+                                        <input type="checkbox" onclick="return false;">
                                         }
                                     </td>
                                     <td class="center">
@@ -147,14 +165,14 @@
                                     @if(member.isFormPresentation == true) {
                                         <input type="checkbox" checked="checked" onclick="return false;">
                                     } else {
-                                        <input type="checkbox"  onclick="return false;">
+                                        <input type="checkbox" onclick="return false;">
                                         }
                                     </td>
                                     <td class="center">
                                     @if(member.isFormCombined == true) {
                                         <input type="checkbox" checked="checked" onclick="return false;">
                                     } else {
-                                        <input type="checkbox"  onclick="return false;">
+                                        <input type="checkbox" onclick="return false;">
                                         }
 
                                     </td>

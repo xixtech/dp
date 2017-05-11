@@ -30,20 +30,23 @@ public class Teachers extends Model {
 
     public double summary;
 
+    public double recountedSummary;
+
     @ManyToOne
     public TeachersRole teachersRole;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<TeachersInWeeks> teachersInWeeks;
 
-    @OneToMany(mappedBy = "statement",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "statement", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StatementTeachersParticipants> statementTeachersParticipants;
 
-    public Teachers(Courses courses, Employees employees, double scale, double summary) {
+    public Teachers(Courses courses, Employees employees, double scale, double summary, double recountedSummary) {
         this.courses = courses;
         this.employees = employees;
         this.scale = scale;
         this.summary = summary;
+        this.recountedSummary = recountedSummary;
     }
 
     public Courses getCourses() {
@@ -84,6 +87,14 @@ public class Teachers extends Model {
 
     public void setSummary(double summary) {
         this.summary = summary;
+    }
+
+    public double getRecountedSummary() {
+        return recountedSummary;
+    }
+
+    public void setRecountedSummary(double recountedSummary) {
+        this.recountedSummary = recountedSummary;
     }
 
     public List<TeachersInWeeks> getTeachersInWeeks() {

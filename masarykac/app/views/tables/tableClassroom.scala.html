@@ -32,6 +32,24 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Přehled místností
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2">
+                        @form(routes.ClassroomController.index()) {
+                            <input type="submit" value="+ Přidat místnost" class="btn btn-success">
+                            }
+                        </div>
+                        <div class="col-md-1">
+                        @form(routes.PDFController.pdfTableClassroom()) {
+                            <input type="submit" value="Generovat PDF" class="btn btn-success">
+                            }
+                        </div>
+                        <div class="col-md-1">
+                        @form(routes.DOCController.docTableClassroom()) {
+                            <input type="submit" value="Generovat DOC" class="btn btn-success">
+                            }
+                        </div>
+                    </div>
                 </div>
                     <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -65,7 +83,7 @@
                                     </td>
                                     <td class="center">
                                     @form(routes.ClassroomController.edit(member.getId())) {
-                                        <input type="submit" value="Upravit" class="btn btn-info">
+                                        <input type="submit" value="Upravit" class="btn btn-warning">
                                         }
                                     </td>
                                     <td class="center">

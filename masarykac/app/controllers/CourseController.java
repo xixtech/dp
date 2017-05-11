@@ -131,7 +131,7 @@ public class CourseController extends Controller {
             c.save();
             courseID = c.getId();
             for (int j = 0; j < teachers.size(); j++) {
-                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(teachers.get(j))), teachersScale.get(j),0.0);
+                Teachers t = new Teachers(c, Employees.findById(Long.parseLong(teachers.get(j))), teachersScale.get(j),0.0, 0.0);
                 t.save();
             }
         }

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Tue May 09 00:03:02 CEST 2017
+// @DATE:Thu May 11 10:08:54 CEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -1173,16 +1173,6 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:189
-    def docfTableSubjects: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.DOCController.docfTableSubjects",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docfTableSubjects"})
-        }
-      """
-    )
-  
     // @LINE:182
     def docTableCommittee: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DOCController.docTableCommittee",
@@ -1264,11 +1254,11 @@ package controllers.javascript {
     )
   
     // @LINE:185
-    def docTablePlublication: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.DOCController.docTablePlublication",
+    def docTablePublication: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTablePublication",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTablePlublication"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTablePublication"})
         }
       """
     )
@@ -1309,6 +1299,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableTeachingDepartmentEmployee"})
+        }
+      """
+    )
+  
+    // @LINE:189
+    def docTableSubjects: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DOCController.docTableSubjects",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "docTableSubjects"})
         }
       """
     )
@@ -1513,16 +1513,6 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:169
-    def pdfTablePlublication: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PDFController.pdfTablePlublication",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTablePlublication"})
-        }
-      """
-    )
-  
     // @LINE:177
     def pdfTableTeachingCB: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PDFController.pdfTableTeachingCB",
@@ -1579,6 +1569,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTableSubjects"})
+        }
+      """
+    )
+  
+    // @LINE:169
+    def pdfTablePublication: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PDFController.pdfTablePublication",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pdfTablePublication"})
         }
       """
     )

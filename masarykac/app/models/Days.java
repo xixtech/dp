@@ -29,6 +29,9 @@ public class Days extends Model {
     @OneToMany(mappedBy="days",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<ScheduleInWeeks> scheduleInWeeks;
 
+    @OneToMany(mappedBy="days",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    public List<Schedule> schedule;
+
     public Days(int dayP, String day, String dayV) {
         this.dayP = dayP;
         this.day = day;
@@ -73,6 +76,14 @@ public class Days extends Model {
 
     public void setScheduleInWeeks(List<ScheduleInWeeks> scheduleInWeeks) {
         this.scheduleInWeeks = scheduleInWeeks;
+    }
+
+    public List<Schedule> getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(List<Schedule> schedule) {
+        this.schedule = schedule;
     }
 
     public static List<Days> search() {

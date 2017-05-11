@@ -7,6 +7,10 @@ import controllers.StartMethods;
 import models.*;
 import models.utils.Hash;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * This class is a Guice module that tells Guice how to bind several
  * different types. This Guice module is created when the Play
@@ -64,6 +68,13 @@ public class OnStartup {
                 profile.save();
                 Person person = new Person(20000, "Lektor", member, roles.roleName);
                 person.save();
+
+                String startDateString = "20.02.2017";
+                String endDateString = "02.07.2017";
+                DateFormat df = new SimpleDateFormat("dd.mm.yyy");
+                Semesters semesters = new Semesters("LS1617", "Letní semestr 2016/2017", "Letní semestr akademického roku 2016/2017", "2016/2017", df.parse(startDateString), df.parse(endDateString));
+                semesters.save();
+
                 member.setPerson(person);
                 member.setProfile(profile);
                 member.update();

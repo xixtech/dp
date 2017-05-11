@@ -54,7 +54,7 @@ public class DOCController extends Controller {
         return ok(views.html.doc.tableFieldsOfStudyDOC.render(FieldsOfStudy.search()));
     }
 
-    public Result docTablePlublication() {
+    public Result docTablePublication() {
         List<Publications> pub = Publications.search();
         List<PublicationsParticipants> pubpart = PublicationsParticipants.search();
         List<Semesters> s = Semesters.search();
@@ -62,7 +62,14 @@ public class DOCController extends Controller {
     }
 
     public Result docTableSPPrint() {
-        return ok(views.html.doc.tableStudyPlansDOC.render(StudyPlans.search()));
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.search();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.search();
+        List<Teachers> teachers = Teachers.find.all();
+        return ok(views.html.doc.tableSPPrintDOC.render(sp, f, s, sem, c, teachers));
     }
 
     public Result docTableStudyGroups() {
@@ -73,7 +80,7 @@ public class DOCController extends Controller {
         return ok(views.html.doc.tableStudyPlansDOC.render(StudyPlans.search()));
     }
 
-    public Result docfTableSubjects() {
+    public Result docTableSubjects() {
         return ok(views.html.doc.tableSubjectsDOC.render(Subjects.search()));
     }
 

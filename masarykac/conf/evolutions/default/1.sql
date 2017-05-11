@@ -461,6 +461,7 @@ create table teachers (
   employees_id                  bigint,
   scale                         float,
   summary                       float,
+  recounted_summary             float,
   teachers_role_id              bigint,
   constraint pk_teachers primary key (id)
 );

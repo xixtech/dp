@@ -32,6 +32,24 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Výpis studijních skupin
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-3">
+                        @form(routes.StudyGroupsController.index()) {
+                            <input type="submit" value="+ Přidat studijní skupinu" class="btn btn-success">
+                            }
+                        </div>
+                        <div class="col-md-1">
+                        @form(routes.PDFController.pdfTableStudyGroups()) {
+                            <input type="submit" value="Generovat PDF" class="btn btn-success">
+                            }
+                        </div>
+                        <div class="col-md-1">
+                        @form(routes.DOCController.docTableStudyGroups()) {
+                            <input type="submit" value="Generovat DOC" class="btn btn-success">
+                            }
+                        </div>
+                    </div>
                 </div>
                     <!-- /.panel-heading -->
                 <div class="panel-body">

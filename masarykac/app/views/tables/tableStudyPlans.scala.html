@@ -31,6 +31,24 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Výpis studijních plánů
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3">
+                            @form(routes.StudyPlansController.index()) {
+                                <input type="submit" value="+ Přidat studijní plán" class="btn btn-success">
+                                }
+                            </div>
+                            <div class="col-md-1">
+                            @form(routes.PDFController.pdfTableStudyPlans()) {
+                                <input type="submit" value="Generovat PDF" class="btn btn-success">
+                                }
+                            </div>
+                            <div class="col-md-1">
+                            @form(routes.DOCController.docTableStudyPlans()) {
+                                <input type="submit" value="Generovat DOC" class="btn btn-success">
+                                }
+                            </div>
+                        </div>
                 </div>
                     <!-- /.panel-heading -->
                 <div class="panel-body">

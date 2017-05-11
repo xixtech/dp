@@ -34,7 +34,7 @@ public class SubjectPlanTeachingController extends Controller {
         Form<Courses> coursesForm = formFactory.form(Courses.class);
         Form<Schedule> scheduleForm = formFactory.form(Schedule.class);
         Form<StudyPlans> studyPlansForm = formFactory.form(StudyPlans.class);
-        return ok(views.html.registerSubjectPlanTeaching.render("",subjectsForm, coursesForm, scheduleForm, studyPlansForm));
+        return ok(views.html.registerSubjectPlanTeaching.render("", subjectsForm, coursesForm, scheduleForm, studyPlansForm));
     }
 
     /**
@@ -48,20 +48,20 @@ public class SubjectPlanTeachingController extends Controller {
         Form<Schedule> scheduleForm = formFactory.form(Schedule.class).bindFromRequest();
         Form<StudyPlans> studyPlansForm = formFactory.form(StudyPlans.class).bindFromRequest();
         if (subjectsForm.hasErrors() || coursesForm.hasErrors() || scheduleForm.hasErrors() || studyPlansForm.hasErrors()) {
-            return badRequest(views.html.registerSubjectPlanTeaching.render("",subjectsForm, coursesForm, scheduleForm, studyPlansForm));
+            return badRequest(views.html.registerSubjectPlanTeaching.render("", subjectsForm, coursesForm, scheduleForm, studyPlansForm));
         }
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
         try {
-            boolean res=saveCourse(formData);
-            if(res) {
+            boolean res = saveCourse(formData);
+            if (res) {
                 return redirect(routes.Application.index());
-            }else{
-                String msg="Kombinace položek Ident, Kurz a Semestr je již zadaná a nelze ji použít znovu";
-                return badRequest(views.html.registerSubjectPlanTeaching.render(msg,subjectsForm, coursesForm, scheduleForm, studyPlansForm));
+            } else {
+                String msg = "Kombinace položek Ident, Kurz a Semestr je již zadaná a nelze ji použít znovu";
+                return badRequest(views.html.registerSubjectPlanTeaching.render(msg, subjectsForm, coursesForm, scheduleForm, studyPlansForm));
             }
         } catch (Throwable t) {
             Logger.error("Exception ", t);
-            return badRequest(views.html.registerSubjectPlanTeaching.render("",subjectsForm, coursesForm, scheduleForm, studyPlansForm));
+            return badRequest(views.html.registerSubjectPlanTeaching.render("", subjectsForm, coursesForm, scheduleForm, studyPlansForm));
         }
     }
 
@@ -230,11 +230,11 @@ public class SubjectPlanTeachingController extends Controller {
             classRoom.add(insId);
         }
 
-        List<String> teachersRole = new ArrayList<>();
+       /* List<String> teachersRole = new ArrayList<>();
 
         for (String insId : formData.get("teachersRole.id")) {
             teachersRole.add(insId);
-        }
+        }*/
 
         List<String> teacherKey = new ArrayList<>();
         List<String> teacherValue = new ArrayList<>();
@@ -444,6 +444,7 @@ public class SubjectPlanTeachingController extends Controller {
         List<String> usedIndexes = new ArrayList<>();
         HashMap<String, Double> numberOfTeachers = new HashMap<String, Double>();
         HashMap<String, Double> numberOfSummaryTeachers = new HashMap<String, Double>();
+        HashMap<String, Double> numberOfRecountedTeachers = new HashMap<String, Double>();
         HashMap<String, Integer> numberOfTeachersInEveryWeek = new HashMap<String, Integer>();
         for (int i = 0; i < p.length; i++) {
             for (int j = i; j < pole.length; j++) {
@@ -528,10 +529,9 @@ public class SubjectPlanTeachingController extends Controller {
             long from = ((dateFrom.getTime()) / (60000));
             double diffMinutes = to - from;
             double vyuka = (diffMinutes) / 45.0;
-            double val = vyuka * v;
+            double val = vyuka * v * scheduleWeekKey.size();
             double valRounded = (double) Math.round(val * 10d) / 10d;
             numberOfSummaryTeachers.put(k, valRounded);
-
         }
 
         List<Integer> fieldsOfStudy = new ArrayList<>();
@@ -589,7 +589,26 @@ public class SubjectPlanTeachingController extends Controller {
 
                 for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()) {
                     Double summary = numberOfSummaryTeachers.get(entry.getKey());
-                    Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue(), summary);
+                    Double recountedSummary = 0.0;
+                    Double val = 1.5;
+                    if (course.get(i).startsWith("9")) {
+                        if (ident.get(i).toUpperCase().startsWith("P") == false) {
+                            if (numberOfStudents.get(i) > 10) {
+                                recountedSummary = summary * val;
+                            } else {
+                                recountedSummary = summary;
+                            }
+                        } else if (ident.get(i).toUpperCase().startsWith("P")) {
+                            recountedSummary = summary * val;
+                        } else if (ident.get(i).toUpperCase().charAt(3) == 'E') {
+                            recountedSummary = summary * val;
+                        }
+                    } else {
+                        recountedSummary = summary;
+                    }
+                    double valRounded = (double) Math.round(recountedSummary * 10d) / 10d;
+
+                    Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue(), summary, recountedSummary);
                     t.save();
                     if (!teachersFromRows.containsKey(entry.getKey())) {
                         teachersFromRows.put(entry.getKey(), t.getId());
@@ -653,7 +672,7 @@ public class SubjectPlanTeachingController extends Controller {
                 }
             }
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -677,7 +696,6 @@ public class SubjectPlanTeachingController extends Controller {
                 }
             }
         }
-
         return true;
     }
 }

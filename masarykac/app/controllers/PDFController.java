@@ -63,7 +63,7 @@ public class PDFController extends Controller {
         return pdfGenerator.ok(views.html.pdf.tableFieldsOfStudyPDF.render(FieldsOfStudy.search()), "http://localhost:9000");
     }
 
-    public Result pdfTablePlublication() {
+    public Result pdfTablePublication() {
         List<Publications> pub = Publications.search();
         List<PublicationsParticipants> pubpart = PublicationsParticipants.search();
         List<Semesters> s = Semesters.search();
@@ -72,8 +72,15 @@ public class PDFController extends Controller {
     }
 
     public Result pdfTableSPPrint() {
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.search();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.search();
+        List<Teachers> teachers = Teachers.find.all();
         pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
-        return pdfGenerator.ok(views.html.pdf.tableStudyPlansPDF.render(StudyPlans.search()), "http://localhost:9000");
+        return pdfGenerator.ok(views.html.pdf.tableSPPrintPDF.render(sp, f, s,sem,c,teachers), "http://localhost:9000");
     }
 
     public Result pdfTableStudyGroups() {
