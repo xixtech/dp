@@ -28,7 +28,8 @@
                             @select(
                                 signupForm("accessRole.id"),
                                 options(AccessRole.options()),
-                                '_label -> "Role",
+                                '_label -> "Role*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "",
                                 '_error -> signupForm.globalError
@@ -40,7 +41,8 @@
                             <div class="col-md-6">
                             @inputPassword(
                                 signupForm("password"),
-                                '_label -> "Heslo",
+                                '_label -> "Heslo*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "Heslo musí mít nejméně 6 znaků."
                             )
@@ -48,7 +50,8 @@
                             <div class="col-md-6">
                             @inputPassword(
                                 signupForm("repeatPassword"),
-                                '_label -> "Heslo pro kontrolu",
+                                '_label -> "Heslo pro kontrolu*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "Prosím zadejte znovu heslo.",
                                 '_error -> signupForm.error("password")
@@ -59,7 +62,8 @@
                             <div class="col-md-3">
                             @inputText(
                                 employeesForm("personalNumber"),
-                                '_label -> "Osobní číslo",
+                                '_label -> "Osobní číslo*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "Prosím zadejte osobní číslo.",
                                 '_error -> employeesForm.globalError
@@ -70,7 +74,7 @@
                             <div class="col-md-2">
                             @inputText(
                                 employeesForm("titleBefore"),
-                                '_label -> "Titul před",
+                                '_label -> "Titul před:",
                                 'class -> "form-control",
                                 '_help -> "Prosím zadejte titul před.",
                                 '_error -> employeesForm.globalError
@@ -79,7 +83,8 @@
                             <div class="col-md-4">
                             @inputText(
                                 employeesForm("firstName"),
-                                '_label -> "Jméno",
+                                '_label -> "Jméno*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "Prosím zadejte jméno.",
                                 '_error -> employeesForm.globalError
@@ -89,7 +94,8 @@
 
                             @inputText(
                                 employeesForm("surname"),
-                                '_label -> "Příjmení",
+                                '_label -> "Příjmení*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "Prosím zadejte příjmení.",
                                 '_error -> employeesForm.globalError
@@ -99,7 +105,7 @@
                             <div class="col-md-2">
                             @inputText(
                                 employeesForm("titleAfter"),
-                                '_label -> "Titul za",
+                                '_label -> "Titul za:",
                                 'class -> "form-control",
                                 '_help -> "Prosím zadejte titul za.",
                                 '_error -> employeesForm.globalError
@@ -111,7 +117,8 @@
                             @select(
                                 unitsForm("organizationalUnits.id"),
                                 options(OrganizationalUnits.options()),
-                                '_label -> "Organizační jednotka",
+                                '_label -> "Organizační jednotka*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "",
                                 '_error -> unitsForm.globalError
@@ -121,7 +128,8 @@
                             @select(
                                 unitsForm("function"),
                                 options(OrganizationalUnitsParticipants.optionsFunction()),
-                                '_label -> "Funkce",
+                                '_label -> "Funkce*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "",
                                 '_error -> unitsForm.globalError
@@ -130,7 +138,8 @@
                             <div class="col-md-4">
                             @inputText(
                                 unitsForm("functionName"),
-                                '_label -> "Název funkce",
+                                '_label -> "Název funkce*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "",
                                 '_error -> unitsForm.globalError

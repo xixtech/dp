@@ -22,12 +22,11 @@
 
                     <fieldset>
                         <legend>Zadání učitele</legend>
-
-
                         @select(
                             teachersForm("employees.id"),
                             options(Employees.options()),
                             '_label -> "Zaměstnanec",
+                            'required -> "required",
                             'class -> "form-control",
                             '_help -> "",
                             '_error -> teachersForm.globalError
@@ -37,6 +36,7 @@
                             teachersForm("courses.id"),
                             options(Courses.options()),
                             '_label -> "Kurz",
+                            'required -> "required",
                             'class -> "form-control",
                             '_help -> "",
                             '_error -> teachersForm.globalError

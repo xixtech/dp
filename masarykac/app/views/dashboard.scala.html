@@ -19,7 +19,6 @@
         <h4>Rychlý přístup</h4>
         <div class="col-lg-3 col-md-6">
             @if(stPage.size()!=0) {
-
                 <div class="panel panel-red">
                     <div class="panel-heading">
                         <div class="row">
@@ -50,39 +49,14 @@
                             <i class="fa fa-tasks fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">Registrace osoby</div>
+                            <div class="huge">Registrace zaměstnance</div>
                             <div></div>
                         </div>
                     </div>
                 </div>
-                <a href="@routes.PersonController.index()">
+                <a href="@routes.EmployeesController.index()">
                     <div class="panel-footer">
-                        <span class="pull-left">Registrace osoby</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        }
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-        @if(session().get("role").equals("director")) {
-            <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">KPI Kalkulace</div>
-                            <div></div>
-                        </div>
-                    </div>
-                </div>
-                <a href="@routes.Application.kpiChoosePerson()">
-                    <div class="panel-footer">
-                        <span class="pull-left">KPI Kalkulace</span>
+                        <span class="pull-left">Registrace zaměstnance</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -99,14 +73,14 @@
                             <i class="fa fa-tasks fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">Seznam pracovníků</div>
+                            <div class="huge">Seznam zaměstnanců</div>
                             <div></div>
                         </div>
                     </div>
                 </div>
-                <a href="@routes.TableController.listPerson()">
+                <a href="@routes.TableController.listEmployees()">
                     <div class="panel-footer">
-                        <span class="pull-left">Seznam pracovníků</span>
+                        <span class="pull-left">Seznam zaměstnanců</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                         <div class="clearfix"></div>
                     </div>
@@ -114,32 +88,6 @@
             </div>
         }
         </div>
-
-        <div class="col-lg-3 col-md-6">
-        @if(session().get("role").equals("director")) {
-            <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>Test</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">Test</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        }
-        </div>
-
     </div>
 
         <!-- /.row -->
@@ -154,12 +102,12 @@
                             <i class="fa fa-tasks fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">Registrace kurzu</div>
+                            <div class="huge">Registrace předmětu</div>
                             <div></div>
                         </div>
                     </div>
                 </div>
-                <a href="@routes.CourseController.index()">
+                <a href="@routes.SubjectPlanTeachingController.index()">
                     <div class="panel-footer">
                         <span class="pull-left">Registrace kurzu</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -217,32 +165,6 @@
             </div>
         }
         </div>
-
-        <div class="col-lg-3 col-md-6">
-        @if(session().get("role").equals("director")) {
-            <div class="panel panel-red">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>Test</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#">
-                    <div class="panel-footer">
-                        <span class="pull-left">Test</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
-            </div>
-        }
-        </div>
-
     </div>
 
 

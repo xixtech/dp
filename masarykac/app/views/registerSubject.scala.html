@@ -26,7 +26,8 @@
                             <div class="col-md-6">
                             @inputText(
                                 subjectForm("ident"),
-                                '_label -> "Ident",
+                                '_label -> "Ident*:",
+                                'required -> "required",
                                 'class -> "form-control",
                                 '_help -> "",
                                 '_error -> subjectForm.globalError
@@ -35,7 +36,7 @@
                             <div class="col-md-6">
                             @inputText(
                                 subjectForm("identOld"),
-                                '_label -> "Ident_old",
+                                '_label -> "Ident_old:",
                                 'class -> "form-control",
                                 '_help -> "",
                                 '_error -> subjectForm.globalError
@@ -44,92 +45,99 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                        @inputText(
-                            subjectForm("titleC"),
-                            '_label -> "Název česky",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
+                            @inputText(
+                                subjectForm("titleC"),
+                                '_label -> "Název česky*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> subjectForm.globalError
+                            )
                             </div>
                             <div class="col-md-6">
-                        @inputText(
-                            subjectForm("titleA"),
-                            '_label -> "Název anglicky",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
+                            @inputText(
+                                subjectForm("titleA"),
+                                '_label -> "Název anglicky*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> subjectForm.globalError
+                            )
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                        @inputText(
-                            subjectForm("hoursP"),
-                            '_label -> "Počet hodin přednášek za týden",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
+                            @inputText(
+                                subjectForm("hoursP"),
+                                '_label -> "Počet hodin přednášek za týden*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> subjectForm.globalError
+                            )
                             </div>
                             <div class="col-md-4">
-                        @inputText(
-                            subjectForm("hoursC"),
-                            '_label -> "Počet hodin cvičení za týden",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
+                            @inputText(
+                                subjectForm("hoursC"),
+                                '_label -> "Počet hodin cvičení za týden*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> subjectForm.globalError
+                            )
                             </div>
                             <div class="col-md-4">
-                        @inputText(
-                            subjectForm("hoursSemester"),
-                            '_label -> "Počet hodin za semestr",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
+                            @inputText(
+                                subjectForm("hoursSemester"),
+                                '_label -> "Počet hodin za semestr*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> subjectForm.globalError
+                            )
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                        @inputText(
-                            subjectForm("credits"),
-                            '_label -> "Počet kreditů",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )</div>
+                            @inputText(
+                                subjectForm("credits"),
+                                '_label -> "Počet kreditů*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> subjectForm.globalError
+                            )</div>
 
-                                <div class="col-md-8">
-                        @checkbox(
-                            subjectForm("credit"),
-                            '_label -> "Zápočet",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
+                            <div class="col-md-8">
+                                @checkbox(
+                                    subjectForm("credit"),
+                                    '_label -> "Zápočet:",
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> subjectForm.globalError
+                                )
 
-                        @checkbox(
-                            subjectForm("exam"),
-                            '_label -> "Zkouška",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
+                                @checkbox(
+                                    subjectForm("exam"),
+                                    '_label -> "Zkouška:",
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> subjectForm.globalError
+                                )
 
-                        @checkbox(
-                            subjectForm("classifiedCredit"),
-                            '_label -> "Klasifikovaný zápočet",
-                            'class -> "form-control",
-                            '_help -> "",
-                            '_error -> subjectForm.globalError
-                        )
-                                </div>
+                                @checkbox(
+                                    subjectForm("classifiedCredit"),
+                                    '_label -> "Klasifikovaný zápočet:",
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> subjectForm.globalError
+                                )
                             </div>
+                        </div>
                         @inputText(
                             subjectForm("department"),
-                            '_label -> "Oddělení",
+                            '_label -> "Oddělení*:",
+                            'required -> "required",
                             'class -> "form-control",
                             '_help -> "",
                             '_error -> subjectForm.globalError
@@ -137,24 +145,20 @@
 
                         @checkbox(
                             subjectForm("formPresentation"),
-                            '_label -> "Prezenční forma",
+                            '_label -> "Prezenční forma:",
                             'class -> "form-control",
                             '_help -> "",
                             '_error -> subjectForm.globalError
                         )
-
                         @checkbox(
                             subjectForm("formCombined"),
-                            '_label -> "Kombinovaná forma",
+                            '_label -> "Kombinovaná forma:",
                             'class -> "form-control",
                             '_help -> "",
                             '_error -> subjectForm.globalError
                         )
-
                     </fieldset>
-
                     <div class="actions">
-
                         <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
                         <a href="@routes.Application.index()" class="btn">Zrušit</a>
                     </div>

@@ -1,104 +1,109 @@
 @(studyPlansForm: Form[StudyPlans])
-    @import helper._
-    @localScripts = {
-        <!-- Morris Charts JavaScript -->
-        <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
-        <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
-        <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
-    }
-    @main(scripts = localScripts) {
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Registrace</h1>
-            </div>
-                <!-- /.col-lg-12 -->
+@import helper._
+@localScripts = {
+    <!-- Morris Charts JavaScript -->
+    <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+    <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+    <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+}
+@main(scripts = localScripts) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Registrace</h1>
         </div>
-            <!-- /.row -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="panel-body">
-                    @helper.form(action = routes.StudyPlansController.save) {
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel-body">
+                @helper.form(action = routes.StudyPlansController.save) {
 
-                        <fieldset>
-                            <legend>Zadání studijního plánu</legend>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                @select(
-                                    studyPlansForm("subjects.id"),
-                                    options(Subjects.options()),
-                                    '_label -> "Ident",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> studyPlansForm.globalError
-                                )
-                                </div>
-                                <div class="col-md-6">
-                                @select(
-                                    studyPlansForm("fieldsOfStudy.id"),
-                                    options(FieldsOfStudy.options()),
-                                    '_label -> "Obor",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> studyPlansForm.globalError
-                                )
-                                </div>
+                    <fieldset>
+                        <legend>Zadání studijního plánu</legend>
+                        <div class="row">
+                            <div class="col-md-6">
+                            @select(
+                                studyPlansForm("subjects.id"),
+                                options(Subjects.options()),
+                                '_label -> "Ident*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> studyPlansForm.globalError
+                            )
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                @select(
-                                    studyPlansForm("semesters.id"),
-                                    options(Semesters.options()),
-                                    '_label -> "Semestr nástupu",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> studyPlansForm.globalError
-                                )
-                                </div>
-                                <div class="col-md-6">
-                                @inputText(
-                                    studyPlansForm("semesterValue"),
-                                    '_label -> "Semestr",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> studyPlansForm.globalError
-                                )
-                                </div>
+                            <div class="col-md-6">
+                            @select(
+                                studyPlansForm("fieldsOfStudy.id"),
+                                options(FieldsOfStudy.options()),
+                                '_label -> "Obor*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> studyPlansForm.globalError
+                            )
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                @select(
-                                    studyPlansForm("studyGroups.id"),
-                                    options(StudyGroups.options()),
-                                    '_label -> "Skupina",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> studyPlansForm.globalError
-                                )
-                                </div>
-                                <div class="col-md-6">
-                                @select(
-                                    studyPlansForm("studyGroups1.id"),
-                                    options(StudyGroups1.options()),
-                                    '_label -> "Skupina_obor",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> studyPlansForm.globalError
-                                )
-                                </div>
-                            </div>
-                        </fieldset>
-
-                        <div class="actions">
-
-                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                            <a href="@routes.Application.index()" class="btn">Zrušit</a>
                         </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                            @select(
+                                studyPlansForm("semesters.id"),
+                                options(Semesters.options()),
+                                '_label -> "Semestr nástupu*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> studyPlansForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-6">
+                            @inputText(
+                                studyPlansForm("semesterValue"),
+                                '_label -> "Semestr*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> studyPlansForm.globalError
+                            )
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                            @select(
+                                studyPlansForm("studyGroups.id"),
+                                options(StudyGroups.options()),
+                                '_label -> "Skupina*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> studyPlansForm.globalError
+                            )
+                            </div>
+                            <div class="col-md-6">
+                            @select(
+                                studyPlansForm("studyGroups1.id"),
+                                options(StudyGroups1.options()),
+                                '_label -> "Skupina_obor*:",
+                                'required -> "required",
+                                'class -> "form-control",
+                                '_help -> "",
+                                '_error -> studyPlansForm.globalError
+                            )
+                            </div>
+                        </div>
+                    </fieldset>
 
-                    }
+                    <div class="actions">
+
+                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
                     </div>
+
+                }
                 </div>
             </div>
         </div>
-    }
+    </div>
+}
