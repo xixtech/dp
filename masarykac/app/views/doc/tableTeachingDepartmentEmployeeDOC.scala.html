@@ -13,8 +13,6 @@
     --></style>
 
         <!-- DataTables JavaScript -->
-    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
-    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>
     <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
     <body onload="export2Word(window.docx, 'Výpis', ' zaměstnanců').click();">
 
@@ -144,16 +142,21 @@
                                                                                     }
                                                                                     </td>
                                                                                     <td class="center">
-                                                                                        TODO
-                                                                                <td class="center">
-                                                                                    @(x = 0)
-                                                                                    @for(schw <- schweeksPage) {
-                                                                                        @if(sch.getId == schw.getSchedule.getId) {
-                                                                                            @(x = x + 1)
-                                                                                        }
+                                                                                    @if(sch.getDuration == null) {
+                                                                                        <em>-</em>
+                                                                                    } else {
+                                                                                        @sch.getDuration
                                                                                     }
-                                                                                    @x
-                                                                                </td>
+                                                                                    </td>
+                                                                                    <td class="center">
+                                                                                        @(x = 0)
+                                                                                        @for(schw <- schweeksPage) {
+                                                                                            @if(sch.getId == schw.getSchedule.getId) {
+                                                                                                @(x = x + 1)
+                                                                                            }
+                                                                                        }
+                                                                                        @x
+                                                                                    </td>
                                                                                     <td class="center">
                                                                                     @if(t.getScale == 0) {
                                                                                         <em>-</em>
@@ -279,7 +282,12 @@
                                                                                     }
                                                                                     </td>
                                                                                     <td class="center">
-                                                                                        TODO
+                                                                                    @if(sch.getDuration == null) {
+                                                                                        <em>-</em>
+                                                                                    } else {
+                                                                                        @sch.getDuration
+                                                                                    }
+                                                                                    </td>
                                                                                 <td class="center">
                                                                                     @(x = 0)
                                                                                     @for(schw <- schweeksPage) {
@@ -409,7 +417,12 @@
                                                                                     }
                                                                                     </td>
                                                                                     <td class="center">
-                                                                                        TODO
+                                                                                    @if(sch.getDuration == null) {
+                                                                                        <em>-</em>
+                                                                                    } else {
+                                                                                        @sch.getDuration
+                                                                                    }
+                                                                                    </td>
                                                                                 <td class="center">
                                                                                     @(x = 0)
                                                                                     @for(schw <- schweeksPage) {

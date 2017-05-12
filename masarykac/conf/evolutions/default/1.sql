@@ -306,6 +306,7 @@ create table schedule (
   days_id                       bigint,
   schedule_from                 varchar(255),
   schedule_to                   varchar(255),
+  duration                      varchar(255),
   class_room_id                 bigint,
   courses_id                    bigint,
   constraint pk_schedule primary key (id)
@@ -318,6 +319,7 @@ create table schedule_in_weeks (
   days_id                       bigint,
   schedule_from                 varchar(255),
   schedule_to                   varchar(255),
+  duration                      varchar(255),
   class_room_id                 bigint,
   schedule_week                 integer,
   schedule_year                 integer,

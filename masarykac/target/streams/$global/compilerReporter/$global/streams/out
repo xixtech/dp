@@ -1,2 +1,4 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\SemestersController.java:47: unreported exception java.lang.Exception; must be caught or declared to be thrown
-[error] saveSemester(semesters, formData)
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableClassroom.scala.html:78: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getCapacity == null) {
+[warn]                                                            ^
+[warn] one warning found

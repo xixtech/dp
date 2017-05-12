@@ -34,17 +34,17 @@
                     Výpis oborů
                     <hr>
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                         @form(routes.FieldOfStudyController.index()) {
                             <input type="submit" value="+ Přidat obor" class="btn btn-success">
                             }
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-3">
                         @form(routes.PDFController.pdfTableFieldsOfStudy()) {
                             <input type="submit" value="Generovat PDF" class="btn btn-success">
                             }
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-3">
                         @form(routes.DOCController.docTableFieldsOfStudy()) {
                             <input type="submit" value="Generovat DOC" class="btn btn-success">
                             }

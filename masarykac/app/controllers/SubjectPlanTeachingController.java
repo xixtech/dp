@@ -516,7 +516,7 @@ public class SubjectPlanTeachingController extends Controller {
                 numberOfTeachers.put(p[i][3], val);
             }
         }
-
+        double duration=0.0;
         for (Map.Entry<String, Double> entry : numberOfTeachers.entrySet()) {
             String k = entry.getKey();
             Double v = entry.getValue();
@@ -529,6 +529,7 @@ public class SubjectPlanTeachingController extends Controller {
             long from = ((dateFrom.getTime()) / (60000));
             double diffMinutes = to - from;
             double vyuka = (diffMinutes) / 45.0;
+            duration=vyuka;
             double val = vyuka * v * scheduleWeekKey.size();
             double valRounded = (double) Math.round(val * 10d) / 10d;
             numberOfSummaryTeachers.put(k, valRounded);
@@ -652,12 +653,12 @@ public class SubjectPlanTeachingController extends Controller {
 
             HashMap<String, Long> scheduleInW = new HashMap<String, Long>();
             for (int i = 0; i < days.size(); i++) {
-                Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))));
+                Schedule s = new Schedule(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))),duration+"");
                 s.save();
 
                 for (int j = 0; j < swyear.length; j++) {
                     ScheduleInWeeks siw = new ScheduleInWeeks(Semesters.findById(Long.parseLong(semesters.get(0))), ident.get(0), c, Days.findById(Long.parseLong(days.get(0))), scheduleFrom.get(0), scheduleTo.get(0), Classroom.findById(Long.parseLong(classRoom.get(0))),
-                            Integer.parseInt(swyear[j][1]), Integer.parseInt(swyear[j][2]), s);
+                            Integer.parseInt(swyear[j][1]), Integer.parseInt(swyear[j][2]), s,duration+"");
                     siw.save();
                     scheduleInW.put(swyear[j][1], siw.getId());
                 }

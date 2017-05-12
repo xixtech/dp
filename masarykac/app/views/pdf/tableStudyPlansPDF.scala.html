@@ -1,6 +1,6 @@
 @(currentPage: List[StudyPlans])
 @import helper._
-@localStylesheets = {
+<link href='@routes.Assets.at("stylesheets/sb-admin-2.css")' rel="stylesheet" type="text/css">
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
     <meta charset="UTF-8" />
     <style type="text/css"><!--
@@ -9,23 +9,11 @@
     }
 
     --></style>
-}
 
-@localScripts = {
-        <!-- DataTables JavaScript -->
     <script src='@routes.Assets.at("lib/datatables/js/jquery.dataTables.min.js")'></script>
     <script src='@routes.Assets.at("lib/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js")'></script>
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-            $(document).ready(function () {
-                $('#dataTables-example').DataTable({
-                    responsive: true
-                });
-            });
-    </script>
-}
 
-@main(scripts = localScripts, stylesheets = localStylesheets) {
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Studijní plány</h1>
@@ -103,5 +91,3 @@
         </div>
             <!-- /.col-lg-12 -->
     </div>
-
-}

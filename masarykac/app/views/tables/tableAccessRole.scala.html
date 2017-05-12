@@ -34,17 +34,17 @@
                     Přehled rolí
                     <hr>
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                         @form(routes.AccessRoleController.index()) {
                             <input type="submit" value="+ Přidat roli" class="btn btn-success">
                             }
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-3">
                         @form(routes.PDFController.pdfTableAccessRole()) {
                             <input type="submit" value="Generovat PDF" class="btn btn-success">
                             }
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-3">
                         @form(routes.DOCController.docTableAccessRole()) {
                             <input type="submit" value="Generovat DOC" class="btn btn-success">
                             }

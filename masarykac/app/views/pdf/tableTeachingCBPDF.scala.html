@@ -1,143 +1,136 @@
 @(cPage: List[Courses], tPage: List[Teachers], cbPage: List[Courses], semPage: List[Semesters], schPage: List[Schedule], schweeksPage: List[ScheduleInWeeks])
 @import helper._
 @import scala.Predef; var x = 0; var y = 0.0;
-@localStylesheets = {
-    <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
-    <meta charset="UTF-8" />
-    <style type="text/css"><!--
-    body {
-        font-family: Technika;
-    }
 
-    --></style>
+<link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
+<link href='@routes.Assets.at("stylesheets/sb-admin-2.css")' rel="stylesheet" type="text/css">
+
+<meta charset="UTF-8" />
+<style type="text/css"><!--
+body {
+    font-family: Technika;
 }
 
-@localScripts = {
-        <!-- DataTables JavaScript -->
-    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
-    <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>
+--></style>
 
-        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-            $(document).ready(function () {
-                $('#dataTables-example').DataTable({
-                    responsive: true
-                });
-            });
-    </script>
-}
+<script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
+<script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>
 
-@main(scripts = localScripts, stylesheets = localStylesheets) {
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Ukazatel CB</h1>
-        </div>
-            <!-- /.col-lg-12 -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Ukazatel CB</h1>
     </div>
-        <!-- /.row -->
-    <div class="row">
-        @if(semPage.size() == 0) {
-            <p>Žádné údaje k zobrazení</p>
-        }
-        @for(sem <- semPage) {
-            @sem.getSemesterVD
+        <!-- /.col-lg-12 -->
+</div>
+    <!-- /.row -->
+<div class="row">
+    @if(semPage.size() == 0) {
+        <p>Žádné údaje k zobrazení</p>
+    }
+    @for(sem <- semPage) {
+        @sem.getSemesterVD
 
-            <hr>
+        <hr>
 
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
                                 Ukazatel CB
-                    </div>
-                        <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <div class="dataTable_wrapper">
+                </div>
+                    <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="dataTable_wrapper">
 
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Ident</th>
-                                        <th>Název česky</th>
-                                        <th>Kurz</th>
-                                        <th>Studentů</th>
-                                        <th>Den</th>
-                                        <th>Od</th>
-                                        <th>Do</th>
-                                        <th>Učebna</th>
-                                        <th>Hodin</th>
-                                        <th>Týdnů</th>
-                                        <th>Celkem</th>
-                                        <th>Přepočteno</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @for(member <- cbPage) {
-                                    @if(sem.getId == member.getSemester.getId) {
-                                        @for(t <- tPage) {
-                                            @if(t.getCourses.getId == member.getId) {
-                                                @for(sch <- schPage) {
-                                                    @if(sch.getCourses.getId == member.getId) {
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>Ident</th>
+                                    <th>Název česky</th>
+                                    <th>Kurz</th>
+                                    <th>Studentů</th>
+                                    <th>Den</th>
+                                    <th>Od</th>
+                                    <th>Do</th>
+                                    <th>Učebna</th>
+                                    <th>Hodin</th>
+                                    <th>Týdnů</th>
+                                    <th>Celkem</th>
+                                    <th>Přepočteno</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @for(member <- cbPage) {
+                                @if(sem.getId == member.getSemester.getId) {
+                                    @for(t <- tPage) {
+                                        @if(t.getCourses.getId == member.getId) {
+                                            @for(sch <- schPage) {
+                                                @if(sch.getCourses.getId == member.getId) {
 
-                                                        <tr>
+                                                    <tr>
 
-                                                            <td class="center">
-                                                            @if(member.subjects.getIdent == null) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @member.subjects.getIdent
-                                                            }
-                                                            </td>
-                                                            <td class="center">
-                                                            @if(member.subjects.getTitleC == null) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @member.subjects.getTitleC
-                                                            }
-                                                            </td>
-                                                            <td class="center">
-                                                            @if(member.course == null) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @member.course
-                                                            }
-                                                            </td>
-                                                            <td class="center">
-                                                            @if(member.numberOfStudents == 0) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @member.numberOfStudents
-                                                            }
-                                                            </td>
-                                                            <td class="center">
-                                                            @if(sch.getDay.getDayV == null) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @sch.getDay.getDayV
-                                                            }
-                                                            </td>
-                                                            <td class="center">
-                                                            @if(sch.getScheduleFrom == null) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @sch.getScheduleFrom
-                                                            }
-                                                            </td>
-                                                            <td class="center">
-                                                            @if(sch.getScheduleTo == null) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @sch.getScheduleTo
-                                                            }
-                                                            </td>
-                                                            <td class="center">
-                                                            @if(sch.getClassRoom == null) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @sch.getClassRoom
-                                                            }
-                                                            </td>
-                                                            <td class="center">
-                                                                TODO
+                                                        <td class="center">
+                                                        @if(member.subjects.getIdent == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @member.subjects.getIdent
+                                                        }
+                                                        </td>
+                                                        <td class="center">
+                                                        @if(member.subjects.getTitleC == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @member.subjects.getTitleC
+                                                        }
+                                                        </td>
+                                                        <td class="center">
+                                                        @if(member.course == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @member.course
+                                                        }
+                                                        </td>
+                                                        <td class="center">
+                                                        @if(member.numberOfStudents == 0) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @member.numberOfStudents
+                                                        }
+                                                        </td>
+                                                        <td class="center">
+                                                        @if(sch.getDay.getDayV == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @sch.getDay.getDayV
+                                                        }
+                                                        </td>
+                                                        <td class="center">
+                                                        @if(sch.getScheduleFrom == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @sch.getScheduleFrom
+                                                        }
+                                                        </td>
+                                                        <td class="center">
+                                                        @if(sch.getScheduleTo == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @sch.getScheduleTo
+                                                        }
+                                                        </td>
+                                                        <td class="center">
+                                                        @if(sch.getClassRoom == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @sch.getClassRoom
+                                                        }
+                                                        </td>
+                                                        <td class="center">
+                                                        @if(sch.getDuration == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @sch.getDuration
+                                                        }
+                                                        </td>
                                                         <td class="center">
                                                             @(x = 0)
                                                             @for(schw <- schweeksPage) {
@@ -147,42 +140,40 @@
                                                             }
                                                             @x
                                                         </td>
-                                                            <td class="center">
-                                                            @if(t.getScale == 0) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @(math.ceil(t.getScale * 100))
-                                                            }
+                                                        <td class="center">
+                                                        @if(t.getScale == 0) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @(math.ceil(t.getScale * 100))
+                                                        }
 
 
-                                                            </td>
-                                                            <td class="center">
-                                                            @if(t.getSummary == 0) {
-                                                                <em>-</em>
-                                                            } else {
-                                                                @(t.getSummary)
-                                                                @(y = y + t.getSummary)
-                                                            }
-                                                            </td>
-                                                            <td class="center">
+                                                        </td>
+                                                        <td class="center">
+                                                        @if(t.getSummary == 0) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @(t.getSummary)
+                                                            @(y = y + t.getSummary)
+                                                        }
+                                                        </td>
+                                                        <td class="center">
 
-                                                            </td>
-                                                        </tr>
-                                                    }
+                                                        </td>
+                                                    </tr>
                                                 }
                                             }
                                         }
                                     }
                                 }
-                                </tbody>
-                            </table>
-                        </div>
+                            }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                    <!-- /.panel -->
             </div>
-                <!-- /.col-lg-12 -->
-        }
-    </div>
-
-}
+                <!-- /.panel -->
+        </div>
+            <!-- /.col-lg-12 -->
+    }
+</div>

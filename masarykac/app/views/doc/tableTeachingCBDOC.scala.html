@@ -129,16 +129,21 @@
                                                                         }
                                                                         </td>
                                                                         <td class="center">
-                                                                            TODO
-                                                                    <td class="center">
-                                                                        @(x = 0)
-                                                                        @for(schw <- schweeksPage) {
-                                                                            @if(sch.getId == schw.getSchedule.getId) {
-                                                                                @(x = x + 1)
-                                                                            }
+                                                                        @if(sch.getDuration == null) {
+                                                                            <em>-</em>
+                                                                        } else {
+                                                                            @sch.getDuration
                                                                         }
-                                                                        @x
-                                                                    </td>
+                                                                        </td>
+                                                                        <td class="center">
+                                                                            @(x = 0)
+                                                                            @for(schw <- schweeksPage) {
+                                                                                @if(sch.getId == schw.getSchedule.getId) {
+                                                                                    @(x = x + 1)
+                                                                                }
+                                                                            }
+                                                                            @x
+                                                                        </td>
                                                                         <td class="center">
                                                                         @if(t.getScale == 0) {
                                                                             <em>-</em>

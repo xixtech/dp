@@ -1,6 +1,6 @@
-@(ojPage: List[OrganizationalUnitsParticipants], ePage: List[Employees], cPage: List[Courses], sPage: List[Subjects], tPage: List[Teachers], caaaPage: List[Courses], caabPage: List[Courses], cbPage: List[Courses], semPage: List[Semesters],schPage: List[Schedule],schweeksPage: List[ScheduleInWeeks])
+@(ojPage: List[OrganizationalUnitsParticipants], ePage: List[Employees], cPage: List[Courses], sPage: List[Subjects], tPage: List[Teachers], caaaPage: List[Courses], caabPage: List[Courses], cbPage: List[Courses], semPage: List[Semesters], schPage: List[Schedule], schweeksPage: List[ScheduleInWeeks])
 @import helper._
-@import scala.Predef; var x = 0; var y=0.0;
+@import scala.Predef; var x = 0; var y = 0.0;
 @localStylesheets = {
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
 }
@@ -28,15 +28,15 @@
             <!-- /.col-lg-12 -->
         <div class="panel-heading">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-3">
 
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-3">
                 @form(routes.PDFController.pdfTableTeachingDepartmentEmployee()) {
                     <input type="submit" value="Generovat PDF" class="btn btn-success">
                     }
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-3">
                 @form(routes.DOCController.docTableTeachingDepartmentEmployee()) {
                     <input type="submit" value="Generovat DOC" class="btn btn-success">
                     }
@@ -162,16 +162,21 @@
                                                                         }
                                                                         </td>
                                                                         <td class="center">
-                                                                            TODO
-                                                                    <td class="center">
-                                                                        @(x = 0)
-                                                                        @for(schw <- schweeksPage) {
-                                                                            @if(sch.getId == schw.getSchedule.getId) {
-                                                                                @(x = x + 1)
-                                                                            }
+                                                                        @if(sch.getDuration == null) {
+                                                                            <em>-</em>
+                                                                        } else {
+                                                                            @sch.getDuration
                                                                         }
-                                                                        @x
-                                                                    </td>
+                                                                        </td>
+                                                                        <td class="center">
+                                                                            @(x = 0)
+                                                                            @for(schw <- schweeksPage) {
+                                                                                @if(sch.getId == schw.getSchedule.getId) {
+                                                                                    @(x = x + 1)
+                                                                                }
+                                                                            }
+                                                                            @x
+                                                                        </td>
                                                                         <td class="center">
                                                                         @if(t.getScale == 0) {
                                                                             <em>-</em>
@@ -297,16 +302,21 @@
                                                                         }
                                                                         </td>
                                                                         <td class="center">
-                                                                            TODO
-                                                                    <td class="center">
-                                                                        @(x = 0)
-                                                                        @for(schw <- schweeksPage) {
-                                                                            @if(sch.getId == schw.getSchedule.getId) {
-                                                                                @(x = x + 1)
-                                                                            }
+                                                                        @if(sch.getDuration == null) {
+                                                                            <em>-</em>
+                                                                        } else {
+                                                                            @sch.getDuration
                                                                         }
-                                                                        @x
-                                                                    </td>
+                                                                        </td>
+                                                                        <td class="center">
+                                                                            @(x = 0)
+                                                                            @for(schw <- schweeksPage) {
+                                                                                @if(sch.getId == schw.getSchedule.getId) {
+                                                                                    @(x = x + 1)
+                                                                                }
+                                                                            }
+                                                                            @x
+                                                                        </td>
                                                                         <td class="center">
                                                                         @if(t.getScale == 0) {
                                                                             <em>-</em>
@@ -427,16 +437,21 @@
                                                                         }
                                                                         </td>
                                                                         <td class="center">
-                                                                            TODO
-                                                                    <td class="center">
-                                                                        @(x = 0)
-                                                                        @for(schw <- schweeksPage) {
-                                                                            @if(sch.getId == schw.getSchedule.getId) {
-                                                                                @(x = x + 1)
-                                                                            }
+                                                                        @if(sch.getDuration == null) {
+                                                                            <em>-</em>
+                                                                        } else {
+                                                                            @sch.getDuration
                                                                         }
-                                                                        @x
-                                                                    </td>
+                                                                        </td>
+                                                                        <td class="center">
+                                                                            @(x = 0)
+                                                                            @for(schw <- schweeksPage) {
+                                                                                @if(sch.getId == schw.getSchedule.getId) {
+                                                                                    @(x = x + 1)
+                                                                                }
+                                                                            }
+                                                                            @x
+                                                                        </td>
                                                                         <td class="center">
                                                                         @if(t.getScale == 0) {
                                                                             <em>-</em>
