@@ -1,1 +1,8 @@
-[error] C:\Users\Martin\dp\masarykac\app\controllers\CommitteeController.java:52: ';' expected
+[error] C:\Users\Martin\dp\masarykac\app\models\Visits.java:126: cannot find symbol
+[error]   symbol:   method isActive()
+[error]   location: variable set of type models.Visits
+[error] set.isActive
+[error] C:\Users\Martin\dp\masarykac\app\models\Visits.java:137: cannot find symbol
+[error]   symbol:   method isActive()
+[error]   location: variable set of type models.Visits
+[error] set.isActive

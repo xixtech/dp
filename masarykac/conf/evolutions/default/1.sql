@@ -23,6 +23,7 @@ create table committee (
   id                            bigserial not null,
   date_of_committee             timestamp,
   semester_id                   bigint,
+  active                        boolean,
   constraint pk_committee primary key (id)
 );
 
@@ -107,6 +108,7 @@ create table fields_of_study (
   study                         varchar(255),
   fields_of_study_language      varchar(255),
   form_of_teaching              varchar(255),
+  active                        boolean,
   constraint pk_fields_of_study primary key (id)
 );
 
@@ -116,6 +118,7 @@ create table final_works (
   names                         varchar(255),
   year                          timestamp,
   semester_id                   bigint,
+  active                        boolean,
   constraint pk_final_works primary key (id)
 );
 
@@ -192,6 +195,7 @@ create table organizational_units (
   organizational_unit_responsible bigint,
   has_head_of_organization      boolean,
   has_deputy_head_of_organization boolean,
+  active                        boolean,
   constraint pk_organizational_units primary key (id)
 );
 
@@ -244,6 +248,7 @@ create table projects (
   semester_id                   bigint,
   has_grant                     boolean,
   grant_value                   varchar(255),
+  active                        boolean,
   constraint pk_projects primary key (id)
 );
 
@@ -261,6 +266,7 @@ create table publications (
   semester_id                   bigint,
   type                          varchar(255),
   citation                      varchar(255),
+  active                        boolean,
   constraint pk_publications primary key (id)
 );
 
@@ -328,6 +334,7 @@ create table semesters (
   semester_ar                   varchar(255),
   semester_from                 timestamp,
   semester_to                   timestamp,
+  active                        boolean,
   constraint pk_semesters primary key (id)
 );
 
@@ -335,6 +342,7 @@ create table statement (
   id                            bigserial not null,
   date                          timestamp,
   state                         varchar(255),
+  active                        boolean,
   semester_id                   bigint,
   employees_id                  bigint,
   manager_employee_id           bigint,
@@ -452,6 +460,7 @@ create table subjects (
   department                    varchar(255),
   form_presentation             boolean,
   form_combined                 boolean,
+  active                        boolean,
   constraint pk_subjects primary key (id)
 );
 
@@ -496,6 +505,7 @@ create table visits (
   visit_from                    timestamp,
   visit_to                      timestamp,
   semester_id                   bigint,
+  active                        boolean,
   constraint pk_visits primary key (id)
 );
 

@@ -27,6 +27,9 @@ public class Statement extends Model {
 
     public String state;
 
+    public boolean active;
+
+
     @ManyToOne
     public Semesters semester;
 
@@ -59,6 +62,7 @@ public class Statement extends Model {
         this.state = state;
         this.semester = semester;
         this.employees=employees;
+        this.active=true;
     }
 
     public Semesters getSemester() {
@@ -149,6 +153,14 @@ public class Statement extends Model {
         this.statementVisitsParticipants = statementVisitsParticipants;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public Long getId() {
         return id;
     }
@@ -165,7 +177,9 @@ public class Statement extends Model {
         List<Statement> subjectSets = Statement.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
         for (Statement set : subjectSets) {
-            options.put(set.id.toString(), set.id.toString());
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.id.toString());
+            }
         }
         return options;
     }

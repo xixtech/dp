@@ -39,13 +39,16 @@ public class Visits extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<VisitsParticipants> visitsParticipants;
 
+    public boolean active;
+
     public Visits(String purposeOfVisit, String country, String event, Date visitFrom, Date visitTo, Semesters semester) {
         this.purposeOfVisit = purposeOfVisit;
         this.country = country;
         this.event = event;
         this.visitFrom = visitFrom;
         this.visitTo = visitTo;
-        this.semester=semester;
+        this.semester = semester;
+        this.active = true;
     }
 
     public Long getId() {
@@ -112,24 +115,36 @@ public class Visits extends Model {
         this.visitsParticipants = visitsParticipants;
     }
 
-    public static Visits findById(long id) {
-        return find.where().eq("id",id).findUnique();
+    public boolean isActive() {
+        return active;
     }
 
-    public static Map<String,String> options() {
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public static Visits findById(long id) {
+        return find.where().eq("id", id).findUnique();
+    }
+
+    public static Map<String, String> options() {
         List<Visits> subjectSets = Visits.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Visits set: subjectSets) {
-            options.put(set.id.toString(), set.purposeOfVisit.toString());
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Visits set : subjectSets) {
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.purposeOfVisit.toString());
+            }
         }
         return options;
     }
 
-    public static Map<String,String> optionsCountries() {
+    public static Map<String, String> optionsCountries() {
         List<Visits> subjectSets = Visits.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Visits set: subjectSets) {
-            options.put(set.id.toString(), set.purposeOfVisit.toString());
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Visits set : subjectSets) {
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.purposeOfVisit.toString());
+            }
         }
         return options;
     }

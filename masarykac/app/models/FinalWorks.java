@@ -42,11 +42,14 @@ public class FinalWorks extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<FinalWorksParticipants> finalWorksToEmployees;
 
+    public boolean active;
+
     public FinalWorks(String finalWorksName, String names, Date year, Semesters semester) {
         this.finalWorksName = finalWorksName;
         this.names = names;
         this.year = year;
         this.semester = semester;
+        this.active = true;
     }
 
     public Long getId() {
@@ -97,15 +100,25 @@ public class FinalWorks extends Model {
         this.finalWorksToEmployees = finalWorksToEmployees;
     }
 
-    public static FinalWorks findById(long id) {
-        return find.where().eq("id",id).findUnique();
+    public boolean isActive() {
+        return active;
     }
 
-    public static Map<String,String> options() {
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public static FinalWorks findById(long id) {
+        return find.where().eq("id", id).findUnique();
+    }
+
+    public static Map<String, String> options() {
         List<FinalWorks> subjectSets = FinalWorks.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(FinalWorks set: subjectSets) {
-            options.put(set.id.toString(), set.finalWorksName.toString());
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (FinalWorks set : subjectSets) {
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.finalWorksName.toString());
+            }
         }
         return options;
     }

@@ -33,6 +33,8 @@ public class Semesters extends Model {
     @Formats.DateTime(pattern = "dd.MM.yyyy")
     public Date semesterTo;
 
+    public boolean active;
+
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StudyPlans> studyPlans;
 
@@ -89,6 +91,7 @@ public class Semesters extends Model {
         this.semesterAr = semesterAr;
         this.semesterFrom = semesterFrom;
         this.semesterTo = semesterTo;
+        this.active = true;
     }
 
     public List<StudyPlans> getStudyPlans() {
@@ -151,7 +154,9 @@ public class Semesters extends Model {
         return scheduleInWeekses;
     }
 
-    public void setScheduleInWeekses(List<ScheduleInWeeks> scheduleInWeekses) { this.scheduleInWeekses = scheduleInWeekses; }
+    public void setScheduleInWeekses(List<ScheduleInWeeks> scheduleInWeekses) {
+        this.scheduleInWeekses = scheduleInWeekses;
+    }
 
     public List<Courses> getCourses() {
         return courses;
@@ -273,11 +278,21 @@ public class Semesters extends Model {
         this.statementVisitsParticipants = statementVisitsParticipants;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public static Map<String, String> options() {
         List<Semesters> semestersSet = Semesters.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
         for (Semesters set : semestersSet) {
-            options.put(set.id.toString(), set.semesterValue.toString());
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.semesterValue.toString());
+            }
         }
         return options;
     }
@@ -286,7 +301,9 @@ public class Semesters extends Model {
         List<Semesters> semestersSet = Semesters.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
         for (Semesters set : semestersSet) {
-            options.put(set.semesterValue.toString(), set.semesterValue.toString());
+            if (set.isActive()) {
+                options.put(set.semesterValue.toString(), set.semesterValue.toString());
+            }
         }
         return options;
     }

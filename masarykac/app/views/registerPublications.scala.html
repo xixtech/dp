@@ -6,14 +6,14 @@
         <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
 
         <script>
-        $(document).ready(function () {
+                $(document).ready(function () {
 
-            var MyUserObject = {};
-            MyUserObject["v"] = "@Employees.getJS1Value()";
-            MyUserObject["k"] = "@Employees.getJS1Key()";
+                    var MyUserObject = {};
+                    MyUserObject["v"] = "@Employees.getJS1Value()";
+                    MyUserObject["k"] = "@Employees.getJS1Key()";
 
-            publicationArray(MyUserObject);
-        });
+                    publicationArray(MyUserObject);
+                });
 
 
         </script>

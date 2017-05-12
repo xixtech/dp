@@ -40,6 +40,8 @@ public class Projects extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<ProjectsParticipants> projectsParticipants;
 
+    public boolean active;
+
     public Projects(String projectName, Date projectFrom, Date projectTo, Semesters semester, boolean hasGrant, String grantValue) {
         this.projectName = projectName;
         this.projectFrom = projectFrom;
@@ -47,6 +49,7 @@ public class Projects extends Model {
         this.semester = semester;
         this.hasGrant = hasGrant;
         this.grantValue = grantValue;
+        this.active = true;
     }
 
     public Long getId() {
@@ -113,15 +116,25 @@ public class Projects extends Model {
         this.projectsParticipants = projectsParticipants;
     }
 
-    public static Projects findById(long id) {
-        return find.where().eq("id",id).findUnique();
+    public boolean isActive() {
+        return active;
     }
 
-    public static Map<String,String> options() {
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public static Projects findById(long id) {
+        return find.where().eq("id", id).findUnique();
+    }
+
+    public static Map<String, String> options() {
         List<Projects> subjectSets = Projects.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Projects set: subjectSets) {
-            options.put(set.id.toString(), set.projectName.toString());
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Projects set : subjectSets) {
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.projectName.toString());
+            }
         }
         return options;
     }

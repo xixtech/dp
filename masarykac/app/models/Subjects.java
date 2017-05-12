@@ -49,6 +49,8 @@ public class Subjects extends Model {
 
     public boolean formCombined;
 
+    public boolean active;
+
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StudyPlans> studyPlans;
 
@@ -71,6 +73,7 @@ public class Subjects extends Model {
         this.department = department;
         this.formPresentation = formPresentation;
         this.formCombined = formCombined;
+        this.active = true;
     }
 
     public Long getId() {
@@ -217,11 +220,21 @@ public class Subjects extends Model {
         return find.where().eq("id", id).findUnique();
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public static Map<String, String> options() {
         List<Subjects> subjectSets = Subjects.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
         for (Subjects set : subjectSets) {
-            options.put(set.id.toString(), set.ident.toString());
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.ident.toString());
+            }
         }
         return options;
     }
@@ -249,7 +262,7 @@ public class Subjects extends Model {
             Subjects subjects = iterator.next();
             String identToCheck = subjects.getIdent();
 
-            if (identToCheck.startsWith("p")==false || identToCheck.startsWith("P")==false) {
+            if (identToCheck.startsWith("p") == false || identToCheck.startsWith("P") == false) {
                 iterator.remove();
             }
         }
@@ -262,7 +275,7 @@ public class Subjects extends Model {
             Subjects subjects = iterator.next();
             String identToCheck = subjects.getIdent();
             char fourth = identToCheck.charAt(3);
-            if (fourth!='e' || fourth!='E') {
+            if (fourth != 'e' || fourth != 'E') {
                 iterator.remove();
             }
         }

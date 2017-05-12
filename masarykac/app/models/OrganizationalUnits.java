@@ -55,6 +55,7 @@ public class OrganizationalUnits extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<OrganizationalUnitsParticipants> organizationalUnitsParticipantses;
 
+    public boolean active;
 
     public OrganizationalUnits(String organizationalUnitNumber, String organizationalUnitNumberParent, String titleCzech, String titleEnglish, String functionNameOfSeniorEmployee, String functionNameOfSeniorEmployeeAppointment, Long organizationalUnitResponsible) {
         this.organizationalUnitNumber = organizationalUnitNumber;
@@ -66,6 +67,7 @@ public class OrganizationalUnits extends Model {
         this.organizationalUnitResponsible = organizationalUnitResponsible;
         this.hasHeadOfOrganization = false;
         this.hasDeputyHeadOfOrganization = false;
+        this.active = true;
     }
 
     public Long getId() {
@@ -156,6 +158,14 @@ public class OrganizationalUnits extends Model {
         this.organizationalUnitsParticipantses = organizationalUnitsParticipantses;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public static List<OrganizationalUnits> search() {
         return OrganizationalUnits.find.all();
     }
@@ -168,7 +178,9 @@ public class OrganizationalUnits extends Model {
         List<OrganizationalUnits> subjectSets = OrganizationalUnits.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
         for (OrganizationalUnits set : subjectSets) {
-            options.put(set.id.toString(), set.organizationalUnitNumber.toString());
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.organizationalUnitNumber.toString());
+            }
         }
         return options;
     }

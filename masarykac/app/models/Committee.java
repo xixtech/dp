@@ -28,12 +28,15 @@ public class Committee extends Model {
     @ManyToOne
     public Semesters semester;
 
+    public boolean active;
+
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<CommitteeParticipants> committeeToEmployes;
 
     public Committee(Date dateOfCommittee, Semesters semester) {
         this.dateOfCommittee = dateOfCommittee;
         this.semester = semester;
+        this.active = true;
 
     }
 
@@ -61,6 +64,14 @@ public class Committee extends Model {
         this.semester = semester;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public List<CommitteeParticipants> getCommitteeToEmployes() {
         return committeeToEmployes;
     }
@@ -70,14 +81,16 @@ public class Committee extends Model {
     }
 
     public static Committee findById(long id) {
-        return find.where().eq("id",id).findUnique();
+        return find.where().eq("id", id).findUnique();
     }
 
-    public static Map<String,String> options() {
+    public static Map<String, String> options() {
         List<Committee> subjectSets = Committee.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(Committee set: subjectSets) {
-            options.put(set.id.toString(), set.id.toString());
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (Committee set : subjectSets) {
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.id.toString());
+            }
         }
         return options;
     }

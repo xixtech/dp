@@ -58,12 +58,12 @@ public class AccessRole extends Model {
         this.description = description;
     }
 
-    @OneToMany(mappedBy="accessRole",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "accessRole", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<Employees> employees;
 
-    public AccessRole(String role,String description) {
+    public AccessRole(String role, String description) {
         this.role = role;
-        this.description=description;
+        this.description = description;
         this.active = true;
     }
 
@@ -87,7 +87,9 @@ public class AccessRole extends Model {
         List<AccessRole> subjectSets = AccessRole.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
         for (AccessRole set : subjectSets) {
-            options.put(set.id.toString(), set.description.toString());
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.description.toString());
+            }
         }
         return options;
     }

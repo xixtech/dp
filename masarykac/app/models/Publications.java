@@ -42,11 +42,14 @@ public class Publications extends Model {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<PublicationsParticipants> publicationsParticipants;
 
+    public boolean active;
+
     public Publications(String yearOfPublication, Semesters semester, String type, String citation) {
         this.yearOfPublication = yearOfPublication;
         this.semester = semester;
         this.type = type;
         this.citation = citation;
+        this.active=true;
     }
 
     public Long getId() {
@@ -97,6 +100,14 @@ public class Publications extends Model {
         this.publicationsParticipants = publicationsParticipants;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public static Publications findById(long id) {
         return find.where().eq("id",id).findUnique();
     }
@@ -105,7 +116,9 @@ public class Publications extends Model {
         List<Publications> subjectSets = Publications.find.all();
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
         for(Publications set: subjectSets) {
-            options.put(set.id.toString(), set.citation.toString());
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.citation.toString());
+            }
         }
         return options;
     }

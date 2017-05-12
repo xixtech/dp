@@ -11,7 +11,9 @@ import java.util.*;
 @Entity
 public class FieldsOfStudy extends Model {
 
-    /** Obory **/
+    /**
+     * Obory
+     **/
     public static Finder<Long, FieldsOfStudy> find = new Finder<Long, FieldsOfStudy>(
             FieldsOfStudy.class);
 
@@ -32,12 +34,15 @@ public class FieldsOfStudy extends Model {
 
     public String formOfTeaching;
 
+    public boolean active;
+
     public FieldsOfStudy(String fieldOfStudy, String fieldOfStudyV, String study, String fieldsOfStudyLanguage, String formOfTeaching) {
         this.fieldOfStudy = fieldOfStudy;
         this.fieldOfStudyV = fieldOfStudyV;
         this.study = study;
         this.fieldsOfStudyLanguage = fieldsOfStudyLanguage;
         this.formOfTeaching = formOfTeaching;
+        this.active=true;
     }
 
     public Long getId() {
@@ -96,11 +101,21 @@ public class FieldsOfStudy extends Model {
         this.formOfTeaching = formOfTeaching;
     }
 
-    public static Map<String,String> options() {
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public static Map<String, String> options() {
         List<FieldsOfStudy> fieldsOfStudiesSet = FieldsOfStudy.find.all();
-        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
-        for(FieldsOfStudy set: fieldsOfStudiesSet) {
-            options.put(set.id.toString(), set.fieldOfStudy.toString());
+        LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();
+        for (FieldsOfStudy set : fieldsOfStudiesSet) {
+            if (set.isActive()) {
+                options.put(set.id.toString(), set.fieldOfStudy.toString());
+            }
         }
         return options;
     }
@@ -153,6 +168,6 @@ public class FieldsOfStudy extends Model {
     }
 
     public static FieldsOfStudy findById(long id) {
-        return find.where().eq("id",id).findUnique();
+        return find.where().eq("id", id).findUnique();
     }
 }
