@@ -40,9 +40,6 @@ public class ProjectController extends Controller {
     public Result save() {
         Form<Projects> projectsForm = formFactory.form(Projects.class).bindFromRequest();
         Form<ProjectsParticipants> projectsParticipantsForm = formFactory.form(ProjectsParticipants.class).bindFromRequest();
-        if (projectsForm.hasErrors() || projectsParticipantsForm.hasErrors()) {
-            return badRequest(views.html.registerProjects.render(projectsForm, projectsParticipantsForm));
-        }
 
         try {
             Map<String, String[]> formData = request().body().asFormUrlEncoded();
@@ -61,7 +58,7 @@ public class ProjectController extends Controller {
         }
 
         List<Date> projectFrom = new ArrayList<>();
-        DateFormat format = new SimpleDateFormat("dd.mm.yyyy", Locale.ENGLISH);
+        DateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
 
         for (String insId : formData.get("projectFrom")) {
 

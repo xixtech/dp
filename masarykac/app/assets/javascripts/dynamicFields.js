@@ -5,8 +5,11 @@ var pocitadlo = 1;
 var pocitadlo1 = 0;
 var pocitadloPublicationParticipant = 1;
 var pocitadloVisitParticipant = 1;
+var pocitadloVisitParticipantDeleted = 1;
 var pocitadloProjectParticipant = 1;
+var pocitadloProjectParticipantDeleted = 1;
 var pocitadloCommitteeParticipant = 1;
+var pocitadloCommitteeParticipantDeleted = 1;
 var countStudyPlan = 1;
 var weeksCount = 101;
 var weeksTeacher = 1;
@@ -27,6 +30,7 @@ var sDate = new Date();
 var eDate = new Date();
 var currDate = new Date();
 var weekStart = 1;
+var labelsStudyPlans = 0;
 
 $('body').on('click', 'input.deleteDep', function () {
     $(this).parents('tr').remove();
@@ -44,6 +48,7 @@ function export2Word(element, surname, name) {
         '@page WordSection1{size: 841.95pt 595.35pt;size: portrait;}' +
         'div.WordSection1 {page: WordSection1;}' +
         'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;}' +
+        'body{font-family:Technika;}' +
         '</style>'
     );
     var filename = surname + "" + name;
@@ -91,6 +96,31 @@ function calculateFirstAndLastDateOfWeek(mydate) {
 function del(elem) {
     document.getElementById(elem).remove();
 }
+
+function delVisit(elem) {
+    document.getElementById(elem).remove();
+    pocitadloVisitParticipantDeleted++;
+    if (pocitadloVisitParticipant == pocitadloVisitParticipantDeleted) {
+        document.getElementById('submitButton').style.display = 'none';
+    }
+}
+
+function delProjects(elem) {
+    document.getElementById(elem).remove();
+    pocitadloProjectParticipantDeleted++;
+    if (pocitadloProjectParticipant == pocitadloProjectParticipantDeleted) {
+        document.getElementById('submitButton').style.display = 'none';
+    }
+}
+
+function delCommittee(elem) {
+    document.getElementById(elem).remove();
+    pocitadloCommitteeParticipantDeleted++;
+    if (pocitadloCommitteeParticipant == pocitadloCommitteeParticipantDeleted) {
+        document.getElementById('submitButton').style.display = 'none';
+    }
+}
+
 function delGeneralTeacher(elem) {
     var pole = [];
     var teachindex = 0;
@@ -306,7 +336,6 @@ function appendRowDiv() {
         else {
             num = weekStart + 1;
         }
-
     }
     if (value == 3) {
         count = weekDiff / 2;
@@ -326,7 +355,6 @@ function appendRowDiv() {
     for (i = 0; i < count; i++) {
         var newDiv = document.createElement('div');
         newDiv.setAttribute("id", weeksCount);
-
         if (num > 52) {
             num = 1;
             if (value == 2) {
@@ -336,11 +364,11 @@ function appendRowDiv() {
         }
 
         var selectHTML = "";
-        selectHTML = "<div class='row'><div class='col-md-10'>";
-        selectHTML += "<div class='col-md-2'><input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeks(" + weeksCount + ");'/> </div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleWeek" + weeksCount + "' value='" + num + "' onkeypress='return isNumberKey(event)' required/></div>";
-        selectHTML += "<div class='col-md-2'><input type='text' class='form-control' name='scheduleYear" + weeksCount + "' value='" + year + "' onkeypress='return isNumberKey(event)' required/></div>";
-        selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
+        selectHTML = "<hr><div class='row'><div class='col-md-10'>";
+        selectHTML += "<div class='col-md-2'>&nbsp;<input type='button' class='btn btn' value='Přidat vyučující' onclick='addCourseTeacherWeeks(" + weeksCount + ");'/> </div>";
+        selectHTML += "<div class='col-md-2'>Týden<input type='text' class='form-control' name='scheduleWeek" + weeksCount + "' value='" + num + "' onkeypress='return isNumberKey(event)' required/></div>";
+        selectHTML += "<div class='col-md-2'>Rok<input type='text' class='form-control' name='scheduleYear" + weeksCount + "' value='" + year + "' onkeypress='return isNumberKey(event)' required/></div>";
+        selectHTML += "<div class='col-md-1'>&nbsp;<input type='button' class='deleteDep' value='Smazat' onclick='del(" + weeksCount + ");'/></div>";
         selectHTML += "</div></div>";
         selectHTML += "<div class='row'><div class='col-md-10'>";
         selectHTML += "  <label>" + 'Týden od: ' + sDate.getDate() + '. ' + (sDate.getMonth() + 1) + '. ' + sDate.getFullYear() + ' do: ' + eDate.getDate() + '. ' + (eDate.getMonth() + 1) + '. ' + eDate.getFullYear() + " </label>";
@@ -365,10 +393,10 @@ function appendRowDiv() {
             num = num + 1;
         }
     }
+    document.getElementById('teacherToEveryWeek').style.display = 'block';
 }
 
 function appendRowOne() {
-
     for (i = 0; i < 1; i++) {
         var tbl = document.getElementById('my-table'), // table reference
             row = tbl.insertRow(tbl.rows.length),      // append table row
@@ -376,7 +404,6 @@ function appendRowOne() {
         createCellscheduleWeek(row.insertCell(0), i + 1, 'row');
         createCellscheduleYear(row.insertCell(1), 2017, 'row');
         createCellDeleteButton(row.insertCell(2), 2017, 'row');
-
     }
 }
 function createCellTButton() {
@@ -385,8 +412,6 @@ function createCellTButton() {
     var selectHTML = "";
     selectHTML = " <td colspan='4'></td>";
     div.innerHTML = selectHTML;
-    // append text node to the DIV
-
 }
 
 function createCellAddButton(cell, text, style) {
@@ -466,7 +491,6 @@ function addPublicationParticipant() {
 }
 
 function addVisitParticipant() {
-
     var newDiv = document.createElement('div');
     var idnt = pocitadloVisitParticipant;
     newDiv.setAttribute("id", idnt);
@@ -487,14 +511,14 @@ function addVisitParticipant() {
 
     }
     selectHTML += "</select></div>";
-    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idnt + ");'/></div></div></br>";
+    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='delVisit(" + idnt + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('visitpart').appendChild(newDiv);
     pocitadloVisitParticipant++;
+    document.getElementById('submitButton').style.display = 'block';
 }
 
 function addProjectParticipant() {
-
     var newDiv = document.createElement('div');
     var idnt = pocitadloProjectParticipant;
     newDiv.setAttribute("id", idnt);
@@ -516,10 +540,11 @@ function addProjectParticipant() {
     }
     selectHTML += "</select></div>";
     selectHTML += "<div class='col-md-3'><input type='text' class='form-control' placeholder='Role v projektu' name='projectRole' required> </div>";
-    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idnt + ");'/></div></div></br>";
+    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='delProjects(" + idnt + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('projectpart').appendChild(newDiv);
     pocitadloProjectParticipant++;
+    document.getElementById('submitButton').style.display = 'block';
 }
 
 
@@ -544,13 +569,28 @@ function addCommitteeParticipant() {
 
     }
     selectHTML += "</select></div><div class='col-md-3'><input type='text' class='form-control' placeholder='Pozice v komisi' name='roleInCommittee' required> </div>";
-    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idCommittee + ");'/></div></div></br>";
+    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='delCommittee(" + idCommittee + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('committeepart').appendChild(newDiv);
     pocitadloCommitteeParticipant++;
+    document.getElementById('submitButton').style.display = 'block';
 }
 
 function addStudyPlan(divName) {
+    var sp = "Studijní plán";
+    var nastup = "Nástup";
+    var sem = "Semestr";
+    var s = "Skupina";
+    var so = "Skupina obor";
+    var d = "&nbsp";
+    if (labelsStudyPlans !== 0) {
+        sp = "";
+        nastup = "";
+        sem = "";
+        s = "";
+        so = "";
+        d = "";
+    }
 
     var newDiv = document.createElement('div');
     var idn = countStudyPlan;
@@ -596,38 +636,39 @@ function addStudyPlan(divName) {
     }
 
     var selectHTML = "";
-    selectHTML = "<div class='row'><div class='col-md-2'><select class='form-control' name='fieldsOfStudy.id'>";
+    selectHTML = "<div class='row'><div class='col-md-2'>" + sp + "<select class='form-control' name='fieldsOfStudy.id'>";
     for (i = 0; i < outfieldsOfStudy.length; i = i + 1) {
         selectHTML += "<option value='" + outfieldsOfStudy[i][0] + "'>" + outfieldsOfStudy[i][1] + "</option>";
 
     }
     selectHTML += "</select></div>";
-    selectHTML += "<div class='col-md-2'><select class='form-control' name='semesters.id'>";
+    selectHTML += "<div class='col-md-2'>" + nastup + "<select class='form-control' name='semesters.id'>";
     for (i = 0; i < outsemesters.length; i = i + 1) {
         selectHTML += "<option value='" + outsemesters[i][0] + "'>" + outsemesters[i][1] + "</option>";
 
     }
-    selectHTML += "</select></div><div class='col-md-2'><input type='text' class='form-control' name='semesterValue' onkeyup='sv(this);' onkeypress='return isNumberKey(event)' required> </div>";
-    selectHTML += "<div class='col-md-2'><select class='form-control' name='studyGroups.id'>";
+    selectHTML += "</select></div><div class='col-md-2'>" + sem + "<input type='text' class='form-control' name='semesterValue' onkeyup='sv(this);' onkeypress='return isNumberKey(event)' required> </div>";
+
+    selectHTML += "<div class='col-md-2'>" + s + "<select class='form-control' name='studyGroups.id'>";
     for (i = 0; i < outstudyGroups.length; i = i + 1) {
         selectHTML += "<option value='" + outstudyGroups[i][0] + "'>" + outstudyGroups[i][1] + "</option>";
 
     }
     selectHTML += "</select></div>";
-    selectHTML += "<div class='col-md-2'><select class='form-control' name='studyGroups1.id'>";
+    selectHTML += "<div class='col-md-2'>" + so + "<select class='form-control' name='studyGroups1.id'>";
     for (i = 0; i < outstudyGroups1.length; i = i + 1) {
         selectHTML += "<option value='" + outstudyGroups1[i][0] + "'>" + outstudyGroups1[i][1] + "</option>";
 
     }
     selectHTML += "</select></div>";
-    selectHTML += "<div class='col-md-1'><input type='button' class='deleteDep' value='Smazat' onclick='del(" + idn + ");'/></div></div></br>";
+    selectHTML += "<div class='col-md-1'>" + d + "<input type='button' class='deleteDep' value='Smazat' onclick='del(" + idn + ");'/></div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
     countStudyPlan++;
+    labelsStudyPlans++;
 }
 
 function addPokusRadek(divName) {
-
     var newDiv = document.createElement('div');
     var ident = divName + "" + pocitadlo1;
     newDiv.setAttribute("id", ident);
@@ -635,7 +676,6 @@ function addPokusRadek(divName) {
     var mapValue = publParticipantArray.v;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
-
     var i, out = [];//literal new array
     for (i = 0; i < testKey.length; i++) {
         out.push([testKey[i], testValue[i]]);
@@ -663,7 +703,6 @@ function addDivToTable(cell, text, style) {
     var selectHTML = "";
     selectHTML = "<input type='button' name='' value='' data-href='xxx'/>";
     selectHTML += "<input type='button' name='' value='#'/>";
-
     div.innerHTML = selectHTML;
     // append text node to the DIV
     div.setAttribute('class', style);        // set DIV class attribute
@@ -672,7 +711,6 @@ function addDivToTable(cell, text, style) {
 }
 
 function addCourseTeacher() {
-
     var newDiv = document.createElement('div');
     newDiv.setAttribute("id", pocitadlo);
     var mapKey = emplArray.k;
@@ -683,7 +721,6 @@ function addCourseTeacher() {
     for (i = 0; i < testKey.length; i++) {
         out.push([testKey[i], testValue[i]]);
     }
-
     var selectHTML = "";
     selectHTML = "<div class='row'><div class='col-md-6'><select class='form-control' name='teachers.id'>";
     for (i = 0; i < out.length; i = i + 1) {
@@ -693,12 +730,9 @@ function addCourseTeacher() {
     selectHTML += "</select></div><div class='col-md-4'><input type='text' class='form-control' name='teachers.scale' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-2'><input type='button' class='btn btn' value='Př' onclick='addPokusRadek(" + pocitadlo + ");'/>  </div></div></br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById('radky').appendChild(newDiv);
-
     pocitadlo++;
-
 }
 function addCourseTeacher1() {
-
     var newDiv = document.createElement('div');
     newDiv.setAttribute("id", pocitadlo);
     var mapKey = emplArray.k;
@@ -727,7 +761,6 @@ function addCourseTeacher1() {
 }
 
 function addCourseTeacherWeeks(divName) {
-
     var newDiv = document.createElement('div');
     newDiv.setAttribute("id", weeksTeacher);
     var ident = divName + "" + weeksTeacher;
@@ -736,12 +769,10 @@ function addCourseTeacherWeeks(divName) {
     var mapValue = emplArray.v;
     var testKey = mapKey.split(";");
     var testValue = mapValue.split(";");
-
     var i, out = [];//literal new array
     for (i = 0; i < testKey.length; i++) {
         out.push([testKey[i], testValue[i]]);
     }
-
     var selectHTML = "";
     selectHTML = "<div class='row'><div class='col-md-3'><select class='form-control' id='tname" + divName + "" + weeksTeacher + "' name='tname" + divName + "" + weeksTeacher + "'>";
     for (i = 0; i < out.length; i = i + 1) {
@@ -750,12 +781,10 @@ function addCourseTeacherWeeks(divName) {
     selectHTML += "</select></div><div class='col-md-1'><input type='text' class='form-control' name='tvalue" + divName + "" + weeksTeacher + "' onkeyup='handleChange(this);' onkeypress='return isDecimalNumberKey(event)' required></div><div class='col-md-1'><label>%</label></div><div class='col-md-1'><input type='button' class='btn btn-outline btn-danger' value='Smazat' onclick='del(" + ident + ");'/></div></div> </br>";
     newDiv.innerHTML = selectHTML;
     document.getElementById(divName).appendChild(newDiv);
-
     weeksTeacher++;
 }
 
 function addCourseTeacherTable(divName) {
-
     var newDiv = document.createElement('div');
     var mapKey = document.getElementById('myFieldX').value;
     var mapValue = document.getElementById('myField2X').value;
@@ -799,7 +828,6 @@ function addCourseTeacherTable(divName) {
 })(jQuery);
 
 function addInputT1(divName, pole) {
-
     var newDiv = document.createElement('div');
     var mapKey = document.getElementById('myField').value;
     var mapValue = document.getElementById('myField2').value;
@@ -948,11 +976,19 @@ function displayVisitTextAreaOff() {
     }
 }
 
+
+function displaySpecialWeeksOff() {
+    if (document.getElementById('yesCheck').checked === false) {
+        document.getElementById('ifYes').style.display = 'none';
+        document.getElementById('numOfRows').required = false;
+    }
+}
+
 function displaySpecialWeeks() {
     if (document.getElementById('yesCheck').checked) {
         document.getElementById('ifYes').style.display = 'block';
+        document.getElementById('numOfRows').required = true;
     }
-    else document.getElementById('ifYes').style.display = 'none';
 }
 
 

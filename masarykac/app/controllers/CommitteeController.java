@@ -35,7 +35,6 @@ public class CommitteeController extends Controller {
     public Result save() {
         Form<Committee> committeeForm = formFactory.form(Committee.class).bindFromRequest();
         Form<CommitteeParticipants> committeeParticipantsForm = formFactory.form(CommitteeParticipants.class).bindFromRequest();
-
         if (committeeForm.hasErrors() || committeeParticipantsForm.hasErrors()) {
             return badRequest(views.html.registerCommittee.render(committeeForm, committeeParticipantsForm));
         }
@@ -52,9 +51,12 @@ public class CommitteeController extends Controller {
     private void saveCommittee(Map<String, String[]> formData) throws Exception {
 
         List<Date> dateOfCommittee = new ArrayList<>();
-        DateFormat format = new SimpleDateFormat("dd.mm.yyyy", Locale.ENGLISH);
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd", new Locale("cs", "CZ"));
         for (String insId : formData.get("dateOfCommittee")) {
-            dateOfCommittee.add(format.parse(insId));
+            Date date = format.parse(insId);
+            SimpleDateFormat dt1 = new SimpleDateFormat("dd.MM.yyyy");
+            String s = dt1.format(date);
+            dateOfCommittee.add(dt1.parse(s));
         }
 
         List<String> semester = new ArrayList<>();

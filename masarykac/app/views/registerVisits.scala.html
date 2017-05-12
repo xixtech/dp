@@ -1,137 +1,126 @@
 @import models.utils.Countries
 @(visitsForm: Form[Visits], participantsForm: Form[VisitsParticipants])
-@import helper._
-@localStylesheets = {
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-}
-@localScripts = {
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-    <script>
-            $(document).ready(function () {
+    @import helper._
+    @localStylesheets = {
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    }
+    @localScripts = {
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+        <script>
+                $(document).ready(function () {
 
-                var MyUserObject = {};
-                MyUserObject["v"] = "@Employees.getJS1Value()";
-                MyUserObject["k"] = "@Employees.getJS1Key()";
+                    var MyUserObject = {};
+                    MyUserObject["v"] = "@Employees.getJS1Value()";
+                    MyUserObject["k"] = "@Employees.getJS1Key()";
 
-                visitArray(MyUserObject);
-            });
-    </script>
-}
-@main(scripts = localScripts, stylesheets = localStylesheets) {
-    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
-        <!-- polyfiller file to detect and load polyfills -->
-    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
-    <script>
-            webshim.setOptions("forms-ext", {
-                "date": {
-                    "startView": 2,
-                    "inlinePicker": false
-                }
-            });
-            webshim.setOptions("forms-ext", {
-                "widgets": {
-                    "stepfactor": 1,
-                    "nopicker": true
-                }
-            });
-            webshims.activeLang('cs');
-            webshims.setOptions('forms-ext', {types: 'date'});
-            webshims.polyfill('forms forms-ext');
-    </script>
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Registrace</h1>
-        </div>
-            <!-- /.col-lg-12 -->
-    </div>
-        <!-- /.row -->
-    <div class="container">
+                    visitArray(MyUserObject);
+                });
+        </script>
+    }
+    @main(scripts = localScripts, stylesheets = localStylesheets) {
+        <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+            <!-- polyfiller file to detect and load polyfills -->
+        <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+        <script>
+                webshim.setOptions("forms-ext", {
+                    "date": {
+                        "startView": 2,
+                        "inlinePicker": false
+                    }
+                });
+                webshim.setOptions("forms-ext", {
+                    "widgets": {
+                        "stepfactor": 1,
+                        "nopicker": true
+                    }
+                });
+                webshims.activeLang('cs');
+                webshims.setOptions('forms-ext', {types: 'date'});
+                webshims.polyfill('forms forms-ext');
+        </script>
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel-body">
-                @helper.form(action = routes.VisitsController.save) {
+            <div class="col-lg-12">
+                <h1 class="page-header">Registrace</h1>
+            </div>
+                <!-- /.col-lg-12 -->
+        </div>
+            <!-- /.row -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel-body">
+                    @helper.form(action = routes.VisitsController.save) {
 
-                    <fieldset>
-                        <legend>Zadání výjezdu</legend>
-                        <div class="row">
-                            <div class="col-md-12">
-                            @inputText(
-                                visitsForm("purposeOfVisit"),
-                                '_label -> "Důvod návštěvy:",
-                                'class -> "form-control",
-                                '_help -> "Prosím zadejte Důvod návštěvy.",
-                                '_error -> visitsForm.globalError
-                            )
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                            @select(
-                                visitsForm("country"),
-                                options(Countries.options()),
-                                '_default -> "ČESKÁ REPUBLIKA",
-                                '_label -> "Země:",
-                                'class -> "form-control",
-                                '_help -> "Prosím zadejte zemi.",
-                                '_error -> visitsForm.globalError
-                            )
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                            @inputText(
-                                visitsForm("event"),
-                                '_label -> "Název události:",
-                                'class -> "form-control",
-                                '_help -> "Prosím zadejte Název události.",
-                                '_error -> visitsForm.globalError
-                            )
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="visitFrom">Výjezd od*:</label>
-                                <input type="date" class="form-control" id="visitFrom" name="visitFrom"/>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="visitTo">Výjezd do*:</label>
-                                <input type="date" class="form-control" id="visitTo" name="visitTo"/>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                            @select(
-                                visitsForm("semester.id"),
-                                options(Semesters.options()),
-                                '_label -> "Výjezd proběhl v semestru:",
-                                'class -> "form-control",
-                                '_help -> "Prosím zadejte semestr výjezdu.",
-                                '_error -> visitsForm.globalError
-                            )
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input type="button" value="Přidat účastníka" class="btn btn-default" onclick="addVisitParticipant();" />
-                                <div class="row">
-                                </br>
+                        <fieldset>
+                            <legend>Zadání výjezdu</legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="course">Důvod návštěvy*:</label>
+                                    <input type="text" id="purposeOfVisit" class="form-control" name="purposeOfVisit" required/>
                                 </div>
-                                <div id="visitpart"></div>
                             </div>
-                        </div>
-                    </fieldset>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @select(
+                                    visitsForm("country"),
+                                    options(Countries.options()),
+                                    '_label -> "Země:",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte zemi.",
+                                    '_error -> visitsForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="course">Název události*:</label>
+                                    <input type="text" id="event" class="form-control" name="event" required/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="visitFrom">Výjezd od*:</label>
+                                    <input type="date" class="form-control" id="visitFrom" name="visitFrom" required/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="visitTo">Výjezd do*:</label>
+                                    <input type="date" class="form-control" id="visitTo" name="visitTo" required/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @select(
+                                    visitsForm("semester.id"),
+                                    options(Semesters.options()),
+                                    '_label -> "Výjezd proběhl v semestru:",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte semestr výjezdu.",
+                                    '_error -> visitsForm.globalError
+                                )
+                                </div>
+                            </div>
 
-                    <div class="actions">
-                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
-                        <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="button" value="Přidat účastníka" class="btn btn-outline btn-primary" onclick="addVisitParticipant();" />
+                                    <div class="row">
+                                    </br>
+                                    </div>
+                                    <div id="visitpart"></div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="actions" style="display: none" id="submitButton">
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                            <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                        </div>
+                    }
                     </div>
-                }
                 </div>
             </div>
         </div>
-    </div>
-}
+    }

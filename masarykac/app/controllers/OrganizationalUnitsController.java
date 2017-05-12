@@ -9,6 +9,7 @@ import play.mvc.Security;
 
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -44,9 +45,9 @@ public class OrganizationalUnitsController extends Controller {
         if (organizationalUnitsForm.hasErrors()) {
             return badRequest(views.html.registerOrganizationalUnits.render(organizationalUnitsForm));
         }
-        OrganizationalUnits organizationalUnits = organizationalUnitsForm.get();
+        Map<String, String[]> formData = request().body().asFormUrlEncoded();
         try {
-            saveOrganizationalUnit(organizationalUnits);
+            saveOrganizationalUnit(formData);
             return redirect(routes.Application.index());
         } catch (Exception e) {
             return badRequest(views.html.registerOrganizationalUnits.render(organizationalUnitsForm));
@@ -110,9 +111,9 @@ public class OrganizationalUnitsController extends Controller {
         return state;
     }
 
-    private void saveOrganizationalUnit(OrganizationalUnits orUnits) throws Exception {
-        OrganizationalUnits ou = new OrganizationalUnits(orUnits.organizationalUnitNumber, orUnits.organizationalUnitNumberParent, orUnits.titleCzech, orUnits.titleEnglish, orUnits.functionNameOfSeniorEmployee,
-                orUnits.functionNameOfSeniorEmployeeAppointment, orUnits.organizationalUnitResponsible);
+    private void saveOrganizationalUnit(Map<String, String[]> formData) throws Exception {
+        OrganizationalUnits ou = new OrganizationalUnits(formData.get("organizationalUnitNumber")[0], formData.get("organizationalUnitNumberParent")[0], formData.get("titleCzech")[0], formData.get("titleEnglish")[0], formData.get("functionNameOfSeniorEmployee")[0],
+                formData.get("functionNameOfSeniorEmployeeAppointment")[0], Long.parseLong(formData.get("organizationalUnitResponsible")[0]));
         ou.save();
 
     }

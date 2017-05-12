@@ -22,29 +22,15 @@
 
                     <fieldset>
                         <legend>Zadání závěrečné práce</legend>
-                        @inputText(
-                            finalWorkForm("finalWorksName"),
-                            '_label -> "Název závěrečné práce:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte název závěrečné práce.",
-                            '_error -> finalWorkForm.globalError
-                        )
+                        <label for="finalWorksName">Název závěrečné práce*:</label>
+                        <input type="text" id="finalWorksName" class="form-control" name="finalWorksName" required/>
 
-                        @inputText(
-                            finalWorkForm("names"),
-                            '_label -> "Jména tvůrců:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte jména.",
-                            '_error -> finalWorkForm.globalError
-                        )
+                        <label for="names">Jména tvůrců*:</label>
+                        <input type="text" id="names" class="form-control" name="names" required/>
 
-                        @inputText(
-                            finalWorkForm("year"),
-                            '_label -> "Závěrečná práce probíhá/probíhala v roce:",
-                            'class -> "form-control",
-                            '_help -> "Prosím zadejte datum.",
-                            '_error -> finalWorkForm.globalError
-                        )
+                        <label>
+                            Závěrečná práce probíhá/probíhala v roce*:
+                            <input type="text" value="2017" class="form-control" id="year" name="year" onkeypress="return isNumberKey(event)" maxlength="4" required/></label>
 
                         @select(
                             finalWorkForm("semester.id"),
@@ -63,15 +49,9 @@
                             '_help -> "Prosím zadejte semestr účastníka.",
                             '_error -> participantsForm.globalError
                         )
-
-                        @inputText(
-                            participantsForm("teachersRole"),
-                            '_label -> "Role vyučujícího:",
-                            'class -> "form-control",
-                            '_help -> "Prosím roli vyučujícího.",
-                            '_error -> participantsForm.globalError
-                        )
-
+                        <label for="teachersRole">Role vyučujícího*:</label>
+                        <input type="text" id="teachersRole" class="form-control" name="teachersRole" required/>
+                        </br>
                     </fieldset>
 
                     <div class="actions">

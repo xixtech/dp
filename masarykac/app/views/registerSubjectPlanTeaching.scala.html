@@ -38,7 +38,7 @@
                 MyUserObject["k"] = "@Employees.getJS1Key()";
 
                 employeeArray(MyUserObject);
-                document.getElementById('addToAllWeeks').style.visibility='hidden';
+                document.getElementById('addToAllWeeks').style.visibility = 'hidden';
             });
 
             $('.timepicker').timepicker({
@@ -91,7 +91,7 @@
                 @helper.form(action = routes.SubjectPlanTeachingController.save) {
                     <fieldset>
                         <legend>Zadání předmětu</legend>
-                        <p style="color:red"><strong> @msg</strong></p>
+                        <p style="color: red"><strong> @msg</strong></p>
                         <div class="col-md-30">
                             <div class="row">
                                 <div class="col-md-3">
@@ -177,7 +177,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label for="department">Oddělení*:</label>
-                                    <input type="text" id="department" class="form-control" name="department" onkeypress="return isNumberKey(event)" maxlength="2" required/>
+                                    <input type="text" id="department" class="form-control" name="department" maxlength="5" required/>
                                 </div>
 
                             </div>
@@ -194,7 +194,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label for="course">Kurz*:</label>
-                                    <input type="text" id="course" class="form-control" name="course" required/>
+                                    <input type="text" id="course" class="form-control" name="course" onkeypress="return isNumberKey(event)" maxlength="5" required/>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="numberOfStudents">Počet studentů*:</label>
@@ -222,14 +222,14 @@
                                     <input type="text" id="scheduleTo" class="timepicker form-control" name="scheduleTo" onkeypress="return isDateKey(event)" maxlength="5" required/>
                                 </div>
                                 <div class="col-md-3">
-                                    @select(
-                                        scheduleForm("classroom.id"),
-                                        options(Classroom.options()),
-                                        '_label -> "Učebna",
-                                        'class -> "form-control",
-                                        '_help -> "",
-                                        '_error -> scheduleForm.globalError
-                                    )
+                                @select(
+                                    scheduleForm("classroom.id"),
+                                    options(Classroom.options()),
+                                    '_label -> "Učebna",
+                                    'class -> "form-control",
+                                    '_help -> "",
+                                    '_error -> scheduleForm.globalError
+                                )
                                 </div>
                             </div>
 
@@ -253,7 +253,7 @@
                                             <div class="row">
                                             </br>
                                                 <div class="col-md-4">
-                                                    <label>Vygenerování týdnů</label>
+                                                    <label>Zadání týdnů</label>
                                                     <div class="form-group">
                                                         <div class="row">
                                                             <div class="col-md-6">
@@ -262,49 +262,51 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label>
-                                                                    Semestr končí: <input type="date" class="form-control" id="endSemester" /> </label>
+                                                                    Semestr končí: <input type="date" class="form-control" id="endSemester"/> </label>
                                                             </div>
                                                         </div>
                                                         <div id="MyEdit">
 
                                                         </div>
-                                                        <div class="radio">
-                                                            <label>
-                                                                <input type="radio" id="noCheck" name="optionsRadios" value="1">
-                                                                Všechny týdny
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label>
-                                                                <input type="radio" id="noCheck" name="optionsRadios" value="2">
-                                                                Pouze sudé týdny
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label>
-                                                                <input type="radio" id="noCheck" name="optionsRadios" value="3">
-                                                                Pouze liché týdny
-                                                            </label>
-                                                        </div>
-                                                        <div class="radio">
-                                                            <label>
-                                                                <input type="radio" id="yesCheck" name="optionsRadios" value="4" onclick="displaySpecialWeeks();">
-                                                                Individuální zadání počtu týdnů
-                                                            </label>
-                                                            <div id="ifYes" style="display: none">
-                                                                <input type="text" class="form-control" id="numOfRows" name="numOfRows">
+                                                        <div class="col-md-9">
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input type="radio" id="noCheck" name="optionsRadios" value="1" onclick="displaySpecialWeeksOff();">
+                                                                    Všechny týdny
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input type="radio" id="noCheck" name="optionsRadios" value="2" onclick="displaySpecialWeeksOff();">
+                                                                    Pouze sudé týdny
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input type="radio" id="noCheck" name="optionsRadios" value="3" onclick="displaySpecialWeeksOff();">
+                                                                    Pouze liché týdny
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <label>
+                                                                    <input type="radio" id="yesCheck" name="optionsRadios" value="4" onclick="displaySpecialWeeks();">
+                                                                    Individuální zadání počtu týdnů
+                                                                </label>
+                                                                <div id="ifYes" style="display: none">
+                                                                    <input type="text" class="form-control" id="numOfRows" name="numOfRows" onkeypress="return isNumberKey(event)" maxlength="2">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                 </div>
-                                                <div class="col-md-8">
-                                                    <input type="button" id="addCourseT" class="btn btn-default" value="Přidat vyučujícího" onclick="addCourseTeacher1();" />
+                                                <div class="col-md-8" id="teacherToEveryWeek" style="display: none">
+                                                    <input type="button" id="addCourseT" class="btn btn-default" value="Přidat vyučující ke všem týdnům" onclick="addCourseTeacher1();" />
                                                     <div class="row">
                                                     </br>
                                                     </div>
                                                     <div id="radky"></div>
-                                                    <input type="button" id="addToAllWeeks" class="btn btn-default" value="Přidat" onclick="addCourseTeacherWeeksByDefault()" />
+                                                    <input type="button" id="addToAllWeeks" class="btn btn-outline btn-primary" value="Přidat k týdnům" onclick="addCourseTeacherWeeksByDefault()" />
                                                 </div>
                                             </br>
                                             </div>
@@ -313,7 +315,7 @@
                                                 <div class="col-md-12">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <input type="button" class="btn btn-default" value="Přidat týdny" onclick="appendRowDiv()" />
+                                                            <input type="button" class="btn btn-outline btn-primary" value="Vygenerovat týdny" onclick="appendRowDiv()" />
                                                             <div class="row">
                                                             </br>
                                                             </div>
@@ -328,7 +330,7 @@
                                         </br>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <input type="button" class="btn btn" value="Přidat studijní plán" onclick="addStudyPlan('studyplan');" />
+                                                    <input type="button" class="btn btn-outline btn-primary" value="Přidat studijní plán" onclick="addStudyPlan('studyplan');" />
                                                     <div class="row">
                                                     </br>
                                                     </div>

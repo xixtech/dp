@@ -1,3 +1,1 @@
-[error] C:\Users\Martin\dp\masarykac\conf\routes:185: value docTablePublication is not a member of controllers.DOCController
-[error] GET         /docTablePublication                       controllers.DOCController.docTablePublication()
-[error] one error found
+[error] C:\Users\Martin\dp\masarykac\app\controllers\CommitteeController.java:52: ';' expected

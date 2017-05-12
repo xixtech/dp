@@ -38,15 +38,17 @@ public class VisitsController extends Controller {
      *
      * @return
      */
-    public Result save() throws Exception {
+    public Result save() {
         Form<Visits> visitsForm = formFactory.form(Visits.class).bindFromRequest();
         Form<VisitsParticipants> visitsParticipantsForm = formFactory.form(VisitsParticipants.class).bindFromRequest();
-
-        Map<String, String[]> formData = request().body().asFormUrlEncoded();
-
-        saveVisit(formData);
-        return redirect(routes.Application.index());
-
+       
+        try {
+            Map<String, String[]> formData = request().body().asFormUrlEncoded();
+            saveVisit(formData);
+            return redirect(routes.Application.index());
+        } catch (Exception e) {
+            return badRequest(views.html.registerVisits.render(visitsForm, visitsParticipantsForm));
+        }
     }
 
     private void saveVisit(Map<String, String[]> formData) throws Exception {
@@ -70,17 +72,20 @@ public class VisitsController extends Controller {
         }
 
         List<Date> visitFrom = new ArrayList<>();
-        DateFormat format = new SimpleDateFormat("yyyy-mm-dd", Locale.ENGLISH);
-
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd", new Locale("cs", "CZ"));
         for (String insId : formData.get("visitFrom")) {
-
-            visitFrom.add(format.parse(insId));
+            Date date = format.parse(insId);
+            SimpleDateFormat dt1 = new SimpleDateFormat("dd.MM.yyyy");
+            String s = dt1.format(date);
+            visitFrom.add(dt1.parse(s));
         }
 
         List<Date> visitTo = new ArrayList<>();
-
         for (String insId : formData.get("visitTo")) {
-            visitTo.add(format.parse(insId));
+            Date date = format.parse(insId);
+            SimpleDateFormat dt1 = new SimpleDateFormat("dd.MM.yyyy");
+            String s = dt1.format(date);
+            visitTo.add(dt1.parse(s));
         }
 
         List<String> semester = new ArrayList<>();
@@ -109,7 +114,7 @@ public class VisitsController extends Controller {
 
             VisitsParticipants vp = new VisitsParticipants(Employees.findById(Long.parseLong(employees.get(i))), Visits.findById(visitId));
             vp.save();
-            visitPart[i]=vp;
+            visitPart[i] = vp;
         }
 
         List<Statement> s = Statement.findBySemester(Long.parseLong(semester.get(0)));

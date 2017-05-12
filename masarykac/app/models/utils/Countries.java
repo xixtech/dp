@@ -13,6 +13,7 @@ import java.util.Map;
 public class Countries {
     public static List<String> countriesList() {
         List<String> countries = new ArrayList<String>();
+        countries.add("ČESKÁ REPUBLIKA");
         countries.add("AFGHANISTÁN");
         countries.add("ALBÁNIE");
         countries.add("ALŽÍR");
@@ -47,7 +48,6 @@ public class Countries {
         countries.add("COOKOVY OSTROVY");
         countries.add("CURACAO");
         countries.add("ČAD");
-        countries.add("ČESKÁ REPUBLIKA");
         countries.add("ČILE");
         countries.add("ČÍNA");
         countries.add("DÁNSKO");
