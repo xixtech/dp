@@ -33,7 +33,8 @@ body {
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th>Název</th>
+                                <th>Název role</th>
+                                <th>Popis role</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,6 +45,13 @@ body {
                                     <em>-</em>
                                 } else {
                                     @member.getRole
+                                }
+                                </td>
+                                <td class="center">
+                                @if(member.getDescription == "") {
+                                    <em>-</em>
+                                } else {
+                                    @member.getDescription
                                 }
                                 </td>
                             </tr>

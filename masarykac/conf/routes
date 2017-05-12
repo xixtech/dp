@@ -15,7 +15,6 @@ GET         /login                                     controllers.Login.index()
 POST        /login                                     controllers.Login.authenticate()
 GET         /charts/flot                               controllers.Charts.flot()
 GET         /charts/morris                             controllers.Charts.morris()
-GET         /tables                                    controllers.Application.tables()
 GET         /forms                                     controllers.Application.forms()
 GET         /ui-elements/panels-and-wells              controllers.UiElements.panelsAndWells()
 GET         /ui-elements/buttons                       controllers.UiElements.buttons()
@@ -205,7 +204,6 @@ GET         /users/moje/:id                            controllers.PrintControll
 POST        /users/lector/saved                        controllers.SalaryController.saveLector()
 POST        /users/lector/:id                          controllers.SalaryController.printLector(id:Long)
 GET         /users/lector/:id                          controllers.SalaryController.detailsListLector(id:Long)
-
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                              controllers.Assets.at(path="/public", file)

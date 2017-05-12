@@ -11,8 +11,14 @@
         <!-- DataTables JavaScript -->
     <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
     <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>
-    <script src='@routes.Assets.at("javascripts/dynamicFields.js")'></script>
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+            $(document).ready(function () {
+                $('#dataTables-example').DataTable({
+                    responsive: true
+                });
+            });
+    </script>
 }
 
 @main(scripts = localScripts, stylesheets = localStylesheets) {

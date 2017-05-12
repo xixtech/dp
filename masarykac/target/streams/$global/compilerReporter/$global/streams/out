@@ -1,4 +1,76 @@
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableCheckRepairEmployeeCheckStatement.scala.html:91: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                         @if(member.getTeachers.getScale == null) {
+[warn]                                                                                         ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:120: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursP == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:127: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursC == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:134: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getCredits == null) {
+[warn]                                                                               ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployeeCheckStatement.scala.html:91: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                             @if(member.getTeachers.getScale == null) {
+[warn]                                                                                             ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableInfoEmployeeCheckStatement.scala.html:89: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                         @if(member.getTeachers.getScale == null) {
+[warn]                                                                                         ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP.scala.html:138: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursP == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP.scala.html:145: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursC == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP.scala.html:152: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getCredits == null) {
+[warn]                                                                               ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableStatement.scala.html:84: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                 @if(member.getTeachers.getScale == null) {
+[warn]                                                                                 ^
+[warn] 10 warnings found
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableCheckRepairEmployeeCheckStatement.scala.html:91: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                         @if(member.getTeachers.getScale == null) {
+[warn]                                                                                         ^
 [warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableClassroom.scala.html:78: comparing values of types Int and Null using `==' will always yield false
 [warn]                                     @if(member.getCapacity == null) {
 [warn]                                                            ^
-[warn] one warning found
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:120: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursP == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:127: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursC == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPS.scala.html:134: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getCredits == null) {
+[warn]                                                                               ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployeeCheckStatement.scala.html:91: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                             @if(member.getTeachers.getScale == null) {
+[warn]                                                                                             ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableInfoEmployeeCheckStatement.scala.html:89: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                         @if(member.getTeachers.getScale == null) {
+[warn]                                                                                         ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP.scala.html:138: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursP == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP.scala.html:145: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getHoursC == null) {
+[warn]                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP.scala.html:152: comparing values of types Int and Null using `==' will always yield false
+[warn]                                             @if(member.getSubjects.getCredits == null) {
+[warn]                                                                               ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSPPrint.scala.html:114: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 @if(member.getSubjects.getHoursP == null) {
+[warn]                                                                                  ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSPPrint.scala.html:121: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 @if(member.getSubjects.getHoursC == null) {
+[warn]                                                                                  ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSPPrint.scala.html:128: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 @if(member.getSubjects.getCredits == null) {
+[warn]                                                                                   ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableStatement.scala.html:84: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                 @if(member.getTeachers.getScale == null) {
+[warn]                                                                                 ^
+[warn] 14 warnings found
+[warn] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomController.java:3: com.sun.org.apache.bcel.internal.util.ClassQueue is internal proprietary API and may be removed in a future release
+[warn] com.sun.org.apache.bcel.internal.util.ClassQueue

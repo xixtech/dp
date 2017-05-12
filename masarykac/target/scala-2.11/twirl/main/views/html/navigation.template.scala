@@ -33,28 +33,19 @@ Seq[Any](format.raw/*1.4*/("""
     """),format.raw/*2.5*/("""<!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Masarykáč beta v0.2</a>
+            <a class="navbar-brand" href="/">Masarykáč v0.8</a>
         </div>
         <!-- /.navbar-header -->
-        <img src=""""),_display_(/*14.20*/routes/*14.26*/.Assets.at("images/logo_MUVS.jpg")),format.raw/*14.60*/("""" width="140" height="40" align="center"/>
+        <img src=""""),_display_(/*8.20*/routes/*8.26*/.Assets.at("images/logo_MUVS.jpg")),format.raw/*8.60*/("""" width="140" height="40" align="center"/>
         <ul class="nav navbar-top-links navbar-right">
-
-
             <li class="dropdown">
-                <a href=""""),_display_(/*19.27*/routes/*19.33*/.Application.logout()),format.raw/*19.54*/(""""><i class="fa fa-gear fa-fw"></i> Odhlásit</a>
+                <a href=""""),_display_(/*11.27*/routes/*11.33*/.Application.logout()),format.raw/*11.54*/(""""><i class="fa fa-gear fa-fw"></i> Odhlásit</a>
             </li>
             <!-- /.dropdown -->
         </ul>
         <!-- /.navbar-top-links -->
-
-        """),_display_(/*25.10*/sidebar()),format.raw/*25.19*/("""
-        """),format.raw/*26.9*/("""<!-- /.navbar-static-side -->
+        """),_display_(/*16.10*/sidebar()),format.raw/*16.19*/("""
+        """),format.raw/*17.9*/("""<!-- /.navbar-static-side -->
     </nav>
 """))
       }
@@ -76,11 +67,11 @@ Seq[Any](format.raw/*1.4*/("""
 object navigation extends navigation_Scope0.navigation
               /*
                   -- GENERATED --
-                  DATE: Tue May 02 09:47:06 CEST 2017
+                  DATE: Fri May 12 19:58:21 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/navigation.scala.html
-                  HASH: 4e41e887092aaf51022b779de7c9ecd130026905
-                  MATRIX: 748->1|844->3|875->8|1532->638|1547->644|1602->678|1789->838|1804->844|1846->865|2031->1023|2061->1032|2097->1041
-                  LINES: 27->1|32->1|33->2|45->14|45->14|45->14|50->19|50->19|50->19|56->25|56->25|57->26
+                  HASH: f22f8a59d628e016eecdf537c6e85bc9969fae26
+                  MATRIX: 748->1|844->3|875->8|1189->296|1203->302|1257->336|1442->494|1457->500|1499->521|1683->678|1713->687|1749->696
+                  LINES: 27->1|32->1|33->2|39->8|39->8|39->8|42->11|42->11|42->11|47->16|47->16|48->17
                   -- GENERATED --
               */
           
