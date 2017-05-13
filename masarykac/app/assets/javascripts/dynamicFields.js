@@ -45,10 +45,10 @@ function export2Word(element, surname, name) {
     var html, link, blob, url, css;
     css = (
         '<style>' +
-        '@page WordSection1{size: 841.95pt 595.35pt;size: portrait;}' +
+        '@page WordSection1{width:210mm;height:297mm;margin: 10px;size: portrait;font-family:Technika;background: white;align:center;}' +
         'div.WordSection1 {page: WordSection1;}' +
-        'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;}' +
-        'body{font-family:Technika;}' +
+        'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;font-family:Technika;}' +
+        'body{font-family:Technika; align:center;margin: 0;padding: 0;}'+
         '</style>'
     );
     var filename = surname + "" + name;

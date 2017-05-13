@@ -1,6 +1,6 @@
 @(ojPage: List[OrganizationalUnitsParticipants], ePage: List[Employees], cPage: List[Courses], sPage: List[Subjects], tPage: List[Teachers], caaaPage: List[Courses], caabPage: List[Courses], cbPage: List[Courses], semPage: List[Semesters], schPage: List[Schedule], schweeksPage: List[ScheduleInWeeks])
 @import helper._
-@import scala.Predef; var x = 0; var y = 0.0;
+@import scala.Predef; var x = 0; var y = 0.0;var z = 0.0;
 
 <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
 <link href='@routes.Assets.at("stylesheets/sb-admin-2.css")' rel="stylesheet" type="text/css">
@@ -57,7 +57,6 @@ body {
                                 <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
-
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
@@ -71,6 +70,7 @@ body {
                                                 <th>Učebna</th>
                                                 <th>Hodin</th>
                                                 <th>Týdnů</th>
+                                                <th>Podíl</th>
                                                 <th>Celkem</th>
                                                 <th>Přepočteno</th>
                                             </tr>
@@ -163,8 +163,6 @@ body {
                                                                     } else {
                                                                         @(math.ceil(t.getScale * 100))
                                                                     }
-
-
                                                                     </td>
                                                                     <td class="center">
                                                                     @if(t.getSummary == 0) {
@@ -175,7 +173,12 @@ body {
                                                                     }
                                                                     </td>
                                                                     <td class="center">
-
+                                                                    @if(t.getRecountedSummary == 0) {
+                                                                        <em>-</em>
+                                                                    } else {
+                                                                        @(t.getRecountedSummary)
+                                                                        @(z = z + t.getRecountedSummary)
+                                                                    }
                                                                     </td>
                                                                 </tr>
                                                             }
@@ -183,9 +186,18 @@ body {
                                                     }
                                                 }
                                             }
-
                                         }
-
+                                        <table class="table ">
+                                            <tr align="right">
+                                                <td class="right">
+                                                    @(y = y / 13)
+                                                    Celkem: @y
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                    @(z = z / 13)
+                                                    Celkem: @z &nbsp; &nbsp; &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
                                         </tbody>
                                     </table>
                                 </div>
@@ -197,7 +209,6 @@ body {
                                 <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
-
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
@@ -211,6 +222,7 @@ body {
                                                 <th>Učebna</th>
                                                 <th>Hodin</th>
                                                 <th>Týdnů</th>
+                                                <th>Podíl</th>
                                                 <th>Celkem</th>
                                                 <th>Přepočteno</th>
                                             </tr>
@@ -222,9 +234,7 @@ body {
                                                     @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
                                                         @for(sch <- schPage) {
                                                             @if(sch.getCourses.getId == member.getId) {
-
                                                                 <tr>
-
                                                                     <td class="center">
                                                                     @if(member.subjects.getIdent == null) {
                                                                         <em>-</em>
@@ -288,23 +298,21 @@ body {
                                                                         @sch.getDuration
                                                                     }
                                                                     </td>
-                                                                <td class="center">
-                                                                    @(x = 0)
-                                                                    @for(schw <- schweeksPage) {
-                                                                        @if(sch.getId == schw.getSchedule.getId) {
-                                                                            @(x = x + 1)
+                                                                    <td class="center">
+                                                                        @(x = 0)
+                                                                        @for(schw <- schweeksPage) {
+                                                                            @if(sch.getId == schw.getSchedule.getId) {
+                                                                                @(x = x + 1)
+                                                                            }
                                                                         }
-                                                                    }
-                                                                    @x
-                                                                </td>
+                                                                        @x
+                                                                    </td>
                                                                     <td class="center">
                                                                     @if(t.getScale == 0) {
                                                                         <em>-</em>
                                                                     } else {
                                                                         @(math.ceil(t.getScale * 100))
                                                                     }
-
-
                                                                     </td>
                                                                     <td class="center">
                                                                     @if(t.getSummary == 0) {
@@ -315,7 +323,12 @@ body {
                                                                     }
                                                                     </td>
                                                                     <td class="center">
-
+                                                                    @if(t.getRecountedSummary == 0) {
+                                                                        <em>-</em>
+                                                                    } else {
+                                                                        @(t.getRecountedSummary)
+                                                                        @(z = z + t.getRecountedSummary)
+                                                                    }
                                                                     </td>
                                                                 </tr>
                                                             }
@@ -324,6 +337,17 @@ body {
                                                 }
                                             }
                                         }
+                                        <table class="table ">
+                                            <tr align="right">
+                                                <td class="right">
+                                                    @(y = y / 13)
+                                                    Celkem: @y
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                    @(z = z / 13)
+                                                    Celkem: @z &nbsp; &nbsp; &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
                                         </tbody>
                                     </table>
                                 </div>
@@ -334,7 +358,6 @@ body {
                                 <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="dataTable_wrapper">
-
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                         <thead>
                                             <tr>
@@ -348,6 +371,7 @@ body {
                                                 <th>Učebna</th>
                                                 <th>Hodin</th>
                                                 <th>Týdnů</th>
+                                                <th>Podíl</th>
                                                 <th>Celkem</th>
                                                 <th>Přepočteno</th>
                                             </tr>
@@ -423,23 +447,21 @@ body {
                                                                         @sch.getDuration
                                                                     }
                                                                     </td>
-                                                                <td class="center">
-                                                                    @(x = 0)
-                                                                    @for(schw <- schweeksPage) {
-                                                                        @if(sch.getId == schw.getSchedule.getId) {
-                                                                            @(x = x + 1)
+                                                                    <td class="center">
+                                                                        @(x = 0)
+                                                                        @for(schw <- schweeksPage) {
+                                                                            @if(sch.getId == schw.getSchedule.getId) {
+                                                                                @(x = x + 1)
+                                                                            }
                                                                         }
-                                                                    }
-                                                                    @x
-                                                                </td>
+                                                                        @x
+                                                                    </td>
                                                                     <td class="center">
                                                                     @if(t.getScale == 0) {
                                                                         <em>-</em>
                                                                     } else {
                                                                         @(math.ceil(t.getScale * 100))
                                                                     }
-
-
                                                                     </td>
                                                                     <td class="center">
                                                                     @if(t.getSummary == 0) {
@@ -450,7 +472,12 @@ body {
                                                                     }
                                                                     </td>
                                                                     <td class="center">
-
+                                                                    @if(t.getRecountedSummary == 0) {
+                                                                        <em>-</em>
+                                                                    } else {
+                                                                        @(t.getRecountedSummary)
+                                                                        @(z = z + t.getRecountedSummary)
+                                                                    }
                                                                     </td>
                                                                 </tr>
                                                             }
@@ -458,9 +485,18 @@ body {
                                                     }
                                                 }
                                             }
-
                                         }
-
+                                        <table class="table ">
+                                            <tr align="right">
+                                                <td class="right">
+                                                    @(y = y / 13)
+                                                    Celkem: @y
+                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                    @(z = z / 13)
+                                                    Celkem: @z &nbsp; &nbsp; &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
                                         </tbody>
                                     </table>
                                 </div>

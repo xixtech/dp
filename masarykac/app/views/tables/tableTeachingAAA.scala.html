@@ -73,6 +73,7 @@
                                         <th>Učebna</th>
                                         <th>Hodin</th>
                                         <th>Týdnů</th>
+                                        <th>Podíl</th>
                                         <th>Celkem</th>
                                         <th>Přepočteno</th>
                                     </tr>
@@ -189,16 +190,14 @@
                                             }
                                         }
                                     }
-                                <table>
-                                    <tr>
-                                        <td align="right">
+                                <table class="table ">
+                                    <tr align="right">
+                                        <td class="right">
                                             @(y = y / 13)
                                             Celkem: @y
-                                        </td>
-
-                                        <td align="right">
+                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                             @(z = z / 13)
-                                            Celkem: @z
+                                            Celkem: @z &nbsp; &nbsp; &nbsp;
                                         </td>
                                     </tr>
                                 </table>
@@ -212,5 +211,4 @@
                 <!-- /.col-lg-12 -->
         }
     </div>
-
 }

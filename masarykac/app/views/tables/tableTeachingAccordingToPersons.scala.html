@@ -1,6 +1,6 @@
 @(ePage: List[Employees], cPage: List[Courses], tPage: List[Teachers], semPage: List[Semesters], schPage: List[Schedule], schweeksPage: List[ScheduleInWeeks])
 @import helper._
-@import scala.Predef; var x = 0; var y = 0.0;
+@import scala.Predef; var x = 0; var y = 0.0;var z = 0.0;
 @localStylesheets = {
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
 }
@@ -80,6 +80,7 @@
                                             <th>Týdnů</th>
                                             <th>Podíl</th>
                                             <th>Celkem</th>
+                                            <th>Přepočteno</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -91,9 +92,7 @@
                                                         @if(t.getCourses.getId == member.getId) {
                                                             @for(sch <- schPage) {
                                                                 @if(sch.getCourses.getId == member.getId) {
-
                                                                     <tr>
-
                                                                         <td class="center">
                                                                         @if(member.subjects.getIdent == null) {
                                                                             <em>-</em>
@@ -173,7 +172,6 @@
                                                                             @(math.ceil(t.getScale * 100))
                                                                         }
 
-
                                                                         </td>
                                                                         <td class="center">
                                                                         @if(t.getSummary == 0) {
@@ -183,7 +181,14 @@
                                                                             @(y = y + t.getSummary)
                                                                         }
                                                                         </td>
-
+                                                                        <td class="center">
+                                                                        @if(t.getRecountedSummary == 0) {
+                                                                            <em>-</em>
+                                                                        } else {
+                                                                            @(t.getRecountedSummary)
+                                                                            @(z = z + t.getRecountedSummary)
+                                                                        }
+                                                                        </td>
                                                                     </tr>
                                                                 }
                                                             }
@@ -191,17 +196,18 @@
                                                     }
                                                 }
                                             }
-
                                         }
-                                    <table>
-                                        <tr>
-                                            <td align="right">
+                                    <table class="table ">
+                                        <tr align="right">
+                                            <td class="right">
                                                 @(y = y / 13)
                                                 Celkem: @y
+                                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                @(z = z / 13)
+                                                Celkem: @z &nbsp; &nbsp; &nbsp;
                                             </td>
                                         </tr>
                                     </table>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -213,7 +219,5 @@
                     <!-- /.col-lg-12 -->
             }
         }
-
     </div>
-
 }

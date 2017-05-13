@@ -1,6 +1,6 @@
 @(ePage: List[Employees], cPage: List[Courses], tPage: List[Teachers], semPage: List[Semesters], schPage: List[Schedule], schweeksPage: List[ScheduleInWeeks])
 @import helper._
-@import scala.Predef; var x = 0; var y = 0.0;
+@import scala.Predef; var x = 0; var y = 0.0;var z = 0.0;
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
     <link href='@routes.Assets.at("stylesheets/sb-admin-2.css")' rel="stylesheet" type="text/css">
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
@@ -154,8 +154,6 @@
                                                                                     } else {
                                                                                         @(math.ceil(t.getScale * 100))
                                                                                     }
-
-
                                                                                     </td>
                                                                                     <td class="center">
                                                                                     @if(t.getSummary == 0) {
@@ -165,7 +163,14 @@
                                                                                         @(y = y + t.getSummary)
                                                                                     }
                                                                                     </td>
-
+                                                                                    <td class="center">
+                                                                                    @if(t.getRecountedSummary == 0) {
+                                                                                        <em>-</em>
+                                                                                    } else {
+                                                                                        @(t.getRecountedSummary)
+                                                                                        @(z = z + t.getRecountedSummary)
+                                                                                    }
+                                                                                    </td>
                                                                                 </tr>
                                                                             }
                                                                         }
@@ -175,15 +180,17 @@
                                                         }
 
                                                     }
-                                                <table>
-                                                    <tr>
-                                                        <td align="right" class="center">
+                                                <table class="table ">
+                                                    <tr align="right">
+                                                        <td class="right">
                                                             @(y = y / 13)
                                                             Celkem: @y
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                            @(z = z / 13)
+                                                            Celkem: @z &nbsp; &nbsp; &nbsp;
                                                         </td>
                                                     </tr>
                                                 </table>
-
                                                 </tbody>
                                             </table>
                                         </div>
