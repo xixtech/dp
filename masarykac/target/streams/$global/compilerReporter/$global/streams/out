@@ -1,10 +1,10 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP1.scala.html:140: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                 @if(member.getSubjects.getHoursP == null) {
-[warn]                                                                                  ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP1.scala.html:147: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                 @if(member.getSubjects.getHoursC == null) {
-[warn]                                                                                  ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableSP1.scala.html:154: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                 @if(member.getSubjects.getCredits == null) {
-[warn]                                                                                   ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\doc\tableSPPrintDOC.scala.html:155: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                             @if(member.getSubjects.getHoursP == null) {
+[warn]                                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\doc\tableSPPrintDOC.scala.html:162: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                             @if(member.getSubjects.getHoursC == null) {
+[warn]                                                                                              ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\doc\tableSPPrintDOC.scala.html:169: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                             @if(member.getSubjects.getCredits == null) {
+[warn]                                                                                               ^
 [warn] three warnings found

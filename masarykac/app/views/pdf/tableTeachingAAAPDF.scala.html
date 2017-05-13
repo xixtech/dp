@@ -88,7 +88,6 @@ body {
                                                     @if(sch.getCourses.getId == member.getId) {
 
                                                         <tr>
-
                                                             <td class="center">
                                                             @if(member.subjects.getIdent == null) {
                                                                 <em>-</em>
@@ -142,7 +141,7 @@ body {
                                                             @if(sch.getClassRoom == null) {
                                                                 <em>-</em>
                                                             } else {
-                                                                @sch.getClassRoom
+                                                                @sch.getClassRoom.getClassroomName
                                                             }
                                                             </td>
                                                             <td class="center">
