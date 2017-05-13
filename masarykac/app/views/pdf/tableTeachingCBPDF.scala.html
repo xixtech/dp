@@ -15,15 +15,34 @@ html, body {
 }
 
 table {
-    border-collapse: collapse;
+    width: 86%;
 }
 
 td {
     border: 1px gray solid;
-    width: 5em;
+
     padding: 2px;
     font-family: Technika;
-    font-size: 10px;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
+h6 {
+
+    font-family: Technika;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
+th {
+    font-family: Technika;
+    font-size: 14px;
+}
+
+#newline {
+    page-break-before: always;
 }
 
 body {
@@ -32,7 +51,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 --></style>
 
 <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
@@ -74,6 +92,7 @@ body {
                                     <th>Učebna</th>
                                     <th>Hodin</th>
                                     <th>Týdnů</th>
+                                    <th>Podíl</th>
                                     <th>Celkem</th>
                                     <th>Přepočteno</th>
                                 </tr>
@@ -141,7 +160,7 @@ body {
                                                             @if(sch.getClassRoom == null) {
                                                                 <em>-</em>
                                                             } else {
-                                                                @sch.getClassRoom
+                                                                @sch.getClassRoom.getClassroomName
                                                             }
                                                             </td>
                                                             <td class="center">
@@ -209,5 +228,6 @@ body {
                 <!-- /.panel -->
         </div>
             <!-- /.col-lg-12 -->
+        <p id="newline"></p>
     }
 </div>

@@ -13,15 +13,34 @@ html, body {
 }
 
 table {
-    border-collapse: collapse;
+    width: 86%;
 }
 
 td {
     border: 1px gray solid;
-    width: 5em;
+
     padding: 2px;
     font-family: Technika;
-    font-size: 10px;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
+h6 {
+
+    font-family: Technika;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
+th {
+    font-family: Technika;
+    font-size: 14px;
+}
+
+#newline {
+    page-break-before: always;
 }
 
 body {
@@ -56,19 +75,19 @@ body {
                         <thead>
                             <tr>
                                 <th>Ident</th>
-                                <th>Ident_old</th>
-                                <th>Název česky</th>
-                                <th>Název anglicky</th>
-                                <th>Hodin přednášek</th>
-                                <th>Hodin cvičení</th>
-                                <th>Hodin za semestr</th>
+                                <th>Ident</br>_old</th>
+                                <th>Název </br>česky</th>
+                                <th>Název </br>anglicky</th>
+                                <th>Hodin </br>přednášek</th>
+                                <th>Hodin </br>cvičení</th>
+                                <th>Hodin </br>za semestr</th>
                                 <th>Kreditů</th>
-                                <th>Zápočet</th>
-                                <th>Zkouška</th>
-                                <th>Klasifikovaný zápočet</th>
-                                <th>Oddělení</th>
-                                <th>Prezenční forma</th>
-                                <th>Kombinovaná forma</th>
+                                <th>Z</th>
+                                <th>ZK</th>
+                                <th>Kz</th>
+                                <th>Odděl.</th>
+                                <th>Pre. </br>f.</th>
+                                <th>Kombi. </br>f.</th>
                             </tr>
                         </thead>
                         <tbody>

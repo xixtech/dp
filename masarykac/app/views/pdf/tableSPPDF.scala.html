@@ -13,20 +13,34 @@ html, body {
     background: white;
     align: center;
 }
-table {  width: 90%; }
+
+table {
+    width: 90%;
+}
 
 td {
     border: 1px gray solid;
 
     padding: 2px;
     font-family: Technika;
-    font-size: 10px;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
+h6 {
+
+    font-family: Technika;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
 }
 
 th {
     font-family: Technika;
     font-size: 14px;
 }
+
 #newline {
     page-break-before: always;
 }
@@ -107,7 +121,7 @@ body {
                                         </th>
                                         <th width="5%">
 
-                                                Z Zk  KZ
+                                            Z Zk  KZ
                                         </th>
                                         <th width="10%">
                                             Doporuč. sem.</br>

@@ -14,15 +14,34 @@ html, body {
 }
 
 table {
-    border-collapse: collapse;
+    width: 86%;
 }
 
 td {
     border: 1px gray solid;
-    width: 5em;
+
     padding: 2px;
     font-family: Technika;
-    font-size: 10px;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
+h6 {
+
+    font-family: Technika;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
+th {
+    font-family: Technika;
+    font-size: 14px;
+}
+
+#newline {
+    page-break-before: always;
 }
 
 body {
@@ -159,7 +178,7 @@ body {
                                                                         @if(sch.getClassRoom == null) {
                                                                             <em>-</em>
                                                                         } else {
-                                                                            @sch.getClassRoom
+                                                                            @sch.getClassRoom.getClassroomName
                                                                         }
                                                                         </td>
                                                                         <td class="center">
@@ -309,7 +328,7 @@ body {
                                                                         @if(sch.getClassRoom == null) {
                                                                             <em>-</em>
                                                                         } else {
-                                                                            @sch.getClassRoom
+                                                                            @sch.getClassRoom.getClassroomName
                                                                         }
                                                                         </td>
                                                                         <td class="center">
@@ -458,7 +477,7 @@ body {
                                                                         @if(sch.getClassRoom == null) {
                                                                             <em>-</em>
                                                                         } else {
-                                                                            @sch.getClassRoom
+                                                                            @sch.getClassRoom.getClassroomName
                                                                         }
                                                                         </td>
                                                                         <td class="center">
@@ -529,6 +548,7 @@ body {
                         <!-- /.col-lg-12 -->
                 }
             }
+            <p id="newline"></p>
         }
     }
 </div>

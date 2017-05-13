@@ -35,9 +35,6 @@ public class CommitteeController extends Controller {
     public Result save() {
         Form<Committee> committeeForm = formFactory.form(Committee.class).bindFromRequest();
         Form<CommitteeParticipants> committeeParticipantsForm = formFactory.form(CommitteeParticipants.class).bindFromRequest();
-        if (committeeForm.hasErrors() || committeeParticipantsForm.hasErrors()) {
-            return badRequest(views.html.registerCommittee.render(committeeForm, committeeParticipantsForm));
-        }
 
         try {
             Map<String, String[]> formData = request().body().asFormUrlEncoded();

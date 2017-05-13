@@ -13,15 +13,34 @@ html, body {
 }
 
 table {
-    border-collapse: collapse;
+    width: 85%;
 }
 
 td {
     border: 1px gray solid;
-    width: 5em;
+
     padding: 2px;
     font-family: Technika;
-    font-size: 10px;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
+h6 {
+
+    font-family: Technika;
+    font-size: 12px;
+    word-wrap: break-word; /* All browsers since IE 5.5+ */
+    overflow-wrap: break-word;
+}
+
+th {
+    font-family: Technika;
+    font-size: 14px;
+}
+
+#newline {
+    page-break-before: always;
 }
 
 body {
@@ -46,9 +65,6 @@ body {
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                Výpis oborů
-            </div>
                 <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="dataTable_wrapper">
