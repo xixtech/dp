@@ -96,6 +96,8 @@ GET         /statistics/cb                             controllers.PersonalStati
 
 GET         /dcps                                      controllers.StatisticController.index()
 GET         /sp                                        controllers.StatisticController.studyPlansTable()
+GET         /sp1                                        controllers.StatisticController.sp1()
+
 GET         /spprint                                   controllers.StatisticController.studyPlansTablePrint()
 
 # Přidat předmět

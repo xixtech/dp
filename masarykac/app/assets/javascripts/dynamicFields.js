@@ -48,7 +48,7 @@ function export2Word(element, surname, name) {
         '@page WordSection1{width:210mm;height:297mm;margin: 10px;size: portrait;font-family:Technika;background: white;align:center;}' +
         'div.WordSection1 {page: WordSection1;}' +
         'table{border-collapse:collapse;}td{border:1px gray solid;width:5em;padding:2px;font-family:Technika;}' +
-        'body{font-family:Technika; align:center;margin: 0;padding: 0;}'+
+        'body{font-family:Technika; align:center;margin: 0;padding: 0;}' +
         '</style>'
     );
     var filename = surname + "" + name;

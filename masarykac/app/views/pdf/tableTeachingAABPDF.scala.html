@@ -1,12 +1,35 @@
 @(cPage: List[Courses], tPage: List[Teachers], caabPage: List[Courses], semPage: List[Semesters], schPage: List[Schedule], schweeksPage: List[ScheduleInWeeks])
 @import helper._
 @import scala.Predef; var x = 0; var y = 0.0;var z = 0.0;
-<link href='@routes.Assets.at("stylesheets/sb-admin-2.css")' rel="stylesheet" type="text/css">
-<link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
 <meta charset="UTF-8" />
 <style type="text/css"><!--
+html, body {
+    font-family: Technika;
+    width: 210mm;
+    height: 297mm;
+    margin: 10px;
+    size: portrait;
+    background: white;
+    align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px gray solid;
+    width: 5em;
+    padding: 2px;
+    font-family: Technika;
+    font-size: 10px;
+}
+
 body {
     font-family: Technika;
+    align: center;
+    margin: 0;
+    padding: 0;
 }
 
 --></style>

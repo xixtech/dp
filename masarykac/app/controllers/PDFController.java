@@ -80,7 +80,7 @@ public class PDFController extends Controller {
         List<Courses> c = Courses.search();
         List<Teachers> teachers = Teachers.find.all();
         pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
-        return pdfGenerator.ok(views.html.pdf.tableSPPrintPDF.render(sp, f, s,sem,c,teachers), "http://localhost:9000");
+        return pdfGenerator.ok(views.html.pdf.tableSPPDF.render(sp, f, s,sem,c,teachers), "http://localhost:9000");
     }
 
     public Result pdfTableStudyGroups() {

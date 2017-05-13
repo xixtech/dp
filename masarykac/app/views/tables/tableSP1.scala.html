@@ -1,0 +1,222 @@
+@(spPage: List[StudyPlans], fPage: List[FieldsOfStudy], sbjPage: List[Subjects], semPage: List[Semesters], cPage: List[Courses], tPage: List[Teachers])
+@import helper._
+@import scala.Predef; var x = 0;var y = 0;var k = 0;
+@localStylesheets = {
+    <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
+}
+
+@localScripts = {
+
+}
+
+@main(scripts = localScripts, stylesheets = localStylesheets) {
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"></h1>
+        </div>
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-3">
+                @form(routes.StudyPlansController.index()) {
+                    <input type="submit" value="+ Přidat studijní plán" class="btn btn-success">
+                    }
+                </div>
+                <div class="col-md-3">
+                @form(routes.PDFController.pdfTableSPPrint()) {
+                    <input type="submit" value="Generovat PDF" class="btn btn-success">
+                    }
+                </div>
+                <div class="col-md-3">
+                @form(routes.DOCController.docTableSPPrint()) {
+                    <input type="submit" value="Generovat DOC" class="btn btn-success">
+                    }
+                </div>
+            </div>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="row">
+        @if(fPage.size() == 0) {
+            <p>Žádné údaje k zobrazení</p>
+        }
+        @for(f <- fPage) {
+            <div class="col-lg-12">
+                <div class="panel panel-info">
+
+                    @if(spPage.size() == 0) {
+                        <p>Žádné údaje k zobrazení</p>
+                    }
+                    @(x = 0)
+                    @(y = 0)
+                    @for(sp <- spPage) {
+                        @if(f.getId == sp.getFieldsOfStudy.getId) {
+                            @if(y == 0) {
+                                <div class="panel-heading">
+                                    <p align="center">
+                                        Studijní plán pro studenty přijaté ke studiu v @sp.getSemesters.getSemesterValue</p>
+                                    <p align="center">@f.getFieldOfStudyV (@f.getFieldOfStudy)</p>
+                                    @(y = y + 1)
+                                </div>
+                            }
+
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                @(k = 0)
+                                @if(k == 0) {
+                                    <thead>
+                                    @if(x != sp.getSemesterValue) {
+                                        <tr>
+                                            <th>
+                                                <b>@sp.getSemesterValue. semestr</b>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <h6>@sp.getStudyGroups.getStudyGroupV</h6>
+                                            </th>
+                                            <th>
+                                                <h6>@sp.getStudyGroups.getStudyGroupsNote</h6>
+                                            </th>
+                                            <th>
+                                            @(x = sp.getSemesterValue)
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+
+                                                Kód
+                                            </th>
+                                            <th>
+
+                                                Název
+                                            </th>
+                                            <th>
+
+                                                Př.
+                                            </th>
+                                            <th>
+
+                                                Cv.
+                                            </th>
+                                            <th>
+
+                                                Kr.
+                                            </th>
+                                            <th>
+                                            </br>
+                                                    &nbspZ&nbsp&nbspZk&nbsp&nbspKZ
+                                            </th>
+                                            <th>
+                                                Doporuč. sem.</br>
+                                                &nbsp1.&nbsp2.&nbsp3.&nbsp4.&nbsp5.&nbsp6.
+                                            </th>
+
+                                        </tr>
+                                        @(k = k + 1)
+
+                                    }
+                                    </thead>
+                                }
+                                <tbody>
+                                        <!-- /.panel-heading -->
+                                    @for(member <- cPage) {
+                                        @if(sp.getSubjects.getId == member.getSubjects.getId) {
+                                            <tr>
+                                                <td class="center">
+                                                @if(member.getSubjects.getIdent == null) {
+                                                    <em>-</em>
+                                                } else {
+                                                    @member.getSubjects.getIdent
+                                                }
+                                                </td>
+                                                <td class="center">
+                                                @if(member.getSubjects.getTitleC == null) {
+                                                    <em>-</em>
+                                                } else {
+                                                    @member.getSubjects.getTitleC
+                                                }
+                                                </td>
+                                                <td class="center">
+                                                @if(member.getSubjects.getHoursP == null) {
+                                                    <em>-</em>
+                                                } else {
+                                                    @member.getSubjects.getHoursP
+                                                }
+                                                </td>
+                                                <td class="center">
+                                                @if(member.getSubjects.getHoursC == null) {
+                                                    <em>-</em>
+                                                } else {
+                                                    @member.getSubjects.getHoursC
+                                                }
+                                                </td>
+                                                <td class="center">
+                                                @if(member.getSubjects.getCredits == null) {
+                                                    <em>-</em>
+                                                } else {
+                                                    @member.getSubjects.getCredits
+                                                }
+                                                </td>
+                                                <td class="center">
+                                                    @if(member.getSubjects.isCredit == true) {
+                                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                                    } else {
+                                                        <input type="checkbox" onclick="return false;">
+                                                    }&nbsp
+                                                    @if(member.getSubjects.isExam == true) {
+                                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                                    } else {
+                                                        <input type="checkbox" onclick="return false;">
+                                                    }&nbsp
+                                                    @if(member.getSubjects.isClassifiedCredit == true) {
+                                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                                    } else {
+                                                        <input type="checkbox" onclick="return false;">
+                                                        }
+                                                </td>
+                                                <td class="center">
+                                                    @if(sp.getSemesterValue == 1) {
+                                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                                    } else {
+                                                        <input type="checkbox" onclick="return false;">
+                                                    }
+                                                    @if(sp.getSemesterValue == 2) {
+                                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                                    } else {
+                                                        <input type="checkbox" onclick="return false;">
+                                                    }
+                                                    @if(sp.getSemesterValue == 3) {
+                                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                                    } else {
+                                                        <input type="checkbox" onclick="return false;">
+                                                    }
+                                                    @if(sp.getSemesterValue == 4) {
+                                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                                    } else {
+                                                        <input type="checkbox" onclick="return false;">
+                                                    }
+                                                    @if(sp.getSemesterValue == 5) {
+                                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                                    } else {
+                                                        <input type="checkbox" onclick="return false;">
+                                                    }
+                                                    @if(sp.getSemesterValue == 6) {
+                                                        <input type="checkbox" checked="checked" onclick="return false;">
+                                                    } else {
+                                                        <input type="checkbox" onclick="return false;">
+                                                        }
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+
+                        }
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}

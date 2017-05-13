@@ -375,7 +375,7 @@ Seq[Any](format.raw/*1.4*/("""
 object panelsAndWells extends panelsAndWells_Scope0.panelsAndWells
               /*
                   -- GENERATED --
-                  DATE: Fri May 12 19:58:23 CEST 2017
+                  DATE: Sat May 13 11:42:20 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/uielements/panelsAndWells.scala.html
                   HASH: 3a7ad94fda7fc7c5d1a8a17a26947341453e5b0e
                   MATRIX: 767->1|863->3|891->6|904->12|943->14|974->19
