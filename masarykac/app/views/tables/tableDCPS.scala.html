@@ -34,6 +34,23 @@
         <div class="col-lg-12">
             <h1 class="page-header"></h1>
         </div>
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                @form(routes.PDFController.pdfTableDCPS()) {
+                    <input type="submit" value="Generovat PDF" class="btn btn-success">
+                    }
+                </div>
+                <div class="col-md-3">
+                @form(routes.DOCController.docTableDCPS()) {
+                    <input type="submit" value="Generovat DOC" class="btn btn-success">
+                    }
+                </div>
+            </div>
+        </div>
             <!-- /.col-lg-12 -->
     </div>
         <!-- /.row -->
@@ -54,8 +71,8 @@
                         @if(f.getId == sp.getFieldsOfStudy.getId) {
                             @if(y == 0) {
                                 <div class="panel-heading">
-                                    <p>Studijní plán pro studenty přijaté ke studiu v @sp.getSemesters.getSemesterValue</p>
-                                    <p>@f.getFieldOfStudyV (@f.getFieldOfStudy)</p>
+                                    <p align="center">Studijní plán pro studenty přijaté ke studiu v @sp.getSemesters.getSemesterValue</p>
+                                    <p align="center">@f.getFieldOfStudyV (@f.getFieldOfStudy)</p>
                                     @(y=y+1)
                                 </div>
                             }

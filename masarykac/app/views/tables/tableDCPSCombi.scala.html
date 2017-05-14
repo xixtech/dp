@@ -33,6 +33,23 @@
         <div class="col-lg-12">
             <h1 class="page-header"></h1>
         </div>
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+                @form(routes.PDFController.pdfTableDCPSCombi()) {
+                    <input type="submit" value="Generovat PDF" class="btn btn-success">
+                    }
+                </div>
+                <div class="col-md-3">
+                @form(routes.DOCController.docTableDCPSCombi()) {
+                    <input type="submit" value="Generovat DOC" class="btn btn-success">
+                    }
+                </div>
+            </div>
+        </div>
             <!-- /.col-lg-12 -->
     </div>
         <!-- /.row -->
@@ -54,7 +71,7 @@
                             @(c = 0)
                             @for(member <- cPage) {
                                 @if(sp.getSubjects.getId == member.getSubjects.getId) {
-                                    @if(member.getSubjects.isFormPresentation == true) {
+                                    @if(member.getSubjects.isFormCombined == true) {
                                         @(c = c + 1)
                                     }
                                 }
@@ -62,8 +79,8 @@
                             @if(c != 0) {
                                 @if(y == 0) {
                                     <div class="panel-heading">
-                                        <p>Studijní plán pro studenty přijaté ke studiu v @sp.getSemesters.getSemesterValue</p>
-                                        <p>@f.getFieldOfStudyV (@f.getFieldOfStudy)</p>
+                                        <p align="center">Studijní plán pro studenty přijaté ke studiu v @sp.getSemesters.getSemesterValue</p>
+                                        <p align="center">@f.getFieldOfStudyV (@f.getFieldOfStudy)</p>
                                         @(y = y + 1)
                                     </div>
                                 }

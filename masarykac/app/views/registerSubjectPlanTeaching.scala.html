@@ -46,7 +46,36 @@
                 employeeArray(MyUserObject);
                 document.getElementById('addToAllWeeks').style.visibility = 'hidden';
 
+
+                var newDiv = document.createElement('div');
+                var mapKey = "@Semesters.getKey()";
+                var mapValue = "@Semesters.getValue()";
+                var testKey = mapKey.split(";");
+                var testValue = mapValue.split(";");
+
+                var i, out = [];//literal new array
+                for (i = 0; i < testKey.length; i++) {
+                    out.push([testKey[i], testValue[i]]);
+                }
+
+                var selectHTML = "";
+                selectHTML = " <label for='xxx'>Semestr*:</label><select class='form-control' id='xxx' name='semester.id' onchange='getComboA(this)' >";
+                for (i = 0; i < out.length; i = i + 1) {
+                    selectHTML += "<option value='" + out[i][0] + "'>" + out[i][1] + "</option>";
+
+                }
+                selectHTML += "</select>";
+                newDiv.innerHTML = selectHTML;
+                document.getElementById('sel').appendChild(newDiv);
+
             });
+
+            function getComboA(selectObject) {
+                var value = selectObject.value;
+                var fr = "@Semesters.findById('1')";
+                document.getElementById('identOld').value = fr.value;
+
+            }
 
             $('.timepicker').timepicker({
                 timeFormat: 'HH:mm',
@@ -61,7 +90,7 @@
             });
 
 
-            $('input[type="checkbox"][id="formPresentation"]').on('change',function(){
+            $('input[type="checkbox"][id="formPresentation"]').on('change', function () {
                 var pres = document.getElementById('formPresentation');
                 var combi = document.getElementById('formCombined');
                 var isChecked = false;
@@ -69,7 +98,7 @@
                 if (pres.checked || combi.checked) {
                     isChecked = true;
                 }
-                if ( isChecked ) {
+                if (isChecked) {
                     document.getElementById("formPresentation").required = false;
                     document.getElementById("formCombined").required = false;
                 } else {
@@ -187,14 +216,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                @select(
-                                    coursesForm("semester.id"),
-                                    options(Semesters.options()),
-                                    '_label -> "Semestr",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> coursesForm.globalError
-                                )
+                                    <div id="sel">
+                                    </div>
+
                                 </div>
                                 <div class="col-md-3">
                                     <label for="course">Kurz*:</label>
@@ -262,11 +286,11 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <label>
-                                                                    Semestr začíná: <input type="date" class="form-control" id="startSemester" onblur="setStartWeek();"/> </label>
+                                                                    Semestr začíná: <input type="date" class="form-control" id="startSemester" value="01.01.2017" onblur="setStartWeek();"/> </label>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <label>
-                                                                    Semestr končí: <input type="date" class="form-control" id="endSemester"/> </label>
+                                                                    Semestr končí: <input type="date" class="form-control" value="01.07.2017" id="endSemester"/> </label>
                                                             </div>
                                                         </div>
                                                         <div id="MyEdit">
@@ -305,12 +329,14 @@
 
                                                 </div>
                                                 <div class="col-md-8" id="teacherToEveryWeek" style="display: none">
-                                                    <input type="button" id="addCourseT" class="btn btn-default" value="Přidat vyučující ke všem týdnům" onclick="addCourseTeacher1();" />
                                                     <div class="row">
-                                                    </br>
+                                                        <input type="button" id="addCourseT" class="btn btn-default" value="Přidat vyučující ke všem týdnům" onclick="addCourseTeacher1();" />
+                                                        <div class="row">
+                                                        </br>
+                                                        </div>
+                                                        <div id="radky"></div>
+                                                        <input type="button" id="addToAllWeeks" class="btn btn-outline btn-primary" value="Přidat k týdnům" onclick="addCourseTeacherWeeksByDefault()" />
                                                     </div>
-                                                    <div id="radky"></div>
-                                                    <input type="button" id="addToAllWeeks" class="btn btn-outline btn-primary" value="Přidat k týdnům" onclick="addCourseTeacherWeeksByDefault()" />
                                                 </div>
                                             </br>
                                             </div>

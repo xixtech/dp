@@ -31,6 +31,42 @@ public class PDFController extends Controller {
         return pdfGenerator.ok(views.html.pdf.tableAccessRolePDF.render(AccessRole.search()), "http://localhost:9000");
     }
 
+    public Result pdfTableDCPS() {
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.search();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.search();
+        List<Teachers> teachers = Teachers.find.all();
+        pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
+        return pdfGenerator.ok(views.html.pdf.tableDCPSPDF.render(sp, f, s, sem, c, teachers), "http://localhost:9000");
+    }
+
+    public Result pdfTableDCPSPres() {
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.searchPresentation();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.searchPresentation();
+        List<Teachers> teachers = Teachers.find.all();
+        pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
+        return pdfGenerator.ok(views.html.pdf.tableDCPSPresPDF.render(sp, f, s, sem, c, teachers), "http://localhost:9000");
+    }
+
+    public Result pdfTableDCPSCombi() {
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.searchCombi();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.searchCombi();
+        List<Teachers> teachers = Teachers.find.all();
+        pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
+        return pdfGenerator.ok(views.html.pdf.tableDCPSCombiPDF.render(sp, f, s, sem, c, teachers), "http://localhost:9000");
+    }
+
     public Result pdfTableClassroom() {
         pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
         return pdfGenerator.ok(views.html.pdf.tableClassroomPDF.render(Classroom.search()), "http://localhost:9000");
@@ -80,7 +116,7 @@ public class PDFController extends Controller {
         List<Courses> c = Courses.search();
         List<Teachers> teachers = Teachers.find.all();
         pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
-        return pdfGenerator.ok(views.html.pdf.tableSPPDF.render(sp, f, s,sem,c,teachers), "http://localhost:9000");
+        return pdfGenerator.ok(views.html.pdf.tableSPPDF.render(sp, f, s, sem, c, teachers), "http://localhost:9000");
     }
 
     public Result pdfTableStudyGroups() {

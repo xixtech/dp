@@ -26,6 +26,39 @@ public class DOCController extends Controller {
         return ok(views.html.doc.tableAccessRoleDOC.render(AccessRole.search()));
     }
 
+    public Result docTableDCPS() {
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.search();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.search();
+        List<Teachers> teachers = Teachers.find.all();
+        return ok(views.html.doc.tableDCPSDOC.render(sp, f, s, sem, c, teachers));
+    }
+
+    public Result docTableDCPSPres() {
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.searchPresentation();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.searchPresentation();
+        List<Teachers> teachers = Teachers.find.all();
+        return ok(views.html.doc.tableDCPSPresDOC.render(sp, f, s, sem, c, teachers));
+    }
+
+    public Result docTableDCPSCombi() {
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.searchCombi();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.searchCombi();
+        List<Teachers> teachers = Teachers.find.all();
+        return ok(views.html.doc.tableDCPSCombiDOC.render(sp, f, s, sem, c, teachers));
+    }
+
     public Result docTableClassroom() {
         return ok(views.html.doc.tableClassroomDOC.render(Classroom.search()));
     }

@@ -1,6 +1,6 @@
 @(ojPage: List[OrganizationalUnitsParticipants], ePage: List[Employees], cPage: List[Courses], sPage: List[Subjects], tPage: List[Teachers], caaaPage: List[Courses], caabPage: List[Courses], cbPage: List[Courses], semPage: List[Semesters], schPage: List[Schedule], schweeksPage: List[ScheduleInWeeks])
 @import helper._
-@import scala.Predef; var x = 0; var y = 0.0;var z = 0.0;
+@import scala.Predef; var x = 0; var y = 0.0;var z = 0.0;var c = 0;
 <meta charset="UTF-8" />
 <style type="text/css"><!--
 html, body {
@@ -85,473 +85,507 @@ body {
                     <p>Žádné údaje k zobrazení</p>
                 }
                 @for(sem <- semPage) {
-                    @sem.getSemesterVD
+                    @(c = 0)
+                    @for(member <- caaaPage) {
+                        @if(sem.getId == member.getSemester.getId) {
+                            @for(t <- tPage) {
+                                @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
+                                    @(c = c + 1)
+                                }
+                            }
+                        }
+                    }
+                    @for(member <- caabPage) {
+                        @if(sem.getId == member.getSemester.getId) {
+                            @for(t <- tPage) {
+                                @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
+                                    @(c = c + 1)
+                                }
+                            }
+                        }
+                    }
+                    @for(member <- cbPage) {
+                        @if(sem.getId == member.getSemester.getId) {
+                            @for(t <- tPage) {
+                                @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
+                                    @(c = c + 1)
+                                }
+                            }
+                        }
+                    }
 
-                    <hr>
+                    @if(c != 0) {
 
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Ukazatel AAA
-                            </div>
-                                <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div class="dataTable_wrapper">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <thead>
-                                            <tr>
-                                                <th>Ident</th>
-                                                <th>Název česky</th>
-                                                <th>Kurz</th>
-                                                <th>Studentů</th>
-                                                <th>Den</th>
-                                                <th>Od</th>
-                                                <th>Do</th>
-                                                <th>Učebna</th>
-                                                <th>Hodin</th>
-                                                <th>Týdnů</th>
-                                                <th>Podíl</th>
-                                                <th>Celkem</th>
-                                                <th>Přepočteno</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @(y = 0)
-                                            @(z = 0)
-                                            @for(member <- caaaPage) {
-                                                @if(sem.getId == member.getSemester.getId) {
-                                                    @for(t <- tPage) {
-                                                        @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
-                                                            @for(sch <- schPage) {
-                                                                @if(sch.getCourses.getId == member.getId) {
+                        @sem.getSemesterVD
+                        <hr>
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Ukazatel AAA
+                                </div>
+                                    <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="dataTable_wrapper">
 
-                                                                    <tr>
-
-                                                                        <td class="center">
-                                                                        @if(member.subjects.getIdent == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.subjects.getIdent
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(member.subjects.getTitleC == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.subjects.getTitleC
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(member.course == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.course
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(member.numberOfStudents == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.numberOfStudents
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getDay.getDayV == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getDay.getDayV
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getScheduleFrom == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getScheduleFrom
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getScheduleTo == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getScheduleTo
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getClassRoom == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getClassRoom.getClassroomName
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getDuration == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getDuration
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                            @(x = 0)
-                                                                            @for(schw <- schweeksPage) {
-                                                                                @if(sch.getId == schw.getSchedule.getId) {
-                                                                                    @(x = x + 1)
-                                                                                }
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ident</th>
+                                                    <th>Název česky</th>
+                                                    <th>Kurz</th>
+                                                    <th>Studentů</th>
+                                                    <th>Den</th>
+                                                    <th>Od</th>
+                                                    <th>Do</th>
+                                                    <th>Učebna</th>
+                                                    <th>Hodin</th>
+                                                    <th>Týdnů</th>
+                                                    <th>Podíl</th>
+                                                    <th>Celkem</th>
+                                                    <th>Přepočteno</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @(y = 0)
+                                                @(z = 0)
+                                                @for(member <- caaaPage) {
+                                                    @if(sem.getId == member.getSemester.getId) {
+                                                        @for(t <- tPage) {
+                                                            @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
+                                                                @for(sch <- schPage) {
+                                                                    @if(sch.getCourses.getId == member.getId) {
+                                                                        <tr>
+                                                                            <td class="center">
+                                                                            @if(member.subjects.getIdent == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.subjects.getIdent
                                                                             }
-                                                                            @x
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(t.getScale == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @(math.ceil(t.getScale * 100))
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(t.getSummary == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @(t.getSummary)
-                                                                            @(y = y + t.getSummary)
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(t.getRecountedSummary == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @(t.getRecountedSummary)
-                                                                            @(z = z + t.getRecountedSummary)
-                                                                        }
-                                                                        </td>
-                                                                    </tr>
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(member.subjects.getTitleC == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.subjects.getTitleC
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(member.course == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.course
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(member.numberOfStudents == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.numberOfStudents
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getDay.getDayV == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getDay.getDayV
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getScheduleFrom == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getScheduleFrom
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getScheduleTo == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getScheduleTo
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getClassRoom == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getClassRoom.getClassroomName
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getDuration == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getDuration
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                                @(x = 0)
+                                                                                @for(schw <- schweeksPage) {
+                                                                                    @if(sch.getId == schw.getSchedule.getId) {
+                                                                                        @(x = x + 1)
+                                                                                    }
+                                                                                }
+                                                                                @x
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(t.getScale == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @(math.ceil(t.getScale * 100))
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(t.getSummary == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @(t.getSummary)
+                                                                                @(y = y + t.getSummary)
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(t.getRecountedSummary == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @(t.getRecountedSummary)
+                                                                                @(z = z + t.getRecountedSummary)
+                                                                            }
+                                                                            </td>
+                                                                        </tr>
+                                                                    }
                                                                 }
                                                             }
                                                         }
                                                     }
                                                 }
-                                            }
-                                        <table class="table ">
-                                            <tr align="right">
-                                                <td class="right">
-                                                    @(y = y / 13)
-                                                    Celkem: @BigDecimal(y).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
-                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                    @(z = z / 13)
-                                                    Celkem: @BigDecimal(z).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble &nbsp; &nbsp; &nbsp;
-                                                </td>
-                                            </tr>
+                                                <table class="table ">
+                                                    <tr align="right">
+                                                        <td class="right">
+                                                            @(y = y / 13)
+                                                            Celkem: @BigDecimal(y).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+                                                            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                            @(z = z / 13)
+                                                            Celkem: @BigDecimal(z).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </tbody>
                                         </table>
-                                        </tbody>
-                                    </table>
+                                    </div>
                                 </div>
-                            </div>
-                                <!-- /.table-responsive -->
-                            <div class="panel-heading">
-                                Ukazatel AAB
-                            </div>
-                                <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div class="dataTable_wrapper">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <thead>
-                                            <tr>
-                                                <th>Ident</th>
-                                                <th>Název česky</th>
-                                                <th>Kurz</th>
-                                                <th>Studentů</th>
-                                                <th>Den</th>
-                                                <th>Od</th>
-                                                <th>Do</th>
-                                                <th>Učebna</th>
-                                                <th>Hodin</th>
-                                                <th>Týdnů</th>
-                                                <th>Podíl</th>
-                                                <th>Celkem</th>
-                                                <th>Přepočteno</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @(y = 0)
-                                            @(z = 0)
-                                            @for(member <- caabPage) {
-                                                @if(sem.getId == member.getSemester.getId) {
-                                                    @for(t <- tPage) {
-                                                        @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
-                                                            @for(sch <- schPage) {
-                                                                @if(sch.getCourses.getId == member.getId) {
-                                                                    <tr>
-                                                                        <td class="center">
-                                                                        @if(member.subjects.getIdent == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.subjects.getIdent
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(member.subjects.getTitleC == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.subjects.getTitleC
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(member.course == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.course
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(member.numberOfStudents == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.numberOfStudents
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getDay.getDayV == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getDay.getDayV
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getScheduleFrom == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getScheduleFrom
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getScheduleTo == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getScheduleTo
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getClassRoom == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getClassRoom.getClassroomName
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getDuration == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getDuration
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                            @(x = 0)
-                                                                            @for(schw <- schweeksPage) {
-                                                                                @if(sch.getId == schw.getSchedule.getId) {
-                                                                                    @(x = x + 1)
-                                                                                }
+                                    <!-- /.table-responsive -->
+                                <div class="panel-heading">
+                                    Ukazatel AAB
+                                </div>
+                                    <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="dataTable_wrapper">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ident</th>
+                                                    <th>Název česky</th>
+                                                    <th>Kurz</th>
+                                                    <th>Studentů</th>
+                                                    <th>Den</th>
+                                                    <th>Od</th>
+                                                    <th>Do</th>
+                                                    <th>Učebna</th>
+                                                    <th>Hodin</th>
+                                                    <th>Týdnů</th>
+                                                    <th>Podíl</th>
+                                                    <th>Celkem</th>
+                                                    <th>Přepočteno</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @(y = 0)
+                                                @(z = 0)
+                                                @for(member <- caabPage) {
+                                                    @if(sem.getId == member.getSemester.getId) {
+                                                        @for(t <- tPage) {
+                                                            @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
+                                                                @for(sch <- schPage) {
+                                                                    @if(sch.getCourses.getId == member.getId) {
+                                                                        <tr>
+                                                                            <td class="center">
+                                                                            @if(member.subjects.getIdent == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.subjects.getIdent
                                                                             }
-                                                                            @x
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(t.getScale == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @(math.ceil(t.getScale * 100))
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(t.getSummary == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @(t.getSummary)
-                                                                            @(y = y + t.getSummary)
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(t.getRecountedSummary == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @(t.getRecountedSummary)
-                                                                            @(z = z + t.getRecountedSummary)
-                                                                        }
-                                                                        </td>
-                                                                    </tr>
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(member.subjects.getTitleC == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.subjects.getTitleC
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(member.course == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.course
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(member.numberOfStudents == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.numberOfStudents
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getDay.getDayV == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getDay.getDayV
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getScheduleFrom == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getScheduleFrom
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getScheduleTo == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getScheduleTo
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getClassRoom == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getClassRoom.getClassroomName
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getDuration == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getDuration
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                                @(x = 0)
+                                                                                @for(schw <- schweeksPage) {
+                                                                                    @if(sch.getId == schw.getSchedule.getId) {
+                                                                                        @(x = x + 1)
+                                                                                    }
+                                                                                }
+                                                                                @x
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(t.getScale == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @(math.ceil(t.getScale * 100))
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(t.getSummary == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @(t.getSummary)
+                                                                                @(y = y + t.getSummary)
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(t.getRecountedSummary == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @(t.getRecountedSummary)
+                                                                                @(z = z + t.getRecountedSummary)
+                                                                            }
+                                                                            </td>
+                                                                        </tr>
+                                                                    }
                                                                 }
                                                             }
                                                         }
                                                     }
                                                 }
-                                            }
-                                        <table class="table ">
-                                            <tr align="right">
-                                                <td class="right">
-                                                    @(y = y / 13)
-                                                    Celkem: @BigDecimal(y).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
-                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                    @(z = z / 13)
-                                                    Celkem: @BigDecimal(z).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble &nbsp; &nbsp; &nbsp;
-                                                </td>
-                                            </tr>
+                                                <table class="table ">
+                                                    <tr align="right">
+                                                        <td class="right">
+                                                            @(y = y / 13)
+                                                            Celkem: @BigDecimal(y).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+                                                            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                            @(z = z / 13)
+                                                            Celkem: @BigDecimal(z).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </tbody>
                                         </table>
-                                        </tbody>
-                                    </table>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="panel-heading">
-                                Ukazatel CB
-                            </div>
-                                <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div class="dataTable_wrapper">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <thead>
-                                            <tr>
-                                                <th>Ident</th>
-                                                <th>Název česky</th>
-                                                <th>Kurz</th>
-                                                <th>Studentů</th>
-                                                <th>Den</th>
-                                                <th>Od</th>
-                                                <th>Do</th>
-                                                <th>Učebna</th>
-                                                <th>Hodin</th>
-                                                <th>Týdnů</th>
-                                                <th>Podíl</th>
-                                                <th>Celkem</th>
-                                                <th>Přepočteno</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @(y = 0)
-                                            @(z = 0)
-                                            @for(member <- cbPage) {
-                                                @if(sem.getId == member.getSemester.getId) {
-                                                    @for(t <- tPage) {
-                                                        @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
-                                                            @for(sch <- schPage) {
-                                                                @if(sch.getCourses.getId == member.getId) {
-                                                                    <tr>
-                                                                        <td class="center">
-                                                                        @if(member.subjects.getIdent == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.subjects.getIdent
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(member.subjects.getTitleC == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.subjects.getTitleC
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(member.course == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.course
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(member.numberOfStudents == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @member.numberOfStudents
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getDay.getDayV == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getDay.getDayV
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getScheduleFrom == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getScheduleFrom
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getScheduleTo == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getScheduleTo
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getClassRoom == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getClassRoom.getClassroomName
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(sch.getDuration == null) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @sch.getDuration
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                            @(x = 0)
-                                                                            @for(schw <- schweeksPage) {
-                                                                                @if(sch.getId == schw.getSchedule.getId) {
-                                                                                    @(x = x + 1)
-                                                                                }
+                                <div class="panel-heading">
+                                    Ukazatel CB
+                                </div>
+                                    <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="dataTable_wrapper">
+
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ident</th>
+                                                    <th>Název česky</th>
+                                                    <th>Kurz</th>
+                                                    <th>Studentů</th>
+                                                    <th>Den</th>
+                                                    <th>Od</th>
+                                                    <th>Do</th>
+                                                    <th>Učebna</th>
+                                                    <th>Hodin</th>
+                                                    <th>Týdnů</th>
+                                                    <th>Podíl</th>
+                                                    <th>Celkem</th>
+                                                    <th>Přepočteno</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @(y = 0)
+                                                @(z = 0)
+                                                @for(member <- cbPage) {
+                                                    @if(sem.getId == member.getSemester.getId) {
+                                                        @for(t <- tPage) {
+                                                            @if((t.getEmployees.getId == ounits.getEmployees.getId) && (t.getCourses.getId == member.getId)) {
+                                                                @for(sch <- schPage) {
+                                                                    @if(sch.getCourses.getId == member.getId) {
+                                                                        <tr>
+                                                                            <td class="center">
+                                                                            @if(member.subjects.getIdent == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.subjects.getIdent
                                                                             }
-                                                                            @x
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(t.getScale == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @(math.ceil(t.getScale * 100))
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(t.getSummary == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @(t.getSummary)
-                                                                            @(y = y + t.getSummary)
-                                                                        }
-                                                                        </td>
-                                                                        <td class="center">
-                                                                        @if(t.getRecountedSummary == 0) {
-                                                                            <em>-</em>
-                                                                        } else {
-                                                                            @(t.getRecountedSummary)
-                                                                            @(z = z + t.getRecountedSummary)
-                                                                        }
-                                                                        </td>
-                                                                    </tr>
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(member.subjects.getTitleC == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.subjects.getTitleC
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(member.course == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.course
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(member.numberOfStudents == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @member.numberOfStudents
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getDay.getDayV == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getDay.getDayV
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getScheduleFrom == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getScheduleFrom
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getScheduleTo == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getScheduleTo
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getClassRoom == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getClassRoom.getClassroomName
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(sch.getDuration == null) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @sch.getDuration
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                                @(x = 0)
+                                                                                @for(schw <- schweeksPage) {
+                                                                                    @if(sch.getId == schw.getSchedule.getId) {
+                                                                                        @(x = x + 1)
+                                                                                    }
+                                                                                }
+                                                                                @x
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(t.getScale == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @(math.ceil(t.getScale * 100))
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(t.getSummary == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @(t.getSummary)
+                                                                                @(y = y + t.getSummary)
+                                                                            }
+                                                                            </td>
+                                                                            <td class="center">
+                                                                            @if(t.getRecountedSummary == 0) {
+                                                                                <em>-</em>
+                                                                            } else {
+                                                                                @(t.getRecountedSummary)
+                                                                                @(z = z + t.getRecountedSummary)
+                                                                            }
+                                                                            </td>
+                                                                        </tr>
+                                                                    }
                                                                 }
                                                             }
                                                         }
                                                     }
+
                                                 }
-                                            }
-                                        <table class="table ">
-                                            <tr align="right">
-                                                <td class="right">
-                                                    @(y = y / 13)
-                                                    Celkem: @BigDecimal(y).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
-                                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                                    @(z = z / 13)
-                                                    Celkem: @BigDecimal(z).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble &nbsp; &nbsp; &nbsp;
-                                                </td>
-                                            </tr>
+                                                <table class="table ">
+                                                    <tr align="right">
+                                                        <td class="right">
+                                                            @(y = y / 13)
+                                                            Celkem: @BigDecimal(y).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+                                                            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                                                            @(z = z / 13)
+                                                            Celkem: @BigDecimal(z).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </tbody>
                                         </table>
-                                        </tbody>
-                                    </table>
+                                    </div>
                                 </div>
+                                    <!-- /.panel-body -->
                             </div>
-                                <!-- /.panel-body -->
+                                <!-- /.panel -->
                         </div>
-                            <!-- /.panel -->
-                    </div>
-                        <!-- /.col-lg-12 -->
+                            <!-- /.col-lg-12 -->
+                    } else {
+                        <p>@sem.getSemesterVD </br>
+                            V tomto období není evidován žádný vyučovaný předmět ve sledovaných kategoriích u tohoto zaměstnance.</p> </br> <hr>
+                    }
                 }
             }
             <p id="newline"></p>

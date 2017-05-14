@@ -165,6 +165,9 @@ GET         /sub/add                                   controllers.SubjectPlanTe
 POST        /sub/saved                                 controllers.SubjectPlanTeachingController.save()
 
 GET         /pdfTableAccessRole                        controllers.PDFController.pdfTableAccessRole()
+GET         /pdfTableDCPS                              controllers.PDFController.pdfTableDCPS()
+GET         /pdfTableDCPSPres                          controllers.PDFController.pdfTableDCPSPres()
+GET         /pdfTableDCPSCombi                         controllers.PDFController.pdfTableDCPSCombi()
 GET         /pdfTableClassroom                         controllers.PDFController.pdfTableClassroom()
 GET         /pdfTableCommittee                         controllers.PDFController.pdfTableCommittee()
 GET         /pdfTableEmployees                         controllers.PDFController.pdfTableEmployees()
@@ -181,6 +184,9 @@ GET         /pdfTableTeachingCB                        controllers.PDFController
 GET         /pdfTableTeachingDepartmentEmployee        controllers.PDFController.pdfTableTeachingDepartmentEmployee()
 
 GET         /docTableAccessRole                        controllers.DOCController.docTableAccessRole()
+GET         /docTableDCPS                              controllers.DOCController.docTableDCPS()
+GET         /docTableDCPSPres                          controllers.DOCController.docTableDCPSPres()
+GET         /docTableDCPSCombi                         controllers.DOCController.docTableDCPSCombi()
 GET         /docTableClassroom                         controllers.DOCController.docTableClassroom()
 GET         /docTableCommittee                         controllers.DOCController.docTableCommittee()
 GET         /docTableEmployees                         controllers.DOCController.docTableEmployees()

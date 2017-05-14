@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sun May 14 11:27:35 CEST 2017
+// @DATE:Sun May 14 22:44:42 CEST 2017
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -34,14 +34,14 @@ package controllers {
   
   }
 
-  // @LINE:213
+  // @LINE:219
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:213
+    // @LINE:219
     def at(file:String): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
@@ -157,20 +157,20 @@ package controllers {
   
   }
 
-  // @LINE:205
+  // @LINE:211
   class ReversePrintController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:205
+    // @LINE:211
     def printUserDetails(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "users/moje/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:206
+    // @LINE:212
     def detailsList(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "users/moje/" + implicitly[PathBindable[Long]].unbind("id", id))
@@ -668,7 +668,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "pdf")
     }
   
-    // @LINE:202
+    // @LINE:208
     def logout(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "logout")
@@ -778,98 +778,116 @@ package controllers {
   
   }
 
-  // @LINE:183
+  // @LINE:186
   class ReverseDOCController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:187
+    // @LINE:189
+    def docTableDCPSCombi(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "docTableDCPSCombi")
+    }
+  
+    // @LINE:193
     def docTableFieldsOfStudy(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableFieldsOfStudy")
     }
   
-    // @LINE:185
+    // @LINE:191
     def docTableCommittee(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableCommittee")
     }
   
-    // @LINE:191
+    // @LINE:197
     def docTableStudyPlans(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableStudyPlans")
     }
   
-    // @LINE:193
+    // @LINE:199
     def docTableTeachingAAA(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableTeachingAAA")
     }
   
-    // @LINE:186
+    // @LINE:192
     def docTableEmployees(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableEmployees")
     }
   
-    // @LINE:183
+    // @LINE:186
     def docTableAccessRole(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableAccessRole")
     }
   
-    // @LINE:190
+    // @LINE:196
     def docTableStudyGroups(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableStudyGroups")
     }
   
-    // @LINE:196
+    // @LINE:202
     def docTableTeachingCB(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableTeachingCB")
     }
   
-    // @LINE:194
+    // @LINE:200
     def docTableTeachingAAB(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableTeachingAAB")
     }
   
-    // @LINE:188
+    // @LINE:187
+    def docTableDCPS(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "docTableDCPS")
+    }
+  
+    // @LINE:194
     def docTablePublication(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTablePublication")
     }
   
-    // @LINE:189
+    // @LINE:188
+    def docTableDCPSPres(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "docTableDCPSPres")
+    }
+  
+    // @LINE:195
     def docTableSPPrint(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableSPPrint")
     }
   
-    // @LINE:195
+    // @LINE:201
     def docTableTeachingAccordingToPersons(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableTeachingAccordingToPersons")
     }
   
-    // @LINE:184
+    // @LINE:190
     def docTableClassroom(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableClassroom")
     }
   
-    // @LINE:197
+    // @LINE:203
     def docTableTeachingDepartmentEmployee(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableTeachingDepartmentEmployee")
     }
   
-    // @LINE:192
+    // @LINE:198
     def docTableSubjects(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "docTableSubjects")
@@ -989,7 +1007,13 @@ package controllers {
     }
 
   
-    // @LINE:171
+    // @LINE:169
+    def pdfTableDCPSPres(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "pdfTableDCPSPres")
+    }
+  
+    // @LINE:174
     def pdfTableFieldsOfStudy(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableFieldsOfStudy")
@@ -1001,79 +1025,91 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableAccessRole")
     }
   
-    // @LINE:170
+    // @LINE:173
     def pdfTableEmployees(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableEmployees")
     }
   
-    // @LINE:175
+    // @LINE:178
     def pdfTableStudyPlans(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableStudyPlans")
     }
   
-    // @LINE:180
+    // @LINE:170
+    def pdfTableDCPSCombi(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "pdfTableDCPSCombi")
+    }
+  
+    // @LINE:183
     def pdfTableTeachingCB(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableTeachingCB")
     }
   
-    // @LINE:181
+    // @LINE:168
+    def pdfTableDCPS(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "pdfTableDCPS")
+    }
+  
+    // @LINE:184
     def pdfTableTeachingDepartmentEmployee(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableTeachingDepartmentEmployee")
     }
   
-    // @LINE:179
+    // @LINE:182
     def pdfTableTeachingAccordingToPersons(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableTeachingAccordingToPersons")
     }
   
-    // @LINE:169
+    // @LINE:172
     def pdfTableCommittee(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableCommittee")
     }
   
-    // @LINE:168
+    // @LINE:171
     def pdfTableClassroom(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableClassroom")
     }
   
-    // @LINE:176
+    // @LINE:179
     def pdfTableSubjects(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableSubjects")
     }
   
-    // @LINE:172
+    // @LINE:175
     def pdfTablePublication(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTablePublication")
     }
   
-    // @LINE:178
+    // @LINE:181
     def pdfTableTeachingAAB(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableTeachingAAB")
     }
   
-    // @LINE:174
+    // @LINE:177
     def pdfTableStudyGroups(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableStudyGroups")
     }
   
-    // @LINE:177
+    // @LINE:180
     def pdfTableTeachingAAA(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableTeachingAAA")
     }
   
-    // @LINE:173
+    // @LINE:176
     def pdfTableSPPrint(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "pdfTableSPPrint")
@@ -1081,20 +1117,20 @@ package controllers {
   
   }
 
-  // @LINE:199
+  // @LINE:205
   class ReverseIdeasController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:200
+    // @LINE:206
     def save(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "regidea/saved")
     }
   
-    // @LINE:199
+    // @LINE:205
     def index(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "regidea")
@@ -1244,7 +1280,7 @@ package controllers {
     }
 
   
-    // @LINE:208
+    // @LINE:214
     def saveLector(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "users/lector/saved")
@@ -1256,13 +1292,13 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "kpi/k")
     }
   
-    // @LINE:210
+    // @LINE:216
     def detailsListLector(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "users/lector/" + implicitly[PathBindable[Long]].unbind("id", id))
     }
   
-    // @LINE:209
+    // @LINE:215
     def printLector(id:Long): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "users/lector/" + implicitly[PathBindable[Long]].unbind("id", id))
