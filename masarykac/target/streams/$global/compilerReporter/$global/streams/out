@@ -1,4 +1,19 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\pdf\tableClassroomPDF.scala.html:92: comparing values of types Int and Null using `==' will always yield false
-[warn]                                 @if(member.getCapacity == null) {
-[warn]                                                        ^
-[warn] one warning found
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPSCombi.scala.html:138: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 @if(member.getSubjects.getHoursP == null) {
+[warn]                                                                                  ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPSCombi.scala.html:145: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 @if(member.getSubjects.getHoursC == null) {
+[warn]                                                                                  ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPSCombi.scala.html:152: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 @if(member.getSubjects.getCredits == null) {
+[warn]                                                                                   ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPSPres.scala.html:138: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 @if(member.getSubjects.getHoursP == null) {
+[warn]                                                                                  ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPSPres.scala.html:145: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 @if(member.getSubjects.getHoursC == null) {
+[warn]                                                                                  ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPSPres.scala.html:152: comparing values of types Int and Null using `==' will always yield false
+[warn]                                                 @if(member.getSubjects.getCredits == null) {
+[warn]                                                                                   ^
+[warn] 6 warnings found

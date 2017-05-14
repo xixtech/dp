@@ -95,8 +95,10 @@ GET         /statistics/cb                             controllers.PersonalStati
 
 
 GET         /dcps                                      controllers.StatisticController.index()
+GET         /dcpsc                                     controllers.StatisticController.dcpsCombi()
+GET         /dcpsp                                     controllers.StatisticController.dcpsPres()
 GET         /sp                                        controllers.StatisticController.studyPlansTable()
-GET         /sp1                                        controllers.StatisticController.sp1()
+GET         /sp1                                       controllers.StatisticController.sp1()
 
 GET         /spprint                                   controllers.StatisticController.studyPlansTablePrint()
 

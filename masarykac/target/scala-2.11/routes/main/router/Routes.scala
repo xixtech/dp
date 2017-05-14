@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Sat May 13 12:31:23 CEST 2017
+// @DATE:Sun May 14 11:27:35 CEST 2017
 
 package router
 
@@ -60,33 +60,33 @@ class Routes(
   PersonalStatisticController_15: controllers.PersonalStatisticController,
   // @LINE:97
   StatisticController_4: controllers.StatisticController,
-  // @LINE:104
-  StudyGroupsController_7: controllers.StudyGroupsController,
   // @LINE:106
+  StudyGroupsController_7: controllers.StudyGroupsController,
+  // @LINE:108
   TableController_18: controllers.TableController,
-  // @LINE:109
+  // @LINE:111
   SemestersController_26: controllers.SemestersController,
-  // @LINE:114
+  // @LINE:116
   StudyPlansController_14: controllers.StudyPlansController,
-  // @LINE:118
+  // @LINE:120
   CourseController_3: controllers.CourseController,
-  // @LINE:144
+  // @LINE:146
   TeachersController_9: controllers.TeachersController,
-  // @LINE:147
+  // @LINE:149
   AccessRoleController_33: controllers.AccessRoleController,
-  // @LINE:154
+  // @LINE:156
   MethodicsController_0: controllers.MethodicsController,
-  // @LINE:162
+  // @LINE:164
   SubjectPlanTeachingController_10: controllers.SubjectPlanTeachingController,
-  // @LINE:165
+  // @LINE:167
   PDFController_13: controllers.PDFController,
-  // @LINE:181
+  // @LINE:183
   DOCController_29: controllers.DOCController,
-  // @LINE:197
+  // @LINE:199
   IdeasController_20: controllers.IdeasController,
-  // @LINE:203
+  // @LINE:205
   PrintController_19: controllers.PrintController,
-  // @LINE:211
+  // @LINE:213
   Assets_27: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -137,33 +137,33 @@ class Routes(
     PersonalStatisticController_15: controllers.PersonalStatisticController,
     // @LINE:97
     StatisticController_4: controllers.StatisticController,
-    // @LINE:104
-    StudyGroupsController_7: controllers.StudyGroupsController,
     // @LINE:106
+    StudyGroupsController_7: controllers.StudyGroupsController,
+    // @LINE:108
     TableController_18: controllers.TableController,
-    // @LINE:109
+    // @LINE:111
     SemestersController_26: controllers.SemestersController,
-    // @LINE:114
+    // @LINE:116
     StudyPlansController_14: controllers.StudyPlansController,
-    // @LINE:118
+    // @LINE:120
     CourseController_3: controllers.CourseController,
-    // @LINE:144
+    // @LINE:146
     TeachersController_9: controllers.TeachersController,
-    // @LINE:147
+    // @LINE:149
     AccessRoleController_33: controllers.AccessRoleController,
-    // @LINE:154
+    // @LINE:156
     MethodicsController_0: controllers.MethodicsController,
-    // @LINE:162
+    // @LINE:164
     SubjectPlanTeachingController_10: controllers.SubjectPlanTeachingController,
-    // @LINE:165
+    // @LINE:167
     PDFController_13: controllers.PDFController,
-    // @LINE:181
+    // @LINE:183
     DOCController_29: controllers.DOCController,
-    // @LINE:197
+    // @LINE:199
     IdeasController_20: controllers.IdeasController,
-    // @LINE:203
+    // @LINE:205
     PrintController_19: controllers.PrintController,
-    // @LINE:211
+    // @LINE:213
     Assets_27: controllers.Assets
   ) = this(errorHandler, Application_31, TestController_22, SalaryController_17, Login_24, Charts_32, UiElements_21, Pages_5, PersonController_2, VisitsController_1, ProjectController_16, FinalWorksController_6, PublicationsController_8, OrganizationalUnitsController_12, EmployeesController_23, StatementController_28, SubjectController_34, ClassroomController_35, TeachersRoleController_25, FieldOfStudyController_11, CommitteeController_30, PersonalStatisticController_15, StatisticController_4, StudyGroupsController_7, TableController_18, SemestersController_26, StudyPlansController_14, CourseController_3, TeachersController_9, AccessRoleController_33, MethodicsController_0, SubjectPlanTeachingController_10, PDFController_13, DOCController_29, IdeasController_20, PrintController_19, Assets_27, "/")
 
@@ -250,6 +250,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """statistics/aab""", """controllers.PersonalStatisticController.teachingAAB()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """statistics/cb""", """controllers.PersonalStatisticController.teachingCB()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dcps""", """controllers.StatisticController.index()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dcpsc""", """controllers.StatisticController.dcpsCombi()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dcpsp""", """controllers.StatisticController.dcpsPres()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """sp""", """controllers.StatisticController.studyPlansTable()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """sp1""", """controllers.StatisticController.sp1()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """spprint""", """controllers.StatisticController.studyPlansTablePrint()"""),
@@ -1551,10 +1553,44 @@ class Routes(
   )
 
   // @LINE:98
-  private[this] lazy val controllers_StatisticController_studyPlansTable71_route = Route("GET",
+  private[this] lazy val controllers_StatisticController_dcpsCombi71_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("dcpsc")))
+  )
+  private[this] lazy val controllers_StatisticController_dcpsCombi71_invoker = createInvoker(
+    StatisticController_4.dcpsCombi(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.StatisticController",
+      "dcpsCombi",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """dcpsc"""
+    )
+  )
+
+  // @LINE:99
+  private[this] lazy val controllers_StatisticController_dcpsPres72_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("dcpsp")))
+  )
+  private[this] lazy val controllers_StatisticController_dcpsPres72_invoker = createInvoker(
+    StatisticController_4.dcpsPres(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.StatisticController",
+      "dcpsPres",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """dcpsp"""
+    )
+  )
+
+  // @LINE:100
+  private[this] lazy val controllers_StatisticController_studyPlansTable73_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("sp")))
   )
-  private[this] lazy val controllers_StatisticController_studyPlansTable71_invoker = createInvoker(
+  private[this] lazy val controllers_StatisticController_studyPlansTable73_invoker = createInvoker(
     StatisticController_4.studyPlansTable(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1567,11 +1603,11 @@ class Routes(
     )
   )
 
-  // @LINE:99
-  private[this] lazy val controllers_StatisticController_sp172_route = Route("GET",
+  // @LINE:101
+  private[this] lazy val controllers_StatisticController_sp174_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("sp1")))
   )
-  private[this] lazy val controllers_StatisticController_sp172_invoker = createInvoker(
+  private[this] lazy val controllers_StatisticController_sp174_invoker = createInvoker(
     StatisticController_4.sp1(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1584,11 +1620,11 @@ class Routes(
     )
   )
 
-  // @LINE:101
-  private[this] lazy val controllers_StatisticController_studyPlansTablePrint73_route = Route("GET",
+  // @LINE:103
+  private[this] lazy val controllers_StatisticController_studyPlansTablePrint75_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("spprint")))
   )
-  private[this] lazy val controllers_StatisticController_studyPlansTablePrint73_invoker = createInvoker(
+  private[this] lazy val controllers_StatisticController_studyPlansTablePrint75_invoker = createInvoker(
     StatisticController_4.studyPlansTablePrint(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1601,11 +1637,11 @@ class Routes(
     )
   )
 
-  // @LINE:104
-  private[this] lazy val controllers_StudyGroupsController_index74_route = Route("GET",
+  // @LINE:106
+  private[this] lazy val controllers_StudyGroupsController_index76_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("studygroups/add")))
   )
-  private[this] lazy val controllers_StudyGroupsController_index74_invoker = createInvoker(
+  private[this] lazy val controllers_StudyGroupsController_index76_invoker = createInvoker(
     StudyGroupsController_7.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1618,11 +1654,11 @@ class Routes(
     )
   )
 
-  // @LINE:105
-  private[this] lazy val controllers_StudyGroupsController_save75_route = Route("POST",
+  // @LINE:107
+  private[this] lazy val controllers_StudyGroupsController_save77_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("studygroups/saved")))
   )
-  private[this] lazy val controllers_StudyGroupsController_save75_invoker = createInvoker(
+  private[this] lazy val controllers_StudyGroupsController_save77_invoker = createInvoker(
     StudyGroupsController_7.save(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1635,11 +1671,11 @@ class Routes(
     )
   )
 
-  // @LINE:106
-  private[this] lazy val controllers_TableController_listStudyGroups76_route = Route("GET",
+  // @LINE:108
+  private[this] lazy val controllers_TableController_listStudyGroups78_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("studygroups")))
   )
-  private[this] lazy val controllers_TableController_listStudyGroups76_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listStudyGroups78_invoker = createInvoker(
     TableController_18.listStudyGroups(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1652,11 +1688,11 @@ class Routes(
     )
   )
 
-  // @LINE:109
-  private[this] lazy val controllers_SemestersController_index77_route = Route("GET",
+  // @LINE:111
+  private[this] lazy val controllers_SemestersController_index79_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("semester/add")))
   )
-  private[this] lazy val controllers_SemestersController_index77_invoker = createInvoker(
+  private[this] lazy val controllers_SemestersController_index79_invoker = createInvoker(
     SemestersController_26.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1669,11 +1705,11 @@ class Routes(
     )
   )
 
-  // @LINE:110
-  private[this] lazy val controllers_SemestersController_save78_route = Route("POST",
+  // @LINE:112
+  private[this] lazy val controllers_SemestersController_save80_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("semester/saved")))
   )
-  private[this] lazy val controllers_SemestersController_save78_invoker = createInvoker(
+  private[this] lazy val controllers_SemestersController_save80_invoker = createInvoker(
     SemestersController_26.save(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1686,11 +1722,11 @@ class Routes(
     )
   )
 
-  // @LINE:111
-  private[this] lazy val controllers_TableController_listSemesters79_route = Route("GET",
+  // @LINE:113
+  private[this] lazy val controllers_TableController_listSemesters81_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("semester")))
   )
-  private[this] lazy val controllers_TableController_listSemesters79_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listSemesters81_invoker = createInvoker(
     TableController_18.listSemesters(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1703,11 +1739,11 @@ class Routes(
     )
   )
 
-  // @LINE:114
-  private[this] lazy val controllers_StudyPlansController_index80_route = Route("GET",
+  // @LINE:116
+  private[this] lazy val controllers_StudyPlansController_index82_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("studyplan/add")))
   )
-  private[this] lazy val controllers_StudyPlansController_index80_invoker = createInvoker(
+  private[this] lazy val controllers_StudyPlansController_index82_invoker = createInvoker(
     StudyPlansController_14.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1720,11 +1756,11 @@ class Routes(
     )
   )
 
-  // @LINE:115
-  private[this] lazy val controllers_StudyPlansController_save81_route = Route("POST",
+  // @LINE:117
+  private[this] lazy val controllers_StudyPlansController_save83_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("studyplan/saved")))
   )
-  private[this] lazy val controllers_StudyPlansController_save81_invoker = createInvoker(
+  private[this] lazy val controllers_StudyPlansController_save83_invoker = createInvoker(
     StudyPlansController_14.save(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1737,11 +1773,11 @@ class Routes(
     )
   )
 
-  // @LINE:116
-  private[this] lazy val controllers_TableController_listStudyPlans82_route = Route("GET",
+  // @LINE:118
+  private[this] lazy val controllers_TableController_listStudyPlans84_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("studyplans")))
   )
-  private[this] lazy val controllers_TableController_listStudyPlans82_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listStudyPlans84_invoker = createInvoker(
     TableController_18.listStudyPlans(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1754,11 +1790,11 @@ class Routes(
     )
   )
 
-  // @LINE:118
-  private[this] lazy val controllers_CourseController_index83_route = Route("GET",
+  // @LINE:120
+  private[this] lazy val controllers_CourseController_index85_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courses/add")))
   )
-  private[this] lazy val controllers_CourseController_index83_invoker = createInvoker(
+  private[this] lazy val controllers_CourseController_index85_invoker = createInvoker(
     CourseController_3.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1771,11 +1807,11 @@ class Routes(
     )
   )
 
-  // @LINE:119
-  private[this] lazy val controllers_CourseController_save84_route = Route("POST",
+  // @LINE:121
+  private[this] lazy val controllers_CourseController_save86_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courses/saved")))
   )
-  private[this] lazy val controllers_CourseController_save84_invoker = createInvoker(
+  private[this] lazy val controllers_CourseController_save86_invoker = createInvoker(
     CourseController_3.save(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1788,11 +1824,11 @@ class Routes(
     )
   )
 
-  // @LINE:121
-  private[this] lazy val controllers_TableController_listScheduleInWeeks85_route = Route("GET",
+  // @LINE:123
+  private[this] lazy val controllers_TableController_listScheduleInWeeks87_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("scheduleinweeks")))
   )
-  private[this] lazy val controllers_TableController_listScheduleInWeeks85_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listScheduleInWeeks87_invoker = createInvoker(
     TableController_18.listScheduleInWeeks(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1805,11 +1841,11 @@ class Routes(
     )
   )
 
-  // @LINE:123
-  private[this] lazy val controllers_TableController_listSchedule86_route = Route("GET",
+  // @LINE:125
+  private[this] lazy val controllers_TableController_listSchedule88_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("schedule")))
   )
-  private[this] lazy val controllers_TableController_listSchedule86_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listSchedule88_invoker = createInvoker(
     TableController_18.listSchedule(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1822,11 +1858,11 @@ class Routes(
     )
   )
 
-  // @LINE:124
-  private[this] lazy val controllers_TableController_listEmployees87_route = Route("GET",
+  // @LINE:126
+  private[this] lazy val controllers_TableController_listEmployees89_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("employees")))
   )
-  private[this] lazy val controllers_TableController_listEmployees87_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listEmployees89_invoker = createInvoker(
     TableController_18.listEmployees(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1839,11 +1875,11 @@ class Routes(
     )
   )
 
-  // @LINE:125
-  private[this] lazy val controllers_TableController_listTeachers88_route = Route("GET",
+  // @LINE:127
+  private[this] lazy val controllers_TableController_listTeachers90_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("teachers")))
   )
-  private[this] lazy val controllers_TableController_listTeachers88_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listTeachers90_invoker = createInvoker(
     TableController_18.listTeachers(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1856,11 +1892,11 @@ class Routes(
     )
   )
 
-  // @LINE:126
-  private[this] lazy val controllers_TableController_listSubjects89_route = Route("GET",
+  // @LINE:128
+  private[this] lazy val controllers_TableController_listSubjects91_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("subjects")))
   )
-  private[this] lazy val controllers_TableController_listSubjects89_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listSubjects91_invoker = createInvoker(
     TableController_18.listSubjects(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1873,11 +1909,11 @@ class Routes(
     )
   )
 
-  // @LINE:127
-  private[this] lazy val controllers_TableController_listFieldsOfStudy90_route = Route("GET",
+  // @LINE:129
+  private[this] lazy val controllers_TableController_listFieldsOfStudy92_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fields")))
   )
-  private[this] lazy val controllers_TableController_listFieldsOfStudy90_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listFieldsOfStudy92_invoker = createInvoker(
     TableController_18.listFieldsOfStudy(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1890,11 +1926,11 @@ class Routes(
     )
   )
 
-  // @LINE:128
-  private[this] lazy val controllers_TableController_listCourses91_route = Route("GET",
+  // @LINE:130
+  private[this] lazy val controllers_TableController_listCourses93_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courses")))
   )
-  private[this] lazy val controllers_TableController_listCourses91_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listCourses93_invoker = createInvoker(
     TableController_18.listCourses(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1907,11 +1943,11 @@ class Routes(
     )
   )
 
-  // @LINE:129
-  private[this] lazy val controllers_TableController_listCurrentSemesters92_route = Route("GET",
+  // @LINE:131
+  private[this] lazy val controllers_TableController_listCurrentSemesters94_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("currentsemesters")))
   )
-  private[this] lazy val controllers_TableController_listCurrentSemesters92_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listCurrentSemesters94_invoker = createInvoker(
     TableController_18.listCurrentSemesters(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1924,11 +1960,11 @@ class Routes(
     )
   )
 
-  // @LINE:130
-  private[this] lazy val controllers_TableController_listCurrentSemestersUntilTheEndOfStudy93_route = Route("GET",
+  // @LINE:132
+  private[this] lazy val controllers_TableController_listCurrentSemestersUntilTheEndOfStudy95_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("lcsuteos")))
   )
-  private[this] lazy val controllers_TableController_listCurrentSemestersUntilTheEndOfStudy93_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listCurrentSemestersUntilTheEndOfStudy95_invoker = createInvoker(
     TableController_18.listCurrentSemestersUntilTheEndOfStudy(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1941,11 +1977,11 @@ class Routes(
     )
   )
 
-  // @LINE:131
-  private[this] lazy val controllers_TableController_listDays94_route = Route("GET",
+  // @LINE:133
+  private[this] lazy val controllers_TableController_listDays96_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("days")))
   )
-  private[this] lazy val controllers_TableController_listDays94_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listDays96_invoker = createInvoker(
     TableController_18.listDays(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1958,11 +1994,11 @@ class Routes(
     )
   )
 
-  // @LINE:132
-  private[this] lazy val controllers_TableController_listClassrooms95_route = Route("GET",
+  // @LINE:134
+  private[this] lazy val controllers_TableController_listClassrooms97_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("classrooms")))
   )
-  private[this] lazy val controllers_TableController_listClassrooms95_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listClassrooms97_invoker = createInvoker(
     TableController_18.listClassrooms(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1975,11 +2011,11 @@ class Routes(
     )
   )
 
-  // @LINE:133
-  private[this] lazy val controllers_TableController_listTeachersRole96_route = Route("GET",
+  // @LINE:135
+  private[this] lazy val controllers_TableController_listTeachersRole98_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("teachroles")))
   )
-  private[this] lazy val controllers_TableController_listTeachersRole96_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listTeachersRole98_invoker = createInvoker(
     TableController_18.listTeachersRole(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -1992,11 +2028,11 @@ class Routes(
     )
   )
 
-  // @LINE:134
-  private[this] lazy val controllers_TableController_listAccessRole97_route = Route("GET",
+  // @LINE:136
+  private[this] lazy val controllers_TableController_listAccessRole99_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("accessroles")))
   )
-  private[this] lazy val controllers_TableController_listAccessRole97_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listAccessRole99_invoker = createInvoker(
     TableController_18.listAccessRole(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2009,11 +2045,11 @@ class Routes(
     )
   )
 
-  // @LINE:135
-  private[this] lazy val controllers_TableController_listCommittees98_route = Route("GET",
+  // @LINE:137
+  private[this] lazy val controllers_TableController_listCommittees100_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("committees")))
   )
-  private[this] lazy val controllers_TableController_listCommittees98_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listCommittees100_invoker = createInvoker(
     TableController_18.listCommittees(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2026,11 +2062,11 @@ class Routes(
     )
   )
 
-  // @LINE:136
-  private[this] lazy val controllers_TableController_listPublications99_route = Route("GET",
+  // @LINE:138
+  private[this] lazy val controllers_TableController_listPublications101_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("publications")))
   )
-  private[this] lazy val controllers_TableController_listPublications99_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listPublications101_invoker = createInvoker(
     TableController_18.listPublications(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2043,11 +2079,11 @@ class Routes(
     )
   )
 
-  // @LINE:137
-  private[this] lazy val controllers_TableController_listTeachersInWeeks100_route = Route("GET",
+  // @LINE:139
+  private[this] lazy val controllers_TableController_listTeachersInWeeks102_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tiw")))
   )
-  private[this] lazy val controllers_TableController_listTeachersInWeeks100_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listTeachersInWeeks102_invoker = createInvoker(
     TableController_18.listTeachersInWeeks(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2060,11 +2096,11 @@ class Routes(
     )
   )
 
-  // @LINE:139
-  private[this] lazy val controllers_StatisticController_listEmployeesActvitiy101_route = Route("GET",
+  // @LINE:141
+  private[this] lazy val controllers_StatisticController_listEmployeesActvitiy103_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estat")))
   )
-  private[this] lazy val controllers_StatisticController_listEmployeesActvitiy101_invoker = createInvoker(
+  private[this] lazy val controllers_StatisticController_listEmployeesActvitiy103_invoker = createInvoker(
     StatisticController_4.listEmployeesActvitiy(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2077,11 +2113,11 @@ class Routes(
     )
   )
 
-  // @LINE:140
-  private[this] lazy val controllers_StatisticController_listEmployeerActvitiy102_route = Route("GET",
+  // @LINE:142
+  private[this] lazy val controllers_StatisticController_listEmployeerActvitiy104_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("estat/info/"), DynamicPart("uid", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_StatisticController_listEmployeerActvitiy102_invoker = createInvoker(
+  private[this] lazy val controllers_StatisticController_listEmployeerActvitiy104_invoker = createInvoker(
     StatisticController_4.listEmployeerActvitiy(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2094,11 +2130,11 @@ class Routes(
     )
   )
 
-  // @LINE:141
-  private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToPersons103_route = Route("GET",
+  // @LINE:143
+  private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToPersons105_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("teaching")))
   )
-  private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToPersons103_invoker = createInvoker(
+  private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToPersons105_invoker = createInvoker(
     PersonalStatisticController_15.listTableTeachingAccordingToPersons(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2111,11 +2147,11 @@ class Routes(
     )
   )
 
-  // @LINE:142
-  private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToId104_route = Route("GET",
+  // @LINE:144
+  private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToId106_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("teaching/t/"), DynamicPart("uid", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToId104_invoker = createInvoker(
+  private[this] lazy val controllers_PersonalStatisticController_listTableTeachingAccordingToId106_invoker = createInvoker(
     PersonalStatisticController_15.listTableTeachingAccordingToId(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2128,11 +2164,11 @@ class Routes(
     )
   )
 
-  // @LINE:144
-  private[this] lazy val controllers_TeachersController_index105_route = Route("GET",
+  // @LINE:146
+  private[this] lazy val controllers_TeachersController_index107_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("teachers/add")))
   )
-  private[this] lazy val controllers_TeachersController_index105_invoker = createInvoker(
+  private[this] lazy val controllers_TeachersController_index107_invoker = createInvoker(
     TeachersController_9.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2145,11 +2181,11 @@ class Routes(
     )
   )
 
-  // @LINE:145
-  private[this] lazy val controllers_TeachersController_save106_route = Route("POST",
+  // @LINE:147
+  private[this] lazy val controllers_TeachersController_save108_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("teachers/saved")))
   )
-  private[this] lazy val controllers_TeachersController_save106_invoker = createInvoker(
+  private[this] lazy val controllers_TeachersController_save108_invoker = createInvoker(
     TeachersController_9.save(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2162,11 +2198,11 @@ class Routes(
     )
   )
 
-  // @LINE:147
-  private[this] lazy val controllers_AccessRoleController_index107_route = Route("GET",
+  // @LINE:149
+  private[this] lazy val controllers_AccessRoleController_index109_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("accessrole/add")))
   )
-  private[this] lazy val controllers_AccessRoleController_index107_invoker = createInvoker(
+  private[this] lazy val controllers_AccessRoleController_index109_invoker = createInvoker(
     AccessRoleController_33.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2179,11 +2215,11 @@ class Routes(
     )
   )
 
-  // @LINE:148
-  private[this] lazy val controllers_AccessRoleController_save108_route = Route("POST",
+  // @LINE:150
+  private[this] lazy val controllers_AccessRoleController_save110_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("accessrole/saved")))
   )
-  private[this] lazy val controllers_AccessRoleController_save108_invoker = createInvoker(
+  private[this] lazy val controllers_AccessRoleController_save110_invoker = createInvoker(
     AccessRoleController_33.save(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2196,11 +2232,11 @@ class Routes(
     )
   )
 
-  // @LINE:149
-  private[this] lazy val controllers_AccessRoleController_edit109_route = Route("GET",
+  // @LINE:151
+  private[this] lazy val controllers_AccessRoleController_edit111_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("accessrole/edit/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AccessRoleController_edit109_invoker = createInvoker(
+  private[this] lazy val controllers_AccessRoleController_edit111_invoker = createInvoker(
     AccessRoleController_33.edit(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2213,11 +2249,11 @@ class Routes(
     )
   )
 
-  // @LINE:150
-  private[this] lazy val controllers_AccessRoleController_update110_route = Route("POST",
+  // @LINE:152
+  private[this] lazy val controllers_AccessRoleController_update112_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("accessrole/updated/")))
   )
-  private[this] lazy val controllers_AccessRoleController_update110_invoker = createInvoker(
+  private[this] lazy val controllers_AccessRoleController_update112_invoker = createInvoker(
     AccessRoleController_33.update(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2230,11 +2266,11 @@ class Routes(
     )
   )
 
-  // @LINE:151
-  private[this] lazy val controllers_AccessRoleController_delete111_route = Route("POST",
+  // @LINE:153
+  private[this] lazy val controllers_AccessRoleController_delete113_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("accessrole/delete")))
   )
-  private[this] lazy val controllers_AccessRoleController_delete111_invoker = createInvoker(
+  private[this] lazy val controllers_AccessRoleController_delete113_invoker = createInvoker(
     AccessRoleController_33.delete(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2247,11 +2283,11 @@ class Routes(
     )
   )
 
-  // @LINE:154
-  private[this] lazy val controllers_MethodicsController_index112_route = Route("GET",
+  // @LINE:156
+  private[this] lazy val controllers_MethodicsController_index114_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("m/add")))
   )
-  private[this] lazy val controllers_MethodicsController_index112_invoker = createInvoker(
+  private[this] lazy val controllers_MethodicsController_index114_invoker = createInvoker(
     MethodicsController_0.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2264,11 +2300,11 @@ class Routes(
     )
   )
 
-  // @LINE:155
-  private[this] lazy val controllers_MethodicsController_save113_route = Route("POST",
+  // @LINE:157
+  private[this] lazy val controllers_MethodicsController_save115_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("m/saved")))
   )
-  private[this] lazy val controllers_MethodicsController_save113_invoker = createInvoker(
+  private[this] lazy val controllers_MethodicsController_save115_invoker = createInvoker(
     MethodicsController_0.save(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2281,11 +2317,11 @@ class Routes(
     )
   )
 
-  // @LINE:157
-  private[this] lazy val controllers_Application_roles114_route = Route("GET",
+  // @LINE:159
+  private[this] lazy val controllers_Application_roles116_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("roles")))
   )
-  private[this] lazy val controllers_Application_roles114_invoker = createInvoker(
+  private[this] lazy val controllers_Application_roles116_invoker = createInvoker(
     Application_31.roles(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2298,11 +2334,11 @@ class Routes(
     )
   )
 
-  // @LINE:160
-  private[this] lazy val controllers_TableController_listPerson115_route = Route("GET",
+  // @LINE:162
+  private[this] lazy val controllers_TableController_listPerson117_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users")))
   )
-  private[this] lazy val controllers_TableController_listPerson115_invoker = createInvoker(
+  private[this] lazy val controllers_TableController_listPerson117_invoker = createInvoker(
     TableController_18.listPerson(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2315,11 +2351,11 @@ class Routes(
     )
   )
 
-  // @LINE:162
-  private[this] lazy val controllers_SubjectPlanTeachingController_index116_route = Route("GET",
+  // @LINE:164
+  private[this] lazy val controllers_SubjectPlanTeachingController_index118_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("sub/add")))
   )
-  private[this] lazy val controllers_SubjectPlanTeachingController_index116_invoker = createInvoker(
+  private[this] lazy val controllers_SubjectPlanTeachingController_index118_invoker = createInvoker(
     SubjectPlanTeachingController_10.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2332,11 +2368,11 @@ class Routes(
     )
   )
 
-  // @LINE:163
-  private[this] lazy val controllers_SubjectPlanTeachingController_save117_route = Route("POST",
+  // @LINE:165
+  private[this] lazy val controllers_SubjectPlanTeachingController_save119_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("sub/saved")))
   )
-  private[this] lazy val controllers_SubjectPlanTeachingController_save117_invoker = createInvoker(
+  private[this] lazy val controllers_SubjectPlanTeachingController_save119_invoker = createInvoker(
     SubjectPlanTeachingController_10.save(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2349,11 +2385,11 @@ class Routes(
     )
   )
 
-  // @LINE:165
-  private[this] lazy val controllers_PDFController_pdfTableAccessRole118_route = Route("GET",
+  // @LINE:167
+  private[this] lazy val controllers_PDFController_pdfTableAccessRole120_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableAccessRole")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableAccessRole118_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableAccessRole120_invoker = createInvoker(
     PDFController_13.pdfTableAccessRole(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2366,11 +2402,11 @@ class Routes(
     )
   )
 
-  // @LINE:166
-  private[this] lazy val controllers_PDFController_pdfTableClassroom119_route = Route("GET",
+  // @LINE:168
+  private[this] lazy val controllers_PDFController_pdfTableClassroom121_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableClassroom")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableClassroom119_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableClassroom121_invoker = createInvoker(
     PDFController_13.pdfTableClassroom(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2383,11 +2419,11 @@ class Routes(
     )
   )
 
-  // @LINE:167
-  private[this] lazy val controllers_PDFController_pdfTableCommittee120_route = Route("GET",
+  // @LINE:169
+  private[this] lazy val controllers_PDFController_pdfTableCommittee122_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableCommittee")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableCommittee120_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableCommittee122_invoker = createInvoker(
     PDFController_13.pdfTableCommittee(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2400,11 +2436,11 @@ class Routes(
     )
   )
 
-  // @LINE:168
-  private[this] lazy val controllers_PDFController_pdfTableEmployees121_route = Route("GET",
+  // @LINE:170
+  private[this] lazy val controllers_PDFController_pdfTableEmployees123_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableEmployees")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableEmployees121_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableEmployees123_invoker = createInvoker(
     PDFController_13.pdfTableEmployees(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2417,11 +2453,11 @@ class Routes(
     )
   )
 
-  // @LINE:169
-  private[this] lazy val controllers_PDFController_pdfTableFieldsOfStudy122_route = Route("GET",
+  // @LINE:171
+  private[this] lazy val controllers_PDFController_pdfTableFieldsOfStudy124_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableFieldsOfStudy")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableFieldsOfStudy122_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableFieldsOfStudy124_invoker = createInvoker(
     PDFController_13.pdfTableFieldsOfStudy(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2434,11 +2470,11 @@ class Routes(
     )
   )
 
-  // @LINE:170
-  private[this] lazy val controllers_PDFController_pdfTablePublication123_route = Route("GET",
+  // @LINE:172
+  private[this] lazy val controllers_PDFController_pdfTablePublication125_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTablePublication")))
   )
-  private[this] lazy val controllers_PDFController_pdfTablePublication123_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTablePublication125_invoker = createInvoker(
     PDFController_13.pdfTablePublication(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2451,11 +2487,11 @@ class Routes(
     )
   )
 
-  // @LINE:171
-  private[this] lazy val controllers_PDFController_pdfTableSPPrint124_route = Route("GET",
+  // @LINE:173
+  private[this] lazy val controllers_PDFController_pdfTableSPPrint126_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableSPPrint")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableSPPrint124_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableSPPrint126_invoker = createInvoker(
     PDFController_13.pdfTableSPPrint(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2468,11 +2504,11 @@ class Routes(
     )
   )
 
-  // @LINE:172
-  private[this] lazy val controllers_PDFController_pdfTableStudyGroups125_route = Route("GET",
+  // @LINE:174
+  private[this] lazy val controllers_PDFController_pdfTableStudyGroups127_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableStudyGroups")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableStudyGroups125_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableStudyGroups127_invoker = createInvoker(
     PDFController_13.pdfTableStudyGroups(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2485,11 +2521,11 @@ class Routes(
     )
   )
 
-  // @LINE:173
-  private[this] lazy val controllers_PDFController_pdfTableStudyPlans126_route = Route("GET",
+  // @LINE:175
+  private[this] lazy val controllers_PDFController_pdfTableStudyPlans128_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableStudyPlans")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableStudyPlans126_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableStudyPlans128_invoker = createInvoker(
     PDFController_13.pdfTableStudyPlans(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2502,11 +2538,11 @@ class Routes(
     )
   )
 
-  // @LINE:174
-  private[this] lazy val controllers_PDFController_pdfTableSubjects127_route = Route("GET",
+  // @LINE:176
+  private[this] lazy val controllers_PDFController_pdfTableSubjects129_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableSubjects")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableSubjects127_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableSubjects129_invoker = createInvoker(
     PDFController_13.pdfTableSubjects(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2519,11 +2555,11 @@ class Routes(
     )
   )
 
-  // @LINE:175
-  private[this] lazy val controllers_PDFController_pdfTableTeachingAAA128_route = Route("GET",
+  // @LINE:177
+  private[this] lazy val controllers_PDFController_pdfTableTeachingAAA130_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableTeachingAAA")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableTeachingAAA128_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableTeachingAAA130_invoker = createInvoker(
     PDFController_13.pdfTableTeachingAAA(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2536,11 +2572,11 @@ class Routes(
     )
   )
 
-  // @LINE:176
-  private[this] lazy val controllers_PDFController_pdfTableTeachingAAB129_route = Route("GET",
+  // @LINE:178
+  private[this] lazy val controllers_PDFController_pdfTableTeachingAAB131_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableTeachingAAB")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableTeachingAAB129_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableTeachingAAB131_invoker = createInvoker(
     PDFController_13.pdfTableTeachingAAB(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2553,11 +2589,11 @@ class Routes(
     )
   )
 
-  // @LINE:177
-  private[this] lazy val controllers_PDFController_pdfTableTeachingAccordingToPersons130_route = Route("GET",
+  // @LINE:179
+  private[this] lazy val controllers_PDFController_pdfTableTeachingAccordingToPersons132_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableTeachingAccordingToPersons")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableTeachingAccordingToPersons130_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableTeachingAccordingToPersons132_invoker = createInvoker(
     PDFController_13.pdfTableTeachingAccordingToPersons(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2570,11 +2606,11 @@ class Routes(
     )
   )
 
-  // @LINE:178
-  private[this] lazy val controllers_PDFController_pdfTableTeachingCB131_route = Route("GET",
+  // @LINE:180
+  private[this] lazy val controllers_PDFController_pdfTableTeachingCB133_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableTeachingCB")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableTeachingCB131_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableTeachingCB133_invoker = createInvoker(
     PDFController_13.pdfTableTeachingCB(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2587,11 +2623,11 @@ class Routes(
     )
   )
 
-  // @LINE:179
-  private[this] lazy val controllers_PDFController_pdfTableTeachingDepartmentEmployee132_route = Route("GET",
+  // @LINE:181
+  private[this] lazy val controllers_PDFController_pdfTableTeachingDepartmentEmployee134_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pdfTableTeachingDepartmentEmployee")))
   )
-  private[this] lazy val controllers_PDFController_pdfTableTeachingDepartmentEmployee132_invoker = createInvoker(
+  private[this] lazy val controllers_PDFController_pdfTableTeachingDepartmentEmployee134_invoker = createInvoker(
     PDFController_13.pdfTableTeachingDepartmentEmployee(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2604,11 +2640,11 @@ class Routes(
     )
   )
 
-  // @LINE:181
-  private[this] lazy val controllers_DOCController_docTableAccessRole133_route = Route("GET",
+  // @LINE:183
+  private[this] lazy val controllers_DOCController_docTableAccessRole135_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableAccessRole")))
   )
-  private[this] lazy val controllers_DOCController_docTableAccessRole133_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableAccessRole135_invoker = createInvoker(
     DOCController_29.docTableAccessRole(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2621,11 +2657,11 @@ class Routes(
     )
   )
 
-  // @LINE:182
-  private[this] lazy val controllers_DOCController_docTableClassroom134_route = Route("GET",
+  // @LINE:184
+  private[this] lazy val controllers_DOCController_docTableClassroom136_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableClassroom")))
   )
-  private[this] lazy val controllers_DOCController_docTableClassroom134_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableClassroom136_invoker = createInvoker(
     DOCController_29.docTableClassroom(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2638,11 +2674,11 @@ class Routes(
     )
   )
 
-  // @LINE:183
-  private[this] lazy val controllers_DOCController_docTableCommittee135_route = Route("GET",
+  // @LINE:185
+  private[this] lazy val controllers_DOCController_docTableCommittee137_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableCommittee")))
   )
-  private[this] lazy val controllers_DOCController_docTableCommittee135_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableCommittee137_invoker = createInvoker(
     DOCController_29.docTableCommittee(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2655,11 +2691,11 @@ class Routes(
     )
   )
 
-  // @LINE:184
-  private[this] lazy val controllers_DOCController_docTableEmployees136_route = Route("GET",
+  // @LINE:186
+  private[this] lazy val controllers_DOCController_docTableEmployees138_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableEmployees")))
   )
-  private[this] lazy val controllers_DOCController_docTableEmployees136_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableEmployees138_invoker = createInvoker(
     DOCController_29.docTableEmployees(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2672,11 +2708,11 @@ class Routes(
     )
   )
 
-  // @LINE:185
-  private[this] lazy val controllers_DOCController_docTableFieldsOfStudy137_route = Route("GET",
+  // @LINE:187
+  private[this] lazy val controllers_DOCController_docTableFieldsOfStudy139_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableFieldsOfStudy")))
   )
-  private[this] lazy val controllers_DOCController_docTableFieldsOfStudy137_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableFieldsOfStudy139_invoker = createInvoker(
     DOCController_29.docTableFieldsOfStudy(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2689,11 +2725,11 @@ class Routes(
     )
   )
 
-  // @LINE:186
-  private[this] lazy val controllers_DOCController_docTablePublication138_route = Route("GET",
+  // @LINE:188
+  private[this] lazy val controllers_DOCController_docTablePublication140_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTablePublication")))
   )
-  private[this] lazy val controllers_DOCController_docTablePublication138_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTablePublication140_invoker = createInvoker(
     DOCController_29.docTablePublication(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2706,11 +2742,11 @@ class Routes(
     )
   )
 
-  // @LINE:187
-  private[this] lazy val controllers_DOCController_docTableSPPrint139_route = Route("GET",
+  // @LINE:189
+  private[this] lazy val controllers_DOCController_docTableSPPrint141_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableSPPrint")))
   )
-  private[this] lazy val controllers_DOCController_docTableSPPrint139_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableSPPrint141_invoker = createInvoker(
     DOCController_29.docTableSPPrint(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2723,11 +2759,11 @@ class Routes(
     )
   )
 
-  // @LINE:188
-  private[this] lazy val controllers_DOCController_docTableStudyGroups140_route = Route("GET",
+  // @LINE:190
+  private[this] lazy val controllers_DOCController_docTableStudyGroups142_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableStudyGroups")))
   )
-  private[this] lazy val controllers_DOCController_docTableStudyGroups140_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableStudyGroups142_invoker = createInvoker(
     DOCController_29.docTableStudyGroups(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2740,11 +2776,11 @@ class Routes(
     )
   )
 
-  // @LINE:189
-  private[this] lazy val controllers_DOCController_docTableStudyPlans141_route = Route("GET",
+  // @LINE:191
+  private[this] lazy val controllers_DOCController_docTableStudyPlans143_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableStudyPlans")))
   )
-  private[this] lazy val controllers_DOCController_docTableStudyPlans141_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableStudyPlans143_invoker = createInvoker(
     DOCController_29.docTableStudyPlans(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2757,11 +2793,11 @@ class Routes(
     )
   )
 
-  // @LINE:190
-  private[this] lazy val controllers_DOCController_docTableSubjects142_route = Route("GET",
+  // @LINE:192
+  private[this] lazy val controllers_DOCController_docTableSubjects144_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableSubjects")))
   )
-  private[this] lazy val controllers_DOCController_docTableSubjects142_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableSubjects144_invoker = createInvoker(
     DOCController_29.docTableSubjects(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2774,11 +2810,11 @@ class Routes(
     )
   )
 
-  // @LINE:191
-  private[this] lazy val controllers_DOCController_docTableTeachingAAA143_route = Route("GET",
+  // @LINE:193
+  private[this] lazy val controllers_DOCController_docTableTeachingAAA145_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableTeachingAAA")))
   )
-  private[this] lazy val controllers_DOCController_docTableTeachingAAA143_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableTeachingAAA145_invoker = createInvoker(
     DOCController_29.docTableTeachingAAA(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2791,11 +2827,11 @@ class Routes(
     )
   )
 
-  // @LINE:192
-  private[this] lazy val controllers_DOCController_docTableTeachingAAB144_route = Route("GET",
+  // @LINE:194
+  private[this] lazy val controllers_DOCController_docTableTeachingAAB146_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableTeachingAAB")))
   )
-  private[this] lazy val controllers_DOCController_docTableTeachingAAB144_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableTeachingAAB146_invoker = createInvoker(
     DOCController_29.docTableTeachingAAB(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2808,11 +2844,11 @@ class Routes(
     )
   )
 
-  // @LINE:193
-  private[this] lazy val controllers_DOCController_docTableTeachingAccordingToPersons145_route = Route("GET",
+  // @LINE:195
+  private[this] lazy val controllers_DOCController_docTableTeachingAccordingToPersons147_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableTeachingAccordingToPersons")))
   )
-  private[this] lazy val controllers_DOCController_docTableTeachingAccordingToPersons145_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableTeachingAccordingToPersons147_invoker = createInvoker(
     DOCController_29.docTableTeachingAccordingToPersons(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2825,11 +2861,11 @@ class Routes(
     )
   )
 
-  // @LINE:194
-  private[this] lazy val controllers_DOCController_docTableTeachingCB146_route = Route("GET",
+  // @LINE:196
+  private[this] lazy val controllers_DOCController_docTableTeachingCB148_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableTeachingCB")))
   )
-  private[this] lazy val controllers_DOCController_docTableTeachingCB146_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableTeachingCB148_invoker = createInvoker(
     DOCController_29.docTableTeachingCB(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2842,11 +2878,11 @@ class Routes(
     )
   )
 
-  // @LINE:195
-  private[this] lazy val controllers_DOCController_docTableTeachingDepartmentEmployee147_route = Route("GET",
+  // @LINE:197
+  private[this] lazy val controllers_DOCController_docTableTeachingDepartmentEmployee149_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("docTableTeachingDepartmentEmployee")))
   )
-  private[this] lazy val controllers_DOCController_docTableTeachingDepartmentEmployee147_invoker = createInvoker(
+  private[this] lazy val controllers_DOCController_docTableTeachingDepartmentEmployee149_invoker = createInvoker(
     DOCController_29.docTableTeachingDepartmentEmployee(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2859,11 +2895,11 @@ class Routes(
     )
   )
 
-  // @LINE:197
-  private[this] lazy val controllers_IdeasController_index148_route = Route("GET",
+  // @LINE:199
+  private[this] lazy val controllers_IdeasController_index150_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("regidea")))
   )
-  private[this] lazy val controllers_IdeasController_index148_invoker = createInvoker(
+  private[this] lazy val controllers_IdeasController_index150_invoker = createInvoker(
     IdeasController_20.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2876,11 +2912,11 @@ class Routes(
     )
   )
 
-  // @LINE:198
-  private[this] lazy val controllers_IdeasController_save149_route = Route("POST",
+  // @LINE:200
+  private[this] lazy val controllers_IdeasController_save151_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("regidea/saved")))
   )
-  private[this] lazy val controllers_IdeasController_save149_invoker = createInvoker(
+  private[this] lazy val controllers_IdeasController_save151_invoker = createInvoker(
     IdeasController_20.save(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2893,11 +2929,11 @@ class Routes(
     )
   )
 
-  // @LINE:200
-  private[this] lazy val controllers_Application_logout150_route = Route("GET",
+  // @LINE:202
+  private[this] lazy val controllers_Application_logout152_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
-  private[this] lazy val controllers_Application_logout150_invoker = createInvoker(
+  private[this] lazy val controllers_Application_logout152_invoker = createInvoker(
     Application_31.logout(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2910,11 +2946,11 @@ class Routes(
     )
   )
 
-  // @LINE:203
-  private[this] lazy val controllers_PrintController_printUserDetails151_route = Route("POST",
+  // @LINE:205
+  private[this] lazy val controllers_PrintController_printUserDetails153_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/moje/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PrintController_printUserDetails151_invoker = createInvoker(
+  private[this] lazy val controllers_PrintController_printUserDetails153_invoker = createInvoker(
     PrintController_19.printUserDetails(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2927,11 +2963,11 @@ class Routes(
     )
   )
 
-  // @LINE:204
-  private[this] lazy val controllers_PrintController_detailsList152_route = Route("GET",
+  // @LINE:206
+  private[this] lazy val controllers_PrintController_detailsList154_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/moje/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PrintController_detailsList152_invoker = createInvoker(
+  private[this] lazy val controllers_PrintController_detailsList154_invoker = createInvoker(
     PrintController_19.detailsList(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2944,11 +2980,11 @@ class Routes(
     )
   )
 
-  // @LINE:206
-  private[this] lazy val controllers_SalaryController_saveLector153_route = Route("POST",
+  // @LINE:208
+  private[this] lazy val controllers_SalaryController_saveLector155_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/lector/saved")))
   )
-  private[this] lazy val controllers_SalaryController_saveLector153_invoker = createInvoker(
+  private[this] lazy val controllers_SalaryController_saveLector155_invoker = createInvoker(
     SalaryController_17.saveLector(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2961,11 +2997,11 @@ class Routes(
     )
   )
 
-  // @LINE:207
-  private[this] lazy val controllers_SalaryController_printLector154_route = Route("POST",
+  // @LINE:209
+  private[this] lazy val controllers_SalaryController_printLector156_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/lector/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_SalaryController_printLector154_invoker = createInvoker(
+  private[this] lazy val controllers_SalaryController_printLector156_invoker = createInvoker(
     SalaryController_17.printLector(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2978,11 +3014,11 @@ class Routes(
     )
   )
 
-  // @LINE:208
-  private[this] lazy val controllers_SalaryController_detailsListLector155_route = Route("GET",
+  // @LINE:210
+  private[this] lazy val controllers_SalaryController_detailsListLector157_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/lector/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_SalaryController_detailsListLector155_invoker = createInvoker(
+  private[this] lazy val controllers_SalaryController_detailsListLector157_invoker = createInvoker(
     SalaryController_17.detailsListLector(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2995,11 +3031,11 @@ class Routes(
     )
   )
 
-  // @LINE:211
-  private[this] lazy val controllers_Assets_at156_route = Route("GET",
+  // @LINE:213
+  private[this] lazy val controllers_Assets_at158_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at156_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at158_invoker = createInvoker(
     Assets_27.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3442,519 +3478,531 @@ class Routes(
       }
   
     // @LINE:98
-    case controllers_StatisticController_studyPlansTable71_route(params) =>
+    case controllers_StatisticController_dcpsCombi71_route(params) =>
       call { 
-        controllers_StatisticController_studyPlansTable71_invoker.call(StatisticController_4.studyPlansTable())
+        controllers_StatisticController_dcpsCombi71_invoker.call(StatisticController_4.dcpsCombi())
       }
   
     // @LINE:99
-    case controllers_StatisticController_sp172_route(params) =>
+    case controllers_StatisticController_dcpsPres72_route(params) =>
       call { 
-        controllers_StatisticController_sp172_invoker.call(StatisticController_4.sp1())
+        controllers_StatisticController_dcpsPres72_invoker.call(StatisticController_4.dcpsPres())
+      }
+  
+    // @LINE:100
+    case controllers_StatisticController_studyPlansTable73_route(params) =>
+      call { 
+        controllers_StatisticController_studyPlansTable73_invoker.call(StatisticController_4.studyPlansTable())
       }
   
     // @LINE:101
-    case controllers_StatisticController_studyPlansTablePrint73_route(params) =>
+    case controllers_StatisticController_sp174_route(params) =>
       call { 
-        controllers_StatisticController_studyPlansTablePrint73_invoker.call(StatisticController_4.studyPlansTablePrint())
+        controllers_StatisticController_sp174_invoker.call(StatisticController_4.sp1())
       }
   
-    // @LINE:104
-    case controllers_StudyGroupsController_index74_route(params) =>
+    // @LINE:103
+    case controllers_StatisticController_studyPlansTablePrint75_route(params) =>
       call { 
-        controllers_StudyGroupsController_index74_invoker.call(StudyGroupsController_7.index())
-      }
-  
-    // @LINE:105
-    case controllers_StudyGroupsController_save75_route(params) =>
-      call { 
-        controllers_StudyGroupsController_save75_invoker.call(StudyGroupsController_7.save())
+        controllers_StatisticController_studyPlansTablePrint75_invoker.call(StatisticController_4.studyPlansTablePrint())
       }
   
     // @LINE:106
-    case controllers_TableController_listStudyGroups76_route(params) =>
+    case controllers_StudyGroupsController_index76_route(params) =>
       call { 
-        controllers_TableController_listStudyGroups76_invoker.call(TableController_18.listStudyGroups())
+        controllers_StudyGroupsController_index76_invoker.call(StudyGroupsController_7.index())
       }
   
-    // @LINE:109
-    case controllers_SemestersController_index77_route(params) =>
+    // @LINE:107
+    case controllers_StudyGroupsController_save77_route(params) =>
       call { 
-        controllers_SemestersController_index77_invoker.call(SemestersController_26.index())
+        controllers_StudyGroupsController_save77_invoker.call(StudyGroupsController_7.save())
       }
   
-    // @LINE:110
-    case controllers_SemestersController_save78_route(params) =>
+    // @LINE:108
+    case controllers_TableController_listStudyGroups78_route(params) =>
       call { 
-        controllers_SemestersController_save78_invoker.call(SemestersController_26.save())
+        controllers_TableController_listStudyGroups78_invoker.call(TableController_18.listStudyGroups())
       }
   
     // @LINE:111
-    case controllers_TableController_listSemesters79_route(params) =>
+    case controllers_SemestersController_index79_route(params) =>
       call { 
-        controllers_TableController_listSemesters79_invoker.call(TableController_18.listSemesters())
+        controllers_SemestersController_index79_invoker.call(SemestersController_26.index())
       }
   
-    // @LINE:114
-    case controllers_StudyPlansController_index80_route(params) =>
+    // @LINE:112
+    case controllers_SemestersController_save80_route(params) =>
       call { 
-        controllers_StudyPlansController_index80_invoker.call(StudyPlansController_14.index())
+        controllers_SemestersController_save80_invoker.call(SemestersController_26.save())
       }
   
-    // @LINE:115
-    case controllers_StudyPlansController_save81_route(params) =>
+    // @LINE:113
+    case controllers_TableController_listSemesters81_route(params) =>
       call { 
-        controllers_StudyPlansController_save81_invoker.call(StudyPlansController_14.save())
+        controllers_TableController_listSemesters81_invoker.call(TableController_18.listSemesters())
       }
   
     // @LINE:116
-    case controllers_TableController_listStudyPlans82_route(params) =>
+    case controllers_StudyPlansController_index82_route(params) =>
       call { 
-        controllers_TableController_listStudyPlans82_invoker.call(TableController_18.listStudyPlans())
+        controllers_StudyPlansController_index82_invoker.call(StudyPlansController_14.index())
+      }
+  
+    // @LINE:117
+    case controllers_StudyPlansController_save83_route(params) =>
+      call { 
+        controllers_StudyPlansController_save83_invoker.call(StudyPlansController_14.save())
       }
   
     // @LINE:118
-    case controllers_CourseController_index83_route(params) =>
+    case controllers_TableController_listStudyPlans84_route(params) =>
       call { 
-        controllers_CourseController_index83_invoker.call(CourseController_3.index())
+        controllers_TableController_listStudyPlans84_invoker.call(TableController_18.listStudyPlans())
       }
   
-    // @LINE:119
-    case controllers_CourseController_save84_route(params) =>
+    // @LINE:120
+    case controllers_CourseController_index85_route(params) =>
       call { 
-        controllers_CourseController_save84_invoker.call(CourseController_3.save())
+        controllers_CourseController_index85_invoker.call(CourseController_3.index())
       }
   
     // @LINE:121
-    case controllers_TableController_listScheduleInWeeks85_route(params) =>
+    case controllers_CourseController_save86_route(params) =>
       call { 
-        controllers_TableController_listScheduleInWeeks85_invoker.call(TableController_18.listScheduleInWeeks())
+        controllers_CourseController_save86_invoker.call(CourseController_3.save())
       }
   
     // @LINE:123
-    case controllers_TableController_listSchedule86_route(params) =>
+    case controllers_TableController_listScheduleInWeeks87_route(params) =>
       call { 
-        controllers_TableController_listSchedule86_invoker.call(TableController_18.listSchedule())
-      }
-  
-    // @LINE:124
-    case controllers_TableController_listEmployees87_route(params) =>
-      call { 
-        controllers_TableController_listEmployees87_invoker.call(TableController_18.listEmployees())
+        controllers_TableController_listScheduleInWeeks87_invoker.call(TableController_18.listScheduleInWeeks())
       }
   
     // @LINE:125
-    case controllers_TableController_listTeachers88_route(params) =>
+    case controllers_TableController_listSchedule88_route(params) =>
       call { 
-        controllers_TableController_listTeachers88_invoker.call(TableController_18.listTeachers())
+        controllers_TableController_listSchedule88_invoker.call(TableController_18.listSchedule())
       }
   
     // @LINE:126
-    case controllers_TableController_listSubjects89_route(params) =>
+    case controllers_TableController_listEmployees89_route(params) =>
       call { 
-        controllers_TableController_listSubjects89_invoker.call(TableController_18.listSubjects())
+        controllers_TableController_listEmployees89_invoker.call(TableController_18.listEmployees())
       }
   
     // @LINE:127
-    case controllers_TableController_listFieldsOfStudy90_route(params) =>
+    case controllers_TableController_listTeachers90_route(params) =>
       call { 
-        controllers_TableController_listFieldsOfStudy90_invoker.call(TableController_18.listFieldsOfStudy())
+        controllers_TableController_listTeachers90_invoker.call(TableController_18.listTeachers())
       }
   
     // @LINE:128
-    case controllers_TableController_listCourses91_route(params) =>
+    case controllers_TableController_listSubjects91_route(params) =>
       call { 
-        controllers_TableController_listCourses91_invoker.call(TableController_18.listCourses())
+        controllers_TableController_listSubjects91_invoker.call(TableController_18.listSubjects())
       }
   
     // @LINE:129
-    case controllers_TableController_listCurrentSemesters92_route(params) =>
+    case controllers_TableController_listFieldsOfStudy92_route(params) =>
       call { 
-        controllers_TableController_listCurrentSemesters92_invoker.call(TableController_18.listCurrentSemesters())
+        controllers_TableController_listFieldsOfStudy92_invoker.call(TableController_18.listFieldsOfStudy())
       }
   
     // @LINE:130
-    case controllers_TableController_listCurrentSemestersUntilTheEndOfStudy93_route(params) =>
+    case controllers_TableController_listCourses93_route(params) =>
       call { 
-        controllers_TableController_listCurrentSemestersUntilTheEndOfStudy93_invoker.call(TableController_18.listCurrentSemestersUntilTheEndOfStudy())
+        controllers_TableController_listCourses93_invoker.call(TableController_18.listCourses())
       }
   
     // @LINE:131
-    case controllers_TableController_listDays94_route(params) =>
+    case controllers_TableController_listCurrentSemesters94_route(params) =>
       call { 
-        controllers_TableController_listDays94_invoker.call(TableController_18.listDays())
+        controllers_TableController_listCurrentSemesters94_invoker.call(TableController_18.listCurrentSemesters())
       }
   
     // @LINE:132
-    case controllers_TableController_listClassrooms95_route(params) =>
+    case controllers_TableController_listCurrentSemestersUntilTheEndOfStudy95_route(params) =>
       call { 
-        controllers_TableController_listClassrooms95_invoker.call(TableController_18.listClassrooms())
+        controllers_TableController_listCurrentSemestersUntilTheEndOfStudy95_invoker.call(TableController_18.listCurrentSemestersUntilTheEndOfStudy())
       }
   
     // @LINE:133
-    case controllers_TableController_listTeachersRole96_route(params) =>
+    case controllers_TableController_listDays96_route(params) =>
       call { 
-        controllers_TableController_listTeachersRole96_invoker.call(TableController_18.listTeachersRole())
+        controllers_TableController_listDays96_invoker.call(TableController_18.listDays())
       }
   
     // @LINE:134
-    case controllers_TableController_listAccessRole97_route(params) =>
+    case controllers_TableController_listClassrooms97_route(params) =>
       call { 
-        controllers_TableController_listAccessRole97_invoker.call(TableController_18.listAccessRole())
+        controllers_TableController_listClassrooms97_invoker.call(TableController_18.listClassrooms())
       }
   
     // @LINE:135
-    case controllers_TableController_listCommittees98_route(params) =>
+    case controllers_TableController_listTeachersRole98_route(params) =>
       call { 
-        controllers_TableController_listCommittees98_invoker.call(TableController_18.listCommittees())
+        controllers_TableController_listTeachersRole98_invoker.call(TableController_18.listTeachersRole())
       }
   
     // @LINE:136
-    case controllers_TableController_listPublications99_route(params) =>
+    case controllers_TableController_listAccessRole99_route(params) =>
       call { 
-        controllers_TableController_listPublications99_invoker.call(TableController_18.listPublications())
+        controllers_TableController_listAccessRole99_invoker.call(TableController_18.listAccessRole())
       }
   
     // @LINE:137
-    case controllers_TableController_listTeachersInWeeks100_route(params) =>
+    case controllers_TableController_listCommittees100_route(params) =>
       call { 
-        controllers_TableController_listTeachersInWeeks100_invoker.call(TableController_18.listTeachersInWeeks())
+        controllers_TableController_listCommittees100_invoker.call(TableController_18.listCommittees())
+      }
+  
+    // @LINE:138
+    case controllers_TableController_listPublications101_route(params) =>
+      call { 
+        controllers_TableController_listPublications101_invoker.call(TableController_18.listPublications())
       }
   
     // @LINE:139
-    case controllers_StatisticController_listEmployeesActvitiy101_route(params) =>
+    case controllers_TableController_listTeachersInWeeks102_route(params) =>
       call { 
-        controllers_StatisticController_listEmployeesActvitiy101_invoker.call(StatisticController_4.listEmployeesActvitiy())
-      }
-  
-    // @LINE:140
-    case controllers_StatisticController_listEmployeerActvitiy102_route(params) =>
-      call(params.fromPath[String]("uid", None)) { (uid) =>
-        controllers_StatisticController_listEmployeerActvitiy102_invoker.call(StatisticController_4.listEmployeerActvitiy(uid))
+        controllers_TableController_listTeachersInWeeks102_invoker.call(TableController_18.listTeachersInWeeks())
       }
   
     // @LINE:141
-    case controllers_PersonalStatisticController_listTableTeachingAccordingToPersons103_route(params) =>
+    case controllers_StatisticController_listEmployeesActvitiy103_route(params) =>
       call { 
-        controllers_PersonalStatisticController_listTableTeachingAccordingToPersons103_invoker.call(PersonalStatisticController_15.listTableTeachingAccordingToPersons())
+        controllers_StatisticController_listEmployeesActvitiy103_invoker.call(StatisticController_4.listEmployeesActvitiy())
       }
   
     // @LINE:142
-    case controllers_PersonalStatisticController_listTableTeachingAccordingToId104_route(params) =>
+    case controllers_StatisticController_listEmployeerActvitiy104_route(params) =>
       call(params.fromPath[String]("uid", None)) { (uid) =>
-        controllers_PersonalStatisticController_listTableTeachingAccordingToId104_invoker.call(PersonalStatisticController_15.listTableTeachingAccordingToId(uid))
+        controllers_StatisticController_listEmployeerActvitiy104_invoker.call(StatisticController_4.listEmployeerActvitiy(uid))
+      }
+  
+    // @LINE:143
+    case controllers_PersonalStatisticController_listTableTeachingAccordingToPersons105_route(params) =>
+      call { 
+        controllers_PersonalStatisticController_listTableTeachingAccordingToPersons105_invoker.call(PersonalStatisticController_15.listTableTeachingAccordingToPersons())
       }
   
     // @LINE:144
-    case controllers_TeachersController_index105_route(params) =>
-      call { 
-        controllers_TeachersController_index105_invoker.call(TeachersController_9.index())
+    case controllers_PersonalStatisticController_listTableTeachingAccordingToId106_route(params) =>
+      call(params.fromPath[String]("uid", None)) { (uid) =>
+        controllers_PersonalStatisticController_listTableTeachingAccordingToId106_invoker.call(PersonalStatisticController_15.listTableTeachingAccordingToId(uid))
       }
   
-    // @LINE:145
-    case controllers_TeachersController_save106_route(params) =>
+    // @LINE:146
+    case controllers_TeachersController_index107_route(params) =>
       call { 
-        controllers_TeachersController_save106_invoker.call(TeachersController_9.save())
+        controllers_TeachersController_index107_invoker.call(TeachersController_9.index())
       }
   
     // @LINE:147
-    case controllers_AccessRoleController_index107_route(params) =>
+    case controllers_TeachersController_save108_route(params) =>
       call { 
-        controllers_AccessRoleController_index107_invoker.call(AccessRoleController_33.index())
-      }
-  
-    // @LINE:148
-    case controllers_AccessRoleController_save108_route(params) =>
-      call { 
-        controllers_AccessRoleController_save108_invoker.call(AccessRoleController_33.save())
+        controllers_TeachersController_save108_invoker.call(TeachersController_9.save())
       }
   
     // @LINE:149
-    case controllers_AccessRoleController_edit109_route(params) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_AccessRoleController_edit109_invoker.call(AccessRoleController_33.edit(id))
+    case controllers_AccessRoleController_index109_route(params) =>
+      call { 
+        controllers_AccessRoleController_index109_invoker.call(AccessRoleController_33.index())
       }
   
     // @LINE:150
-    case controllers_AccessRoleController_update110_route(params) =>
-      call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_AccessRoleController_update110_invoker.call(AccessRoleController_33.update(id))
+    case controllers_AccessRoleController_save110_route(params) =>
+      call { 
+        controllers_AccessRoleController_save110_invoker.call(AccessRoleController_33.save())
       }
   
     // @LINE:151
-    case controllers_AccessRoleController_delete111_route(params) =>
+    case controllers_AccessRoleController_edit111_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_AccessRoleController_edit111_invoker.call(AccessRoleController_33.edit(id))
+      }
+  
+    // @LINE:152
+    case controllers_AccessRoleController_update112_route(params) =>
       call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_AccessRoleController_delete111_invoker.call(AccessRoleController_33.delete(id))
+        controllers_AccessRoleController_update112_invoker.call(AccessRoleController_33.update(id))
       }
   
-    // @LINE:154
-    case controllers_MethodicsController_index112_route(params) =>
-      call { 
-        controllers_MethodicsController_index112_invoker.call(MethodicsController_0.index())
+    // @LINE:153
+    case controllers_AccessRoleController_delete113_route(params) =>
+      call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_AccessRoleController_delete113_invoker.call(AccessRoleController_33.delete(id))
       }
   
-    // @LINE:155
-    case controllers_MethodicsController_save113_route(params) =>
+    // @LINE:156
+    case controllers_MethodicsController_index114_route(params) =>
       call { 
-        controllers_MethodicsController_save113_invoker.call(MethodicsController_0.save())
+        controllers_MethodicsController_index114_invoker.call(MethodicsController_0.index())
       }
   
     // @LINE:157
-    case controllers_Application_roles114_route(params) =>
+    case controllers_MethodicsController_save115_route(params) =>
       call { 
-        controllers_Application_roles114_invoker.call(Application_31.roles())
+        controllers_MethodicsController_save115_invoker.call(MethodicsController_0.save())
       }
   
-    // @LINE:160
-    case controllers_TableController_listPerson115_route(params) =>
+    // @LINE:159
+    case controllers_Application_roles116_route(params) =>
       call { 
-        controllers_TableController_listPerson115_invoker.call(TableController_18.listPerson())
+        controllers_Application_roles116_invoker.call(Application_31.roles())
       }
   
     // @LINE:162
-    case controllers_SubjectPlanTeachingController_index116_route(params) =>
+    case controllers_TableController_listPerson117_route(params) =>
       call { 
-        controllers_SubjectPlanTeachingController_index116_invoker.call(SubjectPlanTeachingController_10.index())
+        controllers_TableController_listPerson117_invoker.call(TableController_18.listPerson())
       }
   
-    // @LINE:163
-    case controllers_SubjectPlanTeachingController_save117_route(params) =>
+    // @LINE:164
+    case controllers_SubjectPlanTeachingController_index118_route(params) =>
       call { 
-        controllers_SubjectPlanTeachingController_save117_invoker.call(SubjectPlanTeachingController_10.save())
+        controllers_SubjectPlanTeachingController_index118_invoker.call(SubjectPlanTeachingController_10.index())
       }
   
     // @LINE:165
-    case controllers_PDFController_pdfTableAccessRole118_route(params) =>
+    case controllers_SubjectPlanTeachingController_save119_route(params) =>
       call { 
-        controllers_PDFController_pdfTableAccessRole118_invoker.call(PDFController_13.pdfTableAccessRole())
-      }
-  
-    // @LINE:166
-    case controllers_PDFController_pdfTableClassroom119_route(params) =>
-      call { 
-        controllers_PDFController_pdfTableClassroom119_invoker.call(PDFController_13.pdfTableClassroom())
+        controllers_SubjectPlanTeachingController_save119_invoker.call(SubjectPlanTeachingController_10.save())
       }
   
     // @LINE:167
-    case controllers_PDFController_pdfTableCommittee120_route(params) =>
+    case controllers_PDFController_pdfTableAccessRole120_route(params) =>
       call { 
-        controllers_PDFController_pdfTableCommittee120_invoker.call(PDFController_13.pdfTableCommittee())
+        controllers_PDFController_pdfTableAccessRole120_invoker.call(PDFController_13.pdfTableAccessRole())
       }
   
     // @LINE:168
-    case controllers_PDFController_pdfTableEmployees121_route(params) =>
+    case controllers_PDFController_pdfTableClassroom121_route(params) =>
       call { 
-        controllers_PDFController_pdfTableEmployees121_invoker.call(PDFController_13.pdfTableEmployees())
+        controllers_PDFController_pdfTableClassroom121_invoker.call(PDFController_13.pdfTableClassroom())
       }
   
     // @LINE:169
-    case controllers_PDFController_pdfTableFieldsOfStudy122_route(params) =>
+    case controllers_PDFController_pdfTableCommittee122_route(params) =>
       call { 
-        controllers_PDFController_pdfTableFieldsOfStudy122_invoker.call(PDFController_13.pdfTableFieldsOfStudy())
+        controllers_PDFController_pdfTableCommittee122_invoker.call(PDFController_13.pdfTableCommittee())
       }
   
     // @LINE:170
-    case controllers_PDFController_pdfTablePublication123_route(params) =>
+    case controllers_PDFController_pdfTableEmployees123_route(params) =>
       call { 
-        controllers_PDFController_pdfTablePublication123_invoker.call(PDFController_13.pdfTablePublication())
+        controllers_PDFController_pdfTableEmployees123_invoker.call(PDFController_13.pdfTableEmployees())
       }
   
     // @LINE:171
-    case controllers_PDFController_pdfTableSPPrint124_route(params) =>
+    case controllers_PDFController_pdfTableFieldsOfStudy124_route(params) =>
       call { 
-        controllers_PDFController_pdfTableSPPrint124_invoker.call(PDFController_13.pdfTableSPPrint())
+        controllers_PDFController_pdfTableFieldsOfStudy124_invoker.call(PDFController_13.pdfTableFieldsOfStudy())
       }
   
     // @LINE:172
-    case controllers_PDFController_pdfTableStudyGroups125_route(params) =>
+    case controllers_PDFController_pdfTablePublication125_route(params) =>
       call { 
-        controllers_PDFController_pdfTableStudyGroups125_invoker.call(PDFController_13.pdfTableStudyGroups())
+        controllers_PDFController_pdfTablePublication125_invoker.call(PDFController_13.pdfTablePublication())
       }
   
     // @LINE:173
-    case controllers_PDFController_pdfTableStudyPlans126_route(params) =>
+    case controllers_PDFController_pdfTableSPPrint126_route(params) =>
       call { 
-        controllers_PDFController_pdfTableStudyPlans126_invoker.call(PDFController_13.pdfTableStudyPlans())
+        controllers_PDFController_pdfTableSPPrint126_invoker.call(PDFController_13.pdfTableSPPrint())
       }
   
     // @LINE:174
-    case controllers_PDFController_pdfTableSubjects127_route(params) =>
+    case controllers_PDFController_pdfTableStudyGroups127_route(params) =>
       call { 
-        controllers_PDFController_pdfTableSubjects127_invoker.call(PDFController_13.pdfTableSubjects())
+        controllers_PDFController_pdfTableStudyGroups127_invoker.call(PDFController_13.pdfTableStudyGroups())
       }
   
     // @LINE:175
-    case controllers_PDFController_pdfTableTeachingAAA128_route(params) =>
+    case controllers_PDFController_pdfTableStudyPlans128_route(params) =>
       call { 
-        controllers_PDFController_pdfTableTeachingAAA128_invoker.call(PDFController_13.pdfTableTeachingAAA())
+        controllers_PDFController_pdfTableStudyPlans128_invoker.call(PDFController_13.pdfTableStudyPlans())
       }
   
     // @LINE:176
-    case controllers_PDFController_pdfTableTeachingAAB129_route(params) =>
+    case controllers_PDFController_pdfTableSubjects129_route(params) =>
       call { 
-        controllers_PDFController_pdfTableTeachingAAB129_invoker.call(PDFController_13.pdfTableTeachingAAB())
+        controllers_PDFController_pdfTableSubjects129_invoker.call(PDFController_13.pdfTableSubjects())
       }
   
     // @LINE:177
-    case controllers_PDFController_pdfTableTeachingAccordingToPersons130_route(params) =>
+    case controllers_PDFController_pdfTableTeachingAAA130_route(params) =>
       call { 
-        controllers_PDFController_pdfTableTeachingAccordingToPersons130_invoker.call(PDFController_13.pdfTableTeachingAccordingToPersons())
+        controllers_PDFController_pdfTableTeachingAAA130_invoker.call(PDFController_13.pdfTableTeachingAAA())
       }
   
     // @LINE:178
-    case controllers_PDFController_pdfTableTeachingCB131_route(params) =>
+    case controllers_PDFController_pdfTableTeachingAAB131_route(params) =>
       call { 
-        controllers_PDFController_pdfTableTeachingCB131_invoker.call(PDFController_13.pdfTableTeachingCB())
+        controllers_PDFController_pdfTableTeachingAAB131_invoker.call(PDFController_13.pdfTableTeachingAAB())
       }
   
     // @LINE:179
-    case controllers_PDFController_pdfTableTeachingDepartmentEmployee132_route(params) =>
+    case controllers_PDFController_pdfTableTeachingAccordingToPersons132_route(params) =>
       call { 
-        controllers_PDFController_pdfTableTeachingDepartmentEmployee132_invoker.call(PDFController_13.pdfTableTeachingDepartmentEmployee())
+        controllers_PDFController_pdfTableTeachingAccordingToPersons132_invoker.call(PDFController_13.pdfTableTeachingAccordingToPersons())
+      }
+  
+    // @LINE:180
+    case controllers_PDFController_pdfTableTeachingCB133_route(params) =>
+      call { 
+        controllers_PDFController_pdfTableTeachingCB133_invoker.call(PDFController_13.pdfTableTeachingCB())
       }
   
     // @LINE:181
-    case controllers_DOCController_docTableAccessRole133_route(params) =>
+    case controllers_PDFController_pdfTableTeachingDepartmentEmployee134_route(params) =>
       call { 
-        controllers_DOCController_docTableAccessRole133_invoker.call(DOCController_29.docTableAccessRole())
-      }
-  
-    // @LINE:182
-    case controllers_DOCController_docTableClassroom134_route(params) =>
-      call { 
-        controllers_DOCController_docTableClassroom134_invoker.call(DOCController_29.docTableClassroom())
+        controllers_PDFController_pdfTableTeachingDepartmentEmployee134_invoker.call(PDFController_13.pdfTableTeachingDepartmentEmployee())
       }
   
     // @LINE:183
-    case controllers_DOCController_docTableCommittee135_route(params) =>
+    case controllers_DOCController_docTableAccessRole135_route(params) =>
       call { 
-        controllers_DOCController_docTableCommittee135_invoker.call(DOCController_29.docTableCommittee())
+        controllers_DOCController_docTableAccessRole135_invoker.call(DOCController_29.docTableAccessRole())
       }
   
     // @LINE:184
-    case controllers_DOCController_docTableEmployees136_route(params) =>
+    case controllers_DOCController_docTableClassroom136_route(params) =>
       call { 
-        controllers_DOCController_docTableEmployees136_invoker.call(DOCController_29.docTableEmployees())
+        controllers_DOCController_docTableClassroom136_invoker.call(DOCController_29.docTableClassroom())
       }
   
     // @LINE:185
-    case controllers_DOCController_docTableFieldsOfStudy137_route(params) =>
+    case controllers_DOCController_docTableCommittee137_route(params) =>
       call { 
-        controllers_DOCController_docTableFieldsOfStudy137_invoker.call(DOCController_29.docTableFieldsOfStudy())
+        controllers_DOCController_docTableCommittee137_invoker.call(DOCController_29.docTableCommittee())
       }
   
     // @LINE:186
-    case controllers_DOCController_docTablePublication138_route(params) =>
+    case controllers_DOCController_docTableEmployees138_route(params) =>
       call { 
-        controllers_DOCController_docTablePublication138_invoker.call(DOCController_29.docTablePublication())
+        controllers_DOCController_docTableEmployees138_invoker.call(DOCController_29.docTableEmployees())
       }
   
     // @LINE:187
-    case controllers_DOCController_docTableSPPrint139_route(params) =>
+    case controllers_DOCController_docTableFieldsOfStudy139_route(params) =>
       call { 
-        controllers_DOCController_docTableSPPrint139_invoker.call(DOCController_29.docTableSPPrint())
+        controllers_DOCController_docTableFieldsOfStudy139_invoker.call(DOCController_29.docTableFieldsOfStudy())
       }
   
     // @LINE:188
-    case controllers_DOCController_docTableStudyGroups140_route(params) =>
+    case controllers_DOCController_docTablePublication140_route(params) =>
       call { 
-        controllers_DOCController_docTableStudyGroups140_invoker.call(DOCController_29.docTableStudyGroups())
+        controllers_DOCController_docTablePublication140_invoker.call(DOCController_29.docTablePublication())
       }
   
     // @LINE:189
-    case controllers_DOCController_docTableStudyPlans141_route(params) =>
+    case controllers_DOCController_docTableSPPrint141_route(params) =>
       call { 
-        controllers_DOCController_docTableStudyPlans141_invoker.call(DOCController_29.docTableStudyPlans())
+        controllers_DOCController_docTableSPPrint141_invoker.call(DOCController_29.docTableSPPrint())
       }
   
     // @LINE:190
-    case controllers_DOCController_docTableSubjects142_route(params) =>
+    case controllers_DOCController_docTableStudyGroups142_route(params) =>
       call { 
-        controllers_DOCController_docTableSubjects142_invoker.call(DOCController_29.docTableSubjects())
+        controllers_DOCController_docTableStudyGroups142_invoker.call(DOCController_29.docTableStudyGroups())
       }
   
     // @LINE:191
-    case controllers_DOCController_docTableTeachingAAA143_route(params) =>
+    case controllers_DOCController_docTableStudyPlans143_route(params) =>
       call { 
-        controllers_DOCController_docTableTeachingAAA143_invoker.call(DOCController_29.docTableTeachingAAA())
+        controllers_DOCController_docTableStudyPlans143_invoker.call(DOCController_29.docTableStudyPlans())
       }
   
     // @LINE:192
-    case controllers_DOCController_docTableTeachingAAB144_route(params) =>
+    case controllers_DOCController_docTableSubjects144_route(params) =>
       call { 
-        controllers_DOCController_docTableTeachingAAB144_invoker.call(DOCController_29.docTableTeachingAAB())
+        controllers_DOCController_docTableSubjects144_invoker.call(DOCController_29.docTableSubjects())
       }
   
     // @LINE:193
-    case controllers_DOCController_docTableTeachingAccordingToPersons145_route(params) =>
+    case controllers_DOCController_docTableTeachingAAA145_route(params) =>
       call { 
-        controllers_DOCController_docTableTeachingAccordingToPersons145_invoker.call(DOCController_29.docTableTeachingAccordingToPersons())
+        controllers_DOCController_docTableTeachingAAA145_invoker.call(DOCController_29.docTableTeachingAAA())
       }
   
     // @LINE:194
-    case controllers_DOCController_docTableTeachingCB146_route(params) =>
+    case controllers_DOCController_docTableTeachingAAB146_route(params) =>
       call { 
-        controllers_DOCController_docTableTeachingCB146_invoker.call(DOCController_29.docTableTeachingCB())
+        controllers_DOCController_docTableTeachingAAB146_invoker.call(DOCController_29.docTableTeachingAAB())
       }
   
     // @LINE:195
-    case controllers_DOCController_docTableTeachingDepartmentEmployee147_route(params) =>
+    case controllers_DOCController_docTableTeachingAccordingToPersons147_route(params) =>
       call { 
-        controllers_DOCController_docTableTeachingDepartmentEmployee147_invoker.call(DOCController_29.docTableTeachingDepartmentEmployee())
+        controllers_DOCController_docTableTeachingAccordingToPersons147_invoker.call(DOCController_29.docTableTeachingAccordingToPersons())
+      }
+  
+    // @LINE:196
+    case controllers_DOCController_docTableTeachingCB148_route(params) =>
+      call { 
+        controllers_DOCController_docTableTeachingCB148_invoker.call(DOCController_29.docTableTeachingCB())
       }
   
     // @LINE:197
-    case controllers_IdeasController_index148_route(params) =>
+    case controllers_DOCController_docTableTeachingDepartmentEmployee149_route(params) =>
       call { 
-        controllers_IdeasController_index148_invoker.call(IdeasController_20.index())
+        controllers_DOCController_docTableTeachingDepartmentEmployee149_invoker.call(DOCController_29.docTableTeachingDepartmentEmployee())
       }
   
-    // @LINE:198
-    case controllers_IdeasController_save149_route(params) =>
+    // @LINE:199
+    case controllers_IdeasController_index150_route(params) =>
       call { 
-        controllers_IdeasController_save149_invoker.call(IdeasController_20.save())
+        controllers_IdeasController_index150_invoker.call(IdeasController_20.index())
       }
   
     // @LINE:200
-    case controllers_Application_logout150_route(params) =>
+    case controllers_IdeasController_save151_route(params) =>
       call { 
-        controllers_Application_logout150_invoker.call(Application_31.logout())
+        controllers_IdeasController_save151_invoker.call(IdeasController_20.save())
       }
   
-    // @LINE:203
-    case controllers_PrintController_printUserDetails151_route(params) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_PrintController_printUserDetails151_invoker.call(PrintController_19.printUserDetails(id))
+    // @LINE:202
+    case controllers_Application_logout152_route(params) =>
+      call { 
+        controllers_Application_logout152_invoker.call(Application_31.logout())
       }
   
-    // @LINE:204
-    case controllers_PrintController_detailsList152_route(params) =>
+    // @LINE:205
+    case controllers_PrintController_printUserDetails153_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_PrintController_detailsList152_invoker.call(PrintController_19.detailsList(id))
+        controllers_PrintController_printUserDetails153_invoker.call(PrintController_19.printUserDetails(id))
       }
   
     // @LINE:206
-    case controllers_SalaryController_saveLector153_route(params) =>
-      call { 
-        controllers_SalaryController_saveLector153_invoker.call(SalaryController_17.saveLector())
-      }
-  
-    // @LINE:207
-    case controllers_SalaryController_printLector154_route(params) =>
+    case controllers_PrintController_detailsList154_route(params) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_SalaryController_printLector154_invoker.call(SalaryController_17.printLector(id))
+        controllers_PrintController_detailsList154_invoker.call(PrintController_19.detailsList(id))
       }
   
     // @LINE:208
-    case controllers_SalaryController_detailsListLector155_route(params) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_SalaryController_detailsListLector155_invoker.call(SalaryController_17.detailsListLector(id))
+    case controllers_SalaryController_saveLector155_route(params) =>
+      call { 
+        controllers_SalaryController_saveLector155_invoker.call(SalaryController_17.saveLector())
       }
   
-    // @LINE:211
-    case controllers_Assets_at156_route(params) =>
+    // @LINE:209
+    case controllers_SalaryController_printLector156_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_SalaryController_printLector156_invoker.call(SalaryController_17.printLector(id))
+      }
+  
+    // @LINE:210
+    case controllers_SalaryController_detailsListLector157_route(params) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_SalaryController_detailsListLector157_invoker.call(SalaryController_17.detailsListLector(id))
+      }
+  
+    // @LINE:213
+    case controllers_Assets_at158_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at156_invoker.call(Assets_27.at(path, file))
+        controllers_Assets_at158_invoker.call(Assets_27.at(path, file))
       }
   }
 }

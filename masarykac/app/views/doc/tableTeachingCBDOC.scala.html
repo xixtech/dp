@@ -63,6 +63,8 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @(y = 0)
+                                                @(z = 0)
                                                 @for(member <- cbPage) {
                                                     @if(sem.getId == member.getSemester.getId) {
                                                         @for(t <- tPage) {
@@ -178,10 +180,10 @@
                                                 <tr align="right">
                                                     <td class="right">
                                                         @(y = y / 13)
-                                                        Celkem: @y
+                                                        Celkem: @BigDecimal(y).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
                                                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                                         @(z = z / 13)
-                                                        Celkem: @z &nbsp; &nbsp; &nbsp;
+                                                        Celkem: @BigDecimal(z).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble &nbsp; &nbsp; &nbsp;
                                                     </td>
                                                 </tr>
                                             </table>

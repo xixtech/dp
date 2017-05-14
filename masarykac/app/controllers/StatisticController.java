@@ -37,6 +37,28 @@ public class StatisticController extends Controller {
         return ok(views.html.tables.tableDCPS.render(sp, f, s,sem,c,teachers));
     }
 
+    public Result dcpsCombi() {
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.searchCombi();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.searchCombi();
+        List<Teachers> teachers = Teachers.find.all();
+        return ok(views.html.tables.tableDCPSCombi.render(sp, f, s,sem,c,teachers));
+    }
+
+    public Result dcpsPres() {
+        List<StudyPlans> sp = StudyPlans.search();
+        List<FieldsOfStudy> f = FieldsOfStudy.search();
+        List<Subjects> s = Subjects.searchPresentation();
+        List<StudyGroups> sg = StudyGroups.search();
+        List<Semesters> sem = Semesters.search();
+        List<Courses> c = Courses.searchPresentation();
+        List<Teachers> teachers = Teachers.find.all();
+        return ok(views.html.tables.tableDCPSPres.render(sp, f, s,sem,c,teachers));
+    }
+
     public Result studyPlansTable() {
         List<StudyPlans> sp = StudyPlans.search();
         List<FieldsOfStudy> f = FieldsOfStudy.search();

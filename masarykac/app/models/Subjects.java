@@ -243,6 +243,30 @@ public class Subjects extends Model {
         return Subjects.find.all();
     }
 
+    public static List<Subjects> searchCombi() {
+        List<Subjects> list = search();
+        for (Iterator<Subjects> iterator = list.iterator(); iterator.hasNext(); ) {
+            Subjects subjects = iterator.next();
+            boolean combi = subjects.isFormCombined();
+            if (!combi) {
+                iterator.remove();
+            }
+        }
+        return list;
+    }
+
+    public static List<Subjects> searchPresentation() {
+        List<Subjects> list = search();
+        for (Iterator<Subjects> iterator = list.iterator(); iterator.hasNext(); ) {
+            Subjects subjects = iterator.next();
+            boolean pres = subjects.isFormPresentation();
+            if (!pres) {
+                iterator.remove();
+            }
+        }
+        return list;
+    }
+
     public static List<Subjects> searchAAA() {
         List<Subjects> list = search();
         for (Iterator<Subjects> iterator = list.iterator(); iterator.hasNext(); ) {

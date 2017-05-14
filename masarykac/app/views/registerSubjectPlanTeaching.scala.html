@@ -3,6 +3,12 @@
 
 @localStylesheets = {
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <style type="text/css">
+    #formPresentation:not(:checked).invalid + strong {
+        color: red;
+    }
+
+    </style>
 }
 @localScripts = {
 
@@ -39,6 +45,7 @@
 
                 employeeArray(MyUserObject);
                 document.getElementById('addToAllWeeks').style.visibility = 'hidden';
+
             });
 
             $('.timepicker').timepicker({
@@ -51,6 +58,24 @@
                 dynamic: true,
                 dropdown: true,
                 scrollbar: true
+            });
+
+
+            $('input[type="checkbox"][id="formPresentation"]').on('change',function(){
+                var pres = document.getElementById('formPresentation');
+                var combi = document.getElementById('formCombined');
+                var isChecked = false;
+
+                if (pres.checked || combi.checked) {
+                    isChecked = true;
+                }
+                if ( isChecked ) {
+                    document.getElementById("formPresentation").required = false;
+                    document.getElementById("formCombined").required = false;
+                } else {
+                    document.getElementById("formPresentation").required = true;
+                    document.getElementById("formCombined").required = true;
+                }
             });
     </script>
 }
@@ -107,23 +132,12 @@
                                     <input type="checkbox" id="credit" class="form-control" name="credit"/>
                                 </div>
                                 <div class="col-md-1">
-
-                                @checkbox(
-                                    subjectForm("exam"),
-                                    '_label -> "Zkouška",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="exam">Zkouška:</label>
+                                    <input type="checkbox" id="exam" class="form-control" name="exam"/>
                                 </div>
                                 <div class="col-md-2">
-                                @checkbox(
-                                    subjectForm("classifiedCredit"),
-                                    '_label -> "Klasifikovaný zápočet",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="classifiedCredit">Klasifikovaný zápočet:</label>
+                                    <input type="checkbox" id="classifiedCredit" class="form-control" name="classifiedCredit"/>
                                 </div>
 
                             </div>
@@ -137,22 +151,12 @@
                                     <input type="text" id="hoursC" class="form-control" name="hoursC" onkeypress="return isNumberKey(event)" maxlength="1" required/>
                                 </div>
                                 <div class="col-md-2">
-                                @checkbox(
-                                    subjectForm("formPresentation"),
-                                    '_label -> "Prezenční forma",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="formPresentation">Prezenční forma:</label>
+                                    <input type="checkbox" id="formPresentation" class="form-control" name="formPresentation"/>
                                 </div>
                                 <div class="col-md-2">
-                                @checkbox(
-                                    subjectForm("formCombined"),
-                                    '_label -> "Kombinovaná forma",
-                                    'class -> "form-control",
-                                    '_help -> "",
-                                    '_error -> subjectForm.globalError
-                                )
+                                    <label for="formCombined">Kombinovaná forma:</label>
+                                    <input type="checkbox" id="formCombined" class="form-control" name="formCombined"/>
                                 </div>
                             </div>
                             <div class="row">

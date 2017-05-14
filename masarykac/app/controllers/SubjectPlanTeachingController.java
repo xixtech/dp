@@ -609,8 +609,11 @@ public class SubjectPlanTeachingController extends Controller {
                         recountedSummary = summary;
                     }
                     double valRounded = (double) Math.round(recountedSummary * 10d) / 10d;
-
-                    Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), entry.getValue(), summary, valRounded);
+                    double scale = (double) Math.round(entry.getValue() * 10d) / 10d;
+                    if (scale > 1.0) {
+                        scale = 1.0;
+                    }
+                    Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), scale, summary, valRounded);
                     t.save();
                     if (!teachersFromRows.containsKey(entry.getKey())) {
                         teachersFromRows.put(entry.getKey(), t.getId());

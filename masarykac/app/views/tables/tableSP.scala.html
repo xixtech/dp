@@ -3,6 +3,16 @@
 @import scala.Predef; var x = 0;var y = 0;
 @localStylesheets = {
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
+    <style type="text/css"><!--
+
+    div {
+
+        word-wrap: break-word; /* All browsers since IE 5.5+ */
+        overflow-wrap: break-word;
+    }
+
+
+    --></style>
 }
 
 @localScripts = {

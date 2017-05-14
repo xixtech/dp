@@ -176,4 +176,28 @@ public class Courses extends Model {
         return Courses.find.all();
     }
 
+    public static List<Courses> searchCombi() {
+        List<Courses> list = search();
+        for (Iterator<Courses> iterator = list.iterator(); iterator.hasNext(); ) {
+            Courses courses = iterator.next();
+            boolean combi = courses.getSubjects().isFormCombined();
+            if (!combi) {
+                iterator.remove();
+            }
+        }
+        return list;
+    }
+
+    public static List<Courses> searchPresentation() {
+        List<Courses> list = search();
+        for (Iterator<Courses> iterator = list.iterator(); iterator.hasNext(); ) {
+            Courses courses = iterator.next();
+            boolean pres = courses.getSubjects().isFormPresentation();
+            if (!pres) {
+                iterator.remove();
+            }
+        }
+        return list;
+    }
+
 }
