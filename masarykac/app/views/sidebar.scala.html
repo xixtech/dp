@@ -44,6 +44,12 @@
                     }
                     @if(session().get("role").equals("director") || session().get("role").equals("head")) {
                         <li>
+                            <a href='@routes.TableController.listOJ()'><i class="fa fa-table fa-fw"></i>
+                                Organizační jednotky</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                        <li>
                             <a href='@routes.TableController.listAccessRole()'><i class="fa fa-table fa-fw"></i>
                                 Role přístupů</a>
                         </li>
