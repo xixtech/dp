@@ -1,2 +1,16 @@
-[warn] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomController.java:3: com.sun.org.apache.bcel.internal.util.ClassQueue is internal proprietary API and may be removed in a future release
-[warn] com.sun.org.apache.bcel.internal.util.ClassQueue
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableCheckRepairEmployeeCheckStatement.scala.html:104: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                         @if(member.getTeachers.getScale == null) {
+[warn]                                                                                         ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableClassroom.scala.html:92: comparing values of types Int and Null using `==' will always yield false
+[warn]                                     @if(member.getCapacity == null) {
+[warn]                                                            ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployeeCheckStatement.scala.html:104: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                             @if(member.getTeachers.getScale == null) {
+[warn]                                                                                             ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableInfoEmployeeCheckStatement.scala.html:102: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                         @if(member.getTeachers.getScale == null) {
+[warn]                                                                                         ^
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableStatement.scala.html:97: comparing values of types Double and Null using `==' will always yield false
+[warn]                                                 @if(member.getTeachers.getScale == null) {
+[warn]                                                                                 ^
+[warn] 5 warnings found
