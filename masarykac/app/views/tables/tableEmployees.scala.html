@@ -2,6 +2,22 @@
 @import helper._
 @localStylesheets = {
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
+    <style type="text/css"><!--
+
+
+    table {
+        width: 100%;
+        table-layout:fixed;
+    }
+
+    td {
+        word-wrap: break-word; /* All browsers since IE 5.5+ */
+        overflow-wrap: break-word;
+    }
+
+
+    --></style>
+
 }
 
 @localScripts = {

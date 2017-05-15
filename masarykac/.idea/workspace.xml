@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c2beb26-3c63-43aa-8b60-e106e0ae02db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/doc/tableDCPSCombiDOC.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/doc/tableDCPSDOC.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/doc/tableDCPSPresDOC.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pdf/tableDCPSCombiPDF.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pdf/tableDCPSPDF.scala.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/pdf/tableDCPSPresPDF.scala.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/editFieldsOfStudy.scala.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/editStudyGroups.scala.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPerson.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" afterPath="$PROJECT_DIR$/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.10/output_dsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseCharts.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/ReverseCharts.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/TableController.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/TableController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseCharts.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/controllers/javascript/ReverseCharts.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/Member.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/Member.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$documentation$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$documentation$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_Application_dashboard0_invoker$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_Application_dashboard0_invoker$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_Application_pdf1_invoker$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$router$Routes$$controllers_Application_pdf1_invoker$1.class" />
@@ -69,34 +68,76 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1$$anonfun$applyOrElse$9.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes$$anonfun$routes$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/router/Routes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar$$anonfun$f$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar$$anonfun$f$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/dashboard$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/dashboard$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/dashboard_Scope0$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/dashboard_Scope0$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/dashboard_Scope0$dashboard$$anonfun$f$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/dashboard_Scope0$dashboard$$anonfun$f$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/dashboard_Scope0$dashboard.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/dashboard_Scope0$dashboard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main_Scope0$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main_Scope0$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main_Scope0$main$$anonfun$f$1$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main_Scope0$main$$anonfun$f$1$$anonfun$apply$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main_Scope0$main$$anonfun$f$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main_Scope0$main$$anonfun$f$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main_Scope0$main.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/main_Scope0$main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$workers$$anonfun$1$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$workers$$anonfun$1$$anonfun$apply$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$workers$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$workers$$anonfun$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$workers$$anonfun$f$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$workers$$anonfun$f$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$workers.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/tables/workers_Scope0$workers.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/op-cache" afterPath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/op-cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/connections/master.log" afterPath="$PROJECT_DIR$/.sbtserver/connections/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/master.log" afterPath="$PROJECT_DIR$/.sbtserver/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/previous.log" afterPath="$PROJECT_DIR$/.sbtserver/previous.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/DOCController.java" afterPath="$PROJECT_DIR$/app/controllers/DOCController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/EmployeesController.java" afterPath="$PROJECT_DIR$/app/controllers/EmployeesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/FieldOfStudyController.java" afterPath="$PROJECT_DIR$/app/controllers/FieldOfStudyController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PDFController.java" afterPath="$PROJECT_DIR$/app/controllers/PDFController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PersonalStatisticController.java" afterPath="$PROJECT_DIR$/app/controllers/PersonalStatisticController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/StudyGroupsController.java" afterPath="$PROJECT_DIR$/app/controllers/StudyGroupsController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/SubjectPlanTeachingController.java" afterPath="$PROJECT_DIR$/app/controllers/SubjectPlanTeachingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TableController.java" afterPath="$PROJECT_DIR$/app/controllers/TableController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Member.java" afterPath="$PROJECT_DIR$/app/models/Member.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/dashboard.scala.html" afterPath="$PROJECT_DIR$/app/views/dashboard.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doc/tableDCPSCombiDOC.scala.html" afterPath="$PROJECT_DIR$/app/views/doc/tableDCPSCombiDOC.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doc/tableDCPSDOC.scala.html" afterPath="$PROJECT_DIR$/app/views/doc/tableDCPSDOC.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doc/tableDCPSPresDOC.scala.html" afterPath="$PROJECT_DIR$/app/views/doc/tableDCPSPresDOC.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doc/tableTeachingAAADOC.scala.html" afterPath="$PROJECT_DIR$/app/views/doc/tableTeachingAAADOC.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doc/tableTeachingAABDOC.scala.html" afterPath="$PROJECT_DIR$/app/views/doc/tableTeachingAABDOC.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doc/tableTeachingAccordingToPersonsDOC.scala.html" afterPath="$PROJECT_DIR$/app/views/doc/tableTeachingAccordingToPersonsDOC.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doc/tableTeachingCBDOC.scala.html" afterPath="$PROJECT_DIR$/app/views/doc/tableTeachingCBDOC.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/doc/tableTeachingDepartmentEmployeeDOC.scala.html" afterPath="$PROJECT_DIR$/app/views/doc/tableTeachingDepartmentEmployeeDOC.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/main.scala.html" afterPath="$PROJECT_DIR$/app/views/main.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pdf/tableDCPSCombiPDF.scala.html" afterPath="$PROJECT_DIR$/app/views/pdf/tableDCPSCombiPDF.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pdf/tableDCPSPDF.scala.html" afterPath="$PROJECT_DIR$/app/views/pdf/tableDCPSPDF.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pdf/tableDCPSPresPDF.scala.html" afterPath="$PROJECT_DIR$/app/views/pdf/tableDCPSPresPDF.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pdf/tableTeachingAAAPDF.scala.html" afterPath="$PROJECT_DIR$/app/views/pdf/tableTeachingAAAPDF.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pdf/tableTeachingAABPDF.scala.html" afterPath="$PROJECT_DIR$/app/views/pdf/tableTeachingAABPDF.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pdf/tableTeachingAccordingToPersonsPDF.scala.html" afterPath="$PROJECT_DIR$/app/views/pdf/tableTeachingAccordingToPersonsPDF.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pdf/tableTeachingCBPDF.scala.html" afterPath="$PROJECT_DIR$/app/views/pdf/tableTeachingCBPDF.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pdf/tableTeachingDepartmentEmployeePDF.scala.html" afterPath="$PROJECT_DIR$/app/views/pdf/tableTeachingDepartmentEmployeePDF.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerPublications.scala.html" afterPath="$PROJECT_DIR$/app/views/registerPublications.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" afterPath="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableAccessRole.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableAccessRole.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableCourses.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableCourses.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableDCPS.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableDCPS.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableDCPSCombi.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableDCPSCombi.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableDCPSPres.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableDCPSPres.scala.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableSP.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableSP.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableEmployees.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableEmployees.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableFieldsOfStudy.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableFieldsOfStudy.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tablePublications.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tablePublications.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableSchedule.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableSchedule.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableScheduleInWeeks.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableScheduleInWeeks.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableStudyGroups.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableStudyGroups.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableSubjects.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableSubjects.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableTeachers.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachers.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableTeachersInWeeks.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachersInWeeks.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableTeachingAAA.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachingAAA.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableTeachingAAB.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachingAAB.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPersons.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPersons.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableTeachingCB.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachingCB.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/tableTeachingDepartmentEmployee.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/tableTeachingDepartmentEmployee.scala.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tables/workers.scala.html" afterPath="$PROJECT_DIR$/app/views/tables/workers.scala.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/.sbtserver" afterPath="$PROJECT_DIR$/project/.sbtserver" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala" />
@@ -104,12 +145,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/routes.java" afterPath="$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/routes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/routes/main/router/Routes.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/routes/main/router/Routes.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/routes/main/router/RoutesPrefix.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/routes/main/router/RoutesPrefix.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/dashboard.template.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/dashboard.template.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/main.template.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/main.template.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/tables/workers.template.scala" afterPath="$PROJECT_DIR$/target/scala-2.11/twirl/main/views/html/tables/workers.template.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerGenerateAccessors/$global/streams/play_instrumentation_2.11" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" afterPath="$PROJECT_DIR$/target/streams/compile/playEnhancerRewriteAccessors/$global/streams/play_instrumentation_2.11" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/compile/twirlCompileTemplates/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/compile/twirlCompileTemplates/$global/streams/out" />
     </list>
     <ignored path="masarykac.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -153,18 +198,48 @@
       <file leaf-file-name="routes" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="188" column="98" selection-start-line="188" selection-start-column="98" selection-end-line="188" selection-end-column="98" />
+            <state relative-caret-position="280">
+              <caret line="179" column="103" selection-start-line="179" selection-start-column="103" selection-end-line="179" selection-end-column="103" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatisticController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/StatisticController.java">
+      <file leaf-file-name="PersonalStatisticController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/PersonalStatisticController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="46" column="54" selection-start-line="40" selection-start-column="7" selection-end-line="46" selection-end-column="54" />
+            <state relative-caret-position="1241">
+              <caret line="82" column="62" selection-start-line="82" selection-start-column="62" selection-end-line="82" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tableTeachingAccordingToPerson.scala.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPerson.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tableSubjects.scala.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tables/tableSubjects.scala.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="27" selection-start-line="8" selection-start-column="7" selection-end-line="9" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DOCController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/DOCController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="136" column="52" selection-start-line="136" selection-start-column="18" selection-end-line="136" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -173,56 +248,19 @@
       <file leaf-file-name="PDFController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/PDFController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="67" column="5" selection-start-line="45" selection-start-column="3" selection-end-line="67" selection-end-column="5" />
+            <state relative-caret-position="305">
+              <caret line="156" column="52" selection-start-line="156" selection-start-column="7" selection-end-line="156" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tableDCPSCombi.scala.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/tables/tableDCPSCombi.scala.html">
+      <file leaf-file-name="tableTeachingAccordingToPersonsPDF.scala.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pdf/tableTeachingAccordingToPersonsPDF.scala.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
-              <folding>
-                <element signature="e#153#168#0#Scala" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DOCController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/DOCController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="50" column="35" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="35" />
+            <state relative-caret-position="3553">
+              <caret line="210" column="98" selection-start-line="210" selection-start-column="98" selection-end-line="210" selection-end-column="98" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tableDCPSDOC.scala.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/doc/tableDCPSDOC.scala.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="687">
-              <caret line="240" column="3" selection-start-line="240" selection-start-column="3" selection-end-line="244" selection-end-column="7" />
-              <folding>
-                <element signature="e#153#168#0#Scala" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Subjects.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Subjects.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="190" column="33" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="33" />
-              <folding>
-                <element signature="e#3881#3882#0" expanded="true" />
-                <element signature="e#3920#3921#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -249,57 +287,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/test.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableSP1.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/doc/tableSPPrintDOC.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableSPPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/controllers/CommitteeController.java" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableCommitteesPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableEmployeesPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tablePublicationsPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableStudyPlansPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableAccessRolePDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableClassroomPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableFieldsOfStudyPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableStudyGroupsPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableSubjectsPDF.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableTeachers.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/editStudyGroups.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableStudyGroups.scala.html" />
+        <option value="$PROJECT_DIR$/app/controllers/StudyGroupsController.java" />
+        <option value="$PROJECT_DIR$/app/views/editFieldsOfStudy.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableFieldsOfStudy.scala.html" />
+        <option value="$PROJECT_DIR$/app/controllers/FieldOfStudyController.java" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableSubjects.scala.html" />
+        <option value="$PROJECT_DIR$/app/controllers/EmployeesController.java" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableEmployees.scala.html" />
+        <option value="$PROJECT_DIR$/app/models/Member.java" />
+        <option value="$PROJECT_DIR$/app/views/tables/workers.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableAccessRole.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableTeachersInWeeks.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tablePublications.scala.html" />
+        <option value="$PROJECT_DIR$/app/controllers/TableController.java" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableCourses.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/SubjectPlanTeachingController.java" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableEmployeerActvitiy.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingCB.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAAB.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAAA.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableEmployeesActvitiy.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingDepartmentEmployee.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPersons.scala.html" />
-        <option value="$PROJECT_DIR$/app/models/Subjects.java" />
-        <option value="$PROJECT_DIR$/app/models/Courses.java" />
-        <option value="$PROJECT_DIR$/app/controllers/StatisticController.java" />
-        <option value="$PROJECT_DIR$/app/views/sidebar.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/main.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/dashboard.scala.html" />
         <option value="$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingAccordingToPersonsPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingDepartmentEmployeePDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingAAAPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingCBPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingAABPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js" />
+        <option value="$PROJECT_DIR$/app/views/registerPublications.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAAA.scala.html" />
         <option value="$PROJECT_DIR$/app/views/doc/tableTeachingAAADOC.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/doc/tableTeachingDepartmentEmployeeDOC.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/doc/tableTeachingCBDOC.scala.html" />
         <option value="$PROJECT_DIR$/app/views/doc/tableTeachingAABDOC.scala.html" />
         <option value="$PROJECT_DIR$/app/views/doc/tableTeachingAccordingToPersonsDOC.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableDCPSPDF.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableSP.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/doc/tableTeachingCBDOC.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingAAAPDF.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingAABPDF.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingAccordingToPersonsPDF.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingCBPDF.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAAB.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingCB.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingDepartmentEmployee.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/pdf/tableTeachingDepartmentEmployeePDF.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/doc/tableTeachingDepartmentEmployeeDOC.scala.html" />
         <option value="$PROJECT_DIR$/app/views/tables/tableDCPS.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/pdf/tableDCPSPresPDF.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/pdf/tableDCPSPDF.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableDCPSCombi.scala.html" />
         <option value="$PROJECT_DIR$/app/views/tables/tableDCPSPres.scala.html" />
-        <option value="$PROJECT_DIR$/app/controllers/PDFController.java" />
+        <option value="$PROJECT_DIR$/app/views/pdf/tableDCPSPresPDF.scala.html" />
         <option value="$PROJECT_DIR$/app/views/pdf/tableDCPSCombiPDF.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/doc/tableDCPSPresDOC.scala.html" />
         <option value="$PROJECT_DIR$/app/views/doc/tableDCPSDOC.scala.html" />
         <option value="$PROJECT_DIR$/app/views/doc/tableDCPSCombiDOC.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/doc/tableDCPSPresDOC.scala.html" />
+        <option value="$PROJECT_DIR$/app/controllers/PDFController.java" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPersons.scala.html" />
+        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPerson.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/DOCController.java" />
         <option value="$PROJECT_DIR$/conf/routes" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableDCPSCombi.scala.html" />
+        <option value="$PROJECT_DIR$/app/controllers/PersonalStatisticController.java" />
       </list>
     </option>
   </component>
@@ -326,9 +364,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1933" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -355,7 +394,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -466,77 +507,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uielements" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masarykac" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masarykac" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tables" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masarykac" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masarykac" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masarykac" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masarykac" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="doc" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -600,8 +571,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -617,23 +586,23 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Martin\dp\masarykac\app\views\tables" />
+      <recent name="C:\Users\Martin\dp\masarykac\app\views" />
+      <recent name="C:\Users\Martin\dp\masarykac\app\views\doc" />
+      <recent name="C:\Users\Martin\dp\masarykac\app\views\pdf" />
+      <recent name="C:\Users\Martin\dp\masarykac\public" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controllers" />
+      <recent name="models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Martin\dp\masarykac\public\lib" />
       <recent name="C:\Users\Martin\dp\masarykac\app\assets" />
       <recent name="C:\Users\Martin\dp\masarykac\public" />
       <recent name="C:\Users\Martin\dp\masarykac\app\views\doc" />
       <recent name="C:\Users\Martin\dp\masarykac\public\javascript" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="controllers" />
-      <recent name="models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Martin\dp\masarykac\app\views\doc" />
-      <recent name="C:\Users\Martin\dp\masarykac\app\views\pdf" />
-      <recent name="C:\Users\Martin\dp\masarykac\app\views\tables" />
-      <recent name="C:\Users\Martin\dp\masarykac\public" />
-      <recent name="C:\Users\Martin\dp\masarykac\app\assets\stylesheets" />
     </key>
   </component>
   <component name="RunManager">
@@ -1295,14 +1264,8 @@
       <workItem from="1494718422790" duration="104000" />
       <workItem from="1494740768817" duration="14473000" />
       <workItem from="1494762992825" duration="5316000" />
-      <workItem from="1494787040020" duration="7348000" />
-    </task>
-    <task id="LOCAL-00088" summary="23_04">
-      <created>1492966019454</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1492966019455</updated>
+      <workItem from="1494787040020" duration="7889000" />
+      <workItem from="1494829637841" duration="12180000" />
     </task>
     <task id="LOCAL-00089" summary="24_04">
       <created>1493067390964</created>
@@ -1640,11 +1603,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494759408097</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="14_05">
+      <created>1494795207251</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1494795207252</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="994937000" />
+    <option name="totallyTimeSpent" value="1007658000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1656,8 +1626,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1933" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1671,10 +1641,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20292123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20260416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1689,6 +1658,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1704,7 +1674,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="08_04" />
     <MESSAGE value="09_04" />
     <MESSAGE value="11_04" />
     <MESSAGE value="13_04" />
@@ -1729,7 +1698,8 @@
     <MESSAGE value="11_05" />
     <MESSAGE value="12_05" />
     <MESSAGE value="13_05" />
-    <option name="LAST_COMMIT_MESSAGE" value="13_05" />
+    <MESSAGE value="14_05" />
+    <option name="LAST_COMMIT_MESSAGE" value="14_05" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1742,246 +1712,152 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/pdf/tablePublicationsPDF.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/models/Courses.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1495">
-          <caret line="124" column="9" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
+        <state relative-caret-position="442">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableStudyGroupsPDF.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/models/Employees.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+        <state relative-caret-position="442">
+          <caret line="173" column="29" selection-start-line="173" selection-start-column="18" selection-end-line="173" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableSubjectsPDF.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/dashboard.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="68">
+          <caret line="4" column="109" selection-start-line="4" selection-start-column="109" selection-end-line="4" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/main.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableStatement.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2244">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/StatementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4931">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/StatementPublicationsParticipants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-630">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/TableController.java">
+    <entry file="file://$PROJECT_DIR$/app/models/Statement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding>
-            <element signature="e#954#955#0" expanded="false" />
-            <element signature="e#1038#1039#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-103">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachersRole.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/models/StatementTeachersParticipants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachers.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-401">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachersInWeeks.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-877">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-562">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/SubjectPlanTeachingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="613" column="36" selection-start-line="613" selection-start-column="36" selection-end-line="613" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableEmployeerActvitiy.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableEmployeesActvitiy.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="45" column="90" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/OnStartup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PersonalStatisticController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="79" column="49" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Courses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="178" column="43" selection-start-line="178" selection-start-column="32" selection-end-line="178" selection-end-column="43" />
-          <folding>
-            <element signature="e#4595#4596#0" expanded="true" />
-            <element signature="e#4636#4637#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sidebar.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="91" selection-start-line="20" selection-start-column="91" selection-end-line="20" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/combodate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Classroom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1048#1049#0" expanded="false" />
-            <element signature="e#1073#1074#0" expanded="false" />
-            <element signature="e#1107#1108#0" expanded="false" />
-            <element signature="e#1135#1136#0" expanded="false" />
-            <element signature="e#1167#1168#0" expanded="false" />
-            <element signature="e#1198#1199#0" expanded="false" />
-            <element signature="e#1243#1244#0" expanded="false" />
-            <element signature="e#1283#1284#0" expanded="false" />
-            <element signature="e#1323#1324#0" expanded="false" />
-            <element signature="e#1359#1360#0" expanded="false" />
-            <element signature="e#1417#1418#0" expanded="false" />
-            <element signature="e#1467#1468#0" expanded="false" />
-            <element signature="e#1500#1501#0" expanded="false" />
-            <element signature="e#1529#1530#0" expanded="false" />
-            <element signature="e#1574#1575#0" expanded="false" />
-            <element signature="e#1610#1611#0" expanded="false" />
-            <element signature="e#1653#1654#0" expanded="false" />
-            <element signature="e#1684#1685#0" expanded="false" />
-            <element signature="e#1740#1741#0" expanded="false" />
-            <element signature="e#1780#1781#0" expanded="false" />
-            <element signature="e#1837#1838#0" expanded="false" />
-            <element signature="e#1875#1876#0" expanded="false" />
-            <element signature="e#1952#1953#0" expanded="false" />
-            <element signature="e#2006#2007#0" expanded="false" />
-            <element signature="e#2055#2056#0" expanded="false" />
-            <element signature="e#2116#2117#0" expanded="false" />
-            <element signature="e#2606#2607#0" expanded="false" />
-            <element signature="e#2649#2650#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPersons.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="240" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingCB.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="223" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Semesters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingDepartmentEmployee.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingAAB.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="222" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingAAA.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="68" />
+        <state relative-caret-position="228">
+          <caret line="638" column="195" selection-start-line="638" selection-start-column="195" selection-end-line="638" selection-end-column="195" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/registerSubjectPlanTeaching.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2686">
-          <caret line="329" column="54" selection-start-line="329" selection-start-column="54" selection-end-line="329" selection-end-column="54" />
+        <state relative-caret-position="-3485">
+          <caret line="17" column="102" selection-start-line="17" selection-start-column="102" selection-end-line="17" selection-end-column="102" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/dynamicFields.js">
+    <entry file="file://$PROJECT_DIR$/app/views/doc/tableSubjectsDOC.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="49" column="113" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="113" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingAAADOC.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="199" column="106" selection-start-line="199" selection-start-column="106" selection-end-line="199" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingAABDOC.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="199" column="106" selection-start-line="199" selection-start-column="106" selection-end-line="199" selection-end-column="106" />
           <folding>
-            <marker date="1494789048891" expanded="true" signature="12359:12365" ph="&amp;nbsp;" />
-            <marker date="1494789048891" expanded="true" signature="12947:12953" ph="&amp;nbsp;" />
+            <element signature="e#161#176#0#Scala" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableTeachingDepartmentEmployeePDF.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingAccordingToPersonsDOC.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="823">
-          <caret line="594" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="594" selection-end-column="0" />
+        <state relative-caret-position="427">
+          <caret line="216" column="114" selection-start-line="216" selection-start-column="114" selection-end-line="216" selection-end-column="114" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingCBDOC.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="201" column="106" selection-start-line="201" selection-start-column="106" selection-end-line="201" selection-end-column="106" />
+          <folding>
+            <element signature="e#159#174#0#Scala" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pdf/tableTeachingAAAPDF.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3424">
-          <caret line="240" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="629">
+          <caret line="191" column="86" selection-start-line="191" selection-start-column="86" selection-end-line="191" selection-end-column="86" />
+          <folding>
+            <element signature="e#161#176#0#Scala" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingDepartmentEmployeeDOC.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableTeachingAABPDF.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="94" selection-start-line="5" selection-start-column="94" selection-end-line="5" selection-end-column="94" />
+        <state relative-caret-position="357">
+          <caret line="193" column="90" selection-start-line="193" selection-start-column="90" selection-end-line="193" selection-end-column="90" />
           <folding />
         </state>
       </provider>
@@ -1989,73 +1865,139 @@
     <entry file="file://$PROJECT_DIR$/app/views/pdf/tableTeachingCBPDF.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="245" selection-end-column="6" />
+          <caret line="195" column="90" selection-start-line="195" selection-start-column="90" selection-end-line="195" selection-end-column="90" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingAABDOC.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachersInWeeks.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+        <state relative-caret-position="416">
+          <caret line="95" column="92" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableTeachingAABPDF.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableCourses.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="-9">
+          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingAccordingToPersonsDOC.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingAAA.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="2" column="67" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
+        <state relative-caret-position="322">
+          <caret line="173" column="94" selection-start-line="173" selection-start-column="94" selection-end-line="173" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingAAB.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="174" column="94" selection-start-line="174" selection-start-column="94" selection-end-line="174" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingCB.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="188" column="94" selection-start-line="188" selection-start-column="94" selection-end-line="188" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingDepartmentEmployee.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5459">
+          <caret line="527" column="106" selection-start-line="527" selection-start-column="106" selection-end-line="527" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableTeachingDepartmentEmployeePDF.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="537" column="102" selection-start-line="537" selection-start-column="102" selection-end-line="537" selection-end-column="102" />
           <folding>
-            <element signature="e#160#175#0#Scala" expanded="false" />
+            <element signature="e#303#318#0#Scala" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableTeachingAccordingToPersonsPDF.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingDepartmentEmployeeDOC.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="67" />
+        <state relative-caret-position="-119">
+          <caret line="540" column="118" selection-start-line="540" selection-start-column="118" selection-end-line="540" selection-end-column="118" />
+          <folding>
+            <element signature="e#303#318#0#Scala" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/registerPublications.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-304">
+          <caret line="5" column="113" selection-start-line="5" selection-start-column="113" selection-end-line="5" selection-end-column="113" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingAAADOC.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableAccessRole.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="823">
-          <caret line="252" column="7" selection-start-line="3" selection-start-column="0" selection-end-line="252" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableTeachingCBDOC.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableSPPDF.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="75" column="50" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="50" />
+        <state relative-caret-position="204">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tables/tableSP.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="54" column="10" selection-start-line="32" selection-start-column="3" selection-end-line="54" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableEmployeerActvitiyPDF.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableDays.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableDCPS.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="214" column="56" selection-start-line="204" selection-start-column="48" selection-end-line="214" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableDCPSCombi.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="223" column="60" selection-start-line="223" selection-start-column="60" selection-end-line="223" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableDCPSPres.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="223" column="60" selection-start-line="223" selection-start-column="60" selection-end-line="223" selection-end-column="60" />
           <folding>
             <element signature="e#153#168#0#Scala" expanded="false" />
           </folding>
@@ -2064,128 +2006,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pdf/tableDCPSPDF.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="53" column="17" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+        <state relative-caret-position="458">
+          <caret line="217" column="56" selection-start-line="207" selection-start-column="48" selection-end-line="217" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableSPPrintDOC.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableDCPSPresPDF.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="244" column="7" selection-start-line="240" selection-start-column="10" selection-end-line="244" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Subjects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="190" column="33" selection-start-line="190" selection-start-column="19" selection-end-line="190" selection-end-column="33" />
-          <folding>
-            <element signature="e#3881#3882#0" expanded="true" />
-            <element signature="e#3920#3921#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableDCPS.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="54" column="10" selection-start-line="32" selection-start-column="4" selection-end-line="54" selection-end-column="10" />
+        <state relative-caret-position="-1650">
+          <caret line="103" column="71" selection-start-line="103" selection-start-column="71" selection-end-line="103" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pdf/tableDCPSCombiPDF.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="86" column="69" selection-start-line="86" selection-start-column="69" selection-end-line="86" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/StatisticController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="46" column="54" selection-start-line="40" selection-start-column="7" selection-end-line="46" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableDCPSPres.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="53" column="10" selection-start-line="31" selection-start-column="4" selection-end-line="53" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableDCPSDOC.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="240" column="3" selection-start-line="240" selection-start-column="3" selection-end-line="244" selection-end-column="7" />
-          <folding>
-            <element signature="e#153#168#0#Scala" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableDCPSPresPDF.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="86" column="73" selection-start-line="86" selection-start-column="55" selection-end-line="86" selection-end-column="73" />
+        <state relative-caret-position="-1446">
+          <caret line="103" column="71" selection-start-line="103" selection-start-column="71" selection-end-line="103" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/doc/tableDCPSPresDOC.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="92" column="89" selection-start-line="92" selection-start-column="89" selection-end-line="92" selection-end-column="89" />
+        <state relative-caret-position="934">
+          <caret line="109" column="87" selection-start-line="109" selection-start-column="87" selection-end-line="109" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/doc/tableDCPSDOC.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1548">
+          <caret line="101" column="83" selection-start-line="101" selection-start-column="83" selection-end-line="101" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/doc/tableDCPSCombiDOC.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3322">
-          <caret line="253" column="7" selection-start-line="253" selection-start-column="7" selection-end-line="253" selection-end-column="7" />
+        <state relative-caret-position="-647">
+          <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableSubjects.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" selection-start-line="8" selection-start-column="7" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="1076" column="8" selection-start-line="1076" selection-start-column="8" selection-end-line="1076" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/scala-2.11/routes/main/controllers/routes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pdf/tableTeachingAccordingToPersonsPDF.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3553">
+          <caret line="210" column="98" selection-start-line="210" selection-start-column="98" selection-end-line="210" selection-end-column="98" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PDFController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="67" column="5" selection-start-line="45" selection-start-column="3" selection-end-line="67" selection-end-column="5" />
+        <state relative-caret-position="305">
+          <caret line="156" column="52" selection-start-line="156" selection-start-column="7" selection-end-line="156" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/DOCController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="50" column="35" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="35" />
+        <state relative-caret-position="373">
+          <caret line="136" column="52" selection-start-line="136" selection-start-column="18" selection-end-line="136" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/routes">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="188" column="98" selection-start-line="188" selection-start-column="98" selection-end-line="188" selection-end-column="98" />
+        <state relative-caret-position="280">
+          <caret line="179" column="103" selection-start-line="179" selection-start-column="103" selection-end-line="179" selection-end-column="103" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tables/tableDCPSCombi.scala.html">
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPersons.scala.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
-          <folding>
-            <element signature="e#153#168#0#Scala" expanded="false" />
-          </folding>
+        <state relative-caret-position="646">
+          <caret line="39" column="78" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPerson.scala.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PersonalStatisticController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="82" column="62" selection-start-line="82" selection-start-column="62" selection-end-line="82" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>

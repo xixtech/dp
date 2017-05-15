@@ -61,6 +61,7 @@
                                     <th>Studium</th>
                                     <th>Jazyk</th>
                                     <th>Forma</th>
+                                    <th>Upravit</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -102,7 +103,11 @@
                                         @member.getFormOfTeaching
                                     }
                                     </td>
-
+                                    <td class="center">
+                                    @form(routes.FieldOfStudyController.edit(member.getId())) {
+                                        <input type="submit" value="Upravit" class="btn btn-warning">
+                                        }
+                                    </td>
                                 </tr>
                             }
                             </tbody>

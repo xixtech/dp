@@ -9,10 +9,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -158,6 +155,19 @@ public class PDFController extends Controller {
 
     public Result pdfTableTeachingAccordingToPersons() {
         List<Employees> empl = Employees.find.all();
+        List<Teachers> teachers = Teachers.find.all();
+        List<Courses> c = Courses.find.all();
+        List<Semesters> s = Semesters.search();
+        List<Schedule> schedules = Schedule.search();
+        List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
+        pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
+        return pdfGenerator.ok(views.html.pdf.tableTeachingAccordingToPersonsPDF.render(empl, c, teachers, s, schedules, scheduleInWeekses), "http://localhost:9000");
+    }
+
+    public Result pdfTableTeachingAccordingToPerson(String uid) {
+        Member m = Member.findByUID(uid);
+        List<Employees> empl = new ArrayList<>();
+        empl.add(Employees.findById(m.getEmployees().getId()));
         List<Teachers> teachers = Teachers.find.all();
         List<Courses> c = Courses.find.all();
         List<Semesters> s = Semesters.search();

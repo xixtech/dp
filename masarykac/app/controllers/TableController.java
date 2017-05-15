@@ -56,7 +56,7 @@ public class TableController extends Controller {
     }
 
     public Result listCourses() {
-        return ok(views.html.tables.tableCourses.render(Courses.search()));
+        return ok(views.html.tables.tableCourses.render(Courses.search(), Teachers.search()));
     }
 
     public Result listCurrentSemesters() {

@@ -60,6 +60,7 @@
                                     <th>Skupina_P</th>
                                     <th>Skupina</th>
                                     <th>Poznámka</th>
+                                    <th>Upravit</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,6 +94,11 @@
                                     } else {
                                         @member.getStudyGroupsNote
                                     }
+                                    </td>
+                                    <td class="center">
+                                    @form(routes.StudyGroupsController.edit(member.getId())) {
+                                        <input type="submit" value="Upravit" class="btn btn-warning">
+                                        }
                                     </td>
                                     }
                             </tbody>

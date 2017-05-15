@@ -30,6 +30,12 @@ public class StudyGroupsController extends Controller {
         return ok(views.html.registerStudyGroups.render(studyGroupsForm));
     }
 
+    public Result edit(long id) {
+        StudyGroups studyGroups = StudyGroups.findById(id);
+        Form<StudyGroups> studyGroupsForm = formFactory.form(StudyGroups.class).fill(studyGroups);
+        return ok(views.html.editStudyGroups.render(id,studyGroupsForm));
+    }
+
     /**
      * uložení osoby, profilu a zákazníka z formuláře
      *
@@ -47,6 +53,36 @@ public class StudyGroupsController extends Controller {
         } catch (Exception e) {
             return badRequest(views.html.registerStudyGroups.render(studyGroupsForm));
         }
+    }
+
+    public Result update(long id) {
+        Form<StudyGroups> studyGroupsForm = formFactory.form(StudyGroups.class).bindFromRequest();
+        if (studyGroupsForm.hasErrors()) {
+            return badRequest(views.html.registerStudyGroups.render(studyGroupsForm));
+        }
+        StudyGroups studyGroups = studyGroupsForm.get();
+        try {
+            updateStudyGroups(studyGroups,id);
+            return redirect(routes.Application.index());
+        } catch (Exception e) {
+            return badRequest(views.html.registerStudyGroups.render(studyGroupsForm));
+        }
+    }
+
+    private void updateStudyGroups(StudyGroups studyGroups, long id) throws Exception {
+        StudyGroups sg = StudyGroups.findById(id);
+        sg.setStudyGroup(studyGroups.studyGroup);
+        sg.setStudyGroupP(studyGroups.studyGroupP);
+        sg.setStudyGroupV(studyGroups.studyGroupV);
+        sg.setStudyGroupsNote(studyGroups.studyGroupsNote);
+        sg.update();
+
+        StudyGroups1 sg1 = StudyGroups1.findById(id);
+        sg1.setStudyGroup(studyGroups.studyGroup);
+        sg1.setStudyGroupP(studyGroups.studyGroupP);
+        sg1.setStudyGroupV(studyGroups.studyGroupV);
+        sg1.setStudyGroupsNote(studyGroups.studyGroupsNote);
+        sg1.update();
     }
 
     private void saveStudyGroups(StudyGroups studyGroups) throws Exception {

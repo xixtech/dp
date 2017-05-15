@@ -10,6 +10,23 @@
         word-wrap: break-word; /* All browsers since IE 5.5+ */
         overflow-wrap: break-word;
     }
+    table {
+        width: 100%;
+        table-layout:fixed;
+    }
+
+    td {
+        word-wrap: break-word; /* All browsers since IE 5.5+ */
+        overflow-wrap: break-word;
+    }
+    #innertable{
+        border: none;
+        border-collapse: collapse;
+    }
+    #innerrow{
+        padding: 0;
+        border: none;
+    }
 
     --></style>
 }
@@ -194,11 +211,11 @@
                                                     }
                                                 </div>
                                                 <div class="col-md-1">
-                                                    <table>
+                                                    <table id="innertable" cellspacing="0" cellpadding="0">
                                                     @for(t <- tPage) {
                                                         @if(t.getCourses.getId == member.getId) {
-                                                            <tr>
-                                                                <td class="center">
+                                                            <tr id="innerrow">
+                                                                <td id="innerrow" class="center">
                                                                 @t.getEmployees.getSurname
                                                                 </td>
                                                             </tr>

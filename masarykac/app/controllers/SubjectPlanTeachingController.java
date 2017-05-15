@@ -609,9 +609,9 @@ public class SubjectPlanTeachingController extends Controller {
                         recountedSummary = summary;
                     }
                     double valRounded = (double) Math.round(recountedSummary * 10d) / 10d;
-                    double scale = (double) Math.round(entry.getValue() * 10d) / 10d;
-                    if (scale > 1.0) {
-                        scale = 1.0;
+                    double scale = (double) Math.round(entry.getValue()*100 * 10d) / 10d;
+                    if (scale > 100.0) {
+                        scale = 100.0;
                     }
                     Teachers t = new Teachers(c, Employees.findById(Long.parseLong(entry.getKey())), scale, summary, valRounded);
                     t.save();

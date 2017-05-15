@@ -1,3 +1,3 @@
-[error] C:\Users\Martin\dp\masarykac\app\views\pdf\tableSPPDF.scala.html:229: Expected '}' but found 'EOF'
-[error] </div>
-[error]       ^
+[error] C:\Users\Martin\dp\masarykac\app\views\tables\tableAccessRole.scala.html:22: Not parsed?
+[error] }
+[error] ^

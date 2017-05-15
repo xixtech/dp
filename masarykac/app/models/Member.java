@@ -30,7 +30,6 @@ public class Member extends Model {
     public String uid;
 
     @Email(message = "Nebyl zadán platný email")
-    @Constraints.Required(message = "Email je povinný")
     public String email;
 
     @Constraints.Required(message = "Heslo je povinné")

@@ -110,19 +110,7 @@ public class EmployeesController extends Controller {
         Form<Member> registerForm = formFactory.form(Member.class).bindFromRequest();
         Form<Employees> employeesForm = formFactory.form(Employees.class).bindFromRequest();
         Form<OrganizationalUnitsParticipants> organizationalUnitsParticipantsForm = formFactory.form(OrganizationalUnitsParticipants.class).bindFromRequest();
-        if (employeesForm.hasErrors()) {
-            return badRequest(views.html.editEmployee.render(uid, registerForm, employeesForm, organizationalUnitsParticipantsForm));
-        }
-        if (organizationalUnitsParticipantsForm.hasErrors()) {
-            return badRequest(views.html.editEmployee.render(uid, registerForm, employeesForm, organizationalUnitsParticipantsForm));
-        }
-        if (checkRepeated(registerForm)) {
-            registerForm.reject("repeatPassword", "Hesla se neshodují");
-            return badRequest(views.html.editEmployee.render(uid, registerForm, employeesForm, organizationalUnitsParticipantsForm));
-        }
-        if (registerForm.hasErrors()) {
-            return badRequest(views.html.editEmployee.render(uid, registerForm, employeesForm, organizationalUnitsParticipantsForm));
-        }
+
         Member m = Member.findByUID(uid);
         m.setPassword(Hash.createPassword(registerForm.get().getPassword()));
         m.update();
@@ -138,7 +126,8 @@ public class EmployeesController extends Controller {
         oup.setOrganizationalUnits(organizationalUnitsParticipantsForm.get().getOrganizationalUnits());
         oup.setFunction(organizationalUnitsParticipantsForm.get().getFunction());
         oup.setFunctionName(organizationalUnitsParticipantsForm.get().getFunctionName());
-        return redirect(routes.Application.index());
+        oup.update();
+        return redirect(routes.TableController.listEmployees());
     }
 
     private boolean checkRepeated(Form<Member> registerForm) {

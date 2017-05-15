@@ -89,7 +89,7 @@ public class PersonalStatisticController extends Controller {
         List<Semesters> s = Semesters.search();
         List<Schedule> schedules = Schedule.search();
         List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
-        return ok(views.html.tables.tableTeachingAccordingToPersons.render(empl, c, teachers, s, schedules, scheduleInWeekses));
+        return ok(views.html.tables.tableTeachingAccordingToPerson.render(uid, empl, c, teachers, s, schedules, scheduleInWeekses));
     }
 
     /**

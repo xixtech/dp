@@ -1,10 +1,2 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPSCombi.scala.html:155: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                 @if(member.getSubjects.getHoursP == null) {
-[warn]                                                                                  ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPSCombi.scala.html:162: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                 @if(member.getSubjects.getHoursC == null) {
-[warn]                                                                                  ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableDCPSCombi.scala.html:169: comparing values of types Int and Null using `==' will always yield false
-[warn]                                                 @if(member.getSubjects.getCredits == null) {
-[warn]                                                                                   ^
-[warn] three warnings found
+[warn] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomController.java:3: com.sun.org.apache.bcel.internal.util.ClassQueue is internal proprietary API and may be removed in a future release
+[warn] com.sun.org.apache.bcel.internal.util.ClassQueue

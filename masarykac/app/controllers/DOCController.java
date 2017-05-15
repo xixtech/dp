@@ -8,10 +8,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 
 import javax.inject.Inject;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Martin on 16.03.2017.
@@ -139,6 +136,18 @@ public class DOCController extends Controller {
 
     public Result docTableTeachingAccordingToPersons() {
         List<Employees> empl = Employees.find.all();
+        List<Teachers> teachers = Teachers.find.all();
+        List<Courses> c = Courses.find.all();
+        List<Semesters> s = Semesters.search();
+        List<Schedule> schedules = Schedule.search();
+        List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
+        return ok(views.html.doc.tableTeachingAccordingToPersonsDOC.render(empl, c, teachers, s, schedules, scheduleInWeekses));
+    }
+
+    public Result docTableTeachingAccordingToPerson(String uid) {
+        Member m = Member.findByUID(uid);
+        List<Employees> empl = new ArrayList<>();
+        empl.add(Employees.findById(m.getEmployees().getId()));
         List<Teachers> teachers = Teachers.find.all();
         List<Courses> c = Courses.find.all();
         List<Semesters> s = Semesters.search();

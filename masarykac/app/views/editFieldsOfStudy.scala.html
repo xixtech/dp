@@ -1,0 +1,93 @@
+@(id: Long, fieldsOfStudyForm: Form[FieldsOfStudy])
+    @import helper._
+    @localScripts = {
+        <!-- Morris Charts JavaScript -->
+        <script src='@routes.Assets.at("lib/raphaeljs/raphael-min.js")'></script>
+        <script src='@routes.Assets.at("lib/morrisjs/morris.min.js")'></script>
+        <script src='@routes.Assets.at("javascripts/morris-data.js")'></script>
+    }
+    @main(scripts = localScripts) {
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Registrace</h1>
+            </div>
+                <!-- /.col-lg-12 -->
+        </div>
+            <!-- /.row -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel-body">
+                    @helper.form(action = routes.FieldOfStudyController.update(id)) {
+
+                        <fieldset>
+                            <legend>Přihlašovací údaje</legend>
+                            <div class="row">
+                                <div class="col-md-6">
+                                @inputText(
+                                    fieldsOfStudyForm("fieldOfStudy"),
+                                    '_label -> "Obor_v",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte obor.",
+                                    '_error -> fieldsOfStudyForm.globalError
+                                )
+                                </div>
+                                <div class="col-md-6">
+
+                                @inputText(
+                                    fieldsOfStudyForm("fieldOfStudyV"),
+                                    '_label -> "Obor_v",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte obor.",
+                                    '_error -> fieldsOfStudyForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @inputText(
+                                    fieldsOfStudyForm("study"),
+                                    '_label -> "Studium",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte formu studia.",
+                                    '_error -> fieldsOfStudyForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @inputText(
+                                    fieldsOfStudyForm("fieldsOfStudyLanguage"),
+                                    '_label -> "Jazyk",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte vyučovaný jazyk.",
+                                    '_error -> fieldsOfStudyForm.globalError
+                                )
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                @inputText(
+                                    fieldsOfStudyForm("formOfTeaching"),
+                                    '_label -> "Forma",
+                                    'class -> "form-control",
+                                    '_help -> "Prosím zadejte formu.",
+                                    '_error -> fieldsOfStudyForm.globalError
+                                )
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <div class="actions">
+
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Uložit">
+                            <a href="@routes.Application.index()" class="btn">Zrušit</a>
+                        </div>
+
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }

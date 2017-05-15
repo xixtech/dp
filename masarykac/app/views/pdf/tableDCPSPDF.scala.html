@@ -14,8 +14,9 @@ html, body {
     align: center;
 }
 
-table {
+#t {
     width: 90%;
+
 }
 
 td {
@@ -48,6 +49,8 @@ th {
 #innertable{
     border: none;
     border-collapse: collapse;
+    table-layout:fixed;
+    width: 80%;
 }
 #innerrow{
     padding: 0;
@@ -89,7 +92,7 @@ body {
                             </div>
                         }
 
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" id="t">
                             @(k = 0)
                             @if(k == 0) {
                                 <thead>
