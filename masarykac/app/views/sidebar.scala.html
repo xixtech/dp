@@ -11,7 +11,7 @@
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Osobní údaje<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="@routes.StatementController.index()">Zobrazit výkaz</a>
+                        <a href="@routes.StatementController.index()">Zobrazit všechny výkazy</a>
                         <a href="@routes.PersonalStatisticController.index()">Výuka dle oddělení a osob</a>
                         <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToPersons()'>
                             Výuka dle osob</a>
@@ -40,6 +40,12 @@
                         <li>
                             <a href='@routes.TableController.listClassrooms()'><i class="fa fa-table fa-fw"></i>
                                 Místnosti</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                        <li>
+                            <a href='@routes.TableController.listVisits()'><i class="fa fa-table fa-fw"></i>
+                                Výjezdy</a>
                         </li>
                     }
                     @if(session().get("role").equals("director") || session().get("role").equals("head")) {

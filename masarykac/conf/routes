@@ -139,6 +139,7 @@ GET         /courses                                        controllers.TableCon
 GET         /currentsemesters                               controllers.TableController.listCurrentSemesters()
 GET         /lcsuteos                                       controllers.TableController.listCurrentSemestersUntilTheEndOfStudy()
 GET         /days                                           controllers.TableController.listDays()
+GET         /visits                                           controllers.TableController.listVisits()
 GET         /classrooms                                     controllers.TableController.listClassrooms()
 GET         /teachroles                                     controllers.TableController.listTeachersRole()
 GET         /accessroles                                    controllers.TableController.listAccessRole()

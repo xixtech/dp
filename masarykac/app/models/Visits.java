@@ -33,6 +33,8 @@ public class Visits extends Model {
     @Formats.DateTime(pattern = "dd.MM.yyyy")
     public Date visitTo;
 
+    public String duration;
+
     @ManyToOne
     public Semesters semester;
 
@@ -41,7 +43,7 @@ public class Visits extends Model {
 
     public boolean active;
 
-    public Visits(String purposeOfVisit, String country, String event, Date visitFrom, Date visitTo, Semesters semester) {
+    public Visits(String purposeOfVisit, String country, String event, Date visitFrom, Date visitTo, Semesters semester, String duration) {
         this.purposeOfVisit = purposeOfVisit;
         this.country = country;
         this.event = event;
@@ -49,6 +51,7 @@ public class Visits extends Model {
         this.visitTo = visitTo;
         this.semester = semester;
         this.active = true;
+        this.duration = duration;
     }
 
     public Long getId() {
@@ -121,6 +124,14 @@ public class Visits extends Model {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
     public static Visits findById(long id) {

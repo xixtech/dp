@@ -170,6 +170,17 @@ public class TableController extends Controller {
         return redirect(routes.Application.index());
     }
 
+    public Result listVisits() {
+        if (Check.isDirector(Member.findByUID(request().username()))) {
+            List<Visits> visits = Visits.search();
+            List<VisitsParticipants> compart = VisitsParticipants.search();
+            List<Semesters> s = Semesters.search();
+            return ok(views.html.tables.tableVisits.render(visits, compart, s));
+        }
+        notAccess();
+        return redirect(routes.Application.index());
+    }
+
     public Result listPublications() {
         if (Check.isDirector(Member.findByUID(request().username()))) {
             List<Publications> pub = Publications.search();

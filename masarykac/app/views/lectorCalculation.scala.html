@@ -232,7 +232,8 @@
                                                         <th>Popis</th>
                                                         <th>Jednotka</th>
                                                         <th>Váha</th>
-
+                                                        <th>II.2015</th>
+                                                        <th>I.2016</th>
                                                     </tr>
                                                 </thead>
 
@@ -282,60 +283,18 @@
                                                             }
                                                             </div>
                                                         </td>
-
+                                                        <td>@if(items.unit != "") {
+                                                            <input type="text" class ="form-control">
+                                                            }
+                                                        </td>
+                                                        <td>@if(items.unit != "") {
+                                                            <input type="text" class ="form-control">
+                                                            }
+                                                        </td>
                                                     </tr>
                                                     @(i += 1)
 
                                                 }
-                                                </tbody>
-
-                                            </table>
-                                        </td>
-
-                                        <td>
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>II.2015</th>
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody>
-
-                                                    <tr>
-
-                                                    @helper.repeat(personSalaryForm("valuesKPIPrevious"), min = i) { valuesField =>
-                                                        <td> <div style="height: 65px;
-                                                            overflow: hidden;">
-                                                            @helper.inputText(personSalaryForm(valuesField.name.toString),
-                                                                '_label -> "",
-                                                                'class -> "form-control")
-
-                                                        </div> </td> </tr>
-                                                    }
-                                                </tbody>
-
-                                            </table>
-                                        </td>
-
-                                        <td>
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>I.2016</th>
-                                                    </tr>
-                                                </thead>
-
-                                                <tbody>
-
-                                                    <tr>
-
-                                                    @helper.repeat(personSalaryForm("valuesKPICurrent"), min = i) { valuesField =>
-                                                        <td> <div style="height: 65px;
-                                                            overflow: hidden;">@helper.inputText(personSalaryForm(valuesField.name.toString),
-                                                            '_label -> "",
-                                                            'class -> "form-control") </div> </td> </tr>
-                                                    }
                                                 </tbody>
 
                                             </table>

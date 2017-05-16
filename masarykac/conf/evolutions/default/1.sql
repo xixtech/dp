@@ -506,6 +506,7 @@ create table visits (
   event                         varchar(255),
   visit_from                    timestamp,
   visit_to                      timestamp,
+  duration                      varchar(255),
   semester_id                   bigint,
   active                        boolean,
   constraint pk_visits primary key (id)

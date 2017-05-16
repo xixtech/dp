@@ -5,6 +5,7 @@ import play.data.format.Formats;
 import play.data.validation.Constraints;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -120,6 +121,19 @@ public class Publications extends Model {
                 options.put(set.id.toString(), set.citation.toString());
             }
         }
+        return options;
+    }
+
+    public static List<String> typeOptions() {
+        List<String> options = new ArrayList<>();
+        options.add("WoS");
+        options.add("Scopus");
+        options.add("ERIH");
+        options.add("Článek ČR recenz.");
+        options.add("Sborník (impakt.)");
+        options.add("Monografie");
+        options.add("Odborný článek");
+        options.add("Neimpaktovaný sborník");
         return options;
     }
 

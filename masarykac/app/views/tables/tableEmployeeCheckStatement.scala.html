@@ -433,6 +433,7 @@
                                                             <tr>
                                                                 <th>Důvod návštěvy</th>
                                                                 <th>Název události</th>
+                                                                <th>Doba</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -452,6 +453,13 @@
                                                                         <em>-</em>
                                                                     } else {
                                                                         @member.getVisitsParticipants.getVisits.getEvent
+                                                                    }
+                                                                    </td>
+                                                                    <td class="center">
+                                                                    @if(member.getVisitsParticipants.getVisits.getDuration == "") {
+                                                                        <em>-</em>
+                                                                    } else {
+                                                                        @member.getVisitsParticipants.getVisits.getDuration
                                                                     }
                                                                     </td>
                                                                 </tr>

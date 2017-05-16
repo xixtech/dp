@@ -361,6 +361,7 @@
                                                     <tr>
                                                         <th>Důvod návštěvy</th>
                                                         <th>Název události</th>
+                                                        <th>Doba</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -368,7 +369,7 @@
                                                     @if(stat.getId == member.getStatement.getId) {
                                                         <tr>
                                                             <td class="center">
-                                                            @if(member.getVisitsParticipants.getVisits.getPurposeOfVisit == null) {
+                                                            @if(member.getVisitsParticipants.getVisits.getPurposeOfVisit == "") {
                                                                 <em>-</em>
                                                             } else {
                                                                 @member.getVisitsParticipants.getVisits.getPurposeOfVisit
@@ -376,10 +377,17 @@
                                                             </td>
 
                                                             <td class="center">
-                                                            @if(member.getVisitsParticipants.getVisits.getEvent == null) {
+                                                            @if(member.getVisitsParticipants.getVisits.getEvent == "") {
                                                                 <em>-</em>
                                                             } else {
                                                                 @member.getVisitsParticipants.getVisits.getEvent
+                                                            }
+                                                            </td>
+                                                            <td class="center">
+                                                            @if(member.getVisitsParticipants.getVisits.getDuration == "") {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getVisitsParticipants.getVisits.getDuration
                                                             }
                                                             </td>
                                                         </tr>

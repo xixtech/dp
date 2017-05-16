@@ -88,6 +88,9 @@ public class VisitsController extends Controller {
             visitTo.add(dt1.parse(s));
         }
 
+
+        int diffInDays = (int) ((visitTo.get(0).getTime() - visitFrom.get(0).getTime()) / (1000 * 60 * 60 * 24));
+
         List<String> semester = new ArrayList<>();
 
         for (String insId : formData.get("semester.id")) {
@@ -104,7 +107,7 @@ public class VisitsController extends Controller {
 
         for (int i = 0; i < purposeOfVisit.size(); i++) {
 
-            Visits v = new Visits(purposeOfVisit.get(i), country.get(i), event.get(i), visitFrom.get(i), visitTo.get(i), Semesters.findById(Long.parseLong(semester.get(i))));
+            Visits v = new Visits(purposeOfVisit.get(i), country.get(i), event.get(i), visitFrom.get(i), visitTo.get(i), Semesters.findById(Long.parseLong(semester.get(i))), (diffInDays+1)+"");
             v.save();
             visitId = v.getId();
         }
