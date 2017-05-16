@@ -1,10 +1,4 @@
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableCheckRepairEmployeeCheckStatement.scala.html:112: comparing values of types Double and Null using `==' will always yield false
+[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableCheckRepairEmployeeCheckStatement.scala.html:105: comparing values of types Double and Null using `==' will always yield false
 [warn]                                                             @if(member.getTeachers.getScale == null) {
 [warn]                                                                                             ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableEmployeeCheckStatement.scala.html:106: comparing values of types Double and Null using `==' will always yield false
-[warn]                                                                     @if(member.getTeachers.getScale == null) {
-[warn]                                                                                                     ^
-[warn] C:\Users\Martin\dp\masarykac\app\views\tables\tableInfoEmployeeCheckStatement.scala.html:110: comparing values of types Double and Null using `==' will always yield false
-[warn]                                                         @if(member.getTeachers.getScale == null) {
-[warn]                                                                                         ^
-[warn] three warnings found
+[warn] one warning found

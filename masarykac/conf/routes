@@ -56,7 +56,10 @@ POST        /employee/delete                                controllers.Employee
 
 GET         /statement                                      controllers.StatementController.index()
 POST        /statement/employee/:uid                        controllers.StatementController.employeeStatement(uid:String)
+GET         /statement/employee/:uid                        controllers.StatementController.employeeStatement(uid:String)
 POST        /statement/check/:idE:idS                       controllers.StatementController.sendStatementToEmployee(idE:Long, idS:Long)
+POST        /statement/confirmed/:idE:idS                   controllers.StatementController.showConfirmedStatement(idE:Long, idS:Long)
+POST        /statement/back/:idE:idS                        controllers.StatementController.backToTableEmployeeStatements(idE:Long, idS:Long)
 POST        /statement/info/:idE:idS                        controllers.StatementController.infoStatementToEmployee(idE:Long, idS:Long)
 POST        /statement/ver/:idE:idS                         controllers.StatementController.sendToVerify(idE:Long, idS:Long)
 POST        /statement/agree/:idE:idS                       controllers.StatementController.sendToAgree(idE:Long, idS:Long)

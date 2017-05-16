@@ -86,7 +86,33 @@ public class StatementController extends Controller {
         s.setManagerEmployee(Employees.findById(m.getEmployees().getId()));
         s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements, m.getEmployees().getId()));
+        return redirect(routes.StatementController.employeeStatement(e.get(0).getMember().getUid()));
+    }
+
+    public Result backToTableEmployeeStatements(long idE, long idS) {
+        Member m = Member.findByUID(request()
+                .username());
+        List<Employees> e = new ArrayList<>();
+        e.add(Employees.findById(idE));
+        return redirect(routes.StatementController.employeeStatement(e.get(0).getMember().getUid()));
+    }
+
+    public Result showConfirmedStatement(long idE, long idS) {
+        List<Employees> e = new ArrayList<>();
+        e.add(Employees.findById(idE));
+        List<Statement> statements = new ArrayList<>();
+        Statement s = Statement.findById(idS);
+        statements.add(s);
+        List<Semesters> sem = new ArrayList<>();
+        Semesters semesters = Semesters.findById(s.getSemester().getId());
+        sem.add(semesters);
+        List<StatementCommitteeParticipants> scp = StatementCommitteeParticipants.search();
+        List<StatementFinalWorksParticipants> sfwp = StatementFinalWorksParticipants.search();
+        List<StatementProjectsParticipants> spp = StatementProjectsParticipants.search();
+        List<StatementPublicationsParticipants> sppart = StatementPublicationsParticipants.search();
+        List<StatementTeachersParticipants> stp = StatementTeachersParticipants.search();
+        List<StatementVisitsParticipants> svp = StatementVisitsParticipants.search();
+        return ok(views.html.tables.tableShowConfirmedStatement.render(idE, idS, e, sem, statements, scp, sfwp, spp, sppart, stp, svp));
     }
 
     public Result infoStatementToEmployee(long idE, long idS) {
@@ -137,6 +163,8 @@ public class StatementController extends Controller {
     }
 
     public Result sendToVerify(long idE, long idS) {
+        List<Employees> e = new ArrayList<>();
+        e.add(Employees.findById(idE));
         Member m = Member.findByUID(request()
                 .username());
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
@@ -282,10 +310,12 @@ public class StatementController extends Controller {
         }
         s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements, m.getEmployees().getId()));
+        return redirect(routes.StatementController.employeeStatement(e.get(0).getMember().getUid()));
     }
 
     public Result sendToAgree(long idE, long idS) {
+        List<Employees> e = new ArrayList<>();
+        e.add(Employees.findById(idE));
         Member m = Member.findByUID(request()
                 .username());
         Map<String, String[]> formData = request().body().asFormUrlEncoded();
@@ -343,10 +373,12 @@ public class StatementController extends Controller {
         s.setState("Schváleno");
         s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements, m.getEmployees().getId()));
+        return redirect(routes.StatementController.employeeStatement(e.get(0).getMember().getUid()));
     }
 
     public Result sendToRepair(long idE, long idS) {
+        List<Employees> e = new ArrayList<>();
+        e.add(Employees.findById(idE));
         Member m = Member.findByUID(request()
                 .username());
         List<Statement> statements = new ArrayList<>();
@@ -354,7 +386,7 @@ public class StatementController extends Controller {
         s.setState("Uloženo k opravě údajů");
         s.update();
         statements.add(s);
-        return ok(views.html.tables.tableEmployeeStatements.render(statements, m.getEmployees().getId()));
+        return redirect(routes.StatementController.employeeStatement(e.get(0).getMember().getUid()));
     }
 
     public Result save() {
