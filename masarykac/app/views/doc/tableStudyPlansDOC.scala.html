@@ -3,14 +3,56 @@
 <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
     <link href='@routes.Assets.at("stylesheets/sb-admin-2.css")' rel="stylesheet" type="text/css">
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
-
     <style type="text/css"><!--
+    html, body {
+        font-family: Technika;
+        width: 210mm;
+        height: 297mm;
+        margin: 10px;
+        size: portrait;
+        background: white;
+        align: center;
+    }
+
+    table {
+        width: 80%;
+    }
+
+    td {
+        border: 1px gray solid;
+
+        padding: 2px;
+        font-family: Technika;
+        font-size: 12px;
+        word-wrap: break-word; /* All browsers since IE 5.5+ */
+        overflow-wrap: break-word;
+    }
+
+    h6 {
+
+        font-family: Technika;
+        font-size: 12px;
+        word-wrap: break-word; /* All browsers since IE 5.5+ */
+        overflow-wrap: break-word;
+    }
+
+    th {
+        font-family: Technika;
+        font-size: 14px;
+    }
+
+    #newline {
+        page-break-before: always;
+    }
+
     body {
         font-family: Technika;
+        align: center;
+        margin: 0;
+        padding: 0;
     }
 
     --></style>
-
         <!-- DataTables JavaScript -->
     <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/jquery.dataTables.js")'></script>
     <script src='@routes.Assets.at("DataTables/DataTables-1.10.13/js/dataTables.bootstrap.min.js")'></script>

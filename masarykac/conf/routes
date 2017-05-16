@@ -139,7 +139,7 @@ GET         /courses                                        controllers.TableCon
 GET         /currentsemesters                               controllers.TableController.listCurrentSemesters()
 GET         /lcsuteos                                       controllers.TableController.listCurrentSemestersUntilTheEndOfStudy()
 GET         /days                                           controllers.TableController.listDays()
-GET         /visits                                           controllers.TableController.listVisits()
+GET         /visits                                         controllers.TableController.listVisits()
 GET         /classrooms                                     controllers.TableController.listClassrooms()
 GET         /teachroles                                     controllers.TableController.listTeachersRole()
 GET         /accessroles                                    controllers.TableController.listAccessRole()
@@ -192,6 +192,7 @@ GET         /pdfTableTeachingAccordingToPersons             controllers.PDFContr
 GET         /pdfTableTeachingAccordingToPersons/:uid        controllers.PDFController.pdfTableTeachingAccordingToPerson(uid:String)
 GET         /pdfTableTeachingCB                             controllers.PDFController.pdfTableTeachingCB()
 GET         /pdfTableTeachingDepartmentEmployee             controllers.PDFController.pdfTableTeachingDepartmentEmployee()
+GET         /pdfTableVisits                                 controllers.PDFController.pdfTableVisits()
 
 GET         /docTableAccessRole                             controllers.DOCController.docTableAccessRole()
 GET         /docTableDCPS                                   controllers.DOCController.docTableDCPS()
@@ -212,6 +213,7 @@ GET         /docTableTeachingAccordingToPersons             controllers.DOCContr
 GET         /docTableTeachingAccordingToPersons/:uid        controllers.DOCController.docTableTeachingAccordingToPerson(uid:String)
 GET         /docTableTeachingCB                             controllers.DOCController.docTableTeachingCB()
 GET         /docTableTeachingDepartmentEmployee             controllers.DOCController.docTableTeachingDepartmentEmployee()
+GET         /docTableVisits                                 controllers.DOCController.docTableVisits()
 
 GET         /regidea                                        controllers.IdeasController.index()
 POST        /regidea/saved                                  controllers.IdeasController.save()

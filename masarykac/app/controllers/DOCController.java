@@ -2,6 +2,7 @@ package controllers;
 
 import it.innove.play.pdf.PdfGenerator;
 import models.*;
+import models.utils.Check;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -179,5 +180,20 @@ public class DOCController extends Controller {
         List<Schedule> schedules = Schedule.search();
         List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
         return ok(views.html.doc.tableTeachingDepartmentEmployeeDOC.render(oj, e, c, s, t, caaa, caab, cb, sem, schedules, scheduleInWeekses));
+    }
+
+    public Result docTableVisits() {
+        if (Check.isDirector(Member.findByUID(request().username()))) {
+            List<Visits> visits = Visits.search();
+            List<VisitsParticipants> compart = VisitsParticipants.search();
+            List<Semesters> s = Semesters.search();
+
+            return ok(views.html.doc.tableVisitsDOC.render(visits, compart, s));
+        }
+        notAccess();
+        return redirect(routes.Application.index());
+    }
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
     }
 }

@@ -45,12 +45,12 @@
                     }
                 </div>
                 <div class="col-md-3">
-                @form(routes.PDFController.pdfTablePublication()) {
+                @form(routes.PDFController.pdfTableVisits()) {
                     <input type="submit" value="Generovat PDF" class="btn btn-success">
                     }
                 </div>
                 <div class="col-md-3">
-                @form(routes.DOCController.docTablePublication()) {
+                @form(routes.DOCController.docTableVisits()) {
                     <input type="submit" value="Generovat DOC" class="btn btn-success">
                     }
                 </div>
@@ -111,7 +111,7 @@
                                             @for(cp <- vispartPage) {
                                                 @if(c.getId == cp.getVisits.getId) {
                                                     <div class="row">
-                                                        <div class="col-md-1">
+                                                        <div class="col-md-5">
                                                         @cp.getEmployees.getSurname
                                                         </div>
 

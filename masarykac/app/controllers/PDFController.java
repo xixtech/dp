@@ -2,6 +2,7 @@ package controllers;
 
 import it.innove.play.pdf.PdfGenerator;
 import models.*;
+import models.utils.Check;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -202,5 +203,20 @@ public class PDFController extends Controller {
         List<ScheduleInWeeks> scheduleInWeekses = ScheduleInWeeks.search();
         pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
         return pdfGenerator.ok(views.html.pdf.tableTeachingDepartmentEmployeePDF.render(oj, e, c, s, t, caaa, caab, cb, sem, schedules, scheduleInWeekses), "http://localhost:9000");
+    }
+
+    public Result pdfTableVisits() {
+        if (Check.isDirector(Member.findByUID(request().username()))) {
+            List<Visits> visits = Visits.search();
+            List<VisitsParticipants> compart = VisitsParticipants.search();
+            List<Semesters> s = Semesters.search();
+            pdfGenerator.loadTemporaryFonts(Arrays.asList(new String[]{"fonts/Technika-Regular.ttf"}));
+            return pdfGenerator.ok(views.html.pdf.tableVisitsPDF.render(visits, compart, s), "http://localhost:9000");
+        }
+        notAccess();
+        return redirect(routes.Application.index());
+    }
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
     }
 }
