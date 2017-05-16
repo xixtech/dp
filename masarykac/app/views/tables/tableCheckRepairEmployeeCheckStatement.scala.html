@@ -2,7 +2,7 @@
 @(idE: Long, idS: Long, ePage: List[Employees], semPage: List[Semesters], statementPage: List[Statement], statComPartPage: List[StatementCommitteeParticipants], statFinalWPartPage: List[StatementFinalWorksParticipants],
         statProjPartPage: List[StatementProjectsParticipants], statPubPartPage: List[StatementPublicationsParticipants], statTeachPart: List[StatementTeachersParticipants], statVisitsPart: List[StatementVisitsParticipants])
 @import helper._
-@import scala.Predef; var x = 0; var y = 0.0;
+@import scala.Predef; var x = 0; var y = 0.0; var sub = 0; var pub = 0; var proj = 0; var com = 0; var fin = 0; var vis = 0;
 @localStylesheets = {
     <link href='@routes.Assets.at("stylesheets/tables.css")' rel="stylesheet" type="text/css">
     <style type="text/css"><!--
@@ -68,280 +68,341 @@
                             @if(statTeachPart.size() == 0) {
                                 <p>Ve sledovaném období neproběhla účast na výuce předmětů</p>
                             } else {
+                                @(sub = 0)
+                                @for(member <- statTeachPart) {
+                                    @if(stat.getId == member.getStatement.getId) {
+                                        @(sub = sub + 1)
+                                    }
+                                }
+                                @if(sub == 0) {
+                                    <p>Ve sledovaném období neproběhla účast na výuce předmětů</p>
+                                } else {
+                                    <div class="panel-body">
+                                        <div class="dataTable_wrapper">
 
-                                <div class="panel-body">
-                                    <div class="dataTable_wrapper">
-
-                                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                            <thead>
-                                                <tr>
-                                                    <th>Kurz</th>
-                                                    <th>Ident</th>
-                                                    <th>Podíl</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            @for(member <- statTeachPart) {
-                                                @if(stat.getId == member.getStatement.getId) {
+                                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                <thead>
                                                     <tr>
-                                                        <td class="center">
-                                                        @if(member.getTeachers.getCourses.getCourse == null) {
-                                                            <em>-</em>
-                                                        } else {
-                                                            @member.getTeachers.getCourses.getCourse
-                                                        }
-                                                        </td>
-
-                                                        <td class="center">
-                                                        @if(member.getTeachers.getCourses.getSubjects.getIdent == null) {
-                                                            <em>-</em>
-                                                        } else {
-                                                            @member.getTeachers.getCourses.getSubjects.getIdent
-                                                        }
-                                                        </td>
-
-                                                        <td class="center">
-                                                        @if(member.getTeachers.getScale == null) {
-                                                            <em>-</em>
-                                                        } else {
-                                                            @member.getTeachers.getScale
-                                                        }
-                                                        </td>
+                                                        <th>Kurz</th>
+                                                        <th>Ident</th>
+                                                        <th>Podíl</th>
                                                     </tr>
+                                                </thead>
+                                                <tbody>
+                                                @for(member <- statTeachPart) {
+                                                    @if(stat.getId == member.getStatement.getId) {
+                                                        <tr>
+                                                            <td class="center">
+                                                            @if(member.getTeachers.getCourses.getCourse == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getTeachers.getCourses.getCourse
+                                                            }
+                                                            </td>
+
+                                                            <td class="center">
+                                                            @if(member.getTeachers.getCourses.getSubjects.getIdent == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getTeachers.getCourses.getSubjects.getIdent
+                                                            }
+                                                            </td>
+
+                                                            <td class="center">
+                                                            @if(member.getTeachers.getScale == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getTeachers.getScale
+                                                            }
+                                                            </td>
+                                                        </tr>
+                                                    }
                                                 }
-                                            }
-                                            </tbody>
-                                        </table>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        }
-                    </div>
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
+                                }
+
+                            }
+                        </div>
+
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
                                 Publikace
-                        </div>
-                        @if(statPubPartPage.size() == 0) {
-                            <p>Ve sledovaném období neproběhla účast na publikacích</p>
-                        } else {
-                            <div class="panel-body">
-                                <div class="dataTable_wrapper">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <thead>
-                                            <tr>
-                                                <th>Název</th>
-                                                <th>Podíl</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        @for(member <- statPubPartPage) {
-                                            @if(stat.getId == member.getStatement.getId) {
-                                                <tr>
-                                                    <td class="center">
-                                                    @if(member.getPublicationsParticipants.getPublications.getCitation == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getPublicationsParticipants.getPublications.getCitation
-                                                    }
-                                                    </td>
-                                                    <td class="center">
-                                                    @if(member.getPublicationsParticipants.getShare == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getPublicationsParticipants.getShare
-                                                    }
-                                                    </td>
-                                                </tr>
-                                            }
-                                        }
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
-                        }
-                    </div>
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
+                            @if(statPubPartPage.size() == 0) {
+                                <p>Ve sledovaném období neproběhla účast na publikacích</p>
+                            } else {
+                                @(pub = 0)
+                                @for(member <- statPubPartPage) {
+                                    @if(stat.getId == member.getStatement.getId) {
+                                        @(pub = pub + 1)
+                                    }
+                                }
+                                @if(pub == 0) {
+                                    <p>Ve sledovaném období neproběhla účast na publikacích</p>
+                                } else {
+                                    <div class="panel-body">
+                                        <div class="dataTable_wrapper">
+                                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Název</th>
+                                                        <th>Podíl</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @for(member <- statPubPartPage) {
+                                                    @if(stat.getId == member.getStatement.getId) {
+                                                        <tr>
+                                                            <td class="center">
+                                                            @if(member.getPublicationsParticipants.getPublications.getCitation == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getPublicationsParticipants.getPublications.getCitation
+                                                            }
+                                                            </td>
+                                                            <td class="center">
+                                                            @if(member.getPublicationsParticipants.getShare == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getPublicationsParticipants.getShare
+                                                            }
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
                                 Projekty
-                        </div>
-                        @if(statProjPartPage.size() == 0) {
-                            <p>Ve sledovaném období neproběhla účast na projektech</p>
-                        } else {
-                            <div class="panel-body">
-                                <div class="dataTable_wrapper">
-
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <thead>
-                                            <tr>
-                                                <th>Název projektu</th>
-                                                <th>Role v projektu</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        @for(member <- statProjPartPage) {
-                                            @if(stat.getId == member.getStatement.getId) {
-                                                <tr>
-                                                    <td class="center">
-                                                    @if(member.getProjectsParticipants.getProjects.getProjectName == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getProjectsParticipants.getProjects.getProjectName
-                                                    }
-                                                    </td>
-
-                                                    <td class="center">
-                                                    @if(member.getProjectsParticipants.getProjectRole == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getProjectsParticipants.getProjectRole
-                                                    }
-                                                    </td>
-                                                </tr>
-                                            }
-                                        }
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
-                        }
-                    </div>
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
+                            @if(statProjPartPage.size() == 0) {
+                                <p>Ve sledovaném období neproběhla účast na projektech</p>
+                            } else {
+                                @(proj = 0)
+                                @for(member <- statProjPartPage) {
+                                    @if(stat.getId == member.getStatement.getId) {
+                                        @(proj = proj + 1)
+                                    }
+                                }
+                                @if(proj == 0) {
+                                    <p>Ve sledovaném období neproběhla účast na projektech</p>
+                                } else {
+                                    <div class="panel-body">
+                                        <div class="dataTable_wrapper">
+
+                                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Název projektu</th>
+                                                        <th>Role v projektu</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @for(member <- statProjPartPage) {
+                                                    @if(stat.getId == member.getStatement.getId) {
+                                                        <tr>
+                                                            <td class="center">
+                                                            @if(member.getProjectsParticipants.getProjects.getProjectName == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getProjectsParticipants.getProjects.getProjectName
+                                                            }
+                                                            </td>
+
+                                                            <td class="center">
+                                                            @if(member.getProjectsParticipants.getProjectRole == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getProjectsParticipants.getProjectRole
+                                                            }
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
                                 Účast v komisích Státních závěrečných zkoušek
-                        </div>
-                        @if(statComPartPage.size() == 0) {
-                            <p>Ve sledovaném období neproběhla účast v komisích</p>
-                        } else {
-                            <div class="panel-body">
-                                <div class="dataTable_wrapper">
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <thead>
-                                            <tr>
-                                                <th>Datum konání komise</th>
-                                                <th>Role v komisi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        @for(member <- statComPartPage) {
-                                            @if(stat.getId == member.getStatement.getId) {
-                                                <tr>
-                                                    <td class="center">
-                                                    @if(member.getCommitteeParticipants.getCommittee.getDateOfCommittee == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getCommitteeParticipants.getCommittee.getDateOfCommittee
-                                                    }
-                                                    </td>
-
-                                                    <td class="center">
-                                                    @if(member.getCommitteeParticipants.getRoleInCommittee == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getCommitteeParticipants.getRoleInCommittee
-                                                    }
-                                                    </td>
-                                                </tr>
-                                            }
-                                        }
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
-                        }
-                    </div>
-                    <div class="panel panel-warning">
-                        <div class="panel-heading">
+                            @if(statComPartPage.size() == 0) {
+                                <p>Ve sledovaném období neproběhla účast v komisích</p>
+                            } else {
+                                @(com = 0)
+                                @for(member <- statComPartPage) {
+                                    @if(stat.getId == member.getStatement.getId) {
+                                        @(com = com + 1)
+                                    }
+                                }
+                                @if(com == 0) {
+                                    <p>Ve sledovaném období neproběhla účast v komisích</p>
+                                } else {
+                                    <div class="panel-body">
+                                        <div class="dataTable_wrapper">
+                                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Datum konání komise</th>
+                                                        <th>Role v komisi</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @for(member <- statComPartPage) {
+                                                    @if(stat.getId == member.getStatement.getId) {
+                                                        <tr>
+                                                            <td class="center">
+                                                            @if(member.getCommitteeParticipants == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getCommitteeParticipants.getCommittee.getDateOfCommittee
+                                                            }
+                                                            </td>
+
+                                                            <td class="center">
+                                                            @if(member.getCommitteeParticipants == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getCommitteeParticipants.getRoleInCommittee
+                                                            }
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
                                 Účast na závěrečných pracích studentů
-                        </div>
-                        @if(statFinalWPartPage.size() == 0) {
-                            <p>Ve sledovaném období neproběhla účast na závěrečných pracích studentů</p>
-                        } else {
-                            <div class="panel-body">
-                                <div class="dataTable_wrapper">
-
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <thead>
-                                            <tr>
-                                                <th>Název práce</th>
-                                                <th>Role</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        @for(member <- statFinalWPartPage) {
-                                            @if(stat.getId == member.getStatement.getId) {
-                                                <tr>
-                                                    <td class="center">
-                                                    @if(member.getFinalWorksParticipants.getFinalWorks.getFinalWorksName == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getFinalWorksParticipants.getFinalWorks.getFinalWorksName
-                                                    }
-                                                    </td>
-
-                                                    <td class="center">
-                                                    @if(member.getFinalWorksParticipants.getTeachersRole == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getFinalWorksParticipants.getTeachersRole
-                                                    }
-                                                    </td>
-                                                </tr>
-                                            }
-                                        }
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
-                        }
-                    </div>
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
+                            @if(statFinalWPartPage.size() == 0) {
+                                <p>Ve sledovaném období neproběhla účast na závěrečných pracích studentů</p>
+                            } else {
+                                @(fin = 0)
+                                @for(member <- statFinalWPartPage) {
+                                    @if(stat.getId == member.getStatement.getId) {
+                                        @(fin = fin + 1)
+                                    }
+                                }
+                                @if(fin == 0) {
+                                    <p>Ve sledovaném období neproběhla účast na závěrečných pracích studentů</p>
+                                } else {
+                                    <div class="panel-body">
+                                        <div class="dataTable_wrapper">
+
+                                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Název práce</th>
+                                                        <th>Role</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @for(member <- statFinalWPartPage) {
+                                                    @if(stat.getId == member.getStatement.getId) {
+                                                        <tr>
+                                                            <td class="center">
+                                                            @if(member.getFinalWorksParticipants.getFinalWorks.getFinalWorksName == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getFinalWorksParticipants.getFinalWorks.getFinalWorksName
+                                                            }
+                                                            </td>
+
+                                                            <td class="center">
+                                                            @if(member.getFinalWorksParticipants.getTeachersRole == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getFinalWorksParticipants.getTeachersRole
+                                                            }
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
                                 Účast na výjezdech
-                        </div>
-                        @if(statVisitsPart.size() == 0) {
-                            <p>Ve sledovaném období neproběhla účast na výjezdech</p>
-                        } else {
-                            <div class="panel-body">
-                                <div class="dataTable_wrapper">
-
-                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                        <thead>
-                                            <tr>
-                                                <th>Důvod návštěvy</th>
-                                                <th>Název události</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        @for(member <- statVisitsPart) {
-                                            @if(stat.getId == member.getStatement.getId) {
-                                                <tr>
-                                                    <td class="center">
-                                                    @if(member.getVisitsParticipants.getVisits.getPurposeOfVisit == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getVisitsParticipants.getVisits.getPurposeOfVisit
-                                                    }
-                                                    </td>
-
-                                                    <td class="center">
-                                                    @if(member.getVisitsParticipants.getVisits.getEvent == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @member.getVisitsParticipants.getVisits.getEvent
-                                                    }
-                                                    </td>
-                                                </tr>
-                                            }
-                                        }
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
-                        }
+                            @if(statVisitsPart.size() == 0) {
+                                <p>Ve sledovaném období neproběhla účast na výjezdech</p>
+                            } else {
+                                @(vis = 0)
+                                @for(member <- statVisitsPart) {
+                                    @if(stat.getId == member.getStatement.getId) {
+                                        @(vis = vis + 1)
+                                    }
+                                }
+                                @if(vis == 0) {
+                                    <p>Ve sledovaném období neproběhla účast na výjezdech</p>
+                                } else {
+                                    <div class="panel-body">
+                                        <div class="dataTable_wrapper">
+
+                                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Důvod návštěvy</th>
+                                                        <th>Název události</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                @for(member <- statVisitsPart) {
+                                                    @if(stat.getId == member.getStatement.getId) {
+                                                        <tr>
+                                                            <td class="center">
+                                                            @if(member.getVisitsParticipants.getVisits.getPurposeOfVisit == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getVisitsParticipants.getVisits.getPurposeOfVisit
+                                                            }
+                                                            </td>
+
+                                                            <td class="center">
+                                                            @if(member.getVisitsParticipants.getVisits.getEvent == null) {
+                                                                <em>-</em>
+                                                            } else {
+                                                                @member.getVisitsParticipants.getVisits.getEvent
+                                                            }
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
                     </div>
                 </fieldset>
                 <div class="panel-body">
-                    @form(routes.StatementController.sendRepairedStatement(idE, idS)) {
+                    @form(routes.StatementController.sendStatementToEmployee(idE, idS)) {
                         <input type="submit" value="Odeslat ke schválení" class="btn btn-info">
                     }
                     @form(routes.StatementController.sendToRepair(idE, idS)) {

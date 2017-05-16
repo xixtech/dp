@@ -45,9 +45,14 @@ public class StatementController extends Controller {
                 .username());
         List<Statement> statements = Statement.findByEmployees(m.getEmployees().getId());
         if (statements.size() != 0) {
-            statements.get(0).setState("Vytvořeno");
-            statements.get(0).setManagerEmployee(Employees.findById(mE.getEmployees().getId()));
-            statements.get(0).update();
+            for (int i = 0; i < statements.size(); i++) {
+                if (statements.get(i).getManagerEmployee() == null) {
+                    statements.get(i).setState("Vytvořeno");
+                    statements.get(i).setManagerEmployee(Employees.findById(mE.getEmployees().getId()));
+                    statements.get(i).update();
+                }
+            }
+
         }
         return ok(views.html.tables.tableEmployeeStatements.render(statements, mE.getEmployees().getId()));
     }
@@ -58,7 +63,9 @@ public class StatementController extends Controller {
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);
         statements.add(s);
-        List<Semesters> sem = Semesters.search();
+        List<Semesters> sem = new ArrayList<>();
+        Semesters semesters = Semesters.findById(s.getSemester().getId());
+        sem.add(semesters);
         List<StatementCommitteeParticipants> scp = StatementCommitteeParticipants.search();
         List<StatementFinalWorksParticipants> sfwp = StatementFinalWorksParticipants.search();
         List<StatementProjectsParticipants> spp = StatementProjectsParticipants.search();
@@ -88,7 +95,9 @@ public class StatementController extends Controller {
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);
         statements.add(s);
-        List<Semesters> sem = Semesters.search();
+        List<Semesters> sem = new ArrayList<>();
+        Semesters semesters = Semesters.findById(s.getSemester().getId());
+        sem.add(semesters);
         List<StatementCommitteeParticipants> scp = StatementCommitteeParticipants.search();
         List<StatementFinalWorksParticipants> sfwp = StatementFinalWorksParticipants.search();
         List<StatementProjectsParticipants> spp = StatementProjectsParticipants.search();
@@ -104,7 +113,9 @@ public class StatementController extends Controller {
         List<Statement> statements = new ArrayList<>();
         Statement s = Statement.findById(idS);
         statements.add(s);
-        List<Semesters> sem = Semesters.search();
+        List<Semesters> sem = new ArrayList<>();
+        Semesters semesters = Semesters.findById(s.getSemester().getId());
+        sem.add(semesters);
         List<StatementCommitteeParticipants> scp = StatementCommitteeParticipants.search();
         List<StatementFinalWorksParticipants> sfwp = StatementFinalWorksParticipants.search();
         List<StatementProjectsParticipants> spp = StatementProjectsParticipants.search();

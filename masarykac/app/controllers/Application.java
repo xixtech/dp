@@ -47,7 +47,7 @@ public class Application extends Controller {
         List<Statement> statements=new ArrayList<>();
         List<Statement> s = Statement.findByEmployees(m.getEmployees().getId());
         for (Statement set : s) {
-            if(set.getState().equals("Odesláno ke schválení")||set.getState().equals("Opraveno")){
+            if(set.getState().equals("Ke schválení")||set.getState().equals("Opraveno")){
                 statements.add(set);
             }
         }
