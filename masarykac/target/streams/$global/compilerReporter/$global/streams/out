@@ -113,6 +113,3 @@
 [warn]                                                 @if(member.getTeachers.getScale == null) {
 [warn]                                                                                 ^
 [warn] 38 warnings found
-[error] C:\Users\Martin\dp\masarykac\app\controllers\OrganizationalUnitsController.java:116:  long cannot be converted to java.lang.String
-[error] Long.parseLong(formData.get("organizationalUnitResponsible")[0])
-[info] Some messages have been simplified; recompile with -Xdiags:verbose to get full output

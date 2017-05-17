@@ -174,6 +174,10 @@ public class OrganizationalUnits extends Model {
         return find.where().eq("id", id).findUnique();
     }
 
+    public static OrganizationalUnits findByOUNumber(String organizationalUnitNumber) {
+        return find.where().eq("organizationalUnitNumber", organizationalUnitNumber).findUnique();
+    }
+
     public static Map<String, String> options() {
         List<OrganizationalUnits> subjectSets = OrganizationalUnits.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();

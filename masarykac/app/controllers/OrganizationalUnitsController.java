@@ -113,7 +113,7 @@ public class OrganizationalUnitsController extends Controller {
 
     private void saveOrganizationalUnit(Map<String, String[]> formData) throws Exception {
         OrganizationalUnits ou = new OrganizationalUnits(formData.get("organizationalUnitNumber")[0], formData.get("organizationalUnitNumberParent")[0], formData.get("titleCzech")[0], formData.get("titleEnglish")[0], formData.get("functionNameOfSeniorEmployee")[0],
-                formData.get("functionNameOfSeniorEmployeeAppointment")[0], Long.parseLong(formData.get("organizationalUnitResponsible")[0]));
+                formData.get("functionNameOfSeniorEmployeeAppointment")[0], formData.get("organizationalUnitResponsible")[0]);
         ou.save();
 
     }

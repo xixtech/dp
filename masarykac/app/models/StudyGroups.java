@@ -20,13 +20,13 @@ public class StudyGroups extends Model {
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StudyPlans> studyPlans;
-
+    @Column(length=10485760)
     public String studyGroup;
-
+    @Column(length=10485760)
     public int studyGroupP;
-
+    @Column(length=10485760)
     public String studyGroupV;
-
+    @Column(length=10485760)
     public String studyGroupsNote;
 
     public StudyGroups(String studyGroup, int studyGroupP, String studyGroupV, String studyGroupsNote) {

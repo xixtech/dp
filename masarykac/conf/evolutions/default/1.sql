@@ -192,7 +192,7 @@ create table organizational_units (
   title_english                 varchar(255),
   function_name_of_senior_employee varchar(255),
   function_name_of_senior_employee_appointment varchar(255),
-  organizational_unit_responsible bigint,
+  organizational_unit_responsible varchar(255),
   has_head_of_organization      boolean,
   has_deputy_head_of_organization boolean,
   active                        boolean,
@@ -419,10 +419,10 @@ create table statement_visits_participants (
 
 create table study_groups (
   id                            bigserial not null,
-  study_group                   varchar(255),
+  study_group                   varchar(10485760),
   study_group_p                 integer,
-  study_group_v                 varchar(255),
-  study_groups_note             varchar(255),
+  study_group_v                 varchar(10485760),
+  study_groups_note             varchar(10485760),
   constraint pk_study_groups primary key (id)
 );
 

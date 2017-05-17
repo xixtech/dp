@@ -37,6 +37,9 @@ public class OnStartup {
                 sm.insertOJ();
                 sm.insertSemesters();
                 sm.insertEmployees();
+                sm.insertFS();
+                sm.insertSG();
+                sm.insertOJPart();
 
                 Roles roles = new Roles("Lektor");
                 roles.save();
