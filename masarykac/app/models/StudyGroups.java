@@ -131,6 +131,10 @@ public class StudyGroups extends Model {
         return find.where().eq("id",id).findUnique();
     }
 
+    public static StudyGroups findByStudyGroup(String studyGroup) {
+        return find.where().eq("studyGroup",studyGroup).findUnique();
+    }
+
     public static List<StudyGroups> search() {
         return StudyGroups.find.where().orderBy("studyGroupP asc").findList();
     }

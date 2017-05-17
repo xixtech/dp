@@ -122,6 +122,27 @@ public class Courses extends Model {
         return find.where().eq("course", course).findList();
     }
 
+    public static Courses findByCourseTeachers(String course, String ident, String sem) {
+       Courses c=null;
+        List<Courses> lc=Courses.find.all();
+        List<Subjects> lsu=Subjects.find.all();
+        for (Courses set : lc) {
+           if(set.getCourse()==course){
+               for (Subjects subset : lsu) {
+                   if(subset.getIdent()==ident) {
+                       if (subset.getId() == set.getSubjects().getId()) {
+                               if (Semesters.findBySemValue(sem).getId() == set.getSemester().getId()) {
+                                   c=set;
+                               }
+                       }
+                   }
+               }
+           }
+        }
+
+        return c;
+    }
+
     public static Map<String, String> options() {
         List<Courses> subjectSets = Courses.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();

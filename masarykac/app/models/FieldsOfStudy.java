@@ -170,4 +170,9 @@ public class FieldsOfStudy extends Model {
     public static FieldsOfStudy findById(long id) {
         return find.where().eq("id", id).findUnique();
     }
+
+    public static FieldsOfStudy findByFS(String fieldOfStudy) {
+        return find.where().eq("fieldOfStudy", fieldOfStudy).findUnique();
+    }
+
 }

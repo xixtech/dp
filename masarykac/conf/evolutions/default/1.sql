@@ -6,6 +6,7 @@
 create table access_role (
   id                            bigserial not null,
   role                          varchar(255),
+  xx                            varchar(255),
   description                   varchar(255),
   active                        boolean,
   constraint pk_access_role primary key (id)
@@ -428,10 +429,10 @@ create table study_groups (
 
 create table study_groups1 (
   id                            bigserial not null,
-  study_group                   varchar(255),
+  study_group                   varchar(10485760),
   study_group_p                 integer,
-  study_group_v                 varchar(255),
-  study_groups_note             varchar(255),
+  study_group_v                 varchar(10485760),
+  study_groups_note             varchar(10485760),
   constraint pk_study_groups1 primary key (id)
 );
 

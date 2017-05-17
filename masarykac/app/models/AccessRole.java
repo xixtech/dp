@@ -21,6 +21,7 @@ public class AccessRole extends Model {
     public Long id;
 
     public String role;
+    public String xx;
 
     public String description;
 

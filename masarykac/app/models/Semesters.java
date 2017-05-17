@@ -357,4 +357,8 @@ public class Semesters extends Model {
     public static Semesters findById(long id) {
         return find.where().eq("id", id).findUnique();
     }
+
+    public static Semesters findBySemValue(String semesterValue) {
+        return find.where().eq("semesterValue", semesterValue).findUnique();
+    }
 }

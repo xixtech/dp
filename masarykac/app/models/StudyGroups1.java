@@ -20,13 +20,13 @@ public class StudyGroups1 extends Model {
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     public List<StudyPlans> studyPlans;
-
+    @Column(length=10485760)
     public String studyGroup;
-
+    @Column(length=10485760)
     public int studyGroupP;
-
+    @Column(length=10485760)
     public String studyGroupV;
-
+    @Column(length=10485760)
     public String studyGroupsNote;
 
     public StudyGroups1(String studyGroup, int studyGroupP, String studyGroupV, String studyGroupsNote) {
@@ -131,5 +131,8 @@ public class StudyGroups1 extends Model {
         return find.where().eq("id",id).findUnique();
     }
 
+    public static StudyGroups1 findByStudyGroup(String studyGroup) {
+        return find.where().eq("studyGroup",studyGroup).findUnique();
+    }
 
 }

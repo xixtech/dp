@@ -25,10 +25,10 @@ import java.util.Date;
 public class OnStartup {
 
     @Inject
-    public OnStartup(Member member1) {
+    public OnStartup(Member member1)  throws Exception{
         if (member1.find.findRowCount() == 0) {
 
-            try {
+
                 StartMethods sm = new StartMethods();
                 sm.insertDaysStart();
                 sm.insertClassroomStart();
@@ -40,6 +40,10 @@ public class OnStartup {
                 sm.insertFS();
                 sm.insertSG();
                 sm.insertOJPart();
+                sm.insertSubjects();
+                sm.insertSP();
+                sm.insertCourses();
+                sm.insertTeachers();
 
                 Roles roles = new Roles("Lektor");
                 roles.save();
@@ -83,10 +87,7 @@ public class OnStartup {
                 kpi.insertKPIStart();
 
 
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+
         }
     }
 }

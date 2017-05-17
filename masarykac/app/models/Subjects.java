@@ -216,6 +216,10 @@ public class Subjects extends Model {
         return find.where().eq("ident", ident).findList();
     }
 
+    public static Subjects findIdentUnique(String ident) {
+        return find.where().eq("ident", ident).findUnique();
+    }
+
     public static Subjects findById(long id) {
         return find.where().eq("id", id).findUnique();
     }

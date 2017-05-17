@@ -234,9 +234,11 @@ public class Employees extends Model {
     public static Employees findById(long id) {
         return find.where().eq("id", id).findUnique();
     }
+
     public static Employees findByPN(long personalNumber) {
         return find.where().eq("personalNumber", personalNumber).findUnique();
     }
+
 
     public static List<Employees> search() {
         return Employees.find.all();

@@ -49,6 +49,14 @@ public class Teachers extends Model {
         this.recountedSummary = recountedSummary;
     }
 
+    public Teachers(Courses courses, Employees employees, double scale) {
+        this.courses = courses;
+        this.employees = employees;
+        this.scale = scale;
+        this.summary = 0.0;
+        this.recountedSummary = 0.0;
+    }
+
     public Courses getCourses() {
         return courses;
     }

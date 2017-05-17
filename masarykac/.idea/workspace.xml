@@ -6,20 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="4c2beb26-3c63-43aa-8b60-e106e0ae02db" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/OnStartup.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/OnStartup.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/models/Member.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/models/Member.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar$$anonfun$f$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/views/html/sidebar_Scope0$sidebar$$anonfun$f$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/connections/master.log" afterPath="$PROJECT_DIR$/.sbtserver/connections/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sbtserver/master.log" afterPath="$PROJECT_DIR$/.sbtserver/master.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/OnStartup.java" afterPath="$PROJECT_DIR$/app/OnStartup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java" afterPath="$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/StartMethods.java" afterPath="$PROJECT_DIR$/app/controllers/StartMethods.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/AccessRole.java" afterPath="$PROJECT_DIR$/app/models/AccessRole.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/OrganizationalUnits.java" afterPath="$PROJECT_DIR$/app/models/OrganizationalUnits.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Courses.java" afterPath="$PROJECT_DIR$/app/models/Courses.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Employees.java" afterPath="$PROJECT_DIR$/app/models/Employees.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/FieldsOfStudy.java" afterPath="$PROJECT_DIR$/app/models/FieldsOfStudy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Semesters.java" afterPath="$PROJECT_DIR$/app/models/Semesters.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/StudyGroups.java" afterPath="$PROJECT_DIR$/app/models/StudyGroups.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/StudyGroups1.java" afterPath="$PROJECT_DIR$/app/models/StudyGroups1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Subjects.java" afterPath="$PROJECT_DIR$/app/models/Subjects.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Teachers.java" afterPath="$PROJECT_DIR$/app/models/Teachers.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/evolutions/default/1.sql" afterPath="$PROJECT_DIR$/conf/evolutions/default/1.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/$global/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/$global/$global/streams/out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" afterPath="$PROJECT_DIR$/target/streams/$global/compilerReporter/$global/streams/out" />
@@ -50,6 +51,26 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="9">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="Teachers.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/models/Teachers.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="577">
+                    <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -78,41 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccessRole.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/models/AccessRole.java">
+      <file leaf-file-name="OnStartup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/OnStartup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.scala.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/sidebar.scala.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrganizationalUnits.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/OrganizationalUnits.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registerSemester.scala.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/registerSemester.scala.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1072">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -121,23 +112,42 @@
       <file leaf-file-name="StartMethods.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/StartMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="645">
+              <caret line="4218" column="27" selection-start-line="4218" selection-start-column="27" selection-end-line="4218" selection-end-column="27" />
               <folding>
-                <element signature="e#3602#3617#0" expanded="true" />
-                <element signature="e#4975#4996#0" expanded="true" />
-                <element signature="e#7845#7878#0" expanded="true" />
-                <element signature="e#44466#44479#0" expanded="true" />
-                <element signature="e#54934#54945#0" expanded="true" />
-                <element signature="e#60765#60776#0" expanded="true" />
-                <element signature="e#87652#87660#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#insertClassroomStart#0;class#StartMethods#0" expanded="false" />
+                <element signature="method#insertTeachers#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#3205#3215#0" expanded="true" />
+                <element signature="method#insertTeachersRole#0;class#StartMethods#0" expanded="false" />
+                <element signature="method#insertCourses#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#169527#169536#0" expanded="true" />
+                <element signature="method#insertSP#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#298063#298075#0" expanded="true" />
+                <element signature="method#insertFS#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#481285#481300#0" expanded="true" />
+                <element signature="method#insertAccessRole#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#482258#482270#0" expanded="true" />
+                <element signature="method#insertSubjects#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#482652#482662#0" expanded="true" />
+                <element signature="method#insertOJ#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#538461#538482#0" expanded="true" />
+                <element signature="method#insertOJPart#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#541331#541364#0" expanded="true" />
+                <element signature="method#insertSG#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#577952#577965#0" expanded="true" />
+                <element signature="method#insertSemesters#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#588567#588578#0" expanded="true" />
+                <element signature="method#insertEmployees#0;class#StartMethods#0" expanded="false" />
+                <element signature="e#594398#594409#0" expanded="true" />
+                <element signature="e#621285#621293#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudyGroups.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/StudyGroups.java">
+      <file leaf-file-name="StudyGroups1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/StudyGroups1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
               <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
@@ -146,24 +156,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrganizationalUnitsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java">
+      <file leaf-file-name="StudyGroups.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/StudyGroups.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="118" column="5" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SemestersController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/SemestersController.java">
+      <file leaf-file-name="AccessRole.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/AccessRole.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="24" column="0" selection-start-line="23" selection-start-column="2" selection-end-line="24" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -190,12 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAAB.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPerson.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableTeachingAccordingToPersons.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/registerProjects.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableCommittees.scala.html" />
-        <option value="$PROJECT_DIR$/app/views/tables/tableOJ.scala.html" />
         <option value="$PROJECT_DIR$/app/views/tables/tableTeachersInWeeks.scala.html" />
         <option value="$PROJECT_DIR$/app/controllers/Application.java" />
         <option value="$PROJECT_DIR$/app/controllers/StatementController.java" />
@@ -233,13 +235,19 @@
         <option value="$PROJECT_DIR$/app/controllers/TableController.java" />
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/views/sidebar.scala.html" />
-        <option value="$PROJECT_DIR$/app/models/Employees.java" />
         <option value="$PROJECT_DIR$/app/models/Member.java" />
         <option value="$PROJECT_DIR$/app/models/OrganizationalUnits.java" />
         <option value="$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java" />
+        <option value="$PROJECT_DIR$/app/models/Semesters.java" />
         <option value="$PROJECT_DIR$/app/models/StudyGroups.java" />
-        <option value="$PROJECT_DIR$/app/controllers/StartMethods.java" />
+        <option value="$PROJECT_DIR$/app/models/Subjects.java" />
+        <option value="$PROJECT_DIR$/app/models/FieldsOfStudy.java" />
+        <option value="$PROJECT_DIR$/app/models/Teachers.java" />
+        <option value="$PROJECT_DIR$/app/models/Employees.java" />
+        <option value="$PROJECT_DIR$/app/models/Courses.java" />
         <option value="$PROJECT_DIR$/app/OnStartup.java" />
+        <option value="$PROJECT_DIR$/app/controllers/StartMethods.java" />
+        <option value="$PROJECT_DIR$/app/models/StudyGroups1.java" />
         <option value="$PROJECT_DIR$/app/models/AccessRole.java" />
       </list>
     </option>
@@ -361,28 +369,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masarykac" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="masarykac" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tables" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1122,14 +1108,7 @@
       <workItem from="1494861705094" duration="2696000" />
       <workItem from="1494875999662" duration="983000" />
       <workItem from="1494916418145" duration="16645000" />
-      <workItem from="1495003675824" duration="12776000" />
-    </task>
-    <task id="LOCAL-00097" summary="29_04">
-      <created>1493472007453</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1493472007453</updated>
+      <workItem from="1495003675824" duration="20310000" />
     </task>
     <task id="LOCAL-00098" summary="30_04">
       <created>1493543725668</created>
@@ -1467,11 +1446,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495013466277</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <task id="LOCAL-00146" summary="16_05">
+      <created>1495018552663</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1495018552663</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1043484000" />
+    <option name="totallyTimeSpent" value="1051018000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1560,7 +1546,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1569,48 +1555,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableDCPSPresDOC.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableDCPSDOC.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableDCPSCombiDOC.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableCommitteesDOC.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="55" column="15" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableClassroomDOC.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doc/tableAccessRoleDOC.scala.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pdf/tableVisitsPDF.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2278">
@@ -1643,6 +1587,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1847,22 +1792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Semesters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="86" column="111" selection-start-line="86" selection-start-column="111" selection-end-line="86" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Employees.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="237" column="63" selection-start-line="237" selection-start-column="63" selection-end-line="237" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Member.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -1878,22 +1807,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/FieldsOfStudy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1913,46 +1826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="118" column="5" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/StudyGroups.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/StartMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <element signature="e#3602#3617#0" expanded="true" />
-            <element signature="e#4975#4996#0" expanded="true" />
-            <element signature="e#7845#7878#0" expanded="true" />
-            <element signature="e#44466#44479#0" expanded="true" />
-            <element signature="e#54934#54945#0" expanded="true" />
-            <element signature="e#60765#60776#0" expanded="true" />
-            <element signature="e#87652#87660#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/OnStartup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="61" column="70" selection-start-line="61" selection-start-column="70" selection-end-line="61" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sidebar.scala.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
@@ -1961,10 +1834,154 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/OrganizationalUnitsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="118" column="5" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Semesters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="360" column="42" selection-start-line="360" selection-start-column="28" selection-end-line="360" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/StudyPlans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="37" column="140" selection-start-line="37" selection-start-column="140" selection-end-line="37" selection-end-column="140" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Subjects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="218" column="42" selection-start-line="218" selection-start-column="27" selection-end-line="218" selection-end-column="42" />
+          <folding>
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="e#4693#4694#0" expanded="true" />
+            <element signature="e#4753#4754#0" expanded="true" />
+            <element signature="e#4820#4821#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/FieldsOfStudy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="173" column="40" selection-start-line="173" selection-start-column="32" selection-end-line="173" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Teachers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Employees.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="237" column="36" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Courses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="125" column="21" selection-start-line="125" selection-start-column="21" selection-end-line="125" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SubjectPlanTeachingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="615" column="129" selection-start-line="615" selection-start-column="20" selection-end-line="615" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/OnStartup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/StartMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="4218" column="27" selection-start-line="4218" selection-start-column="27" selection-end-line="4218" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#insertClassroomStart#0;class#StartMethods#0" expanded="false" />
+            <element signature="method#insertTeachers#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#3205#3215#0" expanded="true" />
+            <element signature="method#insertTeachersRole#0;class#StartMethods#0" expanded="false" />
+            <element signature="method#insertCourses#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#169527#169536#0" expanded="true" />
+            <element signature="method#insertSP#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#298063#298075#0" expanded="true" />
+            <element signature="method#insertFS#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#481285#481300#0" expanded="true" />
+            <element signature="method#insertAccessRole#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#482258#482270#0" expanded="true" />
+            <element signature="method#insertSubjects#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#482652#482662#0" expanded="true" />
+            <element signature="method#insertOJ#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#538461#538482#0" expanded="true" />
+            <element signature="method#insertOJPart#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#541331#541364#0" expanded="true" />
+            <element signature="method#insertSG#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#577952#577965#0" expanded="true" />
+            <element signature="method#insertSemesters#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#588567#588578#0" expanded="true" />
+            <element signature="method#insertEmployees#0;class#StartMethods#0" expanded="false" />
+            <element signature="e#594398#594409#0" expanded="true" />
+            <element signature="e#621285#621293#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/StudyGroups1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/StudyGroups.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/AccessRole.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        <state relative-caret-position="323">
+          <caret line="24" column="0" selection-start-line="23" selection-start-column="2" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
