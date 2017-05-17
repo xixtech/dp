@@ -86,7 +86,7 @@
                                                     @if(stat.getId == member.getStatement.getId) {
                                                         <tr>
                                                             <td class="center">
-                                                            @if(member.getTeachers.getCourses.getCourse == null) {
+                                                            @if(member.getTeachers.getCourses.getCourse == "") {
                                                                 <em>-</em>
                                                             } else {
                                                                 @member.getTeachers.getCourses.getCourse
@@ -94,7 +94,7 @@
                                                             </td>
 
                                                             <td class="center">
-                                                            @if(member.getTeachers.getCourses.getSubjects.getIdent == null) {
+                                                            @if(member.getTeachers.getCourses.getSubjects.getIdent == "") {
                                                                 <em>-</em>
                                                             } else {
                                                                 @member.getTeachers.getCourses.getSubjects.getIdent
@@ -102,7 +102,7 @@
                                                             </td>
 
                                                             <td class="center">
-                                                            @if(member.getTeachers.getScale == null) {
+                                                            @if(member.getTeachers.getScale == -1) {
                                                                 <em>-</em>
                                                             } else {
                                                                 @member.getTeachers.getScale

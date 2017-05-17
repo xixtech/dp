@@ -1,5 +1,5 @@
-New log file opened at Wed May 17 18:43:39 CEST 2017 by 14300@Martin-pc
-jvm 14300@Martin-pc
+New log file opened at Thu May 18 00:52:43 CEST 2017 by 12000@Martin-pc
+jvm 12000@Martin-pc
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.25-b02
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in C:\Users\Martin\dp\masarykac\project, returning: (masarykac-build)
 Loading project definition from C:\Users\Martin\dp\masarykac\project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@22e003a7, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@384c1452, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -67,10 +67,65 @@ Set current project to masarykac (in build file:/C:/Users/Martin/dp/masarykac/)
 > iflast shell
 > server-send-ready-for-request
 > server-handle-next-server-request
-Done executing sbt server engine, result Right(Exit(0))
-Closing listening server socket
-Waiting for socket thread
-Waiting for request processor thread
-Waiting for command engine result
-Returning control to sbt launcher with result Exit(0)
-Closing the 14300@Martin-pc logs at Wed May 17 18:43:45 CEST 2017, goodbye.
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@56e20668, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Martin\dp\masarykac\app\controllers\StatisticController.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\StatisticController.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Martin\dp\masarykac\app\controllers\StatisticController.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Martin\dp\masarykac\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@201aa9f9 directly...
+Java compilation took 0.928663909 s
+Java analysis took 0.148042838 s
+Java compile + analysis took 1.213527697 s
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 4 s, completed 18.5.2017 0:52:53
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Martin/dp/masarykac/}root/compile:discoveredMainClasses
+Evaluating tasks: compile:discoveredMainClasses
+Running task... Cancel: sbt.server.ServerTaskCancellation@a4d9359, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 1 s, completed 18.5.2017 0:52:54
+> server-post-command-cleanup
+> server-handle-next-server-request
+Received execution starting without a waiting first ExecutionStarting(3)
+Received execution starting without a waiting first ExecutionStarting(3)
+Use 'last' for the full log.
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request

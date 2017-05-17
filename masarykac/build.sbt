@@ -30,5 +30,6 @@ libraryDependencies ++= Seq(
 includeFilter in(Assets, LessKeys.less) := "sb-admin-2.less" | "tables.less"
 routesGenerator := InjectedRoutesGenerator
 
+fork in run := true
 
 fork in run := true

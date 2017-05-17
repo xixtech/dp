@@ -25,67 +25,66 @@ import java.util.Date;
 public class OnStartup {
 
     @Inject
-    public OnStartup(Member member1)  throws Exception{
+    public OnStartup(Member member1) throws Exception {
         if (member1.find.findRowCount() == 0) {
 
 
-                StartMethods sm = new StartMethods();
-                sm.insertDaysStart();
-                sm.insertClassroomStart();
-                sm.insertTeachersRole();
-                sm.insertAccessRole();
-                sm.insertOJ();
-                sm.insertSemesters();
-                sm.insertEmployees();
-                sm.insertFS();
-                sm.insertSG();
-                sm.insertOJPart();
-                sm.insertSubjects();
-                sm.insertSP();
-                sm.insertCourses();
-                sm.insertTeachers();
-
-                Roles roles = new Roles("Lektor");
-                roles.save();
-
-                Roles rolesAsistent = new Roles("Asistent");
-                rolesAsistent.save();
-
-                Member member = new Member("a@a.cz", "secret", "aaa");
-                member.setActive(true);
-                member.save();
+            StartMethods sm = new StartMethods();
+            sm.insertDaysStart();
+            sm.insertClassroomStart();
+            sm.insertTeachersRole();
+            sm.insertAccessRole();
+            Member member = new Member("a@a.cz", "secret", "aaa");
+            member.setActive(true);
+            member.save();
 
 
-                Employees em = new Employees(123456, "Bc.", "Černý", "Tomáš", "Ph.D.", AccessRole.findById(3));
-                em.save();
-                em.setMember(member);
-                em.update();
-                member.setEmployees(em);
-                member.update();
+            Employees em = new Employees(123456, "Bc.", "Černý", "Tomáš", "Ph.D.", AccessRole.findById(3));
+            em.save();
+            em.setMember(member);
+            em.update();
+            member.setEmployees(em);
+            member.update();
 
-                Member member2 = new Member("b@b.cz", "heslo", "bbb");
-                member2.setActive(true);
-                member2.save();
+            Member member2 = new Member("b@b.cz", "heslo", "bbb");
+            member2.setActive(true);
+            member2.save();
 
-                Employees e = new Employees(123456, "Ing.", "Novák", "Karel", "Ph.D.", AccessRole.findById(1));
-                e.save();
-                e.setMember(member2);
-                e.update();
+            Employees e = new Employees(123456, "Ing.", "Novák", "Karel", "Ph.D.", AccessRole.findById(1));
+            e.save();
+            e.setMember(member2);
+            e.update();
 
-                member2.setEmployees(e);
-                member2.update();
+            member2.setEmployees(e);
+            member2.update();
+            sm.insertOJ();
+            sm.insertSemesters();
+            sm.insertEmployees();
+            sm.insertFS();
+            sm.insertSG();
+            sm.insertOJPart();
+            sm.insertSubjects();
+            sm.insertSP();
+            sm.insertCourses();
+            sm.insertTeachers();
 
-                Profile profile = new Profile("Jan", "Novák", "123456789", member);
-                profile.save();
-                Person person = new Person(20000, "Lektor", member, roles.roleName);
-                person.save();
+            Roles roles = new Roles("Lektor");
+            roles.save();
 
-                member.setPerson(person);
-                member.setProfile(profile);
-                member.update();
-                KPIStart kpi = new KPIStart();
-                kpi.insertKPIStart();
+            Roles rolesAsistent = new Roles("Asistent");
+            rolesAsistent.save();
 
+
+            Profile profile = new Profile("Jan", "Novák", "123456789", member);
+            profile.save();
+            Person person = new Person(20000, "Lektor", member, roles.roleName);
+            person.save();
+
+            member.setPerson(person);
+            member.setProfile(profile);
+            member.update();
+            KPIStart kpi = new KPIStart();
+            kpi.insertKPIStart();
 
 
         }

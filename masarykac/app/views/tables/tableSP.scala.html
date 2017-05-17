@@ -68,6 +68,8 @@
                     @(x = 0)
                     @(y = 0)
                     @for(sp <- spPage) {
+                        @if(sp.getSubjects != null) {
+                            @if(sp.getStudyGroups != null) {
                         @if(f.getId == sp.getFieldsOfStudy.getId) {
                             @if(y == 0) {
                                 <div class="panel-heading">
@@ -126,6 +128,7 @@
                                     }
                                         <!-- /.panel-heading -->
                                     @for(member <- cPage) {
+                                        @if(member.getSubjects != null) {
                                         @if(sp.getSubjects.getId == member.getSubjects.getId) {
 
                                             <div class="col-md-2">
@@ -213,9 +216,12 @@
                                                     }
                                             </div>
                                         }
+                                        }
                                     }
                                 </div>
                             </div>
+                        }
+                            }
                         }
                     }
                 </div>

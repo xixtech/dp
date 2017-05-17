@@ -46,13 +46,14 @@ th {
     page-break-before: always;
 }
 
-#innertable{
+#innertable {
     border: none;
     border-collapse: collapse;
-    table-layout:fixed;
+    table-layout: fixed;
     width: 80%;
 }
-#innerrow{
+
+#innerrow {
     padding: 0;
     border: none;
 }
@@ -82,163 +83,178 @@ body {
                 @(x = 0)
                 @(y = 0)
                 @for(sp <- spPage) {
-                    @if(f.getId == sp.getFieldsOfStudy.getId) {
-                        @(c = 0)
-                        @for(member <- cPage) {
-                            @if(sp.getSubjects.getId == member.getSubjects.getId) {
-                                @if(member.getSubjects.isFormCombined == true) {
-                                    @(c = c + 1)
-                                }
-                            }
-                        }
-                        @if(c != 0) {
-                            @if(y == 0) {
-                                <div class="panel-heading">
-                                    <p align="center">
-                                        Studijní plán pro studenty přijaté ke studiu v @sp.getSemesters.getSemesterValue</p>
-                                    <p align="center">@f.getFieldOfStudyV (@f.getFieldOfStudy)</p>
-                                    @(y = y + 1)
-                                </div>
-                            }
-
-                            <table class="table table-bordered"  id="t">
-                                @(k = 0)
-                                @if(k == 0) {
-                                    <thead>
-                                    @if(x != sp.getSemesterValue) {
-                                        <tr>
-                                            <th>
-                                                <b>@sp.getSemesterValue. semestr</b>
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <h6>@sp.getStudyGroups.getStudyGroupV</h6>
-                                            </th>
-                                            <th>
-                                                <h6>@sp.getStudyGroups.getStudyGroupsNote</h6>
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th width="10%">
-
-                                                Kód
-                                            </th>
-                                            <th width="15%">
-
-                                                Název
-                                            </th>
-                                            <th width="5%">
-
-                                                Př.
-                                            </th>
-                                            <th width="5%">
-
-                                                Cv.
-                                            </th>
-                                            <th width="5%">
-
-                                                Kr.
-                                            </th>
-                                            <th width="5%">
-
-                                                Z Zk  KZ
-                                            </th>
-                                            <th width="10%">
-
-                                                Učí
-                                            </th>
-
-                                        </tr>
-                                        @(k = k + 1)
-                                        @(x = sp.getSemesterValue)
-
-                                    }
-                                    </thead>
-                                }
-                                <tbody>
-                                        <!-- /.panel-heading -->
-                                    @for(member <- cPage) {
-                                        @if(sp.getSubjects.getId == member.getSubjects.getId) {
-                                            <tr>
-                                                <td width="10%">
-                                                @if(member.getSubjects.getIdent == null) {
-                                                    <em>-</em>
-                                                } else {
-                                                    @member.getSubjects.getIdent
-                                                }
-                                                </td>
-                                                <td width="15%">
-                                                @if(member.getSubjects.getTitleC == null) {
-                                                    <em>-</em>
-                                                } else {
-                                                    @member.getSubjects.getTitleC
-                                                }
-                                                </td>
-                                                <td width="5%">
-                                                @if(member.getSubjects.getHoursP == null) {
-                                                    <em>-</em>
-                                                } else {
-                                                    @member.getSubjects.getHoursP
-                                                }
-                                                </td>
-                                                <td width="5%">
-                                                @if(member.getSubjects.getHoursC == null) {
-                                                    <em>-</em>
-                                                } else {
-                                                    @member.getSubjects.getHoursC
-                                                }
-                                                </td>
-                                                <td width="5%">
-                                                @if(member.getSubjects.getCredits == null) {
-                                                    <em>-</em>
-                                                } else {
-                                                    @member.getSubjects.getCredits
-                                                }
-                                                </td>
-                                                <td width="5%">
-                                                    @if(member.getSubjects.isCredit == true) {
-                                                        <input type="checkbox" checked="checked" onclick="return false;">
-                                                    } else {
-                                                        <input type="checkbox" onclick="return false;">
-                                                    }&nbsp&nbsp
-                                                    @if(member.getSubjects.isExam == true) {
-                                                        <input type="checkbox" checked="checked" onclick="return false;">
-                                                    } else {
-                                                        <input type="checkbox" onclick="return false;">
-                                                    }&nbsp&nbsp
-                                                    @if(member.getSubjects.isClassifiedCredit == true) {
-                                                        <input type="checkbox" checked="checked" onclick="return false;">
-                                                    } else {
-                                                        <input type="checkbox" onclick="return false;">
-                                                        }
-                                                </td>
-                                                <td width="10%">
-                                                    <table id="innertable" cellspacing="0" cellpadding="0">
-                                                    @for(t <- tPage) {
-                                                        @if(t.getCourses.getId == member.getId) {
-                                                            <tr id="innerrow">
-                                                                <td id="innerrow" class="center">
-                                                                @t.getEmployees.getSurname
-                                                                </td>
-                                                            </tr>
-                                                        }
-                                                    }
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                            @if(k != 0) {
-                                                <hr>
-                                                }
+                    @if(sp.getSubjects != null) {
+                        @if(sp.getStudyGroups != null) {
+                            @if(f.getId == sp.getFieldsOfStudy.getId) {
+                                @(c = 0)
+                                @for(member <- cPage) {
+                                    @if(sp.getSubjects.getId == member.getSubjects.getId) {
+                                        @if(member.getSubjects.isFormCombined == true) {
+                                            @(c = c + 1)
                                         }
                                     }
-                                </tbody>
-                            </table>
+                                }
+                                @if(c != 0) {
+                                    @if(y == 0) {
+                                        <p id="newline"></p>
+                                        <div class="panel-heading">
+                                            <p align="center">
+                                                Studijní plán pro studenty přijaté ke studiu v @sp.getSemesters.getSemesterValue</p>
+                                            <p align="center">@f.getFieldOfStudyV (@f.getFieldOfStudy)</p>
+                                            @(y = y + 1)
+                                        </div>
+                                    }
 
+                                    <table class="table table-bordered" id="t">
+                                        @(k = 0)
+                                        @if(k == 0) {
+                                            <thead>
+                                            @if(x != sp.getSemesterValue) {
+                                                <tr>
+                                                    <th>
+                                                        <b>@sp.getSemesterValue. semestr</b>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <h6>@sp.getStudyGroups.getStudyGroupV</h6>
+                                                    </th>
+                                                    <th>
+                                                        <h6>@sp.getStudyGroups.getStudyGroupsNote</h6>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th width="10%">
+
+                                                        Kód
+                                                    </th>
+                                                    <th width="15%">
+
+                                                        Název
+                                                    </th>
+                                                    <th width="5%">
+
+                                                        Př.
+                                                    </th>
+                                                    <th width="5%">
+
+                                                        Cv.
+                                                    </th>
+                                                    <th width="5%">
+
+                                                        Kr.
+                                                    </th>
+                                                    <th width="5%">
+
+                                                        Z Zk  KZ
+                                                    </th>
+                                                    <th width="10%">
+
+                                                        Učí
+                                                    </th>
+
+                                                </tr>
+                                                @(k = k + 1)
+                                                @(x = sp.getSemesterValue)
+
+                                            }
+                                            </thead>
+                                        }
+                                        <tbody>
+                                                <!-- /.panel-heading -->
+                                            @for(member <- cPage) {
+                                                @if(sp.getSubjects.getId == member.getSubjects.getId) {
+                                                    <tr>
+                                                        <td width="10%">
+                                                        @if(member.getSubjects.getIdent == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @member.getSubjects.getIdent
+                                                        }
+                                                        </td>
+                                                        <td width="15%">
+                                                        @if(member.getSubjects.getTitleC == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @member.getSubjects.getTitleC
+                                                        }
+                                                        </td>
+                                                        <td width="5%">
+                                                        @if(member.getSubjects.getHoursP == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @member.getSubjects.getHoursP
+                                                        }
+                                                        </td>
+                                                        <td width="5%">
+                                                        @if(member.getSubjects.getHoursC == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @member.getSubjects.getHoursC
+                                                        }
+                                                        </td>
+                                                        <td width="5%">
+                                                        @if(member.getSubjects.getCredits == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @member.getSubjects.getCredits
+                                                        }
+                                                        </td>
+                                                        <td width="5%">
+                                                            @if(member.getSubjects.isCredit == true) {
+                                                                <input type="checkbox" checked="checked" onclick="return false;">
+                                                            } else {
+                                                                <input type="checkbox" onclick="return false;">
+                                                            }&nbsp&nbsp
+                                                            @if(member.getSubjects.isExam == true) {
+                                                                <input type="checkbox" checked="checked" onclick="return false;">
+                                                            } else {
+                                                                <input type="checkbox" onclick="return false;">
+                                                            }&nbsp&nbsp
+                                                            @if(member.getSubjects.isClassifiedCredit == true) {
+                                                                <input type="checkbox" checked="checked" onclick="return false;">
+                                                            } else {
+                                                                <input type="checkbox" onclick="return false;">
+                                                                }
+                                                        </td>
+                                                        <td width="10%">
+                                                            <table id="innertable" cellspacing="0" cellpadding="0">
+                                                            @for(t <- tPage) {
+                                                                @if(t.getCourses != null) {
+                                                                    @if(t.getCourses.getId == member.getId) {
+                                                                        <tr id="innerrow">
+                                                                            <td id="innerrow" class="center">
+                                                                            @t.getEmployees.getSurname
+                                                                            </td>
+                                                                        </tr>
+                                                                    }
+                                                                } else {
+                                                                    <tr id="innerrow">
+                                                                        <td id="innerrow" class="center">
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    @if(k != 0) {
+                                                        <hr>
+                                                        }
+                                                }
+                                            }
+                                        </tbody>
+
+                                    </table>
+
+                                }
+
+                            }
                         }
                     }
+
                 }
-            <p id="newline"></p>
+
             </div>
         </div>
     }
