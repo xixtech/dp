@@ -23,6 +23,14 @@ public class TableController extends Controller {
         return redirect(routes.Application.index());
     }
 
+    public Result listIdeas() {
+        if (Check.isDirector(Member.findByUID(request().username()))) {
+            return ok(views.html.tables.tableIdeas.render(Ideas.search()));
+        }
+        notAccess();
+        return redirect(routes.Application.index());
+    }
+
     public Result listStudyPlans() {
         if (Check.isDirector(Member.findByUID(request().username()))) {
             return ok(views.html.tables.tableStudyPlans.render(StudyPlans.search()));

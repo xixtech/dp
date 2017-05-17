@@ -71,6 +71,10 @@ public class AccessRole extends Model {
         return find.where().eq("id", id).findUnique();
     }
 
+    public static AccessRole findByRoleName(String role) {
+        return find.where().eq("role", role).findUnique();
+    }
+
     public static List<AccessRole> search() {
         return AccessRole.find.all();
     }

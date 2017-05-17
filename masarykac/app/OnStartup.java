@@ -34,13 +34,17 @@ public class OnStartup {
                 sm.insertClassroomStart();
                 sm.insertTeachersRole();
                 sm.insertAccessRole();
+                sm.insertOJ();
+                sm.insertSemesters();
+                sm.insertEmployees();
+
                 Roles roles = new Roles("Lektor");
                 roles.save();
 
                 Roles rolesAsistent = new Roles("Asistent");
                 rolesAsistent.save();
 
-                Member member = new Member("a@a.cz", Hash.createPassword("secret"), "aaa");
+                Member member = new Member("a@a.cz", "secret", "aaa");
                 member.setActive(true);
                 member.save();
 
@@ -52,7 +56,7 @@ public class OnStartup {
                 member.setEmployees(em);
                 member.update();
 
-                Member member2 = new Member("b@b.cz", Hash.createPassword("heslo"), "bbb");
+                Member member2 = new Member("b@b.cz", "heslo", "bbb");
                 member2.setActive(true);
                 member2.save();
 
@@ -68,12 +72,6 @@ public class OnStartup {
                 profile.save();
                 Person person = new Person(20000, "Lektor", member, roles.roleName);
                 person.save();
-
-                String startDateString = "20.02.2017";
-                String endDateString = "02.07.2017";
-                DateFormat df = new SimpleDateFormat("dd.mm.yyy");
-                Semesters semesters = new Semesters("LS1617", "Letní semestr 2016/2017", "Letní semestr akademického roku 2016/2017", "2016/2017", df.parse(startDateString), df.parse(endDateString));
-                semesters.save();
 
                 member.setPerson(person);
                 member.setProfile(profile);

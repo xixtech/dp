@@ -11,18 +11,11 @@
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Osobní údaje<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="@routes.StatementController.index()">Zobrazit všechny výkazy</a>
-                        <a href="@routes.PersonalStatisticController.index()">Výuka dle oddělení a osob</a>
-                        <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToPersons()'>
-                            Výuka dle osob</a>
-                        <a href="@routes.PersonalStatisticController.teachingAAA()">Výuka AAA</a>
-                        <a href="@routes.PersonalStatisticController.teachingAAB()">Výuka AAB</a>
-                        <a href="@routes.PersonalStatisticController.teachingCB()">Výuka CB</a>
                         <a href="@routes.StatisticController.index()">Zobrazit DČPS všechny</a>
                         <a href="@routes.StatisticController.dcpsPres()">Zobrazit DČPS prezenční</a>
                         <a href="@routes.StatisticController.dcpsCombi()">Zobrazit DČPS kombinované</a>
                         <a href="@routes.StatisticController.studyPlansTable()">Zobrazit SP</a>
-                        <a href="@routes.EmployeesController.info(session().get("uid"))">Info</a>
+                        <a href="@routes.EmployeesController.info(session().get("uid"))">Mé osobní údaje</a>
                         <a href="@routes.StatisticController.listEmployeerActvitiy(session().get("uid"))">
                             Můj souhrn aktivity v semestrech</a>
                         <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToId(session().get("uid"))'>
@@ -36,6 +29,37 @@
             @if(session().get("role").equals("director") || session().get("role").equals("head")) {
                 <a href="#"><i class="fa fa-table fa-fw"></i>Seznamy a výstupy<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
+                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                        <li>
+                            <a href="@routes.PersonalStatisticController.teachingAAA()">Výuka AAA</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                        <li>
+                            <a href="@routes.PersonalStatisticController.teachingAAB()">Výuka AAB</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                        <li>
+                            <a href="@routes.PersonalStatisticController.teachingCB()">Výuka CB</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                        <li>
+                            <a href="@routes.StatementController.index()">Zobrazit všechny výkazy</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                        <li>
+                            <a href="@routes.PersonalStatisticController.index()">Výuka dle oddělení a osob</a>
+                        </li>
+                    }
+                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                        <li>
+                            <a href='@routes.PersonalStatisticController.listTableTeachingAccordingToPersons()'>
+                                Výuka dle osob</a>
+                        </li>
+                    }
                     @if(session().get("role").equals("director") || session().get("role").equals("head")) {
                         <li>
                             <a href='@routes.TableController.listClassrooms()'><i class="fa fa-table fa-fw"></i>
@@ -60,7 +84,7 @@
                                 Role přístupů</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                    @if(session().get("role").equals("xxx") || session().get("role").equals("xxx")) {
                         <li>
                             <a href='@routes.TableController.listTeachersRole()'><i class="fa fa-table fa-fw"></i>
                                 Role předmětů</a>
@@ -79,7 +103,7 @@
                                 Souhrn výuky dle osob v semestrech</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                    @if(session().get("role").equals("xxx") || session().get("role").equals("xxx")) {
                         <li>
                             <a href='@routes.TableController.listPerson()'><i class="fa fa-table fa-fw"></i>
                                 Pracovníci</a>
@@ -109,7 +133,7 @@
                                 Zaměstnanci</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                    @if(session().get("role").equals("xxx") || session().get("role").equals("xxx")) {
                         <li>
                             <a href='@routes.TableController.listTeachers()'><i class="fa fa-table fa-fw"></i>
                                 Vyučující</a>
@@ -144,13 +168,13 @@
                             <a href='@routes.TableController.listCourses()'><i class="fa fa-table fa-fw"></i> Kurzy</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                    @if(session().get("role").equals("xxx") || session().get("role").equals("xxx")) {
                         <li>
                             <a href='@routes.TableController.listCurrentSemesters()'><i class="fa fa-table fa-fw"></i>
                                 Aktuální semestry</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director") || session().get("role").equals("head")) {
+                    @if(session().get("role").equals("xxx") || session().get("role").equals("xxx")) {
                         <li>
                             <a href='@routes.TableController.listCurrentSemestersUntilTheEndOfStudy()'><i class="fa fa-table fa-fw"></i>
                                 Aktuální semestry do konce studia</a>
@@ -192,27 +216,27 @@
                             <a href="@routes.ClassroomController.index()">Místnosti</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.TeachersRoleController.index()">Role u předmětů</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.Pages.blank">Blank Page</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.Application.pdf()">pdf</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.Application.raw()">Dokument</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.TestController.test()">test</a>
                         </li>
@@ -249,7 +273,8 @@
                     }
                     @if(session().get("role").equals("director")) {
                         <li>
-                            <a href="@routes.OrganizationalUnitsController.indexParticipants()">OJ zaměstnanec</a>
+                            <a href="@routes.OrganizationalUnitsController.indexParticipants()">
+                                Přidání zaměstnanec do OJ</a>
                         </li>
                     }
                     @if(session().get("role").equals("director")) {
@@ -262,7 +287,7 @@
                             <a href="@routes.Application.kpiChoosePerson()">KPI výběr osoby</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.Application.roles()">Role</a>
                         </li>
@@ -278,7 +303,7 @@
                         </li>
                     }
 
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.SubjectController.index()">Registrace předmětu</a>
                         </li>
@@ -299,17 +324,17 @@
                             <a href="@routes.SemestersController.index()">Registrace semestru</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.StudyPlansController.index()">Registrace studijního plánu</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.TeachersController.index()">Registrace učitele</a>
                         </li>
                     }
-                    @if(session().get("role").equals("director")) {
+                    @if(session().get("role").equals("xxx")) {
                         <li>
                             <a href="@routes.CourseController.index()">Registrace kurzu</a>
                         </li>
@@ -320,7 +345,7 @@
             }
             </li>
             <li>
-            @if(session().get("role").equals("director")) {
+            @if(session().get("role").equals("xxx")) {
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Metodika<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                 @if(session().get("role").equals("director")) {
@@ -333,12 +358,12 @@
             }
             </li>
             <li>
-            @if(session().get("role").equals("director")) {
+            @if(session().get("role").equals("xxx")) {
                 <a href='@routes.Application.forms'><i class="fa fa-edit fa-fw"></i> Formuláře</a>
             }
             </li>
             <li>
-            @if(session().get("role").equals("director")) {
+            @if(session().get("role").equals("xxx")) {
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> UI prvky<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>

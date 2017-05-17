@@ -50,11 +50,12 @@ public class Member extends Model {
      * @param email
      * @param password
      */
-    public Member(String email, String password, String uid) {
+    public Member(String email, String password, String uid) throws Exception{
         super();
         this.email = email;
-        this.password = password;
+        this.password = Hash.createPassword(password);
         this.uid=uid;
+        this.active=true;
     }
 
     public Long getId() {

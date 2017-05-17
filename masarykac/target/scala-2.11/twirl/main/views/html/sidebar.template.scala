@@ -42,21 +42,14 @@ Seq[Any](format.raw/*1.4*/("""
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Osobní údaje<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href=""""),_display_(/*14.35*/routes/*14.41*/.StatementController.index()),format.raw/*14.69*/("""">Zobrazit všechny výkazy</a>
-                        <a href=""""),_display_(/*15.35*/routes/*15.41*/.PersonalStatisticController.index()),format.raw/*15.77*/("""">Výuka dle oddělení a osob</a>
-                        <a href='"""),_display_(/*16.35*/routes/*16.41*/.PersonalStatisticController.listTableTeachingAccordingToPersons()),format.raw/*16.107*/("""'>
-                            Výuka dle osob</a>
-                        <a href=""""),_display_(/*18.35*/routes/*18.41*/.PersonalStatisticController.teachingAAA()),format.raw/*18.83*/("""">Výuka AAA</a>
-                        <a href=""""),_display_(/*19.35*/routes/*19.41*/.PersonalStatisticController.teachingAAB()),format.raw/*19.83*/("""">Výuka AAB</a>
-                        <a href=""""),_display_(/*20.35*/routes/*20.41*/.PersonalStatisticController.teachingCB()),format.raw/*20.82*/("""">Výuka CB</a>
-                        <a href=""""),_display_(/*21.35*/routes/*21.41*/.StatisticController.index()),format.raw/*21.69*/("""">Zobrazit DČPS všechny</a>
-                        <a href=""""),_display_(/*22.35*/routes/*22.41*/.StatisticController.dcpsPres()),format.raw/*22.72*/("""">Zobrazit DČPS prezenční</a>
-                        <a href=""""),_display_(/*23.35*/routes/*23.41*/.StatisticController.dcpsCombi()),format.raw/*23.73*/("""">Zobrazit DČPS kombinované</a>
-                        <a href=""""),_display_(/*24.35*/routes/*24.41*/.StatisticController.studyPlansTable()),format.raw/*24.79*/("""">Zobrazit SP</a>
-                        <a href=""""),_display_(/*25.35*/routes/*25.41*/.EmployeesController.info(session().get("uid"))),format.raw/*25.88*/("""">Info</a>
-                        <a href=""""),_display_(/*26.35*/routes/*26.41*/.StatisticController.listEmployeerActvitiy(session().get("uid"))),format.raw/*26.105*/("""">
+                        <a href=""""),_display_(/*14.35*/routes/*14.41*/.StatisticController.index()),format.raw/*14.69*/("""">Zobrazit DČPS všechny</a>
+                        <a href=""""),_display_(/*15.35*/routes/*15.41*/.StatisticController.dcpsPres()),format.raw/*15.72*/("""">Zobrazit DČPS prezenční</a>
+                        <a href=""""),_display_(/*16.35*/routes/*16.41*/.StatisticController.dcpsCombi()),format.raw/*16.73*/("""">Zobrazit DČPS kombinované</a>
+                        <a href=""""),_display_(/*17.35*/routes/*17.41*/.StatisticController.studyPlansTable()),format.raw/*17.79*/("""">Zobrazit SP</a>
+                        <a href=""""),_display_(/*18.35*/routes/*18.41*/.EmployeesController.info(session().get("uid"))),format.raw/*18.88*/("""">Mé osobní údaje</a>
+                        <a href=""""),_display_(/*19.35*/routes/*19.41*/.StatisticController.listEmployeerActvitiy(session().get("uid"))),format.raw/*19.105*/("""">
                             Můj souhrn aktivity v semestrech</a>
-                        <a href='"""),_display_(/*28.35*/routes/*28.41*/.PersonalStatisticController.listTableTeachingAccordingToId(session().get("uid"))),format.raw/*28.122*/("""'>
+                        <a href='"""),_display_(/*21.35*/routes/*21.41*/.PersonalStatisticController.listTableTeachingAccordingToId(session().get("uid"))),format.raw/*21.122*/("""'>
                             Má výuka</a>
                     </li>
                 </ul>
@@ -64,336 +57,368 @@ Seq[Any](format.raw/*1.4*/("""
             </li>
 
             <li>
-            """),_display_(/*36.14*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*36.98*/ {_display_(Seq[Any](format.raw/*36.100*/("""
-                """),format.raw/*37.17*/("""<a href="#"><i class="fa fa-table fa-fw"></i>Seznamy a výstupy<span class="fa arrow"></span></a>
+            """),_display_(/*29.14*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*29.98*/ {_display_(Seq[Any](format.raw/*29.100*/("""
+                """),format.raw/*30.17*/("""<a href="#"><i class="fa fa-table fa-fw"></i>Seznamy a výstupy<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    """),_display_(/*39.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*39.106*/ {_display_(Seq[Any](format.raw/*39.108*/("""
-                        """),format.raw/*40.25*/("""<li>
-                            <a href='"""),_display_(/*41.39*/routes/*41.45*/.TableController.listClassrooms()),format.raw/*41.78*/("""'><i class="fa fa-table fa-fw"></i>
-                                Místnosti</a>
+                    """),_display_(/*32.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*32.106*/ {_display_(Seq[Any](format.raw/*32.108*/("""
+                        """),format.raw/*33.25*/("""<li>
+                            <a href=""""),_display_(/*34.39*/routes/*34.45*/.PersonalStatisticController.teachingAAA()),format.raw/*34.87*/("""">Výuka AAA</a>
                         </li>
-                    """)))}),format.raw/*44.22*/("""
-                    """),_display_(/*45.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*45.106*/ {_display_(Seq[Any](format.raw/*45.108*/("""
-                        """),format.raw/*46.25*/("""<li>
-                            <a href='"""),_display_(/*47.39*/routes/*47.45*/.TableController.listVisits()),format.raw/*47.74*/("""'><i class="fa fa-table fa-fw"></i>
-                                Výjezdy</a>
+                    """)))}),format.raw/*36.22*/("""
+                    """),_display_(/*37.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*37.106*/ {_display_(Seq[Any](format.raw/*37.108*/("""
+                        """),format.raw/*38.25*/("""<li>
+                            <a href=""""),_display_(/*39.39*/routes/*39.45*/.PersonalStatisticController.teachingAAB()),format.raw/*39.87*/("""">Výuka AAB</a>
                         </li>
-                    """)))}),format.raw/*50.22*/("""
-                    """),_display_(/*51.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*51.106*/ {_display_(Seq[Any](format.raw/*51.108*/("""
-                        """),format.raw/*52.25*/("""<li>
-                            <a href='"""),_display_(/*53.39*/routes/*53.45*/.TableController.listOJ()),format.raw/*53.70*/("""'><i class="fa fa-table fa-fw"></i>
-                                Organizační jednotky</a>
+                    """)))}),format.raw/*41.22*/("""
+                    """),_display_(/*42.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*42.106*/ {_display_(Seq[Any](format.raw/*42.108*/("""
+                        """),format.raw/*43.25*/("""<li>
+                            <a href=""""),_display_(/*44.39*/routes/*44.45*/.PersonalStatisticController.teachingCB()),format.raw/*44.86*/("""">Výuka CB</a>
+                        </li>
+                    """)))}),format.raw/*46.22*/("""
+                    """),_display_(/*47.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*47.106*/ {_display_(Seq[Any](format.raw/*47.108*/("""
+                        """),format.raw/*48.25*/("""<li>
+                            <a href=""""),_display_(/*49.39*/routes/*49.45*/.StatementController.index()),format.raw/*49.73*/("""">Zobrazit všechny výkazy</a>
+                        </li>
+                    """)))}),format.raw/*51.22*/("""
+                    """),_display_(/*52.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*52.106*/ {_display_(Seq[Any](format.raw/*52.108*/("""
+                        """),format.raw/*53.25*/("""<li>
+                            <a href=""""),_display_(/*54.39*/routes/*54.45*/.PersonalStatisticController.index()),format.raw/*54.81*/("""">Výuka dle oddělení a osob</a>
                         </li>
                     """)))}),format.raw/*56.22*/("""
                     """),_display_(/*57.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*57.106*/ {_display_(Seq[Any](format.raw/*57.108*/("""
                         """),format.raw/*58.25*/("""<li>
-                            <a href='"""),_display_(/*59.39*/routes/*59.45*/.TableController.listAccessRole()),format.raw/*59.78*/("""'><i class="fa fa-table fa-fw"></i>
-                                Role přístupů</a>
+                            <a href='"""),_display_(/*59.39*/routes/*59.45*/.PersonalStatisticController.listTableTeachingAccordingToPersons()),format.raw/*59.111*/("""'>
+                                Výuka dle osob</a>
                         </li>
                     """)))}),format.raw/*62.22*/("""
                     """),_display_(/*63.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*63.106*/ {_display_(Seq[Any](format.raw/*63.108*/("""
                         """),format.raw/*64.25*/("""<li>
-                            <a href='"""),_display_(/*65.39*/routes/*65.45*/.TableController.listTeachersRole()),format.raw/*65.80*/("""'><i class="fa fa-table fa-fw"></i>
-                                Role předmětů</a>
+                            <a href='"""),_display_(/*65.39*/routes/*65.45*/.TableController.listClassrooms()),format.raw/*65.78*/("""'><i class="fa fa-table fa-fw"></i>
+                                Místnosti</a>
                         </li>
                     """)))}),format.raw/*68.22*/("""
                     """),_display_(/*69.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*69.106*/ {_display_(Seq[Any](format.raw/*69.108*/("""
                         """),format.raw/*70.25*/("""<li>
-                            <a href='"""),_display_(/*71.39*/routes/*71.45*/.PersonalStatisticController.listTableTeachingAccordingToPersons()),format.raw/*71.111*/("""'><i class="fa fa-table fa-fw"></i>
-                                Výuka dle osob</a>
+                            <a href='"""),_display_(/*71.39*/routes/*71.45*/.TableController.listVisits()),format.raw/*71.74*/("""'><i class="fa fa-table fa-fw"></i>
+                                Výjezdy</a>
                         </li>
                     """)))}),format.raw/*74.22*/("""
+                    """),_display_(/*75.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*75.106*/ {_display_(Seq[Any](format.raw/*75.108*/("""
+                        """),format.raw/*76.25*/("""<li>
+                            <a href='"""),_display_(/*77.39*/routes/*77.45*/.TableController.listOJ()),format.raw/*77.70*/("""'><i class="fa fa-table fa-fw"></i>
+                                Organizační jednotky</a>
+                        </li>
+                    """)))}),format.raw/*80.22*/("""
+                    """),_display_(/*81.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*81.106*/ {_display_(Seq[Any](format.raw/*81.108*/("""
+                        """),format.raw/*82.25*/("""<li>
+                            <a href='"""),_display_(/*83.39*/routes/*83.45*/.TableController.listAccessRole()),format.raw/*83.78*/("""'><i class="fa fa-table fa-fw"></i>
+                                Role přístupů</a>
+                        </li>
+                    """)))}),format.raw/*86.22*/("""
+                    """),_display_(/*87.22*/if(session().get("role").equals("xxx") || session().get("role").equals("xxx"))/*87.100*/ {_display_(Seq[Any](format.raw/*87.102*/("""
+                        """),format.raw/*88.25*/("""<li>
+                            <a href='"""),_display_(/*89.39*/routes/*89.45*/.TableController.listTeachersRole()),format.raw/*89.80*/("""'><i class="fa fa-table fa-fw"></i>
+                                Role předmětů</a>
+                        </li>
+                    """)))}),format.raw/*92.22*/("""
+                    """),_display_(/*93.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*93.106*/ {_display_(Seq[Any](format.raw/*93.108*/("""
+                        """),format.raw/*94.25*/("""<li>
+                            <a href='"""),_display_(/*95.39*/routes/*95.45*/.PersonalStatisticController.listTableTeachingAccordingToPersons()),format.raw/*95.111*/("""'><i class="fa fa-table fa-fw"></i>
+                                Výuka dle osob</a>
+                        </li>
+                    """)))}),format.raw/*98.22*/("""
 
-                    """),_display_(/*76.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*76.106*/ {_display_(Seq[Any](format.raw/*76.108*/("""
-                        """),format.raw/*77.25*/("""<li>
-                            <a href='"""),_display_(/*78.39*/routes/*78.45*/.StatisticController.listEmployeesActvitiy()),format.raw/*78.89*/("""'><i class="fa fa-table fa-fw"></i>
-                                Souhrn výuky dle osob v semestrech</a>
-                        </li>
-                    """)))}),format.raw/*81.22*/("""
-                    """),_display_(/*82.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*82.106*/ {_display_(Seq[Any](format.raw/*82.108*/("""
-                        """),format.raw/*83.25*/("""<li>
-                            <a href='"""),_display_(/*84.39*/routes/*84.45*/.TableController.listPerson()),format.raw/*84.74*/("""'><i class="fa fa-table fa-fw"></i>
-                                Pracovníci</a>
-                        </li>
-                    """)))}),format.raw/*87.22*/("""
-                    """),_display_(/*88.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*88.106*/ {_display_(Seq[Any](format.raw/*88.108*/("""
-                        """),format.raw/*89.25*/("""<li>
-                            <a href='"""),_display_(/*90.39*/routes/*90.45*/.TableController.listStudyPlans()),format.raw/*90.78*/("""'><i class="fa fa-table fa-fw"></i>
-                                Studijní plány</a>
-                        </li>
-                    """)))}),format.raw/*93.22*/("""
-                    """),_display_(/*94.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*94.106*/ {_display_(Seq[Any](format.raw/*94.108*/("""
-                        """),format.raw/*95.25*/("""<li>
-                            <a href='"""),_display_(/*96.39*/routes/*96.45*/.TableController.listScheduleInWeeks()),format.raw/*96.83*/("""'><i class="fa fa-table fa-fw"></i>
-                                Rozvrh v týdnech</a>
-                        </li>
-                    """)))}),format.raw/*99.22*/("""
                     """),_display_(/*100.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*100.106*/ {_display_(Seq[Any](format.raw/*100.108*/("""
                         """),format.raw/*101.25*/("""<li>
-                            <a href='"""),_display_(/*102.39*/routes/*102.45*/.TableController.listSchedule()),format.raw/*102.76*/("""'><i class="fa fa-table fa-fw"></i>
-                                Rozvrh</a>
+                            <a href='"""),_display_(/*102.39*/routes/*102.45*/.StatisticController.listEmployeesActvitiy()),format.raw/*102.89*/("""'><i class="fa fa-table fa-fw"></i>
+                                Souhrn výuky dle osob v semestrech</a>
                         </li>
                     """)))}),format.raw/*105.22*/("""
-                    """),_display_(/*106.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*106.106*/ {_display_(Seq[Any](format.raw/*106.108*/("""
+                    """),_display_(/*106.22*/if(session().get("role").equals("xxx") || session().get("role").equals("xxx"))/*106.100*/ {_display_(Seq[Any](format.raw/*106.102*/("""
                         """),format.raw/*107.25*/("""<li>
-                            <a href='"""),_display_(/*108.39*/routes/*108.45*/.TableController.listEmployees()),format.raw/*108.77*/("""'><i class="fa fa-table fa-fw"></i>
-                                Zaměstnanci</a>
+                            <a href='"""),_display_(/*108.39*/routes/*108.45*/.TableController.listPerson()),format.raw/*108.74*/("""'><i class="fa fa-table fa-fw"></i>
+                                Pracovníci</a>
                         </li>
                     """)))}),format.raw/*111.22*/("""
                     """),_display_(/*112.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*112.106*/ {_display_(Seq[Any](format.raw/*112.108*/("""
                         """),format.raw/*113.25*/("""<li>
-                            <a href='"""),_display_(/*114.39*/routes/*114.45*/.TableController.listTeachers()),format.raw/*114.76*/("""'><i class="fa fa-table fa-fw"></i>
-                                Vyučující</a>
+                            <a href='"""),_display_(/*114.39*/routes/*114.45*/.TableController.listStudyPlans()),format.raw/*114.78*/("""'><i class="fa fa-table fa-fw"></i>
+                                Studijní plány</a>
                         </li>
                     """)))}),format.raw/*117.22*/("""
                     """),_display_(/*118.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*118.106*/ {_display_(Seq[Any](format.raw/*118.108*/("""
                         """),format.raw/*119.25*/("""<li>
-                            <a href='"""),_display_(/*120.39*/routes/*120.45*/.TableController.listStudyGroups()),format.raw/*120.79*/("""'><i class="fa fa-table fa-fw"></i>
-                                Studijní skupiny</a>
+                            <a href='"""),_display_(/*120.39*/routes/*120.45*/.TableController.listScheduleInWeeks()),format.raw/*120.83*/("""'><i class="fa fa-table fa-fw"></i>
+                                Rozvrh v týdnech</a>
                         </li>
                     """)))}),format.raw/*123.22*/("""
                     """),_display_(/*124.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*124.106*/ {_display_(Seq[Any](format.raw/*124.108*/("""
                         """),format.raw/*125.25*/("""<li>
-                            <a href='"""),_display_(/*126.39*/routes/*126.45*/.TableController.listSemesters()),format.raw/*126.77*/("""'><i class="fa fa-table fa-fw"></i>
-                                Semestry</a>
+                            <a href='"""),_display_(/*126.39*/routes/*126.45*/.TableController.listSchedule()),format.raw/*126.76*/("""'><i class="fa fa-table fa-fw"></i>
+                                Rozvrh</a>
                         </li>
                     """)))}),format.raw/*129.22*/("""
                     """),_display_(/*130.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*130.106*/ {_display_(Seq[Any](format.raw/*130.108*/("""
                         """),format.raw/*131.25*/("""<li>
-                            <a href='"""),_display_(/*132.39*/routes/*132.45*/.TableController.listSubjects()),format.raw/*132.76*/("""'><i class="fa fa-table fa-fw"></i>
-                                Předměty</a>
+                            <a href='"""),_display_(/*132.39*/routes/*132.45*/.TableController.listEmployees()),format.raw/*132.77*/("""'><i class="fa fa-table fa-fw"></i>
+                                Zaměstnanci</a>
                         </li>
                     """)))}),format.raw/*135.22*/("""
-                    """),_display_(/*136.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*136.106*/ {_display_(Seq[Any](format.raw/*136.108*/("""
+                    """),_display_(/*136.22*/if(session().get("role").equals("xxx") || session().get("role").equals("xxx"))/*136.100*/ {_display_(Seq[Any](format.raw/*136.102*/("""
                         """),format.raw/*137.25*/("""<li>
-                            <a href='"""),_display_(/*138.39*/routes/*138.45*/.TableController.listFieldsOfStudy()),format.raw/*138.81*/("""'><i class="fa fa-table fa-fw"></i>
-                                Obory</a>
+                            <a href='"""),_display_(/*138.39*/routes/*138.45*/.TableController.listTeachers()),format.raw/*138.76*/("""'><i class="fa fa-table fa-fw"></i>
+                                Vyučující</a>
                         </li>
                     """)))}),format.raw/*141.22*/("""
                     """),_display_(/*142.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*142.106*/ {_display_(Seq[Any](format.raw/*142.108*/("""
                         """),format.raw/*143.25*/("""<li>
-                            <a href='"""),_display_(/*144.39*/routes/*144.45*/.TableController.listCourses()),format.raw/*144.75*/("""'><i class="fa fa-table fa-fw"></i> Kurzy</a>
+                            <a href='"""),_display_(/*144.39*/routes/*144.45*/.TableController.listStudyGroups()),format.raw/*144.79*/("""'><i class="fa fa-table fa-fw"></i>
+                                Studijní skupiny</a>
                         </li>
-                    """)))}),format.raw/*146.22*/("""
-                    """),_display_(/*147.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*147.106*/ {_display_(Seq[Any](format.raw/*147.108*/("""
-                        """),format.raw/*148.25*/("""<li>
-                            <a href='"""),_display_(/*149.39*/routes/*149.45*/.TableController.listCurrentSemesters()),format.raw/*149.84*/("""'><i class="fa fa-table fa-fw"></i>
+                    """)))}),format.raw/*147.22*/("""
+                    """),_display_(/*148.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*148.106*/ {_display_(Seq[Any](format.raw/*148.108*/("""
+                        """),format.raw/*149.25*/("""<li>
+                            <a href='"""),_display_(/*150.39*/routes/*150.45*/.TableController.listSemesters()),format.raw/*150.77*/("""'><i class="fa fa-table fa-fw"></i>
+                                Semestry</a>
+                        </li>
+                    """)))}),format.raw/*153.22*/("""
+                    """),_display_(/*154.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*154.106*/ {_display_(Seq[Any](format.raw/*154.108*/("""
+                        """),format.raw/*155.25*/("""<li>
+                            <a href='"""),_display_(/*156.39*/routes/*156.45*/.TableController.listSubjects()),format.raw/*156.76*/("""'><i class="fa fa-table fa-fw"></i>
+                                Předměty</a>
+                        </li>
+                    """)))}),format.raw/*159.22*/("""
+                    """),_display_(/*160.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*160.106*/ {_display_(Seq[Any](format.raw/*160.108*/("""
+                        """),format.raw/*161.25*/("""<li>
+                            <a href='"""),_display_(/*162.39*/routes/*162.45*/.TableController.listFieldsOfStudy()),format.raw/*162.81*/("""'><i class="fa fa-table fa-fw"></i>
+                                Obory</a>
+                        </li>
+                    """)))}),format.raw/*165.22*/("""
+                    """),_display_(/*166.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*166.106*/ {_display_(Seq[Any](format.raw/*166.108*/("""
+                        """),format.raw/*167.25*/("""<li>
+                            <a href='"""),_display_(/*168.39*/routes/*168.45*/.TableController.listCourses()),format.raw/*168.75*/("""'><i class="fa fa-table fa-fw"></i> Kurzy</a>
+                        </li>
+                    """)))}),format.raw/*170.22*/("""
+                    """),_display_(/*171.22*/if(session().get("role").equals("xxx") || session().get("role").equals("xxx"))/*171.100*/ {_display_(Seq[Any](format.raw/*171.102*/("""
+                        """),format.raw/*172.25*/("""<li>
+                            <a href='"""),_display_(/*173.39*/routes/*173.45*/.TableController.listCurrentSemesters()),format.raw/*173.84*/("""'><i class="fa fa-table fa-fw"></i>
                                 Aktuální semestry</a>
                         </li>
-                    """)))}),format.raw/*152.22*/("""
-                    """),_display_(/*153.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*153.106*/ {_display_(Seq[Any](format.raw/*153.108*/("""
-                        """),format.raw/*154.25*/("""<li>
-                            <a href='"""),_display_(/*155.39*/routes/*155.45*/.TableController.listCurrentSemestersUntilTheEndOfStudy()),format.raw/*155.102*/("""'><i class="fa fa-table fa-fw"></i>
+                    """)))}),format.raw/*176.22*/("""
+                    """),_display_(/*177.22*/if(session().get("role").equals("xxx") || session().get("role").equals("xxx"))/*177.100*/ {_display_(Seq[Any](format.raw/*177.102*/("""
+                        """),format.raw/*178.25*/("""<li>
+                            <a href='"""),_display_(/*179.39*/routes/*179.45*/.TableController.listCurrentSemestersUntilTheEndOfStudy()),format.raw/*179.102*/("""'><i class="fa fa-table fa-fw"></i>
                                 Aktuální semestry do konce studia</a>
                         </li>
-                    """)))}),format.raw/*158.22*/("""
-                    """),_display_(/*159.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*159.106*/ {_display_(Seq[Any](format.raw/*159.108*/("""
-                        """),format.raw/*160.25*/("""<li>
-                            <a href='"""),_display_(/*161.39*/routes/*161.45*/.TableController.listDays()),format.raw/*161.72*/("""'><i class="fa fa-table fa-fw"></i> Dny</a>
+                    """)))}),format.raw/*182.22*/("""
+                    """),_display_(/*183.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*183.106*/ {_display_(Seq[Any](format.raw/*183.108*/("""
+                        """),format.raw/*184.25*/("""<li>
+                            <a href='"""),_display_(/*185.39*/routes/*185.45*/.TableController.listDays()),format.raw/*185.72*/("""'><i class="fa fa-table fa-fw"></i> Dny</a>
                         </li>
-                    """)))}),format.raw/*163.22*/("""
-                    """),_display_(/*164.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*164.106*/ {_display_(Seq[Any](format.raw/*164.108*/("""
-                        """),format.raw/*165.25*/("""<li>
-                            <a href='"""),_display_(/*166.39*/routes/*166.45*/.TableController.listCommittees()),format.raw/*166.78*/("""'><i class="fa fa-table fa-fw"></i>
+                    """)))}),format.raw/*187.22*/("""
+                    """),_display_(/*188.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*188.106*/ {_display_(Seq[Any](format.raw/*188.108*/("""
+                        """),format.raw/*189.25*/("""<li>
+                            <a href='"""),_display_(/*190.39*/routes/*190.45*/.TableController.listCommittees()),format.raw/*190.78*/("""'><i class="fa fa-table fa-fw"></i>
                                 Komise</a>
                         </li>
-                    """)))}),format.raw/*169.22*/("""
-                    """),_display_(/*170.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*170.106*/ {_display_(Seq[Any](format.raw/*170.108*/("""
-                        """),format.raw/*171.25*/("""<li>
-                            <a href='"""),_display_(/*172.39*/routes/*172.45*/.TableController.listPublications()),format.raw/*172.80*/("""'><i class="fa fa-table fa-fw"></i>
+                    """)))}),format.raw/*193.22*/("""
+                    """),_display_(/*194.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*194.106*/ {_display_(Seq[Any](format.raw/*194.108*/("""
+                        """),format.raw/*195.25*/("""<li>
+                            <a href='"""),_display_(/*196.39*/routes/*196.45*/.TableController.listPublications()),format.raw/*196.80*/("""'><i class="fa fa-table fa-fw"></i>
                                 Publikace</a>
                         </li>
-                    """)))}),format.raw/*175.22*/("""
-                    """),_display_(/*176.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*176.106*/ {_display_(Seq[Any](format.raw/*176.108*/("""
-                        """),format.raw/*177.25*/("""<li>
-                            <a href='"""),_display_(/*178.39*/routes/*178.45*/.TableController.listTeachersInWeeks()),format.raw/*178.83*/("""'><i class="fa fa-table fa-fw"></i>
+                    """)))}),format.raw/*199.22*/("""
+                    """),_display_(/*200.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*200.106*/ {_display_(Seq[Any](format.raw/*200.108*/("""
+                        """),format.raw/*201.25*/("""<li>
+                            <a href='"""),_display_(/*202.39*/routes/*202.45*/.TableController.listTeachersInWeeks()),format.raw/*202.83*/("""'><i class="fa fa-table fa-fw"></i>
                                 Učitelé v týdnech</a>
                         </li>
-                    """)))}),format.raw/*181.22*/("""
-                """),format.raw/*182.17*/("""</ul>
+                    """)))}),format.raw/*205.22*/("""
+                """),format.raw/*206.17*/("""</ul>
                     <!-- /.nav-second-level -->
-            """)))}),format.raw/*184.14*/("""
-            """),format.raw/*185.13*/("""</li>
+            """)))}),format.raw/*208.14*/("""
+            """),format.raw/*209.13*/("""</li>
             <li>
-            """),_display_(/*187.14*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*187.98*/ {_display_(Seq[Any](format.raw/*187.100*/("""
-                """),format.raw/*188.17*/("""<a href="#"><i class="fa fa-files-o fa-fw"></i> Oblast zadávání<span class="fa arrow"></span></a>
+            """),_display_(/*211.14*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*211.98*/ {_display_(Seq[Any](format.raw/*211.100*/("""
+                """),format.raw/*212.17*/("""<a href="#"><i class="fa fa-files-o fa-fw"></i> Oblast zadávání<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    """),_display_(/*190.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*190.106*/ {_display_(Seq[Any](format.raw/*190.108*/("""
-                        """),format.raw/*191.25*/("""<li>
-                            <a href=""""),_display_(/*192.39*/routes/*192.45*/.ClassroomController.index()),format.raw/*192.73*/("""">Místnosti</a>
+                    """),_display_(/*214.22*/if(session().get("role").equals("director") || session().get("role").equals("head"))/*214.106*/ {_display_(Seq[Any](format.raw/*214.108*/("""
+                        """),format.raw/*215.25*/("""<li>
+                            <a href=""""),_display_(/*216.39*/routes/*216.45*/.ClassroomController.index()),format.raw/*216.73*/("""">Místnosti</a>
                         </li>
-                    """)))}),format.raw/*194.22*/("""
-                    """),_display_(/*195.22*/if(session().get("role").equals("director"))/*195.66*/ {_display_(Seq[Any](format.raw/*195.68*/("""
-                        """),format.raw/*196.25*/("""<li>
-                            <a href=""""),_display_(/*197.39*/routes/*197.45*/.TeachersRoleController.index()),format.raw/*197.76*/("""">Role u předmětů</a>
+                    """)))}),format.raw/*218.22*/("""
+                    """),_display_(/*219.22*/if(session().get("role").equals("xxx"))/*219.61*/ {_display_(Seq[Any](format.raw/*219.63*/("""
+                        """),format.raw/*220.25*/("""<li>
+                            <a href=""""),_display_(/*221.39*/routes/*221.45*/.TeachersRoleController.index()),format.raw/*221.76*/("""">Role u předmětů</a>
                         </li>
-                    """)))}),format.raw/*199.22*/("""
-                    """),_display_(/*200.22*/if(session().get("role").equals("director"))/*200.66*/ {_display_(Seq[Any](format.raw/*200.68*/("""
-                        """),format.raw/*201.25*/("""<li>
-                            <a href=""""),_display_(/*202.39*/routes/*202.45*/.Pages.blank),format.raw/*202.57*/("""">Blank Page</a>
+                    """)))}),format.raw/*223.22*/("""
+                    """),_display_(/*224.22*/if(session().get("role").equals("xxx"))/*224.61*/ {_display_(Seq[Any](format.raw/*224.63*/("""
+                        """),format.raw/*225.25*/("""<li>
+                            <a href=""""),_display_(/*226.39*/routes/*226.45*/.Pages.blank),format.raw/*226.57*/("""">Blank Page</a>
                         </li>
-                    """)))}),format.raw/*204.22*/("""
-                    """),_display_(/*205.22*/if(session().get("role").equals("director"))/*205.66*/ {_display_(Seq[Any](format.raw/*205.68*/("""
-                        """),format.raw/*206.25*/("""<li>
-                            <a href=""""),_display_(/*207.39*/routes/*207.45*/.Application.pdf()),format.raw/*207.63*/("""">pdf</a>
+                    """)))}),format.raw/*228.22*/("""
+                    """),_display_(/*229.22*/if(session().get("role").equals("xxx"))/*229.61*/ {_display_(Seq[Any](format.raw/*229.63*/("""
+                        """),format.raw/*230.25*/("""<li>
+                            <a href=""""),_display_(/*231.39*/routes/*231.45*/.Application.pdf()),format.raw/*231.63*/("""">pdf</a>
                         </li>
-                    """)))}),format.raw/*209.22*/("""
-                    """),_display_(/*210.22*/if(session().get("role").equals("director"))/*210.66*/ {_display_(Seq[Any](format.raw/*210.68*/("""
-                        """),format.raw/*211.25*/("""<li>
-                            <a href=""""),_display_(/*212.39*/routes/*212.45*/.Application.raw()),format.raw/*212.63*/("""">Dokument</a>
+                    """)))}),format.raw/*233.22*/("""
+                    """),_display_(/*234.22*/if(session().get("role").equals("xxx"))/*234.61*/ {_display_(Seq[Any](format.raw/*234.63*/("""
+                        """),format.raw/*235.25*/("""<li>
+                            <a href=""""),_display_(/*236.39*/routes/*236.45*/.Application.raw()),format.raw/*236.63*/("""">Dokument</a>
                         </li>
-                    """)))}),format.raw/*214.22*/("""
-                    """),_display_(/*215.22*/if(session().get("role").equals("director"))/*215.66*/ {_display_(Seq[Any](format.raw/*215.68*/("""
-                        """),format.raw/*216.25*/("""<li>
-                            <a href=""""),_display_(/*217.39*/routes/*217.45*/.TestController.test()),format.raw/*217.67*/("""">test</a>
+                    """)))}),format.raw/*238.22*/("""
+                    """),_display_(/*239.22*/if(session().get("role").equals("xxx"))/*239.61*/ {_display_(Seq[Any](format.raw/*239.63*/("""
+                        """),format.raw/*240.25*/("""<li>
+                            <a href=""""),_display_(/*241.39*/routes/*241.45*/.TestController.test()),format.raw/*241.67*/("""">test</a>
                         </li>
-                    """)))}),format.raw/*219.22*/("""
-                    """),_display_(/*220.22*/if(session().get("role").equals("director"))/*220.66*/ {_display_(Seq[Any](format.raw/*220.68*/("""
-                        """),format.raw/*221.25*/("""<li>
-                            <a href=""""),_display_(/*222.39*/routes/*222.45*/.SubjectPlanTeachingController.index()),format.raw/*222.83*/("""">Přidání předmětu do kurzu</a>
+                    """)))}),format.raw/*243.22*/("""
+                    """),_display_(/*244.22*/if(session().get("role").equals("director"))/*244.66*/ {_display_(Seq[Any](format.raw/*244.68*/("""
+                        """),format.raw/*245.25*/("""<li>
+                            <a href=""""),_display_(/*246.39*/routes/*246.45*/.SubjectPlanTeachingController.index()),format.raw/*246.83*/("""">Přidání předmětu do kurzu</a>
                         </li>
-                    """)))}),format.raw/*224.22*/("""
-                    """),_display_(/*225.22*/if(session().get("role").equals("director"))/*225.66*/ {_display_(Seq[Any](format.raw/*225.68*/("""
-                        """),format.raw/*226.25*/("""<li>
-                            <a href=""""),_display_(/*227.39*/routes/*227.45*/.VisitsController.index()),format.raw/*227.70*/("""">Registrace výjezdu</a>
+                    """)))}),format.raw/*248.22*/("""
+                    """),_display_(/*249.22*/if(session().get("role").equals("director"))/*249.66*/ {_display_(Seq[Any](format.raw/*249.68*/("""
+                        """),format.raw/*250.25*/("""<li>
+                            <a href=""""),_display_(/*251.39*/routes/*251.45*/.VisitsController.index()),format.raw/*251.70*/("""">Registrace výjezdu</a>
                         </li>
-                    """)))}),format.raw/*229.22*/("""
-                    """),_display_(/*230.22*/if(session().get("role").equals("director"))/*230.66*/ {_display_(Seq[Any](format.raw/*230.68*/("""
-                        """),format.raw/*231.25*/("""<li>
-                            <a href=""""),_display_(/*232.39*/routes/*232.45*/.ProjectController.index()),format.raw/*232.71*/("""">Registrace projektu</a>
+                    """)))}),format.raw/*253.22*/("""
+                    """),_display_(/*254.22*/if(session().get("role").equals("director"))/*254.66*/ {_display_(Seq[Any](format.raw/*254.68*/("""
+                        """),format.raw/*255.25*/("""<li>
+                            <a href=""""),_display_(/*256.39*/routes/*256.45*/.ProjectController.index()),format.raw/*256.71*/("""">Registrace projektu</a>
                         </li>
-                    """)))}),format.raw/*234.22*/("""
-                    """),_display_(/*235.22*/if(session().get("role").equals("director"))/*235.66*/ {_display_(Seq[Any](format.raw/*235.68*/("""
-                        """),format.raw/*236.25*/("""<li>
-                            <a href=""""),_display_(/*237.39*/routes/*237.45*/.CommitteeController.index()),format.raw/*237.73*/("""">Registrace komise</a>
+                    """)))}),format.raw/*258.22*/("""
+                    """),_display_(/*259.22*/if(session().get("role").equals("director"))/*259.66*/ {_display_(Seq[Any](format.raw/*259.68*/("""
+                        """),format.raw/*260.25*/("""<li>
+                            <a href=""""),_display_(/*261.39*/routes/*261.45*/.CommitteeController.index()),format.raw/*261.73*/("""">Registrace komise</a>
                         </li>
-                    """)))}),format.raw/*239.22*/("""
-                    """),_display_(/*240.22*/if(session().get("role").equals("director"))/*240.66*/ {_display_(Seq[Any](format.raw/*240.68*/("""
-                        """),format.raw/*241.25*/("""<li>
-                            <a href=""""),_display_(/*242.39*/routes/*242.45*/.PublicationsController.index()),format.raw/*242.76*/("""">Registrace publikace</a>
+                    """)))}),format.raw/*263.22*/("""
+                    """),_display_(/*264.22*/if(session().get("role").equals("director"))/*264.66*/ {_display_(Seq[Any](format.raw/*264.68*/("""
+                        """),format.raw/*265.25*/("""<li>
+                            <a href=""""),_display_(/*266.39*/routes/*266.45*/.PublicationsController.index()),format.raw/*266.76*/("""">Registrace publikace</a>
                         </li>
-                    """)))}),format.raw/*244.22*/("""
-                    """),_display_(/*245.22*/if(session().get("role").equals("director"))/*245.66*/ {_display_(Seq[Any](format.raw/*245.68*/("""
-                        """),format.raw/*246.25*/("""<li>
-                            <a href=""""),_display_(/*247.39*/routes/*247.45*/.OrganizationalUnitsController.index()),format.raw/*247.83*/("""">Registrace organizační jednotky</a>
+                    """)))}),format.raw/*268.22*/("""
+                    """),_display_(/*269.22*/if(session().get("role").equals("director"))/*269.66*/ {_display_(Seq[Any](format.raw/*269.68*/("""
+                        """),format.raw/*270.25*/("""<li>
+                            <a href=""""),_display_(/*271.39*/routes/*271.45*/.OrganizationalUnitsController.index()),format.raw/*271.83*/("""">Registrace organizační jednotky</a>
                         </li>
-                    """)))}),format.raw/*249.22*/("""
-                    """),_display_(/*250.22*/if(session().get("role").equals("director"))/*250.66*/ {_display_(Seq[Any](format.raw/*250.68*/("""
-                        """),format.raw/*251.25*/("""<li>
-                            <a href=""""),_display_(/*252.39*/routes/*252.45*/.OrganizationalUnitsController.indexParticipants()),format.raw/*252.95*/("""">OJ zaměstnanec</a>
-                        </li>
-                    """)))}),format.raw/*254.22*/("""
-                    """),_display_(/*255.22*/if(session().get("role").equals("director"))/*255.66*/ {_display_(Seq[Any](format.raw/*255.68*/("""
-                        """),format.raw/*256.25*/("""<li>
-                            <a href=""""),_display_(/*257.39*/routes/*257.45*/.FinalWorksController.index()),format.raw/*257.74*/("""">Registrace závěrečné práce</a>
-                        </li>
-                    """)))}),format.raw/*259.22*/("""
-                    """),_display_(/*260.22*/if(session().get("role").equals("director"))/*260.66*/ {_display_(Seq[Any](format.raw/*260.68*/("""
-                        """),format.raw/*261.25*/("""<li>
-                            <a href=""""),_display_(/*262.39*/routes/*262.45*/.Application.kpiChoosePerson()),format.raw/*262.75*/("""">KPI výběr osoby</a>
-                        </li>
-                    """)))}),format.raw/*264.22*/("""
-                    """),_display_(/*265.22*/if(session().get("role").equals("director"))/*265.66*/ {_display_(Seq[Any](format.raw/*265.68*/("""
-                        """),format.raw/*266.25*/("""<li>
-                            <a href=""""),_display_(/*267.39*/routes/*267.45*/.Application.roles()),format.raw/*267.65*/("""">Role</a>
-                        </li>
-                    """)))}),format.raw/*269.22*/("""
-                    """),_display_(/*270.22*/if(session().get("role").equals("director"))/*270.66*/ {_display_(Seq[Any](format.raw/*270.68*/("""
-                        """),format.raw/*271.25*/("""<li>
-                            <a href=""""),_display_(/*272.39*/routes/*272.45*/.PersonController.index()),format.raw/*272.70*/("""">Registrace osoby</a>
-                        </li>
-                    """)))}),format.raw/*274.22*/("""
-                    """),_display_(/*275.22*/if(session().get("role").equals("director"))/*275.66*/ {_display_(Seq[Any](format.raw/*275.68*/("""
-                        """),format.raw/*276.25*/("""<li>
-                            <a href=""""),_display_(/*277.39*/routes/*277.45*/.EmployeesController.index()),format.raw/*277.73*/("""">Registrace zaměstnance</a>
+                    """)))}),format.raw/*273.22*/("""
+                    """),_display_(/*274.22*/if(session().get("role").equals("director"))/*274.66*/ {_display_(Seq[Any](format.raw/*274.68*/("""
+                        """),format.raw/*275.25*/("""<li>
+                            <a href=""""),_display_(/*276.39*/routes/*276.45*/.OrganizationalUnitsController.indexParticipants()),format.raw/*276.95*/("""">
+                                Přidání zaměstnanec do OJ</a>
                         </li>
                     """)))}),format.raw/*279.22*/("""
+                    """),_display_(/*280.22*/if(session().get("role").equals("director"))/*280.66*/ {_display_(Seq[Any](format.raw/*280.68*/("""
+                        """),format.raw/*281.25*/("""<li>
+                            <a href=""""),_display_(/*282.39*/routes/*282.45*/.FinalWorksController.index()),format.raw/*282.74*/("""">Registrace závěrečné práce</a>
+                        </li>
+                    """)))}),format.raw/*284.22*/("""
+                    """),_display_(/*285.22*/if(session().get("role").equals("director"))/*285.66*/ {_display_(Seq[Any](format.raw/*285.68*/("""
+                        """),format.raw/*286.25*/("""<li>
+                            <a href=""""),_display_(/*287.39*/routes/*287.45*/.Application.kpiChoosePerson()),format.raw/*287.75*/("""">KPI výběr osoby</a>
+                        </li>
+                    """)))}),format.raw/*289.22*/("""
+                    """),_display_(/*290.22*/if(session().get("role").equals("xxx"))/*290.61*/ {_display_(Seq[Any](format.raw/*290.63*/("""
+                        """),format.raw/*291.25*/("""<li>
+                            <a href=""""),_display_(/*292.39*/routes/*292.45*/.Application.roles()),format.raw/*292.65*/("""">Role</a>
+                        </li>
+                    """)))}),format.raw/*294.22*/("""
+                    """),_display_(/*295.22*/if(session().get("role").equals("director"))/*295.66*/ {_display_(Seq[Any](format.raw/*295.68*/("""
+                        """),format.raw/*296.25*/("""<li>
+                            <a href=""""),_display_(/*297.39*/routes/*297.45*/.PersonController.index()),format.raw/*297.70*/("""">Registrace osoby</a>
+                        </li>
+                    """)))}),format.raw/*299.22*/("""
+                    """),_display_(/*300.22*/if(session().get("role").equals("director"))/*300.66*/ {_display_(Seq[Any](format.raw/*300.68*/("""
+                        """),format.raw/*301.25*/("""<li>
+                            <a href=""""),_display_(/*302.39*/routes/*302.45*/.EmployeesController.index()),format.raw/*302.73*/("""">Registrace zaměstnance</a>
+                        </li>
+                    """)))}),format.raw/*304.22*/("""
 
-                    """),_display_(/*281.22*/if(session().get("role").equals("director"))/*281.66*/ {_display_(Seq[Any](format.raw/*281.68*/("""
-                        """),format.raw/*282.25*/("""<li>
-                            <a href=""""),_display_(/*283.39*/routes/*283.45*/.SubjectController.index()),format.raw/*283.71*/("""">Registrace předmětu</a>
+                    """),_display_(/*306.22*/if(session().get("role").equals("xxx"))/*306.61*/ {_display_(Seq[Any](format.raw/*306.63*/("""
+                        """),format.raw/*307.25*/("""<li>
+                            <a href=""""),_display_(/*308.39*/routes/*308.45*/.SubjectController.index()),format.raw/*308.71*/("""">Registrace předmětu</a>
                         </li>
-                    """)))}),format.raw/*285.22*/("""
+                    """)))}),format.raw/*310.22*/("""
 
-                    """),_display_(/*287.22*/if(session().get("role").equals("director"))/*287.66*/ {_display_(Seq[Any](format.raw/*287.68*/("""
-                        """),format.raw/*288.25*/("""<li>
-                            <a href=""""),_display_(/*289.39*/routes/*289.45*/.FieldOfStudyController.index()),format.raw/*289.76*/("""">Registrace oboru</a>
-                        </li>
-                    """)))}),format.raw/*291.22*/("""
-                    """),_display_(/*292.22*/if(session().get("role").equals("director"))/*292.66*/ {_display_(Seq[Any](format.raw/*292.68*/("""
-                        """),format.raw/*293.25*/("""<li>
-                            <a href=""""),_display_(/*294.39*/routes/*294.45*/.StudyGroupsController.index()),format.raw/*294.75*/("""">Registrace skupiny</a>
-                        </li>
-                    """)))}),format.raw/*296.22*/("""
-                    """),_display_(/*297.22*/if(session().get("role").equals("director"))/*297.66*/ {_display_(Seq[Any](format.raw/*297.68*/("""
-                        """),format.raw/*298.25*/("""<li>
-                            <a href=""""),_display_(/*299.39*/routes/*299.45*/.SemestersController.index()),format.raw/*299.73*/("""">Registrace semestru</a>
-                        </li>
-                    """)))}),format.raw/*301.22*/("""
-                    """),_display_(/*302.22*/if(session().get("role").equals("director"))/*302.66*/ {_display_(Seq[Any](format.raw/*302.68*/("""
-                        """),format.raw/*303.25*/("""<li>
-                            <a href=""""),_display_(/*304.39*/routes/*304.45*/.StudyPlansController.index()),format.raw/*304.74*/("""">Registrace studijního plánu</a>
-                        </li>
-                    """)))}),format.raw/*306.22*/("""
-                    """),_display_(/*307.22*/if(session().get("role").equals("director"))/*307.66*/ {_display_(Seq[Any](format.raw/*307.68*/("""
-                        """),format.raw/*308.25*/("""<li>
-                            <a href=""""),_display_(/*309.39*/routes/*309.45*/.TeachersController.index()),format.raw/*309.72*/("""">Registrace učitele</a>
-                        </li>
-                    """)))}),format.raw/*311.22*/("""
                     """),_display_(/*312.22*/if(session().get("role").equals("director"))/*312.66*/ {_display_(Seq[Any](format.raw/*312.68*/("""
                         """),format.raw/*313.25*/("""<li>
-                            <a href=""""),_display_(/*314.39*/routes/*314.45*/.CourseController.index()),format.raw/*314.70*/("""">Registrace kurzu</a>
+                            <a href=""""),_display_(/*314.39*/routes/*314.45*/.FieldOfStudyController.index()),format.raw/*314.76*/("""">Registrace oboru</a>
                         </li>
                     """)))}),format.raw/*316.22*/("""
+                    """),_display_(/*317.22*/if(session().get("role").equals("director"))/*317.66*/ {_display_(Seq[Any](format.raw/*317.68*/("""
+                        """),format.raw/*318.25*/("""<li>
+                            <a href=""""),_display_(/*319.39*/routes/*319.45*/.StudyGroupsController.index()),format.raw/*319.75*/("""">Registrace skupiny</a>
+                        </li>
+                    """)))}),format.raw/*321.22*/("""
+                    """),_display_(/*322.22*/if(session().get("role").equals("director"))/*322.66*/ {_display_(Seq[Any](format.raw/*322.68*/("""
+                        """),format.raw/*323.25*/("""<li>
+                            <a href=""""),_display_(/*324.39*/routes/*324.45*/.SemestersController.index()),format.raw/*324.73*/("""">Registrace semestru</a>
+                        </li>
+                    """)))}),format.raw/*326.22*/("""
+                    """),_display_(/*327.22*/if(session().get("role").equals("xxx"))/*327.61*/ {_display_(Seq[Any](format.raw/*327.63*/("""
+                        """),format.raw/*328.25*/("""<li>
+                            <a href=""""),_display_(/*329.39*/routes/*329.45*/.StudyPlansController.index()),format.raw/*329.74*/("""">Registrace studijního plánu</a>
+                        </li>
+                    """)))}),format.raw/*331.22*/("""
+                    """),_display_(/*332.22*/if(session().get("role").equals("xxx"))/*332.61*/ {_display_(Seq[Any](format.raw/*332.63*/("""
+                        """),format.raw/*333.25*/("""<li>
+                            <a href=""""),_display_(/*334.39*/routes/*334.45*/.TeachersController.index()),format.raw/*334.72*/("""">Registrace učitele</a>
+                        </li>
+                    """)))}),format.raw/*336.22*/("""
+                    """),_display_(/*337.22*/if(session().get("role").equals("xxx"))/*337.61*/ {_display_(Seq[Any](format.raw/*337.63*/("""
+                        """),format.raw/*338.25*/("""<li>
+                            <a href=""""),_display_(/*339.39*/routes/*339.45*/.CourseController.index()),format.raw/*339.70*/("""">Registrace kurzu</a>
+                        </li>
+                    """)))}),format.raw/*341.22*/("""
 
-                """),format.raw/*318.17*/("""</ul>
+                """),format.raw/*343.17*/("""</ul>
                     <!-- /.nav-second-level -->
-            """)))}),format.raw/*320.14*/("""
-            """),format.raw/*321.13*/("""</li>
+            """)))}),format.raw/*345.14*/("""
+            """),format.raw/*346.13*/("""</li>
             <li>
-            """),_display_(/*323.14*/if(session().get("role").equals("director"))/*323.58*/ {_display_(Seq[Any](format.raw/*323.60*/("""
-                """),format.raw/*324.17*/("""<a href="#"><i class="fa fa-files-o fa-fw"></i> Metodika<span class="fa arrow"></span></a>
+            """),_display_(/*348.14*/if(session().get("role").equals("xxx"))/*348.53*/ {_display_(Seq[Any](format.raw/*348.55*/("""
+                """),format.raw/*349.17*/("""<a href="#"><i class="fa fa-files-o fa-fw"></i> Metodika<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                """),_display_(/*326.18*/if(session().get("role").equals("director"))/*326.62*/ {_display_(Seq[Any](format.raw/*326.64*/("""
-                    """),format.raw/*327.21*/("""<li>
-                        <a href=""""),_display_(/*328.35*/routes/*328.41*/.MethodicsController.index()),format.raw/*328.69*/("""">Přidat metodiku</a>
+                """),_display_(/*351.18*/if(session().get("role").equals("director"))/*351.62*/ {_display_(Seq[Any](format.raw/*351.64*/("""
+                    """),format.raw/*352.21*/("""<li>
+                        <a href=""""),_display_(/*353.35*/routes/*353.41*/.MethodicsController.index()),format.raw/*353.69*/("""">Přidat metodiku</a>
                     </li>
-                """)))}),format.raw/*330.18*/("""
-                """),format.raw/*331.17*/("""</ul>
+                """)))}),format.raw/*355.18*/("""
+                """),format.raw/*356.17*/("""</ul>
                     <!-- /.nav-second-level -->
-            """)))}),format.raw/*333.14*/("""
-            """),format.raw/*334.13*/("""</li>
+            """)))}),format.raw/*358.14*/("""
+            """),format.raw/*359.13*/("""</li>
             <li>
-            """),_display_(/*336.14*/if(session().get("role").equals("director"))/*336.58*/ {_display_(Seq[Any](format.raw/*336.60*/("""
-                """),format.raw/*337.17*/("""<a href='"""),_display_(/*337.27*/routes/*337.33*/.Application.forms),format.raw/*337.51*/("""'><i class="fa fa-edit fa-fw"></i> Formuláře</a>
-            """)))}),format.raw/*338.14*/("""
-            """),format.raw/*339.13*/("""</li>
+            """),_display_(/*361.14*/if(session().get("role").equals("xxx"))/*361.53*/ {_display_(Seq[Any](format.raw/*361.55*/("""
+                """),format.raw/*362.17*/("""<a href='"""),_display_(/*362.27*/routes/*362.33*/.Application.forms),format.raw/*362.51*/("""'><i class="fa fa-edit fa-fw"></i> Formuláře</a>
+            """)))}),format.raw/*363.14*/("""
+            """),format.raw/*364.13*/("""</li>
             <li>
-            """),_display_(/*341.14*/if(session().get("role").equals("director"))/*341.58*/ {_display_(Seq[Any](format.raw/*341.60*/("""
-                """),format.raw/*342.17*/("""<a href="#"><i class="fa fa-wrench fa-fw"></i> UI prvky<span class="fa arrow"></span></a>
+            """),_display_(/*366.14*/if(session().get("role").equals("xxx"))/*366.53*/ {_display_(Seq[Any](format.raw/*366.55*/("""
+                """),format.raw/*367.17*/("""<a href="#"><i class="fa fa-wrench fa-fw"></i> UI prvky<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href=""""),_display_(/*345.35*/routes/*345.41*/.UiElements.panelsAndWells),format.raw/*345.67*/("""">Panels and Wells</a>
+                        <a href=""""),_display_(/*370.35*/routes/*370.41*/.UiElements.panelsAndWells),format.raw/*370.67*/("""">Panels and Wells</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*348.35*/routes/*348.41*/.UiElements.buttons),format.raw/*348.60*/("""">Buttons</a>
+                        <a href=""""),_display_(/*373.35*/routes/*373.41*/.UiElements.buttons),format.raw/*373.60*/("""">Buttons</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*351.35*/routes/*351.41*/.UiElements.notifications),format.raw/*351.66*/("""">Notifications</a>
+                        <a href=""""),_display_(/*376.35*/routes/*376.41*/.UiElements.notifications),format.raw/*376.66*/("""">Notifications</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*354.35*/routes/*354.41*/.UiElements.typography),format.raw/*354.63*/("""">Typography</a>
+                        <a href=""""),_display_(/*379.35*/routes/*379.41*/.UiElements.typography),format.raw/*379.63*/("""">Typography</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*357.35*/routes/*357.41*/.UiElements.icons),format.raw/*357.58*/(""""> Icons</a>
+                        <a href=""""),_display_(/*382.35*/routes/*382.41*/.UiElements.icons),format.raw/*382.58*/(""""> Icons</a>
                     </li>
                     <li>
-                        <a href=""""),_display_(/*360.35*/routes/*360.41*/.UiElements.grid),format.raw/*360.57*/("""">Grid</a>
+                        <a href=""""),_display_(/*385.35*/routes/*385.41*/.UiElements.grid),format.raw/*385.57*/("""">Grid</a>
                     </li>
                 </ul>
                     <!-- /.nav-second-level -->
-            """)))}),format.raw/*364.14*/("""
-            """),format.raw/*365.13*/("""</li>
+            """)))}),format.raw/*389.14*/("""
+            """),format.raw/*390.13*/("""</li>
         </ul>
     </div>
         <!-- /.sidebar-collapse -->
@@ -417,11 +442,11 @@ Seq[Any](format.raw/*1.4*/("""
 object sidebar extends sidebar_Scope0.sidebar
               /*
                   -- GENERATED --
-                  DATE: Tue May 16 13:39:56 CEST 2017
+                  DATE: Wed May 17 09:22:33 CEST 2017
                   SOURCE: C:/Users/Martin/dp/masarykac/app/views/sidebar.scala.html
-                  HASH: 9fb15c70201b15d7ec0417a4448168297bf85300
-                  MATRIX: 742->1|838->3|865->4|1075->188|1089->194|1131->216|1504->562|1519->568|1568->596|1659->660|1674->666|1731->702|1824->768|1839->774|1927->840|2038->924|2053->930|2116->972|2193->1022|2208->1028|2271->1070|2348->1120|2363->1126|2425->1167|2501->1216|2516->1222|2565->1250|2654->1312|2669->1318|2721->1349|2812->1413|2827->1419|2880->1451|2973->1517|2988->1523|3047->1561|3126->1613|3141->1619|3209->1666|3281->1711|3296->1717|3382->1781|3511->1883|3526->1889|3629->1970|3845->2159|3938->2243|3979->2245|4024->2262|4219->2430|4313->2514|4354->2516|4407->2541|4477->2584|4492->2590|4546->2623|4710->2756|4759->2778|4853->2862|4894->2864|4947->2889|5017->2932|5032->2938|5082->2967|5244->3098|5293->3120|5387->3204|5428->3206|5481->3231|5551->3274|5566->3280|5612->3305|5787->3449|5836->3471|5930->3555|5971->3557|6024->3582|6094->3625|6109->3631|6163->3664|6331->3801|6380->3823|6474->3907|6515->3909|6568->3934|6638->3977|6653->3983|6709->4018|6877->4155|6926->4177|7020->4261|7061->4263|7114->4288|7184->4331|7199->4337|7287->4403|7456->4541|7506->4564|7600->4648|7641->4650|7694->4675|7764->4718|7779->4724|7844->4768|8033->4926|8082->4948|8176->5032|8217->5034|8270->5059|8340->5102|8355->5108|8405->5137|8570->5271|8619->5293|8713->5377|8754->5379|8807->5404|8877->5447|8892->5453|8946->5486|9115->5624|9164->5646|9258->5730|9299->5732|9352->5757|9422->5800|9437->5806|9496->5844|9667->5984|9717->6006|9812->6090|9854->6092|9908->6117|9979->6160|9995->6166|10048->6197|10210->6327|10260->6349|10355->6433|10397->6435|10451->6460|10522->6503|10538->6509|10592->6541|10759->6676|10809->6698|10904->6782|10946->6784|11000->6809|11071->6852|11087->6858|11140->6889|11305->7022|11355->7044|11450->7128|11492->7130|11546->7155|11617->7198|11633->7204|11689->7238|11861->7378|11911->7400|12006->7484|12048->7486|12102->7511|12173->7554|12189->7560|12243->7592|12407->7724|12457->7746|12552->7830|12594->7832|12648->7857|12719->7900|12735->7906|12788->7937|12952->8069|13002->8091|13097->8175|13139->8177|13193->8202|13264->8245|13280->8251|13338->8287|13499->8416|13549->8438|13644->8522|13686->8524|13740->8549|13811->8592|13827->8598|13879->8628|14008->8725|14058->8747|14153->8831|14195->8833|14249->8858|14320->8901|14336->8907|14397->8946|14570->9087|14620->9109|14715->9193|14757->9195|14811->9220|14882->9263|14898->9269|14978->9326|15167->9483|15217->9505|15312->9589|15354->9591|15408->9616|15479->9659|15495->9665|15544->9692|15671->9787|15721->9809|15816->9893|15858->9895|15912->9920|15983->9963|15999->9969|16054->10002|16216->10132|16266->10154|16361->10238|16403->10240|16457->10265|16528->10308|16544->10314|16601->10349|16766->10482|16816->10504|16911->10588|16953->10590|17007->10615|17078->10658|17094->10664|17154->10702|17327->10843|17373->10860|17472->10927|17514->10940|17578->10976|17672->11060|17714->11062|17760->11079|17957->11248|18052->11332|18094->11334|18148->11359|18219->11402|18235->11408|18285->11436|18384->11503|18434->11525|18488->11569|18529->11571|18583->11596|18654->11639|18670->11645|18723->11676|18828->11749|18878->11771|18932->11815|18973->11817|19027->11842|19098->11885|19114->11891|19148->11903|19248->11971|19298->11993|19352->12037|19393->12039|19447->12064|19518->12107|19534->12113|19574->12131|19667->12192|19717->12214|19771->12258|19812->12260|19866->12285|19937->12328|19953->12334|19993->12352|20091->12418|20141->12440|20195->12484|20236->12486|20290->12511|20361->12554|20377->12560|20421->12582|20515->12644|20565->12666|20619->12710|20660->12712|20714->12737|20785->12780|20801->12786|20861->12824|20976->12907|21026->12929|21080->12973|21121->12975|21175->13000|21246->13043|21262->13049|21309->13074|21417->13150|21467->13172|21521->13216|21562->13218|21616->13243|21687->13286|21703->13292|21751->13318|21860->13395|21910->13417|21964->13461|22005->13463|22059->13488|22130->13531|22146->13537|22196->13565|22303->13640|22353->13662|22407->13706|22448->13708|22502->13733|22573->13776|22589->13782|22642->13813|22752->13891|22802->13913|22856->13957|22897->13959|22951->13984|23022->14027|23038->14033|23098->14071|23219->14160|23269->14182|23323->14226|23364->14228|23418->14253|23489->14296|23505->14302|23577->14352|23681->14424|23731->14446|23785->14490|23826->14492|23880->14517|23951->14560|23967->14566|24018->14595|24134->14679|24184->14701|24238->14745|24279->14747|24333->14772|24404->14815|24420->14821|24472->14851|24577->14924|24627->14946|24681->14990|24722->14992|24776->15017|24847->15060|24863->15066|24905->15086|24999->15148|25049->15170|25103->15214|25144->15216|25198->15241|25269->15284|25285->15290|25332->15315|25438->15389|25488->15411|25542->15455|25583->15457|25637->15482|25708->15525|25724->15531|25774->15559|25886->15639|25937->15662|25991->15706|26032->15708|26086->15733|26157->15776|26173->15782|26221->15808|26330->15885|26381->15908|26435->15952|26476->15954|26530->15979|26601->16022|26617->16028|26670->16059|26776->16133|26826->16155|26880->16199|26921->16201|26975->16226|27046->16269|27062->16275|27114->16305|27222->16381|27272->16403|27326->16447|27367->16449|27421->16474|27492->16517|27508->16523|27558->16551|27667->16628|27717->16650|27771->16694|27812->16696|27866->16721|27937->16764|27953->16770|28004->16799|28121->16884|28171->16906|28225->16950|28266->16952|28320->16977|28391->17020|28407->17026|28456->17053|28564->17129|28614->17151|28668->17195|28709->17197|28763->17222|28834->17265|28850->17271|28897->17296|29003->17370|29050->17388|29149->17455|29191->17468|29255->17504|29309->17548|29350->17550|29396->17567|29582->17725|29636->17769|29677->17771|29727->17792|29794->17831|29810->17837|29860->17865|29957->17930|30003->17947|30102->18014|30144->18027|30208->18063|30262->18107|30303->18109|30349->18126|30387->18136|30403->18142|30443->18160|30537->18222|30579->18235|30643->18271|30697->18315|30738->18317|30784->18334|31011->18533|31027->18539|31075->18565|31211->18673|31227->18679|31268->18698|31395->18797|31411->18803|31458->18828|31591->18933|31607->18939|31651->18961|31781->19063|31797->19069|31836->19086|31962->19184|31978->19190|32016->19206|32168->19326|32210->19339
-                  LINES: 27->1|32->1|33->2|37->6|37->6|37->6|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|47->16|49->18|49->18|49->18|50->19|50->19|50->19|51->20|51->20|51->20|52->21|52->21|52->21|53->22|53->22|53->22|54->23|54->23|54->23|55->24|55->24|55->24|56->25|56->25|56->25|57->26|57->26|57->26|59->28|59->28|59->28|67->36|67->36|67->36|68->37|70->39|70->39|70->39|71->40|72->41|72->41|72->41|75->44|76->45|76->45|76->45|77->46|78->47|78->47|78->47|81->50|82->51|82->51|82->51|83->52|84->53|84->53|84->53|87->56|88->57|88->57|88->57|89->58|90->59|90->59|90->59|93->62|94->63|94->63|94->63|95->64|96->65|96->65|96->65|99->68|100->69|100->69|100->69|101->70|102->71|102->71|102->71|105->74|107->76|107->76|107->76|108->77|109->78|109->78|109->78|112->81|113->82|113->82|113->82|114->83|115->84|115->84|115->84|118->87|119->88|119->88|119->88|120->89|121->90|121->90|121->90|124->93|125->94|125->94|125->94|126->95|127->96|127->96|127->96|130->99|131->100|131->100|131->100|132->101|133->102|133->102|133->102|136->105|137->106|137->106|137->106|138->107|139->108|139->108|139->108|142->111|143->112|143->112|143->112|144->113|145->114|145->114|145->114|148->117|149->118|149->118|149->118|150->119|151->120|151->120|151->120|154->123|155->124|155->124|155->124|156->125|157->126|157->126|157->126|160->129|161->130|161->130|161->130|162->131|163->132|163->132|163->132|166->135|167->136|167->136|167->136|168->137|169->138|169->138|169->138|172->141|173->142|173->142|173->142|174->143|175->144|175->144|175->144|177->146|178->147|178->147|178->147|179->148|180->149|180->149|180->149|183->152|184->153|184->153|184->153|185->154|186->155|186->155|186->155|189->158|190->159|190->159|190->159|191->160|192->161|192->161|192->161|194->163|195->164|195->164|195->164|196->165|197->166|197->166|197->166|200->169|201->170|201->170|201->170|202->171|203->172|203->172|203->172|206->175|207->176|207->176|207->176|208->177|209->178|209->178|209->178|212->181|213->182|215->184|216->185|218->187|218->187|218->187|219->188|221->190|221->190|221->190|222->191|223->192|223->192|223->192|225->194|226->195|226->195|226->195|227->196|228->197|228->197|228->197|230->199|231->200|231->200|231->200|232->201|233->202|233->202|233->202|235->204|236->205|236->205|236->205|237->206|238->207|238->207|238->207|240->209|241->210|241->210|241->210|242->211|243->212|243->212|243->212|245->214|246->215|246->215|246->215|247->216|248->217|248->217|248->217|250->219|251->220|251->220|251->220|252->221|253->222|253->222|253->222|255->224|256->225|256->225|256->225|257->226|258->227|258->227|258->227|260->229|261->230|261->230|261->230|262->231|263->232|263->232|263->232|265->234|266->235|266->235|266->235|267->236|268->237|268->237|268->237|270->239|271->240|271->240|271->240|272->241|273->242|273->242|273->242|275->244|276->245|276->245|276->245|277->246|278->247|278->247|278->247|280->249|281->250|281->250|281->250|282->251|283->252|283->252|283->252|285->254|286->255|286->255|286->255|287->256|288->257|288->257|288->257|290->259|291->260|291->260|291->260|292->261|293->262|293->262|293->262|295->264|296->265|296->265|296->265|297->266|298->267|298->267|298->267|300->269|301->270|301->270|301->270|302->271|303->272|303->272|303->272|305->274|306->275|306->275|306->275|307->276|308->277|308->277|308->277|310->279|312->281|312->281|312->281|313->282|314->283|314->283|314->283|316->285|318->287|318->287|318->287|319->288|320->289|320->289|320->289|322->291|323->292|323->292|323->292|324->293|325->294|325->294|325->294|327->296|328->297|328->297|328->297|329->298|330->299|330->299|330->299|332->301|333->302|333->302|333->302|334->303|335->304|335->304|335->304|337->306|338->307|338->307|338->307|339->308|340->309|340->309|340->309|342->311|343->312|343->312|343->312|344->313|345->314|345->314|345->314|347->316|349->318|351->320|352->321|354->323|354->323|354->323|355->324|357->326|357->326|357->326|358->327|359->328|359->328|359->328|361->330|362->331|364->333|365->334|367->336|367->336|367->336|368->337|368->337|368->337|368->337|369->338|370->339|372->341|372->341|372->341|373->342|376->345|376->345|376->345|379->348|379->348|379->348|382->351|382->351|382->351|385->354|385->354|385->354|388->357|388->357|388->357|391->360|391->360|391->360|395->364|396->365
+                  HASH: 83bae130488a8f1a0ad1d86df46d2dba53aabd2f
+                  MATRIX: 742->1|838->3|865->4|1075->188|1089->194|1131->216|1504->562|1519->568|1568->596|1657->658|1672->664|1724->695|1815->759|1830->765|1883->797|1976->863|1991->869|2050->907|2129->959|2144->965|2212->1012|2295->1068|2310->1074|2396->1138|2525->1240|2540->1246|2643->1327|2859->1516|2952->1600|2993->1602|3038->1619|3233->1787|3327->1871|3368->1873|3421->1898|3491->1941|3506->1947|3569->1989|3667->2056|3716->2078|3810->2162|3851->2164|3904->2189|3974->2232|3989->2238|4052->2280|4150->2347|4199->2369|4293->2453|4334->2455|4387->2480|4457->2523|4472->2529|4534->2570|4631->2636|4680->2658|4774->2742|4815->2744|4868->2769|4938->2812|4953->2818|5002->2846|5114->2927|5163->2949|5257->3033|5298->3035|5351->3060|5421->3103|5436->3109|5493->3145|5607->3228|5656->3250|5750->3334|5791->3336|5844->3361|5914->3404|5929->3410|6017->3476|6153->3581|6202->3603|6296->3687|6337->3689|6390->3714|6460->3757|6475->3763|6529->3796|6693->3929|6742->3951|6836->4035|6877->4037|6930->4062|7000->4105|7015->4111|7065->4140|7227->4271|7276->4293|7370->4377|7411->4379|7464->4404|7534->4447|7549->4453|7595->4478|7770->4622|7819->4644|7913->4728|7954->4730|8007->4755|8077->4798|8092->4804|8146->4837|8314->4974|8363->4996|8451->5074|8492->5076|8545->5101|8615->5144|8630->5150|8686->5185|8854->5322|8903->5344|8997->5428|9038->5430|9091->5455|9161->5498|9176->5504|9264->5570|9433->5708|9484->5731|9579->5815|9621->5817|9675->5842|9746->5885|9762->5891|9828->5935|10018->6093|10068->6115|10157->6193|10199->6195|10253->6220|10324->6263|10340->6269|10391->6298|10557->6432|10607->6454|10702->6538|10744->6540|10798->6565|10869->6608|10885->6614|10940->6647|11110->6785|11160->6807|11255->6891|11297->6893|11351->6918|11422->6961|11438->6967|11498->7005|11670->7145|11720->7167|11815->7251|11857->7253|11911->7278|11982->7321|11998->7327|12051->7358|12213->7488|12263->7510|12358->7594|12400->7596|12454->7621|12525->7664|12541->7670|12595->7702|12762->7837|12812->7859|12901->7937|12943->7939|12997->7964|13068->8007|13084->8013|13137->8044|13302->8177|13352->8199|13447->8283|13489->8285|13543->8310|13614->8353|13630->8359|13686->8393|13858->8533|13908->8555|14003->8639|14045->8641|14099->8666|14170->8709|14186->8715|14240->8747|14404->8879|14454->8901|14549->8985|14591->8987|14645->9012|14716->9055|14732->9061|14785->9092|14949->9224|14999->9246|15094->9330|15136->9332|15190->9357|15261->9400|15277->9406|15335->9442|15496->9571|15546->9593|15641->9677|15683->9679|15737->9704|15808->9747|15824->9753|15876->9783|16005->9880|16055->9902|16144->9980|16186->9982|16240->10007|16311->10050|16327->10056|16388->10095|16561->10236|16611->10258|16700->10336|16742->10338|16796->10363|16867->10406|16883->10412|16963->10469|17152->10626|17202->10648|17297->10732|17339->10734|17393->10759|17464->10802|17480->10808|17529->10835|17656->10930|17706->10952|17801->11036|17843->11038|17897->11063|17968->11106|17984->11112|18039->11145|18201->11275|18251->11297|18346->11381|18388->11383|18442->11408|18513->11451|18529->11457|18586->11492|18751->11625|18801->11647|18896->11731|18938->11733|18992->11758|19063->11801|19079->11807|19139->11845|19312->11986|19358->12003|19457->12070|19499->12083|19563->12119|19657->12203|19699->12205|19745->12222|19942->12391|20037->12475|20079->12477|20133->12502|20204->12545|20220->12551|20270->12579|20369->12646|20419->12668|20468->12707|20509->12709|20563->12734|20634->12777|20650->12783|20703->12814|20808->12887|20858->12909|20907->12948|20948->12950|21002->12975|21073->13018|21089->13024|21123->13036|21223->13104|21273->13126|21322->13165|21363->13167|21417->13192|21488->13235|21504->13241|21544->13259|21637->13320|21687->13342|21736->13381|21777->13383|21831->13408|21902->13451|21918->13457|21958->13475|22056->13541|22106->13563|22155->13602|22196->13604|22250->13629|22321->13672|22337->13678|22381->13700|22475->13762|22525->13784|22579->13828|22620->13830|22674->13855|22745->13898|22761->13904|22821->13942|22936->14025|22986->14047|23040->14091|23081->14093|23135->14118|23206->14161|23222->14167|23269->14192|23377->14268|23427->14290|23481->14334|23522->14336|23576->14361|23647->14404|23663->14410|23711->14436|23820->14513|23870->14535|23924->14579|23965->14581|24019->14606|24090->14649|24106->14655|24156->14683|24263->14758|24313->14780|24367->14824|24408->14826|24462->14851|24533->14894|24549->14900|24602->14931|24712->15009|24762->15031|24816->15075|24857->15077|24911->15102|24982->15145|24998->15151|25058->15189|25179->15278|25229->15300|25283->15344|25324->15346|25378->15371|25449->15414|25465->15420|25537->15470|25685->15586|25735->15608|25789->15652|25830->15654|25884->15679|25955->15722|25971->15728|26022->15757|26138->15841|26188->15863|26242->15907|26283->15909|26337->15934|26408->15977|26424->15983|26476->16013|26581->16086|26631->16108|26680->16147|26721->16149|26775->16174|26846->16217|26862->16223|26904->16243|26998->16305|27048->16327|27102->16371|27143->16373|27197->16398|27268->16441|27284->16447|27331->16472|27437->16546|27487->16568|27541->16612|27582->16614|27636->16639|27707->16682|27723->16688|27773->16716|27885->16796|27936->16819|27985->16858|28026->16860|28080->16885|28151->16928|28167->16934|28215->16960|28324->17037|28375->17060|28429->17104|28470->17106|28524->17131|28595->17174|28611->17180|28664->17211|28770->17285|28820->17307|28874->17351|28915->17353|28969->17378|29040->17421|29056->17427|29108->17457|29216->17533|29266->17555|29320->17599|29361->17601|29415->17626|29486->17669|29502->17675|29552->17703|29661->17780|29711->17802|29760->17841|29801->17843|29855->17868|29926->17911|29942->17917|29993->17946|30110->18031|30160->18053|30209->18092|30250->18094|30304->18119|30375->18162|30391->18168|30440->18195|30548->18271|30598->18293|30647->18332|30688->18334|30742->18359|30813->18402|30829->18408|30876->18433|30982->18507|31029->18525|31128->18592|31170->18605|31234->18641|31283->18680|31324->18682|31370->18699|31556->18857|31610->18901|31651->18903|31701->18924|31768->18963|31784->18969|31834->18997|31931->19062|31977->19079|32076->19146|32118->19159|32182->19195|32231->19234|32272->19236|32318->19253|32356->19263|32372->19269|32412->19287|32506->19349|32548->19362|32612->19398|32661->19437|32702->19439|32748->19456|32975->19655|32991->19661|33039->19687|33175->19795|33191->19801|33232->19820|33359->19919|33375->19925|33422->19950|33555->20055|33571->20061|33615->20083|33745->20185|33761->20191|33800->20208|33926->20306|33942->20312|33980->20328|34132->20448|34174->20461
+                  LINES: 27->1|32->1|33->2|37->6|37->6|37->6|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|47->16|48->17|48->17|48->17|49->18|49->18|49->18|50->19|50->19|50->19|52->21|52->21|52->21|60->29|60->29|60->29|61->30|63->32|63->32|63->32|64->33|65->34|65->34|65->34|67->36|68->37|68->37|68->37|69->38|70->39|70->39|70->39|72->41|73->42|73->42|73->42|74->43|75->44|75->44|75->44|77->46|78->47|78->47|78->47|79->48|80->49|80->49|80->49|82->51|83->52|83->52|83->52|84->53|85->54|85->54|85->54|87->56|88->57|88->57|88->57|89->58|90->59|90->59|90->59|93->62|94->63|94->63|94->63|95->64|96->65|96->65|96->65|99->68|100->69|100->69|100->69|101->70|102->71|102->71|102->71|105->74|106->75|106->75|106->75|107->76|108->77|108->77|108->77|111->80|112->81|112->81|112->81|113->82|114->83|114->83|114->83|117->86|118->87|118->87|118->87|119->88|120->89|120->89|120->89|123->92|124->93|124->93|124->93|125->94|126->95|126->95|126->95|129->98|131->100|131->100|131->100|132->101|133->102|133->102|133->102|136->105|137->106|137->106|137->106|138->107|139->108|139->108|139->108|142->111|143->112|143->112|143->112|144->113|145->114|145->114|145->114|148->117|149->118|149->118|149->118|150->119|151->120|151->120|151->120|154->123|155->124|155->124|155->124|156->125|157->126|157->126|157->126|160->129|161->130|161->130|161->130|162->131|163->132|163->132|163->132|166->135|167->136|167->136|167->136|168->137|169->138|169->138|169->138|172->141|173->142|173->142|173->142|174->143|175->144|175->144|175->144|178->147|179->148|179->148|179->148|180->149|181->150|181->150|181->150|184->153|185->154|185->154|185->154|186->155|187->156|187->156|187->156|190->159|191->160|191->160|191->160|192->161|193->162|193->162|193->162|196->165|197->166|197->166|197->166|198->167|199->168|199->168|199->168|201->170|202->171|202->171|202->171|203->172|204->173|204->173|204->173|207->176|208->177|208->177|208->177|209->178|210->179|210->179|210->179|213->182|214->183|214->183|214->183|215->184|216->185|216->185|216->185|218->187|219->188|219->188|219->188|220->189|221->190|221->190|221->190|224->193|225->194|225->194|225->194|226->195|227->196|227->196|227->196|230->199|231->200|231->200|231->200|232->201|233->202|233->202|233->202|236->205|237->206|239->208|240->209|242->211|242->211|242->211|243->212|245->214|245->214|245->214|246->215|247->216|247->216|247->216|249->218|250->219|250->219|250->219|251->220|252->221|252->221|252->221|254->223|255->224|255->224|255->224|256->225|257->226|257->226|257->226|259->228|260->229|260->229|260->229|261->230|262->231|262->231|262->231|264->233|265->234|265->234|265->234|266->235|267->236|267->236|267->236|269->238|270->239|270->239|270->239|271->240|272->241|272->241|272->241|274->243|275->244|275->244|275->244|276->245|277->246|277->246|277->246|279->248|280->249|280->249|280->249|281->250|282->251|282->251|282->251|284->253|285->254|285->254|285->254|286->255|287->256|287->256|287->256|289->258|290->259|290->259|290->259|291->260|292->261|292->261|292->261|294->263|295->264|295->264|295->264|296->265|297->266|297->266|297->266|299->268|300->269|300->269|300->269|301->270|302->271|302->271|302->271|304->273|305->274|305->274|305->274|306->275|307->276|307->276|307->276|310->279|311->280|311->280|311->280|312->281|313->282|313->282|313->282|315->284|316->285|316->285|316->285|317->286|318->287|318->287|318->287|320->289|321->290|321->290|321->290|322->291|323->292|323->292|323->292|325->294|326->295|326->295|326->295|327->296|328->297|328->297|328->297|330->299|331->300|331->300|331->300|332->301|333->302|333->302|333->302|335->304|337->306|337->306|337->306|338->307|339->308|339->308|339->308|341->310|343->312|343->312|343->312|344->313|345->314|345->314|345->314|347->316|348->317|348->317|348->317|349->318|350->319|350->319|350->319|352->321|353->322|353->322|353->322|354->323|355->324|355->324|355->324|357->326|358->327|358->327|358->327|359->328|360->329|360->329|360->329|362->331|363->332|363->332|363->332|364->333|365->334|365->334|365->334|367->336|368->337|368->337|368->337|369->338|370->339|370->339|370->339|372->341|374->343|376->345|377->346|379->348|379->348|379->348|380->349|382->351|382->351|382->351|383->352|384->353|384->353|384->353|386->355|387->356|389->358|390->359|392->361|392->361|392->361|393->362|393->362|393->362|393->362|394->363|395->364|397->366|397->366|397->366|398->367|401->370|401->370|401->370|404->373|404->373|404->373|407->376|407->376|407->376|410->379|410->379|410->379|413->382|413->382|413->382|416->385|416->385|416->385|420->389|421->390
                   -- GENERATED --
               */
           

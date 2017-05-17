@@ -46,7 +46,7 @@ public class OrganizationalUnits extends Model {
     @Formats.NonEmpty
     public String functionNameOfSeniorEmployeeAppointment;
 
-    public Long organizationalUnitResponsible;
+    public String organizationalUnitResponsible;
 
     public boolean hasHeadOfOrganization;
 
@@ -57,7 +57,7 @@ public class OrganizationalUnits extends Model {
 
     public boolean active;
 
-    public OrganizationalUnits(String organizationalUnitNumber, String organizationalUnitNumberParent, String titleCzech, String titleEnglish, String functionNameOfSeniorEmployee, String functionNameOfSeniorEmployeeAppointment, Long organizationalUnitResponsible) {
+    public OrganizationalUnits(String organizationalUnitNumber, String organizationalUnitNumberParent, String titleCzech, String titleEnglish, String functionNameOfSeniorEmployee, String functionNameOfSeniorEmployeeAppointment, String organizationalUnitResponsible) {
         this.organizationalUnitNumber = organizationalUnitNumber;
         this.organizationalUnitNumberParent = organizationalUnitNumberParent;
         this.titleCzech = titleCzech;
@@ -126,11 +126,11 @@ public class OrganizationalUnits extends Model {
         this.functionNameOfSeniorEmployeeAppointment = functionNameOfSeniorEmployeeAppointment;
     }
 
-    public Long getOrganizationalUnitResponsible() {
+    public String getOrganizationalUnitResponsible() {
         return organizationalUnitResponsible;
     }
 
-    public void setOrganizationalUnitResponsible(Long organizationalUnitResponsible) {
+    public void setOrganizationalUnitResponsible(String organizationalUnitResponsible) {
         this.organizationalUnitResponsible = organizationalUnitResponsible;
     }
 

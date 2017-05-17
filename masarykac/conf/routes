@@ -130,6 +130,7 @@ POST        /courses/saved                                  controllers.CourseCo
 GET         /scheduleinweeks                                controllers.TableController.listScheduleInWeeks()
 
 GET         /schedule                                       controllers.TableController.listSchedule()
+GET         /ideas                                          controllers.TableController.listIdeas()
 GET         /employees                                      controllers.TableController.listEmployees()
 GET         /oj                                             controllers.TableController.listOJ()
 GET         /teachers                                       controllers.TableController.listTeachers()
