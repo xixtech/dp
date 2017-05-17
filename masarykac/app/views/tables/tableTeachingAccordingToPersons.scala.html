@@ -76,10 +76,12 @@
                     @if(sem.getId == member.getSemester.getId) {
                         @for(t <- tPage) {
                             @if(t.getEmployees.getId == empl.getId) {
-                                @if(t.getCourses.getId == member.getId) {
-                                    @for(sch <- schPage) {
-                                        @if(sch.getCourses.getId == member.getId) {
-                                            @(c = c + 1)
+                                @if(t.getCourses!=null) {
+                                    @if(t.getCourses.getId == member.getId) {
+                                        @for(sch <- schPage) {
+                                            @if(sch.getCourses.getId == member.getId) {
+                                                @(c = c + 1)
+                                            }
                                         }
                                     }
                                 }

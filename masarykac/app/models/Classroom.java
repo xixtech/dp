@@ -92,6 +92,10 @@ public class Classroom extends Model {
         return find.where().eq("id", id).findUnique();
     }
 
+    public static Classroom findByCN(String classroomName) {
+        return find.where().eq("classroomName", classroomName).findUnique();
+    }
+
     public static Map<String, String> options() {
         List<Classroom> subjectSets = Classroom.find.all();
         LinkedHashMap<String, String> options = new LinkedHashMap<String, String>();

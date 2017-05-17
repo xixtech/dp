@@ -124,22 +124,34 @@ public class Courses extends Model {
 
     public static Courses findByCourseTeachers(String course, String ident, String sem) {
        Courses c=null;
+        int t=0;
         List<Courses> lc=Courses.find.all();
         List<Subjects> lsu=Subjects.find.all();
         for (Courses set : lc) {
-           if(set.getCourse()==course){
+           if(set.getCourse().equals(course)){
                for (Subjects subset : lsu) {
-                   if(subset.getIdent()==ident) {
+                   if(subset.getIdent().equals(ident)) {
                        if (subset.getId() == set.getSubjects().getId()) {
                                if (Semesters.findBySemValue(sem).getId() == set.getSemester().getId()) {
                                    c=set;
                                }
+                               else{
+                                   t=1;
+                               }
+                       }else{
+                           t=2;
                        }
                    }
+                   else{
+                       t=3;
+                   }
                }
+           }else{
+               t=4;
            }
         }
-
+    Test t1=new Test(""+t,"");
+        t1.save();
         return c;
     }
 

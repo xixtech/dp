@@ -78,32 +78,34 @@
                                             </td>
                                         </tr>
                                         @for(t <- tPage) {
-                                            @if(c.getId == t.getCourses.getId) {
-                                                <tr>
-                                                    <td class="center">
-                                                    @if(t.getEmployees == null) {
-                                                        <em>-</em>
-                                                    } else {
-                                                        @t.getEmployees.getFullName
-                                                    }
-                                                    </td>
-                                                    <td class="center">
-                                                        <table id="innertable" cellspacing="0" cellpadding="0">
-                                                        @for(tiw <- tiwPage) {
-                                                            <tr id="innerrow">
-                                                            @if(t.getId == tiw.getTeachers.getId) {
-                                                                @for(siw <- siwPage) {
-                                                                    @if(tiw.getScheduleInWeeks.getId == siw.getId) {
-                                                                        @siw.getScheduleWeek
+                                            @if(t.getCourses!=null) {
+                                                @if(c.getId == t.getCourses.getId) {
+                                                    <tr>
+                                                        <td class="center">
+                                                        @if(t.getEmployees == null) {
+                                                            <em>-</em>
+                                                        } else {
+                                                            @t.getEmployees.getFullName
+                                                        }
+                                                        </td>
+                                                        <td class="center">
+                                                            <table id="innertable" cellspacing="0" cellpadding="0">
+                                                            @for(tiw <- tiwPage) {
+                                                                <tr id="innerrow">
+                                                                @if(t.getId == tiw.getTeachers.getId) {
+                                                                    @for(siw <- siwPage) {
+                                                                        @if(tiw.getScheduleInWeeks.getId == siw.getId) {
+                                                                            @siw.getScheduleWeek
 
+                                                                        }
                                                                     }
                                                                 }
+                                                                </tr>
                                                             }
-                                                            </tr>
-                                                        }
-                                                        </table>
-                                                    </td>
-                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                }
                                             }
                                         }
                                     }

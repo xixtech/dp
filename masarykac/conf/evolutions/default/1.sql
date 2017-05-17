@@ -6,7 +6,6 @@
 create table access_role (
   id                            bigserial not null,
   role                          varchar(255),
-  xx                            varchar(255),
   description                   varchar(255),
   active                        boolean,
   constraint pk_access_role primary key (id)

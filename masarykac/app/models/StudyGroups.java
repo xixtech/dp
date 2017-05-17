@@ -36,6 +36,14 @@ public class StudyGroups extends Model {
         this.studyGroupsNote = studyGroupsNote;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public List<StudyPlans> getStudyPlans() {
         return studyPlans;
     }

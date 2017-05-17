@@ -124,13 +124,15 @@ public class StatisticController extends Controller {
         for (int j = 0; j < teachers.size(); j++) {
             if (e.getId().equals(teachers.get(j).getEmployees().getId())) {
                 numberOfTeachedSubjects = 0;
-                if (teachedSem.containsKey(teachers.get(j).getCourses().getSemester().getId())) {
-                    numberOfTeachedSubjects = teachedSem.get(teachers.get(j).getCourses().getSemester().getId());
-                    numberOfTeachedSubjects = numberOfTeachedSubjects + 1;
-                    teachedSem.put(teachers.get(j).getCourses().getSemester().getId(), numberOfTeachedSubjects);
-                } else {
-                    numberOfTeachedSubjects++;
-                    teachedSem.put(teachers.get(j).getCourses().getSemester().getId(), numberOfTeachedSubjects);
+                if(teachers.get(j).getCourses()!=null) {
+                    if (teachedSem.containsKey(teachers.get(j).getCourses().getSemester().getId())) {
+                        numberOfTeachedSubjects = teachedSem.get(teachers.get(j).getCourses().getSemester().getId());
+                        numberOfTeachedSubjects = numberOfTeachedSubjects + 1;
+                        teachedSem.put(teachers.get(j).getCourses().getSemester().getId(), numberOfTeachedSubjects);
+                    } else {
+                        numberOfTeachedSubjects++;
+                        teachedSem.put(teachers.get(j).getCourses().getSemester().getId(), numberOfTeachedSubjects);
+                    }
                 }
             }
         }

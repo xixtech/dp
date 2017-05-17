@@ -63,7 +63,7 @@
                             @for(t <- tPage) {
                                 <tr>
                                     <td class="center">
-                                    @if(t.getCourses.getSemester == "") {
+                                    @if(t.getCourses == null) {
                                         <em>-</em>
                                     } else {
                                         @t.getCourses.getSemester.getSemesterValue
@@ -71,7 +71,7 @@
                                     </td>
 
                                     <td class="center">
-                                    @if(t.getCourses.getSubjects == "") {
+                                    @if(t.getCourses == null) {
                                         <em>-</em>
                                     } else {
                                         @t.getCourses.getSubjects.getIdent
@@ -79,14 +79,14 @@
                                     </td>
 
                                     <td class="center">
-                                    @if(t.getCourses.getCourse == "") {
+                                    @if(t.getCourses == null) {
                                         <em>-</em>
                                     } else {
                                         @t.getCourses.getCourse
                                     }
                                     </td>
                                     <td class="center">
-                                        @if(t.getEmployees == ""){
+                                        @if(t.getEmployees == null){
                                         <em>-</em>
                                     } else{
                                         @t.getEmployees.getFullName

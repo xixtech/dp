@@ -1,8 +1,2 @@
-[error] C:\Users\Martin\dp\masarykac\app\OnStartup.java:38: unreported exception java.lang.Exception; must be caught or declared to be thrown
-[error] sm.insertSemesters()
-[error] C:\Users\Martin\dp\masarykac\app\OnStartup.java:39: unreported exception java.lang.Exception; must be caught or declared to be thrown
-[error] sm.insertEmployees()
-[error] C:\Users\Martin\dp\masarykac\app\OnStartup.java:54: unreported exception java.lang.Exception; must be caught or declared to be thrown
-[error] new Member("a@a.cz", "secret", "aaa")
-[error] C:\Users\Martin\dp\masarykac\app\OnStartup.java:66: unreported exception java.lang.Exception; must be caught or declared to be thrown
-[error] new Member("b@b.cz", "heslo", "bbb")
+[warn] C:\Users\Martin\dp\masarykac\app\controllers\ClassroomController.java:3: com.sun.org.apache.bcel.internal.util.ClassQueue is internal proprietary API and may be removed in a future release
+[warn] com.sun.org.apache.bcel.internal.util.ClassQueue
