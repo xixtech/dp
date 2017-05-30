@@ -34,7 +34,7 @@ public class OnStartup {
             sm.insertClassroomStart();
             sm.insertTeachersRole();
             sm.insertAccessRole();
-            Member member = new Member("a@a.cz", "secret", "aaa");
+            Member member = new Member("a@a.cz", "password1", "test1");
             member.setActive(true);
             member.save();
 
@@ -46,11 +46,11 @@ public class OnStartup {
             member.setEmployees(em);
             member.update();
 
-            Member member2 = new Member("b@b.cz", "heslo", "bbb");
+            Member member2 = new Member("b@b.cz", "password2", "test2");
             member2.setActive(true);
             member2.save();
 
-            Employees e = new Employees(123456, "Ing.", "Novák", "Karel", "Ph.D.", AccessRole.findById(1));
+            Employees e = new Employees(456789, "Ing.", "Novák", "Karel", "Ph.D.", AccessRole.findById(1));
             e.save();
             e.setMember(member2);
             e.update();
@@ -59,14 +59,14 @@ public class OnStartup {
             member2.update();
             sm.insertOJ();
             sm.insertSemesters();
-            sm.insertEmployees();
+           // sm.insertEmployees();
             sm.insertFS();
             sm.insertSG();
-            sm.insertOJPart();
-            sm.insertSubjects();
-            sm.insertSP();
-            sm.insertCourses();
-            sm.insertTeachers();
+           // sm.insertOJPart();
+           // sm.insertSubjects();
+           // sm.insertSP();
+            //sm.insertCourses();
+            //sm.insertTeachers();
 
             Roles roles = new Roles("Lektor");
             roles.save();
@@ -75,14 +75,27 @@ public class OnStartup {
             rolesAsistent.save();
 
 
-            Profile profile = new Profile("Jan", "Novák", "123456789", member);
+            Profile profile = new Profile(e.getFirstName(), e.getSurname(), ""+e.getPersonalNumber(), member);
             profile.save();
             Person person = new Person(20000, "Lektor", member, roles.roleName);
             person.save();
 
+            Profile profile1 = new Profile(em.getFirstName(), em.getSurname(), ""+em.getPersonalNumber(), member2);
+            profile1.save();
+            Person person1 = new Person(20000, "Lektor", member2, roles.roleName);
+            person1.save();
+            OrganizationalUnitsParticipants ou = new OrganizationalUnitsParticipants("employee", "zaměstnanec", e, OrganizationalUnits.findById(1));
+            ou.save();
+
+            OrganizationalUnitsParticipants ou1 = new OrganizationalUnitsParticipants("employee", "zaměstnanec", em, OrganizationalUnits.findById(1));
+            ou1.save();
             member.setPerson(person);
             member.setProfile(profile);
             member.update();
+
+            member2.setPerson(person1);
+            member2.setProfile(profile1);
+            member2.update();
             KPIStart kpi = new KPIStart();
             kpi.insertKPIStart();
 

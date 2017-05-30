@@ -239,6 +239,15 @@ public class Employees extends Model {
         return find.where().eq("personalNumber", personalNumber).findUnique();
     }
 
+    public static boolean findByUniquePN(long personalNumber) {
+        List<Employees> e=find.where().eq("personalNumber", personalNumber).findList();
+        if(e.size()>0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
 
     public static List<Employees> search() {
         return Employees.find.all();

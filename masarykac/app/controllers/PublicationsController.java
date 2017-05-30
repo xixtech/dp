@@ -148,4 +148,8 @@ public class PublicationsController extends Controller {
         }
     }
 
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
 }

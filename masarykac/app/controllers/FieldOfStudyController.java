@@ -81,4 +81,8 @@ public class FieldOfStudyController extends Controller {
 
     }
 
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
 }

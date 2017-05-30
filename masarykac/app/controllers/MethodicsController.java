@@ -60,4 +60,8 @@ public class MethodicsController extends Controller{
         }
         return null;
     }
+
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
 }

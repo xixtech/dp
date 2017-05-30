@@ -93,4 +93,8 @@ public class StudyGroupsController extends Controller {
         sg1.save();
     }
 
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
 }

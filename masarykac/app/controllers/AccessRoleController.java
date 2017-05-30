@@ -88,4 +88,8 @@ public class AccessRoleController extends Controller {
         return redirect(routes.TableController.listAccessRole());
     }
 
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
 }

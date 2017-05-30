@@ -95,4 +95,8 @@ public class SemestersController extends Controller {
         s.save();
     }
 
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
 }

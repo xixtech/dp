@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Martin/dp/masarykac/conf/routes
-// @DATE:Thu May 18 00:13:22 CEST 2017
+// @DATE:Thu May 18 01:08:32 CEST 2017
 
 
 package router {

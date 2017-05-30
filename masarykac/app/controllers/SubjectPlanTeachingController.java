@@ -703,4 +703,8 @@ public class SubjectPlanTeachingController extends Controller {
         }
         return true;
     }
+
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
 }

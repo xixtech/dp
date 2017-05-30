@@ -72,6 +72,10 @@ public class EmployeesController extends Controller {
             registerForm.reject("repeatPassword", "Hesla se neshodují");
             return badRequest(views.html.registerEmployees.render(registerForm, employeesForm, organizationalUnitsParticipantsForm));
         }
+        if (Employees.findByUniquePN(employeesForm.get().getPersonalNumber())) {
+            employeesForm.reject("personalNumber", "Osobní číslo musí být unikátní");
+            return badRequest(views.html.registerEmployees.render(registerForm, employeesForm, organizationalUnitsParticipantsForm));
+        }
         Employees employees = employeesForm.get();
         Member registerMember = registerForm.get();
         OrganizationalUnitsParticipants organizationalUnits = organizationalUnitsParticipantsForm.get();
@@ -96,12 +100,20 @@ public class EmployeesController extends Controller {
 
     private void saveEmployee(Member registerForm, Employees employeesForm) throws Exception {
         Member member = new Member(registerForm.email,
-                Hash.createPassword(registerForm.password), registerForm.uid);
+                registerForm.password, registerForm.uid);
         member.setActive(true);
         member.save();
         Employees employees = new Employees(employeesForm.personalNumber, employeesForm.titleBefore, employeesForm.surname, employeesForm.firstName, employeesForm.titleAfter, employeesForm.accessRole);
         employees.setMember(member);
         employees.save();
+
+
+        Profile profile = new Profile(employees.getFirstName(), employees.getSurname(), ""+employees.getPersonalNumber(), member);
+        profile.save();
+        Person person = new Person(20000, "Lektor", member, "Lektor");
+        person.save();
+        member.setPerson(person);
+        member.setProfile(profile);
         member.setEmployees(employees);
         member.update();
     }
@@ -157,5 +169,9 @@ public class EmployeesController extends Controller {
             return badRequest(views.html.registerEmployees.render(registerForm, employees, organizationalUnitsForm));
         }
         return null;
+    }
+
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
     }
 }

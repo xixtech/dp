@@ -39,5 +39,9 @@ public class PrintController extends Controller {
         return ok(views.html.personDetail.render(member));
     }
 
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
 
 }

@@ -98,4 +98,8 @@ public class Application extends Controller {
         flash("success", "Byl/a jste odhlášen/a.");
         return redirect(routes.Login.index());
     }
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
 }

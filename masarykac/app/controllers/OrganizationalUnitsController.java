@@ -87,24 +87,28 @@ public class OrganizationalUnitsController extends Controller {
             state = 1;
         } else if (ou.size() >0) {
             for (OrganizationalUnitsParticipants set : ou) {
-                if (set.getEmployees().getId() == organizationalUnits.getEmployees().getId()) {
-                    state = 0;
-                } else {
-                    if(hasHead){
-                        if(set.getFunction().equals(organizationalUnits.getFunction())){
-                            state=0;
-                        }else{
-                            state=1;
+                if(organizationalUnits.getEmployees()!=null) {
+                    if (set.getEmployees().getId() == organizationalUnits.getEmployees().getId()) {
+                        state = 0;
+                    } else {
+                        if (hasHead) {
+                            if (set.getFunction().equals(organizationalUnits.getFunction())) {
+                                state = 0;
+                            } else {
+                                state = 1;
+                            }
+                        } else if (hasDeputy) {
+                            if (set.getFunction().equals(organizationalUnits.getFunction())) {
+                                state = 0;
+                            } else {
+                                state = 1;
+                            }
+                        } else {
+                            state = 1;
                         }
-                    }else if(hasDeputy){
-                        if(set.getFunction().equals(organizationalUnits.getFunction())){
-                            state=0;
-                        }else{
-                            state=1;
-                        }
-                    }else{
-                        state=1;
                     }
+                }else{
+                    state=1;
                 }
             }
         }

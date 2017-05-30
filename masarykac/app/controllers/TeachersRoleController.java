@@ -87,4 +87,8 @@ public class TeachersRoleController extends Controller {
         return redirect(routes.TableController.listTeachersRole());
     }
 
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
 }

@@ -34,7 +34,7 @@ public class StatisticController extends Controller {
         List<Semesters> sem = Semesters.search();
         List<Courses> c = Courses.search();
         List<Teachers> teachers = Teachers.find.all();
-        return ok(views.html.tables.tableDCPS.render(sp, f, s,sem,c,teachers));
+        return ok(views.html.tables.tableDCPS.render(sp, f, s,c,teachers));
     }
 
     public Result dcpsCombi() {
@@ -216,5 +216,9 @@ public class StatisticController extends Controller {
 
         return redirect(routes.Application.index());
 
+    }
+
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
     }
 }

@@ -63,5 +63,9 @@ public class TeachersController extends Controller {
         return redirect(routes.Application.index());
     }
 
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
+
 
 }

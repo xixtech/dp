@@ -48,4 +48,8 @@ public class IdeasController extends Controller {
         Ideas i = new Ideas(ideas.idea, new Date());
         i.save();
     }
+
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
 }

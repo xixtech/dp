@@ -81,4 +81,8 @@ public class ClassroomController extends Controller {
         c.update();
         return redirect(routes.TableController.listClassrooms());
     }
+
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
 }

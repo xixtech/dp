@@ -65,4 +65,8 @@ public class Login  extends Controller {
             return redirect(routes.Application.dashboard());
         }
     }
+
+    public static void notAccess() {
+        flash("success", "Pro tuto činnost nemáte přístup!");
+    }
 }
